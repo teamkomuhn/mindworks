@@ -91,12 +91,12 @@ add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
 add_theme_support( 'post-thumbnails' );
 
 //CPT Tools
-add_action( 'init', 'tools_post_type' );
-function portfolio_post_type() {
-    register_post_type( 'tools',
+add_action( 'init', 'mw_tools_post_type' );
+function mw_tools_post_type() {
+    register_post_type( 'mw-tools',
         array(
             'labels' => array(
-                'name' => __( 'Tools' ),
+                'name' => __( 'MW Tools' ),
                 'singular_name' => __( 'Tool' ),
                 'add_new_item' => __( 'Add New Tool' )
             ),
@@ -109,3 +109,19 @@ function portfolio_post_type() {
     );
 }
 
+//MW Tools
+add_action("admin_init", "admin_init");
+
+function admin_init(){
+    add_meta_box("cover_meta", "Cover text", "cover_meta", "mw-tools", "side", "high");
+}
+
+function cover_meta(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $cover_meta = $custom["cover_meta"][0];
+    ?>
+		<label for="cover_meta">Text that will appear on the page cover.</label>
+		<textarea name="cover_meta" rows="4" style="width:100%;"><?php echo $cover_meta; ?></textarea>
+    <?php
+}

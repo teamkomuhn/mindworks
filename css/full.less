@@ -3,8 +3,8 @@
 @import "mixins";
 
 //Variables
-@x-spacing: 	80px;
-@y-spacing: 	80px;
+@x-spacing: 	7.5rem;
+@y-spacing: 	3.5rem;
 @col-spacing:	50px;
 
 @main-width: 	860px;
@@ -12,6 +12,87 @@
 
 @font-size-title: 	4rem;
 @font-size-h1: 		3rem;
-@font-size-h2: 		2rem;
-@font-size-h3: 		1.5rem;
+@font-size-h2: 		2.5rem;
+@font-size-h3: 		2rem;
+@font-size-h4: 		1.7rem;
 @font-size-p: 		1.1rem;
+
+
+.has-large-font-size {
+	font-size: @font-size-h3;
+}
+
+.has-medium-font-size {
+	font-size: @font-size-h4;
+}
+
+.wp-block-pullquote, .wp-block-pullquote.is-style-default {
+    font-size: @font-size-h4;
+}
+
+
+header.main-header {
+
+	h1.logo {
+		margin: 0 0.5em 0 7.5rem;
+		a {
+			img {
+				width: 12rem;
+			}
+		}
+	}
+}
+
+.tool {
+	header {
+		height: calc(100vh - 6rem);
+		.text {
+			width: 50vw;
+            left: 0;
+			padding: 0 7.5rem;
+
+			h1 {
+				font-size: @font-size-h1;
+			}
+
+			h2 {
+				font-size: @font-size-h2;
+			}
+		}
+	}
+    
+	div.content {
+
+		margin: @y-spacing 0;
+		padding: 0 @x-spacing;
+		
+		h3 {
+			font-size: @font-size-h3;
+		}
+        .image {
+            text-align: right;
+            figure {
+                margin: 0;
+            }
+        }
+
+        .zoom {
+            position: absolute;
+            z-index: -1;
+            left: 0;
+
+            width: 100%;
+            margin: @y-spacing 0;
+            padding: 2rem 0 2rem 35%;
+            background-color: @color-black;
+            color: @color-white;
+
+            &:after {
+                content: url('../img/icon-arrow-right.svg');
+                zoom: .5;
+                vertical-align: middle;
+                margin-left: 1.5rem;
+            }
+        }
+	}
+}

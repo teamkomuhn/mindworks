@@ -8,8 +8,9 @@
 
 @font-size-title: 	2rem;
 @font-size-h1: 		2rem;
-@font-size-h2: 		2rem;
-@font-size-h3: 		1.5rem;
+@font-size-h2: 		1.3rem;
+@font-size-h3: 		1.2rem;
+@font-size-h4: 		1.1rem;
 @font-size-p: 		1rem;
 
 /*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
@@ -29,6 +30,8 @@ html {
 	color: #222;
 	font-size: 1em;
 	line-height: 1.4;
+
+	margin-top: 0!important;
 }
 
 /*
@@ -104,10 +107,163 @@ textarea {
 .browserupgrade {
 	margin: 0.2em 0;
 	background: #ccc;
-	color: #000;
+	color: @color-black;
 	padding: 0.2em 0;
 }
 
 /* ==========================================================================
 	 Author's custom styles
 	 ========================================================================== */
+body {
+	font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: @color-black;
+	overflow-x: hidden;
+}
+
+h1 {
+	font-weight: 600;
+}
+
+h2 {
+	font-weight: 600;
+}
+
+h3, h4 {
+	font-weight: 400;
+}
+
+p {
+	line-height: 1.5;
+}
+
+.has-large-font-size {
+	font-size: @font-size-h2;
+}
+
+.has-medium-font-size {
+	font-size: @font-size-h3;
+}
+
+.wp-block-pullquote, .wp-block-pullquote.is-style-default {
+	position: relative;
+	margin: 6rem 0 4rem 0;
+	font-size: @font-size-h2;
+	&:before {
+		content: "";
+		position: absolute;
+		width: 120px;
+		height: 7px;
+		top: -30px;
+		background-color: @color-black;
+	}
+	blockquote {
+		margin: 0;
+	}
+}
+
+.aligncenter {
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+header.main-header {
+	height: 6rem;
+
+	.flex-display();
+	.flex-flow(row nowrap);
+	.align-items(center);
+
+	div.identity {
+
+		.flex-display();
+		.flex-flow(row nowrap);
+		.align-items(center);
+
+		flex-grow: 1; //Push navigation to the right
+	}
+
+	h1.logo {
+		margin: 0 0.5em 0 @x-spacing;
+		a {
+			span {
+				display: none;
+			}
+			img {
+				display: block;
+				width: 8rem;
+			}
+		}
+	}
+
+	nav.main-nav {
+		ul.menu {
+			padding-left: 0;
+			margin-right: @x-spacing;
+
+			.flex-display();
+			.flex-flow(row nowrap);
+
+			li {
+				list-style-type: none;
+				margin: 0 0.5em;
+				&:last-of-type {
+					margin-right: 0;
+				}
+				a {
+					color: #888;
+					text-decoration: none;
+					font-weight: 600;
+					&:hover {
+						color: inherit;
+						transition: color .3s ease;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* MW TOOLS */
+.tool {
+	header {
+		position: relative;
+		height: 70vh;
+		background-size: cover;
+		background-position: center;
+		.text {
+			position: absolute;
+			width: 70vw;
+			bottom: 2rem;
+			padding: 0 @x-spacing;
+			h1 {
+				font-size: @font-size-h1;
+				color: @color-white;
+				margin: 0;
+			}
+	
+			h2 {
+				font-size: @font-size-h2;
+				color: @color-white;
+			}
+		}
+	}
+	div.content {
+
+		margin: @y-spacing 0;
+		padding: 0 @x-spacing;
+		
+
+		div.wp-block-columns {
+
+			.flex-display();
+			.flex-flow(row nowrap);
+
+			h2 {
+				font-weight: 500;
+			}
+
+		}
+	}
+}
