@@ -148,6 +148,7 @@ p {
 	position: relative;
 	margin: 6rem 0 4rem 0;
 	font-size: @font-size-h2;
+	font-style: italic;
 	&:before {
 		content: "";
 		position: absolute;
@@ -174,6 +175,14 @@ header.main-header {
 	.flex-display();
 	.flex-flow(row nowrap);
 	.align-items(center);
+
+	&.bgWhite {
+		background-color: @color-white;
+	}
+
+	&.bgBlack {
+		background-color: @color-black;
+	}
 
 	div.identity {
 
@@ -224,6 +233,42 @@ header.main-header {
 		}
 	}
 }
+
+/* Coming soon */
+.soon {
+
+	.flex-display();
+	.flex-flow(column);
+	.justify-content(flex-end);
+
+	background-color: @color-black;
+	height: calc(100vh - 6rem);
+	padding: 0 @x-spacing;
+	color: @color-white;
+
+	span {
+		font-weight: 300;
+		text-transform: uppercase;
+		font-size: @font-size-h2;
+	}
+
+	h1 {
+		font-size: @font-size-h1;
+		margin: 1.5rem 0 0 0;
+	}
+
+	p {
+		font-size: @font-size-h3;
+		//margin-bottom: 3rem;
+	}
+	h2 {
+		margin-bottom: 3rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		font-size: @font-size-h4;
+	}
+}
+
 
 /* MW TOOLS */
 .tool {
