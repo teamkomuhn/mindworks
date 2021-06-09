@@ -2,10 +2,9 @@
 
 	<main>
 		<section class="soon">
-			<!--<span>Website coming soon</span>-->
-			<h1>The cognitive campaign strategy lab</h1>
-			<p>Mindworks researches cognitive, social and neuro sciences and translates insights into practical tools to help changemakers’ campaigns and engagement efforts. <br>Aiming to shift the hearts and minds of people in order to promote structural changes within difficult social and environmental issues. <br>Mastering our future challenges.</p>
-			<h2>Website coming soon</h2>
+			<h2>The Cognitive Science Lab</h2>
+			<p>Mindworks researches cognitive, social and neuro sciences and translates insights into practical tools in the domains of audience research, campaign strategy and engagement design. <br><br>Based on this expertise, Mindworks co-creates campaigns and engagements with changemakers that are aiming to shift the hearts and minds of people in order to create power and structural changes within difficult social and environmental issues like the climate crisis, pandemics, polarisation or social unrest.</p>
+			<h3>Website coming soon</h3>
 		</section>
 	</main>
 

@@ -47,10 +47,11 @@ header.main-header {
 /* Coming soon */
 .soon {
 	padding: 0 @x-spacing;
+	height: calc(100vh - 6rem);
 	
-	h1 {
+	h2 {
 		font-size: @font-size-h1;
-		width: 50%;
+		width: 40%;
 	}
 
 	p {
@@ -112,4 +113,11 @@ header.main-header {
             }
         }
 	}
+}
+
+//
+@media screen and (min-width: 1420px) {
+    .wrapper {
+        max-width: 1024px;
+    }
 }

@@ -8,7 +8,7 @@
     $mwtools = new WP_Query( $args );
 ?>
     <main>
-        <section class="tool">
+        <section class="single-mw-tool">
 
             <?php if ( $mwtools -> have_posts() ) : while ( $mwtools -> have_posts() ) : $mwtools -> the_post(); 
                 $post_cover_text = get_post_meta( $post->ID, 'cover_meta', 1);
