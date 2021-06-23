@@ -19,13 +19,14 @@
             ?>
 
             <header <?php print $post_style; ?>>
-                <div class="text">
+                <div class="cover-content">
                     <h1><?php the_title(); ?></h1>
                     <h2><?php print $post_cover_text; ?></h2>
+                    <span class="date"><?php the_date( 'F d, Y' ); ?></span>
+                    <span class="readtime" id="time"></span> min read
                 </div>
-                <?php /*the_post_thumbnail('large');*/ ?>
             </header>
-            <div class="content">
+            <div class="content" id="content">
                 <?php the_content(); ?>
             </div>
             <?php endwhile; endif; ?>

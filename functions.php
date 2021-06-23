@@ -70,25 +70,39 @@ add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
 // /**
 //  * Add custom CSS and JS
 //  */
-// function my_load_scripts($hook) {
-//
-//     // create my own version codes
-//     //$my_js_ver  = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'js/custom.js' ));
-//     //$my_css_ver = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'style.css' ));
-//
-//     wp_enqueue_script( 'custom_js', get_template_directory_uri() . '/js/min/custom-min.js', array(), '1.0.0', true );
-//     //wp_enqueue_script( 'custom_js', plugins_url( 'js/custom.js', __FILE__ ), array(), $my_js_ver );
-//     //wp_register_style( 'my_css',    plugins_url( 'style.css',    __FILE__ ), false,   $my_css_ver );
-//     //wp_enqueue_style ( 'my_css' );
-//
-// }
-// add_action('wp_enqueue_scripts', 'my_load_scripts');
+function my_load_scripts($hook) {
+
+     // create my own version codes
+     //$my_js_ver  = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'js/custom.js' ));
+     //$my_css_ver = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'style.css' ));
+
+     wp_enqueue_script( 'script_min', get_template_directory_uri() . '/js/script-min.js', array(), '1.0.0', true );
+     //wp_enqueue_script( 'custom_js', plugins_url( 'js/custom.js', __FILE__ ), array(), $my_js_ver );
+
+}
+add_action('wp_enqueue_scripts', 'my_load_scripts');
 
 // SHORTCODES
 
 
 //Enable thumbnails for CPT - featured image
 add_theme_support( 'post-thumbnails' );
+
+//Add menu page
+add_action( 'admin_menu', 'register_my_custom_menu_page' );
+function register_my_custom_menu_page() {
+  // add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
+  add_menu_page( 
+        'Footer',
+        'Footer',
+        'manage_options',
+        'Footer',
+        'footer_menu_page',
+        'dashicons-welcome-widgets-menus', 
+        26
+    );
+}
+
 
 //CPT Tools
 add_action( 'init', 'mw_tools_post_type' );
@@ -109,11 +123,21 @@ function mw_tools_post_type() {
     );
 }
 
-//MW Tools
 add_action("admin_init", "admin_init");
 
 function admin_init(){
+    //MW Tools
     add_meta_box("cover_meta", "Cover text", "cover_meta", "mw-tools", "side", "high");
+    //Footer
+    function footer_menu_page(){
+        //add_meta_box("title_meta", "Cover text", "title_meta", "", "", "high");
+        $title_meta = $custom["footer_title_meta"][0];
+        ?>
+            <label for="footer_title_meta">Title</label>
+            <textarea name="footer_title_meta" rows="3" style="width:100%;"><?php echo $footer_title_meta; ?></textarea>
+        <?php
+    }
+    
 }
 
 function cover_meta(){
@@ -125,3 +149,11 @@ function cover_meta(){
 		<textarea name="cover_meta" rows="4" style="width:100%;"><?php echo $cover_meta; ?></textarea>
     <?php
 }
+
+add_action('save_post', 'save_details');
+function save_details(){
+    global $post;
+    update_post_meta($post->ID, "cover_meta", $_POST["cover_meta"]);
+}
+
+?>

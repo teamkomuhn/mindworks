@@ -2,16 +2,6 @@
 @import "variables"; //Global
 @import "mixins";
 
-//Variables
-@x-spacing: 	1.5rem;
-@y-spacing: 	3rem;
-
-@font-size-title: 	2rem;
-@font-size-h1: 		2.3rem;
-@font-size-h2: 		1.8rem;
-@font-size-h3: 		1.6rem;
-@font-size-h4: 		1.4rem;
-@font-size-p: 		1.1rem;
 
 /*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
 
@@ -29,7 +19,7 @@
 html {
 	color: #222;
 	font-size: 1em;
-	line-height: 1.4;
+	line-height: 1.5;
 
 	margin-top: 0!important;
 }
@@ -125,23 +115,27 @@ body {
 
 h1 {
 	font-weight: 600;
+	line-height: 1.1;
+	b, strong {
+		font-weight: 700;
+	}
 }
 
-h2 {
+h2, h3, h4 {
 	font-weight: 500;
-}
-
-h3, h4 {
-	font-weight: 400;
+	line-height: 1.3;
+	b, strong {
+		font-weight: 700;
+	}
 }
 
 p {
+	font-size: @font-size-p;
 	line-height: 1.5;
 }
 
 .has-large-font-size {
-	font-size: @font-size-p;
-	font-weight: 500;
+	font-size: @font-size-h4;
 }
 
 .has-medium-font-size {
@@ -153,7 +147,7 @@ p {
 .wp-block-pullquote, .wp-block-pullquote.is-style-default {
 	position: relative;
 	margin: 6rem 0 4rem 0;
-	font-size: @font-size-h2;
+	font-size: @font-size-h4;
 	font-style: italic;
 	&:before {
 		content: "";
@@ -192,14 +186,68 @@ p {
 			text-align: center;
 			border-radius: 10px;
 			border: 2px solid @color-black;
-			padding: .7rem 1.5rem;
+			padding: .7rem @x-spacing;
+			color: @color-black;
+			line-height: 1.5;
 		}
-		&.zoom {
+		&.white {
+			a {
+				background-color: @color-white;
+			}
+		}
+		&.black {
 			a {
 				background-color: @color-black;
 				color: @color-white;
 			}
 		}
+		&.read-more {
+		}
+		&.learn-more {
+			a {
+				width: inherit;
+				position: relative;
+				text-align: left;
+				border: 0;
+				padding: 0;
+				//text-decoration: underline;
+				&:after {
+					content: "";
+					width: 100%;
+					height: 1px;
+					background-color: @color-black;
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+/* FORMS */
+input[type="text"], input[type="name"], input[type="email"], textarea {
+	-webkit-appearance: none;
+	width: calc(100% - 2*@x-spacing);
+	color: @color-black;
+	font-size: @font-size-p;
+	font-weight: 500;
+	line-height: 1.5;
+	border: 2px solid @color-black;
+	border-radius: 10px;
+	background-color: transparent;
+	padding: 1rem @x-spacing;
+	margin: .5rem 0;
+
+	&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: @color-black;
+		opacity: 1; /* Firefox */
+	  }
+	  
+	  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color: @color-black;
+	}
+	
+	&:-ms-input-placeholder { /* Microsoft Edge */
+		color: @color-black;
 	}
 }
 
@@ -212,6 +260,13 @@ p {
 		.wp-block-column {
 			flex-basis:100%!important;
 		}
+		&.separator-heading {
+			background-color: @color-black;
+			color: @color-white;
+			font-weight: 500;
+			padding: @y-spacing @x-spacing;
+			margin: 0 -@x-spacing;
+		}
 	}
 	
 }
@@ -219,13 +274,62 @@ p {
 /* BLOCK GROUPS */
 
 .wp-block-group {
+	&.intro {
+		background-color: @color-black;
+		margin: 0 -@x-spacing;
+		padding: @y-spacing @x-spacing;
+		color: @color-white;
+	}
+	&.index {
+		.wp-block-columns {
+			.wp-block-column {
+				padding: @y-spacing @x-spacing;
+				p:first-child {
+					.flex-display();
+					.justify-content(center);
+					.align-items(center);
+					width: 60px;
+					height: 60px;
+					background-color: #222;
+					color: #fff;
+					border-radius: 50%;
+				}
+				h3 {
+					font-size: @font-size-h4;
+					font-weight: 700;
+				}
+			}
+			&:first-child {
+				.wp-block-column {
+					&:first-child {
+						background-color: @color-grey-light;
+					}
+					&:nth-child(2) {
+						background-color: @color-grey;
+					}
+				}
+			}
+			&:nth-child(2) {
+				.wp-block-column {
+					&:first-child {
+						background-color: @color-grey-dark;
+					}
+					&:nth-child(2) {
+						background-color: @color-black;
+						color: @color-white;
+						margin-right: -@x-spacing;
+						h3 {
+							font-size: @font-size-h3;
+							font-weight: 500;
+						}
+					}
+				}
+			}
+		}
+	}
 	&.call-to-action-infographic {
 		padding: @y-spacing @x-spacing;
 		background-color: @color-blue-light;
-
-		h3 {
-			font-weight: 500;
-		}
 	}
 }
 
@@ -262,17 +366,17 @@ header.main-header {
 		.align-items(center);
 
 		flex-grow: 1; //Push navigation to the right
-	}
 
-	h1.logo {
-		margin: 0 0.5em 0 @x-spacing;
-		a {
-			span {
-				display: none;
-			}
-			img {
-				display: block;
-				width: 10rem;
+		h1.logo {
+			margin: 0 0.5em 0 @x-spacing;
+			a {
+				span {
+					display: none;
+				}
+				img {
+					display: block;
+					width: 10rem;
+				}
 			}
 		}
 	}
@@ -318,7 +422,8 @@ header.main-header {
 	color: @color-white;
 
 	h2 {
-		font-size: @font-size-h1;
+		font-size: @font-size-h2;
+		line-height: 1.3;
 		margin: 1.5rem 0 0 0;
 		width: 90%;
 	}
@@ -339,35 +444,182 @@ header.main-header {
 /* MW TOOLS */
 .single-mw-tool {
 	header {
-		position: relative;
-		height: 70vh;
+		//position: relative;
+		//height: 70vh;
 		background-size: cover;
 		background-position: center;
-		.text {
-			position: absolute;
-			width: 70vw;
-			bottom: 2rem;
+		.cover-content {
+			//position: absolute;
+			//width: calc(100% - 2*(@x-spacing));
+			//bottom: 2rem;
 			padding: 0 @x-spacing;
+			color: @color-white;
 			h1 {
 				font-size: @font-size-h1;
-				color: @color-white;
 				margin: 0;
+				padding-top: 2*(@y-spacing);
 			}
 	
 			h2 {
 				font-size: @font-size-h4;
-				color: @color-white;
+			}
+			span {
+				position: relative;
+				font-size: .9rem;
 				font-weight: 500;
+				padding-left: @x-spacing;
+				&.date {
+					&:before {
+						content: url('../img/icon-calendar.svg');
+						position: absolute;
+						top: -3px;
+						left: 0;
+						transform: scale(.8);
+					}
+				} 
+				&.readtime {
+					margin-left: @x-spacing;
+					&:before {
+						content: url('../img/icon-clock.svg');
+						position: absolute;
+						top: -3px;
+						left: 0;
+						transform: scale(.8);
+					}
+				} 
 			}
 		}
 	}
 	div.content {
 
-		margin: @y-spacing 0;
+		margin: 0 0 @y-spacing 0;
 		padding: 0 @x-spacing;
 		
+		.wp-block-columns.two-columns {
+			.wp-block-column:first-child {
+				h2 {
+					position: relative;
+					font-size: @font-size-h3;
+					&:after {
+						content: "";
+						position: absolute;
+						width: 60px;
+						height: 7px;
+						left: 0;
+						bottom: -@x-spacing;
+						background-color: @color-black;
+					}
+				}
+
+				p {
+					margin-top: @y-spacing;
+				}
+			}
+			&.two-columns {
+				.wp-block-image {
+					margin: 0 -@x-spacing;
+				}
+			}
+		}
 	}
 }
+
+/* FOOTER */
+footer.main-footer {
+	color: @color-white;
+	background-color: @color-black;
+	padding: @y-spacing @x-spacing;
+
+	div.identity {
+		.logo {
+			margin: 0 0.5em 0 @x-spacing;
+			img {
+				display: block;
+				width: 10rem;
+			}
+		}
+	}
+
+	h2 {
+		font-size: @font-size-h4;
+		color: @color-yellow-light;
+	}
+
+	h3 {
+		font-size: @font-size-p;
+		font-weight: 300;
+	}
+
+	div.subscription-form {
+		color: @color-black;
+		background-color: @color-yellow-light;
+		padding: @y-spacing @x-spacing;
+		margin: @y-spacing 0;
+
+		h4 {
+			font-size: @font-size-h4;
+		}
+		
+		p {
+			font-size: @font-size-p;
+		}
+		.mailchimp-form {
+			input[type="submit"] {
+				width: calc(100% + 4px);
+				font-size: @font-size-p;
+				font-weight: 600;
+				line-height: 1.5;
+				color: @color-black;
+				border: 2px solid @color-black;
+				border-radius: 10px;
+				background-color: @color-black;
+				color: @color-white;
+				padding: 1rem @x-spacing;
+				margin-top: 1rem;
+			}
+		}
+	}
+
+	div.so-me {
+
+		.flex-display();
+		.flex-flow(row nowrap);
+		.align-items(center);
+
+		padding: @y-spacing 0;
+
+		a.twitter {
+
+			.flex-display();
+			.flex-flow(row nowrap);
+			.align-items(center);
+
+			color: @color-white;
+			font-size: @font-size-p;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+
+			span.icon-twitter {
+				
+				.flex-display();
+				.flex-flow(row nowrap);
+				.align-items(center);
+				.justify-content(center);
+
+				width: 3rem;
+				height: 3rem;
+				background-color: @color-white;
+				border-radius: 100%;
+				margin-right: @x-spacing;
+			}
+			
+		}
+
+	}
+}
+
 
 @media screen and(min-width: 768px) {
 	/* Coming soon */
