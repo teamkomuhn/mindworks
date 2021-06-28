@@ -31,7 +31,7 @@ function scrollAnchors(e, respond = null) {
 	window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
 	const checkIfDone = setInterval(function() {
 		const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
-		if (distanceToTop(targetAnchor) ==== 0 || atBottom) {
+		if (distanceToTop(targetAnchor) === 0 || atBottom) {
 			targetAnchor.tabIndex = '-1';
 			targetAnchor.focus();
 			window.history.pushState('', '', targetID);
@@ -39,8 +39,6 @@ function scrollAnchors(e, respond = null) {
 		}
 	}, 100);
 }
-
-
 
 (function() {
     scrollTo();
