@@ -67,9 +67,10 @@ function add_additional_class_on_li($classes, $item, $args) {
 }
 add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
 
-// /**
-//  * Add custom CSS and JS
-//  */
+//
+// Add custom CSS and JS
+//
+
 function my_load_scripts($hook) {
 
      // create my own version codes
@@ -84,19 +85,59 @@ add_action('wp_enqueue_scripts', 'my_load_scripts');
 
 // SHORTCODES
 
-
+//
 //Enable thumbnails for CPT - featured image
+//
+
 add_theme_support( 'post-thumbnails' );
 
-/**
- * Reusable Blocks accessible in backend
- * @link https://www.billerickson.net/reusable-blocks-accessible-in-wordpress-admin-area
- *
- */
+// 
+// Reusable Blocks accessible in backend
+// link https://www.billerickson.net/reusable-blocks-accessible-in-wordpress-admin-area
+// 
+
 function be_reusable_blocks_admin_menu() {
     add_menu_page( 'Reusable Blocks', 'Reusable Blocks', 'edit_posts', 'edit.php?post_type=wp_block', '', 'dashicons-editor-table', 22 );
 }
 add_action( 'admin_menu', 'be_reusable_blocks_admin_menu' );
+
+//
+// Adding the Open Graph in the Language Attributes
+// link https://www.wpbeginner.com/wp-themes/how-to-add-facebook-open-graph-meta-data-in-wordpress-themes/
+//
+
+function add_opengraph_doctype( $output ) {
+    return $output . ' xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"';
+}
+add_filter('language_attributes', 'add_opengraph_doctype');
+
+//Lets add Open Graph Meta Info
+
+function insert_fb_in_head() {
+    global $post;
+    if ( !is_singular()) //if it is not a post or a page
+        return;
+        //echo '<meta property="fb:app_id" content="Your Facebook App ID" />';
+        echo '<meta property="og:title" content="Mindworks • ' . strip_tags(get_the_title()) . '"/>';
+        echo '<meta property="og:type" content="website"/>';
+        echo '<meta property="og:url" content="' . get_permalink() . '"/>';
+        echo '<meta property="og:site_name" content="Mindworks"/>';
+        echo '<meta property="og:description" content="' . get_the_excerpt() . '"/>';
+    /*if(!has_post_thumbnail( $post->ID )) { //the post does not have featured image, use a default image
+        $default_image="http://example.com/image.jpg"; //replace this with a default image on your server or an image in your media library
+        echo '<meta property="og:image" content="' . $default_image . '"/>';
+    }
+    else {
+        $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+        echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
+    }*/
+    if(!empty(has_post_thumbnail( $post->ID ))) {
+        $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+        echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
+    }
+    echo "";
+}
+add_action( 'wp_head', 'insert_fb_in_head', 5 );
 
 
 //Add menu page
@@ -114,8 +155,10 @@ function register_my_custom_menu_page() {
     );
 }*/
 
+//
+// CPT MW Tools
+//
 
-//CPT Tools
 add_action( 'init', 'mw_tools_post_type' );
 function mw_tools_post_type() {
     register_post_type( 'mw-tools',
@@ -129,10 +172,46 @@ function mw_tools_post_type() {
             'show_in_rest' => true,
             'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
             'menu_position' => 5,
-            'menu_icon' => 'dashicons-image-filter'
+            'menu_icon' => 'dashicons-image-filter',
+            'rewrite' => array('slug' => '/')
         )
     );
 }
+
+//
+//REMOVE CPT slug /mw-tools/ - https://wordpress.stackexchange.com/questions/125886/remove-slug-from-custom-post-type
+//
+
+add_action( 'pre_get_posts', 'wpse_include_my_post_type_in_query' );
+function wpse_include_my_post_type_in_query( $query ) {
+
+     // Only noop the main query
+     if ( ! $query->is_main_query() )
+         return;
+
+     // Only noop our very specific rewrite rule match
+     if ( 2 != count( $query->query )
+     || ! isset( $query->query['page'] ) )
+          return;
+
+      // Include my post type in the query
+     if ( ! empty( $query->query['name'] ) )
+          $query->set( 'post_type', array( 'post', 'page', 'mw-tools' ) );
+ }
+
+ add_action( 'parse_query', 'wpse_parse_query' );
+ function wpse_parse_query( $wp_query ) {
+ 
+     if( get_page_by_path($wp_query->query_vars['name']) ) {
+         $wp_query->is_single = false;
+         $wp_query->is_page = true;
+     }
+ 
+ }
+
+//
+// CUSTOM FIELDS
+//
 
 add_action("admin_init", "admin_init");
 

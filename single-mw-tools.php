@@ -7,8 +7,7 @@
     );
     $mwtools = new WP_Query( $args );
 ?>
-    <main>
-        <section class="single-mw-tool">
+        <section class="single-mw-tools">
 
             <?php if ( $mwtools -> have_posts() ) : while ( $mwtools -> have_posts() ) : $mwtools -> the_post(); 
                 $post_cover_text = get_post_meta( $post->ID, 'cover_meta', 1);
@@ -44,6 +43,5 @@
         <div class="modal-infographic">
             <img src="" alt="" />
         </div>
-	</main>
 
 <?php get_footer(); ?>
