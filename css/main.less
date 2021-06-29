@@ -375,7 +375,7 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 	.flex-flow(column);
 
 	.wp-block-column, .column {
-		flex-basis:100%!important;
+		flex-basis: 100%;
 		
 		h2 {
 			font-size: @font-size-h3;
@@ -388,10 +388,14 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 	}
 	
 }
+
 .wp-block-columns.three-columns, .three-columns {
 
-	.wp-block-column {
-		flex-basis: 33%;
+	.flex-display();
+	.flex-flow(column);
+
+	.wp-block-column, .column {
+		flex-basis: 100%;
 	}
 
 	p {
@@ -602,6 +606,61 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 
 		}
 
+	}
+
+	&.author {
+
+		.wp-block-image {
+			display: inline-block;
+			width: 5rem;
+			height: 5rem;
+			margin: 1.5rem .5rem 1.5rem 0;
+
+			img {
+				border-radius: 5rem;
+				min-height: 100%;
+				object-fit: cover;
+			}
+		
+		}
+
+		.wp-block-group {
+			display: inline-block;
+			vertical-align: middle;
+
+			p {
+				margin: 0;
+				&:first-child {
+					font-size: @font-size-h4;
+					font-weight: 500;
+				}
+				&:last-child {
+					font-size: 1rem;
+					font-weight: 200;
+				}
+			}
+
+		}
+
+	}
+
+	&.contact-us {
+		background-color: @color-grey-light;
+		padding: @x-spacing;
+		p {
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+				&:before {
+					content: "\e90b";
+					font-family: "icomoon";
+					font-size: @font-size-h3;
+					display: block;
+				}
+			}
+		}
 	}
 
 }
@@ -922,6 +981,33 @@ footer.main-footer {
 			}*/
 		}
 
+		span.icon-email {
+			display: block;
+			position: relative;
+			font-size: @font-size-p;
+			font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+			margin-top: @y-spacing;
+			padding-left: 3rem;
+
+			&:before {
+				font-family: "icomoon";
+				font-size: @font-size-h3;
+				position: absolute;
+				left: 0;
+				z-index: 1;
+				margin-right: .5rem;
+			}
+			
+			a {
+				text-decoration: none;
+				color: @color-black;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+		}
+
 	}
 
 	div.so-me {
@@ -932,45 +1018,23 @@ footer.main-footer {
 
 		padding: @y-spacing 0;
 
-		a.icon-twitter {
-
-			.flex-display();
-			.flex-flow(row nowrap);
-			.align-items(center);
+		a.icon {
 
 			position: relative;
-			color: @color-white;
-			font-size: @font-size-p;
-			font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif!important;
 			text-decoration: none;
+			font-size: @font-size-h2;
+			color: @color-white;
+			text-decoration: none;
+			margin: 0 .5rem;
 
-			&:hover {
-				text-decoration: underline;
+			&:first-child {
+				margin-left: 0;
 			}
 
-			&:before {
-				width: 3rem;
-				text-align: center;
-				font-family: "icomoon";
-				font-size: @font-size-h4;
-				color: @color-black;
-				z-index: 1;
-				margin-right: .5rem;
-			}
-
-			&:after {
-				content: "";
-				position: absolute;
-				width: 3rem;
-				height: 3rem;
-				background-color: @color-white;
-				border-radius: 100%;
-				margin-right: @x-spacing;
-			}
-			
 		}
 
 	}
+
 }
 
 

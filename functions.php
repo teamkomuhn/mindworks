@@ -115,7 +115,7 @@ add_filter('language_attributes', 'add_opengraph_doctype');
 
 function insert_fb_in_head() {
     global $post;
-    if ( !is_singular()) //if it is not a post or a page
+    if ( !is_singular() ) //if it is not a post or a page
         return;
         //echo '<meta property="fb:app_id" content="Your Facebook App ID" />';
         echo '<meta property="og:title" content="Mindworks • ' . strip_tags(get_the_title()) . '"/>';
@@ -131,7 +131,7 @@ function insert_fb_in_head() {
         $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
         echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
     }*/
-    if(!empty(has_post_thumbnail( $post->ID ))) {
+    if( !empty(has_post_thumbnail( $post->ID )) ) {
         $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
         echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
     }

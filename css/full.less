@@ -6,6 +6,8 @@
 @x-spacing: 	7.5rem;
 @y-spacing: 	7.5rem;
 
+@half-spacing:  3.75rem;
+
 @font-size-h1: 		6rem;
 @font-size-h2: 		4rem;
 @font-size-h3: 		3rem;
@@ -124,16 +126,16 @@ p {
 		.wp-block-column {
 
 			.wp-block-image {
-				margin-left: 3.75rem;
-				width: calc(100% + 3.75rem);
+				margin-left: @half-spacing;
+				width: calc(100% + @half-spacing);
 
 				img {
 					width: 100%;
 				}
 
 				figcaption {
-					padding-left: 3.75rem;
-					padding-right: 3.75rem;
+					padding-left: @half-spacing;
+					padding-right: @half-spacing;
 				}
 
 			}
@@ -149,10 +151,10 @@ p {
 
 			&:last-child {
 				h3, p {
-					padding-left: 3.75rem;
+					padding-left: @half-spacing;
 
 					&:after { //underline
-						left: 3.75rem;
+						left: @half-spacing;
 					}
 
 				}
@@ -184,10 +186,10 @@ p {
 
 			&:last-child {
 				h3, p {
-					padding-left: 3.75rem;
+					padding-left: @half-spacing;
 
 					&:after { //underline
-						left: 3.75rem;
+						left: @half-spacing;
 					}
 
 				}
@@ -205,7 +207,7 @@ p {
 	.flex-flow(row nowrap);
 	.align-items(flex-start);
 
-	.wp-block-column {
+	.wp-block-column, .column {
 		flex-basis: 33%;
 	}
 	
@@ -229,7 +231,7 @@ p {
 		.wp-block-columns {
 
 			.wp-block-column {
-				padding: 3.75rem;
+				padding: @half-spacing;
 				flex-basis: 50%!important;
 
 				h3 {
@@ -280,7 +282,7 @@ p {
 	}
 
 	&.infographic {
-		margin: 3.75rem 0;
+		margin: @half-spacing 0;
 		padding: @y-spacing @x-spacing;
 
 		p {
@@ -305,7 +307,7 @@ p {
 
 			img {
 				max-width: 120%;
-				transform: rotate(5deg) translateX(10rem) translateY(3.75rem);
+				transform: rotate(5deg) translateX(10rem) translateY(@half-spacing);
 			}
 
 		}
@@ -330,8 +332,8 @@ p {
 					}
 
 					&:nth-child(2) {
-						flex-basis: calc(50% - 3.75rem)!important;
-						padding: @y-spacing @x-spacing @y-spacing 3.75rem!important;
+						flex-basis: calc(50% - @half-spacing)!important;
+						padding: @y-spacing @x-spacing @y-spacing @half-spacing!important;
 		
 					}
 
@@ -347,8 +349,8 @@ p {
 						padding-left: @x-spacing;
 					}
 					&:nth-child(2) {
-						padding-right: 3.75rem;
-						padding-left: 3.75rem;
+						padding-right: @half-spacing;
+						padding-left: @half-spacing;
 					}
 					&:nth-child(3) {
 						padding-right: @x-spacing;
@@ -360,6 +362,23 @@ p {
 
 		}
 		
+	}
+
+	&.contact-us {
+		padding: @half-spacing;
+		p {
+			&:last-child {
+				padding-left: 3rem;
+				position: relative;
+				&:before {
+					font-size: @font-size-h4;
+					display: inline-block;
+					position: absolute;
+					left: 0;
+					top: 0;
+				}
+			}
+		}
 	}
 
 }

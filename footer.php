@@ -42,14 +42,16 @@
                         </div>
                         <!--End mc_embed_signup-->
                     </div>
+                    <span class="icon-email">
+                        <b>Email</b><br>
+                        <a href="mailto:hello@mindworkslab.org" alt="hello@mindworkslab.org">hello@mindworkslab.org</a>
+                    </span>
                 </div>
             </div>
             <div class="column">
                 <div class="so-me">
-                    <a href="https://twitter.com/mindworkslab" class="icon-twitter" target="_blank" alt="Mindworks Twitter">
-                        Mindworks<br>
-                        @mindworkslab
-                    </a>
+                    <a href="https://www.linkedin.com/company/mindworks-lab/" class="icon icon-linkedin" alt="Mindworks Linkedin"></a>
+                    <a href="https://twitter.com/mindworkslab" class="icon icon-twitter" alt="Mindworks Twitter"></a>
                 </div>
             </div>
         </div>

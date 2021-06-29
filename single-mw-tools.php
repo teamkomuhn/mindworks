@@ -23,15 +23,6 @@
                     <h2><?php print $post_cover_text; ?></h2>
                     <span class="date"><?php the_date( 'F d, Y' ); ?></span>
                     <span class="readtime" id="time"></span> min read
-                    <?php 
-                        $author_ID = get_the_author_meta('ID'); 
-                        $author_name = get_the_author_meta('display_name'); 
-                        if ($author_ID != 0 && $author_ID != 1) {
-                            echo '<span class="author">';
-                            echo '<img src="'. get_avatar_url($author_ID).'" alt="'.$author_name.'"/>';
-                            echo $author_name;
-                            echo '</span>';
-                    } ?>
                 </div>
             </header>
             <div class="content" id="content">
