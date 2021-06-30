@@ -84,6 +84,10 @@ p {
 		img {
 			width: 100%;
 		}
+
+		figcaption {
+			margin: 1.5rem @x-spacing;
+		}
 	}
 
 }
@@ -102,7 +106,8 @@ p {
 
 
 	.wp-block-column, .column {
-		flex-basis: 50%!important;
+		//flex-basis: 50%!important;
+		flex: 0 0 calc(50% - @x-spacing);
 
 		h2 {
 			font-size: @font-size-h2;
@@ -124,7 +129,7 @@ p {
 		.align-items(flex-start);
 
 		.wp-block-column {
-
+			flex: 0 0 50%;
 			.wp-block-image {
 				margin-left: @half-spacing;
 				width: calc(100% + @half-spacing);
@@ -148,6 +153,7 @@ p {
 		.align-items(flex-start);
 
 		.wp-block-column {
+			flex: 0 0 50%;
 
 			&:last-child {
 				h3, p {
@@ -183,6 +189,7 @@ p {
 		.align-items(flex-start);
 
 		.wp-block-column {
+			flex: 0 0 50%;
 
 			&:last-child {
 				h3, p {
@@ -232,7 +239,8 @@ p {
 
 			.wp-block-column {
 				padding: @half-spacing;
-				flex-basis: 50%!important;
+				//flex-basis: 50%!important;
+				flex: 0 0 calc(50% - 2*@half-spacing);
 
 				h3 {
 					font-size: @font-size-h4;
@@ -321,19 +329,23 @@ p {
 
 		.wp-block-columns {
 
+			.wp-block-column {
+				padding: 0;
+			}
+			
 			&:first-child {
 
 				.align-items(flex-end);
 	
 				.wp-block-column {
+					flex: 0 0 calc(50% - @x-spacing - @half-spacing);
 
 					&:first-child {
-						padding: @y-spacing 0 @y-spacing @x-spacing;
+						padding: @y-spacing @half-spacing @y-spacing @x-spacing;
 					}
 
 					&:nth-child(2) {
-						flex-basis: calc(50% - @half-spacing)!important;
-						padding: @y-spacing @x-spacing @y-spacing @half-spacing!important;
+						padding: @y-spacing @x-spacing @y-spacing @half-spacing;
 		
 					}
 
@@ -341,23 +353,49 @@ p {
 
 			}
 
-			&:nth-child(2) {
+			&.two-columns {
 
-				.wp-block-column {
-					
-					&:first-child {
-						padding-left: @x-spacing;
-					}
-					&:nth-child(2) {
-						padding-right: @half-spacing;
-						padding-left: @half-spacing;
-					}
-					&:nth-child(3) {
-						padding-right: @x-spacing;
+				&:nth-child(2) {
+
+					.wp-block-column {
+
+						&:first-child {
+							flex: 0 0 calc(50% - @x-spacing - @half-spacing);	
+							padding: @half-spacing @half-spacing @half-spacing @x-spacing;
+						}
+						&:nth-child(2) {
+							flex: 0 0 calc(50% - @x-spacing - @half-spacing);	
+							padding: @half-spacing @x-spacing @half-spacing @half-spacing;
+						}
+
 					}
 
 				}
 
+			}
+
+			&.three-columns {
+
+				&:nth-child(2) {
+
+					.wp-block-column {
+						
+						&:first-child {
+							flex: 0 0 calc(33% - @x-spacing - @half-spacing);	
+							padding: @half-spacing @half-spacing @half-spacing @x-spacing;
+						}
+						&:nth-child(2) {
+							flex: 0 0 calc(33% - 2*@half-spacing);	
+							padding: @half-spacing;
+						}
+						&:nth-child(3) {
+							flex: 0 0 calc(33% - @x-spacing - @half-spacing);	
+							padding: @half-spacing @x-spacing @half-spacing @half-spacing;
+						}
+
+					}
+
+				}
 			}
 
 		}
@@ -381,6 +419,38 @@ p {
 		}
 	}
 
+	&.changemakers {
+		margin: 0 -@x-spacing;
+		padding: @y-spacing @x-spacing;
+
+		.wp-block-columns {
+			.align-items(stretch)!important;
+		
+			.wp-block-column {
+				background-color: @color-white;
+				padding: @half-spacing;
+				flex: 0 0 calc(50% - 2*@half-spacing);
+				
+			}
+
+			&:first-child {
+
+				.wp-block-column {
+					margin-left: -@half-spacing;
+					
+					&:first-child {
+						margin-left: -@half-spacing;
+
+					}
+
+				}
+			
+			}
+
+		}
+
+	}
+
 }
 
 /* HEADER */
@@ -395,22 +465,6 @@ header.main-header {
 
 	}
 	
-}
-
-/* Coming soon */
-.soon {
-	padding: 0 @x-spacing;
-	height: calc(100vh - 6rem);
-	
-	h2 {
-		font-size: @font-size-h1;
-		width: 40%;
-	}
-
-	p {
-		font-size: @font-size-h5;
-		width: 60%;
-	}
 }
 
 /* MW TOOLS */
@@ -454,7 +508,7 @@ header.main-header {
 
 /* FOOTER */
 
-footer.main-footer {
+footer.main-footer, .page-coming-soon{
 	padding: 0 0 @y-spacing 0;
 	overflow: hidden;
 
@@ -466,7 +520,8 @@ footer.main-footer {
 
 		.column {
 			padding: @y-spacing @x-spacing;
-			flex-basis: calc(50% - @x-spacing)!important;
+			//flex-basis: calc(50% - @x-spacing)!important;
+			flex: 0 0 calc(50% - @x-spacing)!important;
 			&:nth-child(2) {
 				padding: @y-spacing 0;
 				position: absolute;
@@ -506,6 +561,25 @@ footer.main-footer {
 
 }
 
+.page-coming-soon {
+
+	.two-columns {
+
+		.column {
+			padding: 5rem @x-spacing;
+
+			&:nth-child(2) {
+				padding:  7rem 0;
+			}
+		}
+
+	}
+
+	div.subscription-form {
+		padding-top: 0;
+	}
+
+}
 
 //@media screen and (min-width: 1420px) {
 //    .wrapper {
