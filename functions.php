@@ -91,10 +91,10 @@ add_action('wp_enqueue_scripts', 'my_load_scripts');
 
 add_theme_support( 'post-thumbnails' );
 
-// 
+//
 // Reusable Blocks accessible in backend
 // link https://www.billerickson.net/reusable-blocks-accessible-in-wordpress-admin-area
-// 
+//
 
 function be_reusable_blocks_admin_menu() {
     add_menu_page( 'Reusable Blocks', 'Reusable Blocks', 'edit_posts', 'edit.php?post_type=wp_block', '', 'dashicons-editor-table', 22 );
@@ -144,13 +144,13 @@ add_action( 'wp_head', 'insert_fb_in_head', 5 );
 /*add_action( 'admin_menu', 'register_my_custom_menu_page' );
 function register_my_custom_menu_page() {
   // add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
-  add_menu_page( 
+  add_menu_page(
         'Footer',
         'Footer',
         'manage_options',
         'Footer',
         'footer_menu_page',
-        'dashicons-welcome-widgets-menus', 
+        'dashicons-welcome-widgets-menus',
         26
     );
 }*/
@@ -201,49 +201,65 @@ function wpse_include_my_post_type_in_query( $query ) {
 
  add_action( 'parse_query', 'wpse_parse_query' );
  function wpse_parse_query( $wp_query ) {
- 
+
      if( get_page_by_path($wp_query->query_vars['name']) ) {
          $wp_query->is_single = false;
          $wp_query->is_page = true;
      }
- 
+
  }
 
 //
 // CUSTOM FIELDS
 //
 
-add_action("admin_init", "admin_init");
+add_action('admin_init', 'admin_init');
 
 function admin_init(){
     //MW Tools
-    add_meta_box("cover_meta", "Cover text", "cover_meta", "mw-tools", "side", "high");
+    add_meta_box('cover_meta', 'Cover text', 'cover_meta', 'mw-tools', 'side', 'high');
+	add_meta_box('infographic_meta', 'Infographic', 'infographic_meta', 'mw-tools', 'side', 'high');
+
     //Footer
     /*function footer_menu_page(){
-        //add_meta_box("title_meta", "Cover text", "title_meta", "", "", "high");
-        $title_meta = $custom["footer_title_meta"][0];
+        //add_meta_box('title_meta', 'Cover text', 'title_meta', '', '', 'high');
+        $title_meta = $custom['footer_title_meta'][0];
         ?>
             <label for="footer_title_meta">Title</label>
             <textarea name="footer_title_meta" rows="3" style="width:100%;"><?php echo $footer_title_meta; ?></textarea>
         <?php
     }*/
-    
+
 }
 
+//COVER META
 function cover_meta(){
     global $post;
     $custom = get_post_custom($post->ID);
-    $cover_meta = $custom["cover_meta"][0];
+    $cover_meta = $custom['cover_meta'][0];
     ?>
 		<label for="cover_meta">Text that will appear on the page cover.</label>
 		<textarea name="cover_meta" rows="4" style="width:100%;"><?php echo $cover_meta; ?></textarea>
     <?php
 }
 
+
+//INFOGRAPHIC META
+function infographic_meta(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $infographic_meta = $custom['infographic_meta'][0];
+    ?>
+		<label for="infographic_meta">Add infographic image url</label>
+		<input type="text" name="infographic_meta"><?php echo $infographic_meta; ?></input>
+    <?php
+}
+
 add_action('save_post', 'save_details');
 function save_details(){
     global $post;
-    update_post_meta($post->ID, "cover_meta", $_POST["cover_meta"]);
+    update_post_meta($post->ID, 'cover_meta', $_POST['cover_meta']);
+	update_post_meta($post->ID, 'infographic_meta', $_POST['infographic_meta']);
 }
 
 ?>

@@ -58,9 +58,9 @@ p {
 /* BLOCKQUOTE / PULLQUOTES */
 
 .wp-block-pullquote, .wp-block-pullquote.is-style-default {
-	
+
 	blockquote {
-		
+
 		p {
 			font-size: @font-size-h4;
 		}
@@ -105,13 +105,13 @@ p {
 		h2 {
 			font-size: @font-size-h2;
 		}
-	
+
 		h3 {
 			font-size: @font-size-h4;
 		}
 
 	}
-		
+
 
 	&.align-center {
 		.align-items(center)!important;
@@ -138,7 +138,7 @@ p {
 
 			}
 		}
-		
+
 	}
 
 	&.image-text {
@@ -157,7 +157,7 @@ p {
 
 				}
 			}
-			
+
 			.wp-block-image {
 				margin-left: -@x-spacing!important;
 				width: calc(100% + @x-spacing);
@@ -175,7 +175,7 @@ p {
 		}
 
 	}
-	
+
 	&.text-text {
 
 		.align-items(flex-start);
@@ -193,11 +193,11 @@ p {
 				}
 
 			}
-			
+
 		}
 
 	}
-	
+
 }
 
 .wp-block-columns.three-columns, .three-columns {
@@ -208,7 +208,7 @@ p {
 	.wp-block-column {
 		flex-basis: 33%;
 	}
-	
+
 }
 
 /* BLOCK GROUPS */
@@ -241,7 +241,7 @@ p {
 			&.second-row {
 				position: relative;
 				background-color: @color-black;
-				 
+
 				&:before {
 					content: "";
 					position: absolute;
@@ -259,27 +259,27 @@ p {
 
 					&:nth-child(2) {
 						margin-right: 0;
-						
+
 						h3 {
 							font-size: @font-size-h3;
 						}
-						
+
 						.learn-more {
 							max-width: 360px;
-						
+
 						}
-					
+
 					}
-				
+
 				}
-			
+
 			}
 
 		}
 
 	}
 
-	&.infographic {
+	&.infographic-block {
 		margin: 3.75rem 0;
 		padding: @y-spacing @x-spacing;
 
@@ -287,11 +287,10 @@ p {
 			font-size: @font-size-h5;
 			margin: 0;
 		}
-		
-		.zoom {
+
+		.button.zoom {
 
 			&:after {
-				content: url("../img/curved-arrow.svg");
 				width: 80px;
 				transform: scaleY(-1) rotate(30deg);
 				position: relative;
@@ -322,7 +321,7 @@ p {
 			&:first-child {
 
 				.align-items(flex-end);
-	
+
 				.wp-block-column {
 
 					&:first-child {
@@ -332,7 +331,7 @@ p {
 					&:nth-child(2) {
 						flex-basis: calc(50% - 3.75rem)!important;
 						padding: @y-spacing @x-spacing @y-spacing 3.75rem!important;
-		
+
 					}
 
 				}
@@ -342,7 +341,7 @@ p {
 			&:nth-child(2) {
 
 				.wp-block-column {
-					
+
 					&:first-child {
 						padding-left: @x-spacing;
 					}
@@ -359,7 +358,7 @@ p {
 			}
 
 		}
-		
+
 	}
 
 }
@@ -367,7 +366,7 @@ p {
 /* HEADER */
 
 header.main-header {
-	
+
 	div.identity {
 
 		h1.logo {
@@ -375,14 +374,14 @@ header.main-header {
 		}
 
 	}
-	
+
 }
 
 /* Coming soon */
 .soon {
 	padding: 0 @x-spacing;
 	height: calc(100vh - 6rem);
-	
+
 	h2 {
 		font-size: @font-size-h1;
 		width: 40%;
@@ -396,7 +395,7 @@ header.main-header {
 
 /* MW TOOLS */
 .single-mw-tools {
-	header {
+	header.cover {
 		//height: calc(100vh - 6rem);
 		div.cover-content {
 			width: 50%;
@@ -420,7 +419,7 @@ header.main-header {
 		}
 
 	}
-    
+
 	div.content {
 
 		margin: 0 0 @y-spacing 0;
@@ -467,7 +466,7 @@ footer.main-footer {
 		h2 {
 			font-size: @font-size-h3;
 		}
-	
+
 		h3 {
 			font-size: @font-size-h5;
 		}
