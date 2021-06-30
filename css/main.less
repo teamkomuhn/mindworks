@@ -150,7 +150,7 @@ h2, h3, h4 {
 p {
 	font-size: @font-size-p;
 	line-height: 1.5;
-	
+
 	&.footnote {
 		color: @color-grey-darker;
 		font-size: 1rem;
@@ -335,14 +335,13 @@ p {
 			a {
 
 				&:before {
-					content: "\e90a";
+					content: "\e90e";
 					font-family: "icomoon";
 					padding-right: .5rem;
 					vertical-align: top;
 				}
 
 			}
-
 		}
 	}
 }
@@ -567,7 +566,7 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 				a {
 
 					&:before {
-						content: "\e909";
+						content: "\e90d";
 					}
 
 				}
@@ -630,7 +629,7 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 				min-height: 100%;
 				object-fit: cover;
 			}
-		
+
 		}
 
 		.wp-block-group {
@@ -857,7 +856,7 @@ header.main-header {
 				&.date {
 
 					&:before {
-						content: '\e901';
+						content: '\e903';
 					}
 
 				}
@@ -866,7 +865,7 @@ header.main-header {
 					margin-left: @x-spacing;
 
 					&:before {
-						content: '\e900';
+						content: '\e902';
 					}
 
 				}
@@ -947,13 +946,36 @@ section.infographic {
 
 				.button,
 				button {
-					background-color: red;
 					border: 0;
 					color: white;
 					cursor: pointer;
 					padding: 0;
-					margin-left: 1em;
+					margin-left: 2em;
 					text-decoration: none;
+
+					// .flex-display();
+					// .flex-flow(row nowrap);
+
+					&.close,
+					&.download {
+						background: transparent;
+
+						&:after {
+							font-family: 'icomoon';
+							font-size: @font-size-p;
+							margin-left: 0.5em;
+						}
+					}
+					&.close {
+						&:after {
+							content: "\e900";
+						}
+					}
+					&.download {
+						&:after {
+							content: "\e901";
+						}
+					}
 
 				}
 			}
@@ -1015,7 +1037,7 @@ footer.main-footer, .page-coming-soon {
 		margin: @y-spacing 0;
 
 		&:before {
-			content: "\e907";
+			content: "\e90a";
 			font-family: "icomoon";
 			font-size: @font-size-h2;
 		}
@@ -1076,7 +1098,7 @@ footer.main-footer, .page-coming-soon {
 				z-index: 1;
 				margin-right: .5rem;
 			}
-			
+
 			a {
 				text-decoration: none;
 				color: @color-black;
@@ -1115,4 +1137,3 @@ footer.main-footer, .page-coming-soon {
 	}
 
 }
-

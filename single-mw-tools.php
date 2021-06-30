@@ -1,6 +1,6 @@
 <?php
     get_header();
-    
+
 
     // WP_Query arguments
     $args = array(
@@ -10,7 +10,7 @@
 ?>
         <section class="single-mw-tools">
 
-            <?php if ( $mwtools -> have_posts() ) : while ( $mwtools -> have_posts() ) : $mwtools -> the_post(); 
+            <?php if ( $mwtools -> have_posts() ) : while ( $mwtools -> have_posts() ) : $mwtools -> the_post();
                 $post_cover_text = get_post_meta( $post->ID, 'cover_meta', 1);
                 if ( empty($post_cover_text) ) {
                     $post_cover_text = get_the_excerpt();
@@ -39,8 +39,8 @@
                     <header>
                         <h1>Infographic</h1>
                         <nav>
-                            <a class="button download" href="<?php echo wp_get_upload_dir()['baseurl']; ?>/tdm-infographic.pdf" download>D</a>
-                            <button type="button" class="close">x</button>
+                            <a class="button download" href="<?php echo wp_get_upload_dir()['baseurl']; ?>/tdm-infographic.pdf" download>Download</a>
+                            <button type="button" class="close">Close</button>
                         </nav>
                     </header>
                     <figure>
@@ -51,7 +51,7 @@
             <?php endif; ?>
 
             <?php endwhile; endif; ?>
-                
+
 
         </section>
         <div class="modal-infographic">
