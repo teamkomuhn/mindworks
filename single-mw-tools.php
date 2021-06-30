@@ -1,5 +1,6 @@
 <?php
     get_header();
+    
 
     // WP_Query arguments
     $args = array(
@@ -9,7 +10,7 @@
 ?>
         <section class="single-mw-tools">
 
-            <?php if ( $mwtools -> have_posts() ) : while ( $mwtools -> have_posts() ) : $mwtools -> the_post();
+            <?php if ( $mwtools -> have_posts() ) : while ( $mwtools -> have_posts() ) : $mwtools -> the_post(); 
                 $post_cover_text = get_post_meta( $post->ID, 'cover_meta', 1);
                 if ( empty($post_cover_text) ) {
                     $post_cover_text = get_the_excerpt();
@@ -23,15 +24,6 @@
                     <h2><?php print $post_cover_text; ?></h2>
                     <span class="date"><?php the_date( 'F d, Y' ); ?></span>
                     <span class="readtime" id="time"></span> min read
-                    <?php
-                        $author_ID = get_the_author_meta('ID');
-                        $author_name = get_the_author_meta('display_name');
-                        if ($author_ID != 0 && $author_ID != 1) {
-                            echo '<span class="author">';
-                            echo '<img src="'. get_avatar_url($author_ID).'" alt="'.$author_name.'"/>';
-                            echo $author_name;
-                            echo '</span>';
-                    } ?>
                 </div>
             </header>
 
@@ -59,7 +51,11 @@
             <?php endif; ?>
 
             <?php endwhile; endif; ?>
+                
 
         </section>
+        <div class="modal-infographic">
+            <img src="" alt="" />
+        </div>
 
 <?php get_footer(); ?>

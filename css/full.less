@@ -6,6 +6,8 @@
 @x-spacing: 	7.5rem;
 @y-spacing: 	7.5rem;
 
+@half-spacing:  3.75rem;
+
 @font-size-h1: 		6rem;
 @font-size-h2: 		4rem;
 @font-size-h3: 		3rem;
@@ -82,6 +84,10 @@ p {
 		img {
 			width: 100%;
 		}
+
+		figcaption {
+			margin: 1.5rem @x-spacing;
+		}
 	}
 
 }
@@ -100,7 +106,8 @@ p {
 
 
 	.wp-block-column, .column {
-		flex-basis: 50%!important;
+		//flex-basis: 50%!important;
+		flex: 0 0 calc(50% - @x-spacing);
 
 		h2 {
 			font-size: @font-size-h2;
@@ -122,18 +129,18 @@ p {
 		.align-items(flex-start);
 
 		.wp-block-column {
-
+			flex: 0 0 50%;
 			.wp-block-image {
-				margin-left: 3.75rem;
-				width: calc(100% + 3.75rem);
+				margin-left: @half-spacing;
+				width: calc(100% + @half-spacing);
 
 				img {
 					width: 100%;
 				}
 
 				figcaption {
-					padding-left: 3.75rem;
-					padding-right: 3.75rem;
+					padding-left: @half-spacing;
+					padding-right: @half-spacing;
 				}
 
 			}
@@ -146,13 +153,14 @@ p {
 		.align-items(flex-start);
 
 		.wp-block-column {
+			flex: 0 0 50%;
 
 			&:last-child {
 				h3, p {
-					padding-left: 3.75rem;
+					padding-left: @half-spacing;
 
 					&:after { //underline
-						left: 3.75rem;
+						left: @half-spacing;
 					}
 
 				}
@@ -181,13 +189,14 @@ p {
 		.align-items(flex-start);
 
 		.wp-block-column {
+			flex: 0 0 50%;
 
 			&:last-child {
 				h3, p {
-					padding-left: 3.75rem;
+					padding-left: @half-spacing;
 
 					&:after { //underline
-						left: 3.75rem;
+						left: @half-spacing;
 					}
 
 				}
@@ -205,7 +214,7 @@ p {
 	.flex-flow(row nowrap);
 	.align-items(flex-start);
 
-	.wp-block-column {
+	.wp-block-column, .column {
 		flex-basis: 33%;
 	}
 
@@ -229,8 +238,9 @@ p {
 		.wp-block-columns {
 
 			.wp-block-column {
-				padding: 3.75rem;
-				flex-basis: 50%!important;
+				padding: @half-spacing;
+				//flex-basis: 50%!important;
+				flex: 0 0 calc(50% - 2*@half-spacing);
 
 				h3 {
 					font-size: @font-size-h4;
@@ -279,8 +289,8 @@ p {
 
 	}
 
-	&.infographic-block {
-		margin: 3.75rem 0;
+	&.infographic {
+		margin: @half-spacing 0;
 		padding: @y-spacing @x-spacing;
 
 		p {
@@ -304,7 +314,7 @@ p {
 
 			img {
 				max-width: 120%;
-				transform: rotate(5deg) translateX(10rem) translateY(3.75rem);
+				transform: rotate(5deg) translateX(10rem) translateY(@half-spacing);
 			}
 
 		}
@@ -318,19 +328,43 @@ p {
 
 		.wp-block-columns {
 
+			.wp-block-column {
+				padding: 0;
+			}
+			
 			&:first-child {
 
 				.align-items(flex-end);
 
 				.wp-block-column {
+					flex: 0 0 calc(50% - @x-spacing - @half-spacing);
 
 					&:first-child {
-						padding: @y-spacing 0 @y-spacing @x-spacing;
+						padding: @y-spacing @half-spacing @y-spacing @x-spacing;
 					}
 
 					&:nth-child(2) {
-						flex-basis: calc(50% - 3.75rem)!important;
-						padding: @y-spacing @x-spacing @y-spacing 3.75rem!important;
+						padding: @y-spacing @x-spacing @y-spacing @half-spacing;
+					}
+
+				}
+
+			}
+
+			&.two-columns {
+
+				&:nth-child(2) {
+
+					.wp-block-column {
+
+						&:first-child {
+							flex: 0 0 calc(50% - @x-spacing - @half-spacing);	
+							padding: @half-spacing @half-spacing @half-spacing @x-spacing;
+						}
+						&:nth-child(2) {
+							flex: 0 0 calc(50% - @x-spacing - @half-spacing);	
+							padding: @half-spacing @x-spacing @half-spacing @half-spacing;
+						}
 
 					}
 
@@ -338,23 +372,90 @@ p {
 
 			}
 
-			&:nth-child(2) {
+			&.three-columns {
 
-				.wp-block-column {
+				&:nth-child(2) {
 
-					&:first-child {
-						padding-left: @x-spacing;
-					}
-					&:nth-child(2) {
-						padding-right: 3.75rem;
-						padding-left: 3.75rem;
-					}
-					&:nth-child(3) {
-						padding-right: @x-spacing;
+					.wp-block-column {
+						
+						&:first-child {
+							flex: 0 0 calc(33% - @x-spacing - @half-spacing);	
+							padding: @half-spacing @half-spacing @half-spacing @x-spacing;
+						}
+						&:nth-child(2) {
+							flex: 0 0 calc(33% - 2*@half-spacing);	
+							padding: @half-spacing;
+						}
+						&:nth-child(3) {
+							flex: 0 0 calc(33% - @x-spacing - @half-spacing);	
+							padding: @half-spacing @x-spacing @half-spacing @half-spacing;
+						}
+
 					}
 
 				}
+			}
 
+		}
+		
+	}
+
+	&.contact-us {
+		padding: @half-spacing;
+		p {
+			&:last-child {
+				padding-left: 3rem;
+				position: relative;
+				&:before {
+					font-size: @font-size-h4;
+					display: inline-block;
+					position: absolute;
+					left: 0;
+					top: 0;
+				}
+			}
+		}
+	}
+
+	&.changemakers {
+		margin: 0 -@x-spacing;
+		padding: @y-spacing @x-spacing;
+
+		.wp-block-columns {
+			.align-items(stretch)!important;
+		
+			.wp-block-column {
+				background-color: @color-white;
+				padding: @half-spacing;
+				flex: 0 0 calc(50% - 2*@half-spacing);
+				
+				&:last-child {
+					h3, p {
+						padding-left: 0;
+
+						&:after { //underline
+							left: 0;
+						}
+
+					}
+
+				}
+			}
+
+			
+			&:first-child {
+
+				.wp-block-column {
+					//margin-left: -@half-spacing;
+					&:first-child {
+						//margin-left: -@half-spacing;
+						h2, p {
+							margin-left: -@half-spacing;
+						}
+					}
+
+				}
+			
 			}
 
 		}
@@ -375,22 +476,6 @@ header.main-header {
 
 	}
 
-}
-
-/* Coming soon */
-.soon {
-	padding: 0 @x-spacing;
-	height: calc(100vh - 6rem);
-
-	h2 {
-		font-size: @font-size-h1;
-		width: 40%;
-	}
-
-	p {
-		font-size: @font-size-h5;
-		width: 60%;
-	}
 }
 
 /* MW TOOLS */
@@ -434,7 +519,7 @@ header.main-header {
 
 /* FOOTER */
 
-footer.main-footer {
+footer.main-footer, .page-coming-soon{
 	padding: 0 0 @y-spacing 0;
 	overflow: hidden;
 
@@ -446,7 +531,8 @@ footer.main-footer {
 
 		.column {
 			padding: @y-spacing @x-spacing;
-			flex-basis: calc(50% - @x-spacing)!important;
+			//flex-basis: calc(50% - @x-spacing)!important;
+			flex: 0 0 calc(50% - @x-spacing)!important;
 			&:nth-child(2) {
 				padding: @y-spacing 0;
 				position: absolute;
@@ -486,6 +572,25 @@ footer.main-footer {
 
 }
 
+.page-coming-soon {
+
+	.two-columns {
+
+		.column {
+			padding: 5rem @x-spacing;
+
+			&:nth-child(2) {
+				padding:  7rem 0;
+			}
+		}
+
+	}
+
+	div.subscription-form {
+		padding-top: 0;
+	}
+
+}
 
 //@media screen and (min-width: 1420px) {
 //    .wrapper {
