@@ -114,11 +114,15 @@ add_filter('language_attributes', 'add_opengraph_doctype');
 //Lets add Open Graph Meta Info
 
 function insert_fb_in_head() {
+    
     global $post;
+    $custom = get_post_custom($post->ID);
+    $opengraph_meta = $custom['opengraph_meta'][0];
+
     if ( !is_singular() ) //if it is not a post or a page
         return;
         //echo '<meta property="fb:app_id" content="Your Facebook App ID" />';
-        echo '<meta property="og:title" content="Mindworks • ' . strip_tags(get_the_title()) . '"/>';
+        echo '<meta property="og:title" content="' . strip_tags(get_the_title()) . ' - Mindworks"/>';
         echo '<meta property="og:type" content="website"/>';
         echo '<meta property="og:url" content="' . get_permalink() . '"/>';
         echo '<meta property="og:site_name" content="Mindworks"/>';
@@ -131,9 +135,11 @@ function insert_fb_in_head() {
         $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
         echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
     }*/
-    if( !empty(has_post_thumbnail( $post->ID )) ) {
-        $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
-        echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
+    if( $opengraph_meta ) {
+        echo '<meta property="og:image" content="' . $opengraph_meta . '"/>';
+    } else {
+        $default_image= "https://mindworkslab.org/wp-content/uploads/cover-og.png"; //replace this with a default image on your server or an image in your media library
+        echo '<meta property="og:image" content="' . $default_image . '"/>';
     }
     echo "";
 }
@@ -216,6 +222,7 @@ function wpse_include_my_post_type_in_query( $query ) {
 add_action('admin_init', 'admin_init');
 
 function admin_init(){
+	add_meta_box('opengraph_meta', 'Preview image', 'opengraph_meta', 'mw-tools', 'side', 'high');
     //MW Tools
     add_meta_box('cover_meta', 'Cover text', 'cover_meta', 'mw-tools', 'side', 'high');
 	add_meta_box('infographic_meta', 'Infographic', 'infographic_meta', 'mw-tools', 'side', 'high');
@@ -230,6 +237,17 @@ function admin_init(){
         <?php
     }*/
 
+}
+
+//OPEN GRAPH META
+function opengraph_meta(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $opengraph_meta = $custom['opengraph_meta'][0];
+    ?>
+		<label for="opengraph_meta">Add preview image url</label>
+		<input type="text" name="opengraph_meta" value="<?php echo $opengraph_meta; ?>">
+    <?php
 }
 
 //COVER META
@@ -251,7 +269,7 @@ function infographic_meta(){
     $infographic_meta = $custom['infographic_meta'][0];
     ?>
 		<label for="infographic_meta">Add infographic image url</label>
-		<input type="text" name="infographic_meta"><?php echo $infographic_meta; ?></input>
+		<input type="text" name="infographic_meta" value="<?php echo $infographic_meta; ?>">
     <?php
 }
 
@@ -260,6 +278,7 @@ function save_details(){
     global $post;
     update_post_meta($post->ID, 'cover_meta', $_POST['cover_meta']);
 	update_post_meta($post->ID, 'infographic_meta', $_POST['infographic_meta']);
+	update_post_meta($post->ID, 'opengraph_meta', $_POST['opengraph_meta']);
 }
 
 ?>

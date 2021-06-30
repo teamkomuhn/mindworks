@@ -289,7 +289,7 @@ p {
 
 	}
 
-	&.infographic {
+	&.infographic-block {
 		margin: @half-spacing 0;
 		padding: @y-spacing @x-spacing;
 
@@ -309,12 +309,13 @@ p {
 			}
 		}
 
-		.wp-block-image {
+		.wp-block-image, &.full-image {
 			margin-top: 0;
 
 			img {
+				width: 120%!important;
 				max-width: 120%;
-				transform: rotate(5deg) translateX(10rem) translateY(@half-spacing);
+				transform: rotate(5deg) translateX(10%) translateY(@half-spacing);
 			}
 
 		}
@@ -507,8 +508,7 @@ header.main-header {
 
 	div.content {
 
-		margin: 0 0 @y-spacing 0;
-		padding: 0 @x-spacing;
+		padding: 0 @x-spacing @y-spacing @x-spacing;
 
 		h2 {
 			font-size: @font-size-h3;

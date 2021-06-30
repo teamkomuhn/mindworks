@@ -516,6 +516,10 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 			img {
 				transform: rotate(5deg) translateX(100px);
 			}
+
+			figcaption {
+				display: none;
+			}
 		}
 
 		.button.zoom {
@@ -645,6 +649,7 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 				&:last-child {
 					font-size: 1rem;
 					font-weight: 200;
+					text-transform: uppercase;
 				}
 			}
 
@@ -891,8 +896,8 @@ header.main-header {
 	}
 
 	div.content {
-		margin: 0 0 @y-spacing 0;
-		padding: 0 @x-spacing;
+		margin: 0;
+		padding: 0 @x-spacing @y-spacing @x-spacing;
 
 		.wp-block-group.intro {
 			padding-top: 7rem;
@@ -1030,6 +1035,13 @@ footer.main-footer, .page-coming-soon {
 		font-weight: 300;
 	}
 
+	a {
+		text-decoration: underline;
+		color: @color-white;
+		font-size: @font-size-p;
+		font-weight: 500;
+	}
+
 	div.subscription-form {
 		color: @color-black;
 		background-color: @color-yellow-light;
@@ -1050,6 +1062,7 @@ footer.main-footer, .page-coming-soon {
 			font-size: @font-size-p;
 			margin-bottom: @y-spacing;
 		}
+
 
 		.mailchimp-form {
 
