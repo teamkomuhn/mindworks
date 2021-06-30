@@ -1051,6 +1051,7 @@ section.infographic.popup header nav {
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
 }
+section.infographic.popup header nav .button,
 section.infographic.popup header nav button {
   background-color: red;
   border: 0;
@@ -1058,6 +1059,7 @@ section.infographic.popup header nav button {
   cursor: pointer;
   padding: 0;
   margin-left: 1em;
+  text-decoration: none;
 }
 section.infographic.popup figure {
   margin: 0;

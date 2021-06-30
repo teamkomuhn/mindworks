@@ -47,7 +47,7 @@
                     <header>
                         <h1>Infographic</h1>
                         <nav>
-                            <button type="button" class="download">D</button>
+                            <a class="button download" href="<?php echo wp_get_upload_dir()['baseurl']; ?>/tdm-infographic.pdf" download>D</a>
                             <button type="button" class="close">x</button>
                         </nav>
                     </header>
