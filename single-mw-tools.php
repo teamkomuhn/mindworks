@@ -54,8 +54,5 @@
 
 
         </section>
-        <div class="modal-infographic">
-            <img src="" alt="" />
-        </div>
 
 <?php get_footer(); ?>
