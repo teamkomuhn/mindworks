@@ -1,11 +1,44 @@
+// ZOOM INFOGRAPHIC
+let infographic;
+
+function openInfographic() {
+    infographic.classList.toggle('closed');
+    event.preventDefault();
+}
+
+function setInfographic() {
+    infographic = document.querySelector('section.infographic.popup');
+    const buttonClose = infographic.querySelector('header nav > button.close');
+
+    buttonClose.addEventListener('click', openInfographic);
+
+}
+setInfographic();
+
+//
+function bindZoomButtons() {
+    function bindClick() {
+        return function() {
+            openInfographic();
+        };
+    }
+
+    const buttons = document.getElementsByClassName('zoom infographic');
+    for ( var i = 0; i < buttons.length; i++ ) {
+        buttons[i].addEventListener('click', bindClick(i));
+    }
+}
+bindZoomButtons();
+
+
 // READ TIME JS - https://w3collective.com/calculate-reading-time-javascript/
 
 function readingTime() {
-    var text = document.getElementById("content").innerText;
+    var text = document.getElementById('content').innerText;
     var wpm = 225;
     var words = text.trim().split(/\s+/).length;
     var time = Math.ceil(words / wpm);
-    document.getElementById("time").innerText = time;
+    document.getElementById('time').innerText = time;
 }
 
 // Vanilla JavaScript Scroll to Anchor
@@ -40,9 +73,8 @@ function scrollAnchors(e, respond = null) {
 	}, 100);
 }
 
+//
 (function() {
     scrollTo();
-    if('.single-mw-tools'){
-        readingTime();
-    }
+    readingTime();
 })();
