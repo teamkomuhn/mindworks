@@ -429,8 +429,20 @@ p {
 				padding: @half-spacing;
 				flex: 0 0 calc(50% - 2*@half-spacing);
 				
+				&:last-child {
+					h3, p {
+						padding-left: 0;
+
+						&:after { //underline
+							left: 0;
+						}
+
+					}
+
+				}
 			}
 
+			
 			&:first-child {
 
 				.wp-block-column {
@@ -440,17 +452,6 @@ p {
 						h2, p {
 							margin-left: -@half-spacing;
 						}
-					}
-					&:last-child {
-						h3, p {
-							padding-left: 0;
-		
-							&:after { //underline
-								left: 0;
-							}
-		
-						}
-		
 					}
 
 				}
