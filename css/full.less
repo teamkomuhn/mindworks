@@ -437,7 +437,20 @@ p {
 					//margin-left: -@half-spacing;
 					&:first-child {
 						//margin-left: -@half-spacing;
-
+						h2, p {
+							margin-left: -@half-spacing;
+						}
+					}
+					&:last-child {
+						h3, p {
+							padding-left: 0;
+		
+							&:after { //underline
+								left: 0;
+							}
+		
+						}
+		
 					}
 
 				}
