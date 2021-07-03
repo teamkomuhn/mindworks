@@ -13,7 +13,7 @@
             <div class="column">
                 <div class="subscription-form">
                     <h4>Our new website is coming soon!</h4>
-                    <p>Leave your contacts to be the first to know when.</p>
+                    <p>Join our mailing list to be the first to know when.</p>
                     <div class="mailchimp-form">
                         <!-- Begin Mailchimp Signup Form -->
                         <div id="mc_embed_signup">
