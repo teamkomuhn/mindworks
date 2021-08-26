@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-063HXFCJKX"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
@@ -10,7 +10,7 @@
 		gtag('js', new Date());
 
 		gtag('config', 'G-063HXFCJKX');
-	</script>
+	</script> -->
 
 	<meta charset="utf-8">
 
