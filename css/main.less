@@ -726,6 +726,42 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 	margin: 0 auto;
 }
 
+/* ITEMS */
+
+.featured-post {
+
+	.flex-display();
+	.flex-flow(column);
+
+	padding: @x-spacing;
+
+	header {
+
+	}
+
+	figure {
+
+		max-width: 360px;
+		width: 100%;
+		margin: 0;
+
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		&:after {
+			content: "";
+			display: block;
+			padding-bottom: 100%;
+		}
+		
+		img {
+			display: none;
+		}
+
+	}
+
+}
 
 /* HEADER */
 
@@ -803,6 +839,49 @@ header.main-header {
 
 }
 
+
+/* PAGE INDEX */
+.page-index {
+
+	header.cover {
+		
+		div.cover-content {
+
+			.flex-display();
+			.flex-flow(column);
+
+			h1, h2 {
+				margin: 0;
+			}
+
+			h1 {
+				
+				padding: 2*@y-spacing @x-spacing;
+				background-color: @color-black;
+
+				font-size: @font-size-h1;
+				color: @color-white;
+	
+				span {
+					
+					display: block;
+					margin-bottom: @y-spacing;
+
+					font-size: @font-size-h4;
+					font-weight: 200;
+					text-transform: uppercase;
+				}
+			}
+	
+			h2 {
+				padding: @y-spacing @x-spacing;
+				font-size: @font-size-h4;
+				font-weight: 400;
+			}
+		}
+	}
+
+}
 
 /* MW TOOLS */
 .single-mw-tools {

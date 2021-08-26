@@ -83,13 +83,6 @@ function my_load_scripts($hook) {
 }
 add_action('wp_enqueue_scripts', 'my_load_scripts');
 
-// SHORTCODES
-
-//
-//Enable thumbnails for CPT - featured image
-//
-
-add_theme_support( 'post-thumbnails' );
 
 //
 // Reusable Blocks accessible in backend
@@ -162,6 +155,13 @@ function register_my_custom_menu_page() {
 }*/
 
 //
+//Enable thumbnails for CPT - featured image
+//
+
+add_theme_support( 'post-thumbnails' );
+
+
+//
 // CPT MW Tools
 //
 
@@ -222,10 +222,10 @@ function wpse_include_my_post_type_in_query( $query ) {
 add_action('admin_init', 'admin_init');
 
 function admin_init(){
-	add_meta_box('opengraph_meta', 'Preview image', 'opengraph_meta', 'mw-tools', 'side', 'high');
+	add_meta_box('opengraph_meta', 'Preview image', 'opengraph_meta', array('mw-tools', 'page'), 'side', 'high');
     //MW Tools
-    add_meta_box('cover_meta', 'Cover text', 'cover_meta', 'mw-tools', 'side', 'high');
-	add_meta_box('infographic_meta', 'Infographic', 'infographic_meta', 'mw-tools', 'side', 'high');
+    add_meta_box('cover_meta', 'Cover', 'cover_meta', array('mw-tools', 'page'), 'side', 'high');
+	add_meta_box('infographic_meta', 'Infographic', 'infographic_meta', array('mw-tools', 'page'), 'side', 'high');
 
     //Footer
     /*function footer_menu_page(){
@@ -254,10 +254,14 @@ function opengraph_meta(){
 function cover_meta(){
     global $post;
     $custom = get_post_custom($post->ID);
-    $cover_meta = $custom['cover_meta'][0];
+    $cover_meta_context_tag = $custom['cover_meta_context_tag'][0];
+    $cover_meta_text = $custom['cover_meta_text'][0];
     ?>
-		<label for="cover_meta">Text that will appear on the page cover.</label>
-		<textarea name="cover_meta" rows="4" style="width:100%;"><?php echo $cover_meta; ?></textarea>
+        <label for="cover_meta_context_tag">Text that will appear over the title.</label>
+        <textarea name="cover_meta_context_tag" rows="4" style="width:100%;"><?php echo $cover_meta_context_tag; ?></textarea>
+        <br>
+		<label for="cover_meta_text">Text that will appear on the page cover.</label>
+		<textarea name="cover_meta_text" rows="4" style="width:100%;"><?php echo $cover_meta_text; ?></textarea>
     <?php
 }
 
@@ -276,7 +280,8 @@ function infographic_meta(){
 add_action('save_post', 'save_details');
 function save_details(){
     global $post;
-    update_post_meta($post->ID, 'cover_meta', $_POST['cover_meta']);
+    update_post_meta($post->ID, 'cover_meta_context_tag', $_POST['cover_meta_context_tag']);
+    update_post_meta($post->ID, 'cover_meta_text', $_POST['cover_meta_text']);
 	update_post_meta($post->ID, 'infographic_meta', $_POST['infographic_meta']);
 	update_post_meta($post->ID, 'opengraph_meta', $_POST['opengraph_meta']);
 }

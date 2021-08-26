@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-	<main>
 		<section class="page-coming-soon">
 			<div class="two-columns">
 				<div class="column">
@@ -53,4 +52,3 @@
 				</div>
 			</div>
 		</section>
-	</main>
