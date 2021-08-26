@@ -85,21 +85,23 @@
                         <?php
                             while ( $parent->have_posts() ) : $parent->the_post(); 
                         
+                                $post_label = get_post_meta( $post->ID, 'label_meta', 1);
                                 $post_cover_text = get_post_meta( $post->ID, 'cover_meta_text', 1);
                                 $post_image_url = wp_get_attachment_image_url( get_post_thumbnail_id(), 'large');
                                 $post_image = get_the_post_thumbnail( $post , 'thumbnail');
+
                         ?>
 
                             <article class="featured-post">
 
                                 <header>
 
-                                    <label>Part one</label>
-                                    <h1><?php the_title(); ?></h1>
+                                    <label><?php echo $post_label; ?></label>
+                                    <h1><?php echo get_the_title($post->post_parent) . ': ' . get_the_title(); ?></h1>
                                     <span class="date"><?php the_date( 'F d, Y' ); ?></span>
-                                    <span class="readtime" id="time"></span> min read
+                                    <!--<span class="readtime" id="time"></span> min read-->
                                     <?php if ($post_cover_text != '') { echo '<p>'.$post_cover_text.'</p>'; } ?>
-
+                                    <a href="<?php the_permalink(); ?>" class="button black" title="<?php the_title(); ?>">Read</a>
                                 </header>
 
                                 <figure style="background-image:url(<?php echo esc_url( $post_image_url ); ?>);"><?php echo $post_image; ?></figure>

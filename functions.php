@@ -138,83 +138,6 @@ function insert_fb_in_head() {
 }
 add_action( 'wp_head', 'insert_fb_in_head', 5 );
 
-
-//Add menu page
-/*add_action( 'admin_menu', 'register_my_custom_menu_page' );
-function register_my_custom_menu_page() {
-  // add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
-  add_menu_page(
-        'Footer',
-        'Footer',
-        'manage_options',
-        'Footer',
-        'footer_menu_page',
-        'dashicons-welcome-widgets-menus',
-        26
-    );
-}*/
-
-//
-//Enable thumbnails for CPT - featured image
-//
-
-add_theme_support( 'post-thumbnails' );
-
-
-//
-// CPT MW Tools
-//
-
-add_action( 'init', 'mw_tools_post_type' );
-function mw_tools_post_type() {
-    register_post_type( 'mw-tools',
-        array(
-            'labels' => array(
-                'name' => __( 'MW Tools' ),
-                'singular_name' => __( 'Tool' ),
-                'add_new_item' => __( 'Add New Tool' )
-            ),
-            'public' => true,
-            'show_in_rest' => true,
-            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
-            'menu_position' => 5,
-            'menu_icon' => 'dashicons-image-filter',
-            'rewrite' => array('slug' => '/')
-        )
-    );
-}
-
-//
-//REMOVE CPT slug /mw-tools/ - https://wordpress.stackexchange.com/questions/125886/remove-slug-from-custom-post-type
-//
-
-add_action( 'pre_get_posts', 'wpse_include_my_post_type_in_query' );
-function wpse_include_my_post_type_in_query( $query ) {
-
-     // Only noop the main query
-     if ( ! $query->is_main_query() )
-         return;
-
-     // Only noop our very specific rewrite rule match
-     if ( 2 != count( $query->query )
-     || ! isset( $query->query['page'] ) )
-          return;
-
-      // Include my post type in the query
-     if ( ! empty( $query->query['name'] ) )
-          $query->set( 'post_type', array( 'post', 'page', 'mw-tools' ) );
- }
-
- add_action( 'parse_query', 'wpse_parse_query' );
- function wpse_parse_query( $wp_query ) {
-
-     if( get_page_by_path($wp_query->query_vars['name']) ) {
-         $wp_query->is_single = false;
-         $wp_query->is_page = true;
-     }
-
- }
-
 //
 // CUSTOM FIELDS
 //
@@ -222,10 +145,11 @@ function wpse_include_my_post_type_in_query( $query ) {
 add_action('admin_init', 'admin_init');
 
 function admin_init(){
-	add_meta_box('opengraph_meta', 'Preview image', 'opengraph_meta', array('mw-tools', 'page'), 'side', 'high');
+	add_meta_box('opengraph_meta', 'Preview image', 'opengraph_meta', array('post', 'page'), 'side', 'high');
     //MW Tools
-    add_meta_box('cover_meta', 'Cover', 'cover_meta', array('mw-tools', 'page'), 'side', 'high');
-	add_meta_box('infographic_meta', 'Infographic', 'infographic_meta', array('mw-tools', 'page'), 'side', 'high');
+    add_meta_box('label_meta', 'Label', 'label_meta', array('post', 'page'), 'side', 'high');
+    add_meta_box('cover_meta', 'Cover', 'cover_meta', array('post', 'page'), 'side', 'high');
+	add_meta_box('infographic_meta', 'Infographic', 'infographic_meta', array('post', 'page'), 'side', 'high');
 
     //Footer
     /*function footer_menu_page(){
@@ -265,6 +189,17 @@ function cover_meta(){
     <?php
 }
 
+//LABEL META
+function label_meta(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $label_meta = $custom['label_meta'][0];
+    ?>
+        <label for="label_meta">Label, ie: Part 1</label>
+		<input type="text" name="label_meta" value="<?php echo $label_meta; ?>">
+    <?php
+}
+
 
 //INFOGRAPHIC META
 function infographic_meta(){
@@ -280,6 +215,7 @@ function infographic_meta(){
 add_action('save_post', 'save_details');
 function save_details(){
     global $post;
+    update_post_meta($post->ID, 'label_meta', $_POST['label_meta']);
     update_post_meta($post->ID, 'cover_meta_context_tag', $_POST['cover_meta_context_tag']);
     update_post_meta($post->ID, 'cover_meta_text', $_POST['cover_meta_text']);
 	update_post_meta($post->ID, 'infographic_meta', $_POST['infographic_meta']);

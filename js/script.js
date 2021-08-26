@@ -35,7 +35,7 @@ bindZoomButtons();
 
 function readingTime() {
     var text = document.getElementById('content').innerText;
-    var wpm = 225;
+    var wpm = 175;
     var words = text.trim().split(/\s+/).length;
     var time = Math.ceil(words / wpm);
     document.getElementById('time').innerText = time;

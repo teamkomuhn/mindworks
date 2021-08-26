@@ -473,9 +473,32 @@ p {
 	.flex-flow(row nowrap);
 
 	padding: 0 @x-spacing;
+	margin: @x-spacing 0;
 
 	header {
+		
 		.flex-order(2);
+
+		position: relative;
+		padding-left: 3.8rem;
+
+		h1 {
+			font-size: @font-size-h4;
+		}
+
+		p {
+			font-size: @font-size-h5;
+		}
+
+		a.button {
+
+			position: absolute;
+			bottom: 0;
+			
+			margin: 0;
+			
+		}
+
 	}
 
 	figure {
@@ -526,9 +549,14 @@ header.main-header {
 			h2 {
 				.align-self(center);
 			}
-
 	
 		}
+
+	}
+
+	div.content {
+
+		padding: 0 0 @x-spacing 0;
 
 	}
 
