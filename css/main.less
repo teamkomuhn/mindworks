@@ -414,10 +414,10 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 .wp-block-group {
 
 	&.intro {
-		background-color: @color-black;
+		//background-color: @color-black;
 		margin: 0 -@x-spacing;
-		padding: @y-spacing @x-spacing;
-		color: @color-white;
+		padding: 1rem @x-spacing;
+		//color: @color-white;
 	}
 
 	&.index {
@@ -1009,7 +1009,7 @@ header.main-header {
 			h1 {
 				font-size: @font-size-h1;
 				margin: 0;
-				padding-top: 2*(@y-spacing);
+				padding: @x-spacing 0 2*(@y-spacing) 0;
 			}
 
 			h2 {
@@ -1072,15 +1072,30 @@ header.main-header {
 
 	div.content {
 		margin: 0;
-		padding: 0 @x-spacing @y-spacing @x-spacing;
+		padding: @y-spacing @x-spacing;
 
 		.wp-block-group.intro {
-			padding-top: 7rem;
+			//padding-top: 7rem;
+		}
+
+		label {
+			font-size: @font-size-h4;
+			text-transform: uppercase;
 		}
 
 		h2 {
 			font-size: @font-size-h4;
 			font-weight: 700;
+		}
+
+		h2.title {
+			font-size: @font-size-h2;
+		}
+
+		h3.excerpt {
+
+			font-size: @font-size-h3;
+			font-weight: 500;
 		}
 
 	}
