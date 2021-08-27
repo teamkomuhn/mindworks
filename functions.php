@@ -133,4 +133,22 @@
         //'custom-post-type-name',
     ));
 
+
+	//Switch default core markup for search form, comment form, and comments to output valid HTML5. - https://haizdesign.com/wordpress/use-html5-input-types-in-wordpress-forms/
+	add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'script',
+			'style',
+		)
+	);
+
+	// Add support for responsive embeds. - https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/
+	//add_theme_support( 'responsive-embeds' );
+
 ?>
