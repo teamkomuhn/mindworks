@@ -65,7 +65,7 @@
                         'post_parent'    => $post->ID,
                         'order'          => 'ASC',
                         'orderby'        => 'menu_order',
-                        'post_status'    => array('publish', 'pending', 'draft')
+                        'post_status'    => array('publish', 'pending')
                     );
 
 
@@ -93,10 +93,14 @@
                                 $post_cover_text = get_post_meta( $post->ID, 'cover_meta_text', 1);
                                 $post_image_url = wp_get_attachment_image_url( get_post_thumbnail_id(), 'large');
                                 $post_image = get_the_post_thumbnail( $post , 'thumbnail');
-
+                                if (get_post_status() == 'pending') {
+                                    $post_pending = 'pending';
+                                } else {
+                                    $post_pending = '';
+                                }
                         ?>
 
-                            <article class="featured-post">
+                            <article class="featured-post <?php echo $post_pending; ?>">
 
                                 <header>
 

@@ -734,6 +734,23 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 	padding: @x-spacing;
 	margin: @x-spacing 0;
 
+	&.pending {
+
+		opacity: .3;
+
+		figure {
+
+			background-image: none;
+			background-color: @color-grey-dark;
+
+		}
+
+		a.button {
+			pointer-events: none;
+		}
+
+	}
+
 	header {
 		
 		label {
@@ -743,6 +760,7 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 			background-color: @color-grey-light;
 			border-radius: 4px;
 			font-weight: 300;
+			text-transform: uppercase;
 		}
 
 		h1 {
@@ -820,7 +838,6 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 
 	figure {
 
-		max-width: 360px;
 		width: 100%;
 		margin: 0;
 
