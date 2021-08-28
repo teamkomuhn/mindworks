@@ -45,6 +45,22 @@ p {
 
 /* FORMS */
 
+
+/* GRID */
+
+.two-columns {
+
+	.flex-flow(nowrap);
+	.align-items(flex-start);
+
+}
+
+.column {
+	flex: 0 0 50%;
+
+}
+
+
 /* HEADER */
 
 header.main-header {
@@ -57,58 +73,61 @@ header.main-header {
 
 	}
 
-}
+	&.bgBlack {
+		background-color: @color-black;
 
-/* FOOTER */
+		div.identity {
 
-footer.main-footer, .page-coming-soon{
-	padding: 0 0 @y-spacing 0;
-	overflow: hidden;
+			top: 6rem;
 
-	.two-columns {
-		position: relative;
-
-		.flex-flow(wrap);
-		.align-items(flex-start);
-
-		.column {
-			padding: @y-spacing @x-spacing;
-			//flex-basis: calc(50% - @x-spacing)!important;
-			flex: 0 0 calc(50% - @x-spacing)!important;
-			&:nth-child(2) {
-				padding: @y-spacing 0;
-				position: absolute;
-				right: 0;
-				height:100%;
-				width: calc(50% - @x-spacing);
-				//flex-basis: calc(50% - @x-spacing)!important;
-				background-color: @color-yellow-light;
-			}
-
-			&:nth-child(3) {
-				padding: 0 @x-spacing;
-			}
-
-		}
-
-		h2 {
-			font-size: @font-size-h3;
-		}
-
-		h3 {
-			font-size: @font-size-h5;
 		}
 
 	}
 
+}
+
+
+/* FOOTER */
+
+footer.main-footer, .page-coming-soon{
+	padding: 0;
+
+	.two-columns {
+		position: relative;
+
+		.column {
+			padding: @y-spacing @x-spacing;
+			flex: 0 0 calc(50% - 2*@y-spacing);
+			&:nth-child(2) {
+				
+				background-color: @color-yellow-light;
+			}
+
+			&:nth-child(3) {
+				//padding: 0 @x-spacing;
+				position: absolute;
+				bottom: .3rem;
+				left: 0;
+			}
+
+		}
+
+	}
+
+	h2 {
+		font-size: @font-size-h4;
+	}
+
+	h3 {
+		font-size: @font-size-h5;
+	}
 
 	div.subscription-form {
-		padding: @y-spacing @x-spacing;
-		margin: 0;
-		width: calc(100% - 14rem);
+		margin: .9rem -1.5rem;
 
 		h4 {
-			font-size: @font-size-h4;
+			font-size: 2rem;
+			margin-top: .5rem;
 		}
 
 	}
@@ -120,17 +139,20 @@ footer.main-footer, .page-coming-soon{
 	.two-columns {
 
 		.column {
-			padding: 5rem @x-spacing;
 
 			&:nth-child(2) {
-				padding:  7rem 0;
+				margin-top: -6rem;
+				height: calc(100vh - 15rem);
+				
 			}
+
+			&:nth-child(3) {
+				bottom: 4.4rem;
+				padding: 0 @x-spacing;
+			}
+
 		}
 
-	}
-
-	div.subscription-form {
-		padding-top: 0;
 	}
 
 }

@@ -208,6 +208,20 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 	}
 }
 
+/* GRID */
+
+.two-columns {
+
+	.flex-display();
+	.flex-flow(column);
+
+}
+
+.column {
+	flex-basis: 100%;
+
+}
+
 /* HEADER */
 
 header.main-header {
@@ -216,14 +230,6 @@ header.main-header {
 	.flex-display();
 	.flex-flow(row nowrap);
 	.align-items(center);
-
-	&.bgWhite {
-		background-color: @color-white;
-	}
-
-	&.bgBlack {
-		background-color: @color-black;
-	}
 
 	div.identity {
 
@@ -246,6 +252,30 @@ header.main-header {
 			}
 		}
 	}
+
+	&.bgWhite {
+		background-color: @color-white;
+	}
+
+	&.bgBlack {
+		background-color: @color-black;
+
+		div.identity {
+
+			top: 3rem;
+			position: relative;
+
+			h1.logo {
+				a {
+					img {
+						width: 15rem;
+					}
+				}
+			}
+
+		}
+
+	}
 }
 
 
@@ -256,25 +286,6 @@ footer.main-footer, .page-coming-soon {
 	background-color: @color-black;
 	padding: @y-spacing @x-spacing;
 
-    .two-columns {
-
-        .flex-display();
-        .flex-flow(column);
-
-        .column {
-            flex-basis: 100%;
-            h2 {
-                font-size: @font-size-h3;
-            }
-
-            h3 {
-                font-size: @font-size-h4;
-            }
-
-        }
-
-    }
-
 	div.identity {
 
 		.logo {
@@ -282,7 +293,7 @@ footer.main-footer, .page-coming-soon {
 
 			img {
 				display: block;
-				width: 10rem;
+				width: 15rem;
 			}
 
 		}
@@ -290,13 +301,13 @@ footer.main-footer, .page-coming-soon {
 	}
 
 	h2 {
-		font-size: @font-size-h4;
+		font-size: @font-size-h3;
 		color: @color-yellow-light;
 		font-weight: 500;
 	}
 
 	h3 {
-		font-size: @font-size-p;
+		font-size: @font-size-h4;
 		font-weight: 300;
 	}
 
@@ -311,7 +322,7 @@ footer.main-footer, .page-coming-soon {
 		color: @color-black;
 		background-color: @color-yellow-light;
 		padding: @y-spacing @x-spacing;
-		margin: @y-spacing 0;
+		margin: @y-spacing -@x-spacing;
 
 		&:before {
 			content: "\e90a";
@@ -395,7 +406,7 @@ footer.main-footer, .page-coming-soon {
 		.flex-flow(row nowrap);
 		.align-items(center);
 
-		padding: @y-spacing 0;
+		padding: 0 0 @x-spacing 0;
 
 		a.icon {
 
