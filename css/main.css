@@ -1,3 +1,85 @@
+@import "normalize.css";
+/* MIXINS */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+/* ICOMOON */
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon/icomoon.eot?vlyzdy');
+  src: url('../fonts/icomoon/icomoon.eot?vlyzdy#iefix') format('embedded-opentype'), url('../fonts/icomoon/icomoon.ttf?vlyzdy') format('truetype'), url('../fonts/icomoon/icomoon.woff?vlyzdy') format('woff'), url('../fonts/icomoon/icomoon.svg?vlyzdy#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-close:before {
+  content: "\e900";
+}
+.icon-download:before {
+  content: "\e901";
+}
+.icon-twitter:before {
+  content: "\e908";
+}
+.icon-email:before {
+  content: "\e90b";
+}
+.icon-linkedin:before {
+  content: "\e90c";
+}
+.icon-clock:before {
+  content: "\e902";
+}
+.icon-calendar:before {
+  content: "\e903";
+}
+.icon-chevron-bottom:before {
+  content: "\e904";
+}
+.icon-chevron-left:before {
+  content: "\e905";
+}
+.icon-chevron-right:before {
+  content: "\e906";
+}
+.icon-chevron-top:before {
+  content: "\e907";
+}
+.icon-curved-arrow:before {
+  content: "\e909";
+}
+.icon-mail:before {
+  content: "\e90a";
+}
+.icon-index:before {
+  content: "\e90d";
+}
+.icon-zoom:before {
+  content: "\e90e";
+}
 /*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
 /* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
 /*
@@ -69,150 +151,313 @@ textarea {
   resize: vertical;
 }
 /* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-/*
- * Hide visually and from screen readers
- */
-.hidden,
-[hidden] {
-  display: none !important;
+	 Browser Upgrade Prompt
+	 ========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #222222;
+  padding: 0.2em 0;
 }
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-.sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
+/* ==========================================================================
+     Author's custom styles
+     ========================================================================== */
+/* VARIABLES */
+/* HELPERS */
+.hide {
+  display: none;
+}
+.no-margin {
+  margin: 0!important;
+}
+.aligncenter {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+/* BODY AND MAIN*/
+body {
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222222;
+  overflow-x: hidden;
+}
+/* TYPOGRAPHY */
+h1 {
+  font-weight: 600;
+  line-height: 1.1;
+}
+h1 b,
+h1 strong {
+  font-weight: 700;
+}
+h2,
+h3,
+h4 {
+  font-weight: 500;
+  line-height: 1.3;
+}
+h2 b,
+h3 b,
+h4 b,
+h2 strong,
+h3 strong,
+h4 strong {
+  font-weight: 700;
+}
+p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+p.footnote {
+  color: #666666;
+  font-size: 1rem;
+}
+p a {
+  color: #222222;
+}
+/* BUTTONS */
+/* FORMS */
+input[type="text"],
+input[type="name"],
+input[type="email"],
+textarea {
+  -webkit-appearance: none;
+  width: calc(100% - 2*1.5rem - 4px);
+  color: #222222;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  border: 2px solid #222222;
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 1rem 1.5rem;
+  margin: 0.5rem 0;
+}
+input[type="text"]::placeholder,
+input[type="name"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #222222;
+  opacity: 1;
+  /* Firefox */
+}
+input[type="text"]:-ms-input-placeholder,
+input[type="name"]:-ms-input-placeholder,
+input[type="email"]:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #222222;
+}
+input[type="text"]:-ms-input-placeholder,
+input[type="name"]:-ms-input-placeholder,
+input[type="email"]:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #222222;
+}
+/* HEADER */
+header.main-header {
+  height: 6rem;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+header.main-header.bgWhite {
+  background-color: #ffffff;
+}
+header.main-header.bgBlack {
+  background-color: #222222;
+}
+header.main-header div.identity {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  flex-grow: 1;
+}
+header.main-header div.identity h1.logo {
+  margin: 0 0.5em 0 1.5rem;
+}
+header.main-header div.identity h1.logo a span {
+  display: none;
+}
+header.main-header div.identity h1.logo a img {
+  display: block;
+  width: 10rem;
+}
+/* FOOTER */
+footer.main-footer,
+.page-coming-soon {
+  color: #ffffff;
+  background-color: #222222;
+  padding: 3rem 1.5rem;
+}
+footer.main-footer .two-columns,
+.page-coming-soon .two-columns {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+}
+footer.main-footer .two-columns .column,
+.page-coming-soon .two-columns .column {
+  flex-basis: 100%;
+}
+footer.main-footer .two-columns .column h2,
+.page-coming-soon .two-columns .column h2 {
+  font-size: 2.3rem;
+}
+footer.main-footer .two-columns .column h3,
+.page-coming-soon .two-columns .column h3 {
+  font-size: 1.5rem;
+}
+footer.main-footer div.identity .logo,
+.page-coming-soon div.identity .logo {
+  margin: 0 0.5em 0 1.5rem;
+}
+footer.main-footer div.identity .logo img,
+.page-coming-soon div.identity .logo img {
+  display: block;
+  width: 10rem;
+}
+footer.main-footer h2,
+.page-coming-soon h2 {
+  font-size: 1.5rem;
+  color: #FEF288;
+  font-weight: 500;
+}
+footer.main-footer h3,
+.page-coming-soon h3 {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+footer.main-footer a,
+.page-coming-soon a {
+  text-decoration: underline;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+footer.main-footer div.subscription-form,
+.page-coming-soon div.subscription-form {
+  color: #222222;
+  background-color: #FEF288;
+  padding: 3rem 1.5rem;
+  margin: 3rem 0;
+}
+footer.main-footer div.subscription-form:before,
+.page-coming-soon div.subscription-form:before {
+  content: "\e90a";
+  font-family: "icomoon";
+  font-size: 3rem;
+}
+footer.main-footer div.subscription-form h4,
+.page-coming-soon div.subscription-form h4 {
+  font-size: 1.5rem;
+}
+footer.main-footer div.subscription-form p,
+.page-coming-soon div.subscription-form p {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+footer.main-footer div.subscription-form .mailchimp-form,
+.page-coming-soon div.subscription-form .mailchimp-form {
+  /*.content__gdpr {
+				margin: 1rem 0;
+				font-weight: 500;
+				.mc-field-group {
+					label {
+						display: block;
+						margin: .5rem 0;
+						input {
+							margin-right: .5rem;
+						}
+					}
+				}
+			}*/
+}
+footer.main-footer div.subscription-form .mailchimp-form input[type="submit"],
+.page-coming-soon div.subscription-form .mailchimp-form input[type="submit"] {
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #222222;
+  border: 2px solid #222222;
+  border-radius: 10px;
+  background-color: #222222;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+}
+footer.main-footer div.subscription-form span.icon-email,
+.page-coming-soon div.subscription-form span.icon-email {
+  display: block;
+  position: relative;
+  font-size: 1.1rem;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  margin-top: 3rem;
+  padding-left: 3rem;
+}
+footer.main-footer div.subscription-form span.icon-email:before,
+.page-coming-soon div.subscription-form span.icon-email:before {
+  font-family: "icomoon";
+  font-size: 2.3rem;
   position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+  left: 0;
+  z-index: 1;
+  margin-right: 0.5rem;
 }
-/*
- * Extends the .sr-only class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-.sr-only.focusable:active,
-.sr-only.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+footer.main-footer div.subscription-form span.icon-email a,
+.page-coming-soon div.subscription-form span.icon-email a {
+  text-decoration: none;
+  color: #222222;
 }
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-.invisible {
-  visibility: hidden;
+footer.main-footer div.subscription-form span.icon-email a:hover,
+.page-coming-soon div.subscription-form span.icon-email a:hover {
+  text-decoration: underline;
 }
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-.clearfix::before,
-.clearfix::after {
-  content: " ";
-  display: table;
+footer.main-footer div.so-me,
+.page-coming-soon div.so-me {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  padding: 3rem 0;
 }
-.clearfix::after {
-  clear: both;
+footer.main-footer div.so-me a.icon,
+.page-coming-soon div.so-me a.icon {
+  position: relative;
+  font-size: 3rem;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 0.5rem;
 }
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-  pre {
-    white-space: pre-wrap !important;
-  }
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-  /*
-   * Printing Tables:
-   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
-  thead {
-    display: table-header-group;
-  }
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+footer.main-footer div.so-me a.icon:first-child,
+.page-coming-soon div.so-me a.icon:first-child {
+  margin-left: 0;
 }
 /*# sourceMappingURL=main.css.map */
