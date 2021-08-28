@@ -557,10 +557,9 @@ footer.main-footer div.so-me a.icon:first-child,
   }
   .page-coming-soon .two-columns .column:nth-child(2) {
     margin-top: -6rem;
-    height: calc(100vh - 15rem);
   }
   .page-coming-soon .two-columns .column:nth-child(3) {
-    bottom: 4.4rem;
+    bottom: 9rem;
     padding: 0 7.5rem;
   }
 }

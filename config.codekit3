@@ -63,7 +63,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/css\/block-mw-page-cover.css",
+      "oAP" : "\/blocks\/block-mw-page-cover.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -85,26 +85,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/browserconfig.xml",
-      "oF" : 0
-    },
-    "\/css\/full.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/css\/full-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/css\/full.css.map" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/css\/full.css.map",
       "oF" : 0
     },
     "\/css\/full.less" : {
@@ -134,7 +114,7 @@
       "iI" : 0,
       "ma" : 1,
       "mS" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/css\/icomoon.css",
       "oF" : 0,
       "oS" : 0,
@@ -142,26 +122,6 @@
       "rwU" : 0,
       "sI" : 0,
       "sU" : 0
-    },
-    "\/css\/main.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/css\/main-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/css\/main.css.map" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/css\/main.css.map",
-      "oF" : 0
     },
     "\/css\/main.less" : {
       "aP" : 0,
@@ -206,12 +166,12 @@
       "co" : 0,
       "ft" : 16,
       "ma" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/css\/normalize-min.css",
       "oF" : 0,
       "pg" : 0
     },
-    "\/css\/style.css" : {
+    "\/css\/page.css" : {
       "aP" : 1,
       "bl" : 0,
       "ci" : 0,
@@ -219,17 +179,35 @@
       "ft" : 16,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/css\/style-min.css",
+      "oAP" : "\/css\/page-min.css",
       "oF" : 0,
       "pg" : 0
     },
-    "\/css\/style.css.map" : {
+    "\/css\/page.css.map" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/css\/style.css.map",
+      "oAP" : "\/css\/page.css.map",
       "oF" : 0
+    },
+    "\/css\/page.less" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "eJ" : 0,
+      "ft" : 1,
+      "iI" : 0,
+      "ma" : 1,
+      "mS" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/page.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "rwU" : 0,
+      "sI" : 0,
+      "sU" : 0
     },
     "\/css\/variables.less" : {
       "aP" : 0,
@@ -660,6 +638,14 @@
       "oF" : 0,
       "pg" : 0
     },
+    "\/style.css.map" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/style.css.map",
+      "oF" : 0
+    },
     "\/style.less" : {
       "aP" : 0,
       "bl" : 0,
@@ -670,7 +656,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/css\/style.css",
+      "oAP" : "\/style.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -714,7 +700,7 @@
   "projectAttributes" : {
     "creationDate" : 651690037.31669402,
     "displayValue" : "mindworks-2",
-    "displayValueWasSetByUser" : 0,
+    "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-verd",
     "iconImageWasSetByUser" : 0
   },
@@ -2591,7 +2577,7 @@
       "autoOutputPathRelativePath" : "..\/css",
       "autoOutputPathReplace1" : "less",
       "autoOutputPathReplace2" : "css",
-      "autoOutputPathStyle" : 2,
+      "autoOutputPathStyle" : 0,
       "cssoStyle" : 0,
       "enableJavascript" : 0,
       "mathStyle" : 0,
