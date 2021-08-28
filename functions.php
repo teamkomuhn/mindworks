@@ -81,7 +81,8 @@
 
         //Check if files exist
         if ( file_exists( $css_file_dir ) ) {
-            wp_enqueue_style( $template_name, $css_file_uri );
+            wp_register_style( $template_name, $css_file_uri, false, false, 'screen' );
+            wp_enqueue_style( $template_name );
         }
     }
 
