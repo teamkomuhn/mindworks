@@ -75,17 +75,12 @@ footer.main-footer .two-columns .column,
 }
 footer.main-footer .two-columns .column:nth-child(2),
 .page-coming-soon .two-columns .column:nth-child(2) {
-  /*position: absolute;
-				right: 0;
-
-				padding: @x-spacing 0 0 0;
-				height: 100%;*/
   background-color: #FEF288;
 }
 footer.main-footer .two-columns .column:nth-child(3),
 .page-coming-soon .two-columns .column:nth-child(3) {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 0.3rem;
   left: 0;
 }
 footer.main-footer h2,
