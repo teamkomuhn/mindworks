@@ -58,12 +58,12 @@
         // REGISTER
             /// CSS
             /// JS
-            wp_register_script( 'script_min', THEME_DIR . '/js/script-min.js', array(), '1.0.0', true );
+            wp_register_script( 'script_min', get_template_directory_uri() . '/js/script-min.js', array(), '1.0.0', true );
 
         // ENQUEUE
             /// CSS
             /// JS
-            wp_enqueue_style( 'style', THEME_DIR . '/style.css' );
+            wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css' );
 
             wp_enqueue_script( 'custom-script' );
 
