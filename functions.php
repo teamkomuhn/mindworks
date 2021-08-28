@@ -1,6 +1,7 @@
 <?php
 
-    define("THEME_DIR", get_template_directory_uri());
+    define('THEME_DIR', get_template_directory_uri());
+
     // REMOVE GENERATOR META TAG
     remove_action('wp_head', 'wp_generator');
 
@@ -18,9 +19,8 @@
     add_filter('language_attributes', 'add_opengraph_doctype');
 
     //Lets add Open Graph Meta Info
-
     function insert_fb_in_head() {
-        
+
         global $post;
         $custom = get_post_custom($post->ID);
         $opengraph_meta = $custom['opengraph_meta'][0];
@@ -47,26 +47,44 @@
             $default_image= "https://mindworkslab.org/wp-content/uploads/cover-og.png"; //replace this with a default image on your server or an image in your media library
             echo '<meta property="og:image" content="' . $default_image . '"/>';
         }
-        echo "";
+        echo '';
     }
     add_action( 'wp_head', 'insert_fb_in_head', 5 );
 
+
     // ENQUEUE SCRIPTS and STYLES - Add custom CSS and JS
-        
     function enqueue_scripts_styles() {
-        
+
         // REGISTER
             /// CSS
             /// JS
-            wp_register_script( 'script_min', THEME_DIR . '/js/script-min.js', array(), '1.0.0', true );
-        
+            wp_register_script( 'script_min', get_template_directory_uri() . '/js/script-min.js', array(), '1.0.0', true );
+
         // ENQUEUE
             /// CSS
             /// JS
+            wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css' );
+
             wp_enqueue_script( 'custom-script' );
-            
+
     }
     add_action( 'wp_enqueue_scripts', 'enqueue_scripts_styles' );
+
+    //Load CSS and JS based on template name
+    function enqueue_template_files() {
+        //Get template name
+        global $template;
+        $template_name = basename( $template, '.php' );
+        //Get files path + uri
+        $css_file_dir = get_stylesheet_directory() . '/css/' . $template_name . '.css';
+        $css_file_uri = get_stylesheet_directory_uri() . '/css/' . $template_name . '.css';
+
+        //Check if files exist
+        if ( file_exists( $css_file_dir ) ) {
+            wp_enqueue_style( $template_name, $css_file_uri );
+        }
+    }
+
 
     // REMOVE WP EMOJI
     remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -103,7 +121,7 @@
         wp_dequeue_style( 'wp-block-library' );
         wp_dequeue_style( 'wp-block-library-theme' );
         wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
-    } 
+    }
     add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 
 
@@ -116,7 +134,7 @@
         register_nav_menu('my-custom-menu',__( 'My Custom Menu' ));
     }
     add_action( 'init', 'new_custom_menu' );
-    
+
     function add_additional_class_on_li($classes, $item, $args) {
         if(isset($args->add_li_class)) {
             $classes[] = $args->add_li_class;
