@@ -109,8 +109,24 @@
 		"iI": 0,
 		"ma": 1,
 		"mS": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/css/full.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
+	"/css/icomoon.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 1,
+		"oAP": "/css/icomoon.css",
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
@@ -143,8 +159,24 @@
 		"iI": 0,
 		"ma": 1,
 		"mS": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/css/main.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
+	"/css/mixins.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 1,
+		"oAP": "/css/mixins.css",
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
@@ -156,10 +188,60 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/css/normalize-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"/css/page.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/page-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/page.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/css/page.css.map",
+		"oF": 0
+		},
+	"/css/page.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 0,
+		"oAP": "/css/page.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
+	"/css/variables.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 1,
+		"oAP": "/css/variables.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
 		},
 	"/doc/css.md": {
 		"cB": 0,
@@ -321,6 +403,48 @@
 		"oAP": "/favicon.ico",
 		"oF": 0
 		},
+	"/fonts/icomoon/icomoon.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/icomoon/icomoon.eot",
+		"oF": 0
+		},
+	"/fonts/icomoon/icomoon.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/fonts/icomoon/icomoon.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/fonts/icomoon/icomoon.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/icomoon/icomoon.ttf",
+		"oF": 0
+		},
+	"/fonts/icomoon/icomoon.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/icomoon/icomoon.woff",
+		"oF": 0
+		},
+	"/fonts/icomoon/Mindworks Website.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/fonts/icomoon/Mindworks Website-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"/footer.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -373,6 +497,34 @@
 		"oA": 0,
 		"oAP": "/img/.gitignore",
 		"oF": 0
+		},
+	"/img/favicon.ico": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/img/favicon.ico",
+		"oF": 0
+		},
+	"/img/logo-black.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/logo-black.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/img/logo-white.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/logo-white.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
 		},
 	"/index.php": {
 		"cB": 0,
@@ -499,6 +651,30 @@
 		"oAP": "/style-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"/style.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/style.css.map",
+		"oF": 0
+		},
+	"/style.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 0,
+		"oAP": "/style.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
 		},
 	"/tile-wide.png": {
 		"ft": 32768,
