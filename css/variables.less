@@ -2,8 +2,19 @@
 
 @desktop: ~"only screen and (min-width: 1025px)";
 
-// Dynamic global (root) variables
+
+// Dynamic global (root) variables -> CSS only
 :root {
+
+    // Sizes
+    --topbar-height:         12rem;
+
+    // Spacing
+    --spacing-x:             1.5rem;
+    --spacing-y:             3rem;
+    --spacing-half:          3.75rem;
+
+    // Colors
     --color-black:        #222222;
     --color-white:        #ffffff;
 
@@ -19,21 +30,21 @@
 
     --color-coral:         #FFA693;
 
-    --spacing-x:             1.5rem;
-    --spacing-y:             1.5rem;
-    --spacing-half:          3.75rem;
-
-    --font-size-h1:          4rem;
+    // Fonts
+    --font-size-title:       4rem;
+    --font-size-h1:          3rem;
     --font-size-h2:          3rem;
     --font-size-h3:          2.3rem;
     --font-size-h4:          1.5rem;
-    --font-size-h5:          1.5rem;
+    --font-size-h5:          1.2rem;
     --font-size-p:           1.1rem;
 
+    //
     @media @desktop {
         --spacing-x:         7.5rem;
         --spacing-y:         7.5rem;
 
+        --font-size-title:   6rem;
         --font-size-h1:      6rem;
         --font-size-h2:      4rem;
         --font-size-h3:      3rem;
@@ -42,7 +53,7 @@
 }
 
 //
-// @desktop:             ~"only screen and (min-width: 1025px)";
+
 //
 // @color-black:         #222222;
 // @color-white:         #ffffff;
@@ -72,7 +83,7 @@
 // @font-size-h5: 		1.5rem;
 // @font-size-p: 		1.1rem;
 
-
+// @desktop:             ~"only screen and (min-width: 1025px)";
 // @x-spacing: 	    7.5rem;
 // @y-spacing: 	    7.5rem;
 //
