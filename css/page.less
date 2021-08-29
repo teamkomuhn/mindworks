@@ -1,5 +1,21 @@
 /* page.php styles */
-header.main-header {
+.page {
 
-	// height: 1000px;
+    main {
+        padding: 0 var(--spacing-x);
+
+        // Paragraphs added directly to page
+        > p {
+            // font-size: var(--font-size-p);
+            margin: 0;
+            padding-bottom: 1em;
+
+            & strong {
+
+                font-size: 1.2em;
+                font-weight: 500;
+            }
+        }
+        
+    }
 }

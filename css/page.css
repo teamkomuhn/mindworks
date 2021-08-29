@@ -1,2 +1,13 @@
 /* page.php styles */
+.page main {
+  padding: 0 var(--spacing-x);
+}
+.page main > p {
+  margin: 0;
+  padding-bottom: 1em;
+}
+.page main > p strong {
+  font-size: 1.2em;
+  font-weight: 500;
+}
 /*# sourceMappingURL=page.css.map */
