@@ -7,19 +7,38 @@ Author URI: www.komuhn.co
 Version: 2.0
 */
 @import "css/normalize.css";
+:root {
+  --color-black: #222222;
+  --color-white: #ffffff;
+  --color-grey-light: #EEEEEE;
+  --color-grey: #DDDDDD;
+  --color-grey-dark: #CCCCCC;
+  --color-grey-darker: #666666;
+  --color-yellow-light: #FEF288;
+  --color-yellow: #FAFF00;
+  --color-blue-light: #DBEFEE;
+  --color-coral: #FFA693;
+  --spacing-x: 1.5rem;
+  --spacing-y: 1.5rem;
+  --spacing-half: 3.75rem;
+  --font-size-h1: 4rem;
+  --font-size-h2: 3rem;
+  --font-size-h3: 2.3rem;
+  --font-size-h4: 1.5rem;
+  --font-size-h5: 1.5rem;
+  --font-size-p: 1.1rem;
+}
+@media only screen and (min-width: 1025px) {
+  :root {
+    --spacing-x: 7.5rem;
+    --spacing-y: 7.5rem;
+    --font-size-h1: 6rem;
+    --font-size-h2: 4rem;
+    --font-size-h3: 3rem;
+    --font-size-h4: 2.3rem;
+  }
+}
 /* MIXINS */
-.clearfix {
-  *zoom: 1;
-}
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-  line-height: 0;
-}
-.clearfix:after {
-  clear: both;
-}
 /* ICOMOON */
 @font-face {
   font-family: 'icomoon';
@@ -159,18 +178,17 @@ textarea {
   resize: vertical;
 }
 /* ==========================================================================
-	 Browser Upgrade Prompt
-	 ========================================================================== */
+Browser Upgrade Prompt
+========================================================================== */
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
-  color: #222222;
+  color: var(--color-black);
   padding: 0.2em 0;
 }
 /* ==========================================================================
-     Author's custom styles
-     ========================================================================== */
-/* VARIABLES */
+Author's custom styles
+========================================================================== */
 /* HELPERS */
 .hide {
   display: none;
@@ -183,10 +201,22 @@ textarea {
   text-align: center;
   margin: 0 auto;
 }
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
 /* BODY AND MAIN*/
 body {
   font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222222;
+  color: var(--color-black);
   overflow-x: hidden;
 }
 /* TYPOGRAPHY */
@@ -213,15 +243,15 @@ h4 strong {
   font-weight: 700;
 }
 p {
-  font-size: 1.1rem;
+  font-size: var(--font-size-p);
   line-height: 1.5;
 }
 p.footnote {
-  color: #666666;
+  color: var(--color-grey-darker);
   font-size: 1rem;
 }
 p a {
-  color: #222222;
+  color: var(--color-black);
 }
 /* BUTTONS */
 /* FORMS */
@@ -230,15 +260,15 @@ input[type="name"],
 input[type="email"],
 textarea {
   -webkit-appearance: none;
-  width: calc(100% - 2*1.5rem - 4px);
-  color: #222222;
-  font-size: 1.1rem;
+  width: calc(100% - 2*var(--spacing-x) - 4px);
+  color: var(--color-black);
+  font-size: var(--font-size-p);
   font-weight: 500;
   line-height: 1.5;
-  border: 2px solid #222222;
+  border: 2px solid var(--color-black);
   border-radius: 10px;
   background-color: transparent;
-  padding: 1rem 1.5rem;
+  padding: 1rem var(--spacing-x);
   margin: 0.5rem 0;
 }
 input[type="text"]::placeholder,
@@ -246,7 +276,7 @@ input[type="name"]::placeholder,
 input[type="email"]::placeholder,
 textarea::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #222222;
+  color: var(--color-black);
   opacity: 1;
   /* Firefox */
 }
@@ -255,14 +285,14 @@ input[type="name"]:-ms-input-placeholder,
 input[type="email"]:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: #222222;
+  color: var(--color-black);
 }
 input[type="text"]:-ms-input-placeholder,
 input[type="name"]:-ms-input-placeholder,
 input[type="email"]:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   /* Microsoft Edge */
-  color: #222222;
+  color: var(--color-black);
 }
 /* GRID */
 .two-columns {
@@ -305,7 +335,7 @@ header.main-header div.identity {
   flex-grow: 1;
 }
 header.main-header div.identity h1.logo {
-  margin: 0 0.5em 0 1.5rem;
+  margin: 0 0.5em 0 var(--spacing-x);
 }
 header.main-header div.identity h1.logo a span {
   display: none;
@@ -315,10 +345,10 @@ header.main-header div.identity h1.logo a img {
   width: 10rem;
 }
 header.main-header.bgWhite {
-  background-color: #ffffff;
+  background-color: var(--color-white);
 }
 header.main-header.bgBlack {
-  background-color: #222222;
+  background-color: var(--color-black);
 }
 header.main-header.bgBlack div.identity {
   top: 3rem;
@@ -330,13 +360,13 @@ header.main-header.bgBlack div.identity h1.logo a img {
 /* FOOTER */
 footer.main-footer,
 .page-coming-soon {
-  color: #ffffff;
-  background-color: #222222;
-  padding: 3rem 1.5rem;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  padding: var(--spacing-y) var(--spacing-x);
 }
 footer.main-footer div.identity .logo,
 .page-coming-soon div.identity .logo {
-  margin: 0 0.5em 0 1.5rem;
+  margin: 0 0.5em 0 var(--spacing-x);
 }
 footer.main-footer div.identity .logo img,
 .page-coming-soon div.identity .logo img {
@@ -345,43 +375,43 @@ footer.main-footer div.identity .logo img,
 }
 footer.main-footer h2,
 .page-coming-soon h2 {
-  font-size: 2.3rem;
-  color: #FEF288;
+  font-size: var(--font-size-h3);
+  color: var(--color-yellow-light);
   font-weight: 500;
 }
 footer.main-footer h3,
 .page-coming-soon h3 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h4);
   font-weight: 300;
 }
 footer.main-footer a,
 .page-coming-soon a {
   text-decoration: underline;
-  color: #ffffff;
-  font-size: 1.1rem;
+  color: var(--color-white);
+  font-size: var(--font-size-p);
   font-weight: 500;
 }
 footer.main-footer div.subscription-form,
 .page-coming-soon div.subscription-form {
-  color: #222222;
-  background-color: #FEF288;
-  padding: 3rem 1.5rem;
-  margin: 3rem -1.5rem;
+  color: var(--color-black);
+  background-color: var(--color-yellow-light);
+  padding: var(--spacing-y) var(--spacing-x);
+  margin: var(--spacing-y) -var(--spacing-x);
 }
 footer.main-footer div.subscription-form:before,
 .page-coming-soon div.subscription-form:before {
   content: "\e90a";
   font-family: "icomoon";
-  font-size: 3rem;
+  font-size: var(--font-size-h2);
 }
 footer.main-footer div.subscription-form h4,
 .page-coming-soon div.subscription-form h4 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h4);
 }
 footer.main-footer div.subscription-form p,
 .page-coming-soon div.subscription-form p {
-  font-size: 1.1rem;
-  margin-bottom: 3rem;
+  font-size: var(--font-size-p);
+  margin-bottom: var(--spacing-y);
 }
 footer.main-footer div.subscription-form .mailchimp-form,
 .page-coming-soon div.subscription-form .mailchimp-form {
@@ -402,30 +432,30 @@ footer.main-footer div.subscription-form .mailchimp-form,
 footer.main-footer div.subscription-form .mailchimp-form input[type="submit"],
 .page-coming-soon div.subscription-form .mailchimp-form input[type="submit"] {
   width: 100%;
-  font-size: 1.1rem;
+  font-size: var(--font-size-p);
   font-weight: 600;
   line-height: 1.5;
-  color: #222222;
-  border: 2px solid #222222;
+  color: var(--color-black);
+  border: 2px solid var(--color-black);
   border-radius: 10px;
-  background-color: #222222;
-  color: #ffffff;
-  padding: 1rem 1.5rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 1rem var(--spacing-x);
   margin-top: 1rem;
 }
 footer.main-footer div.subscription-form span.icon-email,
 .page-coming-soon div.subscription-form span.icon-email {
   display: block;
   position: relative;
-  font-size: 1.1rem;
+  font-size: var(--font-size-p);
   font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  margin-top: 3rem;
+  margin-top: var(--spacing-y);
   padding-left: 3rem;
 }
 footer.main-footer div.subscription-form span.icon-email:before,
 .page-coming-soon div.subscription-form span.icon-email:before {
   font-family: "icomoon";
-  font-size: 2.3rem;
+  font-size: var(--font-size-h3);
   position: absolute;
   left: 0;
   z-index: 1;
@@ -434,7 +464,7 @@ footer.main-footer div.subscription-form span.icon-email:before,
 footer.main-footer div.subscription-form span.icon-email a,
 .page-coming-soon div.subscription-form span.icon-email a {
   text-decoration: none;
-  color: #222222;
+  color: var(--color-black);
 }
 footer.main-footer div.subscription-form span.icon-email a:hover,
 .page-coming-soon div.subscription-form span.icon-email a:hover {
@@ -452,13 +482,13 @@ footer.main-footer div.so-me,
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
-  padding: 0 0 1.5rem 0;
+  padding: 0 0 var(--spacing-x) 0;
 }
 footer.main-footer div.so-me a.icon,
 .page-coming-soon div.so-me a.icon {
   position: relative;
-  font-size: 3rem;
-  color: #ffffff;
+  font-size: var(--font-size-h2);
+  color: var(--color-white);
   text-decoration: none;
   margin: 0 0.5rem;
 }
@@ -466,16 +496,15 @@ footer.main-footer div.so-me a.icon:first-child,
 .page-coming-soon div.so-me a.icon:first-child {
   margin-left: 0;
 }
+/* BLOCKS */
 @media only screen and (min-width: 1025px) {
-  /* VARIABLES */
   /* BODY AND MAIN*/
   body {
     max-width: 1440px;
-    margin: 0 auto;
-    background-color: #EEEEEE;
+    background-color: var(--color-grey-light);
   }
   main {
-    background-color: #ffffff;
+    background-color: var(--color-white);
   }
   /* TYPOGRAPHY */
   h1,
@@ -487,7 +516,7 @@ footer.main-footer div.so-me a.icon:first-child,
     line-height: 1.5;
   }
   p {
-    font-size: 1.1rem;
+    font-size: var(--font-size-p);
     line-height: 1.5;
   }
   /* BUTTONS */
@@ -506,10 +535,10 @@ footer.main-footer div.so-me a.icon:first-child,
   }
   /* HEADER */
   header.main-header div.identity h1.logo {
-    margin: 0 0.5em 0 7.5rem;
+    margin: 0 0.5em 0 var(--spacing-x);
   }
   header.main-header.bgBlack {
-    background-color: #222222;
+    background-color: var(--color-black);
   }
   header.main-header.bgBlack div.identity {
     top: 6rem;
@@ -525,12 +554,12 @@ footer.main-footer div.so-me a.icon:first-child,
   }
   footer.main-footer .two-columns .column,
   .page-coming-soon .two-columns .column {
-    padding: 7.5rem 7.5rem;
-    flex: 0 0 calc(50% - 2*7.5rem);
+    padding: var(--spacing-y) var(--spacing-x);
+    flex: 0 0 calc(50% - 2*var(--spacing-y));
   }
   footer.main-footer .two-columns .column:nth-child(2),
   .page-coming-soon .two-columns .column:nth-child(2) {
-    background-color: #FEF288;
+    background-color: var(--color-yellow-light);
   }
   footer.main-footer .two-columns .column:nth-child(3),
   .page-coming-soon .two-columns .column:nth-child(3) {
@@ -540,11 +569,11 @@ footer.main-footer div.so-me a.icon:first-child,
   }
   footer.main-footer h2,
   .page-coming-soon h2 {
-    font-size: 2.3rem;
+    font-size: var(--font-size-h4);
   }
   footer.main-footer h3,
   .page-coming-soon h3 {
-    font-size: 1.5rem;
+    font-size: var(--font-size-h5);
   }
   footer.main-footer div.subscription-form,
   .page-coming-soon div.subscription-form {
@@ -560,7 +589,7 @@ footer.main-footer div.so-me a.icon:first-child,
   }
   .page-coming-soon .two-columns .column:nth-child(3) {
     bottom: 9rem;
-    padding: 0 7.5rem;
+    padding: 0 var(--spacing-x);
   }
 }
 /*# sourceMappingURL=style.css.map */

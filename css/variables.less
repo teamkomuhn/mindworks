@@ -1,15 +1,82 @@
-//Variables
-@color-black:         #222222;
-@color-white:         #ffffff;
+// VARIABLES
 
-@color-grey-light:    #EEEEEE;
-@color-grey:          #DDDDDD;
-@color-grey-dark:     #CCCCCC;
-@color-grey-darker:   #666666;
+@desktop: ~"only screen and (min-width: 1025px)";
 
-@color-yellow-light:  #FEF288;
-@color-yellow:        #FAFF00;
+// Dynamic global (root) variables
+:root {
+    --color-black:        #222222;
+    --color-white:        #ffffff;
 
-@color-blue-light:    #DBEFEE;
+    --color-grey-light:    #EEEEEE;
+    --color-grey:          #DDDDDD;
+    --color-grey-dark:     #CCCCCC;
+    --color-grey-darker:   #666666;
 
-@color-coral:         #FFA693;
+    --color-yellow-light:  #FEF288;
+    --color-yellow:        #FAFF00;
+
+    --color-blue-light:    #DBEFEE;
+
+    --color-coral:         #FFA693;
+
+    --spacing-x:             1.5rem;
+    --spacing-y:             1.5rem;
+    --spacing-half:          3.75rem;
+
+    --font-size-h1:          4rem;
+    --font-size-h2:          3rem;
+    --font-size-h3:          2.3rem;
+    --font-size-h4:          1.5rem;
+    --font-size-h5:          1.5rem;
+    --font-size-p:           1.1rem;
+
+    @media @desktop {
+        --spacing-x:         7.5rem;
+        --spacing-y:         7.5rem;
+
+        --font-size-h1:      6rem;
+        --font-size-h2:      4rem;
+        --font-size-h3:      3rem;
+        --font-size-h4:      2.3rem;
+    }
+}
+
+//
+// @desktop:             ~"only screen and (min-width: 1025px)";
+//
+// @color-black:         #222222;
+// @color-white:         #ffffff;
+//
+// @color-grey-light:    #EEEEEE;
+// @color-grey:          #DDDDDD;
+// @color-grey-dark:     #CCCCCC;
+// @color-grey-darker:   #666666;
+//
+// @color-yellow-light:  #FEF288;
+// @color-yellow:        #FAFF00;
+//
+// @color-blue-light:    #DBEFEE;
+//
+// @color-coral:         #FFA693;
+//
+//
+// @x-spacing:     	1.5rem;
+// @y-spacing:     	3rem;
+//
+// @half-spacing:      3.75rem;
+//
+// @font-size-h1: 		4rem;
+// @font-size-h2: 		3rem;
+// @font-size-h3: 		2.3rem;
+// @font-size-h4: 		1.5rem;
+// @font-size-h5: 		1.5rem;
+// @font-size-p: 		1.1rem;
+
+
+// @x-spacing: 	    7.5rem;
+// @y-spacing: 	    7.5rem;
+//
+// @font-size-h1: 		6rem;
+// @font-size-h2: 		4rem;
+// @font-size-h3: 		3rem;
+// @font-size-h4: 		2.3rem;

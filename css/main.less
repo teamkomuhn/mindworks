@@ -85,32 +85,20 @@ textarea {
 
 
 /* ==========================================================================
-	 Browser Upgrade Prompt
-	 ========================================================================== */
+Browser Upgrade Prompt
+========================================================================== */
 
-   .browserupgrade {
+.browserupgrade {
     margin: 0.2em 0;
     background: #ccc;
-    color: @color-black;
+    color: var(--color-black);
     padding: 0.2em 0;
-  }
-
-  /* ==========================================================================
-     Author's custom styles
-     ========================================================================== */
-
-/* VARIABLES */
-
-@x-spacing:     	1.5rem;
-@y-spacing:     	3rem;
-
-@font-size-h1: 		4rem;
-@font-size-h2: 		3rem;
-@font-size-h3: 		2.3rem;
-@font-size-h4: 		1.5rem;
-@font-size-p: 		1.1rem;
+}
 
 
+/* ==========================================================================
+Author's custom styles
+========================================================================== */
 
 /* HELPERS */
 
@@ -128,13 +116,35 @@ textarea {
 	margin: 0 auto;
 }
 
+.clearfix {
+    *zoom: 1;
+
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+        // Fixes Opera/contenteditable bug:
+        // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+        line-height: 0;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.icon-size (@width) {
+    width: @width;
+    height: @width;
+}
+
 
 
 /* BODY AND MAIN*/
 
 body {
 	font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: @color-black;
+	color: var(--color-black);
 	overflow-x: hidden;
 }
 
@@ -162,16 +172,16 @@ h2, h3, h4 {
 }
 
 p {
-	font-size: @font-size-p;
+	font-size: var(--font-size-p);
 	line-height: 1.5;
 
 	&.footnote {
-		color: @color-grey-darker;
+		color: var(--color-grey-darker);
 		font-size: 1rem;
 	}
 
 	a {
-		color: @color-black;
+		color: var(--color-black);
 	}
 
 }
@@ -183,28 +193,28 @@ p {
 
 input[type="text"], input[type="name"], input[type="email"], textarea {
 	-webkit-appearance: none;
-	width: calc(100% - 2*@x-spacing - 4px);
-	color: @color-black;
-	font-size: @font-size-p;
+	width: calc(100% - 2*var(--spacing-x) - 4px);
+	color: var(--color-black);
+	font-size: var(--font-size-p);
 	font-weight: 500;
 	line-height: 1.5;
-	border: 2px solid @color-black;
+	border: 2px solid var(--color-black);
 	border-radius: 10px;
 	background-color: transparent;
-	padding: 1rem @x-spacing;
+	padding: 1rem var(--spacing-x);
 	margin: .5rem 0;
 
 	&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-		color: @color-black;
+		color: var(--color-black);
 		opacity: 1; /* Firefox */
 	  }
 
 	  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-		color: @color-black;
+		color: var(--color-black);
 	}
 
 	&:-ms-input-placeholder { /* Microsoft Edge */
-		color: @color-black;
+		color: var(--color-black);
 	}
 }
 
@@ -240,7 +250,7 @@ header.main-header {
 		flex-grow: 1; //Push navigation to the right
 
 		h1.logo {
-			margin: 0 0.5em 0 @x-spacing;
+			margin: 0 0.5em 0 var(--spacing-x);
 			a {
 				span {
 					display: none;
@@ -254,11 +264,11 @@ header.main-header {
 	}
 
 	&.bgWhite {
-		background-color: @color-white;
+		background-color: var(--color-white);
 	}
 
 	&.bgBlack {
-		background-color: @color-black;
+		background-color: var(--color-black);
 
 		div.identity {
 
@@ -282,14 +292,14 @@ header.main-header {
 /* FOOTER */
 
 footer.main-footer, .page-coming-soon {
-	color: @color-white;
-	background-color: @color-black;
-	padding: @y-spacing @x-spacing;
+	color: var(--color-white);
+	background-color: var(--color-black);
+	padding: var(--spacing-y) var(--spacing-x);
 
 	div.identity {
 
 		.logo {
-			margin: 0 0.5em 0 @x-spacing;
+			margin: 0 0.5em 0 var(--spacing-x);
 
 			img {
 				display: block;
@@ -301,42 +311,42 @@ footer.main-footer, .page-coming-soon {
 	}
 
 	h2 {
-		font-size: @font-size-h3;
-		color: @color-yellow-light;
+		font-size: var(--font-size-h3);
+		color: var(--color-yellow-light);
 		font-weight: 500;
 	}
 
 	h3 {
-		font-size: @font-size-h4;
+		font-size: var(--font-size-h4);
 		font-weight: 300;
 	}
 
 	a {
 		text-decoration: underline;
-		color: @color-white;
-		font-size: @font-size-p;
+		color: var(--color-white);
+		font-size: var(--font-size-p);
 		font-weight: 500;
 	}
 
 	div.subscription-form {
-		color: @color-black;
-		background-color: @color-yellow-light;
-		padding: @y-spacing @x-spacing;
-		margin: @y-spacing -@x-spacing;
+		color: var(--color-black);
+		background-color: var(--color-yellow-light);
+		padding: var(--spacing-y) var(--spacing-x);
+		margin: var(--spacing-y) -var(--spacing-x);
 
 		&:before {
 			content: "\e90a";
 			font-family: "icomoon";
-			font-size: @font-size-h2;
+			font-size: var(--font-size-h2);
 		}
 
 		h4 {
-			font-size: @font-size-h4;
+			font-size: var(--font-size-h4);
 		}
 
 		p {
-			font-size: @font-size-p;
-			margin-bottom: @y-spacing;
+			font-size: var(--font-size-p);
+			margin-bottom: var(--spacing-y);
 		}
 
 
@@ -344,15 +354,15 @@ footer.main-footer, .page-coming-soon {
 
 			input[type="submit"] {
 				width: 100%;
-				font-size: @font-size-p;
+				font-size: var(--font-size-p);
 				font-weight: 600;
 				line-height: 1.5;
-				color: @color-black;
-				border: 2px solid @color-black;
+				color: var(--color-black);
+				border: 2px solid var(--color-black);
 				border-radius: 10px;
-				background-color: @color-black;
-				color: @color-white;
-				padding: 1rem @x-spacing;
+				background-color: var(--color-black);
+				color: var(--color-white);
+				padding: 1rem var(--spacing-x);
 				margin-top: 1rem;
 			}
 
@@ -374,14 +384,14 @@ footer.main-footer, .page-coming-soon {
 		span.icon-email {
 			display: block;
 			position: relative;
-			font-size: @font-size-p;
+			font-size: var(--font-size-p);
 			font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif!important;
-			margin-top: @y-spacing;
+			margin-top: var(--spacing-y);
 			padding-left: 3rem;
 
 			&:before {
 				font-family: "icomoon";
-				font-size: @font-size-h3;
+				font-size: var(--font-size-h3);
 				position: absolute;
 				left: 0;
 				z-index: 1;
@@ -390,7 +400,7 @@ footer.main-footer, .page-coming-soon {
 
 			a {
 				text-decoration: none;
-				color: @color-black;
+				color: var(--color-black);
 				&:hover {
 					text-decoration: underline;
 				}
@@ -406,14 +416,14 @@ footer.main-footer, .page-coming-soon {
 		.flex-flow(row nowrap);
 		.align-items(center);
 
-		padding: 0 0 @x-spacing 0;
+		padding: 0 0 var(--spacing-x) 0;
 
 		a.icon {
 
 			position: relative;
 			text-decoration: none;
-			font-size: @font-size-h2;
-			color: @color-white;
+			font-size: var(--font-size-h2);
+			color: var(--color-white);
 			text-decoration: none;
 			margin: 0 .5rem;
 
@@ -426,3 +436,7 @@ footer.main-footer, .page-coming-soon {
 	}
 
 }
+
+/* BLOCKS */
+
+.block {}

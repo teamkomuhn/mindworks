@@ -1,26 +1,6 @@
 /* MIXINS */
 
-.clearfix {
-    *zoom: 1;
 
-    &:before,
-    &:after {
-        content: " ";
-        display: table;
-        // Fixes Opera/contenteditable bug:
-        // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
-        line-height: 0;
-    }
-
-    &:after {
-        clear: both;
-    }
-}
-
-.icon-size (@width) {
-    width: @width;
-    height: @width;
-}
 
 .flex-center(@vh: column) {
     .flex-display();
@@ -28,6 +8,8 @@
     .justify-content(center);
     .align-items(center);
 }
+
+
 
 // --------------------------------------------------
 // Flexbox LESS mixins

@@ -1,28 +1,13 @@
-/* VARIABLES */
-
-@x-spacing: 	7.5rem;
-@y-spacing: 	7.5rem;
-
-@half-spacing:  3.75rem;
-
-@font-size-h1: 		6rem;
-@font-size-h2: 		4rem;
-@font-size-h3: 		3rem;
-@font-size-h4: 		2.3rem;
-@font-size-h5: 		1.5rem;
-@font-size-p: 		1.1rem;
-
-
 /* BODY AND MAIN*/
 
 body {
 	max-width: 1440px;
-	margin: 0 auto;
-	background-color: @color-grey-light;
+	// margin: 0 auto;
+	background-color: var(--color-grey-light);
 }
 
 main {
-	background-color: @color-white;
+	background-color: var(--color-white);
 }
 
 
@@ -37,7 +22,7 @@ h3, h4 {
 }
 
 p {
-	font-size: @font-size-p;
+	font-size: var(--font-size-p);
 	line-height: 1.5;
 }
 
@@ -68,13 +53,13 @@ header.main-header {
 	div.identity {
 
 		h1.logo {
-			margin: 0 0.5em 0 @x-spacing;
+			margin: 0 0.5em 0 var(--spacing-x);
 		}
 
 	}
 
 	&.bgBlack {
-		background-color: @color-black;
+		background-color: var(--color-black);
 
 		div.identity {
 
@@ -96,11 +81,11 @@ footer.main-footer, .page-coming-soon{
 		position: relative;
 
 		.column {
-			
-			padding: @y-spacing @x-spacing;
-			flex: 0 0 calc(50% - 2*@y-spacing);
+
+			padding: var(--spacing-y) var(--spacing-x);
+			flex: 0 0 calc(50% - 2*var(--spacing-y));
 			&:nth-child(2) {
-				background-color: @color-yellow-light;
+				background-color: var(--color-yellow-light);
 			}
 
 			&:nth-child(3) {
@@ -114,11 +99,11 @@ footer.main-footer, .page-coming-soon{
 	}
 
 	h2 {
-		font-size: @font-size-h4;
+		font-size: var(--font-size-h4);
 	}
 
 	h3 {
-		font-size: @font-size-h5;
+		font-size: var(--font-size-h5);
 	}
 
 	div.subscription-form {
@@ -141,12 +126,12 @@ footer.main-footer, .page-coming-soon{
 
 			&:nth-child(2) {
 				margin-top: -6rem;
-				
+
 			}
 
 			&:nth-child(3) {
 				bottom: 9rem;
-				padding: 0 @x-spacing;
+				padding: 0 var(--spacing-x);
 			}
 
 		}
