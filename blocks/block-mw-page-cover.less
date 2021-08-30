@@ -88,6 +88,7 @@ header.block.cover {
             justify-content: center;
 
             h2.title {
+                font-size: 15vw;
                 color: var(--color-white);
                 margin: 0;
                 padding: 0;
@@ -100,12 +101,6 @@ header.block.cover {
                     font-size: 1rem;
                 }
             }
-
-            // div.time {
-            //     margin-top: auto;
-            //     background-color: pink;
-            // }
-
         }
 
         img {
@@ -128,18 +123,28 @@ header.block.cover {
     }
 
 }
+
 // DESKTOP
 @media @desktop {
 header.block.cover {
 
     flex-flow: row nowrap;
-
-    div.cover-title, figure.cover-image { // Flex columns
+    // Flex columns
+    div.cover-title, figure.cover-image {
         flex: 1 1 50%;
         height: 50vw;
-        max-height: 680px;
-        max-width: 680px;
+        max-height: 620px;
+        max-width: 620px;
     }
+
+    figure.cover-image {
+        div.cover-title-meta {
+            h2.title {
+                font-size: 4.5vw;
+            }
+        }
+    }
+
 
     div.cover-title {
         padding: 0 var(--spacing-x);
@@ -163,4 +168,4 @@ header.block.cover {
     }
 
 }
-}
+}// Desktop styles

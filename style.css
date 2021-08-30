@@ -515,6 +515,7 @@ footer.main-footer div.so-me a.icon:first-child,
   }
   main {
     background-color: var(--color-white);
+    max-width: 1000px;
   }
   /* TYPOGRAPHY */
   /* BUTTONS */
