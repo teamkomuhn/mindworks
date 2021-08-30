@@ -1,5 +1,7 @@
+//
+@import "../css/variables-static";
 
-.block.cover {
+header.block.cover {
 
     display: flex;
     flex-flow: column wrap;
@@ -15,7 +17,7 @@
 
         h1 {
             margin: 0;
-            padding: 0 0 .5em 0;
+            padding: 0;
 
             font-size: var(--font-size-h1);
 
@@ -28,7 +30,7 @@
         }
 
         div.time {
-            margin: 0 0 var(--spacing-y) 0;
+            margin: 0;
 
             // background-color: pink;
 
@@ -50,7 +52,7 @@
                 }
 
                 & span.readtime {
-                    margin-left: var(--spacing-x);
+                    margin-left: 1.5rem;
                     &:before {
 						content: '\e902';
 					}
@@ -70,19 +72,17 @@
     figure.cover-image {
         order: 0;
         display: inherit;
-
         position: relative;
-
         overflow: hidden;
-        width: 100%;
+
         // height: calc(100vh - var(--topbar-height));
         height: 100vw;
-        padding: 0;
+        padding: 0 var(--spacing-x);
         margin: 0;
 
         div.cover-title-meta {
             z-index: 999;
-            padding: var(--spacing-y) var(--spacing-x);
+
             display: flex;
             flex-flow: column wrap;
             justify-content: center;
@@ -127,4 +127,40 @@
         }
     }
 
+}
+// DESKTOP
+@media @desktop {
+header.block.cover {
+
+    flex-flow: row nowrap;
+
+    div.cover-title, figure.cover-image { // Flex columns
+        flex: 1 1 50%;
+        height: 50vw;
+        max-height: 680px;
+        max-width: 680px;
+    }
+
+    div.cover-title {
+        padding: 0 var(--spacing-x);
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+
+        h1 {
+            margin-top: var(--spacing-y);
+        }
+
+        div.time {
+            margin-bottom: var(--spacing-y);
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+    }
+
+}
 }

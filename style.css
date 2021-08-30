@@ -35,10 +35,10 @@ Version: 2.0
     --spacing-x: 7.5rem;
     --spacing-y: 7.5rem;
     --font-size-title: 6rem;
-    --font-size-h1: 6rem;
-    --font-size-h2: 4rem;
-    --font-size-h3: 3rem;
-    --font-size-h4: 2.3rem;
+    --font-size-h1: 3rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 2rem;
+    --font-size-h4: 2rem;
   }
 }
 /* MIXINS */
@@ -511,7 +511,6 @@ footer.main-footer div.so-me a.icon:first-child,
 @media only screen and (min-width: 1025px) {
   /* BODY AND MAIN*/
   body {
-    max-width: 1440px;
     background-color: var(--color-grey-light);
   }
   main {

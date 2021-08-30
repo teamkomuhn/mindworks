@@ -21,11 +21,11 @@ if ( block_field('background-brightness', false) === true ) {
 
     <div class="cover-title">
         <h1><span><?php print $part; ?> </span> <?php print $page_title; ?></h1>
+        <h3><?php block_field( 'page-description' ); ?></h3>
         <div class="time">
             <time datetime="<?php echo get_the_date('l jS \of F Y h:i:s A'); ?>" pubdate="pubdate" class="date"><?php print get_the_date('F j, Y'); ?></time>
             <span class="readtime">[20 min read]</span>
         </div>
-        <h3><?php block_field( 'page-description' ); ?></h3>
     </div>
 
     <figure class="cover-image">

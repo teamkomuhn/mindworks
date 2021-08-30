@@ -191,6 +191,40 @@
 		"sI": 0,
 		"sU": 0
 		},
+	"/css/variables-static.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/variables-static-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/variables-static.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/css/variables-static.css.map",
+		"oF": 0
+		},
+	"/css/variables-static.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 1,
+		"oAP": "/css/variables-static.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
 	"/css/variables.less": {
 		"aP": 0,
 		"bl": 0,
