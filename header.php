@@ -16,7 +16,7 @@
 
 	<?php wp_head(); ?>
 
-	<link rel='shortcut icon' href='/img/favicon.ico' type='image/x-icon' />
+	<link rel='shortcut icon' href='<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.ico' type='image/x-icon' />
 
 	<meta name="description" content="<?php bloginfo( 'description' ); ?>">
 	<meta name="author" content="Komuhn">
@@ -47,7 +47,7 @@
 			<h1 class="logo">
 				<a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" alt="Logo">
 					<span><?php bloginfo('name'); ?></span>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/logo-<?php echo $logoColor; ?>.svg" alt="<?php bloginfo('name'); ?>" />
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-<?php echo $logoColor; ?>.svg" alt="<?php bloginfo('name'); ?>" />
 				</a>
 			</h1>
 		</div>

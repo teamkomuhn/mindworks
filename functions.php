@@ -55,17 +55,12 @@
     // ENQUEUE SCRIPTS and STYLES - Add custom CSS and JS
     function enqueue_scripts_styles() {
 
-        // REGISTER
-            /// CSS
-            /// JS
-            wp_register_script( 'script_min', get_template_directory_uri() . '/js/script-min.js', array(), '1.0.0', true );
-
         // ENQUEUE
             /// CSS
+            wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css' );
             /// JS
-            wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css' );
-
-            wp_enqueue_script( 'custom-script' );
+            // enqueue the script
+            wp_enqueue_script( 'custom_js', get_template_directory_uri() . '/js/script-min.js' );
 
     }
     add_action( 'wp_enqueue_scripts', 'enqueue_scripts_styles' );
