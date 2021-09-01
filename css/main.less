@@ -150,6 +150,10 @@ body {
 
 
 /* TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
 
 h1 {
 	font-weight: 500;
@@ -174,6 +178,23 @@ h2, h3, h4, h5 {
     font-size: var(--font-size-title);
     font-weight: 600;
     line-height: 1;
+}
+
+.sub-title {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 300;
+
+    span& {
+        display: block;
+    }
+}
+
+hgroup {
+    &.reverse {
+        display: flex;
+        flex-flow: column-reverse nowrap;
+    }
 }
 
 p {
@@ -444,4 +465,9 @@ footer.main-footer, .page-coming-soon {
 
 /* BLOCKS */
 
-.block {}
+.block {
+    .dark {
+        background-color: var(--color-black);
+        color: var(--color-white);
+    }
+}

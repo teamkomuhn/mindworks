@@ -57,18 +57,36 @@
 
         // REGISTER
             /// CSS
+            wp_register_style( 'style', get_template_directory_uri() . '/style.css' );
+
             /// JS
-            wp_register_script( 'script_min', get_template_directory_uri() . '/js/script-min.js', array(), '1.0.0', true );
+            wp_register_script( 'script_min', get_template_directory_uri() . '/js/main-min.js', array(), '1.0.0', true );
 
         // ENQUEUE
             /// CSS
-            /// JS
-            wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css' );
+            wp_enqueue_style( 'style');
 
-            wp_enqueue_script( 'custom-script' );
+            /// JS
+            wp_enqueue_script( 'jquery' );
+            wp_enqueue_script( 'script_min' );
+
 
     }
     add_action( 'wp_enqueue_scripts', 'enqueue_scripts_styles' );
+    //
+    function move_jquery_into_footer( $wp_scripts ) {
+
+        if( is_admin() ) {
+            return;
+        }
+
+        $wp_scripts->add_data( 'jquery', 'group', 1 );
+        $wp_scripts->add_data( 'jquery-core', 'group', 1 );
+        $wp_scripts->add_data( 'jquery-migrate', 'group', 1 );
+    }
+    add_action( 'wp_default_scripts', 'move_jquery_into_footer' );
+
+
 
     //Load CSS and JS based on template name
     function enqueue_template_files() {
@@ -78,12 +96,19 @@
         //Get files path + uri
         $css_file_dir = get_stylesheet_directory() . '/css/' . $template_name . '.css';
         $css_file_uri = get_stylesheet_directory_uri() . '/css/' . $template_name . '.css';
+        $js_file_dir = get_stylesheet_directory() . '/js/' . $template_name . '-min.js';
+        $js_file_uri = get_stylesheet_directory_uri() . '/js/' . $template_name . '-min.js';
 
-        //Check if files exist
+        //Check if files exist and if then enqueue
         if ( file_exists( $css_file_dir ) ) {
             wp_register_style( $template_name, $css_file_uri, false, false, 'screen' );
             wp_enqueue_style( $template_name );
         }
+        if ( file_exists( $js_file_dir ) ) {
+            wp_register_script( $template_name, $js_file_uri, array ('jquery'), false, true );
+            wp_enqueue_script( $template_name );
+        }
+
     }
 
 

@@ -1,0 +1,83 @@
+section.block.expanding-content {
+  overflow: hidden;
+  padding: var(--spacing-y) var(--spacing-x) 0;
+  margin: auto calc(-1 * var(--spacing-x)) var(--spacing-y);
+  background-color: pink;
+}
+section.block.expanding-content > header {
+  padding-bottom: var(--spacing-y);
+}
+section.block.expanding-content > header hgroup {
+  padding-bottom: 2em;
+}
+section.block.expanding-content > article {
+  position: relative;
+  background-color: var(--color-grey);
+  padding: var(--spacing-y) var(--spacing-x) 0;
+  margin: auto calc(-1 * var(--spacing-x));
+  transition: background-color 0.3s;
+}
+section.block.expanding-content > article > header {
+  padding-bottom: 120px;
+}
+section.block.expanding-content > article > header h1 {
+  padding-bottom: 0.5em;
+}
+section.block.expanding-content > article > p {
+  padding-bottom: 1em;
+}
+section.block.expanding-content > article > section {
+  padding: var(--spacing-y) var(--spacing-x) calc(var(--spacing-y) * 2);
+  margin: auto calc(-1 * var(--spacing-x));
+}
+section.block.expanding-content > article > section > header {
+  padding-bottom: 2em;
+}
+section.block.expanding-content > article > section > header h1 {
+  padding-bottom: 0.5em;
+}
+section.block.expanding-content > article > section > article {
+  padding-bottom: 1em;
+}
+section.block.expanding-content > article > section > article h2 {
+  padding-bottom: 0.5em;
+}
+section.block.expanding-content > article div.menu {
+  position: absolute;
+  bottom: var(--spacing-y);
+  display: flex;
+  flex-flow: row nowrap;
+  width: calc(100vw - (var(--spacing-x) * 2));
+}
+section.block.expanding-content > article div.menu.expand button {
+  background-color: transparent;
+  border: 0.1rem solid var(--color-black);
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--color-black);
+  line-height: 2.3em;
+  padding: 0 1em;
+  text-align: center;
+  flex: 1 1 50%;
+  border-radius: 0.2em;
+}
+section.block.expanding-content > article div.menu.expand button:first-of-type {
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+section.block.expanding-content > article div.menu.expand button:last-of-type {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+section.block.expanding-content > article.expanded > header {
+  padding-bottom: 2em;
+}
+section.block.expanding-content > article:hover {
+  background-color: var(--color-grey-light);
+}
+/*# sourceMappingURL=block-mw-expanding-content.css.map */

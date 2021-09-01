@@ -33,6 +33,48 @@
 		"oAP": "/_index.html",
 		"oF": 0
 		},
+	"/blocks/block-mw-expanding-content.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-expanding-content-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/blocks/block-mw-expanding-content.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-expanding-content.css.map",
+		"oF": 0
+		},
+	"/blocks/block-mw-expanding-content.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-expanding-content.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
+	"/blocks/block-mw-expanding-content.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-expanding-content.php",
+		"oF": 0
+		},
 	"/blocks/block-mw-page-cover.css": {
 		"aP": 1,
 		"bl": 0,
@@ -532,6 +574,28 @@
 		"oAP": "/index.php",
 		"oF": 0
 		},
+	"/js/_page.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/_page-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/main-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/main-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/js/main.js": {
 		"bF": 0,
 		"ft": 64,
@@ -539,6 +603,28 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/js/main-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/page-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/page-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/page.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/page-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0

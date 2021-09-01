@@ -223,6 +223,16 @@ body {
   overflow-x: hidden;
 }
 /* TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
 h1 {
   font-weight: 500;
   line-height: 1.1;
@@ -252,6 +262,18 @@ h5 strong {
   font-size: var(--font-size-title);
   font-weight: 600;
   line-height: 1;
+}
+.sub-title {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 300;
+}
+span.sub-title {
+  display: block;
+}
+hgroup.reverse {
+  display: flex;
+  flex-flow: column-reverse nowrap;
 }
 p {
   font-size: var(--font-size-p);
@@ -508,6 +530,10 @@ footer.main-footer div.so-me a.icon:first-child,
   margin-left: 0;
 }
 /* BLOCKS */
+.block .dark {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
 @media only screen and (min-width: 1025px) {
   /* BODY AND MAIN*/
   body {
@@ -519,6 +545,10 @@ footer.main-footer div.so-me a.icon:first-child,
   }
   /* TYPOGRAPHY */
   /* BUTTONS */
+  button,
+  .button {
+    transition: 0.3s;
+  }
   /* FORMS */
   /* GRID */
   .two-columns {
