@@ -5,7 +5,7 @@
                 <div class="column">
                     <div class="identity">
                         <a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" alt="Logo">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/logo-white.svg" alt="<?php bloginfo('name'); ?>" />
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-white.svg" alt="<?php bloginfo('name'); ?>" />
                         </a>
                     </div>
                     <h2>Giving changemakers the power to understand how the human mind works.</h2>

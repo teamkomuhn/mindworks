@@ -640,6 +640,17 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/js/script.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/script-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/js/vendor/modernizr-3.11.2.min.js": {
 		"bF": 0,
 		"ft": 64,

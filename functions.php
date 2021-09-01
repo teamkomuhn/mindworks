@@ -57,7 +57,7 @@
 
         // REGISTER
             /// CSS
-            wp_register_style( 'style', get_template_directory_uri() . '/style.css' );
+            wp_register_style( 'style', get_stylesheet_directory() . '/style.css' );
 
             /// JS
             wp_register_script( 'script_min', get_template_directory_uri() . '/js/main-min.js', array(), '1.0.0', true );
