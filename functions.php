@@ -44,7 +44,7 @@
         if( $opengraph_meta ) {
             echo '<meta property="og:image" content="' . $opengraph_meta . '"/>';
         } else {
-            $default_image= "https://mindworkslab.org/wp-content/uploads/cover-og.png"; //replace this with a default image on your server or an image in your media library
+            $default_image= get_template_directorry_uri() . "/uploads/cover-og.png"; //replace this with a default image on your server or an image in your media library
             echo '<meta property="og:image" content="' . $default_image . '"/>';
         }
         echo '';
@@ -57,7 +57,7 @@
 
         // REGISTER
             /// CSS
-            wp_register_style( 'style', get_stylesheet_directory() . '/style.css' );
+            wp_register_style( 'style', get_stylesheet_directory_uri() . '/style.css' );
 
             /// JS
             wp_register_script( 'script_min', get_template_directory_uri() . '/js/main-min.js', array(), '1.0.0', true );
@@ -94,10 +94,10 @@
         global $template;
         $template_name = basename( $template, '.php' );
         //Get files path + uri
-        $css_file_dir = get_stylesheet_directory() . '/css/' . $template_name . '.css';
+        $css_file_dir = get_stylesheet_directory_uri() . '/css/' . $template_name . '.css';
         $css_file_uri = get_stylesheet_directory_uri() . '/css/' . $template_name . '.css';
-        $js_file_dir = get_stylesheet_directory() . '/js/' . $template_name . '-min.js';
-        $js_file_uri = get_stylesheet_directory_uri() . '/js/' . $template_name . '-min.js';
+        $js_file_dir = get_template_directory_uri() . '/js/' . $template_name . '-min.js';
+        $js_file_uri = get_template_directory_uri() . '/js/' . $template_name . '-min.js';
 
         //Check if files exist and if then enqueue
         if ( file_exists( $css_file_dir ) ) {
