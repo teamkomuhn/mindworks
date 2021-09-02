@@ -261,7 +261,7 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 /* HEADER */
 
 header.main-header {
-	height: 6rem;
+	height: 8rem;
 
 	.flex-display();
 	.flex-flow(row nowrap);
@@ -298,13 +298,10 @@ header.main-header {
 
 		div.identity {
 
-			top: 3rem;
-			position: relative;
-
 			h1.logo {
 				a {
 					img {
-						width: 15rem;
+						width: 12rem;
 					}
 				}
 			}
@@ -329,7 +326,7 @@ footer.main-footer, .page-coming-soon {
 
 			img {
 				display: block;
-				width: 15rem;
+				width: 12rem;
 			}
 
 		}
@@ -337,13 +334,14 @@ footer.main-footer, .page-coming-soon {
 	}
 
 	h2 {
-		font-size: var(--font-size-h3);
+		margin: calc(var(--spacing-y)*2) 0 var(--spacing-y) 0;
+		font-size: 1.6rem;
 		color: var(--color-yellow-light);
 		font-weight: 500;
 	}
 
 	h3 {
-		font-size: var(--font-size-h4);
+		font-size: 1.2rem;
 		font-weight: 300;
 	}
 
@@ -355,10 +353,11 @@ footer.main-footer, .page-coming-soon {
 	}
 
 	div.subscription-form {
+
 		color: var(--color-black);
 		background-color: var(--color-yellow-light);
 		padding: var(--spacing-y) var(--spacing-x);
-		margin: var(--spacing-y) -var(--spacing-x);
+		margin: calc(var(--spacing-y)*2) 0 var(--spacing-y) 0;
 
 		&:before {
 			content: "\e90a";
@@ -367,11 +366,13 @@ footer.main-footer, .page-coming-soon {
 		}
 
 		h4 {
-			font-size: var(--font-size-h4);
+			font-size: 1.6rem;
+			font-weight: 500;
+			margin: .5rem 0;
 		}
 
 		p {
-			font-size: var(--font-size-p);
+			font-size: 1.2rem;
 			margin-bottom: var(--spacing-y);
 		}
 
@@ -463,6 +464,13 @@ footer.main-footer, .page-coming-soon {
 
 }
 
+.page-coming-soon {
+
+	h2 {
+		margin: 0 0 var(--spacing-x) 0;
+	}
+}
+
 /* BLOCKS */
 
 .block {
@@ -470,4 +478,29 @@ footer.main-footer, .page-coming-soon {
         background-color: var(--color-black);
         color: var(--color-white);
     }
+}
+
+/* BLOCKS */
+
+.block-side-note {
+	display: none;
+	position: fixed;
+	top: calc(25% - var(--spacing-x));
+	left: 0;
+	z-index: 1;
+
+	margin: var(--spacing-y) var(--spacing-x);
+	width: calc(100% - 2*var(--spacing-x));
+	max-height: 50%;
+	overflow: auto;
+
+	background-color: var(--color-white);
+	border-radius: 4px;
+
+	p {
+		position: relative;
+		//background-color: red;
+		margin: 0 auto;
+	}
+
 }

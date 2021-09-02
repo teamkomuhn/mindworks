@@ -36,9 +36,11 @@
 		if (is_home() ) {
 			$logoColor = "white";
 			$bgColor = "bgBlack";
+			$maxWidth = "class="."maxWidth"."";
 		} else {
 			$logoColor = "black";
 			$bgColor = "bgWhite";
+			$maxWidth = "";
 		}
 	?>
 
@@ -63,4 +65,4 @@
 		</nav>
 	</header>
 	
-    <main>
+    <main <?php echo $maxWidth; ?>>
