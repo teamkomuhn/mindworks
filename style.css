@@ -653,6 +653,14 @@ footer.main-footer div.so-me a.icon:first-child,
     font-size: 2.3rem;
     margin: 2rem 0;
   }
+  footer.main-footer div.subscription-form p,
+  .page-coming-soon div.subscription-form p {
+    margin-bottom: var(--spacing-half);
+  }
+  footer.main-footer div.subscription-form span.icon-email,
+  .page-coming-soon div.subscription-form span.icon-email {
+    margin-top: var(--spacing-half);
+  }
   footer.main-footer div.so-me,
   .page-coming-soon div.so-me {
     padding: 0 0 calc(var(--spacing-x)/2) 0;
