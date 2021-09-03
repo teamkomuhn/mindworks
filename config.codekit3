@@ -217,6 +217,82 @@
       "oF" : 0,
       "pg" : 0
     },
+    "\/css\/page-index.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/page-index-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/css\/page-index.css.map" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/page-index.css.map",
+      "oF" : 0
+    },
+    "\/css\/page-index.less" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "eJ" : 0,
+      "ft" : 1,
+      "iI" : 0,
+      "ma" : 1,
+      "mS" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/page-index.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "rwU" : 0,
+      "sI" : 0,
+      "sU" : 0
+    },
+    "\/css\/page-scientific-insights.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/page-scientific-insights-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/css\/page-scientific-insights.css.map" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/page-scientific-insights.css.map",
+      "oF" : 0
+    },
+    "\/css\/page-scientific-insights.less" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "eJ" : 0,
+      "ft" : 1,
+      "iI" : 0,
+      "ma" : 1,
+      "mS" : 0,
+      "oA" : 0,
+      "oAP" : "\/css\/page-scientific-insights.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "rwU" : 0,
+      "sI" : 0,
+      "sU" : 0
+    },
     "\/css\/page.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -713,6 +789,22 @@
       "oF" : 0,
       "oO" : 0,
       "oS" : 1
+    },
+    "\/page-index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/page-index.php",
+      "oF" : 0
+    },
+    "\/page-scientific-insights.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/page-scientific-insights.php",
+      "oF" : 0
     },
     "\/page.php" : {
       "cB" : 0,

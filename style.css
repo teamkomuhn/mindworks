@@ -367,13 +367,14 @@ header.main-header div.identity {
   align-items: center;
   flex-grow: 1;
 }
-header.main-header div.identity h1.logo {
+header.main-header div.identity .logo {
   margin: 0 0.5em 0 var(--spacing-x);
+  display: block;
 }
-header.main-header div.identity h1.logo a span {
+header.main-header div.identity .logo span {
   display: none;
 }
-header.main-header div.identity h1.logo a img {
+header.main-header div.identity .logo img {
   display: block;
   width: 10rem;
 }
@@ -588,7 +589,7 @@ footer.main-footer div.so-me a.icon:first-child,
   }
   /* BLOCKS */
   /* HEADER */
-  header.main-header div.identity h1.logo a img {
+  header.main-header div.identity .logo img {
     width: 12rem;
   }
   header.main-header.bgBlack {

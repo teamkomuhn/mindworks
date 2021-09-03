@@ -51,12 +51,12 @@
 
 	<header class="main-header <?php echo $bgColor; ?>">
 		<div class="identity">
-			<h1 class="logo">
+			<?php if(is_home()) { echo '<h1>'; } else { echo '<h2>'; } ?>	
 				<a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" alt="Logo">
 					<span><?php bloginfo('name'); ?></span>
 					<img src="<?php echo get_template_directory_uri(); ?>/img/logo-<?php echo $logoColor; ?>.svg" alt="<?php bloginfo('name'); ?>" />
 				</a>
-			</h1>
+			<?php if(is_home()) { echo '</h1>'; } else { echo '</h2>'; } ?>	
 		</div>
 
 		<!--<nav class="main-nav" id="main-nav">
