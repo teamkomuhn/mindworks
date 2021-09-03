@@ -16,7 +16,7 @@
 
 	<?php wp_head(); ?>
 
-	<link rel='shortcut icon' href='<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.ico' type='image/x-icon' />
+	<link rel='shortcut icon' href='<?php echo get_template_directory_uri(); ?>/img/favicon.ico' type='image/x-icon' />
 
 	<meta name="description" content="<?php bloginfo( 'description' ); ?>">
 	<meta name="author" content="Komuhn">
@@ -33,10 +33,15 @@
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
 	<?php
-		if (is_home() ) {
+		if ( is_home() ) {
 			$logoColor = "white";
 			$bgColor = "bgBlack";
 			$maxWidth = "class="."maxWidth"."";
+		//} else if (is_page(array('thedisruptedmind','scientific-insights'))) {
+		} else if ( is_page( array(2,125) ) ) {
+			$logoColor = "black";
+			$bgColor = "bgWhite";
+			$maxWidth = "style='max-width:1440px;'";
 		} else {
 			$logoColor = "black";
 			$bgColor = "bgWhite";
@@ -49,7 +54,7 @@
 			<h1 class="logo">
 				<a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" alt="Logo">
 					<span><?php bloginfo('name'); ?></span>
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-<?php echo $logoColor; ?>.svg" alt="<?php bloginfo('name'); ?>" />
+					<img src="<?php echo get_template_directory_uri(); ?>/img/logo-<?php echo $logoColor; ?>.svg" alt="<?php bloginfo('name'); ?>" />
 				</a>
 			</h1>
 		</div>
