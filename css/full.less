@@ -21,6 +21,10 @@ main {
 
 /* FORMS */
 
+input[type="text"], input[type="name"], input[type="email"], textarea {
+	width: calc(100% - calc(var(--spacing-x)/2) - 4px);
+	padding: 1rem calc(var(--spacing-x)/4);
+}
 
 /* GRID */
 
@@ -31,28 +35,27 @@ main {
 
 }
 
-.column {
-	flex: 0 0 50%;
+/* BLOCKS */
 
+.block-side-note {
+	
 }
-
 
 /* HEADER */
 
 header.main-header {
-
 	div.identity {
-
-		h1.logo {
-
+		.logo {
+			img {
+				width: 12rem;
+			}
 		}
-
 	}
 
 	&.bgBlack {
+		background-color: var(--color-black);
 
 		div.identity {
-
 			top: 6rem;
 
 		}
@@ -72,16 +75,33 @@ footer.main-footer, .page-coming-soon{
 
 		.column {
 
-			padding: var(--spacing-y) var(--spacing-x);
-			flex: 0 0 calc(50% - 2*var(--spacing-y));
+			&:nth-child(1) {
+				padding: 0 var(--spacing-x);
+				flex: 0 0 52.5%;
+			}
+			
 			&:nth-child(2) {
 				background-color: var(--color-yellow-light);
+				flex: 0 0 1;
 			}
 
 			&:nth-child(3) {
+				padding: var(--spacing-y) var(--spacing-x);
 				position: absolute;
-				bottom: .3rem;
+				bottom: 2.4rem;
 				left: 0;
+			}
+
+		}
+
+	}
+	
+	div.identity {
+		margin: var(--spacing-y) 0;
+
+		.logo {
+			img {
+				width: 17rem;
 			}
 
 		}
@@ -89,7 +109,8 @@ footer.main-footer, .page-coming-soon{
 	}
 
 	h2 {
-		font-size: var(--font-size-h4);
+		margin: var(--spacing-y) 0 var(--spacing-y) 0;
+		font-size: 5rem;
 	}
 
 	h3 {
@@ -97,16 +118,37 @@ footer.main-footer, .page-coming-soon{
 	}
 
 	div.subscription-form {
-		margin: .9rem -1.5rem;
+		margin: var(--spacing-y) 0;
+
+		&:before {
+			font-size: var(--font-size-h1);
+		}
 
 		h4 {
-			font-size: 2rem;
-			margin-top: .5rem;
+			font-size: 2.3rem;
+			margin: 2rem 0;
+		}
+		p {
+			margin-bottom: var(--spacing-half);
+		}
+		span.icon-email {
+			margin-top: var(--spacing-half);
 		}
 
 	}
 
+	div.so-me {
+		padding: 0 0 calc(var(--spacing-x)/2) 0;
+	}
+
 }
+
+//To delete 
+.maxWidth {
+	max-width: none;
+}
+
+/* COMING SOON */
 
 .page-coming-soon {
 
@@ -114,17 +156,32 @@ footer.main-footer, .page-coming-soon{
 
 		.column {
 
+			&:nth-child(1) {
+				flex: 0 0 52%;
+				margin-top: -8rem;
+				padding-top: calc(var(--spacing-x)/2);
+				min-height: calc(100vh - 4rem);
+
+			}
 			&:nth-child(2) {
-				margin-top: -6rem;
+				margin-top: -8rem;
+				padding-top: calc(var(--spacing-x)/2);
+				min-height: calc(100vh - 4rem);
 
 			}
 
 			&:nth-child(3) {
-				bottom: 9rem;
+				flex: 0 0 48%;
+				bottom: 3.8rem;
 				padding: 0 var(--spacing-x);
 			}
 
 		}
+
+	}
+
+	div.subscription-form {
+		margin: 0;
 
 	}
 
