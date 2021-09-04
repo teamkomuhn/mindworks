@@ -26,19 +26,20 @@ header.block.cover div.cover-title div.time {
   font-weight: 300;
 }
 header.block.cover div.cover-title div.time:before {
-  font-family: 'icomoon';
   font-size: var(--font-size-p);
   vertical-align: top;
   margin-right: 0.5rem;
 }
 header.block.cover div.cover-title div.time time:before {
   content: '\e90a';
+  font-family: 'icomoon';
 }
 header.block.cover div.cover-title div.time span.readtime {
   margin-left: 1.5rem;
 }
 header.block.cover div.cover-title div.time span.readtime:before {
   content: '\e902';
+  font-family: 'icomoon';
 }
 header.block.cover div.cover-title h3 {
   font-size: var(--font-size-h4);
@@ -78,7 +79,9 @@ header.block.cover figure.cover-image img {
   display: block;
   padding: 0;
   margin: 0;
+  width: 100%;
   height: inherit;
+  object-fit: cover;
 }
 header.block.cover.light div.cover-title-meta h2.title {
   color: var(--color-black);

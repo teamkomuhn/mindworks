@@ -636,11 +636,12 @@ footer.main-footer div.so-me a.icon:first-child,
   footer.main-footer h2,
   .page-coming-soon h2 {
     margin: var(--spacing-y) 0 var(--spacing-y) 0;
-    font-size: 5rem;
+    font-size: 3.5rem;
   }
   footer.main-footer h3,
   .page-coming-soon h3 {
     font-size: var(--font-size-h5);
+    padding-right: var(--spacing-x);
   }
   footer.main-footer div.subscription-form,
   .page-coming-soon div.subscription-form {
