@@ -25,6 +25,7 @@ section.block.expanding-content {
     // .expandable
     > article {
         position: relative;
+        overflow: hidden;
         background-color: var(--color-grey);
         padding: var(--spacing-y) var(--spacing-x) calc( var(--spacing-y) * 2.5);
         margin: auto calc(-1 * var(--spacing-x)); // Counter the <main> left-right padding
@@ -72,6 +73,7 @@ section.block.expanding-content {
         div.menu {
             position: absolute;
             bottom: var(--spacing-y);
+            left: var(--spacing-x);
 
             display: flex;
             flex-flow: row nowrap;
@@ -144,12 +146,7 @@ section.block.expanding-content {
                             }
 
                             &::after {
-                                display: block;
                                 content: "Less ↑";
-                                // text-indent: 0;
-                                // line-height: 2.3em;
-                                // font-size: 1em;
-                                // display: block;
                             }
 
                         }
