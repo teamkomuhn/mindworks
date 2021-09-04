@@ -38,7 +38,7 @@
 			$bgColor = "bgBlack";
 			$maxWidth = "class="."maxWidth"."";
 		//} else if (is_page(array('thedisruptedmind','scientific-insights'))) {
-		} else if ( is_page( array(2,125) ) ) {
+		} else if ( is_page( array(250,252) ) ) {
 			$logoColor = "black";
 			$bgColor = "bgWhite";
 			$maxWidth = "style='max-width:1440px;'";
@@ -51,12 +51,12 @@
 
 	<header class="main-header <?php echo $bgColor; ?>">
 		<div class="identity">
-			<?php if(is_home()) { echo '<h1>'; } else { echo '<h2>'; } ?>	
+			<?php if(is_home()) { echo '<h1>'; } else { echo '<h2>'; } ?>
 				<a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" alt="Logo">
 					<span><?php bloginfo('name'); ?></span>
 					<img src="<?php echo get_template_directory_uri(); ?>/img/logo-<?php echo $logoColor; ?>.svg" alt="<?php bloginfo('name'); ?>" />
 				</a>
-			<?php if(is_home()) { echo '</h1>'; } else { echo '</h2>'; } ?>	
+			<?php if(is_home()) { echo '</h1>'; } else { echo '</h2>'; } ?>
 		</div>
 
 		<!--<nav class="main-nav" id="main-nav">
@@ -69,5 +69,5 @@
 		-->
 		</nav>
 	</header>
-	
+
     <main <?php echo $maxWidth; ?>>
