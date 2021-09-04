@@ -903,7 +903,7 @@
   }
   .page-scientific-insights .wp-block-group.intro {
     margin: 0 -7.5rem;
-    padding: 3rem 7.5rem;
+    padding: 0 7.5rem;
   }
   .page-scientific-insights .wp-block-group.index h2 {
     font-size: 4rem;
@@ -1059,7 +1059,7 @@
     font-size: 2.3rem;
   }
   .page-scientific-insights div.content {
-    padding: 7.5rem 7.5rem;
+    padding: 0 7.5rem 7.5rem 7.5rem;
   }
   .page-scientific-insights div.content h2 {
     font-size: 3rem;
