@@ -31,7 +31,7 @@ header.block.cover div.cover-title div.time:before {
   margin-right: 0.5rem;
 }
 header.block.cover div.cover-title div.time time:before {
-  content: '\e90a';
+  content: '\e903';
   font-family: 'icomoon';
 }
 header.block.cover div.cover-title div.time span.readtime {
