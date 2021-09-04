@@ -287,6 +287,11 @@ p a {
   color: var(--color-black);
 }
 /* BUTTONS */
+button,
+.button {
+  transition: 0.3s;
+  cursor: pointer;
+}
 /* FORMS */
 input[type="text"],
 input[type="name"],
@@ -545,10 +550,6 @@ footer.main-footer div.so-me a.icon:first-child,
   }
   /* TYPOGRAPHY */
   /* BUTTONS */
-  button,
-  .button {
-    transition: 0.3s;
-  }
   /* FORMS */
   /* GRID */
   .two-columns {

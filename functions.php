@@ -61,6 +61,7 @@
 
             /// JS
             wp_register_script( 'script_min', get_template_directory_uri() . '/js/main-min.js', array(), '1.0.0', true );
+            // wp_register_script( 'jquery_mobile', 'https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js', array( ' jquery' ), '1.4.5', true );
 
         // ENQUEUE
             /// CSS
@@ -68,6 +69,7 @@
 
             /// JS
             wp_enqueue_script( 'jquery' );
+            // wp_enqueue_script( 'jquery_mobile' );
             wp_enqueue_script( 'script_min' );
 
 

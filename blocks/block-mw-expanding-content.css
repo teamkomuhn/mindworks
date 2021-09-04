@@ -2,7 +2,6 @@ section.block.expanding-content {
   overflow: hidden;
   padding: var(--spacing-y) var(--spacing-x) 0;
   margin: auto calc(-1 * var(--spacing-x)) var(--spacing-y);
-  background-color: pink;
 }
 section.block.expanding-content > header {
   padding-bottom: var(--spacing-y);
@@ -13,12 +12,13 @@ section.block.expanding-content > header hgroup {
 section.block.expanding-content > article {
   position: relative;
   background-color: var(--color-grey);
-  padding: var(--spacing-y) var(--spacing-x) 0;
+  padding: var(--spacing-y) var(--spacing-x) calc(var(--spacing-y) * 2.5);
   margin: auto calc(-1 * var(--spacing-x));
   transition: background-color 0.3s;
+  will-change: height;
 }
 section.block.expanding-content > article > header {
-  padding-bottom: 120px;
+  padding-bottom: calc(var(--spacing-y) * 3);
 }
 section.block.expanding-content > article > header h1 {
   padding-bottom: 0.5em;
@@ -27,7 +27,7 @@ section.block.expanding-content > article > p {
   padding-bottom: 1em;
 }
 section.block.expanding-content > article > section {
-  padding: var(--spacing-y) var(--spacing-x) calc(var(--spacing-y) * 2);
+  padding: var(--spacing-y) var(--spacing-x);
   margin: auto calc(-1 * var(--spacing-x));
 }
 section.block.expanding-content > article > section > header {
@@ -48,6 +48,7 @@ section.block.expanding-content > article div.menu {
   display: flex;
   flex-flow: row nowrap;
   width: calc(100vw - (var(--spacing-x) * 2));
+  background-color: inherit;
 }
 section.block.expanding-content > article div.menu.expand button {
   background-color: transparent;
@@ -74,10 +75,46 @@ section.block.expanding-content > article div.menu.expand button:last-of-type {
   background-color: var(--color-black);
   color: var(--color-white);
 }
+section.block.expanding-content > article.expanded {
+  padding-bottom: 0;
+}
 section.block.expanding-content > article.expanded > header {
   padding-bottom: 2em;
 }
+section.block.expanding-content > article.expanded > section {
+  padding-bottom: calc(var(--spacing-y) * 2.5);
+  margin: auto calc(-1 * var(--spacing-x));
+}
+section.block.expanding-content > article.expanded div.menu {
+  background-color: transparent;
+}
+section.block.expanding-content > article.expanded div.menu.expand button:first-of-type {
+  color: var(--color-white);
+  border: 0.1rem solid var(--color-white);
+  border-radius: 0.2em;
+}
+section.block.expanding-content > article.expanded div.menu.expand button:first-of-type > span {
+  display: none;
+}
+section.block.expanding-content > article.expanded div.menu.expand button:first-of-type::after {
+  display: block;
+  content: "Less ↑";
+}
+section.block.expanding-content > article.expanded div.menu.expand button:last-of-type {
+  display: none;
+}
 section.block.expanding-content > article:hover {
   background-color: var(--color-grey-light);
+}
+@media only screen and (min-width: 1025px) {
+  section.block.expanding-content > article > section {
+    padding: var(--spacing-y) var(--spacing-x) calc(var(--spacing-y) * 1.5);
+  }
+  section.block.expanding-content > article div.menu {
+    width: auto;
+  }
+  section.block.expanding-content > article div.menu.expand button {
+    padding: 0 3em;
+  }
 }
 /*# sourceMappingURL=block-mw-expanding-content.css.map */

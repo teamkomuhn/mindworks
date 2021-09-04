@@ -12,14 +12,19 @@
         $( '.expandable' ).each( function( i ) {
             const block = $(this);
 
+            const block_padding = parseInt( block.parent().css( 'padding-top' ) );
             const header_height = block.children( 'header' ).height();
+            const header_padding = parseInt( block.children( 'header' ) .css( 'padding-bottom' ) );
             const block_height_closed = header_height; // + header_padding + block_padding;
+            const block_height = block.height() - header_padding - block_padding;
 
-            expandable_blocks_heights.push( block_height_closed );
-            block.height( expandable_blocks_heights[i] );
-            block.removeClass( 'expanded' );
 
+            expandable_blocks_heights.push( [ block_height, block_height_closed ] );
+
+
+            // TODO: Test without this
             if ( !blocks_are_set ) {
+                block.height( block_height_closed );
 
                 block.on(
                     'click', 'button.expand', function() {
@@ -28,8 +33,8 @@
                         if ( isExpanded ) {
 
                             block.animate({
-                                height: expandable_blocks_heights[i]
-                            }, 300, 'swing', function() {
+                                height: expandable_blocks_heights[i][1]
+                            }, 300, function() {
                                 // Animation complete.
                                 block.removeClass( 'expanded' );
                             });
@@ -38,17 +43,17 @@
                             block.addClass( 'expanded' );
 
                             block.animate({
-                                height: '100vh'
-                            }, 300, 'swing', function() {
+                                height: expandable_blocks_heights[i][0]
+                            }, 300, function() {
                                 // Animation complete.
-                                block.height( 'auto' );
+
                             });
 
                         }
 
+                        //
                         if ( $(this).hasClass( 'go-to' ) ) {
                             scrollTo( block.children( 'section' ) );
-
                         } else {
                             scrollTo( block );
                         }
@@ -61,12 +66,35 @@
 
         blocks_are_set = true;
 
-        // console.table( expandable_blocks_heights );
+        console.table( expandable_blocks_heights );
         // console.log( expandable_blocks_heights[0][0], expandable_blocks_heights[0][1] );
 
     }
     setExpandingBlocks();
 
+    //
+    // function resetBlocks() {
+    //
+    //     expandable_blocks_heights = [];
+    //
+    //     $( '.expandable' ).each( function( i ) {
+    //         const block = $(this);
+    //
+    //         const block_padding = parseInt( block.parent().css( 'padding-top' ) );
+    //         const header_height = block.children( 'header' ).height();
+    //         const header_padding = parseInt( block.children( 'header' ) .css( 'padding-bottom' ) );
+    //         const block_height_closed = header_height; // + header_padding + block_padding;
+    //         const block_height = block.height() - header_padding - block_padding;
+    //
+    //         // console.log( block_height );
+    //
+    //         expandable_blocks_heights.push( [ block_height, block_height_closed ] );
+    //         block.height( block_height_closed );
+    //
+    //     });
+    //
+    //     console.table( expandable_blocks_heights );
+    // }
 
     //
     function scrollTo( element ) {

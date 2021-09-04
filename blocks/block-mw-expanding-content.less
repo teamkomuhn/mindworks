@@ -6,8 +6,6 @@ section.block.expanding-content {
     padding: var(--spacing-y) var(--spacing-x) 0;
     margin: auto calc(-1 * var(--spacing-x)) var(--spacing-y); // Counter the <main> left-right padding
 
-    background-color: pink;
-
     > header {
         padding-bottom: var(--spacing-y);
 
@@ -28,19 +26,16 @@ section.block.expanding-content {
     > article {
         position: relative;
         background-color: var(--color-grey);
-        padding: var(--spacing-y) var(--spacing-x) 0;
+        padding: var(--spacing-y) var(--spacing-x) calc( var(--spacing-y) * 2.5);
         margin: auto calc(-1 * var(--spacing-x)); // Counter the <main> left-right padding
 
-        transition: background-color 0.3s; //
-
-        // max-height: inherit;
-        // transition-property: max-height;
-        // transition-duration: 0.5s;
-        // transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        // will-change: max-height;
+        transition: background-color 0.3s;
+        // transition: height .5s linear;
+        will-change: height;
 
         > header {
-            padding-bottom: 120px;
+
+            padding-bottom: calc(var(--spacing-y) * 3); // Adds space for the buttons
 
             h1 {
                 padding-bottom: 0.5em;
@@ -49,14 +44,14 @@ section.block.expanding-content {
 
             }
         }
-         > p {
+
+        > p {
             padding-bottom: 1em;
-         }
+        }
 
         > section { //Recommendations
-            padding: var(--spacing-y) var(--spacing-x) calc(var(--spacing-y) * 2);
+            padding: var(--spacing-y) var(--spacing-x);
             margin: auto calc(-1 * var(--spacing-x)); // Counter the <main> left-right padding
-
 
             > header {
                 padding-bottom: 2em;
@@ -82,6 +77,8 @@ section.block.expanding-content {
             flex-flow: row nowrap;
             width: calc( 100vw - (var(--spacing-x) * 2));
 
+            background-color: inherit;
+
 
             &.expand {
                 button {
@@ -94,7 +91,7 @@ section.block.expanding-content {
                     font-weight: 500;
                     color: var(--color-black);
                     line-height: 2.3em;
-                    padding: 0 1em;;
+                    padding: 0 1em;
                     text-align: center;
 
                     flex: 1 1 50%;
@@ -105,6 +102,7 @@ section.block.expanding-content {
                         border-right: 0;
                         border-top-right-radius: 0;
                         border-bottom-right-radius: 0;
+                        // transition: .3s;
                     }
                     &:last-of-type {
                         border-top-left-radius: 0;
@@ -117,16 +115,53 @@ section.block.expanding-content {
 
                 }
             }
-
         }
 
         &.expanded {
-            // max-height: 99999px !important;
+            padding-bottom: 0;
 
             > header {
                 padding-bottom: 2em;
             }
+
+            > section { //Recommendations
+                padding-bottom: calc( var(--spacing-y) * 2.5);
+                margin: auto calc(-1 * var(--spacing-x)); // Counter the <main> left-right padding
+            }
+
+            div.menu {
+                background-color: transparent;
+
+                &.expand {
+                    button {
+                        &:first-of-type {
+                            color: var(--color-white);
+                            border: .1rem solid var(--color-white);
+                            border-radius: 0.2em;
+
+                            > span {
+                                display: none;
+                            }
+
+                            &::after {
+                                display: block;
+                                content: "Less ↑";
+                                // text-indent: 0;
+                                // line-height: 2.3em;
+                                // font-size: 1em;
+                                // display: block;
+                            }
+
+                        }
+                        &:last-of-type {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
         }
+
         &:hover {
             background-color: var(--color-grey-light);
         }
@@ -142,6 +177,26 @@ section.block.expanding-content {
         > article {
             > header {
 
+            }
+
+            > section { //Recommendations
+                padding: var(--spacing-y) var(--spacing-x) calc( var(--spacing-y) * 1.5);
+            }
+
+            div.menu {
+                width: auto;
+
+                &.expand {
+                    button {
+                        padding: 0 3em;
+
+                        &:first-of-type {
+                        }
+
+                        &:last-of-type {
+                        }
+                    }
+                }
             }
         }
     }
