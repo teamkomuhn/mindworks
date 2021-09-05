@@ -11,6 +11,7 @@ section.block.expanding-content > header hgroup {
 }
 section.block.expanding-content > article {
   position: relative;
+  overflow: hidden;
   background-color: var(--color-grey);
   padding: var(--spacing-y) var(--spacing-x) calc(var(--spacing-y) * 2.5);
   margin: auto calc(-1 * var(--spacing-x));
@@ -45,6 +46,7 @@ section.block.expanding-content > article > section > article h2 {
 section.block.expanding-content > article div.menu {
   position: absolute;
   bottom: var(--spacing-y);
+  left: var(--spacing-x);
   display: flex;
   flex-flow: row nowrap;
   width: calc(100vw - (var(--spacing-x) * 2));
@@ -97,7 +99,6 @@ section.block.expanding-content > article.expanded div.menu.expand button:first-
   display: none;
 }
 section.block.expanding-content > article.expanded div.menu.expand button:first-of-type::after {
-  display: block;
   content: "Less ↑";
 }
 section.block.expanding-content > article.expanded div.menu.expand button:last-of-type {
