@@ -620,7 +620,7 @@
 }
 .page-scientific-insights div.content {
   margin: 0;
-  padding: 3rem 1.5rem;
+  padding: 0 1.5rem 3rem 1.5rem;
 }
 .page-scientific-insights div.content label {
   font-size: 1.5rem;

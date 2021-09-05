@@ -381,7 +381,7 @@ header.main-header div.identity .logo span {
 }
 header.main-header div.identity .logo img {
   display: block;
-  width: 10rem;
+  width: 11rem;
 }
 header.main-header.bgWhite {
   background-color: var(--color-white);
