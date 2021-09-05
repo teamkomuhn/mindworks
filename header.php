@@ -33,6 +33,8 @@
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
 	<?php
+		$pageIndexID = 125;
+
 		if ( is_home() ) {
 			$logoColor = "white";
 			$bgColor = "bgBlack";
@@ -66,8 +68,10 @@
 					'container'       => ''
 				));
 			*/?>
-		-->
-		</nav>
+		</nav>-->
+
+		<a href="<?php echo home_url('thedisruptedmind/'); ?>" id="backToIndex" title="The Disrupted Mind"> Back to Index</a>
+
 	</header>
 
     <main <?php echo $maxWidth; ?> id="main">
