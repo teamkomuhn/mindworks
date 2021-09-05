@@ -38,7 +38,7 @@
 			$bgColor = "bgBlack";
 			$maxWidth = "class="."maxWidth"."";
 		//} else if (is_page(array('thedisruptedmind','scientific-insights'))) {
-		} else if ( is_page( array(250,252) ) ) {
+		} else if ( is_page( array(125,2) ) ) {
 			$logoColor = "black";
 			$bgColor = "bgWhite";
 			$maxWidth = "style='max-width:1440px;'";
@@ -70,4 +70,4 @@
 		</nav>
 	</header>
 
-    <main <?php echo $maxWidth; ?>>
+    <main <?php echo $maxWidth; ?> id="main">

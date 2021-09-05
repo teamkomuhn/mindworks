@@ -31,37 +31,29 @@ header.block.cover {
 
         div.time {
             margin: 0;
-
-            // background-color: pink;
-
-            & > {
-                position: relative;
-				// font-size: .9rem;
-				font-weight: 300;
+            time.date, span.readtime {
+                // font-size: .9rem;
+                font-weight: 300;
                 &:before {
-					//font-family: 'icomoon';
-					font-size: var(--font-size-p);
-					vertical-align: top;
-					margin-right: .5rem;
-				}
-
-                & time {
-                    &:before {
-						content: '\e903';
-                        font-family: 'icomoon';
-					}
-                }
-
-                & span.readtime {
-                    margin-left: 1.5rem;
-                    &:before {
-						content: '\e902';
-                        font-family: 'icomoon';
-					}
+                    font-family: 'icomoon';
+                    font-size: var(--font-size-p);
+                    vertical-align: top;
+                    margin-right: .5rem;
                 }
             }
 
+            time {
+                &:before {
+                    content: '\e903';
+                }
+            }
 
+            span.readtime {
+                margin-left: 1.5rem;
+                &:before {
+                    content: '\e902';
+                }
+            }
 
         }
 

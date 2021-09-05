@@ -1,1 +1,1 @@
-jQuery;
+function readingTime(){var e=document.getElementById("main").innerText.trim().split(/\s+/).length,n=Math.ceil(e/175);document.getElementById("readtime").innerText=n}jQuery(".page")[0]&&readingTime();

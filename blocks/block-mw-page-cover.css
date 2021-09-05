@@ -22,24 +22,26 @@ header.block.cover div.cover-title h1 span {
 }
 header.block.cover div.cover-title div.time {
   margin: 0;
-  position: relative;
+}
+header.block.cover div.cover-title div.time time.date,
+header.block.cover div.cover-title div.time span.readtime {
   font-weight: 300;
 }
-header.block.cover div.cover-title div.time:before {
+header.block.cover div.cover-title div.time time.date:before,
+header.block.cover div.cover-title div.time span.readtime:before {
+  font-family: 'icomoon';
   font-size: var(--font-size-p);
   vertical-align: top;
   margin-right: 0.5rem;
 }
 header.block.cover div.cover-title div.time time:before {
   content: '\e903';
-  font-family: 'icomoon';
 }
 header.block.cover div.cover-title div.time span.readtime {
   margin-left: 1.5rem;
 }
 header.block.cover div.cover-title div.time span.readtime:before {
   content: '\e902';
-  font-family: 'icomoon';
 }
 header.block.cover div.cover-title h3 {
   font-size: var(--font-size-h4);

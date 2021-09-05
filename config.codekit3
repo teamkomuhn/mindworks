@@ -678,6 +678,17 @@
       "oAP" : "\/index.php",
       "oF" : 0
     },
+    "\/js\/_2_page.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/js\/_2_page-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/js\/_page.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -740,17 +751,6 @@
       "mi" : 1,
       "oA" : 0,
       "oAP" : "\/js\/plugins-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/js\/script.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/js\/script-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -1376,7 +1376,7 @@
     ],
     "esLintConfigFileHandlingType" : 0,
     "esLintECMAVersion" : 7,
-    "esLintEnvironmentsMask" : 1,
+    "esLintEnvironmentsMask" : 8193,
     "esLintRules" : {
       "accessor-pairs" : {
         "active" : 0,
