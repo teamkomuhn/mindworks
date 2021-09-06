@@ -75,19 +75,14 @@
 			*/?>
 		</nav>-->
 		<?php
-			/*with pages ID - > if ( home_url() || home_url('thedisruptedmind/') ) {
-			if ( is_page( array(125,2,155) ) ) {
+			/* with pages ID - > */
+			if ( is_page( array(2,155) )  ) {
 				$buttonText = 'Back to Index';
 			} else {
 				$buttonText = 'Check our latest work';
-			}*/
-			if ( home_url() || home_url('thedisruptedmind/') ) {
-				$buttonText = 'Check our latest work';
-			} else {
-				$buttonText = 'Back to Index';
 			}
 		?>
-		<a href="<?php echo home_url('thedisruptedmind/'); ?>" id="backToIndex" title="The Disrupted Mind"><?php echo $buttonText; ?></a>
+		<a href="<?php echo home_url('thedisruptedmind/'); ?>" class="back-to" id="backTo" title="The Disrupted Mind"><?php echo $buttonText; ?></a>
 
 	</header>
 

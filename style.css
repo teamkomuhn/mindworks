@@ -413,6 +413,10 @@ header.main-header.bgBlack {
 header.main-header.bgBlack div.identity h1.logo a img {
   width: 12rem;
 }
+header.main-header a.back-to {
+  position: relative;
+  z-index: 999999;
+}
 /* FOOTER */
 footer.main-footer,
 .page-coming-soon {
