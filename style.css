@@ -233,6 +233,9 @@ body {
   color: var(--color-black);
   overflow-x: hidden;
 }
+main {
+  position: relative;
+}
 /* TYPOGRAPHY */
 h1,
 h2,
@@ -396,7 +399,7 @@ header.main-header div.identity .logo span {
 }
 header.main-header div.identity .logo img {
   display: block;
-  width: 10rem;
+  width: 11rem;
 }
 header.main-header.bgWhite {
   background-color: var(--color-white);
@@ -626,18 +629,18 @@ footer.main-footer div.so-me a.icon:first-child,
   footer.main-footer .two-columns .column:nth-child(1),
   .page-coming-soon .two-columns .column:nth-child(1) {
     padding: 0 var(--spacing-x);
-    flex: 0 0 52.5%;
+    flex-basis: 60%;
   }
   footer.main-footer .two-columns .column:nth-child(2),
   .page-coming-soon .two-columns .column:nth-child(2) {
     background-color: var(--color-yellow-light);
-    flex: 0 0 1;
+    flex: auto;
   }
   footer.main-footer .two-columns .column:nth-child(3),
   .page-coming-soon .two-columns .column:nth-child(3) {
     padding: var(--spacing-y) var(--spacing-x);
     position: absolute;
-    bottom: 2.4rem;
+    bottom: 0;
     left: 0;
   }
   footer.main-footer div.identity,
@@ -650,13 +653,12 @@ footer.main-footer div.so-me a.icon:first-child,
   }
   footer.main-footer h2,
   .page-coming-soon h2 {
-    margin: var(--spacing-y) 0 var(--spacing-y) 0;
-    font-size: 3.5rem;
+    margin: var(--spacing-y) 0 var(--spacing-half) 0;
+    font-size: var(--font-size-h2);
   }
   footer.main-footer h3,
   .page-coming-soon h3 {
     font-size: var(--font-size-h5);
-    padding-right: var(--spacing-x);
   }
   footer.main-footer div.subscription-form,
   .page-coming-soon div.subscription-form {
@@ -668,7 +670,7 @@ footer.main-footer div.so-me a.icon:first-child,
   }
   footer.main-footer div.subscription-form h4,
   .page-coming-soon div.subscription-form h4 {
-    font-size: 2.3rem;
+    font-size: var(--font-size-h3);
     margin: 2rem 0;
   }
   footer.main-footer div.subscription-form p,
@@ -705,6 +707,29 @@ footer.main-footer div.so-me a.icon:first-child,
   }
   .page-coming-soon div.subscription-form {
     margin: 0;
+  }
+}
+@media only screen and (min-width: 1025px) and (min-width: 1400px) {
+  footer.main-footer .two-columns .column:nth-child(1),
+  .page-coming-soon .two-columns .column:nth-child(1) {
+    flex-basis: 1000px;
+  }
+  footer.main-footer .two-columns .column:nth-child(3),
+  .page-coming-soon .two-columns .column:nth-child(3) {
+    bottom: 2.4rem;
+  }
+  footer.main-footer h2,
+  .page-coming-soon h2 {
+    padding-right: var(--spacing-x);
+    font-size: var(--font-size-h1);
+  }
+  footer.main-footer h3,
+  .page-coming-soon h3 {
+    padding-right: calc(var(--spacing-x)*2);
+  }
+  footer.main-footer div.subscription-form h4,
+  .page-coming-soon div.subscription-form h4 {
+    font-size: var(--font-size-h2);
   }
 }
 /*# sourceMappingURL=style.css.map */

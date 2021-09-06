@@ -19,30 +19,34 @@ header.block.cover div.cover-title h1 span {
   font-size: 1rem;
   font-weight: 300;
   text-transform: uppercase;
+  margin-bottom: calc(var(--spacing-half)/4);
 }
 header.block.cover div.cover-title div.time {
   margin: 0;
-  position: relative;
+}
+header.block.cover div.cover-title div.time time.date,
+header.block.cover div.cover-title div.time span.readtime {
   font-weight: 300;
 }
-header.block.cover div.cover-title div.time:before {
+header.block.cover div.cover-title div.time time.date:before,
+header.block.cover div.cover-title div.time span.readtime:before {
+  font-family: 'icomoon';
   font-size: var(--font-size-p);
   vertical-align: top;
   margin-right: 0.5rem;
 }
 header.block.cover div.cover-title div.time time:before {
   content: '\e903';
-  font-family: 'icomoon';
 }
 header.block.cover div.cover-title div.time span.readtime {
   margin-left: 1.5rem;
 }
 header.block.cover div.cover-title div.time span.readtime:before {
   content: '\e902';
-  font-family: 'icomoon';
 }
 header.block.cover div.cover-title h3 {
   font-size: var(--font-size-h4);
+  margin: calc(var(--spacing-half)/2) 0;
 }
 header.block.cover figure.cover-image {
   order: 0;
@@ -105,12 +109,6 @@ header.block.cover.light div.cover-title-meta h2.title {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-  }
-  header.block.cover div.cover-title h1 {
-    margin-top: var(--spacing-y);
-  }
-  header.block.cover div.cover-title div.time {
-    margin-bottom: var(--spacing-y);
   }
   header.block.cover div.cover-title h3 {
     font-size: 1.5em;

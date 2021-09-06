@@ -33,12 +33,14 @@
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
 	<?php
+		$pageIndexID = 125;
+
 		if ( is_home() ) {
 			$logoColor = "white";
 			$bgColor = "bgBlack";
 			$maxWidth = "class="."maxWidth"."";
 		//} else if (is_page(array('thedisruptedmind','scientific-insights'))) {
-		} else if ( is_page( array(250,252) ) ) {
+		} else if ( is_page( array(125,2) ) ) {
 			$logoColor = "black";
 			$bgColor = "bgWhite";
 			$maxWidth = "style='max-width:1440px;'";
@@ -66,8 +68,10 @@
 					'container'       => ''
 				));
 			*/?>
-		-->
-		</nav>
+		</nav>-->
+
+		<a href="<?php echo home_url('thedisruptedmind/'); ?>" id="backToIndex" title="The Disrupted Mind"> Back to Index</a>
+
 	</header>
 
-    <main <?php echo $maxWidth; ?>>
+    <main <?php echo $maxWidth; ?> id="main">

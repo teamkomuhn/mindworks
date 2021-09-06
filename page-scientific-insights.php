@@ -17,9 +17,9 @@
             </header>-->
 
             <div class="content" id="content">
-                <label><?php echo $post_label; ?></label>
-                 <!--<h2 class="title"><?php the_title(); ?></h2>-->
-                <h3 class="excerpt"><?php print $post_cover_text; ?></h3>
+                <!--<label><?php echo $post_label; ?></label>-->
+                 <!--<h2 class="title"><?php //the_title(); ?></h2>-->
+                <!--<h3 class="excerpt"><?php // print $post_cover_text; ?></h3>-->
                 <?php the_content(); ?>
             </div>
 

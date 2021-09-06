@@ -75,6 +75,48 @@
 		"oAP": "/blocks/block-mw-expanding-content.php",
 		"oF": 0
 		},
+	"/blocks/block-mw-infographic.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-infographic-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/blocks/block-mw-infographic.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-infographic.css.map",
+		"oF": 0
+		},
+	"/blocks/block-mw-infographic.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-infographic.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
+	"/blocks/block-mw-infographic.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-infographic.php",
+		"oF": 0
+		},
 	"/blocks/block-mw-page-cover.css": {
 		"aP": 1,
 		"bl": 0,
@@ -124,22 +166,6 @@
 		"oA": 0,
 		"oAP": "/browserconfig.xml",
 		"oF": 0
-		},
-	"/css/full.less": {
-		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
-		"ft": 1,
-		"iI": 0,
-		"ma": 1,
-		"mS": 0,
-		"oA": 1,
-		"oAP": "/css/full.css",
-		"oF": 0,
-		"oS": 0,
-		"rwU": 0,
-		"sI": 0,
-		"sU": 0
 		},
 	"/css/icomoon.less": {
 		"aP": 0,
@@ -684,14 +710,6 @@
 		"plM": 52780316221407,
 		"prP": 0
 		},
-	"/img/Unconfirmed 626554.crdownload": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/img/Unconfirmed 626554.crdownload",
-		"oF": 0
-		},
 	"/index.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -773,17 +791,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/js/plugins-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/js/script.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/js/script-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -900,14 +907,6 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"/style.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/style.css.map",
-		"oF": 0
-		},
 	"/style.less": {
 		"aP": 0,
 		"bl": 0,
@@ -965,7 +964,7 @@
 "projectSettings": {
 	"abortBuildOnError": 1,
 	"allowInjectionReloads": 1,
-	"alwaysUseExternalServer": 1,
+	"alwaysUseExternalServer": 0,
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerEnableIEGrid": 0,

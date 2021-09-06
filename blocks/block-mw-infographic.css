@@ -1,0 +1,170 @@
+/* MIXINS */
+/* ICOMOON */
+@font-face {
+  font-family: 'icomoon';
+  src: url('fonts/icomoon/icomoon.eot?vlyzdy');
+  src: url('fonts/icomoon/icomoon.eot?vlyzdy#iefix') format('embedded-opentype'), url('fonts/icomoon/icomoon.ttf?vlyzdy') format('truetype'), url('fonts/icomoon/icomoon.woff?vlyzdy') format('woff'), url('fonts/icomoon/icomoon.svg?vlyzdy#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-close:before {
+  content: "\e900";
+}
+.icon-download:before {
+  content: "\e901";
+}
+.icon-twitter:before {
+  content: "\e908";
+}
+.icon-email:before {
+  content: "\e90b";
+}
+.icon-linkedin:before {
+  content: "\e90c";
+}
+.icon-clock:before {
+  content: "\e902";
+}
+.icon-calendar:before {
+  content: "\e903";
+}
+.icon-chevron-bottom:before {
+  content: "\e904";
+}
+.icon-chevron-left:before {
+  content: "\e905";
+}
+.icon-chevron-right:before {
+  content: "\e906";
+}
+.icon-chevron-top:before {
+  content: "\e907";
+}
+.icon-curved-arrow:before {
+  content: "\e909";
+}
+.icon-mail:before {
+  content: "\e90a";
+}
+.icon-index:before {
+  content: "\e90d";
+}
+.icon-zoom:before {
+  content: "\e90e";
+}
+.block.zoom.infographic {
+  z-index: 1;
+  position: absolute;
+  width: calc(100vw - 1240px);
+  right: calc(calc(100vw - 1240px)*-1);
+  overflow: hidden;
+}
+.block.zoom.infographic img {
+  width: auto;
+  max-height: 100%;
+}
+.block.infographic {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.block.infographic.popup {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 99999;
+  width: 100vw;
+  transform: translateX(0vw);
+  transition: transform 0.6s ease;
+}
+.block.infographic.popup header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+.block.infographic.popup header h1 {
+  color: transparent;
+  margin: 0;
+  line-height: 1;
+  font-size: 1em;
+  display: none;
+}
+.block.infographic.popup header nav {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+}
+.block.infographic.popup header nav .button,
+.block.infographic.popup header nav button {
+  border: 0;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 2em;
+  text-decoration: none;
+}
+.block.infographic.popup header nav .button.close,
+.block.infographic.popup header nav button.close,
+.block.infographic.popup header nav .button.download,
+.block.infographic.popup header nav button.download {
+  background: transparent;
+}
+.block.infographic.popup header nav .button.close:after,
+.block.infographic.popup header nav button.close:after,
+.block.infographic.popup header nav .button.download:after,
+.block.infographic.popup header nav button.download:after {
+  font-family: 'icomoon';
+  font-size: var(--font-size-p);
+  margin-left: 0.5em;
+}
+.block.infographic.popup header nav .button.close:after,
+.block.infographic.popup header nav button.close:after {
+  content: "\e900";
+}
+.block.infographic.popup header nav .button.download:after,
+.block.infographic.popup header nav button.download:after {
+  content: "\e901";
+}
+.block.infographic figure {
+  margin: 0;
+  max-width: 100%;
+}
+.block.infographic figure img {
+  width: 100%;
+  height: auto;
+}
+.block.infographic.closed {
+  transform: translateX(100vw);
+}
+@media (min-width: 1025px) {
+  .block.infographic.popup {
+    width: 1440px;
+  }
+  .block.infographic.closed {
+    transform: translateX(calc(100vw + 1440px));
+  }
+}
+/*# sourceMappingURL=block-mw-infographic.css.map */
