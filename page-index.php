@@ -5,9 +5,6 @@
 
     if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-        $post_cover_context = get_post_meta( $post->ID, 'cover_meta_context_tag', 1);
-        $post_cover_text = get_post_meta( $post->ID, 'cover_meta_text', 1);
-
 ?>
 
             <section class="page-index">
@@ -30,10 +27,10 @@
                 <header class="cover">
                     <div class="cover-content">
                         <h1>
-                            <span><?php print $post_cover_context; ?></span>
+                            <span><?php echo get_the_excerpt(); ?></span>
                             <?php the_title(); ?>
                         </h1>
-                        <h2><?php print $post_cover_text; ?></h2>
+                        <h2><?php the_content(); ?></h2>
                     </div>
                 </header>
 
