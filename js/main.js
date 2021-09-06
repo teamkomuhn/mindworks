@@ -1,65 +1,79 @@
+// main.js
 (function( $ ) {
-    // main.js
-    if($('.page')[0]) {
+    'use strict';
+
+    // READ TIME JS - https://w3collective.com/calculate-reading-time-javascript/
+    function readingTime() { // TODO: Make function better: variables, id
+        var text = document.getElementById('main').innerText;
+        var wpm = 175;
+        var words = text.trim().split(/\s+/).length;
+        var time = Math.ceil(words / wpm);
+        document.getElementById('readtime').innerText = time;
+
+        //console.log(words);
+    }
+
+    if( $('.page')[0] ) {
         readingTime();
     }
-/*
-    // Hide Infographic popoup when clicking outside the infographic section
-    function clickInfographic(){
-        $(document).click(function() {
-            var obj = $('.infographic.popup');
-            if (!obj.is(event.target) && !obj.has(event.target).length) {
-                $('.infographic.popup').addClass('closed');
-            } else {
-                $(this).next('.infographic.popup').removeClass('closed');
-            }
+
+
+
+    // OPEN COMPANION CONTENT <- slide
+
+    // pinchzomm.js https://github.com/manuelstofer/pinchzoom // TODO: Try this to zoom only the image
+    // var myElement = document.getElementById("zoom");
+    // var pz = new PinchZoom.default(myElement, {
+    //     draggableUnzoomed: false,
+    //     minZoom: 1,
+    //     onZoomStart: function(object, event){
+    //         // Do something on zoom start
+    //         // You can use any Pinchzoom method by calling object.method()
+    //         console.log('startzoom');
+    //     },
+    //     onZoomEnd: function(object, event){
+    //         // Do something on zoom end
+    //         console.log('endzoom');
+    //     }
+    // })
+
+    function setCompanionSlide() {
+        $( '.slide.companion' ).each( function() {
+            const slide = $(this);
+            slide.addClass( 'started' );
+
+            $(document).on(
+                'click', 'button.open.companion', function() {
+
+                    slide.toggleClass( 'opened' );
+                }
+            );
+
+            $(document).on( 'click', function( e ) {
+
+                if ( slide.hasClass('opened') ) {
+
+                    let target = event.target;
+
+                    if ( !target.closest( slide ).length() ) {
+
+                    }
+
+                    alert(target.tagName);
+
+
+                }
+
+            });
+
+
+
+
+
         });
-    }*/
+    }
+    setCompanionSlide();
+
+
 
 })( jQuery );
-
-
-// READ TIME JS - https://w3collective.com/calculate-reading-time-javascript/
-
-function readingTime() {
-    var text = document.getElementById('main').innerText;
-    var wpm = 175;
-    var words = text.trim().split(/\s+/).length;
-    var time = Math.ceil(words / wpm);
-    document.getElementById('readtime').innerText = time;
-
-    //console.log(words);
-}
-
-// ZOOM INFOGRAPHIC
-let infographic;
-
-function openInfographic() {
-    infographic.classList.toggle('closed');
-}
-
-function setInfographic() {
-    infographic = document.querySelector('section.infographic.popup.closed');
-    const buttonClose = infographic.querySelector('header nav > button.close');
-
-    buttonClose.addEventListener('click', openInfographic);
-
-}
-
-setInfographic();
-
-//
-function bindZoomButtons() {
-    function bindClick() {
-        return function() {
-            openInfographic();
-        };
-    }
-
-    const buttons = document.getElementsByClassName('zoom infographic');
-    for ( var i = 0; i < buttons.length; i++ ) {
-        buttons[i].addEventListener('click', bindClick(i));
-    }
-}
-
-bindZoomButtons();

@@ -40,10 +40,61 @@ section.block.expanding-content {
             > header {
                 padding-bottom: calc(var(--spacing-y) * 3); // Adds space for the buttons
 
+                display: flex;
+                flex-flow: column nowrap;
+
                 h1 {
+                    order: 1;
                     padding-bottom: 0.5em;
                 }
+
+                div.meta {
+                    order: 0;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                    margin: -5px 0 .5em;
+
+                    > span {
+                        text-transform: uppercase;
+                        font-size: var(--font-size-small);
+                        font-weight: 300;
+
+                        &.part-index {
+                            margin-right: .5em;
+                        }
+                        &.tag {
+                            font-size: var(--font-size-smallest);
+                            // border: .1rem solid var(--color-grey-darker);
+                            // background-color: var(--color-white);
+                            background-color: rgba(256, 256, 256, .7);
+                            border-radius: .3rem;
+                            padding: 0.1em 0.5em;
+                        }
+                    }
+
+                    button.companion {
+                        height: 24px;
+                        margin-left: auto; // Align to right
+                        margin-right: calc( -1 * var(--spacing-x) + 1em ) ;
+
+                        background-image: url("../img/bkg-button-slide.svg");
+                        background-size: auto 100%;
+                        background-repeat: no-repeat;
+                        background-position: right;
+                        padding-right: 60px;
+
+                        border: 0;
+
+                        span {
+                            display: none;
+                        }
+
+                    }
+
+                }
                 p {
+                    order: 2;
                     font-weight: 500;
                 }
             }
@@ -87,52 +138,11 @@ section.block.expanding-content {
             }
         }
 
-        div.menu {
+        div.buttons {
             position: absolute; z-index: 9999;
             bottom: var(--spacing-y);
             left: var(--spacing-x);
-
-            display: flex;
-            flex-flow: row nowrap;
-            width: calc( 100vw - (var(--spacing-x) * 2));
-
-            background-color: inherit;
-            // opacity: 0.5;
-
-            &.expand {
-                button {
-                    background-color: transparent;
-                    border: .1rem solid var(--color-black);
-                    margin: 0;
-                    padding: 0 1em;
-
-                    font-size: var(--font-small);
-                    font-weight: 500;
-                    color: var(--color-black);
-                    line-height: 2.3em;
-                    text-align: center;
-
-                    flex: 1 1 50%;
-
-                    border-radius: 0.2em;
-
-                    &:first-of-type {
-                        border-right: 0;
-                        border-top-right-radius: 0;
-                        border-bottom-right-radius: 0;
-                        // transition: .3s;
-                    }
-                    &:last-of-type {
-                        border-top-left-radius: 0;
-                        border-bottom-left-radius: 0;
-
-                        background-color: var(--color-black);
-                        color: var(--color-white);
-                    }
-
-
-                }
-            }
+            right: var(--spacing-x);
         }
 
         &::after { // Adds dashed border to bottom
@@ -174,6 +184,13 @@ section.block.expanding-content {
 
                 }
 
+                button { // TODO: Remove this?
+                    position: absolute;
+                    right: 0; top: 0;
+                    margin-right: 2em;
+
+                }
+
             }
         }
 
@@ -196,7 +213,7 @@ section.block.expanding-content {
         }
 
 
-        &.expanded { // + .expandable
+        &.expanded { // .expandable.expanded
             padding-bottom: 0;
 
             div.main {
@@ -210,7 +227,7 @@ section.block.expanding-content {
 
             }
 
-            div.menu {
+            div.buttons {
                 background-color: transparent;
 
                 &.expand {
@@ -270,22 +287,12 @@ section.block.expanding-content {
                 padding: var(--spacing-y) var(--spacing-x) calc( var(--spacing-y) * 1.5);
             }
 
-            div.menu {
-                width: auto;
-
-                &.expand {
-                    button {
-                        padding: 0 3em;
-
-                        &:first-of-type {
-                        }
-
-                        &:last-of-type {
-                        }
-                    }
+            div.buttons {
+                button, .button {
+                    flex: 0 0 30%;
                 }
             }
+
         }
     }
-
 }

@@ -19,11 +19,50 @@ section.block.expanding-content article.expandable {
 }
 section.block.expanding-content article.expandable div.main > header {
   padding-bottom: calc(var(--spacing-y) * 3);
+  display: flex;
+  flex-flow: column nowrap;
 }
 section.block.expanding-content article.expandable div.main > header h1 {
+  order: 1;
   padding-bottom: 0.5em;
 }
+section.block.expanding-content article.expandable div.main > header div.meta {
+  order: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: -5px 0 0.5em;
+}
+section.block.expanding-content article.expandable div.main > header div.meta > span {
+  text-transform: uppercase;
+  font-size: var(--font-size-small);
+  font-weight: 300;
+}
+section.block.expanding-content article.expandable div.main > header div.meta > span.part-index {
+  margin-right: 0.5em;
+}
+section.block.expanding-content article.expandable div.main > header div.meta > span.tag {
+  font-size: var(--font-size-smallest);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0.3rem;
+  padding: 0.1em 0.5em;
+}
+section.block.expanding-content article.expandable div.main > header div.meta button.companion {
+  height: 24px;
+  margin-left: auto;
+  margin-right: calc(-1 * var(--spacing-x) + 1em);
+  background-image: url("../img/bkg-button-slide.svg");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: right;
+  padding-right: 60px;
+  border: 0;
+}
+section.block.expanding-content article.expandable div.main > header div.meta button.companion span {
+  display: none;
+}
 section.block.expanding-content article.expandable div.main > header p {
+  order: 2;
   font-weight: 500;
 }
 section.block.expanding-content article.expandable div.main > p {
@@ -58,39 +97,12 @@ section.block.expanding-content article.expandable section.recommendations > art
 section.block.expanding-content article.expandable section.recommendations > article p {
   font-size: var(--font-size-small);
 }
-section.block.expanding-content article.expandable div.menu {
+section.block.expanding-content article.expandable div.buttons {
   position: absolute;
   z-index: 9999;
   bottom: var(--spacing-y);
   left: var(--spacing-x);
-  display: flex;
-  flex-flow: row nowrap;
-  width: calc(100vw - (var(--spacing-x) * 2));
-  background-color: inherit;
-}
-section.block.expanding-content article.expandable div.menu.expand button {
-  background-color: transparent;
-  border: 0.1rem solid var(--color-black);
-  margin: 0;
-  padding: 0 1em;
-  font-size: var(--font-small);
-  font-weight: 500;
-  color: var(--color-black);
-  line-height: 2.3em;
-  text-align: center;
-  flex: 1 1 50%;
-  border-radius: 0.2em;
-}
-section.block.expanding-content article.expandable div.menu.expand button:first-of-type {
-  border-right: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-section.block.expanding-content article.expandable div.menu.expand button:last-of-type {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  background-color: var(--color-black);
-  color: var(--color-white);
+  right: var(--spacing-x);
 }
 section.block.expanding-content article.expandable::after {
   content: " ";
@@ -129,6 +141,12 @@ section.block.expanding-content article.expandable.companion aside.companion::be
   height: 100%;
   background-image: linear-gradient(rgba(var(--background-color), 0), rgba(var(--background-color), 1) 70%);
 }
+section.block.expanding-content article.expandable.companion aside.companion button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 2em;
+}
 section.block.expanding-content article.expandable.color section.recommendations > header h1 {
   color: var(--block-color);
 }
@@ -144,21 +162,21 @@ section.block.expanding-content article.expandable.expanded div.main > header {
 section.block.expanding-content article.expandable.expanded section.recommendations {
   padding-bottom: calc(var(--spacing-y) * 2.5);
 }
-section.block.expanding-content article.expandable.expanded div.menu {
+section.block.expanding-content article.expandable.expanded div.buttons {
   background-color: transparent;
 }
-section.block.expanding-content article.expandable.expanded div.menu.expand button:first-of-type {
+section.block.expanding-content article.expandable.expanded div.buttons.expand button:first-of-type {
   color: var(--color-white);
   border: 0.1rem solid var(--color-white);
   border-radius: 0.2em;
 }
-section.block.expanding-content article.expandable.expanded div.menu.expand button:first-of-type > span {
+section.block.expanding-content article.expandable.expanded div.buttons.expand button:first-of-type > span {
   display: none;
 }
-section.block.expanding-content article.expandable.expanded div.menu.expand button:first-of-type::after {
+section.block.expanding-content article.expandable.expanded div.buttons.expand button:first-of-type::after {
   content: "Less ↑";
 }
-section.block.expanding-content article.expandable.expanded div.menu.expand button:last-of-type {
+section.block.expanding-content article.expandable.expanded div.buttons.expand button:last-of-type {
   display: none;
 }
 section.block.expanding-content article.expandable:last-of-type::after {
@@ -174,11 +192,9 @@ section.block.expanding-content article.expandable:first-of-type::after {
   section.block.expanding-content article.expandable section.recommendations {
     padding: var(--spacing-y) var(--spacing-x) calc(var(--spacing-y) * 1.5);
   }
-  section.block.expanding-content article.expandable div.menu {
-    width: auto;
-  }
-  section.block.expanding-content article.expandable div.menu.expand button {
-    padding: 0 3em;
+  section.block.expanding-content article.expandable div.buttons button,
+  section.block.expanding-content article.expandable div.buttons .button {
+    flex: 0 0 30%;
   }
 }
 /*# sourceMappingURL=block-mw-expanding-content.css.map */

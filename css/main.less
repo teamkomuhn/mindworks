@@ -226,8 +226,62 @@ p {
 
 /* BUTTONS */
 button, .button {
+    //Reset styles
+    background: none;
+    border: 0;
+    padding: 0;
+    line-height: 1em;
+
+    background-color: transparent;
+    border: .1rem solid var(--color-black);
+    border-radius: 0.2em;
+
+    font-size: var(--font-small);
+    font-weight: 500;
+    color: var(--color-black);
+    line-height: 2.3em;
+    text-align: center;
+    text-decoration: none;
+
+    padding: 0 1em;
+
 	transition: 0.3s;
 	cursor: pointer;
+}
+
+div.buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: inherit;
+    border-radius: 0.2em;
+
+    button, .button {
+        flex: 1 1 auto;
+
+        &:first-child {
+            border-right: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &:last-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+
+            background-color: var(--color-black);
+            color: var(--color-white);
+        }
+    }
+
+
+
+}
+
+/* IMAGES */
+figure {
+    // Reset styles
+    padding: 0;
+    margin: 0;
 }
 
 /* FORMS */

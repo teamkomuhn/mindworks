@@ -307,8 +307,50 @@ p a {
 /* BUTTONS */
 button,
 .button {
+  background: none;
+  border: 0;
+  padding: 0;
+  line-height: 1em;
+  background-color: transparent;
+  border: 0.1rem solid var(--color-black);
+  border-radius: 0.2em;
+  font-size: var(--font-small);
+  font-weight: 500;
+  color: var(--color-black);
+  line-height: 2.3em;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 1em;
   transition: 0.3s;
   cursor: pointer;
+}
+div.buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: inherit;
+  border-radius: 0.2em;
+}
+div.buttons button,
+div.buttons .button {
+  flex: 1 1 auto;
+}
+div.buttons button:first-child,
+div.buttons .button:first-child {
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+div.buttons button:last-child,
+div.buttons .button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+/* IMAGES */
+figure {
+  padding: 0;
+  margin: 0;
 }
 /* FORMS */
 input[type="text"],
@@ -581,7 +623,7 @@ footer.main-footer div.so-me a.icon:first-child,
 @media only screen and (min-width: 1025px) {
   /* BODY AND MAIN*/
   body {
-    background-color: var(--color-grey-dark);
+    background-color: var(--color-grey-light);
   }
   main {
     background-color: var(--color-white);

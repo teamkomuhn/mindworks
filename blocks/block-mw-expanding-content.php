@@ -11,7 +11,12 @@
 
         <div class="main">
             <header>
-                <h1><span class="sub-title">Phase 1</span> Warning and Threat</h1>
+                <h1>Warning and Threat</h1>
+                <div class="meta">
+                    <span class="part-index">Phase 1</span>
+                    <span class="tag">A few days</span>
+                    <button class="open companion" type="button"><span>Infographic</span></button>
+                </div>
                 <p>The first phase is characterised by fear and uncertainty: there are signs that a crisis is coming, but the magnitude and impact are unknown. </p>
             </header>
 
@@ -51,9 +56,9 @@
 
         </section>
 
-        <div class="menu expand">
-            <button class="expand" type="button" name="button"><span>Read more ↓</span></button>
-            <button class="expand go-to" type="button" name="button">Recommendations</button>
+        <div class="buttons expand">
+            <button class="expand" type="button"><span>Read more ↓</span></button>
+            <button class="expand go-to" type="button">Recommendations</button>
         </div>
 
         <?php // IF companion content ?> <?php // TODO: Padding same as image width ?>
@@ -66,8 +71,13 @@
 
         <div class="main">
             <header>
-                <h1><span class="sub-title">Phase 2</span> Impact</h1>
+                <h1>Impact</h1>
                 <p>Phase two is characterised by a range of intense emotional reactions - initial confusion and disbelief are typically followed by a focus on self-preservation and family protection.</p>
+                <div class="meta">
+                    <span class="part-index">Phase 2</span>
+                    <span class="tag">A few days</span>
+                    <button class="open companion" type="button"><span>Infographic</span></button>
+                </div>
             </header>
 
             <p>In a typical disaster, the ‘Impact’ phase is short: an earthquake or a typhoon hits and then passes. This is also true for human-made disasters like industrial accidents or terror attacks. In longer-lasting crises such as a pandemic, the ‘Impact’ phase can not only be extended, but can also overlap with the other stages of a crisis. In a pandemic, the ‘Impact’ phase may be felt in the different infection waves, while in a drought the impact could be the moment of crop failure. In these longer crises, the impacts tend to be less synchronised, for example, people get sick or lose loved ones over a period of months. Nevertheless, communities and whole societies can also experience a shared ‘Impact’ phase, such as a health care system breakdown, or enforced emergency measures, like a lockdown.</p>
@@ -91,9 +101,9 @@
 
         </section>
 
-        <div class="menu expand">
-            <button class="expand" type="button" name="button"><span>Read more ↓</span></button>
-            <button class="expand go-to" type="button" name="button">Recommendations</button>
+        <div class="buttons expand">
+            <button class="expand" type="button"><span>Read more ↓</span></button>
+            <button class="expand go-to" type="button">Recommendations</button>
         </div>
 
         <?php // IF companion content ?> <?php // TODO: Padding same as image width ?>
@@ -106,15 +116,18 @@
 
         <div class="main">
             <header>
-                <h1><span class="sub-title">Phase 3</span> Heroic</h1>
+                <h1>Heroic</h1>
                 <p>During the "Heroic" phase, survivors take risks to rescue and support others and we see the emergence of a new collective social identity moulded by a shared experience of the disaster.</p>
+                <div class="meta">
+                    <span class="part-index">Phase 3</span>
+                    <span class="tag">A few days</span>
+                    <button class="open companion" type="button"><span>Infographic</span></button>
+                </div>
             </header>
 
             <p>The ‘Heroic’ phase usually only lasts a few days. Long before emergency forces can reach a disaster area, neighbours become essential first responders, providing physical and emotional support. They rescue people from rooftops or collapsed buildings, administer first aid or provide shelter and food for those who have lost everything. In the ‘Heroic’ phase, the perception that "we are in this together" emerges. This new identity creates mutual willingness, expectations and norms within the ‘disaster community’ to help and care for each other. These communities are naturally inclusive - everybody who has suffered from the crisis can form part of it. This new shared identity boosts altruism throughout the impacted community whilst other emotional drivers, such as the desire to regain agency, also motivate people to take more actions to support or rescue others. As these actions are often driven by emotions instead of rational thought, they can lead to people taking unnecessary risks, and be limited in their effectiveness. For example, people may help each other in an epidemic without having the necessary protection gear, or they may limit more strategic responses, as was seen in community organised oxygen drive-bys during the Covid-19 pandemic in India, which limited the ability to prioritise oxygen access to the most vulnerable. </p>
 
             <p>In this phase, people are still making sense of the new situation and adjusting their behaviour accordingly. As old norms and narratives are rendered unfit for the present, new norms rapidly emerge. Communities start to make sense of the situation by building on the collective experience and identities are formed in the early hours of the crisis.</p>
-
-
         </div>
 
         <section class="recommendations dark">
@@ -142,9 +155,9 @@
 
         </section>
 
-        <div class="menu expand">
-            <button class="expand" type="button" name="button"><span>Read more ↓</span></button>
-            <button class="expand go-to" type="button" name="button">Recommendations</button>
+        <div class="buttons expand">
+            <button class="expand" type="button"><span>Read more ↓</span></button>
+            <button class="expand go-to" type="button">Recommendations</button>
         </div>
 
         <?php // IF companion content ?> <?php // TODO: Padding same as image width ?>

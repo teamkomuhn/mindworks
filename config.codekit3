@@ -33,6 +33,14 @@
 		"oAP": "/_index.html",
 		"oF": 0
 		},
+	"/blocks/_block-mw-infographic.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/blocks/_block-mw-infographic.php",
+		"oF": 0
+		},
 	"/blocks/block-mw-expanding-content.css": {
 		"aP": 1,
 		"bl": 0,
@@ -166,6 +174,22 @@
 		"oA": 0,
 		"oAP": "/browserconfig.xml",
 		"oF": 0
+		},
+	"/css/full.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 1,
+		"oAP": "/css/full.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
 		},
 	"/css/icomoon.less": {
 		"aP": 0,
@@ -326,24 +350,6 @@
 		"rwU": 0,
 		"sI": 0,
 		"sU": 0
-		},
-	"/css/variables-static.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/variables-static-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/variables-static.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/css/variables-static.css.map",
-		"oF": 0
 		},
 	"/css/variables-static.less": {
 		"aP": 0,
@@ -632,6 +638,16 @@
 		"oAP": "/img/.gitignore",
 		"oF": 0
 		},
+	"/img/bkg-button-slide.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/bkg-button-slide.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
 	"/img/bkg-dotted-line.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -814,6 +830,12 @@
 		"oAP": "/LICENSE.txt",
 		"oF": 0
 		},
+	"/node_modules": {
+		"ft": 65536,
+		"oA": 2,
+		"oAP": "/build/node_modules",
+		"oF": 0
+		},
 	"/package-lock.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -907,6 +929,14 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/style.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/style.css.map",
+		"oF": 0
+		},
 	"/style.less": {
 		"aP": 0,
 		"bl": 0,
@@ -964,7 +994,7 @@
 "projectSettings": {
 	"abortBuildOnError": 1,
 	"allowInjectionReloads": 1,
-	"alwaysUseExternalServer": 0,
+	"alwaysUseExternalServer": 1,
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerEnableIEGrid": 0,
@@ -1394,7 +1424,7 @@
 			"flagValue": -1
 			}
 		},
-	"environmentVariablesString": "NODE_ENV:::production",
+	"environmentVariablesString": "",
 	"esLintConfigFileHandlingType": 0,
 	"esLintECMAVersion": 7,
 	"esLintEnvironmentsMask": 1,

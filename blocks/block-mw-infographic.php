@@ -1,16 +1,28 @@
-<a href="#" title="<?php block_field('infographic-title'); ?>" class="block zoom infographic">
-    <img src="<?php block_field('image-url'); ?>" alt="<?php block_field('infographic-title'); ?>">
-</a>
-
-<section class="block infographic popup closed">
+<section class="block companion infographic">
     <header>
-        <h1>Infographic</h1>
-        <nav>
-            <a class="button download" href="<?php echo block_field('pdf-url'); ?>" download>Download</a>
-            <button type="button" class="close">Close</button>
-        </nav>
+        <hgroup>
+            <h1><span class="sub-title">Infographic</span> The crisis timeline</h1>
+            <h2>How collective mindsets and cultures are shaped during the different phases of a crisis.</h2>
+        </hgroup>
+
+        <div class="buttons open">
+            <button class="open companion" type="button">Open</button>
+            <a class="button download" href="<?php block_field('pdf-url'); ?>">Download</a>
+        </div>
     </header>
+
     <figure>
-        <img src="<?php block_field('image-url'); ?>" alt="<?php block_field('infographic-title'); ?>">
+        <img src="<?php block_field('infographic-image'); ?>" alt="<?php block_field('infographic-title'); ?>">
     </figure>
+
 </section>
+
+<aside class="slide companion" aria-hidden="true">
+    <div class="buttons">
+        <a class="button download" href="<?php block_field('pdf-url'); ?>" download>Download</a>
+        <button class="close open companion" type="button">Close</button>
+    </div>
+    <figure>
+        <img src="<?php block_field('infographic-image'); ?>" alt="<?php block_field('infographic-title'); ?>">
+    </figure>
+</aside>

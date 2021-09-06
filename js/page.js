@@ -34,29 +34,29 @@
                     'click', 'button.expand', function() {
                         let isExpanded = block.hasClass( 'expanded' );
                         const button = $(this);
-                        const menu = button.parent();
+                        const buttons = button.parent();
 
                         if ( isExpanded ) {
-                            menu.hide();
+                            buttons.hide();
 
                             block.stop().animate({
                                 height: expandable_blocks_heights[i]
                             }, 300, 'swing', function() {
                                 // Animation complete.
                                 block.removeClass( 'expanded' );
-                                menu.fadeIn();
+                                buttons.fadeIn();
                             });
 
                         } else { // Expand
                             block.addClass( 'expanded' );
-                            menu.hide();
+                            buttons.hide();
 
                             block.stop().animate({
                                 height: 1000
                             }, 300, 'swing', function() {
                                 // Animation complete.
                                 block.height( 'auto' );
-                                menu.fadeIn();
+                                buttons.fadeIn();
                             });
 
                         }
@@ -69,6 +69,7 @@
 
                     }
                 );
+
             } // if ( !blocks_are_set )
 
         });
