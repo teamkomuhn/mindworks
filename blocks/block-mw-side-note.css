@@ -1,0 +1,122 @@
+/* ICOMOON */
+@font-face {
+  font-family: 'icomoon';
+  src: url('fonts/icomoon/icomoon.eot?vlyzdy');
+  src: url('fonts/icomoon/icomoon.eot?vlyzdy#iefix') format('embedded-opentype'), url('fonts/icomoon/icomoon.ttf?vlyzdy') format('truetype'), url('fonts/icomoon/icomoon.woff?vlyzdy') format('woff'), url('fonts/icomoon/icomoon.svg?vlyzdy#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-close:before {
+  content: "\e900";
+}
+.icon-download:before {
+  content: "\e901";
+}
+.icon-twitter:before {
+  content: "\e908";
+}
+.icon-email:before {
+  content: "\e90b";
+}
+.icon-linkedin:before {
+  content: "\e90c";
+}
+.icon-clock:before {
+  content: "\e902";
+}
+.icon-calendar:before {
+  content: "\e903";
+}
+.icon-chevron-bottom:before {
+  content: "\e904";
+}
+.icon-chevron-left:before {
+  content: "\e905";
+}
+.icon-chevron-right:before {
+  content: "\e906";
+}
+.icon-chevron-top:before {
+  content: "\e907";
+}
+.icon-curved-arrow:before {
+  content: "\e909";
+}
+.icon-mail:before {
+  content: "\e90a";
+}
+.icon-index:before {
+  content: "\e90d";
+}
+.icon-zoom:before {
+  content: "\e90e";
+}
+.block.side-note {
+  position: fixed;
+  width: calc(80vw - var(--spacing-x)*2);
+  top: 0;
+  right: -100vw;
+  transition: right 0.6s ease;
+  padding: var(--spacing-y) var(--spacing-x);
+  background-color: pink;
+  -webkit-box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.5);
+}
+.block.side-note .sup,
+.block.side-note p {
+  font-size: 0.9rem;
+}
+.block.side-note .sup {
+  vertical-align: super;
+  cursor: pointer;
+}
+.block.side-note button.close {
+  position: absolute;
+  top: 1rem;
+  right: var(--spacing-x);
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 2em;
+  text-decoration: none;
+  background: transparent;
+}
+.block.side-note button.close:after {
+  content: "\e900";
+  font-family: 'icomoon';
+  font-size: var(--font-size-p);
+  margin-left: 0.5em;
+}
+.block.side-note.open {
+  right: 0vw;
+  transition: right 0.6s ease;
+}
+@media only screen and (min-width: 1025px) {
+  .block.side-note {
+    position: absolute;
+    width: calc((100vw - 1240px) - var(--spacing-half)*2);
+    max-width: 350px;
+    left: 1240px;
+    padding: 0 var(--spacing-half);
+  }
+  .block.side-note .close {
+    display: none;
+  }
+}
+/*# sourceMappingURL=block-mw-side-note.css.map */

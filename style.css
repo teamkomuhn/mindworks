@@ -227,6 +227,9 @@ Author's custom styles
 .clearfix:after {
   clear: both;
 }
+.overflow-hidden {
+  overflow-y: hidden;
+}
 /* BODY AND MAIN*/
 body {
   font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -560,7 +563,7 @@ footer.main-footer div.so-me a.icon:first-child,
   background-color: var(--color-black);
   color: var(--color-white);
 }
-/* BLOCKS */
+/* BLOCKS SIDE NOTE */
 .block-side-note {
   display: none;
   position: fixed;
@@ -581,7 +584,7 @@ footer.main-footer div.so-me a.icon:first-child,
 @media only screen and (min-width: 1025px) {
   /* BODY AND MAIN*/
   body {
-    background-color: var(--color-grey-dark);
+    background-color: var(--color-grey-light);
   }
   main {
     background-color: var(--color-white);

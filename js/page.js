@@ -2,6 +2,67 @@
 (function( $ ) {
     'use strict';
 
+
+
+
+    const blockSidenote     = $('.block.side-note');
+    const blockSidenoteID   = blockSidenote.attr( 'id' );
+    const sidenoteSup       = blockSidenote.prev().find('sup');
+
+    //let blockSidenote_heights = [];
+
+    $('.block.side-note').each( function(i) {
+        $(this).attr( 'id', 'sn'+ (++i) +'' );
+
+        sidenoteSup.attr('id', blockSidenoteID);
+
+        $('.block.side-note span').text(+i);
+
+        sidenoteSup.on('click', function(){
+            if (blockSidenote.hasClass('open')) {
+                blockSidenote.removeClass('open');
+                $('body').removeClass('overflow-hidden');
+            } else {
+                blockSidenote.addClass('open');
+                $('body').addClass('overflow-hidden');
+            }
+        });
+
+        if ($(window).width() > 1500) {
+
+            const sidenoteSupPosition   = sidenoteSup.position();
+            
+            blockSidenote.css({top: sidenoteSupPosition.top});
+
+            /*if (sidenoteSup.length >= 2) {
+                blockSidenote_heights.push( blockSidenote.outerHeight() );
+                //blockSidenote.outerHeight( blockSidenote_heights[i] );
+
+                console.log(blockSidenote_heights);
+
+            } else {
+                blockSidenote.css({top: sidenoteSupPosition.top});
+            }*/
+    
+        } else {
+            const sidenoteCloseButton   = blockSidenote.find('.close');
+
+            sidenoteCloseButton.on('click', function(){
+                if (blockSidenote.hasClass('open')) {
+                    blockSidenote.removeClass('open');
+                    $('body').removeClass('overflow-hidden');
+                } else {
+                    blockSidenote.addClass('open');
+                    $('body').addClass('overflow-hidden');
+                }
+            });
+
+        }
+
+    });
+
+
+
     //
     function scrollTo( element, duration, delay ) {
         setTimeout(function() {
@@ -10,6 +71,7 @@
             }, duration, 'swing');
         }, delay);
     }
+
 
     // EXPANDING BLOCKS INTERACTION -> JQUERY
     let expandable_blocks_heights = [];

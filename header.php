@@ -33,14 +33,19 @@
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
 	<?php
-		$pageIndexID = 125;
-
+		if (home_url() == "https://testing.mindworkslab.org") {
+			$oldPagesID = is_page( array(8,10) );
+		} else if (home_url() == "https://mindworkslab.org") {
+			$oldPagesID = is_page( array(188,193) );
+		} else {
+			$oldPagesID = is_page( array(125,2) ); //@andrea local
+		}
 		if ( is_home() ) {
 			$logoColor = "white";
 			$bgColor = "bgBlack";
 			$maxWidth = "class="."maxWidth"."";
-		//} else if (is_page(array('thedisruptedmind','scientific-insights'))) {
-		} else if ( is_page( array(125,2) ) ) {
+		//} else if ( is_page( array(8,10) ) ) {
+		} else if ( $oldPagesID ) {
 			$logoColor = "black";
 			$bgColor = "bgWhite";
 			$maxWidth = "style='max-width:1440px;'";
