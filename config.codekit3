@@ -83,6 +83,48 @@
 		"oAP": "/blocks/block-mw-expanding-content.php",
 		"oF": 0
 		},
+	"/blocks/block-mw-external-content.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-external-content-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/blocks/block-mw-external-content.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-external-content.css.map",
+		"oF": 0
+		},
+	"/blocks/block-mw-external-content.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-external-content.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
+	"/blocks/block-mw-external-content.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-external-content.php",
+		"oF": 0
+		},
 	"/blocks/block-mw-infographic.css": {
 		"aP": 1,
 		"bl": 0,
@@ -165,6 +207,48 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/blocks/block-mw-page-cover.php",
+		"oF": 0
+		},
+	"/blocks/block-mw-side-note.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-side-note-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/blocks/block-mw-side-note.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-side-note.css.map",
+		"oF": 0
+		},
+	"/blocks/block-mw-side-note.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-side-note.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
+	"/blocks/block-mw-side-note.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-side-note.php",
 		"oF": 0
 		},
 	"/browserconfig.xml": {
@@ -767,17 +851,6 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"/js/main.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/js/main-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
 	"/js/page-min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -785,6 +858,28 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/js/page-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/page-scientific-insights-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/page-scientific-insights-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/page-scientific-insights.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/page-scientific-insights-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -994,7 +1089,7 @@
 "projectSettings": {
 	"abortBuildOnError": 1,
 	"allowInjectionReloads": 1,
-	"alwaysUseExternalServer": 1,
+	"alwaysUseExternalServer": 0,
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerEnableIEGrid": 0,
@@ -1424,7 +1519,7 @@
 			"flagValue": -1
 			}
 		},
-	"environmentVariablesString": "",
+	"environmentVariablesString": "NODE_ENV:::production",
 	"esLintConfigFileHandlingType": 0,
 	"esLintECMAVersion": 7,
 	"esLintEnvironmentsMask": 1,
