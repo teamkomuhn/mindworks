@@ -15,7 +15,9 @@ Version: 2.0
   --color-black: #222222;
   --color-white: #ffffff;
   --color-grey-light: #EEEEEE;
+  --rgb-grey-light: 238, 238, 238;
   --color-grey: #DDDDDD;
+  --rgb-grey: 212, 221, 221;
   --color-grey-dark: #CCCCCC;
   --color-grey-darker: #666666;
   --color-yellow-light: #FEF288;
@@ -23,18 +25,27 @@ Version: 2.0
   --color-blue-light: #DBEFEE;
   --color-coral: #FFA693;
   --font-size-title: 4rem;
+  --font-size-biggest: 3rem;
+  --font-size-bigger: 2.3rem;
+  --font-size-big: 1.5rem;
+  --font-size-biggish: 1.3rem;
+  --font-size-p: 1.1rem;
+  --font-size-small: 1rem;
+  --font-size-smaller: 0.9rem;
+  --font-size-smallest: 0.8rem;
   --font-size-h1: 3rem;
   --font-size-h2: 3rem;
   --font-size-h3: 2.3rem;
   --font-size-h4: 1.5rem;
   --font-size-h5: 1.2rem;
-  --font-size-p: 1.1rem;
 }
 @media only screen and (min-width: 1025px) {
   :root {
     --spacing-x: 7.5rem;
     --spacing-y: 7.5rem;
-    --font-size-title: 6rem;
+    --font-size-title: 4rem;
+    --font-size-biggest: 3rem;
+    --font-size-bigger: 2rem;
     --font-size-h1: 3rem;
     --font-size-h2: 2rem;
     --font-size-h3: 2rem;
@@ -257,6 +268,10 @@ h3 strong,
 h4 strong,
 h5 strong {
   font-weight: 700;
+}
+sup {
+  padding: 2em;
+  margin: -2em;
 }
 .title {
   font-size: var(--font-size-title);
@@ -563,7 +578,7 @@ footer.main-footer div.so-me a.icon:first-child,
 @media only screen and (min-width: 1025px) {
   /* BODY AND MAIN*/
   body {
-    background-color: var(--color-grey-light);
+    background-color: var(--color-grey-dark);
   }
   main {
     background-color: var(--color-white);

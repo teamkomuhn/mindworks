@@ -21,7 +21,7 @@
         $( '.expandable' ).each( function( i ) {
             const block = $(this);
 
-            const header_height = block.children( 'header' ).height();
+            const header_height = block.find( '.main > header' ).height();
             const block_height_closed = header_height;
 
             expandable_blocks_heights.push( block_height_closed );

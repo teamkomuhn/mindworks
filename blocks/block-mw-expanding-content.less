@@ -12,9 +12,7 @@ section.block.expanding-content {
         hgroup {
             padding-bottom: 2em;
 
-            h1 {
-
-            }
+            h1 {}
             h2 {}
         }
 
@@ -22,35 +20,43 @@ section.block.expanding-content {
 
     }
 
-    // .expandable
-    > article {
+    article.expandable {
         position: relative;
-        overflow: hidden;
-        background-color: var(--color-grey);
         padding: var(--spacing-y) var(--spacing-x) calc( var(--spacing-y) * 2.5);
         margin: auto calc(-1 * var(--spacing-x)); // Counter the <main> left-right padding
 
-        transition: background-color 0.3s;
+        --background-color: var(--rgb-grey); // Store value so can use later in the code and change var.
+        background-color: rgba(var(--background-color), 1);
+
+        // background-image: url("../img/bkg-rect-grey.svg"), url("../img/bkg-dotted-line.svg");
+        // background-repeat: no-repeat, no-repeat;
+        // background-position: right 0 bottom 0,  left var(--spacing-x) bottom 0;
+        // background-size: var(--spacing-x), auto;
+
         // transition: height .5s linear;
         will-change: height;
 
-        > header {
+        div.main {
+            > header {
+                padding-bottom: calc(var(--spacing-y) * 3); // Adds space for the buttons
 
-            padding-bottom: calc(var(--spacing-y) * 3); // Adds space for the buttons
-
-            h1 {
-                padding-bottom: 0.5em;
+                h1 {
+                    padding-bottom: 0.5em;
+                }
+                p {
+                    font-weight: 500;
+                }
             }
-            p {
+
+            > p {
+                font-size: var(--font-size-small);
+                padding-bottom: 1em;
 
             }
         }
 
-        > p {
-            padding-bottom: 1em;
-        }
-
-        > section { //Recommendations
+        section.recommendations {
+            position: relative; z-index: 999;
             padding: var(--spacing-y) var(--spacing-x);
             margin: auto calc(-1 * var(--spacing-x)); // Counter the <main> left-right padding
 
@@ -60,18 +66,29 @@ section.block.expanding-content {
                 h1 {
                     padding-bottom: 0.5em;
                 }
-                p {}
+                p {
+                    font-weight: 500;
+                }
             }
 
             > article {
-                padding-bottom: 1em;
-                h2 {padding-bottom: 0.5em;}
-                p {}
+                border-left: .5em solid #fff;
+                padding: 0 0 0 1em;
+                margin-bottom: 2em;
+
+                h2 {
+                    font-size: var(--font-size-biggish);
+                    font-weight: 500;
+                    padding: 0 0 0.5em 0;
+                }
+                p {
+                    font-size: var(--font-size-small);
+                }
             }
         }
 
         div.menu {
-            position: absolute;
+            position: absolute; z-index: 9999;
             bottom: var(--spacing-y);
             left: var(--spacing-x);
 
@@ -80,20 +97,19 @@ section.block.expanding-content {
             width: calc( 100vw - (var(--spacing-x) * 2));
 
             background-color: inherit;
-
+            // opacity: 0.5;
 
             &.expand {
                 button {
                     background-color: transparent;
                     border: .1rem solid var(--color-black);
                     margin: 0;
-                    padding: 0;
+                    padding: 0 1em;
 
-                    font-size: 1em;
+                    font-size: var(--font-small);
                     font-weight: 500;
                     color: var(--color-black);
                     line-height: 2.3em;
-                    padding: 0 1em;
                     text-align: center;
 
                     flex: 1 1 50%;
@@ -119,16 +135,79 @@ section.block.expanding-content {
             }
         }
 
-        &.expanded {
-            padding-bottom: 0;
+        &::after { // Adds dashed border to bottom
+            content: " ";
+            display: block;
+            // width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: var(--spacing-x); right: var(--spacing-x);
 
-            > header {
-                padding-bottom: 2em;
+            border-bottom: 1px dashed var(--color-black);
+        }
+
+        &.companion { // + .expandable
+            overflow: hidden;
+
+            div.main {
+                padding-right: var(--spacing-x);
+                > header {
+                    padding-right: 15px; //15px = image width
+                }
             }
 
-            > section { //Recommendations
+            aside.companion {
+                position: absolute; z-index: 99;
+                height: 100%;
+                right: var(--spacing-x); top: var(--spacing-y);
+
+                background-color: inherit;
+
+                img {}
+
+                &::before {
+                    content: " ";
+                    display: block;
+                    position: absolute; left: 0; bottom: 0; z-index: 9;
+                    width: 100%; height: 100%;
+                    background-image: linear-gradient( rgba(var(--background-color), 0), rgba(var(--background-color), 1) 70% );
+
+                }
+
+            }
+        }
+
+        &.color {
+            section.recommendations {
+                > header {
+                    h1 {
+                        color: var(--block-color);
+                    }
+                }
+
+                > article {
+                    border-left-color: var(--block-color);
+                    //
+                    // h2 {
+                    //     color: var(--block-color);
+                    // }
+                }
+            }
+        }
+
+
+        &.expanded { // + .expandable
+            padding-bottom: 0;
+
+            div.main {
+                > header {
+                    padding-bottom: 2em;
+                }
+            }
+
+            section.recommendations {
                 padding-bottom: calc( var(--spacing-y) * 2.5);
-                margin: auto calc(-1 * var(--spacing-x)); // Counter the <main> left-right padding
+
             }
 
             div.menu {
@@ -159,8 +238,22 @@ section.block.expanding-content {
 
         }
 
-        &:hover {
-            background-color: var(--color-grey-light);
+        &:last-of-type {
+            // background-image: none;
+            &::after {
+                display: none;
+            }
+        }
+
+        &:first-of-type {
+            --background-color: var(--rgb-grey-light);
+
+            // background-image: url("../img/bkg-rect-grey-light.svg"), url("../img/bkg-dotted-line.svg");
+            // background-image: none;
+            &::after {
+                display: none;
+            }
+
         }
 
     }
@@ -170,13 +263,10 @@ section.block.expanding-content {
 // DESKTOP
 @media @desktop {
     section.block.expanding-content {
-        // .expandable
-        > article {
-            > header {
 
-            }
+        article.expandable {
 
-            > section { //Recommendations
+            section.recommendations {
                 padding: var(--spacing-y) var(--spacing-x) calc( var(--spacing-y) * 1.5);
             }
 

@@ -9,42 +9,58 @@ section.block.expanding-content > header {
 section.block.expanding-content > header hgroup {
   padding-bottom: 2em;
 }
-section.block.expanding-content > article {
+section.block.expanding-content article.expandable {
   position: relative;
-  overflow: hidden;
-  background-color: var(--color-grey);
   padding: var(--spacing-y) var(--spacing-x) calc(var(--spacing-y) * 2.5);
   margin: auto calc(-1 * var(--spacing-x));
-  transition: background-color 0.3s;
+  --background-color: var(--rgb-grey);
+  background-color: rgba(var(--background-color), 1);
   will-change: height;
 }
-section.block.expanding-content > article > header {
+section.block.expanding-content article.expandable div.main > header {
   padding-bottom: calc(var(--spacing-y) * 3);
 }
-section.block.expanding-content > article > header h1 {
+section.block.expanding-content article.expandable div.main > header h1 {
   padding-bottom: 0.5em;
 }
-section.block.expanding-content > article > p {
+section.block.expanding-content article.expandable div.main > header p {
+  font-weight: 500;
+}
+section.block.expanding-content article.expandable div.main > p {
+  font-size: var(--font-size-small);
   padding-bottom: 1em;
 }
-section.block.expanding-content > article > section {
+section.block.expanding-content article.expandable section.recommendations {
+  position: relative;
+  z-index: 999;
   padding: var(--spacing-y) var(--spacing-x);
   margin: auto calc(-1 * var(--spacing-x));
 }
-section.block.expanding-content > article > section > header {
+section.block.expanding-content article.expandable section.recommendations > header {
   padding-bottom: 2em;
 }
-section.block.expanding-content > article > section > header h1 {
+section.block.expanding-content article.expandable section.recommendations > header h1 {
   padding-bottom: 0.5em;
 }
-section.block.expanding-content > article > section > article {
-  padding-bottom: 1em;
+section.block.expanding-content article.expandable section.recommendations > header p {
+  font-weight: 500;
 }
-section.block.expanding-content > article > section > article h2 {
-  padding-bottom: 0.5em;
+section.block.expanding-content article.expandable section.recommendations > article {
+  border-left: 0.5em solid #fff;
+  padding: 0 0 0 1em;
+  margin-bottom: 2em;
 }
-section.block.expanding-content > article div.menu {
+section.block.expanding-content article.expandable section.recommendations > article h2 {
+  font-size: var(--font-size-biggish);
+  font-weight: 500;
+  padding: 0 0 0.5em 0;
+}
+section.block.expanding-content article.expandable section.recommendations > article p {
+  font-size: var(--font-size-small);
+}
+section.block.expanding-content article.expandable div.menu {
   position: absolute;
+  z-index: 9999;
   bottom: var(--spacing-y);
   left: var(--spacing-x);
   display: flex;
@@ -52,69 +68,116 @@ section.block.expanding-content > article div.menu {
   width: calc(100vw - (var(--spacing-x) * 2));
   background-color: inherit;
 }
-section.block.expanding-content > article div.menu.expand button {
+section.block.expanding-content article.expandable div.menu.expand button {
   background-color: transparent;
   border: 0.1rem solid var(--color-black);
   margin: 0;
-  padding: 0;
-  font-size: 1em;
+  padding: 0 1em;
+  font-size: var(--font-small);
   font-weight: 500;
   color: var(--color-black);
   line-height: 2.3em;
-  padding: 0 1em;
   text-align: center;
   flex: 1 1 50%;
   border-radius: 0.2em;
 }
-section.block.expanding-content > article div.menu.expand button:first-of-type {
+section.block.expanding-content article.expandable div.menu.expand button:first-of-type {
   border-right: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-section.block.expanding-content > article div.menu.expand button:last-of-type {
+section.block.expanding-content article.expandable div.menu.expand button:last-of-type {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   background-color: var(--color-black);
   color: var(--color-white);
 }
-section.block.expanding-content > article.expanded {
+section.block.expanding-content article.expandable::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: var(--spacing-x);
+  right: var(--spacing-x);
+  border-bottom: 1px dashed var(--color-black);
+}
+section.block.expanding-content article.expandable.companion {
+  overflow: hidden;
+}
+section.block.expanding-content article.expandable.companion div.main {
+  padding-right: var(--spacing-x);
+}
+section.block.expanding-content article.expandable.companion div.main > header {
+  padding-right: 15px;
+}
+section.block.expanding-content article.expandable.companion aside.companion {
+  position: absolute;
+  z-index: 99;
+  height: 100%;
+  right: var(--spacing-x);
+  top: var(--spacing-y);
+  background-color: inherit;
+}
+section.block.expanding-content article.expandable.companion aside.companion::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(var(--background-color), 0), rgba(var(--background-color), 1) 70%);
+}
+section.block.expanding-content article.expandable.color section.recommendations > header h1 {
+  color: var(--block-color);
+}
+section.block.expanding-content article.expandable.color section.recommendations > article {
+  border-left-color: var(--block-color);
+}
+section.block.expanding-content article.expandable.expanded {
   padding-bottom: 0;
 }
-section.block.expanding-content > article.expanded > header {
+section.block.expanding-content article.expandable.expanded div.main > header {
   padding-bottom: 2em;
 }
-section.block.expanding-content > article.expanded > section {
+section.block.expanding-content article.expandable.expanded section.recommendations {
   padding-bottom: calc(var(--spacing-y) * 2.5);
-  margin: auto calc(-1 * var(--spacing-x));
 }
-section.block.expanding-content > article.expanded div.menu {
+section.block.expanding-content article.expandable.expanded div.menu {
   background-color: transparent;
 }
-section.block.expanding-content > article.expanded div.menu.expand button:first-of-type {
+section.block.expanding-content article.expandable.expanded div.menu.expand button:first-of-type {
   color: var(--color-white);
   border: 0.1rem solid var(--color-white);
   border-radius: 0.2em;
 }
-section.block.expanding-content > article.expanded div.menu.expand button:first-of-type > span {
+section.block.expanding-content article.expandable.expanded div.menu.expand button:first-of-type > span {
   display: none;
 }
-section.block.expanding-content > article.expanded div.menu.expand button:first-of-type::after {
+section.block.expanding-content article.expandable.expanded div.menu.expand button:first-of-type::after {
   content: "Less ↑";
 }
-section.block.expanding-content > article.expanded div.menu.expand button:last-of-type {
+section.block.expanding-content article.expandable.expanded div.menu.expand button:last-of-type {
   display: none;
 }
-section.block.expanding-content > article:hover {
-  background-color: var(--color-grey-light);
+section.block.expanding-content article.expandable:last-of-type::after {
+  display: none;
+}
+section.block.expanding-content article.expandable:first-of-type {
+  --background-color: var(--rgb-grey-light);
+}
+section.block.expanding-content article.expandable:first-of-type::after {
+  display: none;
 }
 @media only screen and (min-width: 1025px) {
-  section.block.expanding-content > article > section {
+  section.block.expanding-content article.expandable section.recommendations {
     padding: var(--spacing-y) var(--spacing-x) calc(var(--spacing-y) * 1.5);
   }
-  section.block.expanding-content > article div.menu {
+  section.block.expanding-content article.expandable div.menu {
     width: auto;
   }
-  section.block.expanding-content > article div.menu.expand button {
+  section.block.expanding-content article.expandable div.menu.expand button {
     padding: 0 3em;
   }
 }
