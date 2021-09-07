@@ -48,27 +48,12 @@
                     slide.toggleClass( 'opened' );
                 }
             );
-
-            $(document).on( 'click', function( e ) {
-
-                if ( slide.hasClass('opened') ) {
-
-                    let target = event.target;
-
-                    if ( !target.closest( slide ).length() ) {
-
-                    }
-
-                    alert(target.tagName);
-
-
+            // If click outside
+            $('body').on( 'click', function() {
+                if ( !$(event.target.parentNode.parentNode).hasClass('slide') && slide.hasClass('opened') ) {
+                    $(slide).toggleClass( 'opened' );
                 }
-
             });
-
-
-
-
 
         });
     }

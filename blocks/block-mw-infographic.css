@@ -9,7 +9,6 @@ section.block.infographic {
 section.block.infographic header {
   margin-bottom: var(--spacing-y);
   z-index: 99;
-  background-color: inherit;
 }
 section.block.infographic header h1 {
   padding-bottom: 2rem;
@@ -58,6 +57,7 @@ aside.slide {
   overflow-x: hidden;
   overflow-y: scroll;
   transform: translateX(100vw);
+  width: auto;
 }
 aside.slide figure {
   width: 100%;

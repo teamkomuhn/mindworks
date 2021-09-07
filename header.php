@@ -74,15 +74,12 @@
 				));
 			*/?>
 		</nav>-->
-		<?php
-			/* with pages ID - > */
-			if ( is_page( array(2,155) )  ) {
-				$buttonText = 'Back to Index';
-			} else {
-				$buttonText = 'Check our latest work';
-			}
-		?>
-		<a href="<?php echo home_url('thedisruptedmind/'); ?>" class="back-to" id="backTo" title="The Disrupted Mind"><?php echo $buttonText; ?></a>
+
+		<nav class="main-nav">
+			<?php global $post; if ( is_page() && $post->post_parent ) : ?>
+				<a class="button back-to-index" href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php echo get_the_title( $post->post_parent ); ?>">← <?php //print get_post_field( 'post_title', $post_id, 'raw' ); ?></a>
+			<?php endif; ?>
+		</nav>
 
 	</header>
 

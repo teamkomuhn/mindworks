@@ -13,7 +13,6 @@ section.block.infographic {
     header {
         margin-bottom: var(--spacing-y);
         z-index: 99;
-        background-color: inherit;
 
         h1 {
             padding-bottom: 2rem;
@@ -76,7 +75,7 @@ aside.slide {
     overflow-y: scroll;
 
     transform: translateX(100vw); // Hide it
-
+    width: auto;
 
     figure {
         width: 100%;
@@ -104,127 +103,11 @@ aside.slide {
     }
 
     // DESKTOP
-    @media @desktop {
+    @media @desktop { // TODO: Adapt with in relation to screen width
 
         left: auto;
         width: 1240px;
+
     } // desktop styles
 
 }
-
-
-
-
-// @import "../css/variables-static";
-// @import '../css/mixins';
-// @import '../css/icomoon';
-//
-// .block.zoom.infographic {
-//     z-index: 1;
-//     position: absolute;
-//     width: calc(100vw - 1240px);
-//     right: calc(calc(100vw - 1240px)*-1);
-//     overflow: hidden;
-//
-//     img {
-//         width: auto;
-//         max-height: 100%;
-//
-//     }
-//
-// }
-//
-// .block.infographic {
-//     overflow-x: hidden;
-//     overflow-y: scroll;
-//     //height: auto;
-//     &.popup {
-//         position: fixed;
-//         right: 0; top: 0; bottom: 0;
-//         z-index: 99999;
-//         width: 100vw;
-//         transform: translateX(0vw);
-//         transition: transform .6s ease;
-//
-//         header {
-//             position: sticky;
-//             left: 0; top: 0; right: 0;
-//
-//             h1 {
-//                 color: transparent;
-//                 margin: 0;
-//                 line-height: 1;
-//                 font-size: 1em;
-//                 display: none;
-//             }
-//
-//             nav {
-//                 position: absolute;
-//                 top: 1rem; right: 1rem;
-//
-//                 .flex-display();
-//                 .flex-flow(row nowrap);
-//
-//                 .button,
-//                 button {
-//                     border: 0;
-//                     color: white;
-//                     cursor: pointer;
-//                     padding: 0;
-//                     margin-left: 2em;
-//                     text-decoration: none;
-//
-//                     &.close,
-//                     &.download {
-//                         background: transparent;
-//
-//                         &:after {
-//                             font-family: 'icomoon';
-//                             font-size: var(--font-size-p);
-//                             margin-left: 0.5em;
-//                         }
-//                     }
-//                     &.close {
-//                         &:after {
-//                             content: "\e900";
-//                         }
-//                     }
-//                     &.download {
-//                         &:after {
-//                         content: "\e901";
-//                         }
-//                     }
-//
-//                 }
-//
-//             }
-//
-//         }
-//
-//     }
-//     figure {
-//         margin: 0;
-//         max-width: 100%;
-//
-//         img {
-//             width: 100%;
-//             height: auto;
-//         }
-//     }
-//     &.closed {
-//         transform: translateX(100vw);
-//     }
-// }
-//
-// // DESKTOP
-// @media (min-width: 1025px) {
-//
-//     .block.infographic {
-//         &.popup {
-//             width: 1440px;
-//         }
-//         &.closed {
-//             transform: translateX(calc(100vw + 1440px));
-//         }
-//     }
-// } // desktop styles

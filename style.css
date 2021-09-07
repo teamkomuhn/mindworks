@@ -411,29 +411,10 @@ textarea:-ms-input-placeholder {
 /* HEADER */
 header.main-header {
   height: 8rem;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: -ms-flex;
   display: flex;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  -webkit-align-items: center;
-  -ms-align-items: center;
   align-items: center;
-}
-header.main-header div.identity {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -webkit-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
-  flex-grow: 1;
+  justify-content: space-between;
 }
 header.main-header div.identity .logo {
   margin: 0 0.5em 0 var(--spacing-x);
@@ -446,6 +427,10 @@ header.main-header div.identity .logo img {
   display: block;
   width: 11rem;
 }
+header.main-header nav.main-nav {
+  margin-right: var(--spacing-x);
+  margin-bottom: 12px;
+}
 header.main-header.bgWhite {
   background-color: var(--color-white);
 }
@@ -454,10 +439,6 @@ header.main-header.bgBlack {
 }
 header.main-header.bgBlack div.identity h1.logo a img {
   width: 12rem;
-}
-header.main-header a.back-to {
-  position: relative;
-  z-index: 999999;
 }
 /* FOOTER */
 footer.main-footer,
@@ -630,7 +611,7 @@ footer.main-footer div.so-me a.icon:first-child,
 @media only screen and (min-width: 1025px) {
   /* BODY AND MAIN*/
   body {
-    background-color: var(--color-grey-light);
+    background-color: var(--color-grey-dark);
   }
   main {
     background-color: var(--color-white);

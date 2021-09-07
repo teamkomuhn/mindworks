@@ -335,17 +335,12 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 header.main-header {
 	height: 8rem;
 
-	.flex-display();
-	.flex-flow(row nowrap);
-	.align-items(center);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
 
 	div.identity {
-
-		.flex-display();
-		.flex-flow(row nowrap);
-		.align-items(center);
-
-		flex-grow: 1; //Push navigation to the right
 
 		.logo {
 			margin: 0 0.5em 0 var(--spacing-x);
@@ -360,6 +355,16 @@ header.main-header {
 			}
 		}
 	}
+
+    nav.main-nav {
+
+        margin-right: var(--spacing-x);
+        margin-bottom: 12px;
+
+        a.back-to-index {
+
+        }
+    }
 
 	&.bgWhite {
 		background-color: var(--color-white);
@@ -381,10 +386,8 @@ header.main-header {
 		}
 
 	}
-	a.back-to {
-		position: relative;
-		z-index: 999999;
-	}
+
+
 
 }
 
