@@ -41,7 +41,10 @@
                         <?php
                             while ( $parent->have_posts() ) : $parent->the_post(); 
                         
-                                $post_label = get_post_meta( $post->ID, 'label_meta', 1);
+                            // Make part from page child order
+                                $page_order = $post->menu_order;
+                                $part = 'Part ' . ($page_order + 1);
+                                //$post_label = get_post_meta( $post->ID, 'label_meta', 1);
                                 $post_cover_text = get_post_meta( $post->ID, 'cover_meta_text', 1);
                                 $post_image_url = wp_get_attachment_image_url( get_post_thumbnail_id(), 'large');
                                 $post_image = get_the_post_thumbnail( $post , 'thumbnail');
@@ -56,7 +59,7 @@
 
                                 <header>
 
-                                    <label><?php echo $post_label; ?></label>
+                                    <label><?php echo $part; ?></label>
                                     <h1><?php echo get_the_title($post->post_parent) . ': ' . get_the_title(); ?></h1>
                                     <span class="date"><?php the_date( 'F d, Y' ); ?></span>
                                     <!--<span class="readtime" id="time"></span> min read-->
