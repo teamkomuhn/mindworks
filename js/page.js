@@ -3,7 +3,6 @@
     'use strict';
     blockSidenote();
 
-
     //BLOCK SIDE NOTE
     function blockSidenote() {
         const blockSidenote     = $('.block.side-note');
@@ -32,7 +31,7 @@
             if ($(window).width() > 1500) {
 
                 const sidenoteSupPosition   = sidenoteSup.position();
-                
+
                 blockSidenote.css({top: sidenoteSupPosition.top});
 
                 /*if (sidenoteSup.length >= 2) {
@@ -44,7 +43,7 @@
                 } else {
                     blockSidenote.css({top: sidenoteSupPosition.top});
                 }*/
-        
+
             } else if ($(window).width() < 1440) {
                 const sidenoteCloseButton   = blockSidenote.find('.close');
 
@@ -146,18 +145,16 @@
     }
     setExpandingBlocks();
 
-
     // Adjust dimensions if browser sizes change
-    window.onresize = function() {
-       if( !window.matchMedia( '(any-hover: none)' ).matches ) { // Only works if !NOT mobile
-           setExpandingBlocks();
-           // alert('onresize');
-       }
-    };
+    window.addEventListener('resize', debounce(function() {
+        if( !window.matchMedia( '(any-hover: none)' ).matches ) { // Only works if !NOT mobile
+            setExpandingBlocks();
+        }
+    }, true));
 
-    window.onorientationchange = function() { // Especially for mobile
-       setExpandingBlocks();
-       // alert('onorientationchange');
-    };
+    window.addEventListener('orientationchange', debounce(function() {
+        setExpandingBlocks();
+    }, true));
+
 
 })( jQuery );

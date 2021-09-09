@@ -30,7 +30,7 @@ section.block.infographic figure {
 section.block.infographic figure img {
   width: 100%;
 }
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1201px) {
   section.block.infographic {
     flex-flow: row nowrap;
   }
@@ -78,10 +78,10 @@ aside.slide.started {
 aside.slide.opened {
   transform: translateX(0vw);
 }
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1201px) {
   aside.slide {
     left: auto;
-    width: 1240px;
+    max-width: var(--main-width-pad);
   }
 }
 /*# sourceMappingURL=block-mw-infographic.css.map */

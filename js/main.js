@@ -1,6 +1,38 @@
 // main.js
+'use strict';
+
+/**
+ * Debounce functions for better performance
+ * (c) 2018 Chris Ferdinandi, MIT License, https://gomakethings.com/debouncing-your-javascript-events/
+ * @param  {Function} fn The function to debounce
+ */
+var debounce = function (fn) {
+	// Setup a timer
+	let timeout;
+
+	// Return a function to run debounced
+	return function () {
+
+		// Setup the arguments
+		let context = this;
+		let args = arguments;
+
+		// If there's a timer, cancel it
+		if (timeout) {
+			window.cancelAnimationFrame(timeout);
+		}
+
+		// Setup the new requestAnimationFrame()
+		timeout = window.requestAnimationFrame(function () {
+			fn.apply(context, args);
+		});
+
+	}
+
+};
+
+// CAN jQuery
 (function( $ ) {
-    'use strict';
 
     // READ TIME JS - https://w3collective.com/calculate-reading-time-javascript/
     function readingTime() { // TODO: Make function better: variables, id
@@ -16,8 +48,6 @@
     if( $('.page')[0] ) {
         readingTime();
     }
-
-
 
     // OPEN COMPANION CONTENT <- slide
 
@@ -37,28 +67,50 @@
     //     }
     // })
 
+
+    const companion_slide = $( '.slide.companion' );
     function setCompanionSlide() {
-        $( '.slide.companion' ).each( function() {
-            const slide = $(this);
-            slide.addClass( 'started' );
+        companion_slide .each( function() {
+            companion_slide.addClass( 'started' );
 
             $(document).on(
                 'click', 'button.open.companion', function() {
 
-                    slide.toggleClass( 'opened' );
+                    companion_slide.toggleClass( 'opened' );
                 }
             );
-            // If click outside
-            $('body').on( 'click', function() {
-                if ( !$(event.target.parentNode.parentNode).hasClass('slide') && slide.hasClass('opened') ) {
-                    $(slide).toggleClass( 'opened' );
-                }
-            });
+
+            // var root = document.querySelector(':root');
+            // const max_width = getComputedStyle(document.documentElement).getPropertyValue('--main-width-pad');
 
         });
     }
     setCompanionSlide();
 
+    // Add a click outside function if browser window is smaller than 2 x the main width
+    function addClickOutsideCompanion() {
+        let window_width = window.innerWidth;
+        let main_width = $('main'). outerWidth();
+
+        if ( window_width <= (main_width * 2) ) {
+            // If click outside
+            $('body').on( 'click', function() {
+                if ( !$(event.target.parentNode.parentNode).hasClass('slide') && companion_slide.hasClass('opened') ) {
+                    $(companion_slide).toggleClass( 'opened' );
+                }
+            });
+        } else {
+            $('body').off();
+        }
+    }
+    addClickOutsideCompanion();
+
+    // Adjust dimensions if browser sizes change
+    window.addEventListener('resize', debounce(function() {
+        if( !window.matchMedia( '(any-hover: none)' ).matches ) { // Only works if !NOT mobile
+            addClickOutsideCompanion();
+        }
+    }, true));
 
 
 })( jQuery );

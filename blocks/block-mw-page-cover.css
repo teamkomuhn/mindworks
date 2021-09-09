@@ -90,7 +90,7 @@ header.block.cover figure.cover-image img {
 header.block.cover.light div.cover-title-meta h2.title {
   color: var(--color-black);
 }
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1201px) {
   header.block.cover {
     flex-flow: row nowrap;
   }

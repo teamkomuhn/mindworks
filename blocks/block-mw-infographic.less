@@ -1,4 +1,4 @@
-//
+// block-mw-infographic.less
 @import "../css/variables-static";
 
 section.block.infographic {
@@ -60,11 +60,11 @@ section.block.infographic {
             }
         }
 
-    } // desktop styles
-
-
+    } // end of desktop styles
 }
 
+
+// SLIDE
 aside.slide {
     position: fixed; z-index: 99999;
     left: 0; right: 0;
@@ -106,7 +106,7 @@ aside.slide {
     @media @desktop { // TODO: Adapt with in relation to screen width
 
         left: auto;
-        width: 1240px;
+        max-width: var(--main-width-pad);
 
     } // desktop styles
 
