@@ -2,6 +2,7 @@ section.block.infographic {
   display: flex;
   flex-flow: column nowrap;
   padding: var(--spacing-y) var(--spacing-x);
+  margin-bottom: var(--spacing-y);
   background-color: var(--color-coral);
   border-radius: 1em;
   overflow: hidden;
@@ -30,9 +31,14 @@ section.block.infographic figure {
 section.block.infographic figure img {
   width: 100%;
 }
+main section.block.infographic {
+  margin-top: var(--spacing-y);
+}
 @media only screen and (min-width: 1201px) {
   section.block.infographic {
     flex-flow: row nowrap;
+    margin-bottom: var(--spacing-x);
+    padding: var(--spacing-x);
   }
   section.block.infographic header {
     margin-bottom: 0;

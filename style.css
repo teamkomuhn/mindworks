@@ -41,10 +41,10 @@ Version: 2.0
   --font-size-h4: 1.5rem;
   --font-size-h5: 1.2rem;
 }
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 1201px) {
   :root {
     --spacing-x: 7.5rem;
-    --spacing-y: 7.5rem;
+    --spacing-y: 3.75rem;
     --main-header-height: 8rem;
     --font-size-title: 4rem;
     --font-size-biggest: 3rem;
@@ -611,7 +611,7 @@ footer.main-footer div.so-me a.icon:first-child,
   position: relative;
   margin: 0 auto;
 }
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 1201px) {
   /* BODY AND MAIN*/
   body {
     background-color: var(--color-grey-dark);
@@ -622,6 +622,10 @@ footer.main-footer div.so-me a.icon:first-child,
   }
   /* TYPOGRAPHY */
   /* BUTTONS */
+  button,
+  .button {
+    line-height: 3em;
+  }
   /* FORMS */
   input[type="text"],
   input[type="name"],
@@ -742,7 +746,7 @@ footer.main-footer div.so-me a.icon:first-child,
     margin: 0;
   }
 }
-@media only screen and (min-width: 960px) and (min-width: 1400px) {
+@media only screen and (min-width: 1201px) and (min-width: 1400px) {
   footer.main-footer .two-columns .column:nth-child(1),
   .page-coming-soon .two-columns .column:nth-child(1) {
     flex-basis: 1000px;
