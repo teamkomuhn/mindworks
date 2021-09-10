@@ -67,7 +67,6 @@ var debounce = function (fn) {
     //     }
     // })
 
-
     const companion_slide = $( '.slide.companion' );
     function setCompanionSlide() {
         companion_slide .each( function() {
@@ -80,9 +79,6 @@ var debounce = function (fn) {
                 }
             );
 
-            // var root = document.querySelector(':root');
-            // const max_width = getComputedStyle(document.documentElement).getPropertyValue('--main-width-pad');
-
         });
     }
     setCompanionSlide();
@@ -90,7 +86,7 @@ var debounce = function (fn) {
     // Add a click outside function if browser window is smaller than 2 x the main width
     function addClickOutsideCompanion() {
         let window_width = window.innerWidth;
-        let main_width = $('main'). outerWidth();
+        let main_width = $('main').outerWidth();
 
         if ( window_width <= (main_width * 2) ) {
             // If click outside
@@ -105,12 +101,38 @@ var debounce = function (fn) {
     }
     addClickOutsideCompanion();
 
-    // Adjust dimensions if browser sizes change
-    window.addEventListener('resize', debounce(function() {
-        if( !window.matchMedia( '(any-hover: none)' ).matches ) { // Only works if !NOT mobile
-            addClickOutsideCompanion();
-        }
-    }, true));
 
+    if( !window.matchMedia( '(any-hover: none)' ).matches ) { // Only works if !NOT mobile
+
+        // Adjust things if browser sizes change
+        window.addEventListener('resize', debounce(function() {
+            addClickOutsideCompanion();
+        }, true));
+
+        //
+        const main_header_height = getComputedStyle(document.documentElement).getPropertyValue('--main-header-height');
+        const main_header_height_num = parseFloat(main_header_height) * 16;
+
+        window.addEventListener('scroll', function() {
+
+            let current_scroll = $(window).scrollTop();
+            let snap_scroll = Math.abs( current_scroll - main_header_height_num );
+
+            if ( current_scroll >= main_header_height_num ) {
+                companion_slide.css({
+                    top: 0
+                });
+            } else {
+                companion_slide.css({
+                    top: snap_scroll
+                })
+            }
+
+            // console.log(current_scroll + ' / ' + snap_scroll);
+
+        }, true);
+
+
+    } // If NOT mobile
 
 })( jQuery );
