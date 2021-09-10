@@ -199,4 +199,69 @@
 	// Add support for responsive embeds. - https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/
 	//add_theme_support( 'responsive-embeds' );
 
+    //Register CPT - reusable content
+    function cpt_reusable_content() {
+        register_post_type('reusable_content',
+            array(
+                'labels'        => array(
+                    'name'          => 'Reusable content',
+                ),
+                'description'   => 'Reusable content blocks to call whenever/wherever needed.',
+                'public'        => true,
+                'hierarchical'  => true,
+                'show_in_rest'  => true,
+                'supports'      => array('title', 'editor', 'revisions', 'trackbacks', 'excerpt', 'page-attributes', 'thumbnails', 'post-formats'),
+            )
+        );
+    }
+    add_action('init', 'cpt_reusable_content');
+
+
+    // SHORTCODE: The Reusable content post
+    function show_reusable_content( $atts ) {
+
+        $post = $atts[slug];
+        $post = get_page_by_path( $post, OBJECT, 'reusable_content' ); //slug
+        if ( $post ) {
+            $page_order = $post->menu_order;
+            $part = 'Phase ' . ($page_order + 1);
+
+            $post_title     = $post->post_title;
+            $post_excerpt   = $post->post_excerpt;
+            $post_content   = $post->post_content;
+            //$post_image     = get_the_post_thumbnail( $post );
+            
+            $return_string = 	'<section class="block expanding-content">';
+            $return_string .= 	    '<article class="expandable companion">';
+            $return_string .=           '<div class="main">';
+            $return_string .=	            '<header>';
+            $return_string .= 			        '<h1>' . $post_title . '</h1>';
+            $return_string .= 			        '<p>' . $post_excerpt . '</p>';
+            $return_string .=                   '<div class="meta">';
+            $return_string .=                       '<span class="part-index">Phase' . $part .'</span>';
+            $return_string .=                       '<span class="tag">A few days</span>';
+            $return_string .=                       '<button class="open companion" type="button"><span>Infographic</span></button>';
+            $return_string .=                   '</div>';
+            $return_string .=		        '</header>';
+            $return_string .=           '</div>';
+            $return_string .=           '<section class="recommendations dark">';
+            $return_string .=	            $post_content;
+            $return_string .=           '</section>';
+            $return_string .=           '<div class="buttons expand">';
+            $return_string .=               '<button class="expand" type="button"><span>Read more ↓</span></button>';
+            $return_string .=               '<button class="expand go-to" type="button">Recommendations</button>';
+            $return_string .=           '</div>';
+            $return_string .=           '<aside class="companion right">';
+            $return_string .=               '<img src="' . get_stylesheet_directory_uri() . '/img/timeline-dotted-line-red.svg" alt="">';
+            $return_string .=           '</aside>';
+            $return_string .= 	    '</article>';
+            $return_string .= 	'</section>';
+            
+
+            wp_reset_query();
+            return $return_string;
+        }
+    }
+    add_shortcode('reusable_content','show_reusable_content');
+
 ?>

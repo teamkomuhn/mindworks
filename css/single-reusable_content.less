@@ -1,0 +1,298 @@
+//
+@import "../css/variables-static";
+
+section.block.expanding-content {
+    overflow: hidden;
+    padding: var(--spacing-y) var(--spacing-x) 0;
+    margin: auto calc(-1 * var(--spacing-x)) var(--spacing-y); // Counter the <main> left-right padding
+
+    > header {
+        padding-bottom: var(--spacing-y);
+
+        hgroup {
+            padding-bottom: 2em;
+
+            h1 {}
+            h2 {}
+        }
+
+        p {}
+
+    }
+
+    article.expandable {
+        position: relative;
+        padding: var(--spacing-y) var(--spacing-x) calc( var(--spacing-y) * 2.5);
+        margin: auto calc(-1 * var(--spacing-x)); // Counter the <main> left-right padding
+
+        --background-color: var(--rgb-grey); // Store value so can use later in the code and change var.
+        background-color: rgba(var(--background-color), 1);
+
+        // background-image: url("../img/bkg-rect-grey.svg"), url("../img/bkg-dotted-line.svg");
+        // background-repeat: no-repeat, no-repeat;
+        // background-position: right 0 bottom 0,  left var(--spacing-x) bottom 0;
+        // background-size: var(--spacing-x), auto;
+
+        // transition: height .5s linear;
+        will-change: height;
+
+        div.main {
+            > header {
+                padding-bottom: calc(var(--spacing-y) * 3); // Adds space for the buttons
+
+                display: flex;
+                flex-flow: column nowrap;
+
+                h1 {
+                    order: 1;
+                    padding-bottom: 0.5em;
+                }
+
+                div.meta {
+                    order: 0;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                    margin: -5px 0 .5em;
+
+                    > span {
+                        text-transform: uppercase;
+                        font-size: var(--font-size-small);
+                        font-weight: 300;
+
+                        &.part-index {
+                            margin-right: .5em;
+                        }
+                        &.tag {
+                            font-size: var(--font-size-smallest);
+                            // border: .1rem solid var(--color-grey-darker);
+                            // background-color: var(--color-white);
+                            background-color: rgba(256, 256, 256, .7);
+                            border-radius: .3rem;
+                            padding: 0.1em 0.5em;
+                        }
+                    }
+
+                    button.companion {
+                        height: 24px;
+                        margin-left: auto; // Align to right
+                        margin-right: calc( -1 * var(--spacing-x) + 1em ) ;
+
+                        background-image: url("../img/bkg-button-slide.svg");
+                        background-size: auto 100%;
+                        background-repeat: no-repeat;
+                        background-position: right;
+                        padding-right: 60px;
+
+                        border: 0;
+
+                        span {
+                            display: none;
+                        }
+
+                    }
+
+                }
+                p {
+                    order: 2;
+                    font-weight: 500;
+                }
+            }
+
+            > p {
+                font-size: var(--font-size-small);
+                padding-bottom: 1em;
+
+            }
+        }
+
+        section.recommendations {
+            position: relative; z-index: 999;
+            padding: var(--spacing-y) var(--spacing-x);
+            margin: auto calc(-1 * var(--spacing-x)); // Counter the <main> left-right padding
+
+            > header {
+                padding-bottom: 2em;
+
+                h1 {
+                    padding-bottom: 0.5em;
+                }
+                p {
+                    font-weight: 500;
+                }
+            }
+
+            > article {
+                border-left: .5em solid #fff;
+                padding: 0 0 0 1em;
+                margin-bottom: 2em;
+
+                h2 {
+                    font-size: var(--font-size-biggish);
+                    font-weight: 500;
+                    padding: 0 0 0.5em 0;
+                }
+                p {
+                    font-size: var(--font-size-small);
+                }
+            }
+        }
+
+        div.buttons {
+            position: absolute; z-index: 9999;
+            bottom: var(--spacing-y);
+            left: var(--spacing-x);
+            right: var(--spacing-x);
+        }
+
+        &::after { // Adds dashed border to bottom
+            content: " ";
+            display: block;
+            // width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: var(--spacing-x); right: var(--spacing-x);
+
+            border-bottom: 1px dashed var(--color-black);
+        }
+
+        &.companion { // + .expandable
+            overflow: hidden;
+
+            div.main {
+                padding-right: var(--spacing-x);
+                > header {
+                    padding-right: 15px; //15px = image width
+                }
+            }
+
+            aside.companion {
+                position: absolute; z-index: 99;
+                height: 100%;
+                right: var(--spacing-x); top: var(--spacing-y);
+
+                background-color: inherit;
+
+                img {}
+
+                &::before {
+                    content: " ";
+                    display: block;
+                    position: absolute; left: 0; bottom: 0; z-index: 9;
+                    width: 100%; height: 100%;
+                    background-image: linear-gradient( rgba(var(--background-color), 0), rgba(var(--background-color), 1) 70% );
+
+                }
+
+                button { // TODO: Remove this?
+                    position: absolute;
+                    right: 0; top: 0;
+                    margin-right: 2em;
+
+                }
+
+            }
+        }
+
+        &.color {
+            section.recommendations {
+                > header {
+                    h1 {
+                        color: var(--block-color);
+                    }
+                }
+
+                > article {
+                    border-left-color: var(--block-color);
+                    //
+                    // h2 {
+                    //     color: var(--block-color);
+                    // }
+                }
+            }
+        }
+
+
+        &.expanded { // .expandable.expanded
+            padding-bottom: 0;
+
+            div.main {
+                > header {
+                    padding-bottom: 2em;
+                }
+            }
+
+            section.recommendations {
+                padding-bottom: calc( var(--spacing-y) * 2.5);
+
+            }
+
+            div.buttons {
+                background-color: transparent;
+
+                &.expand {
+                    button {
+                        &:first-of-type {
+                            color: var(--color-white);
+                            border: .1rem solid var(--color-white);
+                            border-radius: 0.2em;
+
+                            > span {
+                                display: none;
+                            }
+
+                            &::after {
+                                content: "Less ↑";
+                            }
+
+                        }
+                        &:last-of-type {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        &:last-of-type {
+            // background-image: none;
+            &::after {
+                display: none;
+            }
+        }
+
+        &:first-of-type {
+            --background-color: var(--rgb-grey-light);
+
+            // background-image: url("../img/bkg-rect-grey-light.svg"), url("../img/bkg-dotted-line.svg");
+            // background-image: none;
+            &::after {
+                display: none;
+            }
+
+        }
+
+    }
+
+}
+
+// DESKTOP
+@media @desktop {
+    section.block.expanding-content {
+
+        article.expandable {
+
+            section.recommendations {
+                padding: var(--spacing-y) var(--spacing-x) calc( var(--spacing-y) * 1.5);
+            }
+
+            div.buttons {
+                button, .button {
+                    flex: 0 0 30%;
+                }
+            }
+
+        }
+    }
+}

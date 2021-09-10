@@ -33,6 +33,7 @@
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
 	<?php
+	
 		if (home_url() == "https://testing.mindworkslab.org") {
 			$oldPagesID = is_page( array(8,10) );
 		} else if (home_url() == "https://mindworkslab.org") {
@@ -58,12 +59,10 @@
 
 	<header class="main-header <?php echo $bgColor; ?>">
 		<div class="identity">
-			<?php if(is_home()) { echo '<h1>'; } else { echo '<h2>'; } ?>
-				<a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" alt="Logo">
+			<?php if(is_home()) { echo '<h1 class="logo">'; } else { echo '<a class="logo" href="' . home_url() . '" title="' . get_bloginfo('name') . '" alt="' . get_bloginfo('name') . ' Logo">'; } ?>
 					<span><?php bloginfo('name'); ?></span>
 					<img src="<?php echo get_template_directory_uri(); ?>/img/logo-<?php echo $logoColor; ?>.svg" alt="<?php bloginfo('name'); ?>" />
-				</a>
-			<?php if(is_home()) { echo '</h1>'; } else { echo '</h2>'; } ?>
+			<?php if(is_home()) { echo '</h1>'; } else { echo '</a>'; } ?>
 		</div>
 
 		<!--<nav class="main-nav" id="main-nav">
