@@ -49,7 +49,7 @@ var debounce = function (fn) {
         readingTime();
     }
 
-    // OPEN COMPANION CONTENT <- slide
+    // CONTENT SLIDE
 
     // pinchzomm.js https://github.com/manuelstofer/pinchzoom // TODO: Try this to zoom only the image
     // var myElement = document.getElementById("zoom");
@@ -67,51 +67,52 @@ var debounce = function (fn) {
     //     }
     // })
 
-    const companion_slide = $( '.slide.companion' );
-    function setCompanionSlide() {
-        companion_slide .each( function() {
-            companion_slide.addClass( 'started' );
+    const content_slide = $( '.slide.companion' );
+
+    function setContentSlide() {
+        content_slide .each( function() {
+            content_slide.addClass( 'started' );
 
             $(document).on(
                 'click', 'button.open.companion', function() {
 
-                    companion_slide.toggleClass( 'opened' );
+                    content_slide.toggleClass( 'opened' );
                 }
             );
 
         });
     }
-    setCompanionSlide();
+    setContentSlide();
 
     // Add a click outside function if browser window is smaller than 2 x the main width
-    function addClickOutsideCompanion() {
+    function addClickOutsideSlide() {
         let window_width = window.innerWidth;
         let main_width = $('main').outerWidth();
 
         if ( window_width <= (main_width * 2) ) {
             // If click outside
             $('body').on( 'click', function() {
-                if ( !$(event.target.parentNode.parentNode).hasClass('slide') && companion_slide.hasClass('opened') ) {
-                    $(companion_slide).toggleClass( 'opened' );
+                if ( !$(event.target.parentNode.parentNode).hasClass('slide') && content_slide.hasClass('opened') ) {
+                    $(content_slide).toggleClass( 'opened' );
                 }
             });
         } else {
             $('body').off();
         }
     }
-    addClickOutsideCompanion();
+    addClickOutsideSlide();
 
-
-    if( !window.matchMedia( '(any-hover: none)' ).matches ) { // Only works if !NOT mobile
+    // Only works if !NOT mobile
+    if( !window.matchMedia( '(any-hover: none)' ).matches ) {
 
         // Adjust things if browser sizes change
         window.addEventListener('resize', debounce(function() {
-            addClickOutsideCompanion();
+            addClickOutsideSlide();
         }, true));
 
         //
         const main_header_height = getComputedStyle(document.documentElement).getPropertyValue('--main-header-height');
-        const main_header_height_num = parseFloat(main_header_height) * 16;
+        const main_header_height_num = parseFloat(main_header_height) * 16; // Transfrom rem to px in integral number
 
         window.addEventListener('scroll', function() {
 
@@ -119,11 +120,11 @@ var debounce = function (fn) {
             let snap_scroll = Math.abs( current_scroll - main_header_height_num );
 
             if ( current_scroll >= main_header_height_num ) {
-                companion_slide.css({
+                content_slide.css({
                     top: 0
                 });
             } else {
-                companion_slide.css({
+                content_slide.css({
                     top: snap_scroll
                 })
             }
