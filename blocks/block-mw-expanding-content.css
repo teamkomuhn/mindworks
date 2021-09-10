@@ -1,6 +1,6 @@
 section.block.expanding-content {
   overflow: hidden;
-  padding: var(--spacing-y) var(--spacing-x) 0;
+  padding: 0 var(--spacing-x) var(--spacing-y);
   margin: auto calc(-1 * var(--spacing-x)) var(--spacing-y);
 }
 section.block.expanding-content > header {
@@ -8,6 +8,9 @@ section.block.expanding-content > header {
 }
 section.block.expanding-content > header hgroup {
   padding-bottom: 2em;
+}
+section.block.expanding-content > header hgroup h1 {
+  font-size: var(--font-size-bigger);
 }
 section.block.expanding-content article.expandable {
   position: relative;
@@ -25,6 +28,7 @@ section.block.expanding-content article.expandable div.main > header {
 section.block.expanding-content article.expandable div.main > header h1 {
   order: 1;
   padding-bottom: 0.5em;
+  color: var(--block-color);
 }
 section.block.expanding-content article.expandable div.main > header div.meta {
   order: 0;
@@ -73,7 +77,7 @@ section.block.expanding-content article.expandable section.recommendations {
   position: relative;
   z-index: 999;
   padding: var(--spacing-y) var(--spacing-x);
-  margin: auto calc(-1 * var(--spacing-x));
+  margin: var(--spacing-x) calc(-1 * var(--spacing-x)) 0;
 }
 section.block.expanding-content article.expandable section.recommendations > header {
   padding-bottom: 2em;
@@ -189,12 +193,45 @@ section.block.expanding-content article.expandable:first-of-type::after {
   display: none;
 }
 @media only screen and (min-width: 1201px) {
+  section.block.expanding-content > header hgroup h1 {
+    font-size: var(--font-size-biggest);
+    max-width: 60%;
+  }
+  section.block.expanding-content > header > p {
+    font-size: var(--font-size-big);
+  }
+  section.block.expanding-content article.expandable div.main > header h1 {
+    font-size: var(--font-size-bigger);
+  }
+  section.block.expanding-content article.expandable div.main > header > p {
+    font-size: var(--font-size-biggish);
+    font-weight: 400;
+  }
   section.block.expanding-content article.expandable section.recommendations {
     padding: var(--spacing-y) var(--spacing-x) calc(var(--spacing-y) * 1.5);
+    margin-top: var(--spacing-y);
+  }
+  section.block.expanding-content article.expandable section.recommendations > header h1 {
+    font-size: var(--font-size-bigger);
+  }
+  section.block.expanding-content article.expandable section.recommendations > header > p {
+    font-size: var(--font-size-biggish);
+    font-weight: 400;
+  }
+  section.block.expanding-content article.expandable section.recommendations article {
+    padding-right: var(--spacing-x);
+  }
+  section.block.expanding-content article.expandable section.recommendations article h2 {
+    font-size: var(--font-size-big);
+    font-weight: 400;
+  }
+  section.block.expanding-content article.expandable section.recommendations article p {
+    font-size: var(--font-size-p);
+    font-weight: 300;
   }
   section.block.expanding-content article.expandable div.buttons button,
   section.block.expanding-content article.expandable div.buttons .button {
-    flex: 0 0 30%;
+    flex: 0 0 12rem;
   }
 }
 /*# sourceMappingURL=block-mw-expanding-content.css.map */

@@ -5,6 +5,7 @@ section.block.infographic {
     display: flex;
     flex-flow: column nowrap;
     padding: var(--spacing-y) var(--spacing-x);
+    margin-bottom: var(--spacing-y);
 
     background-color: var(--color-coral);
     border-radius: 1em;
@@ -40,10 +41,16 @@ section.block.infographic {
         }
     }
 
+    main & { // If schild of main
+        margin-top: var(--spacing-y);
+    }
 
-    // DESKTOP
+
+    // DESKTOP for BLOCK
     @media @desktop {
         flex-flow: row nowrap;
+        margin-bottom: var(--spacing-x);
+        padding: var(--spacing-x);
 
         header {
             margin-bottom: 0;
@@ -102,10 +109,10 @@ aside.slide {
         transform: translateX(0vw);
     }
 
-    // DESKTOP
+    // DESKTOP for SLIDE
     @media @desktop {
 
-        left: auto; 
+        left: auto;
         max-width: var(--main-width-pad);
 
     } // desktop styles

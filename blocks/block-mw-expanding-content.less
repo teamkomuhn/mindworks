@@ -3,7 +3,7 @@
 
 section.block.expanding-content {
     overflow: hidden;
-    padding: var(--spacing-y) var(--spacing-x) 0;
+    padding: 0 var(--spacing-x) var(--spacing-y);
     margin: auto calc(-1 * var(--spacing-x)) var(--spacing-y); // Counter the <main> left-right padding
 
     > header {
@@ -12,11 +12,15 @@ section.block.expanding-content {
         hgroup {
             padding-bottom: 2em;
 
-            h1 {}
+            h1 {
+                font-size: var(--font-size-bigger);
+            }
             h2 {}
         }
 
-        p {}
+        > p {
+            // font-size:
+        }
 
     }
 
@@ -46,6 +50,7 @@ section.block.expanding-content {
                 h1 {
                     order: 1;
                     padding-bottom: 0.5em;
+                    color: var(--block-color);
                 }
 
                 div.meta {
@@ -109,7 +114,7 @@ section.block.expanding-content {
         section.recommendations {
             position: relative; z-index: 999;
             padding: var(--spacing-y) var(--spacing-x);
-            margin: auto calc(-1 * var(--spacing-x)); // Counter the <main> left-right padding
+            margin: var(--spacing-x) calc(-1 * var(--spacing-x)) 0; // Counter the <main> left-right padding
 
             > header {
                 padding-bottom: 2em;
@@ -204,10 +209,6 @@ section.block.expanding-content {
 
                 > article {
                     border-left-color: var(--block-color);
-                    //
-                    // h2 {
-                    //     color: var(--block-color);
-                    // }
                 }
             }
         }
@@ -252,7 +253,6 @@ section.block.expanding-content {
                     }
                 }
             }
-
         }
 
         &:last-of-type {
@@ -281,15 +281,61 @@ section.block.expanding-content {
 @media @desktop {
     section.block.expanding-content {
 
+        > header {
+            hgroup {
+                h1 {
+                    font-size: var(--font-size-biggest);
+                    max-width: 60%;
+                }
+            }
+            > p {
+                font-size: var(--font-size-big);
+            }
+        }
+
         article.expandable {
+            div.main {
+                > header {
+
+                    h1 {
+                        font-size: var(--font-size-bigger);
+                    }
+                    > p {
+                        font-size: var(--font-size-biggish);
+                        font-weight: 400;
+                    }
+                }
+            }
 
             section.recommendations {
                 padding: var(--spacing-y) var(--spacing-x) calc( var(--spacing-y) * 1.5);
+                margin-top: var(--spacing-y);
+                > header {
+                    h1 {
+                        font-size: var(--font-size-bigger);
+                    }
+                    > p {
+                        font-size: var(--font-size-biggish);
+                        font-weight: 400;
+                    }
+                }
+                article {
+                    padding-right: var(--spacing-x);
+
+                    h2 {
+                        font-size: var(--font-size-big);
+                        font-weight: 400;
+                    }
+                    p {
+                        font-size: var(--font-size-p);
+                        font-weight: 300;
+                    }
+                }
             }
 
             div.buttons {
                 button, .button {
-                    flex: 0 0 30%;
+                    flex: 0 0 12rem;
                 }
             }
 

@@ -44,7 +44,7 @@ Version: 2.0
 @media only screen and (min-width: 1201px) {
   :root {
     --spacing-x: 7.5rem;
-    --spacing-y: 7.5rem;
+    --spacing-y: 3.75rem;
     --main-header-height: 8rem;
     --font-size-title: 4rem;
     --font-size-biggest: 3rem;
@@ -622,6 +622,10 @@ footer.main-footer div.so-me a.icon:first-child,
   }
   /* TYPOGRAPHY */
   /* BUTTONS */
+  button,
+  .button {
+    line-height: 3em;
+  }
   /* FORMS */
   input[type="text"],
   input[type="name"],
