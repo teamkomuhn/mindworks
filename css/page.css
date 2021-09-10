@@ -7,7 +7,7 @@
   padding-bottom: 1em;
 }
 .page main > p strong {
-  font-size: 1.2em;
+  font-size: var(--font-size-biggish);
   font-weight: 500;
 }
 /*# sourceMappingURL=page.css.map */

@@ -1,0 +1,154 @@
+// Block page-cover
+@import "../css/variables-static";
+
+header.block.cover {
+    display: flex;
+    flex-flow: column wrap;
+
+    background-color: var(--color-black);
+    color: var(--color-white);
+
+    margin: 0 calc(-1 * var(--spacing-x)) var(--spacing-y); // Counter the <main> left-right padding
+
+    > div { // Flex col / row
+        overflow: hidden;
+        flex: 1 1 auto;
+    }
+
+    div.title {
+        position: relative;
+        background-color: blue;
+
+        hgroup {
+            position: relative; z-index: 99;
+            display: flex;
+            flex-flow: column nowrap;
+            height: 100vw;
+            justify-content: space-between;
+
+            h1 {
+                order: 1;
+                font-size: var(--font-size-biggest);
+                padding: 0 var(--spacing-x) var(--spacing-y);
+            }
+
+            h2.series-title {
+                order: 0;
+                font-size: var(--font-size-bigger);
+                color: var(--color-coral);
+                font-weight: 500;
+                line-height: 1em;
+                padding: var(--spacing-y) var(--spacing-x) 0;
+            }
+        }
+
+        figure.cover-image {
+            position: absolute; z-index: 9;
+            left: 0; top: 0;
+            overflow: hidden;
+            width: auto;
+            height: 100%;
+
+            img {
+                display: block;
+                padding: 0;
+                margin: 0;
+
+                height: inherit;
+                width: inherit;
+            }
+        }
+
+
+    }
+
+    div.description {
+
+        h3 {
+            font-size: var(--font-size-big);
+            padding: var(--spacing-y) var(--spacing-x) 0;
+        }
+
+        div.time {
+            margin: 0;
+            padding: var(--spacing-y) var(--spacing-x);
+
+            time.date, span.readtime {
+                // font-size: .9rem;
+                font-weight: 300;
+                &:before {
+                    font-family: 'icomoon';
+                    font-size: var(--font-size-p);
+                    vertical-align: top;
+                    margin-right: .5rem;
+                }
+            }
+
+            time {
+                &:before {
+                    content: '\e903';
+                }
+            }
+
+            span.readtime {
+                margin-left: 1.5rem;
+                &:before {
+                    content: '\e902';
+                }
+            }
+
+        }
+    }
+
+    //
+    &.light {
+
+    }
+
+}
+
+// DESKTOP
+@media @desktop {
+header.block.cover {
+    flex-flow: row nowrap;
+
+    > div { // Flex col / row
+        overflow: hidden;
+        flex: 1 1 50%;
+        height: calc(var(--main-width-pad) / 2);
+    }
+
+    div.title {
+        hgroup {
+            justify-content: flex-end;
+            height: inherit;
+
+            h1 {
+                font-size: var(--font-size-title);
+                padding-bottom: var(--spacing-x);
+            }
+            h2.series-title {
+                font-size: var(--font-size-biggest);
+                margin-bottom: 3rem;
+            }
+        }
+    }
+
+    div.description {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+
+        h3 {
+            padding: var(--spacing-x) var(--spacing-y) 3rem;
+            font-size: var(--font-size-bigger);
+            font-weight: 300;
+        }
+        div.time {
+            padding: 0 var(--spacing-y) var(--spacing-x);
+        }
+
+    }
+
+}
+}// Desktop styles
