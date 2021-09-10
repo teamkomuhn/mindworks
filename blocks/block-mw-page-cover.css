@@ -1,118 +1,115 @@
 header.block.cover {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   background-color: var(--color-black);
   color: var(--color-white);
   margin: 0 calc(-1 * var(--spacing-x)) var(--spacing-y);
+  overflow: hidden;
 }
-header.block.cover div.cover-title {
+header.block.cover > * {
+  position: relative;
+  z-index: 99;
+}
+header.block.cover hgroup {
   order: 1;
-  padding: var(--spacing-y) var(--spacing-x);
+  padding: var(--spacing-y) var(--spacing-x) 0;
 }
-header.block.cover div.cover-title h1 {
-  margin: 0;
-  padding: 0;
-  font-size: var(--font-size-h1);
+header.block.cover hgroup h1 {
+  height: calc((100vw / 2) - var(--spacing-y));
+  font-size: var(--font-size-bigger);
 }
-header.block.cover div.cover-title h1 span {
-  display: block;
-  font-size: 1rem;
+header.block.cover hgroup h3 {
+  font-size: var(--font-size-biggish);
+  padding-top: var(--spacing-y);
+}
+header.block.cover h2.series-title {
+  order: 0;
+  font-size: var(--font-size-bigger);
+  color: var(--color-coral);
+  font-weight: 500;
+  line-height: 1em;
+  padding: var(--spacing-y) var(--spacing-x) 0;
+  height: calc((100vw / 2) - var(--spacing-y));
+}
+header.block.cover div.time {
+  order: 2;
+  margin: var(--spacing-y) var(--spacing-x);
+}
+header.block.cover div.time time.date,
+header.block.cover div.time span.readtime {
   font-weight: 300;
-  text-transform: uppercase;
-  margin-bottom: calc(var(--spacing-half)/4);
 }
-header.block.cover div.cover-title div.time {
-  margin: 0;
-}
-header.block.cover div.cover-title div.time time.date,
-header.block.cover div.cover-title div.time span.readtime {
-  font-weight: 300;
-}
-header.block.cover div.cover-title div.time time.date:before,
-header.block.cover div.cover-title div.time span.readtime:before {
+header.block.cover div.time time.date:before,
+header.block.cover div.time span.readtime:before {
   font-family: 'icomoon';
   font-size: var(--font-size-p);
   vertical-align: top;
   margin-right: 0.5rem;
 }
-header.block.cover div.cover-title div.time time:before {
+header.block.cover div.time time:before {
   content: '\e903';
 }
-header.block.cover div.cover-title div.time span.readtime {
+header.block.cover div.time span.readtime {
   margin-left: 1.5rem;
 }
-header.block.cover div.cover-title div.time span.readtime:before {
+header.block.cover div.time span.readtime:before {
   content: '\e902';
 }
-header.block.cover div.cover-title h3 {
-  font-size: var(--font-size-h4);
-  margin: calc(var(--spacing-half)/2) 0;
-}
 header.block.cover figure.cover-image {
-  order: 0;
-  display: inherit;
-  position: relative;
-  overflow: hidden;
-  height: 100vw;
-  padding: 0 var(--spacing-x);
-  margin: 0;
-}
-header.block.cover figure.cover-image div.cover-title-meta {
-  z-index: 999;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-}
-header.block.cover figure.cover-image div.cover-title-meta h2.title {
-  font-size: 15vw;
-  color: var(--color-white);
-  margin: 0;
-  padding: 0;
-}
-header.block.cover figure.cover-image div.cover-title-meta p.sub-title {
-  color: var(--color-white);
-}
-header.block.cover figure.cover-image div.cover-title-meta p.sub-title span {
-  text-transform: uppercase;
-  font-size: 1rem;
-}
-header.block.cover figure.cover-image img {
   position: absolute;
+  z-index: 9;
   left: 0;
   top: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vw;
+}
+header.block.cover figure.cover-image img {
   display: block;
   padding: 0;
   margin: 0;
-  width: 100%;
-  height: inherit;
-  object-fit: cover;
-}
-header.block.cover.light div.cover-title-meta h2.title {
-  color: var(--color-black);
+  height: 100%;
+  width: auto;
 }
 @media only screen and (min-width: 1201px) {
   header.block.cover {
-    flex-flow: row nowrap;
+    height: calc(var(--main-width-pad) / 2);
+    justify-content: flex-end;
   }
-  header.block.cover div.cover-title,
-  header.block.cover figure.cover-image {
-    flex: 1 1 50%;
-    height: 50vw;
-    max-height: 620px;
-    max-width: 620px;
-  }
-  header.block.cover figure.cover-image div.cover-title-meta h2.title {
-    font-size: 4.5vw;
-  }
-  header.block.cover div.cover-title {
-    padding: 0 var(--spacing-x);
+  header.block.cover hgroup {
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
+    flex-flow: row nowrap;
+    align-items: flex-end;
   }
-  header.block.cover div.cover-title h3 {
-    font-size: 1.5em;
+  header.block.cover hgroup > * {
+    flex: 1 1 50%;
+  }
+  header.block.cover hgroup h1 {
+    height: auto;
+    font-size: var(--font-size-title);
+    align-self: flex-start;
+  }
+  header.block.cover hgroup h3 {
+    font-size: var(--font-size-biggish);
+    line-height: 1.5em;
     font-weight: 300;
+    padding-top: 0;
+    margin-left: var(--spacing-x);
+  }
+  header.block.cover h2.series-title {
+    margin-bottom: auto;
+    height: auto;
+  }
+  header.block.cover div.time {
+    margin-left: calc(calc(var(--main-width-pad) / 2) + var(--spacing-y));
+  }
+  header.block.cover div.time time.date,
+  header.block.cover div.time span.readtime {
+    font-size: var(--font-size-p);
+  }
+  header.block.cover figure.cover-image {
+    height: calc(var(--main-width-pad) / 2);
+    width: calc(var(--main-width-pad) / 2);
   }
 }
 /*# sourceMappingURL=block-mw-page-cover.css.map */

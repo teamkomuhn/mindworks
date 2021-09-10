@@ -25,7 +25,9 @@ Version: 2.0
   --color-yellow-light: #FEF288;
   --color-yellow: #FAFF00;
   --color-blue-light: #DBEFEE;
-  --color-coral: #FFA693;
+  --color-coral-dark: #FF7557;
+  --color-coral: #FF7557;
+  --color-coral-light: #FFA693;
   --font-size-title: 4rem;
   --font-size-biggest: 3rem;
   --font-size-bigger: 2.3rem;
