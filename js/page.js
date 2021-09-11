@@ -1,67 +1,79 @@
 // page.js
 (function( $ ) {
     'use strict';
-    blockSidenote();
 
-    //BLOCK SIDE NOTE
-    function blockSidenote() {
-        const blockSidenote     = $('.block.side-note');
-        const blockSidenoteID   = blockSidenote.attr( 'id' );
-        const sidenoteSup       = blockSidenote.prev().find('sup');
+    //BLOCK SIDENOTE
+    const sidebar = $('body').children('aside.sidebar');
 
-        //let blockSidenote_heights = [];
+    function getSidenotes() {
+        $( '.sidenote' ).each( function() {
+            const sidenote = $(this);
+            sidebar.append( sidenote );
+        });
+    }
 
-        $('.block.side-note').each( function(i) {
-            $(this).attr( 'id', 'sn'+ (++i) +'' );
+    let sidenote_sups = [];
 
-            sidenoteSup.attr('id', blockSidenoteID);
+    function getSups() {
+        $( 'sup' ).each( function( i ) {
+            sidenote_sups.push([]);
 
-            $('.block.side-note span').text(+i);
+            const sup = $(this);
+            let sup_pos_y = sup.offset().top;
+            let sup_pos_x = sup.offset().left;
+            sidenote_sups[i].push( sup_pos_x );
+            sidenote_sups[i].push( sup_pos_y );
 
-            sidenoteSup.on('click', function(){
-                if (blockSidenote.hasClass('open')) {
-                    blockSidenote.removeClass('open');
-                    $('body').removeClass('overflow-hidden');
-                } else {
-                    blockSidenote.addClass('open');
-                    $('body').addClass('overflow-hidden');
-                }
+        });
+    }
+
+    function setSidenotes() {
+
+        getSidenotes();
+        getSups();
+
+        $( '.sidenote' ).each( function( i ) {
+            const sidenote = $(this);
+            const close_button = sidenote.find('button.close');
+            let sidenote_pos_x = sidenote_sups[i][0];
+            let sidenote_pos_y = sidenote_sups[i][1];
+            const index = i + 1;
+
+            sidenote.prepend( '<span class="sup">' + index + '</span>' );
+
+            close_button.on('click', function(){
+                sidenote.removeClass('opened');
             });
 
-            if ($(window).width() > 1500) {
+            // On mobile
+            if( window.matchMedia( '(any-hover: none)' ).matches ) {
 
-                const sidenoteSupPosition   = sidenoteSup.position();
-
-                blockSidenote.css({top: sidenoteSupPosition.top});
-
-                /*if (sidenoteSup.length >= 2) {
-                    blockSidenote_heights.push( blockSidenote.outerHeight() );
-                    //blockSidenote.outerHeight( blockSidenote_heights[i] );
-
-                    console.log(blockSidenote_heights);
-
-                } else {
-                    blockSidenote.css({top: sidenoteSupPosition.top});
-                }*/
-
-            } else if ($(window).width() < 1440) {
-                const sidenoteCloseButton   = blockSidenote.find('.close');
-
-                sidenoteCloseButton.on('click', function(){
-                    if (blockSidenote.hasClass('open')) {
-                        blockSidenote.removeClass('open');
-                        $('body').removeClass('overflow-hidden');
-                    } else {
-                        blockSidenote.addClass('open');
-                        $('body').addClass('overflow-hidden');
-                    }
-                });
-
+            } else { // On desktop
+                // sidenote.css({
+                //     top: sidenote_pos_y,
+                //     left: sidenote_pos_x
+                // });
             }
+
 
         });
 
+        $( 'sup' ).each( function( i ) {
+            const sup = $(this);
+
+            const related_sidenote = $('aside.sidebar > *')[i];
+
+            sup.on('click', function(){
+                related_sidenote.classList.toggle('opened');
+            });
+
+        });
+
+        console.table( sidenote_sups );
+
     }
+
+    setSidenotes();
 
 
     //

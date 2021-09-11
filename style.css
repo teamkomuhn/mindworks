@@ -209,9 +209,6 @@ Browser Upgrade Prompt
 Author's custom styles
 ========================================================================== */
 /* HELPERS */
-.hide {
-  display: none;
-}
 .no-margin {
   margin: 0!important;
 }
@@ -281,8 +278,9 @@ h5 strong {
   font-weight: 700;
 }
 sup {
-  padding: 2em;
-  margin: -2em;
+  padding: 1rem;
+  margin: -1rem;
+  cursor: pointer;
 }
 .title {
   font-size: var(--font-size-title);
@@ -331,6 +329,17 @@ button,
   padding: 0 1em;
   transition: 0.3s;
   cursor: pointer;
+}
+button.small,
+.button.small {
+  border: 0;
+  text-indent: -10000px;
+}
+button.close,
+.button.close {
+  background: transparent url("img/bkg-button-close.svg") no-repeat;
+  background-position: center left;
+  background-size: 1em;
 }
 div.buttons {
   display: flex;
@@ -445,6 +454,7 @@ header.main-header.bgBlack {
 header.main-header.bgBlack div.identity h1.logo a img {
   width: 12rem;
 }
+/* SIDEBAR */
 /* FOOTER */
 footer.main-footer,
 .page-coming-soon {

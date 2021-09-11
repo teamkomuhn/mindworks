@@ -89,6 +89,30 @@
 		"oAP": "/blocks/_block-mw-page-cover.php",
 		"oF": 0
 		},
+	"/blocks/_block-mw-sidenote.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 1,
+		"oAP": "/blocks/_block-mw-sidenote.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
+	"/blocks/_block-mw-sidenote.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/blocks/_block-mw-sidenote.php",
+		"oF": 0
+		},
 	"/blocks/block-mw-expanding-content.css": {
 		"aP": 1,
 		"bl": 0,
@@ -275,7 +299,25 @@
 		"oAP": "/blocks/block-mw-side-note.css.map",
 		"oF": 0
 		},
-	"/blocks/block-mw-side-note.less": {
+	"/blocks/block-mw-sidenote.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-sidenote-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/blocks/block-mw-sidenote.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-sidenote.css.map",
+		"oF": 0
+		},
+	"/blocks/block-mw-sidenote.less": {
 		"aP": 0,
 		"bl": 0,
 		"eJ": 0,
@@ -284,19 +326,19 @@
 		"ma": 1,
 		"mS": 0,
 		"oA": 0,
-		"oAP": "/blocks/block-mw-side-note.css",
+		"oAP": "/blocks/block-mw-sidenote.css",
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
 		"sI": 0,
 		"sU": 0
 		},
-	"/blocks/block-mw-side-note.php": {
+	"/blocks/block-mw-sidenote.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/blocks/block-mw-side-note.php",
+		"oAP": "/blocks/block-mw-sidenote.php",
 		"oF": 0
 		},
 	"/browserconfig.xml": {
@@ -477,6 +519,40 @@
 		"mS": 0,
 		"oA": 0,
 		"oAP": "/css/page.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
+	"/css/single-reusable_content.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/single-reusable_content-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/single-reusable_content.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/css/single-reusable_content.css.map",
+		"oF": 0
+		},
+	"/css/single-reusable_content.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 0,
+		"oAP": "/css/single-reusable_content.css",
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
@@ -769,6 +845,16 @@
 		"oA": 0,
 		"oAP": "/img/.gitignore",
 		"oF": 0
+		},
+	"/img/bkg-button-close.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/bkg-button-close.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
 		},
 	"/img/bkg-button-slide.svg": {
 		"ft": 2097152,
@@ -1063,6 +1149,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/robots.txt",
+		"oF": 0
+		},
+	"/single-reusable_content.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/single-reusable_content.php",
 		"oF": 0
 		},
 	"/site.webmanifest": {

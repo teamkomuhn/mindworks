@@ -102,10 +102,6 @@ Author's custom styles
 
 /* HELPERS */
 
-.hide {
-	display: none;
-}
-
 .no-margin {
 	margin: 0!important;
 }
@@ -184,9 +180,9 @@ h2, h3, h4, h5 {
 }
 
 sup {
-    // background-color: pink;
-    padding: 2em;
-    margin: -2em;
+    padding: 1rem;
+    margin: -1rem;
+    cursor: pointer;
 }
 
 .title {
@@ -250,6 +246,21 @@ button, .button {
 
 	transition: 0.3s;
 	cursor: pointer;
+
+    &.small {
+        border: 0;
+        text-indent: -10000px;
+    }
+
+    //
+    &.close {
+        // background: transparent url("../img/bkg-button-close.svg") no-repeat !important;
+        background: transparent url("img/bkg-button-close.svg") no-repeat;
+        background-position: center left;
+        background-size: 1em;
+        // background-size: contain;
+
+    }
 }
 
 div.buttons {
@@ -389,6 +400,11 @@ header.main-header {
 
 }
 
+/* SIDEBAR */
+
+aside.sidebar {
+
+}
 
 /* FOOTER */
 

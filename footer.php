@@ -1,5 +1,9 @@
         </main>
-        
+
+        <aside class="sidebar">
+            <!-- Sidenote elements  -->
+        </aside>
+
         <footer class="main-footer">
             <div class="two-columns">
                 <div class="column">
@@ -58,7 +62,7 @@
                 </div>
             </div>
         </footer>
-        
+
     <?php wp_footer(); ?>
 
     </body>

@@ -1,11 +1,8 @@
 // @import "";
+@import '../css/variables-static';
+@import '../css/icomoon';
 
-@import '../css/variables-static'; 
-@import '../css/icomoon'; 
-
-
-
-.block.side-note {
+.block.sidenote{
 
     position: fixed;
     width: calc(80vw - var(--spacing-x)*2);
@@ -29,10 +26,10 @@
         cursor: pointer;
     }
 
-    
+
     button.close {
         position: absolute;
-        top: 1rem; right: var(--spacing-x);
+        top: 0; left: 0;
         border: 0;
         cursor: pointer;
         padding: 0;
@@ -57,7 +54,7 @@
 // DESKTOP
 @media @desktop {
 
-    .block.side-note {
+    .block.sidenote{
         position: absolute;
         width: calc((100vw - 1240px) - var(--spacing-half)*2);
         max-width: 350px;

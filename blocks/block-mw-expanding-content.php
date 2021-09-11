@@ -31,7 +31,11 @@
         <section class="recommendations dark">
             <header>
                 <h1><span class="sub-title">Phase 1</span> Recommendations</h1>
-                <p>The ‘Warning’ phase should be used to prime<sup>1</sup> your audiences for altruistic behaviour. People need to be prepared for the potential suffering ahead but they also need to be reminded of their abilities to overcome crises together.</p>
+                <p>The ‘Warning’ phase should be used to prime<sup>3</sup> your audiences for altruistic behaviour. People need to be prepared for the potential suffering ahead but they also need to be reminded of their abilities to overcome crises together.</p>
+                <aside class="block sidenote">
+                    <p>lalalalalalallalha</p>
+                    <button type="button" class="close hide small">Close</button>
+                </aside>
             </header>
             <article>
                 <h2>Be transparent and informative</h2>
