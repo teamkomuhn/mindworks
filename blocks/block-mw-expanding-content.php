@@ -32,9 +32,9 @@
 
             <header>
                 <h1><span class="sub-title">Phase 1</span> Recommendations</h1>
-                <p>The ‘Warning’ phase should be used to prime<sup>3</sup> your audiences for altruistic behaviour. People need to be prepared for the potential suffering ahead but they also need to be reminded of their abilities to overcome crises together.</p>
+                <p>The ‘Warning’ phase should be used to prime<sup>1</sup> your audiences for altruistic behaviour. People need to be prepared for the potential suffering ahead but they also need to be reminded of their abilities to overcome crises together.</p>
                 <aside class="block sidenote">
-                    <p>lalalalalalallalha</p>
+                    <p>Priming is a phenomenon whereby exposure to one stimulus influences a response to a subsequent stimulus, without conscious guidance or intention.</p>
                     <button type="button" class="close hide small">Close</button>
                 </aside>
             </header>
@@ -196,6 +196,11 @@
 
             <p>As the impacts of the crisis on day-to-day life diminish, so the importance of the community’s “disaster identity” fades, for example, when the floods recede or the state of emergency ends. In this period, old identities from "normal" times, such as professional, racial or political identities, regain importance. When people experience inequality in the impacted community this temporary identity can fade even quicker, for example, if elites have privileged access to resources, or some people lose their jobs while others don’t. The "Honeymoon" phase relies strongly upon <b>a sense of “<a href="http://people.umass.edu/estaub/The_Roots_of_Goodness.pdf" title="The Roots of Goodness">generalised reciprocity</a>”</b><sup>2</sup>, and so when the community feels this has been violated, their belief in this new "inclusive" society falters.</p>
 
+            <aside class="block sidenote">
+                <p><i>Generalised reciprocity</i> is the notion that, if one helps another person, this person is not only more likely to help oneself in return but also more likely to help some other person in need. Thus, by helping others, one contributes to creating a world in which people in general will be helpful to oneself as well as to important people in one’s life.</p>
+                <button type="button" class="close hide small">Close</button>
+            </aside>
+
             <p>While it is not common, if social division appears early on in the crisis and a new inclusive social identity cannot be created, communities may skip the ‘Honeymoon’ phase altogether, moving directly to the ‘Disillusionment’ phase. The extent and strength of the ‘Honeymoon ’phase strongly depends on the social capital of the community or the rescue and support teams. If rescue operations are poor, if impacted communities are considered a threat to public control or communities are already strongly polarised and unequal, survival mindsets can kick in.</p>
 
             <p>As quickly as the ‘Honeymoon’ phase appears, it will fade and in just a few weeks can give way to the ‘Disillusionment’ phase.</p>
@@ -260,6 +265,11 @@
             </header>
 
             <p>During this phase, which usually lasts for months, people often perceive the crisis or its aftermath as uncontrollable, losing their sense of agency. <b>Fear, depression, anxiety, anger and frustration</b> increase and people switch from an "abundance mindset" to a "<a href="https://www.rocketstartup.co/articles/abundance-and-scarcity-mindset/" title="Abundance and scarcity mindset">scarcity mindset</a>"<sup>3</sup>. This notion of scarcity can be triggered by a decrease in access to resources, limited freedom, social contact, or just dwindling personal energy due to the enduring stress of the crisis.</p>
+
+            <aside class="block sidenote">
+                <p>A <i>scarcity mindset</i> is the belief that there will never be enough, resulting in feelings of fear, stress, and anxiety.</p>
+                <button type="button" class="close hide small">Close</button>
+            </aside>
 
             <p>While the "Honeymoon" phase sees an increase in compassion, in the "Disillusionment" phase it tends to decrease as people <b>revert back to traditional identities and smaller ingroups like family and friends</b>. People also start to <a href="https://duanehallock.com/2010/01/27/phases-of-disaster-recovery/" title="Understanding the Four Phases of Disaster Recovery">look for others to blame</a> for their prolonged suffering, and we see an increase in fragmentation and polarisation. By now, people begin to get tired of reading about the crisis and so the media coverage decreases. Meanwhile on social media, while some move from sharing experiences to sharing conspiracy theories, others start to turn their attention away from the crisis in search of distraction.</p>
 
