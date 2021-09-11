@@ -69,7 +69,7 @@
 
         });
 
-        console.table( sidenote_sups );
+        // console.table( sidenote_sups );
 
     }
 
