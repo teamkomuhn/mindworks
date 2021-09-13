@@ -34,7 +34,7 @@
                 <h1><span class="sub-title">Phase 1</span> Recommendations</h1>
                 <p>The ‘Warning’ phase should be used to prime<sup>1</sup> your audiences for altruistic behaviour. People need to be prepared for the potential suffering ahead but they also need to be reminded of their abilities to overcome crises together.</p>
                 <aside class="block sidenote">
-                    <p>Priming is a phenomenon whereby exposure to one stimulus influences a response to a subsequent stimulus, without conscious guidance or intention.</p>
+                    <p><i>Priming</i> is a phenomenon whereby exposure to one stimulus influences a response to a subsequent stimulus, without conscious guidance or intention. For instance, if you “prime” someone about the possible dangers of fearful situations, they will be afterwards more likely to judge something or someone as threatening.</p>
                     <button type="button" class="close hide small">Close</button>
                 </aside>
             </header>
