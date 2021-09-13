@@ -58,7 +58,7 @@
         // REGISTER
             /// CSS
             wp_register_style( 'style', get_stylesheet_directory_uri() . '/style.css' );
-            wp_register_style( 'style-sidenote', get_stylesheet_directory_uri() . '/blocks/block-mw-sidenote.css' );
+            //wp_register_style( 'style-sidenote', get_stylesheet_directory_uri() . '/blocks/block-mw-sidenote.css' );
 
             /// JS
             wp_register_script( 'script_min', get_template_directory_uri() . '/js/main-min.js', array(), '1.0.0', true );
@@ -67,7 +67,7 @@
         // ENQUEUE
             /// CSS
             wp_enqueue_style( 'style');
-            wp_enqueue_style( 'style-sidenote');
+            //wp_enqueue_style( 'style-sidenote');
 
             /// JS
             wp_enqueue_script( 'jquery' );

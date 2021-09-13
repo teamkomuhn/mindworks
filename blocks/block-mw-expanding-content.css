@@ -101,6 +101,9 @@ section.block.expanding-content article.expandable section.recommendations > art
 section.block.expanding-content article.expandable section.recommendations > article p {
   font-size: var(--font-size-small);
 }
+section.block.expanding-content article.expandable section.recommendations > article p a {
+  color: inherit;
+}
 section.block.expanding-content article.expandable div.buttons {
   position: absolute;
   z-index: 9999;
