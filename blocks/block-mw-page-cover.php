@@ -28,7 +28,7 @@ if ( block_field('background-brightness', false) === true ) {
 
     <div class="time">
         <time datetime="<?php echo get_the_date('l jS \of F Y h:i:s A'); ?>" pubdate="pubdate" class="date"><?php print get_the_date('F j, Y'); ?></time>
-        <span class="readtime" id="readtime"></span> min read
+        <!--<span class="readtime" id="readtime"></span> min read-->
     </div>
 
     <figure class="cover-image">
