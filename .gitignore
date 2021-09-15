@@ -24,3 +24,12 @@ node_modules/
 
 # ignore
 *.DS_Store
+*.ftpconfig
+*.ftpignore
+*.ftpquota
+
+/.htaccess
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz

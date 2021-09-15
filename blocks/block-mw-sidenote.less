@@ -50,6 +50,43 @@
 // DESKTOP
 @media @desktop {
 
+    .block.sidenote{
+
+        // position: absolute;
+        width: auto; height: auto;
+        max-width: 30rem;
+
+        background-color: @color-grey;
+        border: 1px solid @color-black;
+        border-radius: 0.2em;
+
+
+        > p {
+            padding: 2rem;
+            margin-top: 0;
+            font-size: var(--font-size-smaller);
+
+        }
+
+        button {
+            top: 0; right: 0;
+        }
+
+        span.sup {
+            position: relative;
+            left: auto; top: auto;
+            margin: 2rem 1em 0 2rem;
+            float: left;
+            font-size: var(--font-size-smaller);
+        }
+
+        &.opened {
+            left: auto; top: var(--spacing-y); right: var(--spacing-y);
+        }
+
+    }
+    
+
     // .block.sidenote{
     //     opacity: 1;
     //     position: absolute;
@@ -94,42 +131,5 @@
     //     }
     //
     // }
-
-    .block.sidenote{
-
-        // position: absolute;
-        width: auto; height: auto;
-        max-width: 30rem;
-
-        background-color: @color-grey;
-        border: 1px solid @color-black;
-        border-radius: 0.2em;
-
-
-        > p {
-            padding: 2rem;
-            margin-top: 0;
-            font-size: var(--font-size-smaller);
-
-        }
-
-        button {
-            top: 0; right: 0;
-        }
-
-        span.sup {
-            position: relative;
-            left: auto; top: auto;
-            margin: 2rem 1em 0 2rem;
-            float: left;
-            font-size: var(--font-size-smaller);
-        }
-
-        &.opened {
-            left: auto; top: var(--spacing-y); right: var(--spacing-y);
-        }
-
-
-    }
 
 } // Desktop styles
