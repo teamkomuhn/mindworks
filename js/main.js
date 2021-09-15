@@ -34,6 +34,11 @@ var debounce = function (fn) {
 // CAN jQuery
 (function( $ ) {
 
+
+    if( $('.page')[0] ) {
+        //readingTime();
+    }
+    
     // READ TIME JS - https://w3collective.com/calculate-reading-time-javascript/
     function readingTime() { // TODO: Make function better: variables, id
         var text = document.getElementById('main').innerText;
@@ -43,10 +48,6 @@ var debounce = function (fn) {
         document.getElementById('readtime').innerText = time;
 
         //console.log(words);
-    }
-
-    if( $('.page')[0] ) {
-        readingTime();
     }
 
     // CONTENT SLIDE

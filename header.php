@@ -49,7 +49,7 @@
 		} else if ( $oldPagesID ) {
 			$logoColor = "black";
 			$bgColor = "bgWhite";
-			$maxWidth = "style='max-width:1440px;'";
+			$maxWidth = "style='max-width:calc(60rem + (var(--spacing-x)*2));'";
 		} else {
 			$logoColor = "black";
 			$bgColor = "bgWhite";
