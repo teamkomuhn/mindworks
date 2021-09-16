@@ -140,7 +140,7 @@
 .page-scientific-insights .button {
   display: inline-flex;
   margin: 0.5rem 0;
-  border: 0;
+  border: 0!important;
   padding: inherit;
 }
 .page-scientific-insights .wp-block-button a,

@@ -1,7 +1,7 @@
 section.block.expanding-content {
   overflow: hidden;
   padding: 0 var(--spacing-x) var(--spacing-y);
-  margin: auto calc(-1 * var(--spacing-x)) var(--spacing-y);
+  margin: auto calc(-1 * var(--spacing-x)) 0;
 }
 section.block.expanding-content > header {
   padding-bottom: var(--spacing-y);
@@ -194,6 +194,47 @@ section.block.expanding-content article.expandable:first-of-type {
 section.block.expanding-content article.expandable:first-of-type::after {
   display: none;
 }
+.block.sidenote {
+  transition: opacity 0.3s;
+  opacity: 0;
+  position: fixed;
+  z-index: 9999;
+  left: 100vw;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: var(--color-grey);
+}
+.block.sidenote > p {
+  padding: var(--spacing-y) var(--spacing-x);
+  margin-top: var(--spacing-y);
+}
+.block.sidenote button {
+  position: absolute;
+  top: var(--spacing-x);
+  right: var(--spacing-x);
+}
+.block.sidenote span.sup {
+  content: '1';
+  display: inline-block;
+  position: absolute;
+  top: var(--spacing-x);
+  left: var(--spacing-x);
+  background-color: transparent;
+  border: 0.1rem solid var(--color-black);
+  border-radius: 0.2em;
+  font-size: var(--font-small);
+  font-weight: 500;
+  color: #222222;
+  line-height: 2.3em;
+  text-align: center;
+  padding: 0 1em;
+}
+.block.sidenote.opened {
+  left: 0;
+  opacity: 1;
+}
 @media only screen and (min-width: 1201px) {
   section.block.expanding-content > header hgroup h1 {
     font-size: var(--font-size-biggest);
@@ -234,6 +275,36 @@ section.block.expanding-content article.expandable:first-of-type::after {
   section.block.expanding-content article.expandable div.buttons button,
   section.block.expanding-content article.expandable div.buttons .button {
     flex: 0 0 12rem;
+  }
+  .block.sidenote {
+    width: auto;
+    height: auto;
+    max-width: 30rem;
+    background-color: #DDDDDD;
+    border: 1px solid #222222;
+    border-radius: 0.2em;
+  }
+  .block.sidenote > p {
+    padding: 2rem;
+    margin-top: 0;
+    font-size: var(--font-size-smaller);
+  }
+  .block.sidenote button {
+    top: 0;
+    right: 0;
+  }
+  .block.sidenote span.sup {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 2rem 1em 0 2rem;
+    float: left;
+    font-size: var(--font-size-smaller);
+  }
+  .block.sidenote.opened {
+    left: auto;
+    top: var(--spacing-y);
+    right: var(--spacing-y);
   }
 }
 /*# sourceMappingURL=block-mw-expanding-content.css.map */
