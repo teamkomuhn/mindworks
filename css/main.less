@@ -304,15 +304,14 @@ figure {
 
 input[type="text"], input[type="name"], input[type="email"], textarea {
 	-webkit-appearance: none;
-	width: calc(100% - 2*var(--spacing-x) - 4px);
 	color: var(--color-black);
 	font-size: var(--font-size-p);
 	font-weight: 500;
-	line-height: 1.5;
+	line-height: 3;
 	border: 2px solid var(--color-black);
 	border-radius: 10px;
 	background-color: transparent;
-	padding: 1rem var(--spacing-x);
+	padding: 0 1em;
 	margin: .5rem 0;
 
 	&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -410,155 +409,229 @@ aside.sidebar {
 
 /* FOOTER */
 
-footer.main-footer, .page-coming-soon {
-	background-color: var(--color-black);
-    color: var(--color-white);
-	padding: var(--spacing-y) var(--spacing-x);
+footer.main-footer {
+    background-color: var(--color-black);
+    padding: var(--spacing-y) var(--spacing-x);
 
-	div.identity {
+    div.identity {
+        color: var(--color-white);
+        margin-bottom: var(--spacing-y);
 
-		.logo {
-			margin: 0 0.5em 0 var(--spacing-x);
+        h1.logo {
+            margin-bottom: var(--spacing-y);
 
-			img {
-				display: block;
-				width: 12rem;
-			}
+            a.logo {
+                span {
+                    display: none;
+                }
+            }
+        }
 
-		}
+        h2 {
+            color: var(--color-yellow-light);
+            font-size: var(--font-size-big);
+            font-weight: 500;
 
-	}
+            margin-bottom: 1em;
+        }
 
-	h2 {
-		margin: var(--spacing-y) 0 2rem 0;
-		font-size: 1.6rem;
-		color: var(--color-yellow-light);
-		font-weight: 500;
-	}
+        h3 {
+            font-size: var(--font-size-p);
+            font-weight: 300;
+        }
 
-	h3 {
-		font-size: 1.2rem;
-		font-weight: 300;
-	}
+    }
 
-	a {
-		text-decoration: underline;
-		color: var(--color-white);
-		font-size: var(--font-size-p);
-		font-weight: 500;
-	}
+    div.form {
+        background-color: var(--color-yellow-light);
+        padding: var(--spacing-y) var(--spacing-x);
 
-	div.subscription-form {
-
-		color: var(--color-black);
-		background-color: var(--color-yellow-light);
-		padding: var(--spacing-y) var(--spacing-x);
-		margin: var(--spacing-y) 0 var(--spacing-y) 0;
-
-		&:before {
+        &:before {
 			content: "\e90a";
 			font-family: "icomoon";
 			font-size: var(--font-size-h2);
 		}
 
-		h4 {
-			font-size: 1.6rem;
-			font-weight: 500;
-			margin: .5rem 0;
-		}
-
-		p {
-			font-size: 1.2rem;
-			margin-bottom: var(--spacing-y);
-		}
+        h4 {
+            font-size: var(--font-size-big);
+            font-weight: 500;
+            margin-bottom: 1em;
+        }
+        > p {
+            margin-bottom: 1em;
+        }
 
 
-		.mailchimp-form {
+        form {
 
-			input[type="submit"] {
+            input[type="submit"] {
 				width: 100%;
+                line-height: 3rem;
+                margin-top: 1em;
+
 				font-size: var(--font-size-p);
 				font-weight: 600;
-				line-height: 1.5;
-				color: var(--color-black);
+				color: var(--color-white);
+
+                background-color: var(--color-black);
 				border: 2px solid var(--color-black);
 				border-radius: 10px;
-				background-color: var(--color-black);
-				color: var(--color-white);
-				padding: 1rem var(--spacing-x);
-				margin-top: 1rem;
+
 			}
 
-			/*.content__gdpr {
-				margin: 1rem 0;
-				font-weight: 500;
-				.mc-field-group {
-					label {
-						display: block;
-						margin: .5rem 0;
-						input {
-							margin-right: .5rem;
-						}
-					}
-				}
-			}*/
-		}
-
-		span.icon-email {
-			display: block;
-			position: relative;
-			font-size: var(--font-size-p);
-			font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif!important;
-			margin-top: var(--spacing-y);
-			padding-left: 3rem;
-
-			&:before {
-				font-family: "icomoon";
-				font-size: var(--font-size-bigger);
-				position: absolute;
-				left: 0;
-				z-index: 1;
-				margin-right: .5rem;
-			}
-
-			a {
-				text-decoration: none;
-				color: var(--color-black);
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-
-		}
-
-	}
-
-	div.so-me {
-
-		.flex-display();
-		.flex-flow(row nowrap);
-		.align-items(center);
-
-		padding: 0 0 var(--spacing-x) 0;
-
-		a.icon {
-
-			position: relative;
-			text-decoration: none;
-			font-size: var(--font-size-bigger);
-			color: var(--color-white);
-			text-decoration: none;
-			margin: 0 .5rem;
-
-			&:first-child {
-				margin-left: 0;
-			}
-
-		}
-
-	}
-
+        }
+    }
 }
+
+// footer.main-footer, .page-coming-soon {
+// 	background-color: var(--color-black);
+//     color: var(--color-white);
+// 	padding: var(--spacing-y) var(--spacing-x);
+//
+// 	div.identity {
+//
+// 		.logo {
+// 			margin: 0 0.5em 0 var(--spacing-x);
+//
+// 			img {
+// 				display: block;
+// 				width: 12rem;
+// 			}
+//
+// 		}
+//
+// 	}
+//
+// 	h2 {
+// 		margin: var(--spacing-y) 0 2rem 0;
+// 		font-size: 1.6rem;
+// 		color: var(--color-yellow-light);
+// 		font-weight: 500;
+// 	}
+//
+// 	h3 {
+// 		font-size: 1.2rem;
+// 		font-weight: 300;
+// 	}
+//
+// 	a {
+// 		text-decoration: underline;
+// 		color: var(--color-white);
+// 		font-size: var(--font-size-p);
+// 		font-weight: 500;
+// 	}
+//
+// 	div.subscription-form {
+//
+// 		color: var(--color-black);
+// 		background-color: var(--color-yellow-light);
+// 		padding: var(--spacing-y) var(--spacing-x);
+// 		margin: var(--spacing-y) 0 var(--spacing-y) 0;
+//
+// 		&:before {
+// 			content: "\e90a";
+// 			font-family: "icomoon";
+// 			font-size: var(--font-size-h2);
+// 		}
+//
+// 		h4 {
+// 			font-size: 1.6rem;
+// 			font-weight: 500;
+// 			margin: .5rem 0;
+// 		}
+//
+// 		p {
+// 			font-size: 1.2rem;
+// 			margin-bottom: var(--spacing-y);
+// 		}
+//
+//
+// 		.mailchimp-form {
+//
+// 			input[type="submit"] {
+// 				width: 100%;
+// 				font-size: var(--font-size-p);
+// 				font-weight: 600;
+// 				line-height: 1.5;
+// 				color: var(--color-black);
+// 				border: 2px solid var(--color-black);
+// 				border-radius: 10px;
+// 				background-color: var(--color-black);
+// 				color: var(--color-white);
+// 				padding: 1rem var(--spacing-x);
+// 				margin-top: 1rem;
+// 			}
+//
+// 			/*.content__gdpr {
+// 				margin: 1rem 0;
+// 				font-weight: 500;
+// 				.mc-field-group {
+// 					label {
+// 						display: block;
+// 						margin: .5rem 0;
+// 						input {
+// 							margin-right: .5rem;
+// 						}
+// 					}
+// 				}
+// 			}*/
+// 		}
+//
+// 		span.icon-email {
+// 			display: block;
+// 			position: relative;
+// 			font-size: var(--font-size-p);
+// 			font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+// 			margin-top: var(--spacing-y);
+// 			padding-left: 3rem;
+//
+// 			&:before {
+// 				font-family: "icomoon";
+// 				font-size: var(--font-size-bigger);
+// 				position: absolute;
+// 				left: 0;
+// 				z-index: 1;
+// 				margin-right: .5rem;
+// 			}
+//
+// 			a {
+// 				text-decoration: none;
+// 				color: var(--color-black);
+// 				&:hover {
+// 					text-decoration: underline;
+// 				}
+// 			}
+//
+// 		}
+//
+// 	}
+//
+// 	div.so-me {
+//
+// 		.flex-display();
+// 		.flex-flow(row nowrap);
+// 		.align-items(center);
+//
+// 		padding: 0 0 var(--spacing-x) 0;
+//
+// 		a.icon {
+//
+// 			position: relative;
+// 			text-decoration: none;
+// 			font-size: var(--font-size-bigger);
+// 			color: var(--color-white);
+// 			text-decoration: none;
+// 			margin: 0 .5rem;
+//
+// 			&:first-child {
+// 				margin-left: 0;
+// 			}
+//
+// 		}
+//
+// 	}
+//
+// }
 
 .page-coming-soon {
 

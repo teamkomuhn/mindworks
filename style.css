@@ -379,15 +379,14 @@ input[type="name"],
 input[type="email"],
 textarea {
   -webkit-appearance: none;
-  width: calc(100% - 2*var(--spacing-x) - 4px);
   color: var(--color-black);
   font-size: var(--font-size-p);
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 3;
   border: 2px solid var(--color-black);
   border-radius: 10px;
   background-color: transparent;
-  padding: 1rem var(--spacing-x);
+  padding: 0 1em;
   margin: 0.5rem 0;
 }
 input[type="text"]::placeholder,
@@ -460,146 +459,57 @@ header.main-header.bgBlack div.identity h1.logo a img {
 }
 /* SIDEBAR */
 /* FOOTER */
-footer.main-footer,
-.page-coming-soon {
+footer.main-footer {
   background-color: var(--color-black);
-  color: var(--color-white);
   padding: var(--spacing-y) var(--spacing-x);
 }
-footer.main-footer div.identity .logo,
-.page-coming-soon div.identity .logo {
-  margin: 0 0.5em 0 var(--spacing-x);
+footer.main-footer div.identity {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-y);
 }
-footer.main-footer div.identity .logo img,
-.page-coming-soon div.identity .logo img {
-  display: block;
-  width: 12rem;
+footer.main-footer div.identity h1.logo {
+  margin-bottom: var(--spacing-y);
 }
-footer.main-footer h2,
-.page-coming-soon h2 {
-  margin: var(--spacing-y) 0 2rem 0;
-  font-size: 1.6rem;
+footer.main-footer div.identity h1.logo a.logo span {
+  display: none;
+}
+footer.main-footer div.identity h2 {
   color: var(--color-yellow-light);
+  font-size: var(--font-size-big);
   font-weight: 500;
+  margin-bottom: 1em;
 }
-footer.main-footer h3,
-.page-coming-soon h3 {
-  font-size: 1.2rem;
+footer.main-footer div.identity h3 {
+  font-size: var(--font-size-p);
   font-weight: 300;
 }
-footer.main-footer a,
-.page-coming-soon a {
-  text-decoration: underline;
-  color: var(--color-white);
-  font-size: var(--font-size-p);
-  font-weight: 500;
-}
-footer.main-footer div.subscription-form,
-.page-coming-soon div.subscription-form {
-  color: var(--color-black);
+footer.main-footer div.form {
   background-color: var(--color-yellow-light);
   padding: var(--spacing-y) var(--spacing-x);
-  margin: var(--spacing-y) 0 var(--spacing-y) 0;
 }
-footer.main-footer div.subscription-form:before,
-.page-coming-soon div.subscription-form:before {
+footer.main-footer div.form:before {
   content: "\e90a";
   font-family: "icomoon";
   font-size: var(--font-size-h2);
 }
-footer.main-footer div.subscription-form h4,
-.page-coming-soon div.subscription-form h4 {
-  font-size: 1.6rem;
+footer.main-footer div.form h4 {
+  font-size: var(--font-size-big);
   font-weight: 500;
-  margin: 0.5rem 0;
+  margin-bottom: 1em;
 }
-footer.main-footer div.subscription-form p,
-.page-coming-soon div.subscription-form p {
-  font-size: 1.2rem;
-  margin-bottom: var(--spacing-y);
+footer.main-footer div.form > p {
+  margin-bottom: 1em;
 }
-footer.main-footer div.subscription-form .mailchimp-form,
-.page-coming-soon div.subscription-form .mailchimp-form {
-  /*.content__gdpr {
-				margin: 1rem 0;
-				font-weight: 500;
-				.mc-field-group {
-					label {
-						display: block;
-						margin: .5rem 0;
-						input {
-							margin-right: .5rem;
-						}
-					}
-				}
-			}*/
-}
-footer.main-footer div.subscription-form .mailchimp-form input[type="submit"],
-.page-coming-soon div.subscription-form .mailchimp-form input[type="submit"] {
+footer.main-footer div.form form input[type="submit"] {
   width: 100%;
+  line-height: 3rem;
+  margin-top: 1em;
   font-size: var(--font-size-p);
   font-weight: 600;
-  line-height: 1.5;
-  color: var(--color-black);
+  color: var(--color-white);
+  background-color: var(--color-black);
   border: 2px solid var(--color-black);
   border-radius: 10px;
-  background-color: var(--color-black);
-  color: var(--color-white);
-  padding: 1rem var(--spacing-x);
-  margin-top: 1rem;
-}
-footer.main-footer div.subscription-form span.icon-email,
-.page-coming-soon div.subscription-form span.icon-email {
-  display: block;
-  position: relative;
-  font-size: var(--font-size-p);
-  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  margin-top: var(--spacing-y);
-  padding-left: 3rem;
-}
-footer.main-footer div.subscription-form span.icon-email:before,
-.page-coming-soon div.subscription-form span.icon-email:before {
-  font-family: "icomoon";
-  font-size: var(--font-size-bigger);
-  position: absolute;
-  left: 0;
-  z-index: 1;
-  margin-right: 0.5rem;
-}
-footer.main-footer div.subscription-form span.icon-email a,
-.page-coming-soon div.subscription-form span.icon-email a {
-  text-decoration: none;
-  color: var(--color-black);
-}
-footer.main-footer div.subscription-form span.icon-email a:hover,
-.page-coming-soon div.subscription-form span.icon-email a:hover {
-  text-decoration: underline;
-}
-footer.main-footer div.so-me,
-.page-coming-soon div.so-me {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -webkit-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
-  padding: 0 0 var(--spacing-x) 0;
-}
-footer.main-footer div.so-me a.icon,
-.page-coming-soon div.so-me a.icon {
-  position: relative;
-  font-size: var(--font-size-bigger);
-  color: var(--color-white);
-  text-decoration: none;
-  margin: 0 0.5rem;
-}
-footer.main-footer div.so-me a.icon:first-child,
-.page-coming-soon div.so-me a.icon:first-child {
-  margin-left: 0;
 }
 .page-coming-soon h2 {
   margin: 0 0 var(--spacing-x) 0;
@@ -671,73 +581,6 @@ footer.main-footer div.so-me a.icon:first-child,
     top: 6rem;
   }
   /* FOOTER */
-  footer.main-footer,
-  .page-coming-soon {
-    padding: 0;
-  }
-  footer.main-footer .two-columns,
-  .page-coming-soon .two-columns {
-    position: relative;
-  }
-  footer.main-footer .two-columns .column:nth-child(1),
-  .page-coming-soon .two-columns .column:nth-child(1) {
-    padding: 0 var(--spacing-x);
-    flex-basis: 60%;
-  }
-  footer.main-footer .two-columns .column:nth-child(2),
-  .page-coming-soon .two-columns .column:nth-child(2) {
-    background-color: var(--color-yellow-light);
-    flex: auto;
-  }
-  footer.main-footer .two-columns .column:nth-child(3),
-  .page-coming-soon .two-columns .column:nth-child(3) {
-    padding: var(--spacing-y) var(--spacing-x);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-  footer.main-footer div.identity,
-  .page-coming-soon div.identity {
-    margin: var(--spacing-y) 0;
-  }
-  footer.main-footer div.identity .logo img,
-  .page-coming-soon div.identity .logo img {
-    width: 17rem;
-  }
-  footer.main-footer h2,
-  .page-coming-soon h2 {
-    margin: var(--spacing-y) 0 var(--spacing-half) 0;
-    font-size: var(--font-size-h2);
-  }
-  footer.main-footer h3,
-  .page-coming-soon h3 {
-    font-size: var(--font-size-h5);
-  }
-  footer.main-footer div.subscription-form,
-  .page-coming-soon div.subscription-form {
-    margin: var(--spacing-y) 0;
-  }
-  footer.main-footer div.subscription-form:before,
-  .page-coming-soon div.subscription-form:before {
-    font-size: var(--font-size-h1);
-  }
-  footer.main-footer div.subscription-form h4,
-  .page-coming-soon div.subscription-form h4 {
-    font-size: var(--font-size-h3);
-    margin: 2rem 0;
-  }
-  footer.main-footer div.subscription-form p,
-  .page-coming-soon div.subscription-form p {
-    margin-bottom: var(--spacing-half);
-  }
-  footer.main-footer div.subscription-form span.icon-email,
-  .page-coming-soon div.subscription-form span.icon-email {
-    margin-top: var(--spacing-half);
-  }
-  footer.main-footer div.so-me,
-  .page-coming-soon div.so-me {
-    padding: 0 0 calc(var(--spacing-x)/2) 0;
-  }
   .maxWidth {
     max-width: none;
   }
@@ -760,29 +603,6 @@ footer.main-footer div.so-me a.icon:first-child,
   }
   .page-coming-soon div.subscription-form {
     margin: 0;
-  }
-}
-@media only screen and (min-width: 1201px) and (min-width: 1400px) {
-  footer.main-footer .two-columns .column:nth-child(1),
-  .page-coming-soon .two-columns .column:nth-child(1) {
-    flex-basis: 1000px;
-  }
-  footer.main-footer .two-columns .column:nth-child(3),
-  .page-coming-soon .two-columns .column:nth-child(3) {
-    bottom: 2.4rem;
-  }
-  footer.main-footer h2,
-  .page-coming-soon h2 {
-    padding-right: var(--spacing-x);
-    font-size: var(--font-size-h1);
-  }
-  footer.main-footer h3,
-  .page-coming-soon h3 {
-    padding-right: calc(var(--spacing-x)*2);
-  }
-  footer.main-footer div.subscription-form h4,
-  .page-coming-soon div.subscription-form h4 {
-    font-size: var(--font-size-h2);
   }
 }
 /*# sourceMappingURL=style.css.map */
