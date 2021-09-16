@@ -58,7 +58,7 @@
                         <a href="https://www.linkedin.com/company/mindworks-lab/" class="icon icon-linkedin" alt="Mindworks Linkedin"></a>
                         <a href="https://twitter.com/mindworkslab" class="icon icon-twitter" alt="Mindworks Twitter"></a>
                     </div>
-                    <a href="https://docs.google.com/document/d/1SBKEhdD9D9nTdGMZbxMUaOvrSW1ZWH3LjeNQ-uGDrZg/edit?usp=sharing" alt="Mindworks Privacy Policy">Privacy Policy</a>
+                    <a class="text-small" href="https://docs.google.com/document/d/1SBKEhdD9D9nTdGMZbxMUaOvrSW1ZWH3LjeNQ-uGDrZg/edit?usp=sharing" alt="Mindworks Privacy Policy">Privacy Policy</a>
                 </div>
             </div>
         </footer>

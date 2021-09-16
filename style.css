@@ -295,6 +295,10 @@ sup {
 span.sub-title {
   display: block;
 }
+.text-small {
+  font-size: var(--font-size-small) !important;
+  font-weight: 300 !important;
+}
 hgroup.reverse {
   display: flex;
   flex-flow: column-reverse nowrap;
@@ -458,8 +462,8 @@ header.main-header.bgBlack div.identity h1.logo a img {
 /* FOOTER */
 footer.main-footer,
 .page-coming-soon {
-  color: var(--color-white);
   background-color: var(--color-black);
+  color: var(--color-white);
   padding: var(--spacing-y) var(--spacing-x);
 }
 footer.main-footer div.identity .logo,
@@ -473,7 +477,7 @@ footer.main-footer div.identity .logo img,
 }
 footer.main-footer h2,
 .page-coming-soon h2 {
-  margin: calc(var(--spacing-y)*2) 0 var(--spacing-y) 0;
+  margin: var(--spacing-y) 0 2rem 0;
   font-size: 1.6rem;
   color: var(--color-yellow-light);
   font-weight: 500;
@@ -495,7 +499,7 @@ footer.main-footer div.subscription-form,
   color: var(--color-black);
   background-color: var(--color-yellow-light);
   padding: var(--spacing-y) var(--spacing-x);
-  margin: calc(var(--spacing-y)*2) 0 var(--spacing-y) 0;
+  margin: var(--spacing-y) 0 var(--spacing-y) 0;
 }
 footer.main-footer div.subscription-form:before,
 .page-coming-soon div.subscription-form:before {
@@ -556,7 +560,7 @@ footer.main-footer div.subscription-form span.icon-email,
 footer.main-footer div.subscription-form span.icon-email:before,
 .page-coming-soon div.subscription-form span.icon-email:before {
   font-family: "icomoon";
-  font-size: var(--font-size-h3);
+  font-size: var(--font-size-bigger);
   position: absolute;
   left: 0;
   z-index: 1;
@@ -588,7 +592,7 @@ footer.main-footer div.so-me,
 footer.main-footer div.so-me a.icon,
 .page-coming-soon div.so-me a.icon {
   position: relative;
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-bigger);
   color: var(--color-white);
   text-decoration: none;
   margin: 0 0.5rem;

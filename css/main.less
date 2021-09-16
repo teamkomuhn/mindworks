@@ -201,6 +201,11 @@ sup {
     }
 }
 
+.text-small {
+    font-size: var(--font-size-small) !important;
+    font-weight: 300 !important;
+}
+
 hgroup {
     &.reverse {
         display: flex;
@@ -327,15 +332,12 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 /* GRID */
 
 .two-columns {
-
 	.flex-display();
 	.flex-flow(column);
-
 }
 
 .column {
 	flex-basis: 100%;
-
 }
 
 /* HEADER */
@@ -409,8 +411,8 @@ aside.sidebar {
 /* FOOTER */
 
 footer.main-footer, .page-coming-soon {
-	color: var(--color-white);
 	background-color: var(--color-black);
+    color: var(--color-white);
 	padding: var(--spacing-y) var(--spacing-x);
 
 	div.identity {
@@ -428,7 +430,7 @@ footer.main-footer, .page-coming-soon {
 	}
 
 	h2 {
-		margin: calc(var(--spacing-y)*2) 0 var(--spacing-y) 0;
+		margin: var(--spacing-y) 0 2rem 0;
 		font-size: 1.6rem;
 		color: var(--color-yellow-light);
 		font-weight: 500;
@@ -451,7 +453,7 @@ footer.main-footer, .page-coming-soon {
 		color: var(--color-black);
 		background-color: var(--color-yellow-light);
 		padding: var(--spacing-y) var(--spacing-x);
-		margin: calc(var(--spacing-y)*2) 0 var(--spacing-y) 0;
+		margin: var(--spacing-y) 0 var(--spacing-y) 0;
 
 		&:before {
 			content: "\e90a";
@@ -512,7 +514,7 @@ footer.main-footer, .page-coming-soon {
 
 			&:before {
 				font-family: "icomoon";
-				font-size: var(--font-size-h3);
+				font-size: var(--font-size-bigger);
 				position: absolute;
 				left: 0;
 				z-index: 1;
@@ -543,7 +545,7 @@ footer.main-footer, .page-coming-soon {
 
 			position: relative;
 			text-decoration: none;
-			font-size: var(--font-size-h2);
+			font-size: var(--font-size-bigger);
 			color: var(--color-white);
 			text-decoration: none;
 			margin: 0 .5rem;
@@ -593,7 +595,6 @@ footer.main-footer, .page-coming-soon {
 
 	p {
 		position: relative;
-		//background-color: red;
 		margin: 0 auto;
 	}
 
