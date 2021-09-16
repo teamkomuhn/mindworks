@@ -1,0 +1,75 @@
+nav.format-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: var(--spacing-y);
+  display: flex;
+  flex-flow: row nowrap;
+}
+nav.format-menu ul li {
+  flex: 1 1 auto;
+  background-color: var(--color-grey);
+  transition: background-color 0.3s;
+}
+nav.format-menu ul li a {
+  display: block;
+  line-height: 2.3em;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-black);
+}
+nav.format-menu ul li:hover {
+  background-color: var(--color-grey-light);
+}
+nav.format-menu > ul > li {
+  position: relative;
+  background-size: 1.1rem;
+  background-repeat: no-repeat;
+  background-position: right 1em center;
+  padding-right: 2em;
+}
+nav.format-menu > ul > li > ul {
+  position: absolute;
+  z-index: 99;
+  overflow: hidden;
+  transform: scaleY(0);
+  transition: transform 0.1s ease-out 0.3s;
+  transform-origin: left top;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+nav.format-menu > ul > li.explore {
+  background-color: var(--color-black);
+  background-image: url("../img/icon-open-white.svg");
+  background-size: 0.9rem;
+}
+nav.format-menu > ul > li.download {
+  background-image: url("../img/icon-download-black.svg");
+}
+nav.format-menu > ul > li.listen {
+  background-image: url("../img/icon-audio-black.svg");
+}
+nav.format-menu > ul > li:hover > ul,
+nav.format-menu > ul > li:active > ul {
+  transform: scaleY(1);
+}
+nav.format-menu > ul > li:first-of-type {
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+}
+nav.format-menu > ul > li:first-of-type a {
+  color: var(--color-white);
+}
+nav.format-menu > ul > li:last-of-type {
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+}
+nav.format-menu > ul > li.sub-menu > a {
+  pointer-events: none;
+}
+@media only screen and (min-width: 1201px) {
+  nav.format-menu ul {
+    width: 50%;
+  }
+}
+/*# sourceMappingURL=block-mw-format-menu.css.map */
