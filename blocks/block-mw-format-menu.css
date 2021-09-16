@@ -42,7 +42,6 @@ nav.format-menu > ul > li > ul {
   width: 100%;
 }
 nav.format-menu > ul > li.explore > a {
-  background-color: var(--color-black);
   background-image: url("../img/icon-open-white.svg");
   background-size: 0.9rem;
 }
@@ -57,6 +56,7 @@ nav.format-menu > ul > li:active > ul {
   transform: scaleY(1);
 }
 nav.format-menu > ul > li:first-of-type {
+  background-color: var(--color-black);
   border-top-left-radius: 0.2rem;
   border-bottom-left-radius: 0.2rem;
 }
