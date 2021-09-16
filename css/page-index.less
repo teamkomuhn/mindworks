@@ -28,105 +28,6 @@
     @font-size-h4: 		1.5rem;
     @font-size-p: 		1.1rem;
 
-    
-    
-    /* TYPOGRAPHY */
-    
-    h1 {
-        font-weight: 600;
-        line-height: 1.1;
-    
-        b, strong {
-            font-weight: 700;
-        }
-    }
-    
-    h2, h3, h4 {
-    
-        font-weight: 500;
-        line-height: 1.3;
-    
-        b, strong {
-            font-weight: 700;
-        }
-    
-    }
-    
-    p {
-        font-size: @font-size-p;
-        line-height: 1.5;
-    
-        &.footnote {
-            color: @color-grey-darker;
-            font-size: 1rem;
-        }
-    
-        a {
-            color: @color-black;
-        }
-    
-    }
-    
-    .underline {
-        position: relative;
-        margin-bottom: @y-spacing;
-    
-        &:after {
-            content: "";
-            position: absolute;
-            width: 60px;
-            height: 7px;
-            left: 0;
-            bottom: -1rem;
-            background-color: @color-black;
-        }
-    
-        &.white {
-    
-            &:after {
-                background-color: @color-white;
-            }
-    
-        }
-    
-    }
-    
-    .upperline {
-        position: relative;
-        margin-top: @y-spacing;
-    
-        &:after {
-            content: "";
-            position: absolute;
-            width: 60px;
-            height: 7px;
-            left: 0;
-            top: -@x-spacing;
-            background-color: @color-black;
-        }
-    
-        &.white {
-    
-            &:after {
-                background-color: @color-white;
-            }
-    
-        }
-    
-    }
-    
-    .has-huge-font-size {
-        font-size: @font-size-h2;
-    }
-    
-    .has-large-font-size {
-        font-size: @font-size-h4;
-    }
-    
-    .has-medium-font-size {
-        font-size: @font-size-p;
-    }
-    
     /* ITEMS */
     
     .featured-post {
@@ -136,24 +37,6 @@
     
         padding: @x-spacing;
         margin: @x-spacing 0;
-    
-        &.pending {
-    
-            opacity: .3;
-    
-            figure {
-    
-                background-image: none;
-                background-color: @color-grey-dark;
-    
-            }
-    
-            a.button {
-                pointer-events: none;
-            }
-    
-        }
-    
         header {
             
             label {
@@ -260,15 +143,37 @@
             }
     
         }
+
+        &.pending {
     
+            opacity: .3;
+    
+            figure {
+    
+                background-image: none;
+                background-color: @color-grey-dark;
+    
+            }
+    
+            a.button {
+                pointer-events: none;
+                border: 0;
+            }
+    
+        }
+        
     }
 
     header.cover {
 		
+        background-color: @color-black;
+        color: @color-white;
+
 		div.cover-content {
 
 			.flex-display();
 			.flex-flow(column);
+
 
 			h1, h2 {
 				margin: 0;
@@ -276,11 +181,9 @@
 
 			h1 {
 				
-				padding: 2*@y-spacing @x-spacing;
-				background-color: @color-black;
+				padding: @y-spacing @x-spacing;
 
-				font-size: @font-size-h1;
-				color: @color-white;
+				font-size: var(--font-size-title);
 	
 				span {
 					
@@ -295,8 +198,7 @@
 	
 			h2 {
 				padding: @y-spacing @x-spacing;
-				font-size: @font-size-h4;
-				font-weight: 400;
+                font-size: var(--font-size-biggish);
 			}
 		}
 	}
@@ -337,39 +239,7 @@
         @font-size-h5: 		1.5rem;
         @font-size-p: 		1.1rem;
         
-        
-        
-        /* TYPOGRAPHY */
-        
-        h1, h2 {
-            line-height: 1.3;
-        }
-        
-        h3, h4 {
-            line-height: 1.5;
-        }
-        
-        p {
-            font-size: @font-size-p;
-            line-height: 1.5;
-        }
-        
-        .underline {
-            margin-bottom: 3rem;
-        }
-        
-        .has-huge-font-size {
-            font-size: @font-size-h2;
-        }
-        
-        .has-large-font-size {
-            font-size: @font-size-h4;
-        }
-        
-        .has-medium-font-size {
-            font-size: @font-size-h5;
-        }
-                
+         
         /* ITEMS */
 
         .featured-post {
@@ -399,6 +269,8 @@
                     position: absolute;
                     bottom: 0;
                     left: 3.8rem;
+
+                    border: 0;
                     
                     margin: 0;
                     
@@ -419,7 +291,9 @@
 
         header.cover {
             
+            
             div.cover-content {
+                height: calc(var(--main-width-pad) / 2);
 
                 .flex-flow(row nowrap);
 
@@ -435,11 +309,14 @@
                 }
 
                 h1 {
-                    font-size: @font-size-h1;
-                    min-height: calc(100% - @x-spacing);
+                    font-size: var(--font-size-title);
+                    //min-height: calc(100% - @x-spacing);
                 }
 
                 h2 {
+                    font-size: var(--font-size-biggish);
+                    line-height: 1.5em;
+                    font-weight: 300;
                     .align-self(center);
                 }
         
