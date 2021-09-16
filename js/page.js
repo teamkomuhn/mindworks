@@ -2,6 +2,7 @@
 (function( $ ) {
     'use strict';
 
+
     //BLOCK SIDENOTE
     const sidebar = $('body').children('aside.sidebar');
 
@@ -74,16 +75,6 @@
     }
 
     setSidenotes();
-
-
-    //
-    function scrollTo( element, duration, delay ) {
-        setTimeout(function() {
-            $( [document.documentElement, document.body] ).animate({
-                scrollTop: $( element ).offset().top
-            }, duration, 'swing');
-        }, delay);
-    }
 
 
     // EXPANDING BLOCKS INTERACTION -> JQUERY

@@ -49,6 +49,24 @@ var debounce = function (fn) {
     //     });
     // }
 
+
+    //SMOOTH SCROLL FOR ANY .SCROLL-TO ELEMENT
+    $('a.scroll-to[href^="#"]').on('click', function(event) {
+        event.preventDefault();
+        scrollTo($($.attr(this, 'href')), 300, 0);
+    });
+
+
+    //SMOOTH SCROLL TO FUNCTION
+    function scrollTo( element, duration, delay ) {
+        setTimeout(function() {
+            $( [document.documentElement, document.body] ).animate({
+                scrollTop: $( element ).offset().top
+            }, duration, 'swing');
+        }, delay);
+    }
+
+
     // READ TIME JS - https://w3collective.com/calculate-reading-time-javascript/
     function readingTime() { // TODO: Make function better: variables, id
         var text = document.getElementById('main').innerText;
