@@ -17,12 +17,15 @@ nav.format-menu ul li a {
   text-align: center;
   text-decoration: none;
   color: var(--color-black);
+  cursor: pointer;
 }
 nav.format-menu ul li:hover {
   background-color: var(--color-grey-light);
 }
 nav.format-menu > ul > li {
   position: relative;
+}
+nav.format-menu > ul > li > a {
   background-size: 1.1rem;
   background-repeat: no-repeat;
   background-position: right 1em center;
@@ -38,15 +41,15 @@ nav.format-menu > ul > li > ul {
   flex-flow: column nowrap;
   width: 100%;
 }
-nav.format-menu > ul > li.explore {
+nav.format-menu > ul > li.explore > a {
   background-color: var(--color-black);
   background-image: url("../img/icon-open-white.svg");
   background-size: 0.9rem;
 }
-nav.format-menu > ul > li.download {
+nav.format-menu > ul > li.download > a {
   background-image: url("../img/icon-download-black.svg");
 }
-nav.format-menu > ul > li.listen {
+nav.format-menu > ul > li.listen > a {
   background-image: url("../img/icon-audio-black.svg");
 }
 nav.format-menu > ul > li:hover > ul,
@@ -70,6 +73,13 @@ nav.format-menu > ul > li.sub-menu > a {
 @media only screen and (min-width: 1201px) {
   nav.format-menu ul {
     width: 50%;
+  }
+  nav.format-menu ul li a {
+    line-height: 3em;
+    font-weight: 500;
+  }
+  nav.format-menu > ul > li.explore > a {
+    background-size: 1rem;
   }
 }
 /*# sourceMappingURL=block-mw-format-menu.css.map */

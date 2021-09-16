@@ -33,22 +33,22 @@ var debounce = function (fn) {
 
 // CAN jQuery
 (function( $ ) {
-    smoothScrollAnchors();
+    // smoothScrollAnchors();
+    //
+    // if( $('.page')[0] ) {
+    //     //readingTime();
+    // }
+    //
+    // function smoothScrollAnchors() {
+    //     $(document).on('click', 'a[href^="#"]', function (event) {
+    //         event.preventDefault();
+    //
+    //         $('html, body').animate({
+    //             scrollTop: $($.attr(this, 'href')).offset().top
+    //         }, 500);
+    //     });
+    // }
 
-    if( $('.page')[0] ) {
-        //readingTime();
-    }
-
-    function smoothScrollAnchors() {
-        $(document).on('click', 'a[href^="#"]', function (event) {
-            event.preventDefault();
-        
-            $('html, body').animate({
-                scrollTop: $($.attr(this, 'href')).offset().top
-            }, 500);
-        });
-    }
-    
     // READ TIME JS - https://w3collective.com/calculate-reading-time-javascript/
     function readingTime() { // TODO: Make function better: variables, id
         var text = document.getElementById('main').innerText;
@@ -146,5 +146,14 @@ var debounce = function (fn) {
 
 
     } // If NOT mobile
+
+    // Format-menu explore button
+    $(document).on(
+        'click', '.format-menu .explore a', function() {
+            // console.log('click');
+            content_slide.toggleClass( 'opened' );
+            event.preventDefault();
+        }
+    );
 
 })( jQuery );

@@ -24,7 +24,7 @@ nav.format-menu {
                 text-align: center;
                 text-decoration: none;
                 color: var(--color-black);
-
+                cursor: pointer;
             }
 
             &:hover {
@@ -40,10 +40,12 @@ nav.format-menu {
             // border: .1rem solid var(--color-black);
             // border-radius: .2em;
 
-            background-size: 1.1rem;
-            background-repeat: no-repeat;
-            background-position: right 1em center;
-            padding-right: 2em;
+            > a {
+                background-size: 1.1rem;
+                background-repeat: no-repeat;
+                background-position: right 1em center;
+                padding-right: 2em;
+            }
 
             > ul {
                 position: absolute; z-index: 99;
@@ -52,23 +54,26 @@ nav.format-menu {
                 flex-flow: column nowrap;
                 width: 100%;
 
-                li {
-
-
-                }
+                li {}
 
             }
 
             &.explore {
-                background-color: var(--color-black);
-                background-image: url("../img/icon-open-white.svg");
-                background-size: .9rem;
+                > a {
+                    background-color: var(--color-black);
+                    background-image: url("../img/icon-open-white.svg");
+                    background-size: .9rem;
+                }
             }
             &.download {
-                background-image: url("../img/icon-download-black.svg");
+                > a {
+                    background-image: url("../img/icon-download-black.svg");
+                }
             }
             &.listen {
-                background-image: url("../img/icon-audio-black.svg");
+                > a {
+                    background-image: url("../img/icon-audio-black.svg");
+                }
             }
 
             &:hover, &:active {
@@ -98,9 +103,6 @@ nav.format-menu {
             }
 
         }
-
-
-
     }
 }
 
@@ -111,6 +113,22 @@ nav.format-menu {
 
         ul {
             width: 50%;
+
+            li {
+                a {
+                    line-height: 3em;
+                    font-weight: 500;
+                }
+            }
+        }
+        > ul {
+            > li {
+                &.explore {
+                    > a {
+                        background-size: 1rem;
+                    }
+                }
+            }
         }
     }
 }
