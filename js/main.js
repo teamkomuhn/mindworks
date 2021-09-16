@@ -33,7 +33,6 @@ var debounce = function (fn) {
 
 // CAN jQuery
 (function( $ ) {
-    // smoothScrollAnchors();
     //
     // if( $('.page')[0] ) {
     //     //readingTime();
@@ -49,22 +48,23 @@ var debounce = function (fn) {
     //     });
     // }
 
-
-    //SMOOTH SCROLL FOR ANY .SCROLL-TO ELEMENT
-    $('a.scroll-to[href^="#"]').on('click', function(event) {
-        event.preventDefault();
-        scrollTo($($.attr(this, 'href')), 300, 0);
-    });
-
-
-    //SMOOTH SCROLL TO FUNCTION
-    function scrollTo( element, duration, delay ) {
+    //SMOOTH SCROLL TO FUNCTION >> duplicated on page.js for now, need to check how to call it there from here
+    function scrollToMain( element, duration, delay ) {
         setTimeout(function() {
             $( [document.documentElement, document.body] ).animate({
                 scrollTop: $( element ).offset().top
             }, duration, 'swing');
         }, delay);
     }
+
+    //SMOOTH SCROLL FOR ANY .SCROLL-TO ELEMENT
+    function smoothScrollAnchors() {
+        $('a.scroll-to[href^="#"]').on('click', function(event) {
+            event.preventDefault();
+            scrollToMain($($.attr(this, 'href')), 300, 0);
+        });
+    }
+    smoothScrollAnchors();
 
 
     // READ TIME JS - https://w3collective.com/calculate-reading-time-javascript/
