@@ -11,6 +11,16 @@
   /* HELPERS */
   /* ITEMS */
 }
+.page-scientific-insights h1,
+.page-scientific-insights h2,
+.page-scientific-insights h3,
+.page-scientific-insights h4,
+.page-scientific-insights h5,
+.page-scientific-insights h6,
+.page-scientific-insights p {
+  margin: revert;
+  padding: revert;
+}
 .page-scientific-insights h1 {
   font-weight: 600;
   line-height: 1.1;
@@ -130,6 +140,8 @@
 .page-scientific-insights .button {
   display: inline-flex;
   margin: 0.5rem 0;
+  border: 0!important;
+  padding: inherit;
 }
 .page-scientific-insights .wp-block-button a,
 .page-scientific-insights .button a {
