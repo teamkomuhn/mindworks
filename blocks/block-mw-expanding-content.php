@@ -1,4 +1,4 @@
-<section class="block expanding-content">
+<section class="block expanding-content" id="phases">
     <!--<header>
         <hgroup class="reverse">
             <h1>From disorientation to post-crisis culture</h1>

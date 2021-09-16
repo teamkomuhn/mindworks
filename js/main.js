@@ -33,10 +33,20 @@ var debounce = function (fn) {
 
 // CAN jQuery
 (function( $ ) {
-
+    smoothScrollAnchors();
 
     if( $('.page')[0] ) {
         //readingTime();
+    }
+
+    function smoothScrollAnchors() {
+        $(document).on('click', 'a[href^="#"]', function (event) {
+            event.preventDefault();
+        
+            $('html, body').animate({
+                scrollTop: $($.attr(this, 'href')).offset().top
+            }, 500);
+        });
     }
     
     // READ TIME JS - https://w3collective.com/calculate-reading-time-javascript/
