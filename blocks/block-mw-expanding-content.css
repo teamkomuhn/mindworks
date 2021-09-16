@@ -70,7 +70,6 @@ section.block.expanding-content article.expandable div.main > header p {
   font-weight: 500;
 }
 section.block.expanding-content article.expandable div.main > p {
-  font-size: var(--font-size-small);
   padding-bottom: 1em;
 }
 section.block.expanding-content article.expandable section.recommendations {

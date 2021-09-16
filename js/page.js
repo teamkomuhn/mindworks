@@ -46,7 +46,7 @@
             });
 
             // On mobile
-            if( window.matchMedia( '(any-hover: none)' ).matches ) {
+            if( window.matchMedia( '(any-hover: none)' ).matches ) { // TODO: Position sidenotes on the sidebar
 
             } else { // On desktop
                 // sidenote.css({
