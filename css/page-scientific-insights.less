@@ -28,7 +28,10 @@
     @font-size-h4: 		1.5rem;
     @font-size-p: 		1.1rem;
 
-    
+    h1, h2, h3, h4, h5, h6, p {
+        margin: revert;
+        padding: revert;
+    }
     
     /* TYPOGRAPHY */
     
@@ -180,6 +183,8 @@
     
         display: inline-flex;
         margin: .5rem 0;
+        border: 0;
+        padding: inherit;
     
         a {
             width: 100%;

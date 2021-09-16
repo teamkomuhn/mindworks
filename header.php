@@ -34,7 +34,7 @@
 	<![endif]-->
 	<?php
 	
-		if (home_url() == "https://testing.mindworkslab.org") {
+		if (home_url() == "https://testing.mindworkslab.org" || home_url() == "https://komuhn.co/dev/mindworks") {
 			$oldPagesID = is_page( array(8,10) );
 		} else if (home_url() == "https://mindworkslab.org") {
 			$oldPagesID = is_page( array(188,193) );
