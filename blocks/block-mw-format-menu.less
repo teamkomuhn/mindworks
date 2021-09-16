@@ -1,0 +1,116 @@
+//
+@import "../css/variables-static";
+
+nav.format-menu {
+
+    ul {
+        //Reset
+        list-style-type: none;
+        padding: 0; margin: 0;
+
+        margin-bottom: var(--spacing-y);
+
+        display: flex;
+        flex-flow: row nowrap;
+
+        li {
+            flex: 1 1 auto;
+            background-color: var(--color-grey);
+            transition: background-color 0.3s;
+
+            a {
+                display: block;
+                line-height: 2.3em;
+                text-align: center;
+                text-decoration: none;
+                color: var(--color-black);
+
+            }
+
+            &:hover {
+                background-color: var(--color-grey-light);
+            }
+        }
+    }
+
+    > ul {
+
+        > li {
+            position: relative;
+            // border: .1rem solid var(--color-black);
+            // border-radius: .2em;
+
+            background-size: 1.1rem;
+            background-repeat: no-repeat;
+            background-position: right 1em center;
+            padding-right: 2em;
+
+            > ul {
+                position: absolute; z-index: 99;
+                overflow: hidden;
+                transform:scaleY(0); transition: transform .1s ease-out .3s; transform-origin: left top;
+                flex-flow: column nowrap;
+                width: 100%;
+
+                li {
+
+
+                }
+
+            }
+
+            &.explore {
+                background-color: var(--color-black);
+                background-image: url("../img/icon-open-white.svg");
+                background-size: .9rem;
+            }
+            &.download {
+                background-image: url("../img/icon-download-black.svg");
+            }
+            &.listen {
+                background-image: url("../img/icon-audio-black.svg");
+            }
+
+            &:hover, &:active {
+                 > ul {
+                     transform: scaleY(1);
+                 }
+            }
+
+            &:first-of-type {
+                // background-color: var(--color-black);
+                border-top-left-radius: .2rem; border-bottom-left-radius: .2rem;
+
+                a {
+                    color: var(--color-white);
+                }
+
+            }
+            &:last-of-type {
+                border-top-right-radius: .2rem; border-bottom-right-radius: .2rem;
+            }
+
+            &.sub-menu {
+                > a {
+                    pointer-events: none; // Prevent click
+                }
+
+            }
+
+        }
+
+
+
+    }
+}
+
+// DESKTOP
+@media @desktop {
+
+    nav.format-menu {
+
+        ul {
+            width: 50%;
+        }
+    }
+}
