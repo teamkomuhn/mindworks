@@ -4,9 +4,9 @@
         
         <?php
 
-            $post_label = get_post_meta( $post->ID, 'label_meta', 1);
-            $post_cover_text = get_post_meta( $post->ID, 'cover_meta', 1);
-            $post_style = 'style="background-image:url(' . get_the_post_thumbnail_url($post->ID) . ')"';
+            //$post_label = get_post_meta( $post->ID, 'label_meta', 1);
+            //$post_cover_text = get_post_meta( $post->ID, 'cover_meta', 1);
+            //$post_style = 'style="background-image:url(' . get_the_post_thumbnail_url($post->ID) . ')"';
         ?>
             <!--<header class="cover" <?php //print $post_style; ?>>
                 <div class="cover-content">
@@ -17,7 +17,7 @@
             </header>-->
 
             <div class="content" id="content">
-                <!--<label><?php echo $post_label; ?></label>-->
+                <!--<label><?php //echo $post_label; ?></label>-->
                  <!--<h2 class="title"><?php //the_title(); ?></h2>-->
                 <!--<h3 class="excerpt"><?php // print $post_cover_text; ?></h3>-->
                 <?php the_content(); ?>
