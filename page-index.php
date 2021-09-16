@@ -45,7 +45,7 @@
                                 $page_order = $post->menu_order;
                                 $part = 'Part ' . ($page_order + 1);
                                 //$post_label = get_post_meta( $post->ID, 'label_meta', 1);
-                                $post_cover_text = get_post_meta( $post->ID, 'cover_meta_text', 1);
+                                $post_cover_text = get_the_excerpt();
                                 $post_image_url = wp_get_attachment_image_url( get_post_thumbnail_id(), 'large');
                                 $post_image = get_the_post_thumbnail( $post , 'thumbnail');
                                 if (get_post_status() == 'pending') {
@@ -61,7 +61,7 @@
 
                                     <label><?php echo $part; ?></label>
                                     <h1><?php echo get_the_title($post->post_parent) . ': ' . get_the_title(); ?></h1>
-                                    <span class="date"><?php the_date( 'F d, Y' ); ?></span>
+                                    <span class="date"><?php echo get_the_date( 'F d, Y' ); ?></span>
                                     <!--<span class="readtime" id="time"></span> min read-->
                                     <?php if ($post_cover_text != '') { echo '<p>'.$post_cover_text.'</p>'; } ?>
                                     <a href="<?php the_permalink(); ?>" class="button black" title="<?php the_title(); ?>">Read</a>
