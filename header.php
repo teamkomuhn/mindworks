@@ -13,6 +13,13 @@
 	</script> -->
 
 	<meta charset="utf-8">
+	<?php global $post; 
+		if ( is_page() && $post->post_parent ) { 
+			echo '<title>' . strip_tags(get_the_title( $post )) . ' | ' . strip_tags(get_the_title( $post->post_parent )) . ' - Mindworks</title>';
+		} else {
+			echo '<title>' . strip_tags(get_the_title( $post )) . ' - Mindworks</title>';
+		}
+	?>
 
 	<?php wp_head(); ?>
 
