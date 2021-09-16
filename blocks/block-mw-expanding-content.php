@@ -1,11 +1,11 @@
 <section class="block expanding-content">
-    <header>
+    <!--<header>
         <hgroup class="reverse">
             <h1>From disorientation to post-crisis culture</h1>
             <h2 class="sub-title">The crisis timeline</h2>
         </hgroup>
         <p>During a crisis, the impacted community goes through six so-called "psychological phases". These phases are shaped by individual and collective experiences, alongside the other messages that people are exposed to through communications channels.</p>
-    </header>
+    </header>-->
 
     <article class="expandable companion color" style="--block-color: #E4B847;">
 

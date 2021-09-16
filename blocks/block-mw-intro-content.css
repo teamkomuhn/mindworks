@@ -1,0 +1,19 @@
+header.block.intro-content {
+  padding-bottom: var(--spacing-y);
+}
+header.block.intro-content hgroup {
+  padding-bottom: 2em;
+}
+header.block.intro-content hgroup h1 {
+  font-size: var(--font-size-bigger);
+}
+@media only screen and (min-width: 1201px) {
+  header.block.intro-content hgroup h1 {
+    font-size: var(--font-size-biggest);
+    max-width: 60%;
+  }
+  header.block.intro-content > p {
+    font-size: var(--font-size-big);
+  }
+}
+/*# sourceMappingURL=block-mw-intro-content.css.map */
