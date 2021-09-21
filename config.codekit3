@@ -57,6 +57,14 @@
 		"oAP": "/_index.html",
 		"oF": 0
 		},
+	"/_index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/_index.php",
+		"oF": 0
+		},
 	"/_single-reusable_content.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -993,6 +1001,19 @@
 		"opt": 0,
 		"plM": 52780316221407,
 		"prP": 0
+		},
+	"/img/cover-masked-man.jpg": {
+		"ft": 16384,
+		"iS": 82138,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/img/cover-masked-man.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"ou": "lpckwebp-none",
+		"q": 100,
+		"rq": 75
 		},
 	"/img/favicon.ico": {
 		"cB": 0,

@@ -27,16 +27,6 @@
                         <div id="mc_embed_signup_scroll">
                             <input type="text" value="" name="FNAME" class="name" id="mce-FNAME" placeholder="Name">
                             <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="E-mail" required>
-                            <!--<div id="mergeRow-gdpr" class="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group">
-                                <div class="content__gdpr">
-                                    <label>Marketing Permissions</label>
-                                    <fieldset class="mc_fieldset gdprRequired mc-field-group" name="interestgroup_field">
-                                        <label class="checkbox subfield" for="gdpr_38006"><input type="checkbox" id="gdpr_38006" name="gdpr[38006]" value="Y" class="av-checkbox "><span>Email</span></label>
-                                        <label class="checkbox subfield" for="gdpr_38010"><input type="checkbox" id="gdpr_38010" name="gdpr[38010]" value="Y" class="av-checkbox "><span>Direct Mail</span></label>
-                                        <label class="checkbox subfield" for="gdpr_38014"><input type="checkbox" id="gdpr_38014" name="gdpr[38014]" value="Y" class="av-checkbox "><span>Customized Online Advertising</span></label>
-                                    </fieldset>
-                                </div>
-                            </div>-->
                             <div id="mce-responses" class="clear">
                                 <div class="response" id="mce-error-response" style="display:none"></div>
                                 <div class="response" id="mce-success-response" style="display:none"></div>
@@ -48,10 +38,10 @@
                 </div>
                 <!--End mc_embed_signup-->
 
-                <span class="icon-email">
-                    <b>Email</b><br>
+                <p class="email-link icon-email">
+                    <strong>Email</strong>
                     <a href="mailto:hello@mindworkslab.org" alt="hello@mindworkslab.org">hello@mindworkslab.org</a>
-                </span>
+                </p>
 
             </div>
 
@@ -59,9 +49,8 @@
                 <a href="https://www.linkedin.com/company/mindworks-lab/" class="icon icon-linkedin" alt="Mindworks Linkedin"></a>
                 <a href="https://twitter.com/mindworkslab" class="icon icon-twitter" alt="Mindworks Twitter"></a>
             </div>
-            <a class="text-small" href="https://docs.google.com/document/d/1SBKEhdD9D9nTdGMZbxMUaOvrSW1ZWH3LjeNQ-uGDrZg/edit?usp=sharing" alt="Mindworks Privacy Policy">Privacy Policy</a>
 
-
+            <a class="text-small privacy" href="https://docs.google.com/document/d/1SBKEhdD9D9nTdGMZbxMUaOvrSW1ZWH3LjeNQ-uGDrZg/edit?usp=sharing" alt="Mindworks Privacy Policy">Privacy Policy</a>
 
         </footer>
 
