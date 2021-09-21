@@ -7,6 +7,14 @@ body {
 main {
 	background-color: var(--color-white);
 	max-width: var(--main-width);
+	overflow: auto;
+}
+
+body.home {
+	main {
+		max-width: 100vw;
+
+	}
 }
 
 
@@ -19,6 +27,7 @@ main {
 /* BUTTONS */
 button, .button {
 	line-height: 3em;
+	font-weight: 700;
 }
 
 div.buttons {
@@ -66,5 +75,52 @@ header.main-header {
 
 }
 
+//
+section.latest-work {
+    margin: var(--spacing-y) var(--spacing-x);
+	height: 35rem; max-width: var(--main-width-pad);
+
+    flex-flow: row nowrap;
+
+    header {
+		position: absolute; z-index: 999;
+		right: 0; top: 0; left: 50%;
+		padding: 2rem var(--spacing-y);
+    }
+
+    div.row.column {
+		padding: var(--spacing-y) var(--spacing-y);
+
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+
+		&:first-of-type {
+			order: 0;
+			flex: 1 1 50%;
+		}
+
+		&:last-of-type {
+			 order: 2;
+			 flex: 1 1 50%;
+		}
+
+    }
+
+    h2 {
+		font-size: var(--font-size-title);
+    }
+
+
+    h3 {
+		margin: 5rem 0;
+		font-size: var(--font-size-bigger);
+    }
+
+    a.button {
+		width: 15rem;
+    }
+
+}
 
 /* FOOTER */

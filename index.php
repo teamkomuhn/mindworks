@@ -6,7 +6,7 @@
 	</header>
 
 	<div class="row column">
-		<h2>The Disrupted Mind</h2>
+		<h2>The <br>Disrupted <br>Mind</h2>
 		<figure>
 			<img src="<?php echo get_template_directory_uri(); ?>/img/cover-masked-man.jpg" alt="Masked man alone looking outside">
 		</figure>
@@ -14,7 +14,7 @@
 
 	<div class="row column">
 		<h3>How the mind works during and after a crisis and what we can learn to create change.</h3>
-		<a class="button" href="#">Learn more -></a>
+		<a class="button" href="<?php echo home_url( '/thedisruptedmind/' ); ?>">Learn more -></a>
 	</div>
 
 </section>

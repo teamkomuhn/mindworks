@@ -356,7 +356,6 @@ header.main-header {
     align-items: center;
     justify-content: space-between;
 
-
 	div.identity {
 
 		.logo {
@@ -411,12 +410,45 @@ aside.sidebar {
 
 }
 
+/* BLOCKS */
+
+.block {
+    .dark {
+        background-color: var(--color-black);
+        color: var(--color-white);
+    }
+}
+
+/* BLOCKS SIDENOTE */ // TODO: Check if this os still needed
+
+// .block-side-note {
+// 	display: none;
+// 	position: fixed;
+// 	top: calc(25% - var(--spacing-x));
+// 	left: 0;
+// 	z-index: 1;
+//
+// 	margin: var(--spacing-y) var(--spacing-x);
+// 	width: calc(100% - 2*var(--spacing-x));
+// 	max-height: 50%;
+// 	overflow: auto;
+//
+// 	background-color: var(--color-white);
+// 	border-radius: 4px;
+//
+// 	p {
+// 		position: relative;
+// 		margin: 0 auto;
+// 	}
+//
+// }
+
 
 //
 section.latest-work {
     position: relative;
     overflow: hidden;
-    padding: var(--spacing-y) var(--spacing-x);
+    margin: var(--spacing-y) var(--spacing-x);
 
     display: flex;
     flex-flow: column nowrap;
@@ -427,19 +459,24 @@ section.latest-work {
 
     header {
         background-color: var(--color-coral);
+        // background-image: url("/img/icon-curved-arrow-black.png");
+        // background-repeat: no-repeat;
+        // background-position: top 2rem right var(--spacing-x);
+        // background-size: 2.5rem;
+
         padding: 2rem var(--spacing-x);
 
         h1 {
             font-size: var(--font-size-small);
             text-transform: uppercase;
-
+            letter-spacing: .15em;
+            font-weight: 300;
         }
     }
 
     div.row.column {
         background-color: var(--color-black);
         padding: var(--spacing-y) var(--spacing-x);
-
     }
 
     h2 {
@@ -613,38 +650,4 @@ footer.main-footer {
     a.privacy {
         color: var(--color-white);
     }
-}
-
-
-/* BLOCKS */
-
-.block {
-    .dark {
-        background-color: var(--color-black);
-        color: var(--color-white);
-    }
-}
-
-/* BLOCKS SIDENOTE */
-
-.block-side-note {
-	display: none;
-	position: fixed;
-	top: calc(25% - var(--spacing-x));
-	left: 0;
-	z-index: 1;
-
-	margin: var(--spacing-y) var(--spacing-x);
-	width: calc(100% - 2*var(--spacing-x));
-	max-height: 50%;
-	overflow: auto;
-
-	background-color: var(--color-white);
-	border-radius: 4px;
-
-	p {
-		position: relative;
-		margin: 0 auto;
-	}
-
 }

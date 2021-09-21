@@ -13,8 +13,8 @@
 	</script> -->
 
 	<meta charset="utf-8">
-	<?php global $post; 
-		if ( is_page() && $post->post_parent ) { 
+	<?php global $post;
+		if ( is_page() && $post->post_parent ) {
 			echo '<title>' . strip_tags(get_the_title( $post )) . ' | ' . strip_tags(get_the_title( $post->post_parent )) . ' - Mindworks</title>';
 		} else {
 			echo '<title>' . strip_tags(get_the_title( $post )) . ' - Mindworks</title>';
@@ -40,7 +40,7 @@
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
 	<?php
-	
+
 		if ( home_url() == "https://komuhn.co/dev/mindworks") {
 			$oldPagesID = is_page( array(8,10) );
 		} else if (home_url() == "https://testing.mindworkslab.org") {
@@ -50,11 +50,11 @@
 		} else {
 			$oldPagesID = is_page( array(125,2) ); //@andrea local
 		}
-		
+
 		if ( is_home() ) {
 			$logoColor = "white";
 			$bgColor = "bgBlack";
-			$maxWidth = "class="."maxWidth"."";
+			// $maxWidth = "class="."maxWidth"."";
 		//} else if ( is_page( array(8,10) ) ) {
 		} else if ( $oldPagesID ) {
 			$logoColor = "black";

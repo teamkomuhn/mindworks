@@ -463,10 +463,16 @@ header.main-header.bgBlack div.identity h1.logo a img {
   width: 12rem;
 }
 /* SIDEBAR */
+/* BLOCKS */
+.block .dark {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+/* BLOCKS SIDENOTE */
 section.latest-work {
   position: relative;
   overflow: hidden;
-  padding: var(--spacing-y) var(--spacing-x);
+  margin: var(--spacing-y) var(--spacing-x);
   display: flex;
   flex-flow: column nowrap;
 }
@@ -482,6 +488,8 @@ section.latest-work header {
 section.latest-work header h1 {
   font-size: var(--font-size-small);
   text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 300;
 }
 section.latest-work div.row.column {
   background-color: var(--color-black);
@@ -626,29 +634,6 @@ footer.main-footer div.so-me a.icon:first-child {
 footer.main-footer a.privacy {
   color: var(--color-white);
 }
-/* BLOCKS */
-.block .dark {
-  background-color: var(--color-black);
-  color: var(--color-white);
-}
-/* BLOCKS SIDENOTE */
-.block-side-note {
-  display: none;
-  position: fixed;
-  top: calc(25% - var(--spacing-x));
-  left: 0;
-  z-index: 1;
-  margin: var(--spacing-y) var(--spacing-x);
-  width: calc(100% - 2*var(--spacing-x));
-  max-height: 50%;
-  overflow: auto;
-  background-color: var(--color-white);
-  border-radius: 4px;
-}
-.block-side-note p {
-  position: relative;
-  margin: 0 auto;
-}
 @media only screen and (min-width: 1201px) {
   /* BODY AND MAIN*/
   body {
@@ -657,6 +642,10 @@ footer.main-footer a.privacy {
   main {
     background-color: var(--color-white);
     max-width: var(--main-width);
+    overflow: auto;
+  }
+  body.home main {
+    max-width: 100vw;
   }
   /* TYPOGRAPHY */
   .text-biggest {
@@ -666,6 +655,7 @@ footer.main-footer a.privacy {
   button,
   .button {
     line-height: 3em;
+    font-weight: 700;
   }
   /* FORMS */
   input[type="text"],
@@ -685,6 +675,44 @@ footer.main-footer a.privacy {
   }
   header.main-header.bgBlack div.identity {
     top: 6rem;
+  }
+  section.latest-work {
+    margin: var(--spacing-y) var(--spacing-x);
+    height: 35rem;
+    max-width: var(--main-width-pad);
+    flex-flow: row nowrap;
+  }
+  section.latest-work header {
+    position: absolute;
+    z-index: 999;
+    right: 0;
+    top: 0;
+    left: 50%;
+    padding: 2rem var(--spacing-y);
+  }
+  section.latest-work div.row.column {
+    padding: var(--spacing-y) var(--spacing-y);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+  section.latest-work div.row.column:first-of-type {
+    order: 0;
+    flex: 1 1 50%;
+  }
+  section.latest-work div.row.column:last-of-type {
+    order: 2;
+    flex: 1 1 50%;
+  }
+  section.latest-work h2 {
+    font-size: var(--font-size-title);
+  }
+  section.latest-work h3 {
+    margin: 5rem 0;
+    font-size: var(--font-size-bigger);
+  }
+  section.latest-work a.button {
+    width: 15rem;
   }
   /* FOOTER */
 }
