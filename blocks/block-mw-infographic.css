@@ -43,6 +43,9 @@ main section.block.infographic {
   section.block.infographic header {
     margin-bottom: 0;
   }
+  section.block.infographic header h1 {
+    font-size: var(--font-size-biggest);
+  }
   section.block.infographic figure {
     width: 200%;
     margin-bottom: -400%;
@@ -50,6 +53,16 @@ main section.block.infographic {
   }
   section.block.infographic figure img {
     width: 100%;
+  }
+}
+@media only screen and (min-width:600px) and (max-width:1200px) {
+  section.block.infographic {
+    flex-flow: row nowrap;
+  }
+  section.block.infographic figure {
+    width: 130%;
+    margin-bottom: -200%;
+    transform: rotate(18deg) translate(-30%, 5%);
   }
 }
 aside.slide {

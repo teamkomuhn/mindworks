@@ -54,6 +54,10 @@ section.block.infographic {
 
         header {
             margin-bottom: 0;
+
+            h1 {
+                font-size: var(--font-size-biggest);
+            }
         }
 
         figure {
@@ -68,6 +72,17 @@ section.block.infographic {
         }
 
     } // end of desktop styles
+
+    //
+    @media @medium {
+        flex-flow: row nowrap;
+        
+        figure {
+            width: 130%;
+            margin-bottom: -200%;
+            transform: rotate(18deg) translate(-30%, 5%);
+        }
+    }
 }
 
 
