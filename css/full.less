@@ -41,6 +41,8 @@ div.buttons {
 }
 
 
+
+
 /* FORMS */
 
 input[type="text"], input[type="name"], input[type="email"], textarea {
@@ -48,6 +50,9 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 	padding: 1rem calc(var(--spacing-x)/4);
 }
 
+input[type="text"], input[type="name"], input[type="email"], textarea {
+	line-height: 1em;
+}
 
 /* BLOCKS */
 
@@ -113,6 +118,8 @@ section.latest-work {
 
 /* FOOTER */
 footer.main-footer {
+	max-width: var(--main-width);
+	padding: var(--spacing-x) var(--spacing-x);
 
     div.identity {
 
@@ -120,7 +127,48 @@ footer.main-footer {
 			img {
 				width: 15rem;
 			}
+		}
 
+		h2 {
+            font-size: var(--font-size-biggest);
+        }
+
+        h3 {
+            font-size: var(--font-size-big);
+			font-weight: 300;
+			line-height: 1.5;
+        }
+	}
+
+	div.form {
+		padding: var(--spacing-y);
+
+		&:before {
+			font-size: var(--font-size-biggest);
+		}
+
+        h4 {
+            font-size: var(--font-size-bigger);
+		}
+
+		form {
+            input[type="submit"] {
+				width: 15rem;
+			}
+		}
+
+		p.email-link {
+            &:before {
+				font-size: var(--font-size-biggest);
+			}
+		}
+
+	}
+
+	div.so-me {
+		a.icon {
+            font-size: var(--font-size-biggest);
 		}
 	}
+
 }

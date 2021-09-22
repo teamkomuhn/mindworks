@@ -547,7 +547,7 @@ footer.main-footer div.form {
 footer.main-footer div.form:before {
   content: "\e90a";
   font-family: "icomoon";
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-bigger);
 }
 footer.main-footer div.form h4 {
   font-size: var(--font-size-big);
@@ -574,27 +574,23 @@ footer.main-footer div.form form input[type="submit"] {
 footer.main-footer div.form p.email-link {
   display: block;
   position: relative;
-  padding-left: 3rem;
   font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: var(--font-size-p);
-}
-footer.main-footer div.form p.email-link strong {
-  display: block;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
 }
 footer.main-footer div.form p.email-link:before {
   font-family: "icomoon";
   font-size: var(--font-size-bigger);
-  position: absolute;
-  left: 0;
-  z-index: 1;
   margin-right: 0.5rem;
 }
 footer.main-footer div.form p.email-link a {
   text-decoration: none;
   color: var(--color-black);
 }
-footer.main-footer div.form p.email-link a:hover {
-  text-decoration: underline;
+footer.main-footer div.form p.email-link a strong {
+  display: block;
 }
 footer.main-footer div.so-me {
   display: -webkit-flex;
@@ -619,8 +615,9 @@ footer.main-footer div.so-me a.icon {
 footer.main-footer div.so-me a.icon:first-child {
   margin-left: 0;
 }
-footer.main-footer a.privacy {
+footer.main-footer div.so-me a.privacy {
   color: var(--color-white);
+  margin-left: auto;
 }
 @media only screen and (min-width: 1201px) {
   /* BODY AND MAIN*/
@@ -651,6 +648,12 @@ footer.main-footer a.privacy {
   textarea {
     width: calc(100% - calc(var(--spacing-x)/2) - 4px);
     padding: 1rem calc(var(--spacing-x)/4);
+  }
+  input[type="text"],
+  input[type="name"],
+  input[type="email"],
+  textarea {
+    line-height: 1em;
   }
   /* BLOCKS */
   /* HEADER */
@@ -696,8 +699,38 @@ footer.main-footer a.privacy {
     width: 15rem;
   }
   /* FOOTER */
+  footer.main-footer {
+    max-width: var(--main-width);
+    padding: var(--spacing-x) var(--spacing-x);
+  }
   footer.main-footer div.identity h1.logo img {
     width: 15rem;
+  }
+  footer.main-footer div.identity h2 {
+    font-size: var(--font-size-biggest);
+  }
+  footer.main-footer div.identity h3 {
+    font-size: var(--font-size-big);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  footer.main-footer div.form {
+    padding: var(--spacing-y);
+  }
+  footer.main-footer div.form:before {
+    font-size: var(--font-size-biggest);
+  }
+  footer.main-footer div.form h4 {
+    font-size: var(--font-size-bigger);
+  }
+  footer.main-footer div.form form input[type="submit"] {
+    width: 15rem;
+  }
+  footer.main-footer div.form p.email-link:before {
+    font-size: var(--font-size-biggest);
+  }
+  footer.main-footer div.so-me a.icon {
+    font-size: var(--font-size-biggest);
   }
 }
 /*# sourceMappingURL=style.css.map */

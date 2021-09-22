@@ -13,7 +13,7 @@
                         <img src="<?php echo get_template_directory_uri(); ?>/img/logo-white.svg" alt="<?php bloginfo('name'); ?>" />
                     </a>
                 </h1>
-                <h2>Giving changemakers the power to understand how the human mind works.</h2>
+                <h2>Giving changemakers<br> the power to understand<br> how the human mind works.</h2>
                 <h3>Mindworks translates insights from cognitive and social sciences into practical tools for audience research, campaign strategy and engagement design.</h3>
             </div>
 
@@ -39,8 +39,7 @@
                 <!--End mc_embed_signup-->
 
                 <p class="email-link icon-email">
-                    <strong>Email</strong>
-                    <a href="mailto:hello@mindworkslab.org" alt="hello@mindworkslab.org">hello@mindworkslab.org</a>
+                    <a href="mailto:hello@mindworkslab.org" alt="hello@mindworkslab.org"><strong>Email</strong> hello@mindworkslab.org</a>
                 </p>
 
             </div>
@@ -48,9 +47,8 @@
             <div class="so-me">
                 <a href="https://www.linkedin.com/company/mindworks-lab/" class="icon icon-linkedin" alt="Mindworks Linkedin"></a>
                 <a href="https://twitter.com/mindworkslab" class="icon icon-twitter" alt="Mindworks Twitter"></a>
+                <a class="text-small privacy" href="https://docs.google.com/document/d/1SBKEhdD9D9nTdGMZbxMUaOvrSW1ZWH3LjeNQ-uGDrZg/edit?usp=sharing" alt="Mindworks Privacy Policy">Privacy Policy</a>
             </div>
-
-            <a class="text-small privacy" href="https://docs.google.com/document/d/1SBKEhdD9D9nTdGMZbxMUaOvrSW1ZWH3LjeNQ-uGDrZg/edit?usp=sharing" alt="Mindworks Privacy Policy">Privacy Policy</a>
 
         </footer>
 

@@ -536,7 +536,7 @@ footer.main-footer {
         &:before {
 			content: "\e90a";
 			font-family: "icomoon";
-			font-size: var(--font-size-h2);
+			font-size: var(--font-size-bigger);
 		}
 
         h4 {
@@ -571,30 +571,28 @@ footer.main-footer {
         p.email-link {
             display: block;
 			position: relative;
-			padding-left: 3rem;
 
 			font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
             font-size: var(--font-size-p);
 
-            strong {
-                display: block;
-            }
+            display: flex;
+    		flex-flow: row nowrap;
+            align-items: center;
+
 
             &:before {
 				font-family: "icomoon";
 				font-size: var(--font-size-bigger);
-				position: absolute;
-				left: 0;
-				z-index: 1;
-				margin-right: .5rem;
+                margin-right: .5rem;
 			}
 
 			a {
 				text-decoration: none;
 				color: var(--color-black);
-				&:hover {
-					text-decoration: underline;
-				}
+
+                strong {
+                    display: block;
+                }
 			}
         }
     }
@@ -619,9 +617,12 @@ footer.main-footer {
                 margin-left: 0;
             }
         }
+
+        a.privacy {
+            color: var(--color-white);
+            margin-left: auto;
+        }
     }
 
-    a.privacy {
-        color: var(--color-white);
-    }
+
 }
