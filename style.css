@@ -464,7 +464,7 @@ header.main-header nav.main-nav {
 section.latest-work {
   position: relative;
   overflow: hidden;
-  margin: var(--spacing-y) var(--spacing-x);
+  margin: var(--spacing-x) var(--spacing-x) var(--spacing-y) var(--spacing-x);
   display: flex;
   flex-flow: column nowrap;
 }
@@ -665,9 +665,9 @@ footer.main-footer div.so-me a.privacy {
     width: 15rem;
   }
   section.latest-work {
-    margin: var(--spacing-y) var(--spacing-x);
+    margin: 0 var(--spacing-x) var(--spacing-x) var(--spacing-x);
     height: 35rem;
-    max-width: var(--main-width-pad);
+    max-width: calc(var(--main-width) + var(--spacing-x));
     flex-flow: row nowrap;
   }
   section.latest-work header {
@@ -675,7 +675,7 @@ footer.main-footer div.so-me a.privacy {
     z-index: 999;
     right: 0;
     top: 0;
-    left: 50%;
+    left: 0;
     padding: 2rem var(--spacing-y);
   }
   section.latest-work div.row.column {
@@ -693,14 +693,12 @@ footer.main-footer div.so-me a.privacy {
     flex: 1 1 50%;
   }
   section.latest-work h2 {
+    margin-top: 5rem;
     font-size: var(--font-size-title);
   }
   section.latest-work h3 {
     margin: 5rem 0;
     font-size: var(--font-size-bigger);
-  }
-  section.latest-work a.button {
-    width: 15rem;
   }
   /* FOOTER */
   footer.main-footer {
