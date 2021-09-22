@@ -2,20 +2,12 @@
 <html class="no-js" lang="en">
 
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-063HXFCJKX"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-063HXFCJKX');
-	</script> -->
-
 	<meta charset="utf-8">
 	<?php global $post;
 		if ( is_page() && $post->post_parent ) {
 			echo '<title>' . strip_tags(get_the_title( $post )) . ' | ' . strip_tags(get_the_title( $post->post_parent )) . ' - Mindworks</title>';
+		} elseif ( is_home() ) {
+			echo '<title>Mindworks | ' . strip_tags(get_bloginfo( 'description' )) . '</title>';
 		} else {
 			echo '<title>' . strip_tags(get_the_title( $post )) . ' - Mindworks</title>';
 		}
@@ -41,48 +33,27 @@
 	<![endif]-->
 	<?php
 
-		if ( home_url() == "https://komuhn.co/dev/mindworks") {
-			$oldPagesID = is_page( array(8,10) );
-		} else if (home_url() == "https://testing.mindworkslab.org") {
-			$oldPagesID = is_page( array(13,11) );
-		} else if (home_url() == "https://mindworkslab.org") {
-			$oldPagesID = is_page( array(188,193) );
-		} else {
-			$oldPagesID = is_page( array(125,2) ); //@andrea local
+		$old_pages = get_page_by_path('thedisruptedmind/scientific-insights/');
+
+		if ( is_page( $old_pages->ID ) ) {
+			//
 		}
 
-		if ( is_home() ) {
-			$logoColor = "white";
-			$bgColor = "bgBlack";
-			// $maxWidth = "class="."maxWidth"."";
-		//} else if ( is_page( array(8,10) ) ) {
-		} else if ( $oldPagesID ) {
-			$logoColor = "black";
-			$bgColor = "bgWhite";
-			$maxWidth = "style='max-width:calc(60rem + (var(--spacing-x)*2));'";
-		} else {
-			$logoColor = "black";
-			$bgColor = "bgWhite";
-			$maxWidth = "";
-		}
 	?>
 
-	<header class="main-header <?php echo $bgColor; ?>">
-		<div class="identity">
-			<?php if(is_home()) { echo '<h1 class="logo">'; } else { echo '<a class="logo" href="' . home_url() . '" title="' . get_bloginfo('name') . '" alt="' . get_bloginfo('name') . ' Logo">'; } ?>
-					<span><?php bloginfo('name'); ?></span>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/logo-<?php echo $logoColor; ?>.svg" alt="<?php bloginfo('name'); ?>" />
-			<?php if(is_home()) { echo '</h1>'; } else { echo '</a>'; } ?>
-		</div>
+	<header class="main-header">
 
-		<!--<nav class="main-nav" id="main-nav">
-			<?php /*
-				wp_nav_menu( array(
-					'menu'            => 'top-menu',
-					'container'       => ''
-				));
-			*/?>
-		</nav>-->
+		<?php if ( is_home() ) : ?>
+			<h1 class="logo">
+				<span><?php bloginfo('name') ?></span>
+				<img src="<?php echo get_template_directory_uri(); ?>/img/logo-black.svg" alt="<?php bloginfo('name'); ?>" />
+			</h1>
+		<?php else : ?>
+			<a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name') ?>">
+				<span><?php bloginfo('name') ?></span>
+				<img src="<?php echo get_template_directory_uri(); ?>/img/logo-black.svg" alt="<?php bloginfo('name'); ?>" />
+			</a>
+		<?php endif; ?>
 
 		<nav class="main-nav">
 			<?php global $post; if ( is_page() && $post->post_parent ) : ?>

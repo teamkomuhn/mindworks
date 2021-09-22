@@ -9,7 +9,7 @@
             <div class="identity">
                 <h1 class="logo">
                     <a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" alt="Logo">
-                        <span>Mindworks</span>
+                        <span><?php bloginfo('name') ?></span>
                         <img src="<?php echo get_template_directory_uri(); ?>/img/logo-white.svg" alt="<?php bloginfo('name'); ?>" />
                     </a>
                 </h1>

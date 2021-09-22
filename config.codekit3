@@ -49,6 +49,14 @@
 		"oAP": "/_footer.php",
 		"oF": 0
 		},
+	"/_header.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/_header.php",
+		"oF": 0
+		},
 	"/_index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -453,6 +461,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/browserconfig.xml",
+		"oF": 0
+		},
+	"/comments.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/comments.php",
 		"oF": 0
 		},
 	"/css/full.less": {

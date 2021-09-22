@@ -336,7 +336,6 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 }
 
 /* GRID */
-
 .two-columns {
 	.flex-display();
 	.flex-flow(column);
@@ -350,27 +349,22 @@ input[type="text"], input[type="name"], input[type="email"], textarea {
 
 header.main-header {
 	height: var(--main-header-height);
+    background-color: var(--color-white);
 
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
 
-	div.identity {
+    .logo {
+        margin: 0 0.5em 0 var(--spacing-x);
+        display: block;
 
-		.logo {
-			margin: 0 0.5em 0 var(--spacing-x);
-			display: block;
+        span {
+            display: none;
+        }
 
-			span {
-				display: none;
-			}
-			img {
-				display: block;
-				width: 11rem;
-			}
-		}
-	}
+    }
 
     nav.main-nav {
 
@@ -382,26 +376,6 @@ header.main-header {
         }
     }
 
-	&.bgWhite {
-		background-color: var(--color-white);
-	}
-
-	&.bgBlack {
-		background-color: var(--color-black);
-
-		div.identity {
-
-			h1.logo {
-				a {
-					img {
-						width: 12rem;
-					}
-				}
-			}
-
-		}
-
-	}
 }
 
 /* SIDEBAR */

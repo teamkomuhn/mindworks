@@ -47,7 +47,7 @@ Version: 2.0
   :root {
     --spacing-x: 7.5rem;
     --spacing-y: 3.75rem;
-    --main-header-height: 8rem;
+    --main-header-height: 10rem;
     --font-size-title: 4rem;
     --font-size-biggest: 3rem;
     --font-size-bigger: 2rem;
@@ -433,34 +433,22 @@ textarea:-ms-input-placeholder {
 /* HEADER */
 header.main-header {
   height: var(--main-header-height);
+  background-color: var(--color-white);
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
 }
-header.main-header div.identity .logo {
+header.main-header .logo {
   margin: 0 0.5em 0 var(--spacing-x);
   display: block;
 }
-header.main-header div.identity .logo span {
+header.main-header .logo span {
   display: none;
-}
-header.main-header div.identity .logo img {
-  display: block;
-  width: 11rem;
 }
 header.main-header nav.main-nav {
   margin-right: var(--spacing-x);
   margin-bottom: 12px;
-}
-header.main-header.bgWhite {
-  background-color: var(--color-white);
-}
-header.main-header.bgBlack {
-  background-color: var(--color-black);
-}
-header.main-header.bgBlack div.identity h1.logo a img {
-  width: 12rem;
 }
 /* SIDEBAR */
 /* BLOCKS */
@@ -655,7 +643,6 @@ footer.main-footer a.privacy {
   button,
   .button {
     line-height: 3em;
-    font-weight: 700;
   }
   /* FORMS */
   input[type="text"],
@@ -667,14 +654,8 @@ footer.main-footer a.privacy {
   }
   /* BLOCKS */
   /* HEADER */
-  header.main-header div.identity .logo img {
-    width: 12rem;
-  }
-  header.main-header.bgBlack {
-    background-color: var(--color-black);
-  }
-  header.main-header.bgBlack div.identity {
-    top: 6rem;
+  header.main-header .logo img {
+    width: 15rem;
   }
   section.latest-work {
     margin: var(--spacing-y) var(--spacing-x);
@@ -715,5 +696,8 @@ footer.main-footer a.privacy {
     width: 15rem;
   }
   /* FOOTER */
+  footer.main-footer div.identity h1.logo img {
+    width: 15rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
