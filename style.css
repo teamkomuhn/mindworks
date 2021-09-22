@@ -281,6 +281,10 @@ sup {
   padding: 1rem;
   margin: -1rem;
   cursor: pointer;
+  color: var(--color-coral);
+}
+sup:hover {
+  text-decoration: underline;
 }
 .title {
   font-size: var(--font-size-title);
