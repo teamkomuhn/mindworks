@@ -1,3 +1,4 @@
+/* Block expanding-content */
 section.block.expanding-content {
   overflow: hidden;
   padding: 0 var(--spacing-x) var(--spacing-y);

@@ -1,3 +1,4 @@
+/* Block page-cover */
 header.block.cover {
   display: flex;
   flex-flow: column nowrap;

@@ -33,10 +33,13 @@
 	<![endif]-->
 	<?php
 
-		$old_pages = get_page_by_path('thedisruptedmind/scientific-insights/');
+		$old_page_TDMindex = get_page_by_path('thedisruptedmind');
+		$old_page_TDM1 = get_page_by_path('thedisruptedmind/scientific-insights/');
 
-		if ( is_page( $old_pages->ID ) ) {
-			//
+		if ( is_page( $old_page_TDMindex->ID ) || is_page( $old_page_TDM1->ID ) ) {
+			$maxWidth = "style='max-width:calc(60rem + (var(--spacing-x)*2));'";
+		} else {
+			$maxWidth = "";
 		}
 
 	?>

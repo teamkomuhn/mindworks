@@ -1,5 +1,19 @@
 <?php
-
+/*
+$comment_send = 'Send';
+$comment_reply = 'Leave a Message';
+$comment_reply_to = 'Reply';
+ 
+$comment_author = 'Name';
+$comment_email = 'E-Mail';
+$comment_body = 'Comment';
+$comment_url = 'Website';
+$comment_cookies_1 = ' By commenting you accept the';
+$comment_cookies_2 = ' Privacy Policy';
+ 
+$comment_before = 'Registration isn\'t required.';
+ 
+$comment_cancel = 'Cancel Reply';*/
 
 	$args = array(
 		'fields' => apply_filters( 'comment_form_default_fields', array(
@@ -36,20 +50,6 @@
 	);
 	comment_form( $args );
 
-$comment_send = 'Send';
-$comment_reply = 'Leave a Message';
-$comment_reply_to = 'Reply';
- 
-$comment_author = 'Name';
-$comment_email = 'E-Mail';
-$comment_body = 'Comment';
-$comment_url = 'Website';
-$comment_cookies_1 = ' By commenting you accept the';
-$comment_cookies_2 = ' Privacy Policy';
- 
-$comment_before = 'Registration isn\'t required.';
- 
-$comment_cancel = 'Cancel Reply';
 
 
 ?>
