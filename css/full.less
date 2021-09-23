@@ -70,14 +70,16 @@ header.main-header {
 
 //
 section.latest-work {
-    margin: var(--spacing-y) var(--spacing-x);
-	height: 35rem; max-width: var(--main-width-pad);
+    margin: 0 var(--spacing-x) var(--spacing-x) var(--spacing-x);
+	height: 35rem;
+	max-width: calc( var(--main-width) + var(--spacing-x) );
+	// max-width: 960px;
 
     flex-flow: row nowrap;
 
     header {
 		position: absolute; z-index: 999;
-		right: 0; top: 0; left: 50%;
+		right: 0; top: 0; left: 0; //left: 50%;
 		padding: 2rem var(--spacing-y);
     }
 
@@ -101,6 +103,7 @@ section.latest-work {
     }
 
     h2 {
+		margin-top: 5rem;
 		font-size: var(--font-size-title);
     }
 
@@ -110,9 +113,9 @@ section.latest-work {
 		font-size: var(--font-size-bigger);
     }
 
-    a.button {
-		width: 15rem;
-    }
+    // a.button {
+	// 	width: 15rem;
+    // }
 
 }
 
