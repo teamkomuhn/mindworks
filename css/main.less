@@ -321,13 +321,14 @@ figure {
 input[type="text"], input[type="name"], input[type="email"], textarea {
 	-webkit-appearance: none;
 	color: var(--color-black);
-	font-size: var(--font-size-p);
+
 	font-weight: 500;
-	line-height: 3;
-	border: 2px solid var(--color-black);
-	border-radius: 10px;
+	line-height: 3em;
+    text-indent: 1em;
+	border: 1px solid var(--color-black);
+	border-radius: 0.2em;
 	background-color: transparent;
-	padding: 0 1em;
+	padding: 0;
 	margin: .5rem 0;
 
 	&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -561,18 +562,21 @@ footer.main-footer {
         form {
             margin-bottom: var(--spacing-y);
 
+            input {
+                width: 100%;
+            }
+
             input[type="submit"] {
-				width: 100%;
+
                 line-height: 3rem;
                 margin-top: 1em;
 
-				font-size: var(--font-size-p);
 				font-weight: 600;
 				color: var(--color-white);
 
                 background-color: var(--color-black);
 				border: 2px solid var(--color-black);
-				border-radius: 10px;
+
 
 			}
         }

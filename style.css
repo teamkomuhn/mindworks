@@ -389,13 +389,13 @@ input[type="email"],
 textarea {
   -webkit-appearance: none;
   color: var(--color-black);
-  font-size: var(--font-size-p);
   font-weight: 500;
-  line-height: 3;
-  border: 2px solid var(--color-black);
-  border-radius: 10px;
+  line-height: 3em;
+  text-indent: 1em;
+  border: 1px solid var(--color-black);
+  border-radius: 0.2em;
   background-color: transparent;
-  padding: 0 1em;
+  padding: 0;
   margin: 0.5rem 0;
 }
 input[type="text"]::placeholder,
@@ -564,16 +564,16 @@ footer.main-footer div.form > p {
 footer.main-footer div.form form {
   margin-bottom: var(--spacing-y);
 }
-footer.main-footer div.form form input[type="submit"] {
+footer.main-footer div.form form input {
   width: 100%;
+}
+footer.main-footer div.form form input[type="submit"] {
   line-height: 3rem;
   margin-top: 1em;
-  font-size: var(--font-size-p);
   font-weight: 600;
   color: var(--color-white);
   background-color: var(--color-black);
   border: 2px solid var(--color-black);
-  border-radius: 10px;
 }
 footer.main-footer div.form p.email-link {
   display: block;
@@ -646,19 +646,6 @@ footer.main-footer div.so-me a.privacy {
     line-height: 3em;
   }
   /* FORMS */
-  input[type="text"],
-  input[type="name"],
-  input[type="email"],
-  textarea {
-    width: calc(100% - calc(var(--spacing-x)/2) - 4px);
-    padding: 1rem calc(var(--spacing-x)/4);
-  }
-  input[type="text"],
-  input[type="name"],
-  input[type="email"],
-  textarea {
-    line-height: 1em;
-  }
   /* BLOCKS */
   /* HEADER */
   header.main-header .logo img {
