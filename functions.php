@@ -117,8 +117,27 @@
             wp_enqueue_script( $template_name );
         }
 
-    }
 
+		$old_page_TDM1 = get_page_by_path('thedisruptedmind/scientific-insights/');
+		$old_page_TDM2 = get_page_by_path('thedisruptedmind/the-crisis-timeline/');
+
+		if ( is_page( array( get_the_ID($old_page_TDM1), get_the_ID($old_page_TDM2) ) ) ) {
+            wp_register_style( 'block-mw-page-cover', get_template_directory_uri() . '/blocks/block-mw-page-cover.css' );
+            wp_enqueue_style( 'block-mw-page-cover' );
+		}
+        if ( is_page( get_the_ID($old_page_TDM2) ) ) {
+            wp_register_style( 'block-mw-format-menu', get_template_directory_uri() . '/blocks/block-mw-format-menu.css' );
+            wp_register_style( 'block-mw-intro-content', get_template_directory_uri() . '/blocks/block-mw-intro-content.css' );
+            wp_register_style( 'block-mw-infographic', get_template_directory_uri() . '/blocks/block-mw-infographic.css' );
+            wp_register_style( 'block-mw-expanding-content', get_template_directory_uri() . '/blocks/block-mw-expanding-content.css' );
+
+            wp_enqueue_style( 'block-mw-format-menu' );
+            wp_enqueue_style( 'block-mw-intro-content' );
+            wp_enqueue_style( 'block-mw-infographic' );
+            wp_enqueue_style( 'block-mw-expanding-content' );
+        }
+
+    }
 
     // REMOVE WP EMOJI
     remove_action('wp_head', 'print_emoji_detection_script', 7);
