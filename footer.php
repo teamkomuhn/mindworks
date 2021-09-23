@@ -18,8 +18,8 @@
             </div>
 
             <div class="form mailchimp">
-                <h4>Our new website is coming soon!</h4>
-                <p>Join our mailing list to be the first to know when.</p>
+                <h4>Join our mailing list!</h4>
+                <p>Sign up for news, insights, tips and tools from the Mindworks Lab.</p>
 
                 <!-- Begin Mailchimp Signup Form -->
                 <div id="mc_embed_signup">
