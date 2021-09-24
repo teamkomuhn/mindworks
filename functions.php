@@ -244,6 +244,31 @@
         return $fields;
     }
 
+    //Add select field to comments form for subjects
+    add_filter( 'comment_form_field_comment', function( $field ) {
+
+        $subjects = ['I’d like to keep updated about Mindworks’ work',
+                    'I’d like to share some feedback on this paper or on The Disrupted Mind',
+                    'I’d love to collaborate',
+                    'Other'];
+    
+        $select = '<p><label for="subject_select">Subject:</label>
+        <select name="subject_select" id="subjectSelect">
+        <option value="">Select a subject</option>';
+    
+        foreach ( $subjects as $key => $subject )
+            $select .= sprintf(
+                '<option value="%1$s" %2$s>%3$s</option>',
+                esc_attr( $key ),
+                ( in_array( $key, $subject) ? 'selected' : '' ), //this is not working properly yet
+                esc_html( $subject )
+            );
+    
+        $select .= '</select></p>';
+    
+        return $select . $field;
+    });
+
 	// Add support for responsive embeds. - https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/
 	//add_theme_support( 'responsive-embeds' );
 
