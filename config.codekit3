@@ -169,6 +169,40 @@
 		"oAP": "/blocks/_block-mw-sidenote.php",
 		"oF": 0
 		},
+	"/blocks/block-mw-expanding-content.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-expanding-content-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/blocks/block-mw-expanding-content.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-expanding-content.css.map",
+		"oF": 0
+		},
+	"/blocks/block-mw-expanding-content.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-expanding-content.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
 	"/blocks/block-mw-expanding-content.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -195,6 +229,22 @@
 		"oAP": "/blocks/block-mw-external-content.css.map",
 		"oF": 0
 		},
+	"/blocks/block-mw-external-content.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-external-content.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
 	"/blocks/block-mw-external-content.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -202,6 +252,40 @@
 		"oA": 0,
 		"oAP": "/blocks/block-mw-external-content.php",
 		"oF": 0
+		},
+	"/blocks/block-mw-format-menu.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-format-menu-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/blocks/block-mw-format-menu.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-format-menu.css.map",
+		"oF": 0
+		},
+	"/blocks/block-mw-format-menu.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-format-menu.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
 		},
 	"/blocks/block-mw-format-menu.php": {
 		"cB": 0,
@@ -211,6 +295,40 @@
 		"oAP": "/blocks/block-mw-format-menu.php",
 		"oF": 0
 		},
+	"/blocks/block-mw-infographic.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-infographic-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/blocks/block-mw-infographic.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-infographic.css.map",
+		"oF": 0
+		},
+	"/blocks/block-mw-infographic.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-infographic.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
 	"/blocks/block-mw-infographic.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -219,6 +337,40 @@
 		"oAP": "/blocks/block-mw-infographic.php",
 		"oF": 0
 		},
+	"/blocks/block-mw-intro-content.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-intro-content-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/blocks/block-mw-intro-content.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-intro-content.css.map",
+		"oF": 0
+		},
+	"/blocks/block-mw-intro-content.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-intro-content.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
 	"/blocks/block-mw-intro-content.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -226,6 +378,40 @@
 		"oA": 0,
 		"oAP": "/blocks/block-mw-intro-content.php",
 		"oF": 0
+		},
+	"/blocks/block-mw-page-cover.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-page-cover-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/blocks/block-mw-page-cover.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-page-cover.css.map",
+		"oF": 0
+		},
+	"/blocks/block-mw-page-cover.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 0,
+		"oAP": "/blocks/block-mw-page-cover.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
 		},
 	"/blocks/block-mw-page-cover.php": {
 		"cB": 0,
@@ -283,6 +469,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/browserconfig.xml",
+		"oF": 0
+		},
+	"/comments.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/comments.php",
 		"oF": 0
 		},
 	"/css/full.less": {
@@ -745,6 +939,14 @@
 		"oAP": "/functions.php",
 		"oF": 0
 		},
+	"/header.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/header.php",
+		"oF": 0
+		},
 	"/humans.txt": {
 		"cB": 0,
 		"ft": 8192,
@@ -850,6 +1052,16 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "/img/icon-audio-black.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/img/icon-comment.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/icon-comment.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 52780316221407,
@@ -1108,6 +1320,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/page-scientific-insights.php",
+		"oF": 0
+		},
+	"/page.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/page.php",
 		"oF": 0
 		},
 	"/README.html": {

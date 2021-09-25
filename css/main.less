@@ -244,22 +244,16 @@ p {
 
 /* BUTTONS */
 button, .button {
-    //Reset styles
-    background: none;
-    border: 0;
-    padding: 0;
-    line-height: 1em;
-
     display: inline-block;
 
     background-color: transparent;
     border: .1rem solid var(--color-black);
     border-radius: 0.2em;
 
-    font-size: var(--font-small);
+    font-size: var(--font-size-small);
     font-weight: 500;
     color: var(--color-black);
-    line-height: 2.3em;
+    line-height: 3rem;
     text-align: center;
     text-decoration: none;
 
@@ -318,31 +312,71 @@ figure {
 
 /* FORMS */
 
-input[type="text"], input[type="name"], input[type="email"], textarea {
-	-webkit-appearance: none;
-	color: var(--color-black);
+form {
+    input, textarea {
+    	font-weight: 500;
+        color: var(--color-black);
 
-	font-weight: 500;
-	line-height: 3em;
-    text-indent: 1em;
-	border: 1px solid var(--color-black);
-	border-radius: 0.2em;
-	background-color: transparent;
-	padding: 0;
-	margin: .5rem 0;
+    	border: 1px solid var(--color-black);
+    	border-radius: 0.2em;
+    	background-color: transparent;
+    	padding: 1em;
+    	margin: .5rem 0;
 
-	&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-		color: var(--color-black);
-		opacity: 1; /* Firefox */
-	  }
+        box-sizing: border-box;
+        width: 100%;
 
-	  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-		color: var(--color-black);
-	}
+        -webkit-appearance: none;
 
-	&:-ms-input-placeholder { /* Microsoft Edge */
-		color: var(--color-black);
-	}
+    	&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    		color: var(--color-black);
+    		opacity: 1; /* Firefox */
+    	  }
+
+    	  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    		color: var(--color-black);
+    	}
+
+    	&:-ms-input-placeholder { /* Microsoft Edge */
+    		color: var(--color-black);
+    	}
+    }
+
+    input[type="submit"] {
+        font-weight: 600;
+        color: var(--color-white);
+
+        background-color: var(--color-black);
+        margin-top: 1em;
+    }
+
+    textarea {
+        line-height: 1.5;
+    }
+}
+
+// COMMENTS FORM
+section.comments {
+    background-color: var(--color-grey);
+    padding: var(--spacing-x);
+    margin-bottom: var(--spacing-y);
+
+    header {
+        margin-bottom: 1rem;
+
+        h3 {
+            font-size: var(--font-size-big);
+            font-weight: 500;
+            padding: 1.5em 0 .5em;
+
+            background: transparent url("img/icon-comment.svg") left top no-repeat;
+            background-size: 1.5em;
+        }
+
+        p {
+            font-size: var(--font-size-small);
+        }
+    }
 }
 
 /* GRID */
@@ -558,27 +592,8 @@ footer.main-footer {
             margin-bottom: 1em;
         }
 
-
         form {
             margin-bottom: var(--spacing-y);
-
-            input {
-                width: 100%;
-            }
-
-            input[type="submit"] {
-
-                line-height: 3rem;
-                margin-top: 1em;
-
-				font-weight: 600;
-				color: var(--color-white);
-
-                background-color: var(--color-black);
-				border: 2px solid var(--color-black);
-
-
-			}
         }
 
         p.email-link {

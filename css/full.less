@@ -26,7 +26,6 @@ body.home {
 
 /* BUTTONS */
 button, .button {
-	line-height: 3em;
 	// font-weight: 700;
 }
 
@@ -41,9 +40,23 @@ div.buttons {
 }
 
 
-
-
 /* FORMS */
+form {
+	display: flex;
+	flex-flow: column nowrap;
+
+	input[type="submit"] {
+		width: 50%;
+	}
+}
+
+
+// COMMENTS FORM
+section.comments {
+	padding: var(--spacing-y);
+
+
+}
 
 
 /* BLOCKS */
@@ -144,12 +157,6 @@ footer.main-footer {
 
         h4 {
             font-size: var(--font-size-bigger);
-		}
-
-		form {
-            input[type="submit"] {
-				width: 15rem;
-			}
 		}
 
 		p.email-link {

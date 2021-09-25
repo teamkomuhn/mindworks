@@ -325,18 +325,14 @@ p a {
 /* BUTTONS */
 button,
 .button {
-  background: none;
-  border: 0;
-  padding: 0;
-  line-height: 1em;
   display: inline-block;
   background-color: transparent;
   border: 0.1rem solid var(--color-black);
   border-radius: 0.2em;
-  font-size: var(--font-small);
+  font-size: var(--font-size-small);
   font-weight: 500;
   color: var(--color-black);
-  line-height: 2.3em;
+  line-height: 3rem;
   text-align: center;
   text-decoration: none;
   padding: 0 1em;
@@ -383,43 +379,62 @@ figure {
   margin: 0;
 }
 /* FORMS */
-input[type="text"],
-input[type="name"],
-input[type="email"],
-textarea {
-  -webkit-appearance: none;
-  color: var(--color-black);
+form input,
+form textarea {
   font-weight: 500;
-  line-height: 3em;
-  text-indent: 1em;
+  color: var(--color-black);
   border: 1px solid var(--color-black);
   border-radius: 0.2em;
   background-color: transparent;
-  padding: 0;
+  padding: 1em;
   margin: 0.5rem 0;
+  box-sizing: border-box;
+  width: 100%;
+  -webkit-appearance: none;
 }
-input[type="text"]::placeholder,
-input[type="name"]::placeholder,
-input[type="email"]::placeholder,
-textarea::placeholder {
+form input::placeholder,
+form textarea::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--color-black);
   opacity: 1;
   /* Firefox */
 }
-input[type="text"]:-ms-input-placeholder,
-input[type="name"]:-ms-input-placeholder,
-input[type="email"]:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
+form input:-ms-input-placeholder,
+form textarea:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: var(--color-black);
 }
-input[type="text"]:-ms-input-placeholder,
-input[type="name"]:-ms-input-placeholder,
-input[type="email"]:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
+form input:-ms-input-placeholder,
+form textarea:-ms-input-placeholder {
   /* Microsoft Edge */
   color: var(--color-black);
+}
+form input[type="submit"] {
+  font-weight: 600;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  margin-top: 1em;
+}
+form textarea {
+  line-height: 1.5;
+}
+section.comments {
+  background-color: var(--color-grey);
+  padding: var(--spacing-x);
+  margin-bottom: var(--spacing-y);
+}
+section.comments header {
+  margin-bottom: 1rem;
+}
+section.comments header h3 {
+  font-size: var(--font-size-big);
+  font-weight: 500;
+  padding: 1.5em 0 0.5em;
+  background: transparent url("img/icon-comment.svg") left top no-repeat;
+  background-size: 1.5em;
+}
+section.comments header p {
+  font-size: var(--font-size-small);
 }
 /* GRID */
 .two-columns {
@@ -564,17 +579,6 @@ footer.main-footer div.form > p {
 footer.main-footer div.form form {
   margin-bottom: var(--spacing-y);
 }
-footer.main-footer div.form form input {
-  width: 100%;
-}
-footer.main-footer div.form form input[type="submit"] {
-  line-height: 3rem;
-  margin-top: 1em;
-  font-weight: 600;
-  color: var(--color-white);
-  background-color: var(--color-black);
-  border: 2px solid var(--color-black);
-}
 footer.main-footer div.form p.email-link {
   display: block;
   position: relative;
@@ -641,11 +645,17 @@ footer.main-footer div.so-me a.privacy {
     font-size: var(--font-size-biggest);
   }
   /* BUTTONS */
-  button,
-  .button {
-    line-height: 3em;
-  }
   /* FORMS */
+  form {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  form input[type="submit"] {
+    width: 50%;
+  }
+  section.comments {
+    padding: var(--spacing-y);
+  }
   /* BLOCKS */
   /* HEADER */
   header.main-header .logo img {
@@ -711,9 +721,6 @@ footer.main-footer div.so-me a.privacy {
   }
   footer.main-footer div.form h4 {
     font-size: var(--font-size-bigger);
-  }
-  footer.main-footer div.form form input[type="submit"] {
-    width: 15rem;
   }
   footer.main-footer div.form p.email-link:before {
     font-size: var(--font-size-biggest);

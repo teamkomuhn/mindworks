@@ -117,25 +117,25 @@
             wp_enqueue_script( $template_name );
         }
 
-
-		$old_page_TDM1 = get_page_by_path('thedisruptedmind/scientific-insights/');
-		$old_page_TDM2 = get_page_by_path('thedisruptedmind/the-crisis-timeline/');
-
-		if ( is_page( array( get_the_ID($old_page_TDM1), get_the_ID($old_page_TDM2) ) ) ) {
-            wp_register_style( 'block-mw-page-cover', get_template_directory_uri() . '/blocks/block-mw-page-cover.css' );
-            wp_enqueue_style( 'block-mw-page-cover' );
-		}
-        if ( is_page( get_the_ID($old_page_TDM2) ) ) {
-            wp_register_style( 'block-mw-format-menu', get_template_directory_uri() . '/blocks/block-mw-format-menu.css' );
-            wp_register_style( 'block-mw-intro-content', get_template_directory_uri() . '/blocks/block-mw-intro-content.css' );
-            wp_register_style( 'block-mw-infographic', get_template_directory_uri() . '/blocks/block-mw-infographic.css' );
-            wp_register_style( 'block-mw-expanding-content', get_template_directory_uri() . '/blocks/block-mw-expanding-content.css' );
-
-            wp_enqueue_style( 'block-mw-format-menu' );
-            wp_enqueue_style( 'block-mw-intro-content' );
-            wp_enqueue_style( 'block-mw-infographic' );
-            wp_enqueue_style( 'block-mw-expanding-content' );
-        }
+        // 
+		// $old_page_TDM1 = get_page_by_path('thedisruptedmind/scientific-insights/');
+		// $old_page_TDM2 = get_page_by_path('thedisruptedmind/the-crisis-timeline/');
+        //
+		// if ( is_page( array( get_the_ID($old_page_TDM1), get_the_ID($old_page_TDM2) ) ) ) {
+        //     wp_register_style( 'block-mw-page-cover', get_template_directory_uri() . '/blocks/block-mw-page-cover.css' );
+        //     wp_enqueue_style( 'block-mw-page-cover' );
+		// }
+        // if ( is_page( get_the_ID($old_page_TDM2) ) ) {
+        //     wp_register_style( 'block-mw-format-menu', get_template_directory_uri() . '/blocks/block-mw-format-menu.css' );
+        //     wp_register_style( 'block-mw-intro-content', get_template_directory_uri() . '/blocks/block-mw-intro-content.css' );
+        //     wp_register_style( 'block-mw-infographic', get_template_directory_uri() . '/blocks/block-mw-infographic.css' );
+        //     wp_register_style( 'block-mw-expanding-content', get_template_directory_uri() . '/blocks/block-mw-expanding-content.css' );
+        //
+        //     wp_enqueue_style( 'block-mw-format-menu' );
+        //     wp_enqueue_style( 'block-mw-intro-content' );
+        //     wp_enqueue_style( 'block-mw-infographic' );
+        //     wp_enqueue_style( 'block-mw-expanding-content' );
+        // }
 
     }
 
@@ -153,7 +153,7 @@
     // Disable REST API link in HTTP headers
     remove_action('template_redirect', 'rest_output_link_header', 11, 0);
 
-    // Disable oEmbed Discovery Links - https://kinsta.com/knowledgebase/disable-embeds-wordpress/#disable-embeds-code
+    // Disable Embed Discovery Links - https://kinsta.com/knowledgebase/disable-embeds-wordpress/#disable-embeds-code
     remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
 
     // Disable Embeds
@@ -221,54 +221,6 @@
 		)
 	);
 
-    //Comment Field Order
-    add_filter( 'comment_form_fields', 'mo_comment_fields_custom_order' );
-    function mo_comment_fields_custom_order( $fields ) {
-        $comment_field = $fields['comment'];
-        $author_field = $fields['author'];
-        $email_field = $fields['email'];
-        $url_field = $fields['url'];
-        $cookies_field = $fields['cookies'];
-        unset( $fields['comment'] );
-        unset( $fields['author'] );
-        unset( $fields['email'] );
-        unset( $fields['url'] );
-        unset( $fields['cookies'] );
-        // the order of fields is the order below, change it as needed:
-        $fields['author'] = $author_field;
-        $fields['email'] = $email_field;
-        $fields['url'] = $url_field;
-        $fields['comment'] = $comment_field;
-        $fields['cookies'] = $cookies_field;
-        // done ordering, now return the fields:
-        return $fields;
-    }
-
-    //Add select field to comments form for subjects
-    add_filter( 'comment_form_field_comment', function( $field ) {
-
-        $subjects = ['I’d like to keep updated about Mindworks’ work',
-                    'I’d like to share some feedback on this paper or on The Disrupted Mind',
-                    'I’d love to collaborate',
-                    'Other'];
-    
-        $select = '<p><label for="subject_select">Subject:</label>
-        <select name="subject_select" id="subjectSelect">
-        <option value="">Select a subject</option>';
-    
-        foreach ( $subjects as $key => $subject )
-            $select .= sprintf(
-                '<option value="%1$s" %2$s>%3$s</option>',
-                esc_attr( $key ),
-                ( in_array( $key, $subject) ? 'selected' : '' ), //this is not working properly yet
-                esc_html( $subject )
-            );
-    
-        $select .= '</select></p>';
-    
-        return $select . $field;
-    });
-
 	// Add support for responsive embeds. - https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/
 	//add_theme_support( 'responsive-embeds' );
 
@@ -303,7 +255,7 @@
             $post_excerpt   = $post->post_excerpt;
             $post_content   = $post->post_content;
             //$post_image     = get_the_post_thumbnail( $post );
-            
+
             $return_string = 	'<section class="block expanding-content">';
             $return_string .= 	    '<article class="expandable companion">';
             $return_string .=           '<div class="main">';
@@ -329,7 +281,7 @@
             $return_string .=           '</aside>';
             $return_string .= 	    '</article>';
             $return_string .= 	'</section>';
-            
+
 
             wp_reset_query();
             return $return_string;
