@@ -419,7 +419,7 @@ form textarea {
   line-height: 1.5;
 }
 section.comments {
-  background-color: var(--color-grey);
+  background-color: var(--color-grey-light);
   padding: var(--spacing-x);
   margin-bottom: var(--spacing-y);
 }
