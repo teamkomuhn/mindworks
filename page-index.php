@@ -60,7 +60,7 @@
                                 <header>
 
                                     <label><?php echo $part; ?></label>
-                                    <h1><?php echo get_the_title($post->post_parent) . ': ' . get_the_title(); ?></h1>
+                                    <h1><?php echo get_the_title(); ?></h1>
                                     <span class="date"><?php echo get_the_date( 'F d, Y' ); ?></span>
                                     <!--<span class="readtime" id="time"></span> min read-->
                                     <?php if ($post_cover_text != '') { echo '<p>'.$post_cover_text.'</p>'; } ?>
