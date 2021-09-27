@@ -322,6 +322,10 @@ p.footnote {
 p a {
   color: var(--color-black);
 }
+main > h2 {
+  font-size: var(--font-size-bigger);
+  padding-bottom: 0.5em;
+}
 /* BUTTONS */
 button,
 .button {
@@ -642,6 +646,9 @@ footer.main-footer div.so-me a.privacy {
   }
   /* TYPOGRAPHY */
   .text-biggest {
+    font-size: var(--font-size-biggest);
+  }
+  main > h2 {
     font-size: var(--font-size-biggest);
   }
   /* BUTTONS */

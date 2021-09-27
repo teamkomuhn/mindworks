@@ -931,14 +931,6 @@
 		"oAP": "/footer.php",
 		"oF": 0
 		},
-	"/functions.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/functions.php",
-		"oF": 0
-		},
 	"/header.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1304,14 +1296,6 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/LICENSE.txt",
-		"oF": 0
-		},
-	"/page-index.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/page-index.php",
 		"oF": 0
 		},
 	"/page-scientific-insights.php": {
