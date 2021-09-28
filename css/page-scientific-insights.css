@@ -47,20 +47,20 @@
   font-size: 1.1rem;
   line-height: 1.5;
 }
-.page-scientific-insights p.footnote {
-  color: #666666;
-  font-size: 1rem;
-}
-.page-scientific-insights p.footnote sup {
-  color: inherit!important;
-  text-decoration: none!important;
-  pointer-events: none;
-}
 .page-scientific-insights p a {
   color: #222222;
 }
 .page-scientific-insights p sup {
   color: inherit!important;
+}
+.page-scientific-insights p.footnote {
+  color: #666666;
+  font-size: 1rem;
+}
+.page-scientific-insights p.footnote sup a {
+  color: inherit!important;
+  text-decoration: none!important;
+  pointer-events: none;
 }
 .page-scientific-insights .underline {
   position: relative;
@@ -413,6 +413,9 @@
 .page-scientific-insights .wp-block-group.section-header .wp-block-columns:nth-child(2) {
   color: #ffffff;
   background-color: #222222;
+}
+.page-scientific-insights .wp-block-group.section-header .wp-block-columns:nth-child(2) p sup a {
+  color: #ffffff;
 }
 .page-scientific-insights .wp-block-group.author .wp-block-image {
   display: inline-block;

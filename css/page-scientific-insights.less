@@ -59,23 +59,25 @@
         font-size: @font-size-p;
         line-height: 1.5;
     
-        &.footnote {
-            color: @color-grey-darker;
-            font-size: 1rem;
-            sup {
-                color: inherit!important;
-                text-decoration: none!important;
-                pointer-events: none;
-            }
-        }
-    
         a {
             color: @color-black;
         }
+
         sup {
             color: inherit!important;
         }
     
+        &.footnote {
+            color: @color-grey-darker;
+            font-size: 1rem;
+            sup {
+                a {
+                    color: inherit!important;
+                    text-decoration: none!important;
+                    pointer-events: none;
+                }
+            }
+        }
     }
     
     .underline {
@@ -531,6 +533,11 @@
                 &:nth-child(2) {
                     color: @color-white;
                     background-color: @color-black;
+                    
+                    p sup a {
+                        color: @color-white;
+                    }
+
                 }
     
             }
