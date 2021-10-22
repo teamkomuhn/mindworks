@@ -1,5 +1,10 @@
 <?php
 
+
+    include_once __DIR__ . '/inc/custom-post-types.php';
+    include_once __DIR__ . '/inc/custom-fields.php';
+
+
     define('THEME_DIR', get_template_directory_uri());
 
     // REMOVE GENERATOR META TAG
@@ -225,69 +230,172 @@
 	// Add support for responsive embeds. - https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/
 	//add_theme_support( 'responsive-embeds' );
 
-    //Register CPT - reusable content
-    function cpt_reusable_content() {
-        register_post_type('reusable_content',
-            array(
-                'labels'        => array(
-                    'name'          => 'Reusable content',
+    /**
+        * @snippet  Duplicate posts and pages without plugins
+        * @author   Misha Rudrastyh
+        * @url      https://rudrastyh.com/wordpress/duplicate-post.html
+    */
+
+    // Add the duplicate link to action list for post_row_actions
+    // for "post" and custom post types
+    add_filter( 'post_row_actions', 'rd_duplicate_post_link', 10, 2 );
+    // for "page" post type
+    add_filter( 'page_row_actions', 'rd_duplicate_post_link', 10, 2 );
+
+
+    function rd_duplicate_post_link( $actions, $post ) {
+
+        if( ! current_user_can( 'edit_posts' ) ) {
+            return $actions;
+        }
+
+        $url = wp_nonce_url(
+            add_query_arg(
+                array(
+                    'action' => 'rd_duplicate_post_as_draft',
+                    'post' => $post->ID,
                 ),
-                'description'   => 'Reusable content blocks to call whenever/wherever needed.',
-                'public'        => true,
-                'hierarchical'  => true,
-                'show_in_rest'  => true,
-                'supports'      => array('title', 'editor', 'revisions', 'trackbacks', 'excerpt', 'page-attributes', 'thumbnails', 'post-formats'),
-            )
+                'admin.php'
+            ),
+            basename(__FILE__),
+            'duplicate_nonce'
         );
+
+        $actions[ 'duplicate' ] = '<a href="' . $url . '" title="Duplicate this item" rel="permalink">Duplicate</a>';
+
+        return $actions;
     }
-    add_action('init', 'cpt_reusable_content');
 
+    /*
+    * Function creates post duplicate as a draft and redirects then to the edit post screen
+    */
+    add_action( 'admin_action_rd_duplicate_post_as_draft', 'rd_duplicate_post_as_draft' );
 
-    // SHORTCODE: The Reusable content post
-    function show_reusable_content( $atts ) {
+    function rd_duplicate_post_as_draft(){
 
-        $post = $atts[slug];
-        $post = get_page_by_path( $post, OBJECT, 'reusable_content' ); //slug
+        // check if post ID has been provided and action
+        if ( empty( $_GET[ 'post' ] ) ) {
+            wp_die( 'No post to duplicate has been provided!' );
+        }
+
+        // Nonce verification
+        if ( ! isset( $_GET[ 'duplicate_nonce' ] ) || ! wp_verify_nonce( $_GET[ 'duplicate_nonce' ], basename( __FILE__ ) ) ) {
+            return;
+        }
+
+        // Get the original post id
+        $post_id = absint( $_GET[ 'post' ] );
+
+        // And all the original post data then
+        $post = get_post( $post_id );
+
+        /*
+        * if you don't want current user to be the new post author,
+        * then change next couple of lines to this: $new_post_author = $post->post_author;
+        */
+        $current_user = wp_get_current_user();
+        $new_post_author = $current_user->ID;
+
+        // if post data exists (I am sure it is, but just in a case), create the post duplicate
         if ( $post ) {
-            $page_order = $post->menu_order;
-            $part = 'Phase ' . ($page_order + 1);
 
-            $post_title     = $post->post_title;
-            $post_excerpt   = $post->post_excerpt;
-            $post_content   = $post->post_content;
-            //$post_image     = get_the_post_thumbnail( $post );
+            // new post data array
+            $args = array(
+                'comment_status' => $post->comment_status,
+                'ping_status'    => $post->ping_status,
+                'post_author'    => $new_post_author,
+                'post_content'   => $post->post_content,
+                'post_excerpt'   => $post->post_excerpt,
+                'post_name'      => $post->post_name,
+                'post_parent'    => $post->post_parent,
+                'post_password'  => $post->post_password,
+                'post_status'    => 'draft',
+                'post_title'     => $post->post_title,
+                'post_type'      => $post->post_type,
+                'to_ping'        => $post->to_ping,
+                'menu_order'     => $post->menu_order
+            );
 
-            $return_string = 	'<section class="block expanding-content">';
-            $return_string .= 	    '<article class="expandable companion">';
-            $return_string .=           '<div class="main">';
-            $return_string .=	            '<header>';
-            $return_string .= 			        '<h1>' . $post_title . '</h1>';
-            $return_string .= 			        '<p>' . $post_excerpt . '</p>';
-            $return_string .=                   '<div class="meta">';
-            $return_string .=                       '<span class="part-index">Phase' . $part .'</span>';
-            $return_string .=                       '<span class="tag">A few days</span>';
-            $return_string .=                       '<button class="open companion" type="button"><span>Infographic</span></button>';
-            $return_string .=                   '</div>';
-            $return_string .=		        '</header>';
-            $return_string .=           '</div>';
-            $return_string .=           '<section class="recommendations dark">';
-            $return_string .=	            $post_content;
-            $return_string .=           '</section>';
-            $return_string .=           '<div class="buttons expand">';
-            $return_string .=               '<button class="expand" type="button"><span>Read more ↓</span></button>';
-            $return_string .=               '<button class="expand go-to" type="button">Recommendations</button>';
-            $return_string .=           '</div>';
-            $return_string .=           '<aside class="companion right">';
-            $return_string .=               '<img src="' . get_stylesheet_directory_uri() . '/img/timeline-dotted-line-red.svg" alt="">';
-            $return_string .=           '</aside>';
-            $return_string .= 	    '</article>';
-            $return_string .= 	'</section>';
+            // insert the post by wp_insert_post() function
+            $new_post_id = wp_insert_post( $args );
 
+            /*
+            * get all current post terms ad set them to the new post draft
+            */
+            $taxonomies = get_object_taxonomies( get_post_type( $post ) ); // returns array of taxonomy names for post type, ex array("category", "post_tag");
+            if( $taxonomies ) {
+                foreach ( $taxonomies as $taxonomy ) {
+                    $post_terms = wp_get_object_terms( $post_id, $taxonomy, array( 'fields' => 'slugs' ) );
+                    wp_set_object_terms( $new_post_id, $post_terms, $taxonomy, false );
+                }
+            }
 
-            wp_reset_query();
-            return $return_string;
+            // duplicate all post meta
+            $post_meta = get_post_meta( $post_id );
+            if( $post_meta ) {
+
+                foreach ( $post_meta as $meta_key => $meta_values ) {
+
+                    if( '_wp_old_slug' == $meta_key ) { // do nothing for this meta key
+                        continue;
+                    }
+
+                    foreach ( $meta_values as $meta_value ) {
+                        add_post_meta( $new_post_id, $meta_key, $meta_value );
+                    }
+                }
+            }
+
+            // finally, redirect to the edit post screen for the new draft
+            wp_safe_redirect(
+            	add_query_arg(
+            		array(
+            			'action' => 'edit',
+            			'post' => $new_post_id
+            		),
+            		admin_url( 'post.php' )
+            	)
+            );
+            exit;
+            // or we can redirect to all posts with a message
+            //wp_safe_redirect(
+            //    add_query_arg(
+            //        array(
+            //            'post_type' => ( 'post' !== get_post_type( $post ) ? get_post_type( $post ) : false ),
+            //            'saved' => 'post_duplication_created' // just a custom slug here
+            //        ),
+            //        admin_url( 'edit.php' )
+            //    )
+            //);
+           // exit;
+
+        } else {
+            wp_die( 'Post creation failed, could not find original post.' );
+        }
+
+    }
+
+    /*
+    * In case we decided to add admin notices
+    */
+    add_action( 'admin_notices', 'rudr_duplication_admin_notice' );
+
+    function rudr_duplication_admin_notice() {
+
+        // Get the current screen
+        $screen = get_current_screen();
+
+        if ( 'edit' !== $screen->base ) {
+            return;
+        }
+
+        //Checks if settings updated
+        if ( isset( $_GET[ 'saved' ] ) && 'post_duplication_created' == $_GET[ 'saved' ] ) {
+
+            echo '<div class="notice notice-success is-dismissible"><p>Post copy created.</p></div>';
+            
         }
     }
-    add_shortcode('reusable_content','show_reusable_content');
+
 
 ?>
