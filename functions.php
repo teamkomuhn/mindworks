@@ -1,6 +1,5 @@
 <?php
 
-
     include_once __DIR__ . '/inc/custom-post-types.php';
     include_once __DIR__ . '/inc/custom-fields.php';
 
@@ -100,7 +99,6 @@
     add_action( 'wp_default_scripts', 'move_jquery_into_footer' );
 
 
-
     //Load CSS and JS based on template name
     function enqueue_template_files() {
         //Get template name
@@ -152,7 +150,6 @@
     remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
     remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
-
     // Disable REST API link tag
     remove_action('wp_head', 'rest_output_link_wp_head', 10);
 
@@ -187,6 +184,26 @@
     //This code will limit WordPress to only save your last 4 revisions of each post or page, and discard older revisions automatically.
     define( 'WP_POST_REVISIONS', 4 );
 
+    //ADD TEMAPLATE NAME TO BODY CLASS
+    add_filter('body_class', 'acme_add_body_class');
+    /**
+     * If the current page has a template, apply it's name to the list of classes. This is
+     * necessary if there are multiple pages with the same template and you want to apply the
+     * name of the template to the class of the body.
+     * https://tommcfarlin.com/body-class-based-on-a-template/
+     * @param array $classes The current array of attributes to be applied to the
+     */
+    function acme_add_body_class($classes) {
+        if (!empty(get_post_meta(get_the_ID(), '_wp_page_template', true))) {
+            // Remove the `template-` prefix and get the name of the template without the file extension.
+            $templateName = basename(get_page_template_slug(get_the_ID()));
+            $templateName = str_ireplace('template-', '', basename(get_page_template_slug(get_the_ID()), '.php'));
+
+            $classes[] = $templateName;
+        }
+
+        return array_filter($classes);
+    }
 
     //Add CUSTOM MENU functionality
     function new_custom_menu() {
@@ -393,7 +410,7 @@
         if ( isset( $_GET[ 'saved' ] ) && 'post_duplication_created' == $_GET[ 'saved' ] ) {
 
             echo '<div class="notice notice-success is-dismissible"><p>Post copy created.</p></div>';
-            
+
         }
     }
 
