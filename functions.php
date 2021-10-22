@@ -227,6 +227,15 @@
 		)
 	);
 
+    //Add category and tag metaboxes to pages
+    function page_cattag_settings() {
+        register_taxonomy_for_object_type('category', 'page');
+        register_taxonomy_for_object_type('post_tag', 'page');
+    }
+    // Add to the admin_init hook of your theme functions.php file
+    add_action( 'init', 'page_cattag_settings' );
+
+
 	// Add support for responsive embeds. - https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/
 	//add_theme_support( 'responsive-embeds' );
 
