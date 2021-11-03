@@ -1,4 +1,4 @@
-<?php /* Template Name: Page Handbooks */ ?>
+<?php /* Template Name: Page Handbook */ ?>
 
 <?php get_header(); ?>
 
