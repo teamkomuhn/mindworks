@@ -272,8 +272,10 @@ button, .button {
 	cursor: pointer;
 
     &.small {
-        border: 0;
-        text-indent: -10000px;
+        // border: 0;
+        // text-indent: -10000px;
+        line-height: 2em;
+        padding: 0 .5em;
     }
 
     //
@@ -285,6 +287,13 @@ button, .button {
         // background-size: contain;
 
     }
+
+    &.open {
+        background: transparent url("img/icon-open-black.svg") no-repeat;
+        background-position: 1em center;
+        background-size: 1em;
+    }
+
 }
 
 div.buttons {
