@@ -45,7 +45,7 @@
                                     <?php
                                         while ( $cards->have_posts() ) : $cards->the_post(); 
                                     ?>
-                                                <li><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
+                                                <li><a href="#" class="card" data-cat="<?php echo $cat->cat_ID; ?>" id="<?php echo get_the_ID(); ?>"><?php echo get_the_title(); ?></a></li>
                                     <?php
                                         endwhile; 
                                     ?>

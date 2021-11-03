@@ -33,20 +33,34 @@ var debounce = function (fn) {
 
 // CAN jQuery
 (function( $ ) {
-    //
-    // if( $('.page')[0] ) {
-    //     //readingTime();
-    // }
-    //
-    // function smoothScrollAnchors() {
-    //     $(document).on('click', 'a[href^="#"]', function (event) {
-    //         event.preventDefault();
-    //
-    //         $('html, body').animate({
-    //             scrollTop: $($.attr(this, 'href')).offset().top
-    //         }, 500);
-    //     });
-    // }
+    $('.card').on('click', function(){
+
+        //var cardID = $(this).attr('ID');
+        var cardCat = $(this).data('cat');
+
+        fetch('http://localhost:8888/mindworks/wp-json/wp/v2/cards?categories=' + cardCat + '').then(function(response) {
+            // When the page is loaded convert it to text
+            return response.text()
+        })
+        .then(function(html) {
+            // Initialize the DOM parser
+            var parser = new DOMParser();
+    
+            // Parse the text
+            var doc = parser.parseFromString(html, "text/html");
+    
+            // You can now even select part of that html as you would in the regular DOM 
+            // Example:
+            // var docArticle = doc.querySelector('article').innerHTML;
+    
+            console.log(doc);
+        })
+        .catch(function(err) {  
+            console.log('Failed to fetch page: ', err);  
+        });
+
+
+    });
 
     //SMOOTH SCROLL TO FUNCTION >> duplicated on page.js for now, need to check how to call it there from here
     function scrollToMain( element, duration, delay ) {
