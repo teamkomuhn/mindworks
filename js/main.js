@@ -38,11 +38,40 @@ var debounce = function (fn) {
         //var cardID = $(this).attr('ID');
         var cardCat = $(this).data('cat');
 
-        fetch('http://localhost:8888/mindworks/wp-json/wp/v2/cards?categories=' + cardCat + '').then(function(response) {
+        fetch('http://localhost:8888/mindworks/wp-json/wp/v2/cards?categories=' + cardCat + '')
+        .then(response => response.json())
+        .then(cardsData => {
+            if(cardsData != '') {
+                cardsData.forEach(card => {
+                    var $cardTitle = card.title.rendered;
+                    var $cardExcerpt = card.excerpt.rendered;
+                    var $cardContent = card.content.rendered;
+
+                    var $html = '';
+
+                    $html = '<article>';
+                    $html += '<h1>'+$cardTitle+'</h1>';
+                    $html += '<p>'+$cardExcerpt+'</p>';
+                    $html += '<p>'+$cardContent+'</p>';
+                    $html += '</article>';
+
+                    return $(".pop-up").append($html);
+
+                    //$(".pop-up").append(card.title.rendered);
+                });
+            }
+            //return $(".pop-up").append(data[0].title.rendered);
+            //$(".pop-up").append(data[0].title.rendered);
+            //$(".pop-up").append(data[0].content.rendered);
+        })
+        .catch((err) => {  
+            console.log('Failed to fetch page: ', err);  
+        });
+        /*fetch('http://localhost:8888/mindworks/wp-json/wp/v2/cards?categories=' + cardCat + '').then((response) => {
             // When the page is loaded convert it to text
             return response.text()
         })
-        .then(function(html) {
+        .then((data) => {
             // Initialize the DOM parser
             var parser = new DOMParser();
     
@@ -55,9 +84,9 @@ var debounce = function (fn) {
     
             console.log(doc);
         })
-        .catch(function(err) {  
+        .catch((err) => {  
             console.log('Failed to fetch page: ', err);  
-        });
+        });*/
 
 
     });

@@ -1,9 +1,10 @@
-<?php /* Template Name: Page Handbook */ ?>
+<?php /* Template Name: Page Handbook @andrea */ ?>
 
 <?php get_header(); ?>
 
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
+    <section class="pop-up"></section>
         <?php
             the_title();
             the_excerpt();
