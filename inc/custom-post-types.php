@@ -18,7 +18,7 @@
             )
         );
     }
-    add_action('init', 'cpt_handbooks');
+    //add_action('init', 'cpt_handbooks');
 
     //Register CPT - Cards
     function cpt_cards() {
@@ -38,7 +38,7 @@
             )
         );
     }
-    add_action('init', 'cpt_cards');
+    //add_action('init', 'cpt_cards');
 
     //Register CPT - expandable content
     function cpt_expandable_content() {

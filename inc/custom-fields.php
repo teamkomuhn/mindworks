@@ -1,10 +1,81 @@
 <?php
 
+add_action('admin_init', 'admin_init');
+
+function admin_init(){
+	add_meta_box('opengraph_meta', 'Preview image', 'opengraph_meta', array('post', 'page'), 'side', 'high');
+    //MW Tools
+    add_meta_box('label_meta', 'Label', 'label_meta', array('post', 'page'), 'side', 'high');
+    add_meta_box('cover_meta', 'Cover', 'cover_meta', array('post', 'page'), 'side', 'high');
+	add_meta_box('infographic_meta', 'Infographic', 'infographic_meta', array('post', 'page'), 'side', 'high');
+
+}
+
+//OPEN GRAPH META
+function opengraph_meta(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $opengraph_meta = $custom['opengraph_meta'][0];
+    ?>
+		<label for="opengraph_meta">Add preview image url</label>
+		<input type="text" name="opengraph_meta" value="<?php echo $opengraph_meta; ?>">
+    <?php
+}
+
+//COVER META
+function cover_meta(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $cover_meta_context_tag = $custom['cover_meta_context_tag'][0];
+    $cover_meta_text = $custom['cover_meta_text'][0];
+    ?>
+        <label for="cover_meta_context_tag">Text that will appear over the title.</label>
+        <textarea name="cover_meta_context_tag" rows="4" style="width:100%;"><?php echo $cover_meta_context_tag; ?></textarea>
+        <br>
+		<label for="cover_meta_text">Text that will appear on the page cover.</label>
+		<textarea name="cover_meta_text" rows="4" style="width:100%;"><?php echo $cover_meta_text; ?></textarea>
+    <?php
+}
+
+//LABEL META
+function label_meta(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $label_meta = $custom['label_meta'][0];
+    ?>
+        <label for="label_meta">Label, ie: Part 1</label>
+		<input type="text" name="label_meta" value="<?php echo $label_meta; ?>">
+    <?php
+}
+
+
+//INFOGRAPHIC META
+function infographic_meta(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $infographic_meta = $custom['infographic_meta'][0];
+    ?>
+		<label for="infographic_meta">Add infographic image url</label>
+		<input type="text" name="infographic_meta" value="<?php echo $infographic_meta; ?>">
+    <?php
+}
+
+add_action('save_post', 'save_details');
+function save_details(){
+    global $post;
+    update_post_meta($post->ID, 'label_meta', $_POST['label_meta']);
+    update_post_meta($post->ID, 'cover_meta_context_tag', $_POST['cover_meta_context_tag']);
+    update_post_meta($post->ID, 'cover_meta_text', $_POST['cover_meta_text']);
+	update_post_meta($post->ID, 'infographic_meta', $_POST['infographic_meta']);
+	update_post_meta($post->ID, 'opengraph_meta', $_POST['opengraph_meta']);
+}
+
+
 /**
     ** CATEGORY - Upload image field
 
-    **Plugin class
-    **https://pluginrepublic.com/adding-an-image-upload-field-to-categories/
+    ** Plugin class
+    ** https://pluginrepublic.com/adding-an-image-upload-field-to-categories/
 **/
 
     if ( ! class_exists( 'CT_TAX_META' ) ) {
