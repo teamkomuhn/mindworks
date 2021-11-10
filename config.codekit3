@@ -553,6 +553,74 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/css/page-handbook-card.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/page-handbook-card-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/page-handbook-card.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/css/page-handbook-card.css.map",
+		"oF": 0
+		},
+	"/css/page-handbook-card.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 0,
+		"oAP": "/css/page-handbook-card.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
+	"/css/page-handbook.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/page-handbook-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/page-handbook.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/css/page-handbook.css.map",
+		"oF": 0
+		},
+	"/css/page-handbook.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 1,
+		"mS": 0,
+		"oA": 1,
+		"oAP": "/css/page-handbook.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
 	"/css/page-index.css": {
 		"aP": 1,
 		"bl": 0,
@@ -931,6 +999,14 @@
 		"oAP": "/footer.php",
 		"oF": 0
 		},
+	"/functions.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/functions.php",
+		"oF": 0
+		},
 	"/header.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1092,6 +1168,46 @@
 		"plM": 52780316221407,
 		"prP": 0
 		},
+	"/img/icon-example-black.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/icon-example-black.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/img/icon-hand-black.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/icon-hand-black.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/img/icon-hand-white.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/icon-hand-white.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/img/icon-help-black.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/icon-help-black.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
 	"/img/icon-layer-white.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -1102,11 +1218,61 @@
 		"plM": 52780316221407,
 		"prP": 0
 		},
+	"/img/icon-map-black.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/icon-map-black.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/img/icon-map-white.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/icon-map-white.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/img/icon-open-black.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/icon-open-black.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
 	"/img/icon-open-white.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
 		"oAP": "/img/icon-open-white.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/img/icon-sense.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/icon-sense.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/img/icon-slack.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/icon-slack.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 52780316221407,
@@ -1172,6 +1338,22 @@
 		"plM": 52780316221407,
 		"prP": 0
 		},
+	"/inc/custom-fields.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/inc/custom-fields.php",
+		"oF": 0
+		},
+	"/inc/custom-post-types.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/inc/custom-post-types.php",
+		"oF": 0
+		},
 	"/index.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1220,6 +1402,50 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/js/main-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/page-handbook-card-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/page-handbook-card-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/page-handbook-card.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/page-handbook-card-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/page-handbook-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/page-handbook-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/page-handbook.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/page-handbook-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1298,6 +1524,30 @@
 		"oAP": "/LICENSE.txt",
 		"oF": 0
 		},
+	"/page-handbook-card.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/page-handbook-card.php",
+		"oF": 0
+		},
+	"/page-handbook.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/page-handbook.php",
+		"oF": 0
+		},
+	"/page-index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/page-index.php",
+		"oF": 0
+		},
 	"/page-scientific-insights.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1349,6 +1599,14 @@
 		"oAP": "/robots.txt",
 		"oF": 0
 		},
+	"/single-handbooks.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/single-handbooks.php",
+		"oF": 0
+		},
 	"/site.webmanifest": {
 		"cB": 0,
 		"ft": 8192,
@@ -1390,6 +1648,14 @@
 		"rwU": 0,
 		"sI": 0,
 		"sU": 0
+		},
+	"/template-handbooks.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/template-handbooks.php",
+		"oF": 0
 		},
 	"/tile-wide.png": {
 		"ft": 32768,

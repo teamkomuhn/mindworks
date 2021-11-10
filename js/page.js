@@ -3,8 +3,6 @@
     'use strict';
 
     //BLOCK SIDENOTE
-    
-    //BLOCK SIDENOTE
     const sidebar = $('body').children('aside.sidebar');
 
     function getSidenotes() {

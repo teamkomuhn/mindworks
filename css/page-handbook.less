@@ -1,7 +1,8 @@
 /* page-handbook.php styles */
 @import "../css/variables-static";
 
-body.page-handbook {
+body.page-handbook,
+body.page-handbook-card {
     main {
         padding: var(--spacing-y) var(--spacing-x);
 
@@ -20,7 +21,6 @@ body.page-handbook {
             }
 
             article.card {
-
                 background-color: @color-grey-light;
                 border-radius: 0.5em;
                 margin-bottom: var(--spacing-x);
@@ -52,6 +52,7 @@ body.page-handbook {
                         }
                     }
 
+                    a.button,
                     button {
                         order: 2;
                         max-width: 1em;
@@ -77,14 +78,311 @@ body.page-handbook {
                 }
 
             }
+        }
 
+        // TODO: Bring this part to the right folder/file after deciding on WP structure
+        section.cards-slider {
+
+            nav.cards-nav {
+
+            }
+
+            article.card {
+                background-color: @color-grey-light;
+                border-radius: 0.5em;
+                @color-card: #F8CF66; // TODO: Get color from CMS
+
+                > header {
+                    background-color: @color-card;
+                    border-radius: 0.5em 0.5em 0 0;
+                    padding: var(--spacing-y) var(--spacing-x);
+
+                    display: flex;
+                	flex-flow: column wrap;
+
+                    h1 {
+                        font-size: var(--font-size-bigger);
+                        margin-bottom: .5em;
+
+                        order: 1;
+                    }
+
+                    figure {
+                        width: 7em;
+                        margin-bottom: 1em;
+
+                        order: 0;
+
+                        img {
+                            width: inherit;
+                        }
+                    }
+
+                    p {
+                        order: 2;
+                    }
+
+                }
+
+                section {
+                    padding: var(--spacing-y) var(--spacing-x);
+                    overflow: hidden;
+
+                    header {
+                        background-repeat: no-repeat;
+                        background-position: 0 center;
+                        margin-bottom: 2rem;
+
+                        h2 {
+                            font-size: var(--font-size-biggish);
+                            text-indent: 2rem;
+                        }
+                    }
+
+                    > article {
+
+                        h3 {
+                            font-weight: bold;
+                            margin-bottom: 1em;
+                        }
+
+                        p {
+                            font-size: var(--font-size-small);
+                            margin-bottom: 1em;
+                        }
+
+                        a {
+                            color: @color-card;
+                        }
+
+                        figure {
+                            overflow: hidden;
+                            width: 100%;
+                            margin-bottom: 1em;
+
+                            img {
+                                width: inherit;
+                                height: auto;
+                            }
+                        }
+
+                    }
+
+
+                    &.steps {
+                        counter-reset: section;
+
+                        header {
+                            background-image: url("../img/icon-map-black.svg");
+                        }
+
+                        > article {
+                            margin: 0 var(--spacing-x) 1.5em;
+                            border-bottom: 1px dotted #666;
+
+                            > * {
+                                display: none; // NOTE: Temporary while no collapsing code. Hides all elements like if it was collapsed.
+                            }
+
+                            h3 {
+                                display: flex;
+                                flex-flow: row nowrap;
+                                cursor: pointer;
+
+                                &::before {
+                                    counter-increment: section;
+                                    content: counter(section);
+
+                                    flex: 0 0 2em;
+
+                                    font-size: var(--font-size-small);
+                                    width: 2em; height: 2em;
+                                    border: 1px solid #fff;
+                                    border-radius: 50%;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    text-align: center;
+                                    margin-right: .7em;
+                                    margin-top: -0.2em;
+                                }
+
+                                &::after {
+                                    content: " ↓";
+                                    margin-left: auto;
+                                    font-weight: normal;
+                                }
+                            }
+
+                            &:last-of-type {
+                                border-bottom: none;
+                                margin-bottom: var(--spacing-y);
+                            }
+                        }
+
+                        &.active {
+                            header {
+                                background-image: url("../img/icon-map-white.svg");
+                            }
+                        }
+                    }
+
+                    &.tools {
+                        header {
+                            background-image: url("../img/icon-hand-black.svg");
+                        }
+
+                        > article {
+                            margin: 0 var(--spacing-x) 1.5em;
+
+                            &:last-of-type {
+                                margin-bottom: var(--spacing-y);
+                            }
+                        }
+
+                        &.active {
+                            header {
+                                background-image: url("../img/icon-hand-white.svg");
+                            }
+                        }
+                    }
+
+                    &.examples {
+                        header {
+                            background-image: url("../img/icon-example-black.svg");
+                        }
+                    }
+
+                }
+
+                div.tabs {
+                    background-color: @color-black;
+                    color: @color-white;
+
+                    > section {
+                        padding: 0;
+                        // padding-bottom: var(--spacing-y);
+
+                        header {
+                            background-position: var(--spacing-x) center;
+                            background-color: @color-grey;
+                            color: @color-black;
+
+                            h2 {
+                                line-height: 3em;
+                                text-indent: 3.5rem;
+                            }
+                        }
+
+                        &:last-of-type {
+
+                        }
+
+                        &.active {
+                            header {
+                                background-color: @color-black;
+                                color: @color-white;
+
+                            }
+                        }
+                    }
+                }
+
+                footer {
+                    padding: var(--spacing-x);
+                    background-color: @color-white;
+
+                    header {
+                        background-image: url("../img/icon-help-black.svg");
+                        background-repeat: no-repeat;
+                        background-position: 0 center;
+                        margin-bottom: 2rem;
+
+                        h2 {
+                            font-size: var(--font-size-biggish);
+                            text-indent: 2.5rem;
+                        }
+                    }
+
+                    ul {
+                        padding: 0;
+                        list-style: none;
+
+                        li {
+                            display: flex;
+                        	flex-flow: row wrap;
+
+                            img {
+                                
+                            }
+
+                            p {
+                                font-size: var(--font-size-small);
+                                a {
+                                    display: block;
+                                }
+                            }
+
+                        }
+                    }
+
+
+                }
+
+
+            }
         }
     }
 }
 
+div.tabs { // TODO: Move this to main css?
+    position: relative;
+    overflow: hidden;
+
+    .tab {
+
+        .tab-button {
+            position: absolute;
+            display: block;
+            width: 50%;
+            cursor: pointer;
+        }
+
+        > * { // All children elements
+            display: none;
+        }
+
+
+        &:first-of-type {
+            .tab-button {
+                top: 0; left: 0; right: 50%;
+            }
+        }
+        &:last-of-type {
+            .tab-button {
+                top: 0; left: 50%; right: 0;
+            }
+        }
+
+        &.active {
+
+            .tab-button {
+                position: relative;
+            }
+
+            > * { // All children elements
+                display: block;
+            }
+        }
+    }
+
+
+}
+
 // DESKTOP
 @media @desktop {
-    body.page-handbook {
+    body.page-handbook,
+    body.page-handbook-card {
         main {
 
             section.category {
@@ -108,6 +406,7 @@ body.page-handbook {
                     }
 
                     > header {
+                        a.button,
                         button {
                             &.open {
                                 // line-height: .5em;

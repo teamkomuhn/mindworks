@@ -1,0 +1,1 @@
+!function(t){"use strict";let c=[];t(".tabs").children().each((function(){const n=t(this),s=n.find(".tab-button");c.push(n),s.on("click",(function(t){for(const t of c)t.removeClass("active");n.addClass("active")}))}))}(jQuery);

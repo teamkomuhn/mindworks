@@ -120,7 +120,6 @@
             wp_enqueue_script( $template_name );
         }
 
-
         //
 		// $old_page_TDM1 = get_page_by_path('thedisruptedmind/scientific-insights/');
 		// $old_page_TDM2 = get_page_by_path('thedisruptedmind/the-crisis-timeline/');

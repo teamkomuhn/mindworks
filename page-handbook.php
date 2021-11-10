@@ -21,7 +21,7 @@
                 <figure>
                     <img src="<?php echo get_template_directory_uri(); ?>/img/icon-sense.svg" alt="">
                 </figure>
-                <button class="open" type="button" name="button">Open card</button>
+                <a class="button open" href="<?php echo esc_url( get_permalink( get_page_by_title( 'TDM handbook > card 1' ) ) ); ?>">Open card</a>
             </header>
             <p>Use your team’s capacity to observe the crisis and speak to different stakeholders as early as possible...</p>
         </article>
