@@ -128,7 +128,6 @@
 						<li><img src="<?php echo get_template_directory_uri(); ?>/img/icon-slack.svg" alt=""> <p>You want to get advice or exchange with fellow changemakers. <a href="#">Join the conversation on Slack -></a></p></li>
 					</ul>
 
-
                 </footer>
 
             </article>

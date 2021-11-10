@@ -270,7 +270,13 @@ body.page-handbook-card main section.cards-slider article.card footer ul {
 body.page-handbook main section.cards-slider article.card footer ul li,
 body.page-handbook-card main section.cards-slider article.card footer ul li {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row no-wrap;
+  align-items: flex-start;
+}
+body.page-handbook main section.cards-slider article.card footer ul li img,
+body.page-handbook-card main section.cards-slider article.card footer ul li img {
+  width: 6em;
+  margin-right: 1em;
 }
 body.page-handbook main section.cards-slider article.card footer ul li p,
 body.page-handbook-card main section.cards-slider article.card footer ul li p {
