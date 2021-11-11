@@ -73,9 +73,6 @@
                                         <h3><?php echo $title; ?></h3>
                                         <?php echo $description; ?>
                                         <a href="<?php echo esc_url($link); ?>">Learn more -></a>
-                                        <!-- <figure>
-                                            <img src="<?php //echo get_template_directory_uri(); ?>/img/cover-masked-man.jpg" alt="">
-                                        </figure> -->
                                     </article>
 
                         <?php endwhile; endif; ?>
@@ -84,22 +81,31 @@
 
                 </div>
 
-                <section class="examples">
-                    <header>
-                        <h2>Examples</h2>
-                    </header>
 
-                    <article class="example">
-                        <h3>Scenario planning during COVID-19</h3>
-                        <figure>
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/cover-masked-man.jpg" alt="">
-                        </figure>
-                        <p>In 2020, several scenario models for Covid-19 emerged yet most focused on vaccine development, supply chains, economy or working habits and only a few included societal aspects like conspiracy theories, antitrust sentiment, fear or denial. However, as the crisis advanced, these “mindset factors” began to play an ever-important role in the long haul.</p>
-                        <a href="#">Learn more -></a>
-                    </article>
+                <?php  if( have_rows('repeater_card_examples') ): ?>
+                    
+                    <section class="examples">
+                        <header>
+                            <h2>Examples</h2>
+                        </header>
 
-                </section>
+                        <?php 
+                                while( have_rows('repeater_card_examples') ) : the_row();
 
+                                    $title      = get_sub_field('card_example_title');
+                                    $content    = get_sub_field('card_example_content');
+                                    $link       = get_sub_field('card_example_link')['url'];
+                        ?>
+                                    <article class="example">
+                                        <h3><?php echo $title; ?></h3>
+                                        <?php echo $content; ?>
+                                        <a href="<?php echo esc_url($link); ?>">Learn more -></a>
+                                    </article>
+
+                        <?php endwhile; ?>
+                    </section>
+
+                <?php endif; ?>
                 <footer>
                     <header>
                         <h2>Participate</h2>
@@ -120,5 +126,5 @@
     </aside>
 
     <?php endwhile; endif; ?>
-    
+
 <?php get_footer(); ?>
