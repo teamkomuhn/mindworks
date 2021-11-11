@@ -39,7 +39,14 @@
                 <section class="cards-slider">
 
                     <nav class="cards-nav">
-                        cards nav
+						<a href="#" title="All cards"><span>All cards</span></a>
+						<a class="previous" href="#" title="Previous card"><-</a>
+                        <a class="active" href="#" title="Card 1">1</a>
+						<a href="#" title="Card 2">2</a>
+						<a href="#" title="Card 2">3</a>
+						<a class="between" href="#" title="Card 3">...</a>
+						<a href="#" title="Card 4">14</a>
+						<a class="next" href="#" title="Next card">-></a>
                     </nav>
 
                     <article class="card full">
@@ -72,7 +79,7 @@
                                     <h2>How to</h2>
                                 </header>
 
-                                <?php 
+                                <?php
                                     if( have_rows('repeater_card_steps') ):
                                         while( have_rows('repeater_card_steps') ) : the_row();
 
@@ -93,7 +100,7 @@
                                     <h2>Tools</h2>
                                 </header>
 
-                                <?php 
+                                <?php
                                     if( have_rows('repeater_card_tools') ):
                                         while( have_rows('repeater_card_tools') ) : the_row();
 
@@ -115,32 +122,41 @@
 
 
                         <?php  if( have_rows('repeater_card_examples') ): ?>
-                            
+
                             <section class="examples">
                                 <header>
                                     <h2>Examples</h2>
                                 </header>
 
-                                <?php 
-                                        while( have_rows('repeater_card_examples') ) : the_row();
+								<ol class="examples-nav" aria-hidden="true">
+									<li><span>1</span></li>
+									<li class="active"><span>2</span></li>
+									<li><span>3</span></li>
+									<li><span>4</span></li>
+									<li><span>5</span></li>
+								</ol>
 
-                                            $title      = get_sub_field('card_example_title');
-                                            $image      = get_sub_field('card_example_image');
-                                            $content    = get_sub_field('card_example_content');
-                                            $link       = get_sub_field('card_example_link');
+                                <?php
+                                while( have_rows('repeater_card_examples') ) : the_row();
+
+                                    $title      = get_sub_field('card_example_title');
+                                    $image      = get_sub_field('card_example_image');
+                                    $content    = get_sub_field('card_example_content');
+                                    $link       = get_sub_field('card_example_link');
                                 ?>
-                                            <article class="example">
-                                                <h3><?php echo $title; ?></h3>
 
-                                                <?php if($image != '') : ?>
-                                                    <figure>
-                                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-                                                    </figure>
-                                                <?php endif; ?>
+                                <article class="example">
+                                    <h3><?php echo $title; ?></h3>
 
-                                                <?php echo $content; ?>
-                                                <a href="<?php echo $link['url']; ?>">Learn more -></a>
-                                            </article>
+                                    <?php if($image != '') : ?>
+                                        <figure>
+                                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                        </figure>
+                                    <?php endif; ?>
+
+                                    <?php echo $content; ?>
+                                    <a href="<?php echo $link['url']; ?>">Learn more -></a>
+                                </article>
 
                                 <?php endwhile; ?>
                             </section>
