@@ -58,11 +58,11 @@
                             <figure>
                                 <img src="<?php echo $card_image; ?>" alt="">
                             </figure>
-                            <p><?php the_excerpt(); ?></p>
+                            <?php the_excerpt(); ?>
                         </header>
 
                         <section class="intro">
-                            <p><?php the_content(); ?></p>
+                            <?php the_content(); ?>
                         </section>
 
                         <div class="tabs">
