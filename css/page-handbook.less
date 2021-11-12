@@ -176,15 +176,16 @@ body.page-handbook-card {
                             background-image: url("../img/icon-map-black.svg");
                         }
 
-                        > article {
+                        > .expandable {
                             margin: 0 var(--spacing-x) 1.5em;
                             border-bottom: 1px dotted #666;
 
-                            > * {
-                                display: none; // NOTE: Temporary while no collapsing code. Hides all elements like if it was collapsed.
-                            }
+                            // NOTE: done
+                            // > * {
+                            //     display: none; // NOTE: Temporary while no collapsing code. Hides all elements like if it was collapsed.
+                            // }
 
-                            h3 {
+                            .expandable__header {
                                 display: flex;
                                 flex-flow: row nowrap;
                                 cursor: pointer;
@@ -208,7 +209,7 @@ body.page-handbook-card {
                                 }
 
                                 &::after {
-                                    content: " ↓";
+                                    content: " \002193";
                                     margin-left: auto;
                                     font-weight: normal;
                                 }
@@ -217,6 +218,12 @@ body.page-handbook-card {
                             &:last-of-type {
                                 border-bottom: none;
                                 margin-bottom: var(--spacing-y);
+                            }
+
+                            .expandable__content {
+                                overflow: hidden;
+                                height: var(--height);
+                                transition: height 250ms;
                             }
                         }
 
