@@ -69,7 +69,12 @@
                         </header>
 
                         <section class="intro">
-
+							<header class="card-meta">
+								<p><strong>Crisis period:</strong> The Early Phase</p>
+								<p><strong>Use to:</strong> Orientate yourself during the crisis and identify possible entry points and obstacles ahead.</p>
+								<p><strong>Mindset Force:</strong> Disorientation</p>
+								<button type="button">Read more ↓</button>
+							</header>
 
                             <?php the_content(); ?>
                         </section>
