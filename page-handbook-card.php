@@ -39,29 +39,43 @@
                 <section class="cards-slider">
 
                     <nav class="cards-nav">
-                        cards nav
+						<a href="#" title="All cards"><span>All cards</span></a>
+						<a class="previous" href="#" title="Previous card"><-</a>
+                        <a class="active" href="#" title="Card 1">1</a>
+						<a href="#" title="Card 2">2</a>
+						<a href="#" title="Card 2">3</a>
+						<a class="between" href="#" title="Card 3">...</a>
+						<a href="#" title="Card 4">14</a>
+						<a class="next" href="#" title="Next card">-></a>
                     </nav>
 
                     <article class="card full">
                         <header>
                             <h1><?php the_title(); ?></h1>
-                            <?php
-                                if (has_post_thumbnail( $post->ID ) ){
-                                    $card_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
-                                } else {
-                                    $card_image = get_template_directory_uri() . "/img/icon-sense.svg";
-                                }
-                            ?>
-                            <div id="custom-bg" style="background-image: url('<?php echo $image[0]; ?>')">
 
-                            </div>
+                            <?php
+                            if ( has_post_thumbnail( $post->ID ) ) :
+								$thumbnail_id = get_post_thumbnail_id( $post->ID );
+                                $card_image = wp_get_attachment_image_src( $thumbnail_id );
+								$card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+                            ?>
                             <figure>
-                                <img src="<?php echo $card_image; ?>" alt="">
+                                <img src="<?php echo $card_image[0]; ?>" alt="<?php echo $card_image_alt; ?>">
                             </figure>
+							<?php endif; ?>
+
                             <?php the_excerpt(); ?>
+
                         </header>
 
                         <section class="intro">
+							<header class="card-meta">
+								<p><strong>Crisis period:</strong> The Early Phase</p>
+								<p><strong>Use to:</strong> Orientate yourself during the crisis and identify possible entry points and obstacles ahead.</p>
+								<p><strong>Mindset Force:</strong> Disorientation</p>
+								<button type="button">Read more ↓</button>
+							</header>
+
                             <?php the_content(); ?>
                         </section>
 
@@ -72,13 +86,14 @@
                                     <h2>How to</h2>
                                 </header>
 
-                                <?php 
-                                    if( have_rows('repeater_card_steps') ):
-                                        while( have_rows('repeater_card_steps') ) : the_row();
+                                <?php
+                                if ( have_rows('repeater_card_steps') ):
+                                while ( have_rows('repeater_card_steps') ) : the_row();
 
-                                            $title      = get_sub_field('card_step_title');
-                                            $content    = get_sub_field('card_step_content');
+                                $title      = get_sub_field('card_step_title');
+                                $content    = get_sub_field('card_step_content');
                                 ?>
+                              
                                             <article class="step expandable expandable--active">
                                                 <h3 class="expandable__header"><?php echo $title; ?></h3>
 
@@ -96,7 +111,7 @@
                                     <h2>Tools</h2>
                                 </header>
 
-                                <?php 
+                                <?php
                                     if( have_rows('repeater_card_tools') ):
                                         while( have_rows('repeater_card_tools') ) : the_row();
 
@@ -118,32 +133,41 @@
 
 
                         <?php  if( have_rows('repeater_card_examples') ): ?>
-                            
+
                             <section class="examples">
                                 <header>
                                     <h2>Examples</h2>
                                 </header>
 
-                                <?php 
-                                        while( have_rows('repeater_card_examples') ) : the_row();
+								<ol class="examples-nav" aria-hidden="true">
+									<li><span>1</span></li>
+									<li class="active"><span>2</span></li>
+									<li><span>3</span></li>
+									<li><span>4</span></li>
+									<li><span>5</span></li>
+								</ol>
 
-                                            $title      = get_sub_field('card_example_title');
-                                            $image      = get_sub_field('card_example_image');
-                                            $content    = get_sub_field('card_example_content');
-                                            $link       = get_sub_field('card_example_link');
+                                <?php
+                                while( have_rows('repeater_card_examples') ) : the_row();
+
+                                    $title      = get_sub_field('card_example_title');
+                                    $image      = get_sub_field('card_example_image');
+                                    $content    = get_sub_field('card_example_content');
+                                    $link       = get_sub_field('card_example_link');
                                 ?>
-                                            <article class="example">
-                                                <h3><?php echo $title; ?></h3>
 
-                                                <?php if($image != '') : ?>
-                                                    <figure>
-                                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-                                                    </figure>
-                                                <?php endif; ?>
+                                <article class="example">
+                                    <h3><?php echo $title; ?></h3>
 
-                                                <?php echo $content; ?>
-                                                <a href="<?php echo $link['url']; ?>">Learn more -></a>
-                                            </article>
+                                    <?php if($image != '') : ?>
+                                        <figure>
+                                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                        </figure>
+                                    <?php endif; ?>
+
+                                    <?php echo $content; ?>
+                                    <a href="<?php echo $link['url']; ?>">Learn more -></a>
+                                </article>
 
                                 <?php endwhile; ?>
                             </section>

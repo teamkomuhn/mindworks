@@ -70,6 +70,58 @@ body.page-handbook main section.category article.card:hover,
 body.page-handbook-card main section.category article.card:hover {
   box-shadow: 2px 4px 10px 4px #ccc;
 }
+body.page-handbook main section.cards-slider nav.cards-nav,
+body.page-handbook-card main section.cards-slider nav.cards-nav {
+  margin: -1.5rem 0 1rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a,
+body.page-handbook-card main section.cards-slider nav.cards-nav a {
+  border: 0.08rem solid #222;
+  border-radius: 0.35em;
+  height: 1.9rem;
+  width: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #222222;
+  text-decoration: none;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a span,
+body.page-handbook-card main section.cards-slider nav.cards-nav a span {
+  display: none;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a:first-of-type,
+body.page-handbook-card main section.cards-slider nav.cards-nav a:first-of-type {
+  border: 0;
+  background-image: url("../img/icon-cards.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 2.7rem;
+  width: 4.4rem;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a:first-of-type::before,
+body.page-handbook-card main section.cards-slider nav.cards-nav a:first-of-type::before {
+  visibility: hidden;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a.previous,
+body.page-handbook-card main section.cards-slider nav.cards-nav a.previous {
+  border: 0;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a.active,
+body.page-handbook-card main section.cards-slider nav.cards-nav a.active {
+  background-color: #F8CF66;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a.between,
+body.page-handbook-card main section.cards-slider nav.cards-nav a.between {
+  border: 0;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a.next,
+body.page-handbook-card main section.cards-slider nav.cards-nav a.next {
+  border: 0;
+}
 body.page-handbook main section.cards-slider article.card,
 body.page-handbook-card main section.cards-slider article.card {
   background-color: #EEEEEE;
@@ -143,6 +195,24 @@ body.page-handbook main section.cards-slider article.card section > article figu
 body.page-handbook-card main section.cards-slider article.card section > article figure img {
   width: inherit;
   height: auto;
+}
+body.page-handbook main section.cards-slider article.card section.intro header.card-meta,
+body.page-handbook-card main section.cards-slider article.card section.intro header.card-meta {
+  margin-bottom: 0;
+}
+body.page-handbook main section.cards-slider article.card section.intro header.card-meta p,
+body.page-handbook-card main section.cards-slider article.card section.intro header.card-meta p {
+  margin-bottom: 0.5em;
+}
+body.page-handbook main section.cards-slider article.card section.intro header.card-meta button,
+body.page-handbook-card main section.cards-slider article.card section.intro header.card-meta button {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+body.page-handbook main section.cards-slider article.card section.intro > p,
+body.page-handbook-card main section.cards-slider article.card section.intro > p {
+  margin-bottom: 1em;
+  display: none;
 }
 body.page-handbook main section.cards-slider article.card section.steps,
 body.page-handbook-card main section.cards-slider article.card section.steps {
@@ -220,6 +290,43 @@ body.page-handbook-card main section.cards-slider article.card section.tools.act
 body.page-handbook main section.cards-slider article.card section.examples header,
 body.page-handbook-card main section.cards-slider article.card section.examples header {
   background-image: url("../img/icon-example-black.svg");
+}
+body.page-handbook main section.cards-slider article.card section.examples ol.examples-nav,
+body.page-handbook-card main section.cards-slider article.card section.examples ol.examples-nav {
+  padding: 0;
+  margin-top: -1em;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/icon-swipe-black.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+}
+body.page-handbook main section.cards-slider article.card section.examples ol.examples-nav li,
+body.page-handbook-card main section.cards-slider article.card section.examples ol.examples-nav li {
+  font-size: 1.3em;
+  cursor: pointer;
+  margin: 0 0.1em;
+}
+body.page-handbook main section.cards-slider article.card section.examples ol.examples-nav li span,
+body.page-handbook-card main section.cards-slider article.card section.examples ol.examples-nav li span {
+  display: none;
+}
+body.page-handbook main section.cards-slider article.card section.examples ol.examples-nav li::after,
+body.page-handbook-card main section.cards-slider article.card section.examples ol.examples-nav li::after {
+  content: "○";
+}
+body.page-handbook main section.cards-slider article.card section.examples ol.examples-nav li.active::after,
+body.page-handbook-card main section.cards-slider article.card section.examples ol.examples-nav li.active::after {
+  content: "◉";
+}
+body.page-handbook main section.cards-slider article.card section.examples article.example,
+body.page-handbook-card main section.cards-slider article.card section.examples article.example {
+  border-top: 1px dotted #666;
+  padding-top: 1em;
 }
 body.page-handbook main section.cards-slider article.card div.tabs,
 body.page-handbook-card main section.cards-slider article.card div.tabs {
@@ -337,5 +444,18 @@ div.tabs .tab.active > * {
   body.page-handbook main section.category article.card:last-of-type,
   body.page-handbook-card main section.category article.card:last-of-type {
     margin-right: 0;
+  }
+  body.page-handbook main section.cards-slider article.card > header,
+  body.page-handbook-card main section.cards-slider article.card > header {
+    padding: var(--spacing-y);
+  }
+  body.page-handbook main section.cards-slider article.card > header p,
+  body.page-handbook-card main section.cards-slider article.card > header p {
+    order: 2;
+    font-size: var(--font-size-biggish);
+  }
+  body.page-handbook main section.cards-slider article.card section,
+  body.page-handbook-card main section.cards-slider article.card section {
+    padding: var(--spacing-y);
   }
 }
