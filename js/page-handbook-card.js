@@ -28,11 +28,11 @@
     // TODO: If one of the top panels is open, colculate of the onScroll() also the height of that closing
 
     const scrollTo = ( element, duration = 0, offset = 0 ) => {
-        
+
         $( [document.documentElement, document.body] ).animate({
             scrollTop: window.scrollY + element.getBoundingClientRect().top - offset
         }, { duration, easing: `linear` })
-        
+
     }
 
     const collapse = (element, duration = 0) => {
