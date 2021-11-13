@@ -223,19 +223,19 @@ body.page-handbook main section.cards-slider article.card section.steps header,
 body.page-handbook-card main section.cards-slider article.card section.steps header {
   background-image: url("../img/icon-map-black.svg");
 }
-body.page-handbook main section.cards-slider article.card section.steps > .expandable,
-body.page-handbook-card main section.cards-slider article.card section.steps > .expandable {
+body.page-handbook main section.cards-slider article.card section.steps > article,
+body.page-handbook-card main section.cards-slider article.card section.steps > article {
   margin: 0 var(--spacing-x) 1.5em;
   border-bottom: 1px dotted #666;
 }
-body.page-handbook main section.cards-slider article.card section.steps > .expandable .expandable__header,
-body.page-handbook-card main section.cards-slider article.card section.steps > .expandable .expandable__header {
+body.page-handbook main section.cards-slider article.card section.steps > article h3,
+body.page-handbook-card main section.cards-slider article.card section.steps > article h3 {
   display: flex;
   flex-flow: row nowrap;
   cursor: pointer;
 }
-body.page-handbook main section.cards-slider article.card section.steps > .expandable .expandable__header::before,
-body.page-handbook-card main section.cards-slider article.card section.steps > .expandable .expandable__header::before {
+body.page-handbook main section.cards-slider article.card section.steps > article h3::before,
+body.page-handbook-card main section.cards-slider article.card section.steps > article h3::before {
   counter-increment: section;
   content: counter(section);
   flex: 0 0 2em;
@@ -251,19 +251,19 @@ body.page-handbook-card main section.cards-slider article.card section.steps > .
   margin-right: 0.7em;
   margin-top: -0.2em;
 }
-body.page-handbook main section.cards-slider article.card section.steps > .expandable .expandable__header::after,
-body.page-handbook-card main section.cards-slider article.card section.steps > .expandable .expandable__header::after {
+body.page-handbook main section.cards-slider article.card section.steps > article h3::after,
+body.page-handbook-card main section.cards-slider article.card section.steps > article h3::after {
   content: " \002193";
   margin-left: auto;
   font-weight: normal;
 }
-body.page-handbook main section.cards-slider article.card section.steps > .expandable:last-of-type,
-body.page-handbook-card main section.cards-slider article.card section.steps > .expandable:last-of-type {
+body.page-handbook main section.cards-slider article.card section.steps > article:last-of-type,
+body.page-handbook-card main section.cards-slider article.card section.steps > article:last-of-type {
   border-bottom: none;
   margin-bottom: var(--spacing-y);
 }
-body.page-handbook main section.cards-slider article.card section.steps > .expandable .expandable__content,
-body.page-handbook-card main section.cards-slider article.card section.steps > .expandable .expandable__content {
+body.page-handbook main section.cards-slider article.card section.steps > article .expandable__content,
+body.page-handbook-card main section.cards-slider article.card section.steps > article .expandable__content {
   overflow: hidden;
   height: var(--height);
   transition: height 250ms;
@@ -458,6 +458,44 @@ div.tabs .tab.active > * {
   body.page-handbook main section.cards-slider article.card section,
   body.page-handbook-card main section.cards-slider article.card section {
     padding: var(--spacing-y);
+  }
+  body.page-handbook main section.cards-slider article.card section header h2,
+  body.page-handbook-card main section.cards-slider article.card section header h2 {
+    font-size: var(--font-size-big);
+  }
+  body.page-handbook main section.cards-slider article.card section > article h3,
+  body.page-handbook-card main section.cards-slider article.card section > article h3 {
+    font-weight: normal;
+    font-size: var(--font-size-biggish);
+  }
+  body.page-handbook main section.cards-slider article.card section > article p,
+  body.page-handbook-card main section.cards-slider article.card section > article p {
+    font-size: var(--font-size-p);
+  }
+  body.page-handbook main section.cards-slider article.card section.intro header.card-meta button,
+  body.page-handbook-card main section.cards-slider article.card section.intro header.card-meta button {
+    width: 50%;
+  }
+  body.page-handbook main section.cards-slider article.card section.steps > article,
+  body.page-handbook-card main section.cards-slider article.card section.steps > article {
+    margin: 0 var(--spacing-y) 1.5em;
+  }
+  body.page-handbook main section.cards-slider article.card section.steps > article h3::before,
+  body.page-handbook-card main section.cards-slider article.card section.steps > article h3::before {
+    font-size: var(--font-size-p);
+  }
+  body.page-handbook main section.cards-slider article.card section.tools > article,
+  body.page-handbook-card main section.cards-slider article.card section.tools > article {
+    margin: 0 var(--spacing-y) 1.5em;
+  }
+  body.page-handbook main section.cards-slider article.card div.tabs > section header,
+  body.page-handbook-card main section.cards-slider article.card div.tabs > section header {
+    background-position: var(--spacing-y) center;
+  }
+  body.page-handbook main section.cards-slider article.card div.tabs > section header h2,
+  body.page-handbook-card main section.cards-slider article.card div.tabs > section header h2 {
+    text-indent: 6rem;
+    font-size: var(--font-size-big);
   }
 }
 /*# sourceMappingURL=page-handbook-card.css.map */

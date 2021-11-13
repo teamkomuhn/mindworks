@@ -266,11 +266,11 @@ body.page-handbook-card {
                             background-image: url("../img/icon-map-black.svg");
                         }
 
-                        > .expandable {
+                        > article {
                             margin: 0 var(--spacing-x) 1.5em;
                             border-bottom: 1px dotted #666;
 
-                            .expandable__header {
+                            h3 {
                                 display: flex;
                                 flex-flow: row nowrap;
                                 cursor: pointer;
@@ -564,7 +564,70 @@ div.tabs { // TODO: Move this to main css?
 
                     section {
                         padding: var(--spacing-y);
+
+                        header {
+                            h2 {
+                                font-size: var(--font-size-big);
+                            }
+                        }
+
+                        > article {
+
+                            h3 {
+                                font-weight: normal;
+                                font-size: var(--font-size-biggish);
+                            }
+
+                            p {
+                                font-size: var(--font-size-p);
+                            }
+                        }
+
+                        &.intro {
+                            header.card-meta {
+                                button {
+                                    width: 50%;
+                                }
+                            }
+                        }
+
+                        &.steps {
+                            > article {
+                                margin: 0 var(--spacing-y) 1.5em;
+
+                                h3 {
+
+                                    &::before {
+                                        font-size: var(--font-size-p);
+                                    }
+                                }
+
+
+                            }
+                        }
+
+                        &.tools {
+                            > article {
+                                margin: 0 var(--spacing-y) 1.5em;
+                            }
+                        }
+
+
                     }
+
+                    div.tabs {
+                        > section {
+                            header {
+                                background-position: var(--spacing-y) center;
+
+                                h2 {
+                                    text-indent: 6rem;
+                                    font-size: var(--font-size-big);
+                                }
+                            }
+                        }
+                    }
+
 
                 }
 
