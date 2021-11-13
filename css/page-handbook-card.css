@@ -444,5 +444,18 @@ div.tabs .tab.active > * {
   body.page-handbook-card main section.category article.card:last-of-type {
     margin-right: 0;
   }
+  body.page-handbook main section.cards-slider article.card > header,
+  body.page-handbook-card main section.cards-slider article.card > header {
+    padding: var(--spacing-y);
+  }
+  body.page-handbook main section.cards-slider article.card > header p,
+  body.page-handbook-card main section.cards-slider article.card > header p {
+    order: 2;
+    font-size: var(--font-size-biggish);
+  }
+  body.page-handbook main section.cards-slider article.card section,
+  body.page-handbook-card main section.cards-slider article.card section {
+    padding: var(--spacing-y);
+  }
 }
 /*# sourceMappingURL=page-handbook-card.css.map */
