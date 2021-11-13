@@ -4,7 +4,6 @@
 body.page-handbook,
 body.page-handbook-card {
 
-
     main {
         padding: var(--spacing-y) var(--spacing-x);
 
@@ -240,6 +239,25 @@ body.page-handbook-card {
 
                     }
 
+                    &.intro {
+                        header.card-meta {
+                            margin-bottom: 0;
+
+                            p {
+                                margin-bottom: .5em;
+                            }
+                            button {
+                                margin-top: 1.5rem;
+                                width: 100%;
+                            }
+                        }
+
+                        > p {
+                            margin-bottom: 1em;
+                            display: none;
+                        }
+
+                    }
 
                     &.steps {
                         counter-reset: section;
@@ -438,14 +456,9 @@ body.page-handbook-card {
                                     display: block;
                                 }
                             }
-
                         }
                     }
-
-
                 }
-
-
             }
         }
     }
@@ -530,8 +543,29 @@ div.tabs { // TODO: Move this to main css?
                             }
                         }
                     }
+                }
+            }
+
+            // TODO: Bring this part to the right folder/file after deciding on WP structure
+            section.cards-slider {
+
+                article.card {
+
+                    > header {
+                        padding: var(--spacing-y);
+
+                        p {
+                            order: 2;
+                            font-size: var(--font-size-biggish);
+                        }
+                    }
+
+                    section {
+                        padding: var(--spacing-y);
+                    }
 
                 }
+
 
             }
 

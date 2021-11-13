@@ -225,6 +225,12 @@
         'page',
         //'custom-post-type-name',
     ));
+    // Enable svg support
+    function cc_mime_types($mimes) {
+        $mimes['svg'] = 'image/svg+xml';
+        return $mimes;
+    }
+    add_filter('upload_mimes', 'cc_mime_types');
 
     // Add theme support for EXCERPTS
     add_post_type_support( 'page', 'excerpt' );
@@ -432,5 +438,5 @@
         }
         return $text;
     }
-    
+
 ?>

@@ -197,6 +197,24 @@ body.page-handbook-card main section.cards-slider article.card section > article
   width: inherit;
   height: auto;
 }
+body.page-handbook main section.cards-slider article.card section.intro header.card-meta,
+body.page-handbook-card main section.cards-slider article.card section.intro header.card-meta {
+  margin-bottom: 0;
+}
+body.page-handbook main section.cards-slider article.card section.intro header.card-meta p,
+body.page-handbook-card main section.cards-slider article.card section.intro header.card-meta p {
+  margin-bottom: 0.5em;
+}
+body.page-handbook main section.cards-slider article.card section.intro header.card-meta button,
+body.page-handbook-card main section.cards-slider article.card section.intro header.card-meta button {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+body.page-handbook main section.cards-slider article.card section.intro > p,
+body.page-handbook-card main section.cards-slider article.card section.intro > p {
+  margin-bottom: 1em;
+  display: none;
+}
 body.page-handbook main section.cards-slider article.card section.steps,
 body.page-handbook-card main section.cards-slider article.card section.steps {
   counter-reset: section;
@@ -425,6 +443,19 @@ div.tabs .tab.active > * {
   body.page-handbook main section.category article.card:last-of-type,
   body.page-handbook-card main section.category article.card:last-of-type {
     margin-right: 0;
+  }
+  body.page-handbook main section.cards-slider article.card > header,
+  body.page-handbook-card main section.cards-slider article.card > header {
+    padding: var(--spacing-y);
+  }
+  body.page-handbook main section.cards-slider article.card > header p,
+  body.page-handbook-card main section.cards-slider article.card > header p {
+    order: 2;
+    font-size: var(--font-size-biggish);
+  }
+  body.page-handbook main section.cards-slider article.card section,
+  body.page-handbook-card main section.cards-slider article.card section {
+    padding: var(--spacing-y);
   }
 }
 /*# sourceMappingURL=page-handbook-card.css.map */
