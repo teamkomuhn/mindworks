@@ -25,7 +25,7 @@
 
     // TODO: Make a page able to have more than one expandable content section
     // TODO: Break scrollTo() if user scrolls manualy
-    // TODO: If one of the top panels is open, colculate of the onScroll() also the height of that closing
+    // TODO: If one of the top panels is open, calculate of the onScroll() also the height of that closing
 
     const scrollTo = ( element, duration = 0, offset = 0 ) => {
         
@@ -34,45 +34,47 @@
         }, { duration, easing: `linear` })
         
     }
+    
 
-    const collapse = (element, duration = 0) => {
-        open = !open
-
-        element.style.setProperty(`--height`, `0px`)
-    }
-
-    const expand = (element, duration = 0, height = 100) => {
-        open = !open
-
-        element.style.setProperty(`--height`, `${height}px`)
-    }
-
-
-    const steps = document.querySelectorAll(`.step`)
-    const allContents = []
+    const containers = document.querySelectorAll(`.container-expandable`)
+    const allExpandables = []
     const heights = []
+    let openHeight = 0
+    
 
-    for (const [index, step] of steps.entries()) {
+    for (const [index, container] of containers.entries()) {
 
-        const header = step.querySelector(`.expandable__header`)
-        const content = step.querySelector(`.expandable__content`)
+        const button = container.querySelector(`.button-expandable`)
+        const expandable = container.querySelector(`.expandable`)
 
-        allContents.push(content)
-        heights.push(content.getBoundingClientRect().height)
+        allExpandables.push(expandable)
+        heights.push(expandable.getBoundingClientRect().height)
 
-        collapse(content)
+        expandable.style.height = `0px`
 
-        header.addEventListener(`click`, event => {
+        button.addEventListener(`click`, event => {
+
             const DURATION = 250
-            const OFFSET = header.getBoundingClientRect().top
+            const OFFSET = container.getBoundingClientRect().top
 
-            for (const content of allContents) collapse(content, DURATION)
+            let isOpen = expandable.style.height !== `0px`
 
-            if (window.getComputedStyle(content).height === `0px`) {
-                expand(content, DURATION, heights[index])
+            if (isOpen) {
+                expandable.style.height = `0px`
 
-                scrollTo(header, DURATION, OFFSET)
+                // openHeight -= heights[index]
+                // isOpen = expandable.style.height !== `0px`
+            } else {
+                expandable.style.height = `${heights[index]}px`
+
+                // openHeight += heights[index]
+                // isOpen = expandable.style.height !== `0px`
             }
+
+            // const otherHeight = openHeight - (isOpen ? heights[index] : 0)
+            // console.log(otherHeight)
+
+            scrollTo(container, DURATION, OFFSET)
         })
 
     }

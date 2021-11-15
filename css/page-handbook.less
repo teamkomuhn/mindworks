@@ -266,16 +266,11 @@ body.page-handbook-card {
                             background-image: url("../img/icon-map-black.svg");
                         }
 
-                        > .expandable {
+                        > article {
                             margin: 0 var(--spacing-x) 1.5em;
                             border-bottom: 1px dotted #666;
 
-                            // NOTE: done
-                            // > * {
-                            //     display: none; // NOTE: Temporary while no collapsing code. Hides all elements like if it was collapsed.
-                            // }
-
-                            .expandable__header {
+                            h3 {
                                 display: flex;
                                 flex-flow: row nowrap;
                                 cursor: pointer;
@@ -297,23 +292,19 @@ body.page-handbook-card {
                                     margin-right: .7em;
                                     margin-top: -0.2em;
                                 }
-
-                                &::after {
-                                    content: " \002193";
-                                    margin-left: auto;
-                                    font-weight: normal;
-                                }
                             }
 
                             &:last-of-type {
                                 border-bottom: none;
                                 margin-bottom: var(--spacing-y);
                             }
+                        }
 
-                            .expandable__content {
-                                overflow: hidden;
-                                height: var(--height);
-                                transition: height 250ms;
+                        .container-expandable {
+
+                            > .button-expandable { // TODO: style this
+                                color: white;
+                                border: 2px dashed rgb(216, 86, 86);
                             }
                         }
 
@@ -470,6 +461,22 @@ body.page-handbook-card {
         }
     }
 }
+
+.container-expandable { // TODO: Move this to main css?
+
+    .button-expandable {
+
+    }
+
+    .expandable {
+        overflow: hidden;
+        height: auto;  
+        transition: height 250ms;
+    }
+}
+
+
+
 
 div.tabs { // TODO: Move this to main css?
     position: relative;

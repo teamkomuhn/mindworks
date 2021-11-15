@@ -94,10 +94,11 @@
                                 $content    = get_sub_field('card_step_content');
                                 ?>
                               
-                                            <article class="step expandable expandable--active">
-                                                <h3 class="expandable__header"><?php echo $title; ?></h3>
+                                            <article class="step container-expandable">
+                                                <h3><?php echo $title; ?></h3>
+                                                <button class="button-expandable">&darr;</button>
 
-                                                <div class="expandable__content">
+                                                <div class="expandable">
                                                     <?php echo $content; ?>
                                                 </div>
                                             </article>
