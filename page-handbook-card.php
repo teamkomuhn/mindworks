@@ -94,13 +94,13 @@
                                 $content    = get_sub_field('card_step_content');
                                 ?>
 
-                                            <article class="step expandable expandable--active">
-                                                <h3 class="expandable__header"><?php echo $title; ?></h3>
+                                <article class="step expandable expandable--active">
+                                    <h3 class="expandable__header"><?php echo $title; ?></h3>
 
-                                                <div class="expandable__content">
-                                                    <?php echo $content; ?>
-                                                </div>
-                                            </article>
+                                    <div class="expandable__content">
+                                        <?php echo $content; ?>
+                                    </div>
+                                </article>
 
                                 <?php endwhile; endif; ?>
 
