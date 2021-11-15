@@ -33,7 +33,7 @@ var debounce = function (fn) {
 
 // CAN jQuery
 (function( $ ) {
-    $('.card').on('click', function(){
+    /*$('.card').on('click', function(){
 
         //var cardID = $(this).attr('ID');
         var cardCat = $(this).data('cat');
@@ -89,7 +89,7 @@ var debounce = function (fn) {
         });*/
 
 
-    });
+    /*});*/
 
     //SMOOTH SCROLL TO FUNCTION >> duplicated on page.js for now, need to check how to call it there from here
     function scrollToMain( element, duration, delay ) {

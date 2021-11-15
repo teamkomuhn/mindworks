@@ -18,7 +18,7 @@
 
                 tab.addClass('active');
             });
-        });
+        }); 
     }
 
     setTabs();
