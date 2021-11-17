@@ -92,7 +92,7 @@
 
                         </header>
 
-                        <section class="intro">
+                        <section class="intro container-expandable">
 							<header class="card-meta">
 
                                 <?php
@@ -104,14 +104,16 @@
                                 ?>
 
 								<p><strong><?php echo $label; ?>:</strong> <?php echo $description; ?></p>
-
+                                
                                 <?php endwhile; endif; ?>
 
-								<button type="button">Read more &darr;</button>
+								<button class="button-expandable" type="button">Read more &darr;</button>
 
 							</header>
-
-                            <?php the_content(); ?>
+                            
+                            <div class="expandable">
+                                <?php the_content(); ?>
+                            </div>
                         </section>
 
                         <div class="tabs">
