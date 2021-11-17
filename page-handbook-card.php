@@ -72,8 +72,8 @@
                                     $card_image = wp_get_attachment_image_src( $thumbnail_id );
                                     $card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
                             ?>
-
-                            <figure>
+                          
+                            <figure class="icon">
                                 <img src="<?php echo $card_image[0]; ?>" alt="<?php echo $card_image_alt; ?>">
                             </figure>
                             
@@ -81,10 +81,16 @@
 
                             <?php the_excerpt(); ?>
 
+                            <?php // IF COMPANION IMAGE ?>
+                            <figure class="companion-image">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/timeline-phases-nav.svg" alt="">
+                            </figure>
+
                         </header>
 
                         <section class="intro">
 							<header class="card-meta">
+                
                                 <?php
                                     if( have_rows('repeater_card_meta') ):
                                         while( have_rows('repeater_card_meta') ) : the_row();
@@ -98,6 +104,7 @@
                                 <?php endwhile; endif; ?>
 
 								<button type="button">Read more &darr;</button>
+
 							</header>
 
                             <?php the_content(); ?>
@@ -117,11 +124,16 @@
                                             $title      = get_sub_field('card_step_title');
                                             $content    = get_sub_field('card_step_content');
                                 ?>
+                              
+                                            <article class="step container-expandable">
+                                                <h3><?php echo $title; ?></h3>
+                                                <button class="button-expandable">&darr;</button>
 
-                                <article class="step expandable">
-                                    <h3 class="expandable__header"><?php echo $title; ?></h3>
-                                    <div class="expandable__content"><?php echo $content; ?></div>
-                                </article>
+                                                <div class="expandable">
+                                                    <?php echo $content; ?>
+                                                </div>
+                                            </article>
+
 
                                 <?php endwhile; endif; ?>
 
@@ -133,12 +145,12 @@
                                 </header>
 
                                 <?php
-                                    if( have_rows('repeater_card_tools') ):
-                                        while( have_rows('repeater_card_tools') ) : the_row();
+                                if( have_rows('repeater_card_tools') ):
+                                while( have_rows('repeater_card_tools') ) : the_row();
 
-                                            $title       = get_sub_field('card_tool_title');
-                                            $description = get_sub_field('card_tool_description');
-                                            $link        = get_sub_field('card_tool_link');
+                                $title       = get_sub_field('card_tool_title');
+                                $description = get_sub_field('card_tool_description');
+                                $link        = get_sub_field('card_tool_link');
                                 ?>
 
                                 <article class="tool">
@@ -170,24 +182,27 @@
 								</ol>
 
                                 <?php
-                                    while( have_rows('repeater_card_examples') ) : the_row();
 
-                                        $title      = get_sub_field('card_example_title');
-                                        $image      = get_sub_field('card_example_image');
-                                        $content    = get_sub_field('card_example_content');
-                                        $link       = get_sub_field('card_example_link');
+                              
+                                while( have_rows('repeater_card_examples') ) : the_row();
+                                    $title      = get_sub_field('card_example_title');
+                                    $image      = get_sub_field('card_example_image');
+                                    $content    = get_sub_field('card_example_content');
+                                    $link       = get_sub_field('card_example_link');
+
                                 ?>
 
                                 <article class="example">
                                     <h3><?php echo $title; ?></h3>
 
                                     <?php if($image != '') : ?>
-                                        <figure>
-                                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-                                        </figure>
+                                    <figure>
+                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                    </figure>
                                     <?php endif; ?>
 
                                     <?php echo $content; ?>
+
                                     <a href="<?php echo $link['url']; ?>">Learn more -></a>
                                 </article>
 
@@ -202,7 +217,8 @@
                             </header>
 
                             <ul>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/img/icon-slack.svg" alt=""> <p>You want to get advice or exchange with fellow changemakers. <a href="#">Join the conversation on Slack -></a></p></li>
+                                <li><img src="<?php echo get_template_directory_uri(); ?>/img/icon-slack.svg" alt="Icon slack"> <p>Want to learn and exchange with fellow changemakers? <a href="#">Join the conversation on Slack -></a></p></li>
+                                <li><img src="<?php echo get_template_directory_uri(); ?>/img/icon-email-black.svg" alt="Icon email"> <p>Looking for some advice or would like to collaborate with Mindworks? <a href="#">Ask us anything -></a></p></li>
                             </ul>
 
                         </footer>
