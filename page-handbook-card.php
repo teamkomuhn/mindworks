@@ -50,18 +50,18 @@
                             // The Query
                             $cards = new WP_Query( $args );
 
-                            if ( $cards->have_posts() ) : 
+                            if ( $cards->have_posts() ) :
 
                                 $i = 1;
                                 while ( $cards->have_posts() ) : $cards->the_post();
 
                         ?>
-                            
+
                             <a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo $i++; ?></a>
 
                         <?php endwhile; endif; wp_reset_postdata(); ?>
                     </nav>
-                            
+
                     <article class="card full">
                         <?php
                             $card_color = get_field('card_color');
@@ -76,11 +76,11 @@
                                     $card_image = wp_get_attachment_image_src( $thumbnail_id );
                                     $card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
                             ?>
-                          
+
                             <figure class="icon">
                                 <img src="<?php echo $card_image[0]; ?>" alt="<?php echo $card_image_alt; ?>">
                             </figure>
-                            
+
 							<?php endif; ?>
 
                             <?php the_excerpt(); ?>
@@ -94,7 +94,7 @@
 
                         <section class="intro">
 							<header class="card-meta">
-                
+
                                 <?php
                                     if( have_rows('repeater_card_meta') ):
                                         while( have_rows('repeater_card_meta') ) : the_row();
@@ -128,7 +128,7 @@
                                             $title      = get_sub_field('card_step_title');
                                             $content    = get_sub_field('card_step_content');
                                 ?>
-                              
+
                                             <article class="step container-expandable">
                                                 <h3><?php echo $title; ?></h3>
                                                 <button class="button-expandable">&darr;</button>
@@ -187,7 +187,7 @@
 
                                 <?php
 
-                              
+
                                 while( have_rows('repeater_card_examples') ) : the_row();
                                     $title      = get_sub_field('card_example_title');
                                     $image      = get_sub_field('card_example_image');

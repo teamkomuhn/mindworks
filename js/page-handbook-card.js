@@ -10,7 +10,7 @@
             const tab_button = tab.find('.tab-button');
             tabs.push( tab );
 
-            tab_button.on('click', function(s){
+            tab_button.on('click', function(){
 
                 for (const t of tabs) {
                     t.removeClass('active');
@@ -18,7 +18,7 @@
 
                 tab.addClass('active');
             });
-        }); 
+        });
     }
 
     setTabs();
@@ -29,12 +29,9 @@
     const containers = document.querySelectorAll(`.container-expandable`)
     const allExpandables = []
     const heights = []
-    let openHeight = 0
-    
+
 
     for (const [index, container] of containers.entries()) {
-
-        const DURATION = 250
 
         const button = container.querySelector(`.button-expandable`)
         const expandable = container.querySelector(`.expandable`)
@@ -44,8 +41,7 @@
 
         expandable.style.height = `0px`
 
-        button.addEventListener(`click`, event => {
-            const OFFSET = container.getBoundingClientRect().top
+        button.addEventListener(`click`, () => {
 
             const isOpen = expandable.style.height !== `0px`
 
