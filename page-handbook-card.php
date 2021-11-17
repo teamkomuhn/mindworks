@@ -48,20 +48,22 @@
 						<a href="#" title="Card 4">14</a>
 						<a class="next" href="#" title="Next card">-></a>
                     </nav>
-
+                            
                     <article class="card full">
                         <header>
                             <h1><?php the_title(); ?></h1>
 
                             <?php
-                            if ( has_post_thumbnail( $post->ID ) ) :
-								$thumbnail_id = get_post_thumbnail_id( $post->ID );
-                                $card_image = wp_get_attachment_image_src( $thumbnail_id );
-								$card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+                                if ( has_post_thumbnail( $post->ID ) ) :
+                                    $thumbnail_id = get_post_thumbnail_id( $post->ID );
+                                    $card_image = wp_get_attachment_image_src( $thumbnail_id );
+                                    $card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
                             ?>
+
                             <figure>
                                 <img src="<?php echo $card_image[0]; ?>" alt="<?php echo $card_image_alt; ?>">
                             </figure>
+                            
 							<?php endif; ?>
 
                             <?php the_excerpt(); ?>
@@ -70,10 +72,19 @@
 
                         <section class="intro">
 							<header class="card-meta">
-								<p><strong>Crisis period:</strong> The Early Phase</p>
-								<p><strong>Use to:</strong> Orientate yourself during the crisis and identify possible entry points and obstacles ahead.</p>
-								<p><strong>Mindset Force:</strong> Disorientation</p>
-								<button type="button">Read more ↓</button>
+                                <?php
+                                    if( have_rows('repeater_card_meta') ):
+                                        while( have_rows('repeater_card_meta') ) : the_row();
+
+                                            $label       = get_sub_field('card_meta_label');
+                                            $description = get_sub_field('card_meta_description');
+                                ?>
+
+								<p><strong><?php echo $label; ?>:</strong> <?php echo $description; ?></p>
+
+                                <?php endwhile; endif; ?>
+
+								<button type="button">Read more &darr;</button>
 							</header>
 
                             <?php the_content(); ?>
@@ -87,11 +98,11 @@
                                 </header>
 
                                 <?php
-                                if ( have_rows('repeater_card_steps') ):
-                                while ( have_rows('repeater_card_steps') ) : the_row();
+                                    if ( have_rows('repeater_card_steps') ):
+                                        while ( have_rows('repeater_card_steps') ) : the_row();
 
-                                $title      = get_sub_field('card_step_title');
-                                $content    = get_sub_field('card_step_content');
+                                            $title      = get_sub_field('card_step_title');
+                                            $content    = get_sub_field('card_step_content');
                                 ?>
                               
                                             <article class="step container-expandable">
@@ -102,6 +113,7 @@
                                                     <?php echo $content; ?>
                                                 </div>
                                             </article>
+
 
                                 <?php endwhile; endif; ?>
 
@@ -120,11 +132,12 @@
                                             $description = get_sub_field('card_tool_description');
                                             $link        = get_sub_field('card_tool_link');
                                 ?>
-                                            <article class="tool">
-                                                <h3><?php echo $title; ?></h3>
-                                                <?php echo $description; ?>
-                                                <a href="<?php echo esc_url($link); ?>">Learn more -></a>
-                                            </article>
+
+                                <article class="tool">
+                                    <h3><?php echo $title; ?></h3>
+                                    <?php echo $description; ?>
+                                    <a href="<?php echo esc_url($link); ?>">Learn more -></a>
+                                </article>
 
                                 <?php endwhile; endif; ?>
 
@@ -149,12 +162,12 @@
 								</ol>
 
                                 <?php
-                                while( have_rows('repeater_card_examples') ) : the_row();
+                                    while( have_rows('repeater_card_examples') ) : the_row();
 
-                                    $title      = get_sub_field('card_example_title');
-                                    $image      = get_sub_field('card_example_image');
-                                    $content    = get_sub_field('card_example_content');
-                                    $link       = get_sub_field('card_example_link');
+                                        $title      = get_sub_field('card_example_title');
+                                        $image      = get_sub_field('card_example_image');
+                                        $content    = get_sub_field('card_example_content');
+                                        $link       = get_sub_field('card_example_link');
                                 ?>
 
                                 <article class="example">
@@ -174,6 +187,7 @@
                             </section>
 
                         <?php endif; ?>
+
                         <footer>
                             <header>
                                 <h2>Participate</h2>
@@ -189,11 +203,11 @@
 
                 </section>
 
-            <aside class="sidebar">
-                <!-- Sidenote elements  -->
-            </aside>
+                <aside class="sidebar">
+                    <!-- Sidenote elements  -->
+                </aside>
 
-            <?php endwhile; endif; ?>
+                <?php endwhile; endif; ?>
 
         </main>
 
