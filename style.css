@@ -237,6 +237,7 @@ body {
   font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--color-black);
   overflow-x: hidden;
+  margin: 0;
 }
 main {
   position: relative;

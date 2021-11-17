@@ -222,10 +222,31 @@ body.page-handbook-card main section.cards-slider article.card section.intro hea
   margin-top: 1.5rem;
   width: 100%;
 }
-body.page-handbook main section.cards-slider article.card section.intro > p,
-body.page-handbook-card main section.cards-slider article.card section.intro > p {
+body.page-handbook main section.cards-slider article.card section.intro .content > p,
+body.page-handbook-card main section.cards-slider article.card section.intro .content > p {
   margin-bottom: 1em;
+}
+body.page-handbook main section.cards-slider article.card section.intro.container-expandable,
+body.page-handbook-card main section.cards-slider article.card section.intro.container-expandable {
+  position: relative;
+}
+body.page-handbook main section.cards-slider article.card section.intro.container-expandable.expanded .button-expandable,
+body.page-handbook-card main section.cards-slider article.card section.intro.container-expandable.expanded .button-expandable {
+  position: absolute;
+  bottom: var(--spacing-y);
+  width: auto;
+}
+body.page-handbook main section.cards-slider article.card section.intro.container-expandable.expanded .button-expandable span,
+body.page-handbook-card main section.cards-slider article.card section.intro.container-expandable.expanded .button-expandable span {
   display: none;
+}
+body.page-handbook main section.cards-slider article.card section.intro.container-expandable.expanded .button-expandable::after,
+body.page-handbook-card main section.cards-slider article.card section.intro.container-expandable.expanded .button-expandable::after {
+  content: "Less \2191";
+}
+body.page-handbook main section.cards-slider article.card section.intro.container-expandable.expanded > .content,
+body.page-handbook-card main section.cards-slider article.card section.intro.container-expandable.expanded > .content {
+  padding-bottom: var(--spacing-y);
 }
 body.page-handbook main section.cards-slider article.card section.steps,
 body.page-handbook-card main section.cards-slider article.card section.steps {
@@ -244,6 +265,7 @@ body.page-handbook main section.cards-slider article.card section.steps > articl
 body.page-handbook-card main section.cards-slider article.card section.steps > article h3 {
   display: flex;
   flex-flow: row nowrap;
+  margin-right: 1.2em;
   cursor: pointer;
 }
 body.page-handbook main section.cards-slider article.card section.steps > article h3::before,
@@ -268,10 +290,39 @@ body.page-handbook-card main section.cards-slider article.card section.steps > a
   border-bottom: none;
   margin-bottom: var(--spacing-y);
 }
-body.page-handbook main section.cards-slider article.card section.steps .container-expandable > .button-expandable,
-body.page-handbook-card main section.cards-slider article.card section.steps .container-expandable > .button-expandable {
+body.page-handbook main section.cards-slider article.card section.steps > article.container-expandable,
+body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable {
+  position: relative;
+}
+body.page-handbook main section.cards-slider article.card section.steps > article.container-expandable > .button-expandable,
+body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable > .button-expandable {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  line-height: 1.8rem;
+  text-align: right;
   color: white;
-  border: 2px dashed #d85656;
+}
+body.page-handbook main section.cards-slider article.card section.steps > article.container-expandable.expanded,
+body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable.expanded {
+  padding-bottom: 2rem;
+}
+body.page-handbook main section.cards-slider article.card section.steps > article.container-expandable.expanded > .button-expandable,
+body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable.expanded > .button-expandable {
+  top: auto;
+  bottom: 0;
+  line-height: 3em;
+}
+body.page-handbook main section.cards-slider article.card section.steps > article.container-expandable.expanded > .button-expandable span,
+body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable.expanded > .button-expandable span {
+  display: none;
+}
+body.page-handbook main section.cards-slider article.card section.steps > article.container-expandable.expanded > .button-expandable::after,
+body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable.expanded > .button-expandable::after {
+  content: "\2191  Close";
 }
 body.page-handbook main section.cards-slider article.card section.steps.active header,
 body.page-handbook-card main section.cards-slider article.card section.steps.active header {

@@ -107,11 +107,11 @@
 
                                 <?php endwhile; endif; ?>
 
-								<button class="button-expandable" type="button">Read more &darr;</button>
+								<button class="button-expandable" type="button"><span>Read more &darr;</span></button>
 
 							</header>
 
-                            <div class="expandable">
+                            <div class="content expandable">
                                 <?php the_content(); ?>
                             </div>
                         </section>
@@ -133,7 +133,7 @@
 
                                 <article class="step container-expandable">
                                     <h3><?php echo $title; ?></h3>
-                                    <button class="button-expandable">&darr;</button>
+                                    <button class="button-expandable"><span>&darr;</span></button>
 
                                     <div class="expandable">
                                         <?php echo $content; ?>
