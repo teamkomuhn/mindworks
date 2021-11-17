@@ -59,12 +59,16 @@
                                 $card_image = wp_get_attachment_image_src( $thumbnail_id );
 								$card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
                             ?>
-                            <figure>
+                            <figure class="icon">
                                 <img src="<?php echo $card_image[0]; ?>" alt="<?php echo $card_image_alt; ?>">
                             </figure>
 							<?php endif; ?>
 
                             <?php the_excerpt(); ?>
+
+                            <figure class="companion-image">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/timeline-phases-nav.svg" alt="">
+                            </figure>
 
                         </header>
 
@@ -73,7 +77,7 @@
 								<p><strong>Crisis period:</strong> The Early Phase</p>
 								<p><strong>Use to:</strong> Orientate yourself during the crisis and identify possible entry points and obstacles ahead.</p>
 								<p><strong>Mindset Force:</strong> Disorientation</p>
-								<button type="button">Read more &darr;</button>
+								<button type="button">Read more ↓</button>
 							</header>
 
                             <?php the_content(); ?>
@@ -119,6 +123,7 @@
                                 $description = get_sub_field('card_tool_description');
                                 $link        = get_sub_field('card_tool_link');
                                 ?>
+
 
                                 <article class="tool">
                                     <h3><?php echo $title; ?></h3>

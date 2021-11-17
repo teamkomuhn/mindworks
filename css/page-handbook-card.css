@@ -143,19 +143,30 @@ body.page-handbook-card main section.cards-slider article.card > header h1 {
   margin-bottom: 0.5em;
   order: 1;
 }
-body.page-handbook main section.cards-slider article.card > header figure,
-body.page-handbook-card main section.cards-slider article.card > header figure {
+body.page-handbook main section.cards-slider article.card > header figure.icon,
+body.page-handbook-card main section.cards-slider article.card > header figure.icon {
   width: 7em;
   margin-bottom: 1em;
   order: 0;
 }
-body.page-handbook main section.cards-slider article.card > header figure img,
-body.page-handbook-card main section.cards-slider article.card > header figure img {
+body.page-handbook main section.cards-slider article.card > header figure.icon img,
+body.page-handbook-card main section.cards-slider article.card > header figure.icon img {
   width: inherit;
 }
 body.page-handbook main section.cards-slider article.card > header p,
 body.page-handbook-card main section.cards-slider article.card > header p {
   order: 2;
+}
+body.page-handbook main section.cards-slider article.card > header figure.companion-image,
+body.page-handbook-card main section.cards-slider article.card > header figure.companion-image {
+  width: 100%;
+  margin-top: 2rem;
+  order: 3;
+}
+body.page-handbook main section.cards-slider article.card > header figure.companion-image img,
+body.page-handbook-card main section.cards-slider article.card > header figure.companion-image img {
+  width: 100%;
+  height: auto;
 }
 body.page-handbook main section.cards-slider article.card section,
 body.page-handbook-card main section.cards-slider article.card section {
@@ -471,6 +482,10 @@ div.tabs .tab.active > * {
   body.page-handbook-card main section.cards-slider article.card > header p {
     order: 2;
     font-size: var(--font-size-biggish);
+  }
+  body.page-handbook main section.cards-slider article.card > header figure.companion-image,
+  body.page-handbook-card main section.cards-slider article.card > header figure.companion-image {
+    width: 50%;
   }
   body.page-handbook main section.cards-slider article.card section,
   body.page-handbook-card main section.cards-slider article.card section {

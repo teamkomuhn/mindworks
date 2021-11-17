@@ -33,63 +33,6 @@ var debounce = function (fn) {
 
 // CAN jQuery
 (function( $ ) {
-    $('.card').on('click', function(){
-
-        //var cardID = $(this).attr('ID');
-        var cardCat = $(this).data('cat');
-
-        fetch('http://localhost:8888/mindworks/wp-json/wp/v2/cards?categories=' + cardCat + '')
-        .then(response => response.json())
-        .then(cardsData => {
-            if(cardsData != '') {
-                cardsData.forEach(card => {
-                    var $cardTitle = card.title.rendered;
-                    var $cardExcerpt = card.excerpt.rendered;
-                    var $cardContent = card.content.rendered;
-
-                    var $html = '';
-
-                    $html = '<article>';
-                    $html += '<h1>'+$cardTitle+'</h1>';
-                    $html += '<p>'+$cardExcerpt+'</p>';
-                    $html += '<p>'+$cardContent+'</p>';
-                    $html += '</article>';
-
-                    return $(".pop-up").append($html);
-
-                    //$(".pop-up").append(card.title.rendered);
-                });
-            }
-            //return $(".pop-up").append(data[0].title.rendered);
-            //$(".pop-up").append(data[0].title.rendered);
-            //$(".pop-up").append(data[0].content.rendered);
-        })
-        .catch((err) => {  
-            console.log('Failed to fetch page: ', err);  
-        });
-        /*fetch('http://localhost:8888/mindworks/wp-json/wp/v2/cards?categories=' + cardCat + '').then((response) => {
-            // When the page is loaded convert it to text
-            return response.text()
-        })
-        .then((data) => {
-            // Initialize the DOM parser
-            var parser = new DOMParser();
-    
-            // Parse the text
-            var doc = parser.parseFromString(html, "text/html");
-    
-            // You can now even select part of that html as you would in the regular DOM 
-            // Example:
-            // var docArticle = doc.querySelector('article').innerHTML;
-    
-            console.log(doc);
-        })
-        .catch((err) => {  
-            console.log('Failed to fetch page: ', err);  
-        });*/
-
-
-    });
 
     //SMOOTH SCROLL TO FUNCTION >> duplicated on page.js for now, need to check how to call it there from here
     function scrollToMain( element, duration, delay ) {
