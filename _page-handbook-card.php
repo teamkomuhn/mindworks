@@ -1,4 +1,3 @@
-<?php /* Template Name: Page handbook card */ ?>
 <!doctype html>
 <html class="no-js" lang="en">
 
