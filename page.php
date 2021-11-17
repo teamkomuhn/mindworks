@@ -11,8 +11,9 @@
             </header>
             <?php
                 //Add custom message placeholder and button text
+                //Remove text from string, comment or delete the following lines if you don't need to add custom copy
                 $comment_field_placeholder  = "Write here your message or feedback";
-                $submit_button_text         = "Send";
+                $submit_button_text         = "";
 
                 include('inc/comments.php');
             ?>

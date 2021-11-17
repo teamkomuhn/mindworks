@@ -2,6 +2,12 @@
 
     global $comment_field_placeholder, $submit_button_text;
 
+    if($comment_field_placeholder == ''){ 
+        $comment_field_placeholder = 'Write here your message'; 
+    }
+    if($submit_button_text == ''){ 
+        $submit_button_text = 'Send'; 
+    }
     // START WP COMMENTS TEMPLATE
 
     //Comment Field Order
@@ -47,7 +53,7 @@
                         'cookies'   => '',
 
 		) ),
-		'comment_field'             => '<textarea id="comment" name="comment" aria-required="true" placeholder="'.$comment_field_placeholder.'"></textarea>',
+		'comment_field'             => '<textarea id="comment" name="comment" aria-required="true" placeholder="'. $comment_field_placeholder.'"></textarea>',
         // 'comment_notes_after'    => '<p class="comment-notes">Thanks for leaving us your message/feedback! We\'ll get back to you soon.</p>',
         //'id_form'                 => 'commentform',
         //'id_submit'               => 'submit',
