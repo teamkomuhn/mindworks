@@ -59,11 +59,15 @@
                             
                             <a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo $i++; ?></a>
 
-                        <?php endwhile; endif; ?>
+                        <?php endwhile; endif; wp_reset_postdata(); ?>
                     </nav>
                             
                     <article class="card full">
-                        <header>
+                        <?php
+                            $card_color = get_field('card_color');
+                            $card_style = 'style="background-color:'.$card_color.'"';
+                        ?>
+                        <header <?php echo $card_style; ?>>
                             <h1><?php the_title(); ?></h1>
 
                             <?php
