@@ -39,18 +39,35 @@
                 <section class="cards-slider">
 
                     <nav class="cards-nav">
-						<a href="#" title="All cards"><span>All cards</span></a>
-						<a class="previous" href="#" title="Previous card"><-</a>
-                        <a class="active" href="#" title="Card 1">1</a>
-						<a href="#" title="Card 2">2</a>
-						<a href="#" title="Card 2">3</a>
-						<a class="between" href="#" title="Card 3">...</a>
-						<a href="#" title="Card 4">14</a>
-						<a class="next" href="#" title="Next card">-></a>
+                        <a href="<?php echo get_permalink($post->post_parent); ?>" title="All cards"><span>All cards</span></a>
+                        <?php
+                            $args = array(
+                                'post_type'      => 'page',
+                                'posts_per_page' => -1,
+                                'post_parent'    => $post->post_parent
+                            );
+
+                            // The Query
+                            $cards = new WP_Query( $args );
+
+                            if ( $cards->have_posts() ) : 
+
+                                $i = 1;
+                                while ( $cards->have_posts() ) : $cards->the_post();
+
+                        ?>
+                            
+                            <a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo $i++; ?></a>
+
+                        <?php endwhile; endif; wp_reset_postdata(); ?>
                     </nav>
                             
                     <article class="card full">
-                        <header>
+                        <?php
+                            $card_color = get_field('card_color');
+                            $card_style = 'style="background-color:'.$card_color.'"';
+                        ?>
+                        <header <?php echo $card_style; ?>>
                             <h1><?php the_title(); ?></h1>
 
                             <?php
