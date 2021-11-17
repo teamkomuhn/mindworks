@@ -104,11 +104,16 @@
                                             $title      = get_sub_field('card_step_title');
                                             $content    = get_sub_field('card_step_content');
                                 ?>
+                              
+                                            <article class="step container-expandable">
+                                                <h3><?php echo $title; ?></h3>
+                                                <button class="button-expandable">&darr;</button>
 
-                                <article class="step expandable">
-                                    <h3 class="expandable__header"><?php echo $title; ?></h3>
-                                    <div class="expandable__content"><?php echo $content; ?></div>
-                                </article>
+                                                <div class="expandable">
+                                                    <?php echo $content; ?>
+                                                </div>
+                                            </article>
+
 
                                 <?php endwhile; endif; ?>
 

@@ -251,17 +251,20 @@ body.page-handbook-card main section.cards-slider article.card section.steps > a
   margin-right: 0.7em;
   margin-top: -0.2em;
 }
+
 body.page-handbook main section.cards-slider article.card section.steps > article h3::after,
 body.page-handbook-card main section.cards-slider article.card section.steps > article h3::after {
   content: " \002193";
   margin-left: auto;
   font-weight: normal;
 }
+
 body.page-handbook main section.cards-slider article.card section.steps > article:last-of-type,
 body.page-handbook-card main section.cards-slider article.card section.steps > article:last-of-type {
   border-bottom: none;
   margin-bottom: var(--spacing-y);
 }
+
 body.page-handbook main section.cards-slider article.card section.steps > article .expandable__content,
 body.page-handbook-card main section.cards-slider article.card section.steps > article .expandable__content {
   overflow: hidden;
@@ -394,6 +397,11 @@ body.page-handbook-card main section.cards-slider article.card footer ul li p {
 body.page-handbook main section.cards-slider article.card footer ul li p a,
 body.page-handbook-card main section.cards-slider article.card footer ul li p a {
   display: block;
+}
+.container-expandable .expandable {
+  overflow: hidden;
+  height: auto;
+  transition: height 250ms;
 }
 div.tabs {
   position: relative;

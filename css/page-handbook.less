@@ -292,23 +292,19 @@ body.page-handbook-card {
                                     margin-right: .7em;
                                     margin-top: -0.2em;
                                 }
-
-                                &::after {
-                                    content: " \002193";
-                                    margin-left: auto;
-                                    font-weight: normal;
-                                }
                             }
 
                             &:last-of-type {
                                 border-bottom: none;
                                 margin-bottom: var(--spacing-y);
                             }
+                        }
 
-                            .expandable__content {
-                                overflow: hidden;
-                                height: var(--height);
-                                transition: height 250ms;
+                        .container-expandable {
+
+                            > .button-expandable { // TODO: style this
+                                color: white;
+                                border: 2px dashed rgb(216, 86, 86);
                             }
                         }
 
@@ -465,6 +461,22 @@ body.page-handbook-card {
         }
     }
 }
+
+.container-expandable { // TODO: Move this to main css?
+
+    .button-expandable {
+
+    }
+
+    .expandable {
+        overflow: hidden;
+        height: auto;  
+        transition: height 250ms;
+    }
+}
+
+
+
 
 div.tabs { // TODO: Move this to main css?
     position: relative;
