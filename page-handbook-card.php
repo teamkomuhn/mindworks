@@ -66,6 +66,7 @@
 
                             <?php the_excerpt(); ?>
 
+                            <?php // IF COMPANION IMAGE ?>
                             <figure class="companion-image">
                                 <img src="<?php echo get_template_directory_uri(); ?>/img/timeline-phases-nav.svg" alt="">
                             </figure>
