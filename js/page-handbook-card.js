@@ -50,6 +50,8 @@
             } else {
                 expandable.style.height = `${heights[index]}px`
             }
+
+            containers[index].classList.toggle(`expanded`)
         })
 
     }

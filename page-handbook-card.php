@@ -104,13 +104,13 @@
                                 ?>
 
 								<p><strong><?php echo $label; ?>:</strong> <?php echo $description; ?></p>
-                                
+
                                 <?php endwhile; endif; ?>
 
 								<button class="button-expandable" type="button">Read more &darr;</button>
 
 							</header>
-                            
+
                             <div class="expandable">
                                 <?php the_content(); ?>
                             </div>
@@ -124,21 +124,21 @@
                                 </header>
 
                                 <?php
-                                    if ( have_rows('repeater_card_steps') ):
-                                        while ( have_rows('repeater_card_steps') ) : the_row();
+                                if ( have_rows('repeater_card_steps') ):
+                                while ( have_rows('repeater_card_steps') ) : the_row();
 
-                                            $title      = get_sub_field('card_step_title');
-                                            $content    = get_sub_field('card_step_content');
+                                $title      = get_sub_field('card_step_title');
+                                $content    = get_sub_field('card_step_content');
                                 ?>
 
-                                            <article class="step container-expandable">
-                                                <h3><?php echo $title; ?></h3>
-                                                <button class="button-expandable">&darr;</button>
+                                <article class="step container-expandable">
+                                    <h3><?php echo $title; ?></h3>
+                                    <button class="button-expandable">&darr;</button>
 
-                                                <div class="expandable">
-                                                    <?php echo $content; ?>
-                                                </div>
-                                            </article>
+                                    <div class="expandable">
+                                        <?php echo $content; ?>
+                                    </div>
+                                </article>
 
 
                                 <?php endwhile; endif; ?>
