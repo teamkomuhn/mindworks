@@ -62,12 +62,10 @@
                         <?php endwhile; endif; wp_reset_postdata(); ?>
                     </nav>
 
-                    <article class="card full">
-                        <?php
-                            $card_color = get_field('card_color');
-                            $card_style = 'style="background-color:'.$card_color.'"';
-                        ?>
-                        <header <?php echo $card_style; ?>>
+                    <?php $card_color = get_field('card_color'); ?>
+                    
+                    <article class="card full" data-color="<?php echo $card_color; ?>">
+                        <header>
                             <h1><?php the_title(); ?></h1>
 
                             <?php
@@ -85,10 +83,33 @@
 
                             <?php the_excerpt(); ?>
 
-                            <?php // IF COMPANION IMAGE ?>
-                            <figure class="companion-image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/timeline-phases-nav.svg" alt="">
-                            </figure>
+                            <?php 
+                                $companion_image = get_field('companion_image');
+                                $companion_url = get_field('companion_url');
+                                $companion_overlay = get_field('companion_overlay');
+
+                                if($companion_overlay == 1) {
+                                    $companion_button = '<button class="open companion" type="button"></button>';
+                                } else {
+                                    $companion_button = '<a class="button open" href="'.$companion_url.'"></a>';
+                                }
+
+                                if(!empty($companion_image)) {
+                                    $companion_image_alt = $companion_image['alt'];
+
+                                    if(!empty($companion_image_alt)) {
+                                        $companion_image_alt = 'alt="'.$companion_image_alt.'"';
+                                    }
+                            ?>
+                            
+                            <div class="companion-content">
+                                <figure class="companion-image">
+                                    <img src="<?php echo $companion_image['url']; ?>" <?php echo $companion_image_alt; ?>>
+                                </figure>
+                                <?php echo $companion_button; ?>
+                            </div>
+
+							<?php } ?>
 
                         </header>
 
@@ -196,20 +217,37 @@
                                     $content    = get_sub_field('card_example_content');
                                     $link       = get_sub_field('card_example_link');
 
+                                    if(!empty($image)) {
+                                        $image_alt = $image['alt'];
+                                        
+                                        if(!empty($image_alt)) {
+                                            $image_alt = 'alt="'.$image_alt.'"';
+                                        }
+                                        if(!empty($link)) {
+                                            if(!empty($link_alt)) {
+                                                $link_alt = $link['alt'];
+                                                $link_alt = 'alt="'.$link_alt.'"';
+                                            }
+                                            $link = '<a href="'.$link['url'].'" '.$link_alt.'>Learn more -></a>';
+                                        }
+                                    }
                                 ?>
 
                                 <article class="example">
                                     <h3><?php echo $title; ?></h3>
 
-                                    <?php if($image != '') : ?>
+                                    <?php if(!empty($image)) { ?>
+
                                     <figure>
-                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                        <img src="<?php echo $image['url']; ?>" <?php echo $image_alt; ?>>
                                     </figure>
-                                    <?php endif; ?>
 
-                                    <?php echo $content; ?>
-
-                                    <a href="<?php echo $link['url']; ?>">Learn more -></a>
+                                    <?php } 
+                                    
+                                    echo $content;
+                                    echo $link;
+                                    
+                                    ?>
                                 </article>
 
                                 <?php endwhile; ?>

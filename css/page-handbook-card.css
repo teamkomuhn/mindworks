@@ -26,6 +26,7 @@ body.page-handbook main section.category article.card > header,
 body.page-handbook-card main section.category article.card > header {
   position: relative;
   background-color: #FEF288;
+  background-color: var(--card-color);
   border-radius: 0.5em 0.5em 0 0;
   padding: 1.5rem;
   display: flex;
@@ -114,7 +115,7 @@ body.page-handbook-card main section.cards-slider nav.cards-nav a.previous {
 }
 body.page-handbook main section.cards-slider nav.cards-nav a.active,
 body.page-handbook-card main section.cards-slider nav.cards-nav a.active {
-  background-color: #F8CF66;
+  background-color: var(--card-color);
 }
 body.page-handbook main section.cards-slider nav.cards-nav a.between,
 body.page-handbook-card main section.cards-slider nav.cards-nav a.between {
@@ -131,7 +132,7 @@ body.page-handbook-card main section.cards-slider article.card {
 }
 body.page-handbook main section.cards-slider article.card > header,
 body.page-handbook-card main section.cards-slider article.card > header {
-  background-color: #F8CF66;
+  background-color: var(--card-color);
   border-radius: 0.5em 0.5em 0 0;
   padding: var(--spacing-y) var(--spacing-x);
   display: flex;
@@ -157,16 +158,31 @@ body.page-handbook main section.cards-slider article.card > header p,
 body.page-handbook-card main section.cards-slider article.card > header p {
   order: 2;
 }
-body.page-handbook main section.cards-slider article.card > header figure.companion-image,
-body.page-handbook-card main section.cards-slider article.card > header figure.companion-image {
-  width: 100%;
-  margin-top: 2rem;
+body.page-handbook main section.cards-slider article.card > header div.companion-content,
+body.page-handbook-card main section.cards-slider article.card > header div.companion-content {
   order: 3;
 }
-body.page-handbook main section.cards-slider article.card > header figure.companion-image img,
-body.page-handbook-card main section.cards-slider article.card > header figure.companion-image img {
+body.page-handbook main section.cards-slider article.card > header div.companion-content figure.companion-image,
+body.page-handbook-card main section.cards-slider article.card > header div.companion-content figure.companion-image {
+  width: 100%;
+  margin-top: 2rem;
+}
+body.page-handbook main section.cards-slider article.card > header div.companion-content figure.companion-image img,
+body.page-handbook-card main section.cards-slider article.card > header div.companion-content figure.companion-image img {
   width: 100%;
   height: auto;
+}
+body.page-handbook main section.cards-slider article.card > header div.companion-content button.companion,
+body.page-handbook-card main section.cards-slider article.card > header div.companion-content button.companion {
+  height: 24px;
+  margin-left: auto;
+  margin-right: calc(-1 * var(--spacing-x) + 1em);
+  background-image: url("../img/bkg-button-slide.svg");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: right;
+  padding-right: 60px;
+  border: 0;
 }
 body.page-handbook main section.cards-slider article.card section,
 body.page-handbook-card main section.cards-slider article.card section {
@@ -196,7 +212,7 @@ body.page-handbook-card main section.cards-slider article.card section > article
 }
 body.page-handbook main section.cards-slider article.card section > article a,
 body.page-handbook-card main section.cards-slider article.card section > article a {
-  color: #F8CF66;
+  color: var(--card-color);
 }
 body.page-handbook main section.cards-slider article.card section > article figure,
 body.page-handbook-card main section.cards-slider article.card section > article figure {
@@ -533,8 +549,8 @@ div.tabs .tab.active > * {
     order: 2;
     font-size: var(--font-size-biggish);
   }
-  body.page-handbook main section.cards-slider article.card > header figure.companion-image,
-  body.page-handbook-card main section.cards-slider article.card > header figure.companion-image {
+  body.page-handbook main section.cards-slider article.card > header div.companion-content figure.companion-image,
+  body.page-handbook-card main section.cards-slider article.card > header div.companion-content figure.companion-image {
     width: 50%;
   }
   body.page-handbook main section.cards-slider article.card section,

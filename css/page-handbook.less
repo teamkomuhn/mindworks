@@ -29,6 +29,7 @@ body.page-handbook-card {
                 > header {
                     position: relative;
                     background-color: @color-yellow-light;
+                    background-color: var(--card-color);
                     border-radius: 0.5em 0.5em 0 0;
                     padding: 1.5rem;
 
@@ -83,7 +84,7 @@ body.page-handbook-card {
 
         // TODO: Bring this part to the right folder/file after deciding on WP structure
         section.cards-slider {
-            @color-card: #F8CF66; // TODO: Get color from CMS
+            @color-card: var(--card-color); // TODO: Get color from CMS
 
             nav.cards-nav {
                 margin: -1.5rem 0 1rem 0;
@@ -194,15 +195,31 @@ body.page-handbook-card {
                         order: 2;
                     }
 
-                    figure.companion-image {
-                        width: 100%;
-                        margin-top: 2rem;
-
+                    div.companion-content {
                         order: 3;
 
-                        img {
+                        figure.companion-image {
                             width: 100%;
-                            height: auto;
+                            margin-top: 2rem;
+    
+                            img {
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                        button.companion {
+                            height: 24px;
+                            margin-left: auto; // Align to right
+                            margin-right: calc( -1 * var(--spacing-x) + 1em ) ;
+
+                            background-image: url("../img/bkg-button-slide.svg");
+                            background-size: auto 100%;
+                            background-repeat: no-repeat;
+                            background-position: right;
+                            padding-right: 60px;
+
+                            border: 0;
+
                         }
                     }
 
@@ -664,9 +681,11 @@ div.tabs { // TODO: Move this to main css?
                             font-size: var(--font-size-biggish);
                         }
 
-                        figure.companion-image {
-                            width: 50%;
+                        div.companion-content {
+                            figure.companion-image {
+                                width: 50%;
 
+                            }
                         }
                     }
 

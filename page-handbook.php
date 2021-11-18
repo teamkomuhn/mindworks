@@ -48,7 +48,9 @@
                                 // The Loop
                                 while ( $cards->have_posts() ) : $cards->the_post();
                             ?>
-                                    <article class="card">
+                            <?php $card_color = get_field('card_color'); ?>
+
+                                    <article class="card" style="--card-color:<?php echo $card_color; ?>">
                                         <header>
                                             <h3><?php echo get_the_title(); ?></h3>
                                             <figure>

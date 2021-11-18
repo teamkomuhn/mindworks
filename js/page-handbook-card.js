@@ -1,3 +1,14 @@
+//Add color picker global var
+function colorPicker() {
+    
+    var card        = document.querySelector('.card');
+    var cardColor   = card.dataset.color;
+    document.querySelector(':root').style.setProperty('--card-color', ''+cardColor+'');
+    //console.log(colorVar);
+
+}
+colorPicker();
+
 // page-handbook-card.js
 (function( $ ) {
     'use strict';
