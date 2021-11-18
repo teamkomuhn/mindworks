@@ -40,7 +40,10 @@
 
                     <nav class="cards-nav">
                         <a href="<?php echo get_permalink($post->post_parent); ?>" title="All cards"><span>All cards</span></a>
+                        
                         <?php
+                            $current_pageID = get_the_ID();
+
                             $args = array(
                                 'post_type'      => 'page',
                                 'posts_per_page' => -1,
@@ -54,10 +57,14 @@
 
                                 $i = 1;
                                 while ( $cards->have_posts() ) : $cards->the_post();
-
+                                    if($current_pageID == get_the_ID()){
+                                        $active = 'class="active"';
+                                    } else {
+                                        $active = '';
+                                    }
                         ?>
 
-                            <a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo $i++; ?></a>
+                            <a <?php echo $active; ?> href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo $i++; ?></a>
 
                         <?php endwhile; endif; wp_reset_postdata(); ?>
                     </nav>

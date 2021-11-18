@@ -1,22 +1,28 @@
 /* page-handbook.php styles */
-body.page-handbook main {
+body.page-handbook main,
+body.page-handbook-card main {
   padding: var(--spacing-y) var(--spacing-x);
 }
-body.page-handbook main > header h1 {
+body.page-handbook main > header h1,
+body.page-handbook-card main > header h1 {
   color: red;
 }
-body.page-handbook main section.category {
+body.page-handbook main section.category,
+body.page-handbook-card main section.category {
   padding: var(--spacing-y) 0;
 }
-body.page-handbook main section.category > header {
+body.page-handbook main section.category > header,
+body.page-handbook-card main section.category > header {
   margin-bottom: 2rem;
 }
-body.page-handbook main section.category article.card {
+body.page-handbook main section.category article.card,
+body.page-handbook-card main section.category article.card {
   background-color: #EEEEEE;
   border-radius: 0.5em;
   margin-bottom: var(--spacing-x);
 }
-body.page-handbook main section.category article.card > header {
+body.page-handbook main section.category article.card > header,
+body.page-handbook-card main section.category article.card > header {
   position: relative;
   background-color: #FEF288;
   border-radius: 0.5em 0.5em 0 0;
@@ -24,56 +30,593 @@ body.page-handbook main section.category article.card > header {
   display: flex;
   flex-flow: row nowrap;
 }
-body.page-handbook main section.category article.card > header h3 {
+body.page-handbook main section.category article.card > header h3,
+body.page-handbook-card main section.category article.card > header h3 {
   order: 1;
   font-size: var(--font-size-big);
   font-weight: 500;
 }
-body.page-handbook main section.category article.card > header figure {
+body.page-handbook main section.category article.card > header figure,
+body.page-handbook-card main section.category article.card > header figure {
   order: 0;
   margin-right: 1em;
   width: 3.5em;
 }
-body.page-handbook main section.category article.card > header figure img {
+body.page-handbook main section.category article.card > header figure img,
+body.page-handbook-card main section.category article.card > header figure img {
   width: inherit;
 }
 body.page-handbook main section.category article.card > header a.button,
-body.page-handbook main section.category article.card > header button {
+body.page-handbook-card main section.category article.card > header a.button,
+body.page-handbook main section.category article.card > header button,
+body.page-handbook-card main section.category article.card > header button {
   order: 2;
   max-width: 1em;
   margin-left: auto;
 }
 body.page-handbook main section.category article.card > header a.button.open,
-body.page-handbook main section.category article.card > header button.open {
+body.page-handbook-card main section.category article.card > header a.button.open,
+body.page-handbook main section.category article.card > header button.open,
+body.page-handbook-card main section.category article.card > header button.open {
   border: 0;
   text-indent: -10000px;
   background-position: center 0.5em;
 }
-body.page-handbook main section.category article.card > p {
+body.page-handbook main section.category article.card > p,
+body.page-handbook-card main section.category article.card > p {
   padding: 1.5rem;
 }
-body.page-handbook main section.category article.card:hover {
+body.page-handbook main section.category article.card:hover,
+body.page-handbook-card main section.category article.card:hover {
   box-shadow: 2px 4px 10px 4px #ccc;
 }
-body.page-handbook main section.card.full {
-  background: pink;
+body.page-handbook main section.cards-slider nav.cards-nav,
+body.page-handbook-card main section.cards-slider nav.cards-nav {
+  margin: -1.5rem 0 1rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a,
+body.page-handbook-card main section.cards-slider nav.cards-nav a {
+  border: 0.08rem solid #222;
+  border-radius: 0.35em;
+  height: 1.9rem;
+  width: 1.35rem;
+  margin: 0 0.35em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #222222;
+  text-decoration: none;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a span,
+body.page-handbook-card main section.cards-slider nav.cards-nav a span {
+  display: none;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a:first-of-type,
+body.page-handbook-card main section.cards-slider nav.cards-nav a:first-of-type {
+  border: 0;
+  background-image: url("../img/icon-cards.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 2.7rem;
+  width: 4.4rem;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a:first-of-type::before,
+body.page-handbook-card main section.cards-slider nav.cards-nav a:first-of-type::before {
+  visibility: hidden;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a.previous,
+body.page-handbook-card main section.cards-slider nav.cards-nav a.previous {
+  border: 0;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a.active,
+body.page-handbook-card main section.cards-slider nav.cards-nav a.active {
+  background-color: #F8CF66;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a.between,
+body.page-handbook-card main section.cards-slider nav.cards-nav a.between {
+  border: 0;
+}
+body.page-handbook main section.cards-slider nav.cards-nav a.next,
+body.page-handbook-card main section.cards-slider nav.cards-nav a.next {
+  border: 0;
+}
+body.page-handbook main section.cards-slider article.card,
+body.page-handbook-card main section.cards-slider article.card {
+  background-color: #EEEEEE;
+  border-radius: 0.5em;
+}
+body.page-handbook main section.cards-slider article.card > header,
+body.page-handbook-card main section.cards-slider article.card > header {
+  background-color: #F8CF66;
+  border-radius: 0.5em 0.5em 0 0;
+  padding: var(--spacing-y) var(--spacing-x);
+  display: flex;
+  flex-flow: column wrap;
+}
+body.page-handbook main section.cards-slider article.card > header h1,
+body.page-handbook-card main section.cards-slider article.card > header h1 {
+  font-size: var(--font-size-bigger);
+  margin-bottom: 0.5em;
+  order: 1;
+}
+body.page-handbook main section.cards-slider article.card > header figure.icon,
+body.page-handbook-card main section.cards-slider article.card > header figure.icon {
+  width: 7em;
+  margin-bottom: 1em;
+  order: 0;
+}
+body.page-handbook main section.cards-slider article.card > header figure.icon img,
+body.page-handbook-card main section.cards-slider article.card > header figure.icon img {
+  width: inherit;
+}
+body.page-handbook main section.cards-slider article.card > header p,
+body.page-handbook-card main section.cards-slider article.card > header p {
+  order: 2;
+}
+body.page-handbook main section.cards-slider article.card > header figure.companion-image,
+body.page-handbook-card main section.cards-slider article.card > header figure.companion-image {
+  width: 100%;
+  margin-top: 2rem;
+  order: 3;
+}
+body.page-handbook main section.cards-slider article.card > header figure.companion-image img,
+body.page-handbook-card main section.cards-slider article.card > header figure.companion-image img {
+  width: 100%;
+  height: auto;
+}
+body.page-handbook main section.cards-slider article.card section,
+body.page-handbook-card main section.cards-slider article.card section {
+  padding: var(--spacing-y) var(--spacing-x);
+  overflow: hidden;
+}
+body.page-handbook main section.cards-slider article.card section header,
+body.page-handbook-card main section.cards-slider article.card section header {
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  margin-bottom: 2rem;
+}
+body.page-handbook main section.cards-slider article.card section header h2,
+body.page-handbook-card main section.cards-slider article.card section header h2 {
+  font-size: var(--font-size-biggish);
+  text-indent: 2rem;
+}
+body.page-handbook main section.cards-slider article.card section > article h3,
+body.page-handbook-card main section.cards-slider article.card section > article h3 {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+body.page-handbook main section.cards-slider article.card section > article p,
+body.page-handbook-card main section.cards-slider article.card section > article p {
+  font-size: var(--font-size-small);
+  margin-bottom: 1em;
+}
+body.page-handbook main section.cards-slider article.card section > article a,
+body.page-handbook-card main section.cards-slider article.card section > article a {
+  color: #F8CF66;
+}
+body.page-handbook main section.cards-slider article.card section > article figure,
+body.page-handbook-card main section.cards-slider article.card section > article figure {
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 1em;
+}
+body.page-handbook main section.cards-slider article.card section > article figure img,
+body.page-handbook-card main section.cards-slider article.card section > article figure img {
+  width: inherit;
+  height: auto;
+}
+body.page-handbook main section.cards-slider article.card section.intro header.card-meta,
+body.page-handbook-card main section.cards-slider article.card section.intro header.card-meta {
+  margin-bottom: 0;
+}
+body.page-handbook main section.cards-slider article.card section.intro header.card-meta p,
+body.page-handbook-card main section.cards-slider article.card section.intro header.card-meta p {
+  margin-bottom: 0.5em;
+}
+body.page-handbook main section.cards-slider article.card section.intro header.card-meta button,
+body.page-handbook-card main section.cards-slider article.card section.intro header.card-meta button {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+body.page-handbook main section.cards-slider article.card section.intro .content > p,
+body.page-handbook-card main section.cards-slider article.card section.intro .content > p {
+  margin-bottom: 1em;
+}
+body.page-handbook main section.cards-slider article.card section.intro.container-expandable,
+body.page-handbook-card main section.cards-slider article.card section.intro.container-expandable {
+  position: relative;
+}
+body.page-handbook main section.cards-slider article.card section.intro.container-expandable.expanded .button-expandable,
+body.page-handbook-card main section.cards-slider article.card section.intro.container-expandable.expanded .button-expandable {
+  position: absolute;
+  bottom: var(--spacing-y);
+  width: auto;
+}
+body.page-handbook main section.cards-slider article.card section.intro.container-expandable.expanded .button-expandable span,
+body.page-handbook-card main section.cards-slider article.card section.intro.container-expandable.expanded .button-expandable span {
+  display: none;
+}
+body.page-handbook main section.cards-slider article.card section.intro.container-expandable.expanded .button-expandable::after,
+body.page-handbook-card main section.cards-slider article.card section.intro.container-expandable.expanded .button-expandable::after {
+  content: "Less \2191";
+}
+body.page-handbook main section.cards-slider article.card section.intro.container-expandable.expanded > .content,
+body.page-handbook-card main section.cards-slider article.card section.intro.container-expandable.expanded > .content {
+  padding-bottom: var(--spacing-y);
+}
+body.page-handbook main section.cards-slider article.card section.steps,
+body.page-handbook-card main section.cards-slider article.card section.steps {
+  counter-reset: section;
+}
+body.page-handbook main section.cards-slider article.card section.steps header,
+body.page-handbook-card main section.cards-slider article.card section.steps header {
+  background-image: url("../img/icon-map-black.svg");
+}
+body.page-handbook main section.cards-slider article.card section.steps > article,
+body.page-handbook-card main section.cards-slider article.card section.steps > article {
+  margin: 0 var(--spacing-x) 1.5em;
+  border-bottom: 1px dotted #666;
+}
+body.page-handbook main section.cards-slider article.card section.steps > article h3,
+body.page-handbook-card main section.cards-slider article.card section.steps > article h3 {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-right: 1.2em;
+  cursor: pointer;
+}
+body.page-handbook main section.cards-slider article.card section.steps > article h3::before,
+body.page-handbook-card main section.cards-slider article.card section.steps > article h3::before {
+  counter-increment: section;
+  content: counter(section);
+  flex: 0 0 2em;
+  font-size: var(--font-size-small);
+  width: 2em;
+  height: 2em;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-right: 0.7em;
+  margin-top: -0.2em;
+}
+body.page-handbook main section.cards-slider article.card section.steps > article:last-of-type,
+body.page-handbook-card main section.cards-slider article.card section.steps > article:last-of-type {
+  border-bottom: none;
+  margin-bottom: var(--spacing-y);
+}
+body.page-handbook main section.cards-slider article.card section.steps > article.container-expandable,
+body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable {
+  position: relative;
+}
+body.page-handbook main section.cards-slider article.card section.steps > article.container-expandable > .button-expandable,
+body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable > .button-expandable {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  line-height: 1.8rem;
+  text-align: right;
+  color: white;
+}
+body.page-handbook main section.cards-slider article.card section.steps > article.container-expandable.expanded,
+body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable.expanded {
+  padding-bottom: 2rem;
+}
+body.page-handbook main section.cards-slider article.card section.steps > article.container-expandable.expanded > .button-expandable,
+body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable.expanded > .button-expandable {
+  top: auto;
+  bottom: 0;
+  line-height: 3em;
+}
+body.page-handbook main section.cards-slider article.card section.steps > article.container-expandable.expanded > .button-expandable span,
+body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable.expanded > .button-expandable span {
+  display: none;
+}
+body.page-handbook main section.cards-slider article.card section.steps > article.container-expandable.expanded > .button-expandable::after,
+body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable.expanded > .button-expandable::after {
+  content: "\2191  Close";
+}
+body.page-handbook main section.cards-slider article.card section.steps.active header,
+body.page-handbook-card main section.cards-slider article.card section.steps.active header {
+  background-image: url("../img/icon-map-white.svg");
+}
+body.page-handbook main section.cards-slider article.card section.tools header,
+body.page-handbook-card main section.cards-slider article.card section.tools header {
+  background-image: url("../img/icon-hand-black.svg");
+}
+body.page-handbook main section.cards-slider article.card section.tools > article,
+body.page-handbook-card main section.cards-slider article.card section.tools > article {
+  margin: 0 var(--spacing-x) 1.5em;
+}
+body.page-handbook main section.cards-slider article.card section.tools > article:last-of-type,
+body.page-handbook-card main section.cards-slider article.card section.tools > article:last-of-type {
+  margin-bottom: var(--spacing-y);
+}
+body.page-handbook main section.cards-slider article.card section.tools.active header,
+body.page-handbook-card main section.cards-slider article.card section.tools.active header {
+  background-image: url("../img/icon-hand-white.svg");
+}
+body.page-handbook main section.cards-slider article.card section.examples header,
+body.page-handbook-card main section.cards-slider article.card section.examples header {
+  background-image: url("../img/icon-example-black.svg");
+}
+body.page-handbook main section.cards-slider article.card section.examples ol.examples-nav,
+body.page-handbook-card main section.cards-slider article.card section.examples ol.examples-nav {
+  padding: 0;
+  margin-top: -1em;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/icon-swipe-black.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+}
+body.page-handbook main section.cards-slider article.card section.examples ol.examples-nav li,
+body.page-handbook-card main section.cards-slider article.card section.examples ol.examples-nav li {
+  font-size: 1.3em;
+  cursor: pointer;
+  margin: 0 0.1em;
+}
+body.page-handbook main section.cards-slider article.card section.examples ol.examples-nav li span,
+body.page-handbook-card main section.cards-slider article.card section.examples ol.examples-nav li span {
+  display: none;
+}
+body.page-handbook main section.cards-slider article.card section.examples ol.examples-nav li::after,
+body.page-handbook-card main section.cards-slider article.card section.examples ol.examples-nav li::after {
+  content: "○";
+}
+body.page-handbook main section.cards-slider article.card section.examples ol.examples-nav li.active::after,
+body.page-handbook-card main section.cards-slider article.card section.examples ol.examples-nav li.active::after {
+  content: "◉";
+}
+body.page-handbook main section.cards-slider article.card section.examples article.example,
+body.page-handbook-card main section.cards-slider article.card section.examples article.example {
+  border-top: 1px dotted #666;
+  padding-top: 1em;
+}
+body.page-handbook main section.cards-slider article.card section.examples article.example > a,
+body.page-handbook-card main section.cards-slider article.card section.examples article.example > a {
+  color: #222222;
+}
+body.page-handbook main section.cards-slider article.card div.tabs,
+body.page-handbook-card main section.cards-slider article.card div.tabs {
+  background-color: #222222;
+  color: #ffffff;
+}
+body.page-handbook main section.cards-slider article.card div.tabs > section,
+body.page-handbook-card main section.cards-slider article.card div.tabs > section {
+  padding: 0;
+}
+body.page-handbook main section.cards-slider article.card div.tabs > section header,
+body.page-handbook-card main section.cards-slider article.card div.tabs > section header {
+  background-position: var(--spacing-x) center;
+  background-color: #DDDDDD;
+  color: #222222;
+}
+body.page-handbook main section.cards-slider article.card div.tabs > section header h2,
+body.page-handbook-card main section.cards-slider article.card div.tabs > section header h2 {
+  line-height: 3em;
+  text-indent: 3.5rem;
+}
+body.page-handbook main section.cards-slider article.card div.tabs > section.active header,
+body.page-handbook-card main section.cards-slider article.card div.tabs > section.active header {
+  background-color: #222222;
+  color: #ffffff;
+}
+body.page-handbook main section.cards-slider article.card footer,
+body.page-handbook-card main section.cards-slider article.card footer {
+  padding: var(--spacing-x);
+  background-color: #ffffff;
+}
+body.page-handbook main section.cards-slider article.card footer header,
+body.page-handbook-card main section.cards-slider article.card footer header {
+  background-image: url("../img/icon-help-black.svg");
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  margin-bottom: 2rem;
+}
+body.page-handbook main section.cards-slider article.card footer header h2,
+body.page-handbook-card main section.cards-slider article.card footer header h2 {
+  font-size: var(--font-size-biggish);
+  text-indent: 2.5rem;
+}
+body.page-handbook main section.cards-slider article.card footer ul,
+body.page-handbook-card main section.cards-slider article.card footer ul {
+  padding: 0;
+  list-style: none;
+}
+body.page-handbook main section.cards-slider article.card footer ul li,
+body.page-handbook-card main section.cards-slider article.card footer ul li {
+  display: flex;
+  flex-flow: row no-wrap;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+body.page-handbook main section.cards-slider article.card footer ul li img,
+body.page-handbook-card main section.cards-slider article.card footer ul li img {
+  width: 6em;
+  margin-right: 1em;
+}
+body.page-handbook main section.cards-slider article.card footer ul li p,
+body.page-handbook-card main section.cards-slider article.card footer ul li p {
+  font-size: var(--font-size-small);
+  font-weight: 500;
+}
+body.page-handbook main section.cards-slider article.card footer ul li p a,
+body.page-handbook-card main section.cards-slider article.card footer ul li p a {
+  display: block;
+  font-weight: normal;
+}
+.container-expandable .expandable {
+  overflow: hidden;
+  height: auto;
+  transition: height 250ms;
+  will-change: height;
+}
+div.tabs {
+  position: relative;
+  overflow: hidden;
+}
+div.tabs .tab .tab-button {
+  position: absolute;
+  display: block;
+  width: 50%;
+  cursor: pointer;
+}
+div.tabs .tab > * {
+  display: none;
+}
+div.tabs .tab:first-of-type .tab-button {
+  top: 0;
+  left: 0;
+  right: 50%;
+}
+div.tabs .tab:last-of-type .tab-button {
+  top: 0;
+  left: 50%;
+  right: 0;
+}
+div.tabs .tab.active .tab-button {
+  position: relative;
+}
+div.tabs .tab.active > * {
+  display: block;
 }
 @media only screen and (min-width: 1201px) {
-  body.page-handbook main section.category {
+  body.page-handbook main section.category,
+  body.page-handbook-card main section.category {
     display: flex;
     flex-flow: row wrap;
   }
-  body.page-handbook main section.category > header {
+  body.page-handbook main section.category > header,
+  body.page-handbook-card main section.category > header {
     flex: 1 1 100%;
   }
-  body.page-handbook main section.category article.card {
+  body.page-handbook main section.category article.card,
+  body.page-handbook-card main section.category article.card {
     flex: 1 1 auto;
     max-width: 46%;
     margin-right: 2rem;
     margin-bottom: 2rem;
     cursor: pointer;
   }
-  body.page-handbook main section.category article.card:last-of-type {
+  body.page-handbook main section.category article.card:last-of-type,
+  body.page-handbook-card main section.category article.card:last-of-type {
+    margin-right: 0;
+  }
+  body.page-handbook main section.cards-slider nav.cards-nav,
+  body.page-handbook-card main section.cards-slider nav.cards-nav {
+    margin: -1.5rem 0 2rem 0;
+    justify-content: center;
+  }
+  body.page-handbook main section.cards-slider nav.cards-nav a,
+  body.page-handbook-card main section.cards-slider nav.cards-nav a {
+    margin: 0 0.5em;
+  }
+  body.page-handbook main section.cards-slider article.card > header,
+  body.page-handbook-card main section.cards-slider article.card > header {
+    padding: var(--spacing-y);
+  }
+  body.page-handbook main section.cards-slider article.card > header p,
+  body.page-handbook-card main section.cards-slider article.card > header p {
+    order: 2;
+    font-size: var(--font-size-biggish);
+  }
+  body.page-handbook main section.cards-slider article.card > header figure.companion-image,
+  body.page-handbook-card main section.cards-slider article.card > header figure.companion-image {
+    width: 50%;
+  }
+  body.page-handbook main section.cards-slider article.card section,
+  body.page-handbook-card main section.cards-slider article.card section {
+    padding: var(--spacing-y);
+  }
+  body.page-handbook main section.cards-slider article.card section header h2,
+  body.page-handbook-card main section.cards-slider article.card section header h2 {
+    font-size: var(--font-size-big);
+  }
+  body.page-handbook main section.cards-slider article.card section > article h3,
+  body.page-handbook-card main section.cards-slider article.card section > article h3 {
+    font-weight: normal;
+    font-size: var(--font-size-biggish);
+  }
+  body.page-handbook main section.cards-slider article.card section > article p,
+  body.page-handbook-card main section.cards-slider article.card section > article p {
+    font-size: var(--font-size-p);
+  }
+  body.page-handbook main section.cards-slider article.card section.intro header.card-meta button,
+  body.page-handbook-card main section.cards-slider article.card section.intro header.card-meta button {
+    width: 50%;
+  }
+  body.page-handbook main section.cards-slider article.card section.steps > article,
+  body.page-handbook-card main section.cards-slider article.card section.steps > article {
+    margin: 0 var(--spacing-y) 1.5em;
+  }
+  body.page-handbook main section.cards-slider article.card section.steps > article h3::before,
+  body.page-handbook-card main section.cards-slider article.card section.steps > article h3::before {
+    font-size: var(--font-size-p);
+  }
+  body.page-handbook main section.cards-slider article.card section.tools > article,
+  body.page-handbook-card main section.cards-slider article.card section.tools > article {
+    margin: 0 var(--spacing-y) 1.5em;
+  }
+  body.page-handbook main section.cards-slider article.card section.examples article.example,
+  body.page-handbook-card main section.cards-slider article.card section.examples article.example {
+    padding-top: var(--spacing-y);
+  }
+  body.page-handbook main section.cards-slider article.card section.examples article.example h3,
+  body.page-handbook-card main section.cards-slider article.card section.examples article.example h3 {
+    float: left;
+    font-weight: bold;
+  }
+  body.page-handbook main section.cards-slider article.card section.examples article.example figure,
+  body.page-handbook-card main section.cards-slider article.card section.examples article.example figure {
+    width: 50%;
+    float: right;
+    background-color: pink;
+    margin-left: 2rem;
+  }
+  body.page-handbook main section.cards-slider article.card section.examples article.example figure img,
+  body.page-handbook-card main section.cards-slider article.card section.examples article.example figure img {
+    width: 100%;
+  }
+  body.page-handbook main section.cards-slider article.card section.examples article.example p,
+  body.page-handbook-card main section.cards-slider article.card section.examples article.example p {
+    clear: left;
+  }
+  body.page-handbook main section.cards-slider article.card div.tabs > section header,
+  body.page-handbook-card main section.cards-slider article.card div.tabs > section header {
+    background-position: var(--spacing-y) center;
+  }
+  body.page-handbook main section.cards-slider article.card div.tabs > section header h2,
+  body.page-handbook-card main section.cards-slider article.card div.tabs > section header h2 {
+    text-indent: 6rem;
+    font-size: var(--font-size-big);
+  }
+  body.page-handbook main section.cards-slider article.card footer,
+  body.page-handbook-card main section.cards-slider article.card footer {
+    padding: var(--spacing-y);
+  }
+  body.page-handbook main section.cards-slider article.card footer ul,
+  body.page-handbook-card main section.cards-slider article.card footer ul {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  body.page-handbook main section.cards-slider article.card footer ul li,
+  body.page-handbook-card main section.cards-slider article.card footer ul li {
+    margin-right: var(--spacing-y);
+  }
+  body.page-handbook main section.cards-slider article.card footer ul li:last-of-type,
+  body.page-handbook-card main section.cards-slider article.card footer ul li:last-of-type {
     margin-right: 0;
   }
 }
