@@ -38,36 +38,69 @@
 
                 <section class="cards-slider">
 
+                    <?php
+                        $current_cardID = get_the_ID();
+
+                        $cardslist = get_pages(array(
+                            'child_of'    => $post->post_parent,
+                            'sort_column' => 'menu_order',
+                            'sort_order'  => 'ASC',
+                        ));
+                        $cards = array();
+
+                        foreach ($cardslist as $card) {
+                            $cards[] += $card->ID;
+                        }
+
+                        $firstID    = $cards[0];
+                        $lastID     = end($cards);
+                        $total      = count($cards);
+
+                        $current = array_search(get_the_ID(), $cards);
+                        $prevID = $cards[$current-1];
+                        $nextID = $cards[$current+1];
+                        
+                        if($pages > 1) {
+                            if($current_cardID == get_the_ID()){ $active = 'class="active"'; } else { $active = '';  }
+                    ?>
+                   
                     <nav class="cards-nav">
                         <a href="<?php echo get_permalink($post->post_parent); ?>" title="All cards"><span>All cards</span></a>
                         
-                        <?php
-                            $current_pageID = get_the_ID();
+                        <?php if (!empty($prevID)) { ?>
+                                <a class="previous" href="<?php echo get_permalink($prevID); ?>" title="Previous card"><-</a>
+                        <?php } ?>
 
+                        <a <?php echo $active; ?> href="<?php echo get_permalink($firstID); ?>" title="<?php echo get_the_title($firstID); ?>">1</a>
+
+                        <?php
                             $args = array(
                                 'post_type'      => 'page',
                                 'posts_per_page' => -1,
                                 'post_parent'    => $post->post_parent
                             );
-
+                            
                             // The Query
                             $cards = new WP_Query( $args );
-
                             if ( $cards->have_posts() ) :
-
+                                
                                 $i = 1;
                                 while ( $cards->have_posts() ) : $cards->the_post();
-                                    if($current_pageID == get_the_ID()){
-                                        $active = 'class="active"';
-                                    } else {
-                                        $active = '';
-                                    }
+                                if($current_cardID == get_the_ID()){ $active = 'class="active"'; } else { $active = '';  }
                         ?>
 
-                            <a <?php echo $active; ?> href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo $i++; ?></a>
+                        <a <?php echo $active; ?> href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo $i++; ?></a>
 
                         <?php endwhile; endif; wp_reset_postdata(); ?>
+
+                        <a <?php echo $active; ?> href="<?php echo get_permalink($lastID); ?>" title="<?php echo get_the_title($lastID); ?>"><?php echo $total; ?></a>
+
+                        <?php if (!empty($nextID)) { ?>
+                                <a class="next" href="<?php echo get_permalink($nextID); ?>" title="Next card">-></a>
+                        <?php } ?>
                     </nav>
+
+                    <?php } ?>
 
                     <article class="card full">
                         <?php
