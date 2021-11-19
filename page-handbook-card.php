@@ -126,15 +126,25 @@
 
 								<p><strong><?php echo $label; ?>:</strong> <?php echo $description; ?></p>
 
-                                <?php endwhile; endif; ?>
+                                <?php 
+                                        endwhile;
+                                    endif;
+
+                                    $content = get_the_content();
+
+                                    if(!empty($content)){
+                                ?>
 
 								<button class="button-expandable" type="button"><span>Read more &darr;</span></button>
 
+                                <?php } ?>
 							</header>
 
-                            <div class="content expandable">
-                                <?php the_content(); ?>
-                            </div>
+                            <?php if(!empty($content)){ ?>
+                                <div class="content expandable">
+                                    <?php echo $content; ?>
+                                </div>
+                            <?php } ?>
                         </section>
 
                         <div class="tabs">
@@ -154,11 +164,15 @@
 
                                 <article class="step container-expandable">
                                     <h3><?php echo $title; ?></h3>
-                                    <button class="button-expandable"><span>&darr;</span></button>
 
-                                    <div class="expandable">
-                                        <?php echo $content; ?>
-                                    </div>
+                                    <?php if(!empty($content)) { ?>
+                                        <button class="button-expandable"><span>&darr;</span></button>
+
+                                        <div class="expandable">
+                                            <?php echo $content; ?>
+                                        </div>
+                                    <?php } ?>
+
                                 </article>
 
 
@@ -182,8 +196,12 @@
 
                                 <article class="tool">
                                     <h3><?php echo $title; ?></h3>
-                                    <?php echo $description; ?>
+                                    <?php if(!empty($description)) { echo $description; } ?>
+
+                                    <?php if(!empty($link)) { ?>
                                     <a href="<?php echo esc_url($link); ?>">Learn more -></a>
+                                    <?php } ?>                              
+                                          
                                 </article>
 
                                 <?php endwhile; endif; ?>
