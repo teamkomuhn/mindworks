@@ -1,4 +1,3 @@
-/* page-handbook-card.php styles */
 /* page-handbook.php styles */
 body.page-handbook main,
 body.page-handbook-card main {
@@ -348,8 +347,9 @@ body.page-handbook main section.cards-slider article.card section.examples heade
 body.page-handbook-card main section.cards-slider article.card section.examples header {
   background-image: url("../img/icon-example-black.svg");
 }
-body.page-handbook main section.cards-slider article.card section.examples ol.examples-nav,
-body.page-handbook-card main section.cards-slider article.card section.examples ol.examples-nav {
+body.page-handbook main section.cards-slider article.card section.examples .swiper-pagination,
+body.page-handbook-card main section.cards-slider article.card section.examples .swiper-pagination {
+  position: static;
   padding: 0;
   margin-top: -1em;
   list-style: none;
@@ -362,23 +362,20 @@ body.page-handbook-card main section.cards-slider article.card section.examples 
   background-position: right center;
   background-size: contain;
 }
-body.page-handbook main section.cards-slider article.card section.examples ol.examples-nav li,
-body.page-handbook-card main section.cards-slider article.card section.examples ol.examples-nav li {
-  font-size: 1.3em;
+body.page-handbook main section.cards-slider article.card section.examples .swiper-pagination-bullet,
+body.page-handbook-card main section.cards-slider article.card section.examples .swiper-pagination-bullet {
+  display: contents;
+}
+body.page-handbook main section.cards-slider article.card section.examples .swiper-pagination-bullet::before,
+body.page-handbook-card main section.cards-slider article.card section.examples .swiper-pagination-bullet::before {
+  content: "\25CB";
+  font-size: 1.5em;
   cursor: pointer;
   margin: 0 0.1em;
 }
-body.page-handbook main section.cards-slider article.card section.examples ol.examples-nav li span,
-body.page-handbook-card main section.cards-slider article.card section.examples ol.examples-nav li span {
-  display: none;
-}
-body.page-handbook main section.cards-slider article.card section.examples ol.examples-nav li::after,
-body.page-handbook-card main section.cards-slider article.card section.examples ol.examples-nav li::after {
-  content: "○";
-}
-body.page-handbook main section.cards-slider article.card section.examples ol.examples-nav li.active::after,
-body.page-handbook-card main section.cards-slider article.card section.examples ol.examples-nav li.active::after {
-  content: "◉";
+body.page-handbook main section.cards-slider article.card section.examples .swiper-pagination-bullet-active::before,
+body.page-handbook-card main section.cards-slider article.card section.examples .swiper-pagination-bullet-active::before {
+  content: "\25C9";
 }
 body.page-handbook main section.cards-slider article.card section.examples article.example,
 body.page-handbook-card main section.cards-slider article.card section.examples article.example {
@@ -461,7 +458,7 @@ body.page-handbook-card main section.cards-slider article.card footer ul li p a 
 .container-expandable .expandable {
   overflow: hidden;
   height: auto;
-  transition: height 250ms;
+  transition: height 250ms linear;
   will-change: height;
 }
 div.tabs {
@@ -621,4 +618,3 @@ div.tabs .tab.active > * {
     margin-right: 0;
   }
 }
-/*# sourceMappingURL=page-handbook-card.css.map */

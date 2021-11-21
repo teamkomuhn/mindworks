@@ -414,8 +414,49 @@ body.page-handbook-card {
                         header {
                             background-image: url("../img/icon-example-black.svg");
                         }
+                        
+                        // OLD CODE:
 
-                        ol.examples-nav {
+                        // ol.examples-nav {
+                        //     padding: 0;
+                        //     margin-top: -1em;
+                        //     list-style: none;
+
+                        //     display: flex;
+                        // 	flex-flow: row wrap;
+                        //     justify-content: center;
+                        //     align-items: center;
+
+                        //     background-image: url("../img/icon-swipe-black.svg");
+                        //     background-repeat: no-repeat;
+                        //     background-position: right center;
+                        //     background-size: contain;
+
+                        //     li {
+                        //         font-size: 1.3em;
+                        //         cursor: pointer;
+                        //         margin: 0 .1em;
+
+                        //         span {
+                        //             display: none;
+                        //         }
+
+                        //         &::after {
+                        //             content: "○";
+                        //         }
+
+                        //         &.active {
+                        //             &::after {
+                        //                 // content: "●";
+                        //                 content: "◉";
+                        //             }
+                        //         }
+                        //     }
+                        // }
+
+                        .swiper-pagination {
+                            position: static;
+
                             padding: 0;
                             margin-top: -1em;
                             list-style: none;
@@ -429,27 +470,22 @@ body.page-handbook-card {
                             background-repeat: no-repeat;
                             background-position: right center;
                             background-size: contain;
+                        }
 
-                            li {
-                                font-size: 1.3em;
-                                cursor: pointer;
-                                margin: 0 .1em;
+                        .swiper-pagination-bullet {
+                            display: contents;
+                        }
 
-                                span {
-                                    display: none;
-                                }
+                        .swiper-pagination-bullet::before {
+                            content: "\25CB"; // Unicode hex for ○ 
 
-                                &::after {
-                                    content: "○";
-                                }
+                            font-size: 1.5em;
+                            cursor: pointer;
+                            margin: 0 .1em;
+                        }
 
-                                &.active {
-                                    &::after {
-                                        // content: "●";
-                                        content: "◉";
-                                    }
-                                }
-                            }
+                        .swiper-pagination-bullet-active::before {
+                            content: "\25C9"; // Unicode hex for ◉
                         }
 
                         article.example {
@@ -546,6 +582,7 @@ body.page-handbook-card {
 }
 
 .container-expandable { // TODO: Move this to main css?
+    
     .button-expandable {
 
     }
@@ -553,12 +590,10 @@ body.page-handbook-card {
     .expandable {
         overflow: hidden;
         height: auto;
-        transition: height 250ms;
+        transition: height 250ms linear;
         will-change: height;
     }
 }
-
-
 
 div.tabs { // TODO: Move this to main css?
     position: relative;

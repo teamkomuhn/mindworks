@@ -98,6 +98,11 @@
     }
     add_action( 'wp_default_scripts', 'move_jquery_into_footer' );
 
+    function add_type_attribute($tag, $handle, $src) {
+        // change the script tag by adding type="module" and return it.
+        $tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
+        return $tag;
+    }
 
     //Load CSS and JS based on template name
     function enqueue_template_files() {
@@ -109,6 +114,8 @@
         $css_file_uri = get_stylesheet_directory_uri() . '/css/' . $template_name . '.css';
         $js_file_dir = get_stylesheet_directory() . '/js/' . $template_name . '-min.js';
         $js_file_uri = get_stylesheet_directory_uri() . '/js/' . $template_name . '-min.js';
+
+        add_filter('script_loader_tag', 'add_type_attribute' , 10, 3);
 
         //Check if files exist and if then enqueue
         if ( file_exists( $css_file_dir ) ) {
