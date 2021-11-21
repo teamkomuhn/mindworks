@@ -99,8 +99,8 @@
 		},
 	"/blocks/_2_block-mw-page-cover.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -110,7 +110,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/blocks/_2_block-mw-page-cover.php": {
@@ -131,8 +131,8 @@
 		},
 	"/blocks/_block-mw-page-cover.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -142,7 +142,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/blocks/_block-mw-page-cover.php": {
@@ -155,8 +155,8 @@
 		},
 	"/blocks/_block-mw-sidenote.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -166,7 +166,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/blocks/_block-mw-sidenote.php": {
@@ -182,7 +182,7 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/blocks/block-mw-expanding-content-min.css",
 		"oF": 0,
 		"oS": 3
@@ -191,14 +191,14 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/blocks/block-mw-expanding-content.css.map",
 		"oF": 0
 		},
 	"/blocks/block-mw-expanding-content.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -208,7 +208,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/blocks/block-mw-expanding-content.php": {
@@ -224,7 +224,7 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/blocks/block-mw-external-content-min.css",
 		"oF": 0,
 		"oS": 3
@@ -233,14 +233,14 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/blocks/block-mw-external-content.css.map",
 		"oF": 0
 		},
 	"/blocks/block-mw-external-content.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -250,7 +250,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/blocks/block-mw-external-content.php": {
@@ -266,7 +266,7 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/blocks/block-mw-format-menu-min.css",
 		"oF": 0,
 		"oS": 3
@@ -275,14 +275,14 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/blocks/block-mw-format-menu.css.map",
 		"oF": 0
 		},
 	"/blocks/block-mw-format-menu.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -292,7 +292,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/blocks/block-mw-format-menu.php": {
@@ -308,7 +308,7 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/blocks/block-mw-infographic-min.css",
 		"oF": 0,
 		"oS": 3
@@ -317,14 +317,14 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/blocks/block-mw-infographic.css.map",
 		"oF": 0
 		},
 	"/blocks/block-mw-infographic.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -334,7 +334,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/blocks/block-mw-infographic.php": {
@@ -350,7 +350,7 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/blocks/block-mw-intro-content-min.css",
 		"oF": 0,
 		"oS": 3
@@ -359,14 +359,14 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/blocks/block-mw-intro-content.css.map",
 		"oF": 0
 		},
 	"/blocks/block-mw-intro-content.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -376,7 +376,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/blocks/block-mw-intro-content.php": {
@@ -392,7 +392,7 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/blocks/block-mw-page-cover-min.css",
 		"oF": 0,
 		"oS": 3
@@ -401,14 +401,14 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/blocks/block-mw-page-cover.css.map",
 		"oF": 0
 		},
 	"/blocks/block-mw-page-cover.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -418,7 +418,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/blocks/block-mw-page-cover.php": {
@@ -434,7 +434,7 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/blocks/block-mw-sidenote-min.css",
 		"oF": 0,
 		"oS": 3
@@ -443,14 +443,14 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/blocks/block-mw-sidenote.css.map",
 		"oF": 0
 		},
 	"/blocks/block-mw-sidenote.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -460,7 +460,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/blocks/block-mw-sidenote.php": {
@@ -497,8 +497,8 @@
 		},
 	"/css/full.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -508,13 +508,13 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/css/icomoon.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -524,13 +524,13 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/css/main.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -540,13 +540,13 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/css/mixins.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -556,7 +556,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/css/normalize.css": {
@@ -589,8 +589,8 @@
 		},
 	"/css/page-handbook-card.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -600,7 +600,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/css/page-handbook-min.css": {
@@ -633,18 +633,18 @@
 		},
 	"/css/page-handbook.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
 		"mS": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "/css/page-handbook.css",
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/css/page-index.css": {
@@ -667,8 +667,8 @@
 		},
 	"/css/page-index.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -678,7 +678,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/css/page-scientific-insights.css": {
@@ -686,7 +686,7 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/css/page-scientific-insights-min.css",
 		"oF": 0,
 		"oS": 3
@@ -695,14 +695,14 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/css/page-scientific-insights.css.map",
 		"oF": 0
 		},
 	"/css/page-scientific-insights.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -712,7 +712,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/css/page.css": {
@@ -720,7 +720,7 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/css/page-min.css",
 		"oF": 0,
 		"oS": 3
@@ -729,14 +729,14 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/css/page.css.map",
 		"oF": 0
 		},
 	"/css/page.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -746,7 +746,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/css/single-reusable_content.css": {
@@ -754,7 +754,7 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/css/single-reusable_content-min.css",
 		"oF": 0,
 		"oS": 3
@@ -763,14 +763,14 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/css/single-reusable_content.css.map",
 		"oF": 0
 		},
 	"/css/single-reusable_content.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -780,13 +780,13 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/css/variables-static.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -796,13 +796,13 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/css/variables.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -812,7 +812,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/doc/css.html": {
@@ -1120,7 +1120,7 @@
 		"oAP": "/icon.png",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"oT": 1,
 		"ou": "lpckwebp-none",
 		"q": 100,
@@ -1192,7 +1192,7 @@
 		"oAP": "/img/cover-masked-man.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"ou": "lpckwebp-none",
 		"q": 100,
 		"rq": 75
@@ -1272,7 +1272,7 @@
 		"oAP": "/img/icon-curved-arrow-black.png",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"oT": 1,
 		"ou": "lpckwebp-none",
 		"q": 100,
@@ -1577,6 +1577,24 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/js/page-handbook-card.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/js/page-handbook-card-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/js/page-handbook-card.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/js/page-handbook-card.css.map",
+		"oF": 0
+		},
 	"/js/page-handbook-card.js": {
 		"bF": 0,
 		"ft": 64,
@@ -1750,7 +1768,7 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/README.html",
 		"oF": 0
 		},
@@ -1794,7 +1812,7 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/style-min.css",
 		"oF": 0,
 		"oS": 3
@@ -1803,14 +1821,14 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/style.css.map",
 		"oF": 0
 		},
 	"/style.less": {
 		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
+		"bl": 1,
+		"eJ": 1,
 		"ft": 1,
 		"iI": 0,
 		"ma": 1,
@@ -1820,7 +1838,7 @@
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
-		"sI": 0,
+		"sI": 1,
 		"sU": 0
 		},
 	"/template-handbook.php": {
@@ -1838,7 +1856,7 @@
 		"oAP": "/tile-wide.png",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"oT": 1,
 		"ou": "lpckwebp-none",
 		"q": 100,
@@ -1851,7 +1869,7 @@
 		"oAP": "/tile.png",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"oT": 1,
 		"ou": "lpckwebp-none",
 		"q": 100,
@@ -3731,13 +3749,13 @@
 		"autoOutputPathReplace2": "css",
 		"autoOutputPathStyle": 0,
 		"createSourceMap": 1,
-		"enableJavascript": 0,
+		"enableJavascript": 1,
 		"mathStyle": 0,
 		"outputStyle": 0,
 		"rewriteURLStyle": 0,
 		"shouldRunAutoprefixer": 0,
-		"shouldRunBless": 0,
-		"strictImports": 0,
+		"shouldRunBless": 1,
+		"strictImports": 1,
 		"strictUnits": 0
 		},
 	"languageDefaultsMARKDOWN": {

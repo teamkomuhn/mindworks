@@ -3,7 +3,7 @@ body.page-handbook main {
   padding: var(--spacing-y) var(--spacing-x);
 }
 body.page-handbook main > header h1 {
-  color: red;
+  color: violet;
 }
 body.page-handbook main section.category {
   padding: var(--spacing-y) 0;
@@ -55,9 +55,6 @@ body.page-handbook main section.category article.card > p {
 body.page-handbook main section.category article.card:hover {
   box-shadow: 2px 4px 10px 4px #ccc;
 }
-body.page-handbook main section.card.full {
-  background: pink;
-}
 @media only screen and (min-width: 1201px) {
   body.page-handbook main section.category {
     display: flex;
@@ -66,9 +63,12 @@ body.page-handbook main section.card.full {
   body.page-handbook main section.category > header {
     flex: 1 1 100%;
   }
+  body.page-handbook main section.category > header h2 {
+    color: violet;
+  }
   body.page-handbook main section.category article.card {
     flex: 1 1 auto;
-    max-width: 46%;
+    min-width: 200px;
     margin-right: 2rem;
     margin-bottom: 2rem;
     cursor: pointer;

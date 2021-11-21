@@ -30,7 +30,6 @@
     const allExpandables = []
     const heights = []
 
-
     for (const [index, container] of containers.entries()) {
 
         const button = container.querySelector(`.button-expandable`)

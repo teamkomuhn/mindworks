@@ -1,11 +1,12 @@
 /* page-handbook-card.php styles */
+/* page-handbook.php styles */
 body.page-handbook main,
 body.page-handbook-card main {
   padding: var(--spacing-y) var(--spacing-x);
 }
 body.page-handbook main > header h1,
 body.page-handbook-card main > header h1 {
-  color: violet;
+  color: red;
 }
 body.page-handbook main section.category,
 body.page-handbook-card main section.category {
