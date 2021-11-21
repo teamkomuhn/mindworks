@@ -640,12 +640,8 @@ footer.main-footer div.so-me a.privacy {
 }
 @media only screen and (min-width: 1201px) {
   /* BODY AND MAIN*/
-  body {
-    background-color: var(--color-grey-dark);
-  }
   main {
     background-color: var(--color-white);
-    max-width: var(--main-width);
     overflow: auto;
   }
   body.home main {

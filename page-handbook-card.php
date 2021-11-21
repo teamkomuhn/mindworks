@@ -17,7 +17,7 @@
 
         <?php wp_head(); ?>
 
-        <link rel='shortcut icon' href='<?php echo get_template_directory_uri(); ?>/img/favicon.ico' type='image/x-icon' />
+        <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" type="image/x-icon" />
         <meta name="description" content="<?php bloginfo( 'description' ); ?>">
         <meta name="author" content="Komuhn">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -240,9 +240,6 @@
                 <?php endwhile; endif; ?>
 
         </main>
-
         <?php wp_footer(); ?>
-
     </body>
-
 </html>

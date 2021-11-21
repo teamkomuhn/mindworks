@@ -3,7 +3,6 @@
     include_once __DIR__ . '/inc/custom-post-types.php';
     include_once __DIR__ . '/inc/custom-fields.php';
 
-
     define('THEME_DIR', get_template_directory_uri());
 
     // REMOVE GENERATOR META TAG
