@@ -71,7 +71,7 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
     new Swiper(`.swiper`, {
 
         speed: 500,
-        spaceBetween: 60,
+        spaceBetween: 100,
         autoHeight: true,
 
         loop: true,

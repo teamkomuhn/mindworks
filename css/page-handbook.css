@@ -1,96 +1,6 @@
 /* page-handbook.php styles */
 body.page-handbook main {
   padding: 2rem var(--spacing-x) var(--spacing-y) var(--spacing-x);
-  /*
-
-        section.examples {
-            header {
-                background-image: url("../img/icon-example-black.svg");
-            }
-            
-            // OLD CODE:
-
-            // ol.examples-nav {
-            //     padding: 0;
-            //     margin-top: -1em;
-            //     list-style: none;
-
-            //     display: flex;
-            // 	flex-flow: row wrap;
-            //     justify-content: center;
-            //     align-items: center;
-
-            //     background-image: url("../img/icon-swipe-black.svg");
-            //     background-repeat: no-repeat;
-            //     background-position: right center;
-            //     background-size: contain;
-
-            //     li {
-            //         font-size: 1.3em;
-            //         cursor: pointer;
-            //         margin: 0 .1em;
-
-            //         span {
-            //             display: none;
-            //         }
-
-            //         &::after {
-            //             content: "○";
-            //         }
-
-            //         &.active {
-            //             &::after {
-            //                 // content: "●";
-            //                 content: "◉";
-            //             }
-            //         }
-            //     }
-            // }
-
-            .swiper-pagination {
-                position: static;
-
-                padding: 0;
-                margin-top: -1em;
-                list-style: none;
-
-                display: flex;
-                flex-flow: row wrap;
-                justify-content: center;
-                align-items: center;
-
-                background-image: url("../img/icon-swipe-black.svg");
-                background-repeat: no-repeat;
-                background-position: right center;
-                background-size: contain;
-            }
-
-            .swiper-pagination-bullet {
-                display: contents;
-            }
-
-            .swiper-pagination-bullet::before {
-                content: "\25CB"; // Unicode hex for ○ 
-
-                font-size: 1.5em;
-                cursor: pointer;
-                margin: 0 .1em;
-            }
-
-            .swiper-pagination-bullet-active::before {
-                content: "\25C9"; // Unicode hex for ◉
-            }
-
-            article.example {
-                border-top: 1px dotted #666;
-                padding-top: 1em;
-
-                > a {
-                    color: @color-black;
-                }
-            }
-        }
-*/
 }
 body.page-handbook main > header {
   display: flex;
@@ -188,62 +98,6 @@ body.page-handbook main section.category article.card > p {
 body.page-handbook main section.category article.card:hover {
   box-shadow: 2px 4px 10px 4px #ccc;
 }
-body.page-handbook main div.tabs {
-  background-color: #222222;
-  color: #ffffff;
-}
-body.page-handbook main div.tabs > section {
-  padding: 0;
-}
-body.page-handbook main div.tabs > section header {
-  background-position: var(--spacing-x) center;
-  background-color: #DDDDDD;
-  color: #222222;
-}
-body.page-handbook main div.tabs > section header h2 {
-  line-height: 3em;
-  text-indent: 3.5rem;
-}
-body.page-handbook main div.tabs > section.active header {
-  background-color: #222222;
-  color: #ffffff;
-}
-body.page-handbook main footer {
-  padding: var(--spacing-x);
-  background-color: #ffffff;
-}
-body.page-handbook main footer header {
-  background-image: url("../img/icon-help-black.svg");
-  background-repeat: no-repeat;
-  background-position: 0 center;
-  margin-bottom: 2rem;
-}
-body.page-handbook main footer header h2 {
-  font-size: var(--font-size-biggish);
-  text-indent: 2.5rem;
-}
-body.page-handbook main footer ul {
-  padding: 0;
-  list-style: none;
-}
-body.page-handbook main footer ul li {
-  display: flex;
-  flex-flow: row no-wrap;
-  align-items: flex-start;
-  margin-bottom: 2rem;
-}
-body.page-handbook main footer ul li img {
-  width: 6em;
-  margin-right: 1em;
-}
-body.page-handbook main footer ul li p {
-  font-size: var(--font-size-small);
-  font-weight: 500;
-}
-body.page-handbook main footer ul li p a {
-  display: block;
-  font-weight: normal;
-}
 .container-expandable .expandable {
   overflow: hidden;
   height: auto;
@@ -325,4 +179,3 @@ div.tabs .tab.active > * {
     margin-right: 0;
   }
 }
-/*# sourceMappingURL=page-handbook.css.map */
