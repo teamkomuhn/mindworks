@@ -88,7 +88,9 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
         keyboard: {
             enabled: true,
             onlyInViewport: true
-        }
+        },
+
+        mousewheel: true,
     })
 
 })( jQuery );
