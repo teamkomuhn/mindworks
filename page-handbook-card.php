@@ -23,6 +23,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+        />
     </head>
 
     <body <?php body_class(); ?>>
@@ -172,47 +176,43 @@
                         </div>
 
 
-                        <?php  if( have_rows('repeater_card_examples') ): ?>
+                        <?php if( have_rows('repeater_card_examples') ): ?>
 
-                            <section class="examples">
+                            <section class="examples swiper">
                                 <header>
                                     <h2>Examples</h2>
                                 </header>
 
-								<ol class="examples-nav" aria-hidden="true">
-									<li><span>1</span></li>
-									<li class="active"><span>2</span></li>
-									<li><span>3</span></li>
-									<li><span>4</span></li>
-									<li><span>5</span></li>
-								</ol>
+								<ol class="swiper-pagination"></ol>
 
-                                <?php
+                                <div class="swiper-wrapper">
 
+                                    <?php 
 
-                                while( have_rows('repeater_card_examples') ) : the_row();
-                                    $title      = get_sub_field('card_example_title');
-                                    $image      = get_sub_field('card_example_image');
-                                    $content    = get_sub_field('card_example_content');
-                                    $link       = get_sub_field('card_example_link');
+                                        while( have_rows('repeater_card_examples') ) : the_row();
+                                            $title      = get_sub_field('card_example_title');
+                                            $image      = get_sub_field('card_example_image');
+                                            $content    = get_sub_field('card_example_content');
+                                            $link       = get_sub_field('card_example_link');
 
-                                ?>
+                                    ?>
 
-                                <article class="example">
-                                    <h3><?php echo $title; ?></h3>
+                                    <article class="example swiper-slide">
+                                        <h3><?php echo $title; ?></h3>
 
-                                    <?php if($image != '') : ?>
-                                    <figure>
-                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-                                    </figure>
-                                    <?php endif; ?>
+                                        <?php if($image != '') : ?>
+                                        <figure>
+                                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                        </figure>
+                                        <?php endif; ?>
 
-                                    <?php echo $content; ?>
+                                        <?php echo $content; ?>
 
-                                    <a href="<?php echo $link['url']; ?>">Learn more -></a>
-                                </article>
+                                        <a href="<?php echo $link['url']; ?>">Learn more -></a>
+                                    </article>
 
-                                <?php endwhile; ?>
+                                    <?php endwhile; ?>
+                                </div>
                             </section>
 
                         <?php endif; ?>

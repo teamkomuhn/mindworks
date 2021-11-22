@@ -145,11 +145,233 @@ body.page-handbook {
 
             }
         }
+/*
 
+        section.examples {
+            header {
+                background-image: url("../img/icon-example-black.svg");
+            }
+            
+            // OLD CODE:
 
+            // ol.examples-nav {
+            //     padding: 0;
+            //     margin-top: -1em;
+            //     list-style: none;
+
+            //     display: flex;
+            // 	flex-flow: row wrap;
+            //     justify-content: center;
+            //     align-items: center;
+
+            //     background-image: url("../img/icon-swipe-black.svg");
+            //     background-repeat: no-repeat;
+            //     background-position: right center;
+            //     background-size: contain;
+
+            //     li {
+            //         font-size: 1.3em;
+            //         cursor: pointer;
+            //         margin: 0 .1em;
+
+            //         span {
+            //             display: none;
+            //         }
+
+            //         &::after {
+            //             content: "○";
+            //         }
+
+            //         &.active {
+            //             &::after {
+            //                 // content: "●";
+            //                 content: "◉";
+            //             }
+            //         }
+            //     }
+            // }
+
+            .swiper-pagination {
+                position: static;
+
+                padding: 0;
+                margin-top: -1em;
+                list-style: none;
+
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+
+                background-image: url("../img/icon-swipe-black.svg");
+                background-repeat: no-repeat;
+                background-position: right center;
+                background-size: contain;
+            }
+
+            .swiper-pagination-bullet {
+                display: contents;
+            }
+
+            .swiper-pagination-bullet::before {
+                content: "\25CB"; // Unicode hex for ○ 
+
+                font-size: 1.5em;
+                cursor: pointer;
+                margin: 0 .1em;
+            }
+
+            .swiper-pagination-bullet-active::before {
+                content: "\25C9"; // Unicode hex for ◉
+            }
+
+            article.example {
+                border-top: 1px dotted #666;
+                padding-top: 1em;
+
+                > a {
+                    color: @color-black;
+                }
+            }
+        }
+*/
+
+        div.tabs {
+            background-color: @color-black;
+            color: @color-white;
+
+            > section {
+                padding: 0;
+                // padding-bottom: var(--spacing-y);
+
+                header {
+                    background-position: var(--spacing-x) center;
+                    background-color: @color-grey;
+                    color: @color-black;
+
+                    h2 {
+                        line-height: 3em;
+                        text-indent: 3.5rem;
+                    }
+                }
+
+                &:last-of-type {
+
+                }
+
+                &.active {
+                    header {
+                        background-color: @color-black;
+                        color: @color-white;
+
+                    }
+                }
+            }
+        }
+
+        footer {
+            padding: var(--spacing-x);
+            background-color: @color-white;
+
+            header {
+                background-image: url("../img/icon-help-black.svg");
+                background-repeat: no-repeat;
+                background-position: 0 center;
+                margin-bottom: 2rem;
+
+                h2 {
+                    font-size: var(--font-size-biggish);
+                    text-indent: 2.5rem;
+                }
+            }
+
+            ul {
+                padding: 0;
+                list-style: none;
+
+                li {
+                    display: flex;
+                    flex-flow: row no-wrap;
+                    align-items: flex-start;
+                    margin-bottom: 2rem;
+
+                    img {
+                        width: 6em;
+                        margin-right: 1em;
+                    }
+
+                    p {
+                        font-size: var(--font-size-small);
+                        font-weight: 500;
+
+                        a {
+                            display: block;
+                            font-weight: normal;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
+.container-expandable { // TODO: Move this to main css?
+    
+    .button-expandable {
+
+    }
+
+    .expandable {
+        overflow: hidden;
+        height: auto;
+        transition: height 250ms linear;
+        will-change: height;
+    }
+}
+
+div.tabs { // TODO: Move this to main css?
+    position: relative;
+    overflow: hidden;
+
+    .tab {
+
+        .tab-button {
+            position: absolute;
+            display: block;
+            width: 50%;
+            cursor: pointer;
+        }
+
+        > * { // All children elements
+            display: none;
+        }
+
+
+        &:first-of-type {
+            .tab-button {
+                top: 0; left: 0; right: 50%;
+            }
+        }
+        &:last-of-type {
+            .tab-button {
+                top: 0; left: 50%; right: 0;
+            }
+        }
+
+        &.active {
+
+            .tab-button {
+                position: relative;
+            }
+
+            > * { // All children elements
+                display: block;
+            }
+        }
+    }
+
+
+}
 
 // DESKTOP
 @media @desktop {

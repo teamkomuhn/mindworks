@@ -335,6 +335,7 @@ body.page-handbook-card {
                     }
 
                     &.examples {
+                        /*
                         header {
                             background-image: url("../img/icon-example-black.svg");
                         }
@@ -374,6 +375,54 @@ body.page-handbook-card {
                                     }
                                 }
                             }
+                        }
+
+                        article.example {
+                            border-top: 1px dotted #666;
+                            padding-top: 1em;
+
+                            > a {
+                                color: @color-black;
+                            }
+                        }
+                        */
+
+                        header {
+                            background-image: url("../img/icon-example-black.svg");
+                        }
+
+                        .swiper-pagination {
+                            position: static;
+
+                            padding: 0;
+                            margin-top: -1em;
+                            list-style: none;
+
+                            display: flex;
+                            flex-flow: row wrap;
+                            justify-content: center;
+                            align-items: center;
+
+                            background-image: url("../img/icon-swipe-black.svg");
+                            background-repeat: no-repeat;
+                            background-position: right center;
+                            background-size: contain;
+                        }
+
+                        .swiper-pagination-bullet {
+                            display: contents;
+                        }
+
+                        .swiper-pagination-bullet::before {
+                            content: "\25CB"; // Unicode hex for ○ 
+
+                            font-size: 1.5em;
+                            cursor: pointer;
+                            margin: 0 .1em;
+                        }
+
+                        .swiper-pagination-bullet-active::before {
+                            content: "\25C9"; // Unicode hex for ◉
                         }
 
                         article.example {
