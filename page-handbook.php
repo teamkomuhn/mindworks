@@ -4,12 +4,18 @@
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
             <header>
-                <h1><?php the_title(); ?></h1>
-                <h2><?php echo get_the_excerpt(); ?></h2>
+                <h1 class="max-width"><?php the_title(); ?></h1>
+                <h2 class="max-width"><?php print get_the_excerpt(); ?></h2>
+                <figure>
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/icon-book-black.svg" alt="">
+                </figure>
+                <button type="button go-to">Go to cards &darr;</button>
+                <!-- <a class="button" href="#">Go to cards &darr;</a> -->
             </header>
 
-            <?php the_content(); ?></h1>
-
+            <div class="content max-width">
+                <?php the_content(); ?>
+            </div>
 
             <?php
             // Get handbook sections, organized by categories
@@ -33,10 +39,10 @@
                     $imageID = get_term_meta ( $cat->cat_ID, 'category-image-id', true );
             ?>
 
-            <section class="category">
+            <section class="category" id="<?php echo $cat->slug; ?>">
                 <header>
-                    <h2><?php echo $cat->name; ?></h2>
-                    <p><?php echo $cat->description; ?></p>
+                    <h2><?php print $cat->name; ?></h2>
+                    <p><?php print $cat->description; ?></p>
                     <?php /* CAT IMAGE
                         if($imageID != ''){ ?>
                         <figure>

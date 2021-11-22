@@ -2,6 +2,11 @@
 
 body {
 	// background-color: var(--color-grey-dark);
+	&.home {
+		main {
+			max-width: 100vw;
+		}
+	}
 }
 
 main {
@@ -10,13 +15,9 @@ main {
 	overflow: auto;
 }
 
-body.home {
-	main {
-		max-width: 100vw;
-
-	}
+.max-width {
+	max-width: var(--main-width);
 }
-
 
 /* TYPOGRAPHY */
 .text-biggest {

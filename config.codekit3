@@ -479,14 +479,6 @@
 		"oAP": "/browserconfig.xml",
 		"oF": 0
 		},
-	"/build/.gitignore": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/build/.gitignore",
-		"oF": 0
-		},
 	"/comments.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -602,16 +594,6 @@
 		"rwU": 0,
 		"sI": 1,
 		"sU": 0
-		},
-	"/css/page-handbook-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/page-handbook-min-min.css",
-		"oF": 0,
-		"oS": 3
 		},
 	"/css/page-handbook.css": {
 		"aP": 1,
@@ -1210,6 +1192,16 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "/img/icon-audio-black.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/img/icon-book-black.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/icon-book-black.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 52780316221407,

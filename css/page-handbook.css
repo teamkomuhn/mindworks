@@ -1,15 +1,57 @@
 /* page-handbook.php styles */
 body.page-handbook main {
+  padding: 2rem var(--spacing-x) var(--spacing-y) var(--spacing-x);
+}
+body.page-handbook main > header {
+  display: flex;
+  flex-flow: row wrap;
+  margin: -2rem calc(-1 * var(--spacing-x)) 2rem;
   padding: var(--spacing-y) var(--spacing-x);
+  background-color: #FF7557;
 }
 body.page-handbook main > header h1 {
-  color: violet;
+  order: 1;
+  flex: 1 1 80%;
+  font-size: var(--font-size-bigger);
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1em;
+}
+body.page-handbook main > header h2 {
+  order: 2;
+  flex: 0 0 100%;
+  margin-bottom: 1em;
+}
+body.page-handbook main > header figure {
+  order: 0;
+  flex: 0 0 auto;
+  margin-right: 1em;
+}
+body.page-handbook main > header figure img {
+  width: 3rem;
+}
+body.page-handbook main > header button {
+  order: 3;
+  flex: 0 0 100%;
+}
+body.page-handbook main div.content > p {
+  padding-bottom: 1em;
 }
 body.page-handbook main section.category {
   padding: var(--spacing-y) 0;
 }
 body.page-handbook main section.category > header {
   margin-bottom: 2rem;
+}
+body.page-handbook main section.category > header h2 {
+  font-size: var(--font-size-big);
+  font-weight: 600;
+  color: #FF7557;
+  background-image: url("../img/icon-cards-group-black.svg");
+  background-repeat: no-repeat;
+  background-size: 2rem;
+  min-height: 2rem;
+  padding-left: 2em;
 }
 body.page-handbook main section.category article.card {
   background-color: #EEEEEE;
@@ -26,7 +68,7 @@ body.page-handbook main section.category article.card > header {
 }
 body.page-handbook main section.category article.card > header h3 {
   order: 1;
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-biggish);
   font-weight: 500;
 }
 body.page-handbook main section.category article.card > header figure {
@@ -51,11 +93,23 @@ body.page-handbook main section.category article.card > header button.open {
 }
 body.page-handbook main section.category article.card > p {
   padding: 1.5rem;
+  font-size: var(--font-size-small);
 }
 body.page-handbook main section.category article.card:hover {
   box-shadow: 2px 4px 10px 4px #ccc;
 }
 @media only screen and (min-width: 1201px) {
+  body.page-handbook main > header h1 {
+    font-size: var(--font-size-biggest);
+    font-weight: normal;
+  }
+  body.page-handbook main > header button {
+    flex: 0 0 auto;
+    width: 480px;
+    margin-top: 2rem;
+    margin-left: 0;
+    margin-right: calc(100% - 480px);
+  }
   body.page-handbook main section.category {
     display: flex;
     flex-flow: row wrap;
@@ -63,15 +117,18 @@ body.page-handbook main section.category article.card:hover {
   body.page-handbook main section.category > header {
     flex: 1 1 100%;
   }
-  body.page-handbook main section.category > header h2 {
-    color: violet;
-  }
   body.page-handbook main section.category article.card {
-    flex: 1 1 auto;
-    min-width: 200px;
+    flex: 0 0 auto;
+    max-width: 480px;
     margin-right: 2rem;
     margin-bottom: 2rem;
     cursor: pointer;
+  }
+  body.page-handbook main section.category article.card > header h3 {
+    font-size: var(--font-size-big);
+  }
+  body.page-handbook main section.category article.card > p {
+    font-size: var(--font-size-p);
   }
   body.page-handbook main section.category article.card:last-of-type {
     margin-right: 0;

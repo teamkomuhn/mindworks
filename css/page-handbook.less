@@ -2,12 +2,63 @@
 @import "../css/variables-static";
 
 body.page-handbook {
+    header.main-header {
+        // background-color: @color-coral;
+    }
     main {
-        padding: var(--spacing-y) var(--spacing-x);
+        padding: 2rem var(--spacing-x) var(--spacing-y) var(--spacing-x);
 
         > header {
+            display: flex;
+            flex-flow: row wrap;
+            margin: -2rem calc(-1 * var(--spacing-x)) 2rem;
+            padding: var(--spacing-y) var(--spacing-x);
+
+            background-color: @color-coral;
+
             h1 {
-                color: violet;
+                order: 1;
+                flex: 1 1 80%;
+
+                // color: @color-coral;
+                font-size: var(--font-size-bigger);
+                font-weight: 600;
+                color: @color-white;
+                margin-bottom: 1em;
+
+            }
+
+            h2 {
+                order: 2;
+                flex: 0 0 100%;
+
+                margin-bottom: 1em;
+            }
+
+            figure {
+                order: 0;
+                flex: 0 0 auto;
+
+                margin-right: 1em;
+
+                img {
+                    width: 3rem;
+                }
+            }
+
+            button {
+                order: 3;
+                flex: 0 0 100%;
+
+                // background-color: @color-black;
+                // border-color:  @color-white;
+                // color: @color-white;
+            }
+        }
+
+        div.content {
+            > p {
+                padding-bottom: 1em;
             }
         }
 
@@ -16,6 +67,21 @@ body.page-handbook {
 
             > header {
                 margin-bottom: 2rem;
+
+                h2 {
+                    font-size: var(--font-size-big);
+                    font-weight: 600;
+                    color: @color-coral;
+
+                    background-image: url("../img/icon-cards-group-black.svg");
+                    background-repeat: no-repeat;
+                    background-size: 2rem;
+                    min-height: 2rem;
+                    // background-position: left .3em;
+
+                    padding-left: 2em;
+                }
+
 
             }
 
@@ -36,7 +102,7 @@ body.page-handbook {
                     h3 {
                         order: 1;
 
-                        font-size: var(--font-size-big);
+                        font-size: var(--font-size-biggish);
                         font-weight: 500;
                     }
 
@@ -70,6 +136,7 @@ body.page-handbook {
                 }
                 > p {
                     padding: 1.5rem;
+                    font-size: var(--font-size-small);
                 }
 
                 &:hover {
@@ -88,6 +155,23 @@ body.page-handbook {
 @media @desktop {
     body.page-handbook {
         main {
+            > header {
+                h1 {
+                    font-size: var(--font-size-biggest);
+                    font-weight: normal;
+                }
+                h2 {}
+                button {
+                    flex: 0 0 auto;
+                    width: 480px;
+                    margin-top: 2rem;
+                    margin-left: 0;
+                    margin-right: calc( 100% - 480px);
+
+                    // display: none;
+                }
+            }
+
             section.category {
 
                 display: flex;
@@ -97,22 +181,23 @@ body.page-handbook {
                     flex: 1 1 100%;
 
                     h2 {
-                        color: violet;
+
                     }
                 }
 
                 article.card {
-                    flex: 1 1 auto;
-                    min-width: 200px;
+                    flex: 0 0 auto;
+                    max-width: 480px;
+
                     margin-right: 2rem;
                     margin-bottom: 2rem;
                     cursor: pointer;
 
-                    &:last-of-type {
-                        margin-right: 0;
-                    }
-
                     > header {
+                        h3 {
+                            font-size: var(--font-size-big);
+                        }
+
                         a.button,
                         button {
                             &.open {
@@ -121,6 +206,15 @@ body.page-handbook {
                             }
                         }
                     }
+
+                    > p {
+                        font-size: var(--font-size-p);
+                    }
+
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+
                 }
 
 

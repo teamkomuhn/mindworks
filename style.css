@@ -640,12 +640,15 @@ footer.main-footer div.so-me a.privacy {
 }
 @media only screen and (min-width: 1201px) {
   /* BODY AND MAIN*/
+  body.home main {
+    max-width: 100vw;
+  }
   main {
     background-color: var(--color-white);
     overflow: auto;
   }
-  body.home main {
-    max-width: 100vw;
+  .max-width {
+    max-width: var(--main-width);
   }
   /* TYPOGRAPHY */
   .text-biggest {
