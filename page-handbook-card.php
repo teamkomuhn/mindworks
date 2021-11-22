@@ -32,7 +32,7 @@
                 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
-        <main <?php echo $maxWidth; ?> id="main">
+        <main id="main">
 
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
