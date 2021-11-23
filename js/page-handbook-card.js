@@ -29,12 +29,12 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
     // TODO: Make a page able to have more than one expandable content section
 
-    function scrollTo( element, duration, delay, offset) {
-        setTimeout(function() {
-            $( [document.documentElement, document.body] ).animate({
-                scrollTop: $( element ).offset().top - offset
-            }, duration, 'linear');
-        }, delay);
+    const scrollTo = (element, duration = 250, delay = 0, offset = 0) => {
+        setTimeout(() => {
+            $([ document.documentElement, document.body ]).animate({
+                scrollTop: $(element).offset().top - offset
+            }, duration, `linear`)
+        }, delay)
     }
 
     const containers = document.querySelectorAll(`.container-expandable`)
