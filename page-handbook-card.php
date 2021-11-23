@@ -187,14 +187,12 @@
 
                                 <div class="swiper-wrapper">
 
-                                    <?php 
-
-                                        while( have_rows('repeater_card_examples') ) : the_row();
-                                            $title      = get_sub_field('card_example_title');
-                                            $image      = get_sub_field('card_example_image');
-                                            $content    = get_sub_field('card_example_content');
-                                            $link       = get_sub_field('card_example_link');
-
+                                    <?php
+                                    while( have_rows('repeater_card_examples') ) : the_row();
+                                        $title      = get_sub_field('card_example_title');
+                                        $image      = get_sub_field('card_example_image');
+                                        $content    = get_sub_field('card_example_content');
+                                        $link       = get_sub_field('card_example_link');
                                     ?>
 
                                     <article class="example swiper-slide">
