@@ -2,8 +2,19 @@
 <?php get_header(); ?>
 
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    
+    <?php
+        $postcat = get_the_category( $post->ID );
 
-            <header>
+        foreach( $postcat as $cat ) {
+            if ($cat->category_parent == 0) {
+                $cat_color = get_field('category_color', $cat);
+                $cat_color = 'style = "--cat-color:'.$cat_color.'"';
+            }
+        }
+    ?>
+
+            <header <?php echo $cat_color; ?>>
                 <h1 class="max-width"><?php the_title(); ?></h1>
                 <h2 class="max-width"><?php print get_the_excerpt(); ?></h2>
                 <figure>
@@ -21,8 +32,6 @@
             // Get handbook sections, organized by categories
             // Get handbook cards, organized by categories
 
-            $postcat = get_the_category( $post->ID );
-
             foreach( $postcat as $cat ) {
                 // WP_Query arguments
                 $args = array(
@@ -31,18 +40,19 @@
                     'post_parent'    => $post->ID,
                     'cat'            => $cat->cat_ID,
                 );
-
+    
                 // The Query
                 $cards = new WP_Query( $args );
 
-                $cat_color = get_field('category_color', $cat);
+                $subcat_color = get_field('category_color', $cat);
 
                 if (!empty($cat->parent) && !empty($cat_color) && $cards->have_posts() ) {
                     $imageID = get_term_meta ( $cat->cat_ID, 'category-image-id', true );
-                    $card_color = 'style= "--card-color:'.$cat_color.'"';
+
+                    $subcat_color = 'style = "--subcat-color:'.$subcat_color.'"';
             ?>
 
-            <section class="category" id="<?php echo $cat->slug; ?>">
+            <section class="category" id="<?php echo $cat->slug; ?>" <?php echo $subcat_color; ?>>
                 <header>
                     <h2><?php print $cat->name; ?></h2>
                     <p><?php print $cat->description; ?></p>
@@ -59,7 +69,7 @@
                     while ( $cards->have_posts() ) : $cards->the_post();
                 ?>
 
-                        <article class="card" <?php echo $card_color; ?>>
+                        <article class="card">
                             <header>
                                 <h3><?php echo get_the_title(); ?></h3>
                                 <figure>
