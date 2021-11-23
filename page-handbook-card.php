@@ -119,7 +119,7 @@
                                 <figure class="companion-image">
                                     <img src="<?php echo $companion_image['url']; ?>" <?php echo $companion_image_alt; ?>>
                                 </figure>
-                                <?php echo $companion_button; ?>
+                                <?php // echo $companion_button; ?>
                             </div>
 
 							<?php } ?>
