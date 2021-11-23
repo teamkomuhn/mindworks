@@ -1237,6 +1237,16 @@
 		"plM": 52780316221407,
 		"prP": 0
 		},
+	"/img/icon-cards-group-black.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/icon-cards-group-black.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
 	"/img/icon-cards.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -1568,24 +1578,6 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
-		},
-	"/js/page-handbook-card.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/js/page-handbook-card-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/js/page-handbook-card.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/js/page-handbook-card.css.map",
-		"oF": 0
 		},
 	"/js/page-handbook-card.js": {
 		"bF": 0,

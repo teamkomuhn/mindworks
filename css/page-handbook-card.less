@@ -416,7 +416,7 @@ body.page-handbook-card {
                         }
 
                         .swiper-pagination-bullet::before {
-                            content: "\25CB"; // Unicode hex for ○ 
+                            content: "\25CB"; // Unicode hex for ○
 
                             font-size: 1.3em;
                             cursor: pointer;
@@ -428,8 +428,28 @@ body.page-handbook-card {
                         }
 
                         article.example {
+                            // padding-top: var(--spacing-y) !important;
                             border-top: 1px dotted #666;
                             padding-top: 1em;
+
+                            h3 {
+                                font-weight: bold;
+                                font-size: var(--font-size-biggish);
+                                margin-bottom: 1em;
+                            }
+
+                            figure {
+                                width: 100%;
+                                margin-bottom: 1em;
+
+                                img {
+                                    width: inherit;
+                                }
+                            }
+
+                            > p {
+                                margin-bottom: 1em;
+                            }
 
                             > a {
                                 color: @color-black;
@@ -677,7 +697,6 @@ div.tabs { // TODO: Move this to main css?
                                 figure {
                                     width: 50%;
                                     float: right;
-                                    background-color: pink;
                                     margin-left: 2rem;
 
                                     img {
@@ -685,7 +704,7 @@ div.tabs { // TODO: Move this to main css?
                                     }
                                 }
 
-                                p {
+                                > p {
                                     clear: left;
                                 }
                             }

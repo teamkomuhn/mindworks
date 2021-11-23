@@ -311,6 +311,21 @@ body.page-handbook-card main section.cards-slider article.card section.examples 
   border-top: 1px dotted #666;
   padding-top: 1em;
 }
+body.page-handbook-card main section.cards-slider article.card section.examples article.example h3 {
+  font-weight: bold;
+  font-size: var(--font-size-biggish);
+  margin-bottom: 1em;
+}
+body.page-handbook-card main section.cards-slider article.card section.examples article.example figure {
+  width: 100%;
+  margin-bottom: 1em;
+}
+body.page-handbook-card main section.cards-slider article.card section.examples article.example figure img {
+  width: inherit;
+}
+body.page-handbook-card main section.cards-slider article.card section.examples article.example > p {
+  margin-bottom: 1em;
+}
 body.page-handbook-card main section.cards-slider article.card section.examples article.example > a {
   color: #222222;
 }
@@ -461,13 +476,12 @@ div.tabs .tab.active > * {
   body.page-handbook-card main section.cards-slider article.card section.examples article.example figure {
     width: 50%;
     float: right;
-    background-color: pink;
     margin-left: 2rem;
   }
   body.page-handbook-card main section.cards-slider article.card section.examples article.example figure img {
     width: 100%;
   }
-  body.page-handbook-card main section.cards-slider article.card section.examples article.example p {
+  body.page-handbook-card main section.cards-slider article.card section.examples article.example > p {
     clear: left;
   }
   body.page-handbook-card main section.cards-slider article.card div.tabs > section header {
