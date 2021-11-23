@@ -1,7 +1,7 @@
 //Add color picker global var
 function colorPicker() {
     
-    var card        = document.querySelector('.card');
+    var card        = document.querySelector('.cards-slider');
     var cardColor   = card.dataset.color;
     document.querySelector(':root').style.setProperty('--card-color', ''+cardColor+'');
     //console.log(colorVar);

@@ -38,9 +38,20 @@
 
         <main id="main">
 
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            <?php 
+                if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 
-                <section class="cards-slider">
+                    $postcat = get_the_category( $post->ID );
+                    foreach( $postcat as $cat ) {
+                        $cat_color = get_field('category_color', $cat);
+                    }
+                    if (!empty($cat->parent) && !empty($cat_color)) {
+                        $data_color = 'data-color = "'.$cat_color.'"';
+                    }
+                
+            ?>
+
+                <section class="cards-slider" <?php echo $data_color; ?>>
 
                     <nav class="cards-nav">
                         <a href="<?php echo get_permalink($post->post_parent); ?>" title="All cards"><span>All cards</span></a>
@@ -65,10 +76,8 @@
 
                         <?php endwhile; endif; wp_reset_postdata(); ?>
                     </nav>
-
-                    <?php $card_color = get_field('card_color'); ?>
                     
-                    <article class="card full" data-color="<?php echo $card_color; ?>">
+                    <article class="card full">
                         <header>
                             <h1><?php the_title(); ?></h1>
 

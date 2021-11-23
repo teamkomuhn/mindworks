@@ -35,8 +35,11 @@
                 // The Query
                 $cards = new WP_Query( $args );
 
-                if ($cat->parent != 0 && $cards->have_posts() ) {
+                $cat_color = get_field('category_color', $cat);
+
+                if (!empty($cat->parent) && !empty($cat_color) && $cards->have_posts() ) {
                     $imageID = get_term_meta ( $cat->cat_ID, 'category-image-id', true );
+                    $card_color = 'style= "--card-color:'.$cat_color.'"';
             ?>
 
             <section class="category" id="<?php echo $cat->slug; ?>">
@@ -51,20 +54,21 @@
                     <?php }*/ ?>
                 </header>
 
-                <?php // The Loop
+                <?php
+                    // The Loop
                     while ( $cards->have_posts() ) : $cards->the_post();
                 ?>
 
-                <article class="card">
-                    <header>
-                        <h3><?php echo get_the_title(); ?></h3>
-                        <figure>
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/icon-sense.svg" alt="">
-                        </figure>
-                        <a class="button open" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">Open card</a>
-                    </header>
-                    <p><?php echo limit_text(get_the_excerpt(), 20) ?></p>
-                </article>
+                        <article class="card" <?php echo $card_color; ?>>
+                            <header>
+                                <h3><?php echo get_the_title(); ?></h3>
+                                <figure>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/icon-sense.svg" alt="">
+                                </figure>
+                                <a class="button open" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">Open card</a>
+                            </header>
+                            <p><?php echo limit_text(get_the_excerpt(), 20) ?></p>
+                        </article>
 
                 <?php endwhile; wp_reset_postdata(); ?>
 
