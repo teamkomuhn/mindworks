@@ -17,12 +17,16 @@
 
         <?php wp_head(); ?>
 
-        <link rel='shortcut icon' href='<?php echo get_template_directory_uri(); ?>/img/favicon.ico' type='image/x-icon' />
+        <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" type="image/x-icon" />
         <meta name="description" content="<?php bloginfo( 'description' ); ?>">
         <meta name="author" content="Komuhn">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+        />
     </head>
 
     <body <?php body_class(); ?>>
@@ -32,7 +36,7 @@
                 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
-        <main <?php echo $maxWidth; ?> id="main">
+        <main id="main">
 
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -211,29 +215,24 @@
                         </div>
 
 
-                        <?php  if( have_rows('repeater_card_examples') ): ?>
+                        <?php if( have_rows('repeater_card_examples') ): ?>
 
-                            <section class="examples">
+                            <section class="examples swiper">
                                 <header>
                                     <h2>Examples</h2>
                                 </header>
 
-								<ol class="examples-nav" aria-hidden="true">
-									<li><span>1</span></li>
-									<li class="active"><span>2</span></li>
-									<li><span>3</span></li>
-									<li><span>4</span></li>
-									<li><span>5</span></li>
-								</ol>
+								<ol class="swiper-pagination"></ol>
 
-                                <?php
+                                <div class="swiper-wrapper">
 
+                                    <?php 
 
-                                while( have_rows('repeater_card_examples') ) : the_row();
-                                    $title      = get_sub_field('card_example_title');
-                                    $image      = get_sub_field('card_example_image');
-                                    $content    = get_sub_field('card_example_content');
-                                    $link       = get_sub_field('card_example_link');
+                                        while( have_rows('repeater_card_examples') ) : the_row();
+                                            $title      = get_sub_field('card_example_title');
+                                            $image      = get_sub_field('card_example_image');
+                                            $content    = get_sub_field('card_example_content');
+                                            $link       = get_sub_field('card_example_link');
 
                                     if(!empty($image)) {
                                         $image_alt = $image['alt'];
@@ -251,8 +250,8 @@
                                     }
                                 ?>
 
-                                <article class="example">
-                                    <h3><?php echo $title; ?></h3>
+                                    <article class="example swiper-slide">
+                                        <h3><?php echo $title; ?></h3>
 
                                     <?php if(!empty($image)) { ?>
 
@@ -268,7 +267,8 @@
                                     ?>
                                 </article>
 
-                                <?php endwhile; ?>
+                                    <?php endwhile; ?>
+                                </div>
                             </section>
 
                         <?php endif; ?>
@@ -296,9 +296,6 @@
                 <?php endwhile; endif; ?>
 
         </main>
-
         <?php wp_footer(); ?>
-
     </body>
-
 </html>

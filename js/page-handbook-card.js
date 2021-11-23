@@ -10,6 +10,9 @@ function colorPicker() {
 colorPicker();
 
 // page-handbook-card.js
+
+import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
+
 (function( $ ) {
     'use strict';
 
@@ -37,10 +40,17 @@ colorPicker();
 
     // TODO: Make a page able to have more than one expandable content section
 
+    function scrollTo( element, duration, delay, offset) {
+        setTimeout(function() {
+            $( [document.documentElement, document.body] ).animate({
+                scrollTop: $( element ).offset().top - offset
+            }, duration, 'linear');
+        }, delay);
+    }
+
     const containers = document.querySelectorAll(`.container-expandable`)
     const allExpandables = []
     const heights = []
-
 
     for (const [index, container] of containers.entries()) {
 
@@ -58,6 +68,8 @@ colorPicker();
 
             if (isOpen) {
                 expandable.style.height = `0px`
+
+                scrollTo(expandable, 250, 0, 250)
             } else {
                 expandable.style.height = `${heights[index]}px`
             }
@@ -66,5 +78,30 @@ colorPicker();
         })
 
     }
+
+    new Swiper(`.swiper`, {
+
+        speed: 500,
+        spaceBetween: 100,
+        autoHeight: true,
+
+        loop: true,
+
+        paginationClickable: true,
+
+        pagination: {
+            el: `.swiper-pagination`,
+            clickable: true,
+
+            renderBullet: (index, className) => `<li class="${className}"></li>`
+        },
+
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true
+        },
+
+        mousewheel: true,
+    })
 
 })( jQuery );
