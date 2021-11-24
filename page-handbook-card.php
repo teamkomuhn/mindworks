@@ -173,6 +173,7 @@
 
                                 $title      = get_sub_field('card_step_title');
                                 $content    = get_sub_field('card_step_content');
+                                $tools      = get_sub_field('card_step_tools');
                                 ?>
 
                                 <article class="step container-expandable">
@@ -182,7 +183,23 @@
                                         <button class="button-expandable"><span>&darr;</span></button>
 
                                         <div class="expandable">
-                                            <?php echo $content; ?>
+                                            <?php 
+                                            echo $content; 
+
+                                            if ( have_rows('repeater_card_step_tools') ):
+                                            while ( have_rows('repeater_card_step_tools') ) : the_row();
+                                            $tool           = get_sub_field('card_step_tool');
+
+                                            $title          = get_the_title( $tool->ID );
+                                            $slug           = sanitize_title( $title );
+                                            $excerpt        = get_the_excerpt( $tool->ID );
+                                            ?>
+                                            <article class="tools">
+                                                <h3><?php echo $title; ?></h3>
+                                                <?php if(!empty($excerpt)) { echo '<p>'.$excerpt.'</p>'; } ?>
+                                                <a href="#tools?tool=<?php echo $slug; ?>">Learn more -></a>
+                                            </article>
+                                            <?php endwhile; endif; ?>
                                         </div>
                                     <?php } ?>
 
@@ -193,7 +210,7 @@
 
                             </section>
 
-                            <section class="tools tab">
+                            <section class="tools tab" id="tools">
                                 <header class="tab-button">
                                     <h2>Tools</h2>
                                 </header>
@@ -201,15 +218,17 @@
                                 <?php
                                 if( have_rows('repeater_card_tools') ):
                                 while( have_rows('repeater_card_tools') ) : the_row();
+                                $tool           = get_sub_field('card_tool');
 
-                                $title       = get_sub_field('card_tool_title');
-                                $description = get_sub_field('card_tool_description');
-                                $link        = get_sub_field('card_tool_link');
+                                $title          = get_the_title( $tool->ID );
+                                $slug           = sanitize_title( $title );
+                                $excerpt        = get_the_excerpt( $tool->ID );
+                                $link           = get_sub_field('card_tool_link');
                                 ?>
 
-                                <article class="tool">
+                                <article class="tool" id="tool=<?php echo $slug; ?>">
                                     <h3><?php echo $title; ?></h3>
-                                    <?php if(!empty($description)) { echo $description; } ?>
+                                    <?php if(!empty($excerpt)) { echo '<p>'.$excerpt.'</p>'; } ?>
 
                                     <?php if(!empty($link)) { ?>
                                     <a href="<?php echo esc_url($link); ?>">Learn more -></a>
@@ -237,14 +256,17 @@
 
                                     <?php 
 
-                                        while( have_rows('repeater_card_examples') ) : the_row();
-                                            $title      = get_sub_field('card_example_title');
-                                            $image      = get_sub_field('card_example_image');
-                                            $content    = get_sub_field('card_example_content');
-                                            $link       = get_sub_field('card_example_link');
+                                    while( have_rows('repeater_card_examples') ) : the_row();
+                                        $example      = get_sub_field('card_example');
 
+                                        $title       = get_the_title( $example->ID );
+                                        $content     = get_the_content( $example->ID );
+                                        $image       = get_post_thumbnail_id( $example->ID );
+                                        $image_url   = wp_get_attachment_image_url( $image, 'medium' );
+                                        $image_alt   = get_post_meta($image, '_wp_attachment_image_alt', true);
+                                        $link        = get_sub_field('card_example_link');
+                                        
                                     if(!empty($image)) {
-                                        $image_alt = $image['alt'];
                                         
                                         if(!empty($image_alt)) {
                                             $image_alt = 'alt="'.$image_alt.'"';
@@ -262,18 +284,18 @@
                                     <article class="example swiper-slide">
                                         <h3><?php echo $title; ?></h3>
 
-                                    <?php if(!empty($image)) { ?>
+                                        <?php if(!empty($image_url)) { ?>
 
-                                    <figure>
-                                        <img src="<?php echo $image['url']; ?>" <?php echo $image_alt; ?>>
-                                    </figure>
+                                        <figure>
+                                            <img src="<?php echo $image_url; ?>" <?php echo $image_alt; ?>>
+                                        </figure>
 
-                                    <?php } 
+                                        <?php } 
                                     
-                                    echo $content;
-                                    echo $link;
+                                        echo $content;
+                                        echo $link;
                                     
-                                    ?>
+                                        ?>
                                 </article>
 
                                     <?php endwhile; ?>
