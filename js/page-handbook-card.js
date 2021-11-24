@@ -16,6 +16,29 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 (function( $ ) {
     'use strict';
 
+    //CARDS NAV on mobile
+    // Only works if mobile
+    if( window.matchMedia( '(any-hover: none)' ).matches ) {
+
+        // Adjust things if browser sizes change
+        window.addEventListener('resize', debounce(function() {
+          addClickOutsideSlide();
+        }, true));
+
+            $(window).on('load', function() {
+                const activeItemIndex = $('.cards-nav').find('a.active').index();
+                const activeItemPrev = activeItemIndex - 1;
+                const activeItemNext = activeItemIndex + 1;
+                
+                console.log(activeItemPrev); 
+            });
+
+
+
+    } // If mobile
+
+
+    //TABS
     let tabs = [];
     function setTabs() {
 
@@ -79,6 +102,7 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
     }
 
+    //SWIPER
     new Swiper(`.swiper`, {
 
         speed: 500,

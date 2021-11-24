@@ -59,7 +59,7 @@
                         $cardslist = get_pages(array(
                             'child_of'    => $post->post_parent,
                             'sort_column' => 'menu_order',
-                            'sort_order'  => 'ASC',
+                            //'sort_order'  => 'ASC',
                         ));
                         $cards = array();
 
@@ -75,8 +75,13 @@
                         $prevID = $cards[$current-1];
                         $nextID = $cards[$current+1];
                         
+                        if($current == get_the_ID($post)){ 
+                            $active = 'class="active"'; 
+                        } else { 
+                            $active = '';  
+                        }
+
                         if($pages > 1) {
-                            if($current_cardID == get_the_ID()){ $active = 'class="active"'; } else { $active = '';  }
                     ?>
                    
                     <nav class="cards-nav">
@@ -84,14 +89,15 @@
                         
                         <?php if (!empty($prevID)) { ?>
                                 <a class="previous" href="<?php echo get_permalink($prevID); ?>" title="Previous card"><-</a>
+                        <?php } else { ?>
+                                <a class="previous" href="<?php echo get_permalink($lastID); ?>" title="Previous card"><-</a>
                         <?php } ?>
 
-                        <a <?php echo $active; ?> href="<?php echo get_permalink($firstID); ?>" title="<?php echo get_the_title($firstID); ?>">1</a>
-
-                        <?php
+                        <?php 
                             $args = array(
                                 'post_type'      => 'page',
                                 'posts_per_page' => -1,
+                                //'post__not_in'   => array($firstID, $lastID),
                                 'post_parent'    => $post->post_parent
                             );
                             
@@ -108,11 +114,11 @@
 
                         <?php endwhile; endif; wp_reset_postdata(); ?>
 
-                        <a <?php echo $active; ?> href="<?php echo get_permalink($lastID); ?>" title="<?php echo get_the_title($lastID); ?>"><?php echo $total; ?></a>
-
                         <?php if (!empty($nextID)) { ?>
                                 <a class="next" href="<?php echo get_permalink($nextID); ?>" title="Next card">-></a>
-                        <?php } ?>
+                        <?php } else { ?>
+                                <a class="next" href="<?php echo get_permalink($firstID); ?>" title="Next card">-></a>
+                        <?php }?>
                     </nav>
 
                     <?php } ?>
