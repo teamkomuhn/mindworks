@@ -17,12 +17,16 @@
 
         <?php wp_head(); ?>
 
-        <link rel='shortcut icon' href='<?php echo get_template_directory_uri(); ?>/img/favicon.ico' type='image/x-icon' />
+        <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" type="image/x-icon" />
         <meta name="description" content="<?php bloginfo( 'description' ); ?>">
         <meta name="author" content="Komuhn">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+        />
     </head>
 
     <body <?php body_class(); ?>>
@@ -32,11 +36,22 @@
                 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
-        <main <?php echo $maxWidth; ?> id="main">
+        <main id="main">
 
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            <?php 
+                if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 
-                <section class="cards-slider">
+                    $postcat = get_the_category( $post->ID );
+                    foreach( $postcat as $cat ) {
+                        $cat_color = get_field('category_color', $cat);
+                    }
+                    if (!empty($cat->parent) && !empty($cat_color)) {
+                        $data_color = 'data-color = "'.$cat_color.'"';
+                    }
+                
+            ?>
+
+                <section class="cards-slider" <?php echo $data_color; ?>>
 
                     <?php
                         $current_cardID = get_the_ID();
@@ -103,11 +118,7 @@
                     <?php } ?>
 
                     <article class="card full">
-                        <?php
-                            $card_color = get_field('card_color');
-                            $card_style = 'style="background-color:'.$card_color.'"';
-                        ?>
-                        <header <?php echo $card_style; ?>>
+                        <header>
                             <h1><?php the_title(); ?></h1>
 
                             <?php
@@ -125,10 +136,33 @@
 
                             <?php the_excerpt(); ?>
 
-                            <?php // IF COMPANION IMAGE ?>
-                            <figure class="companion-image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/timeline-phases-nav.svg" alt="">
-                            </figure>
+                            <?php 
+                                $companion_image = get_field('companion_image');
+                                $companion_url = get_field('companion_url');
+                                $companion_overlay = get_field('companion_overlay');
+
+                                if($companion_overlay == 1) {
+                                    $companion_button = '<button class="open companion" type="button"></button>';
+                                } else {
+                                    $companion_button = '<a class="button open" href="'.$companion_url.'"></a>';
+                                }
+
+                                if(!empty($companion_image)) {
+                                    $companion_image_alt = $companion_image['alt'];
+
+                                    if(!empty($companion_image_alt)) {
+                                        $companion_image_alt = 'alt="'.$companion_image_alt.'"';
+                                    }
+                            ?>
+                            
+                            <div class="companion-content">
+                                <figure class="companion-image">
+                                    <img src="<?php echo $companion_image['url']; ?>" <?php echo $companion_image_alt; ?>>
+                                </figure>
+                                <?php // echo $companion_button; ?>
+                            </div>
+
+							<?php } ?>
 
                         </header>
 
@@ -145,15 +179,25 @@
 
 								<p><strong><?php echo $label; ?>:</strong> <?php echo $description; ?></p>
 
-                                <?php endwhile; endif; ?>
+                                <?php 
+                                        endwhile;
+                                    endif;
+
+                                    $content = get_the_content();
+
+                                    if(!empty($content)){
+                                ?>
 
 								<button class="button-expandable" type="button"><span>Read more &darr;</span></button>
 
+                                <?php } ?>
 							</header>
 
-                            <div class="content expandable">
-                                <?php the_content(); ?>
-                            </div>
+                            <?php if(!empty($content)){ ?>
+                                <div class="content expandable">
+                                    <?php echo $content; ?>
+                                </div>
+                            <?php } ?>
                         </section>
 
                         <div class="tabs">
@@ -169,15 +213,36 @@
 
                                 $title      = get_sub_field('card_step_title');
                                 $content    = get_sub_field('card_step_content');
+                                $tools      = get_sub_field('card_step_tools');
                                 ?>
 
                                 <article class="step container-expandable">
                                     <h3><?php echo $title; ?></h3>
-                                    <button class="button-expandable"><span>&darr;</span></button>
 
-                                    <div class="expandable">
-                                        <?php echo $content; ?>
-                                    </div>
+                                    <?php if(!empty($content)) { ?>
+                                        <button class="button-expandable"><span>&darr;</span></button>
+
+                                        <div class="expandable">
+                                            <?php 
+                                            echo $content; 
+
+                                            if ( have_rows('repeater_card_step_tools') ):
+                                            while ( have_rows('repeater_card_step_tools') ) : the_row();
+                                            $tool           = get_sub_field('card_step_tool');
+
+                                            $title          = get_the_title( $tool->ID );
+                                            $slug           = sanitize_title( $title );
+                                            $excerpt        = get_the_excerpt( $tool->ID );
+                                            ?>
+                                            <article class="tools">
+                                                <h3><?php echo $title; ?></h3>
+                                                <?php if(!empty($excerpt)) { echo '<p>'.$excerpt.'</p>'; } ?>
+                                                <a href="#tools?tool=<?php echo $slug; ?>">Learn more -></a>
+                                            </article>
+                                            <?php endwhile; endif; ?>
+                                        </div>
+                                    <?php } ?>
+
                                 </article>
 
 
@@ -185,7 +250,7 @@
 
                             </section>
 
-                            <section class="tools tab">
+                            <section class="tools tab" id="tools">
                                 <header class="tab-button">
                                     <h2>Tools</h2>
                                 </header>
@@ -193,16 +258,22 @@
                                 <?php
                                 if( have_rows('repeater_card_tools') ):
                                 while( have_rows('repeater_card_tools') ) : the_row();
+                                $tool           = get_sub_field('card_tool');
 
-                                $title       = get_sub_field('card_tool_title');
-                                $description = get_sub_field('card_tool_description');
-                                $link        = get_sub_field('card_tool_link');
+                                $title          = get_the_title( $tool->ID );
+                                $slug           = sanitize_title( $title );
+                                $excerpt        = get_the_excerpt( $tool->ID );
+                                $link           = get_sub_field('card_tool_link');
                                 ?>
 
-                                <article class="tool">
+                                <article class="tool" id="tool=<?php echo $slug; ?>">
                                     <h3><?php echo $title; ?></h3>
-                                    <?php echo $description; ?>
+                                    <?php if(!empty($excerpt)) { echo '<p>'.$excerpt.'</p>'; } ?>
+
+                                    <?php if(!empty($link)) { ?>
                                     <a href="<?php echo esc_url($link); ?>">Learn more -></a>
+                                    <?php } ?>                              
+                                          
                                 </article>
 
                                 <?php endwhile; endif; ?>
@@ -212,47 +283,63 @@
                         </div>
 
 
-                        <?php  if( have_rows('repeater_card_examples') ): ?>
+                        <?php if( have_rows('repeater_card_examples') ): ?>
 
-                            <section class="examples">
+                            <section class="examples swiper">
                                 <header>
                                     <h2>Examples</h2>
                                 </header>
 
-								<ol class="examples-nav" aria-hidden="true">
-									<li><span>1</span></li>
-									<li class="active"><span>2</span></li>
-									<li><span>3</span></li>
-									<li><span>4</span></li>
-									<li><span>5</span></li>
-								</ol>
+								<ol class="swiper-pagination"></ol>
 
-                                <?php
+                                <div class="swiper-wrapper">
 
+                                    <?php 
 
-                                while( have_rows('repeater_card_examples') ) : the_row();
-                                    $title      = get_sub_field('card_example_title');
-                                    $image      = get_sub_field('card_example_image');
-                                    $content    = get_sub_field('card_example_content');
-                                    $link       = get_sub_field('card_example_link');
+                                    while( have_rows('repeater_card_examples') ) : the_row();
+                                    $example      = get_sub_field('card_example');
 
+                                    $title       = get_the_title( $example->ID );
+                                    $content     = apply_filters('the_content', $example->post_content);
+                                    $image       = get_post_thumbnail_id( $example->ID );
+                                    $image_url   = wp_get_attachment_image_url( $image, 'medium' );
+                                    $image_alt   = get_post_meta($image, '_wp_attachment_image_alt', true);
+                                    $link        = get_sub_field('card_example_link');
+                                        
+                                    if(!empty($image)) {
+                                        
+                                        if(!empty($image_alt)) {
+                                            $image_alt = 'alt="'.$image_alt.'"';
+                                        }
+                                    }
+                                    if(!empty($link)) {
+                                        if(!empty($link_alt)) {
+                                            $link_alt = $link['alt'];
+                                            $link_alt = 'alt="'.$link_alt.'"';
+                                        }
+                                        $link = '<a href="'.$link['url'].'" '.$link_alt.'>Learn more -></a>';
+                                    }
                                 ?>
 
-                                <article class="example">
-                                    <h3><?php echo $title; ?></h3>
+                                    <article class="example swiper-slide">
+                                        <h3><?php echo $title; ?></h3>
 
-                                    <?php if($image != '') : ?>
-                                    <figure>
-                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-                                    </figure>
-                                    <?php endif; ?>
+                                        <?php if(!empty($image_url)) { ?>
 
-                                    <?php echo $content; ?>
+                                        <figure>
+                                            <img src="<?php echo $image_url; ?>" <?php echo $image_alt; ?>>
+                                        </figure>
 
-                                    <a href="<?php echo $link['url']; ?>">Learn more -></a>
+                                        <?php } 
+                                    
+                                        echo $content;
+                                        echo $link;
+                                    
+                                        ?>
                                 </article>
 
-                                <?php endwhile; ?>
+                                    <?php endwhile; ?>
+                                </div>
                             </section>
 
                         <?php endif; ?>
@@ -280,9 +367,6 @@
                 <?php endwhile; endif; ?>
 
         </main>
-
         <?php wp_footer(); ?>
-
     </body>
-
 </html>
