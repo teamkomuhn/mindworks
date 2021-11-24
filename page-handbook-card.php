@@ -257,27 +257,27 @@
                                     <?php 
 
                                     while( have_rows('repeater_card_examples') ) : the_row();
-                                        $example      = get_sub_field('card_example');
+                                    $example      = get_sub_field('card_example');
 
-                                        $title       = get_the_title( $example->ID );
-                                        $content     = get_the_content( $example->ID );
-                                        $image       = get_post_thumbnail_id( $example->ID );
-                                        $image_url   = wp_get_attachment_image_url( $image, 'medium' );
-                                        $image_alt   = get_post_meta($image, '_wp_attachment_image_alt', true);
-                                        $link        = get_sub_field('card_example_link');
+                                    $title       = get_the_title( $example->ID );
+                                    $content     = apply_filters('the_content', $example->post_content);
+                                    $image       = get_post_thumbnail_id( $example->ID );
+                                    $image_url   = wp_get_attachment_image_url( $image, 'medium' );
+                                    $image_alt   = get_post_meta($image, '_wp_attachment_image_alt', true);
+                                    $link        = get_sub_field('card_example_link');
                                         
                                     if(!empty($image)) {
                                         
                                         if(!empty($image_alt)) {
                                             $image_alt = 'alt="'.$image_alt.'"';
                                         }
-                                        if(!empty($link)) {
-                                            if(!empty($link_alt)) {
-                                                $link_alt = $link['alt'];
-                                                $link_alt = 'alt="'.$link_alt.'"';
-                                            }
-                                            $link = '<a href="'.$link['url'].'" '.$link_alt.'>Learn more -></a>';
+                                    }
+                                    if(!empty($link)) {
+                                        if(!empty($link_alt)) {
+                                            $link_alt = $link['alt'];
+                                            $link_alt = 'alt="'.$link_alt.'"';
                                         }
+                                        $link = '<a href="'.$link['url'].'" '.$link_alt.'>Learn more -></a>';
                                     }
                                 ?>
 
