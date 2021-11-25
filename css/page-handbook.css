@@ -8,6 +8,7 @@ body.page-handbook main > header {
   margin: -2rem calc(-1 * var(--spacing-x)) 2rem;
   padding: var(--spacing-y) var(--spacing-x);
   background-color: #FF7557;
+  background-color: var(--cat-color);
 }
 body.page-handbook main > header h1 {
   order: 1;
@@ -61,6 +62,7 @@ body.page-handbook main section.category article.card {
 body.page-handbook main section.category article.card > header {
   position: relative;
   background-color: #FEF288;
+  background-color: var(--subcat-color);
   border-radius: 0.5em 0.5em 0 0;
   padding: 1.5rem;
   display: flex;
@@ -172,6 +174,9 @@ div.tabs .tab.active > * {
   body.page-handbook main section.category article.card > header h3 {
     font-size: var(--font-size-big);
   }
+  body.page-handbook main section.category article.card div.companion-content figure.companion-image {
+    width: 50%;
+  }
   body.page-handbook main section.category article.card > p {
     font-size: var(--font-size-p);
   }
@@ -179,3 +184,4 @@ div.tabs .tab.active > * {
     margin-right: 0;
   }
 }
+/*# sourceMappingURL=page-handbook.css.map */

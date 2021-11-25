@@ -4,7 +4,7 @@ add_action('admin_init', 'admin_init');
 
 function admin_init(){
 
-	add_meta_box('opengraph_meta', 'Preview image', 'opengraph_meta', array('post', 'page'), 'side', 'high');
+	//add_meta_box('opengraph_meta', 'Preview image', 'opengraph_meta', array('post', 'page'), 'side', 'high');
 
     //MW Tools
     //add_meta_box('label_meta', 'Label', 'label_meta', array('post', 'page'), 'side', 'high');

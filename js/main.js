@@ -34,6 +34,7 @@ var debounce = function (fn) {
 // CAN jQuery
 (function( $ ) {
 
+
     //SMOOTH SCROLL TO FUNCTION >> duplicated on page.js for now, need to check how to call it there from here
     function scrollToMain( element, duration, delay ) {
         setTimeout(function() {

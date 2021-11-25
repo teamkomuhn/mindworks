@@ -38,7 +38,7 @@ body.page-handbook-card main section.cards-slider nav.cards-nav a.previous {
   border: 0;
 }
 body.page-handbook-card main section.cards-slider nav.cards-nav a.active {
-  background-color: #F8CF66;
+  background-color: var(--card-color);
 }
 body.page-handbook-card main section.cards-slider nav.cards-nav a.between {
   border: 0;
@@ -51,7 +51,7 @@ body.page-handbook-card main section.cards-slider article.card {
   border-radius: 0.5em;
 }
 body.page-handbook-card main section.cards-slider article.card > header {
-  background-color: #F8CF66;
+  background-color: var(--card-color);
   border-radius: 0.5em 0.5em 0 0;
   padding: var(--spacing-y) var(--spacing-x);
   display: flex;
@@ -73,12 +73,14 @@ body.page-handbook-card main section.cards-slider article.card > header figure.i
 body.page-handbook-card main section.cards-slider article.card > header p {
   order: 2;
 }
-body.page-handbook-card main section.cards-slider article.card > header figure.companion-image {
-  width: 100%;
-  margin-top: 2rem;
+body.page-handbook-card main section.cards-slider article.card > header div.companion-content {
   order: 3;
 }
-body.page-handbook-card main section.cards-slider article.card > header figure.companion-image img {
+body.page-handbook-card main section.cards-slider article.card > header div.companion-content figure.companion-image {
+  width: 100%;
+  margin-top: 2rem;
+}
+body.page-handbook-card main section.cards-slider article.card > header div.companion-content figure.companion-image img {
   width: 100%;
   height: auto;
 }
@@ -104,7 +106,7 @@ body.page-handbook-card main section.cards-slider article.card section > article
   margin-bottom: 1em;
 }
 body.page-handbook-card main section.cards-slider article.card section > article a {
-  color: #F8CF66;
+  color: var(--card-color);
 }
 body.page-handbook-card main section.cards-slider article.card section > article figure {
   overflow: hidden;
@@ -439,7 +441,7 @@ div.tabs .tab.active > * {
     order: 2;
     font-size: var(--font-size-biggish);
   }
-  body.page-handbook-card main section.cards-slider article.card > header figure.companion-image {
+  body.page-handbook-card main section.cards-slider article.card > header div.companion-content figure.companion-image {
     width: 50%;
   }
   body.page-handbook-card main section.cards-slider article.card section {
