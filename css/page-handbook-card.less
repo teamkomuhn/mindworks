@@ -323,6 +323,8 @@ body.page-handbook-card {
 
                         > article {
                             margin: 0 var(--spacing-x) 1.5em;
+                            border: .5px solid #666;
+                            padding: var(--spacing-x);
 
                             &:last-of-type {
                                 margin-bottom: var(--spacing-y);
@@ -449,6 +451,7 @@ body.page-handbook-card {
 
                             > p {
                                 margin-bottom: 1em;
+                                font-size: var(--font-size-small);
                             }
 
                             > a {
@@ -679,8 +682,18 @@ div.tabs { // TODO: Move this to main css?
                         }
 
                         &.tools {
+                            display: flex;
+                            flex-flow: row wrap;
+
+                            
+
                             > article {
+                                // flex: 1 1 calc( 50% - (2 * var(--spacing-y)) );
+                                // max-width: calc( 2 * var(--spacing-y) );
+                                // max-width: 200px;
                                 margin: 0 var(--spacing-y) 1.5em;
+                                padding: 2rem;
+
                             }
                         }
 

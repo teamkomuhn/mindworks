@@ -218,6 +218,8 @@ body.page-handbook-card main section.cards-slider article.card section.tools hea
 }
 body.page-handbook-card main section.cards-slider article.card section.tools > article {
   margin: 0 var(--spacing-x) 1.5em;
+  border: 0.5px solid #666;
+  padding: var(--spacing-x);
 }
 body.page-handbook-card main section.cards-slider article.card section.tools > article:last-of-type {
   margin-bottom: var(--spacing-y);
@@ -325,6 +327,7 @@ body.page-handbook-card main section.cards-slider article.card section.examples 
 }
 body.page-handbook-card main section.cards-slider article.card section.examples article.example > p {
   margin-bottom: 1em;
+  font-size: var(--font-size-small);
 }
 body.page-handbook-card main section.cards-slider article.card section.examples article.example > a {
   color: #222222;
@@ -463,8 +466,13 @@ div.tabs .tab.active > * {
   body.page-handbook-card main section.cards-slider article.card section.steps > article h3::before {
     font-size: var(--font-size-p);
   }
+  body.page-handbook-card main section.cards-slider article.card section.tools {
+    display: flex;
+    flex-flow: row wrap;
+  }
   body.page-handbook-card main section.cards-slider article.card section.tools > article {
     margin: 0 var(--spacing-y) 1.5em;
+    padding: 2rem;
   }
   body.page-handbook-card main section.cards-slider article.card section.examples article.example {
     padding-top: var(--spacing-y);
