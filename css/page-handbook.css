@@ -98,7 +98,18 @@ body.page-handbook main section.category article.card > p {
   font-size: var(--font-size-small);
 }
 body.page-handbook main section.category article.card:hover {
-  box-shadow: 2px 4px 10px 4px #ccc;
+  box-shadow: 2px 4px 10px 4px rgba(0, 0, 0, 0.2);
+}
+body.page-handbook main section.category.special {
+  margin: 0 calc(-1 * var(--spacing-x)) calc(-1 * var(--spacing-y));
+  padding: var(--spacing-y) var(--spacing-x);
+  background-color: #FF7557;
+}
+body.page-handbook main section.category.special > header h2 {
+  color: #ffffff;
+}
+body.page-handbook main section.category.special article.card:hover {
+  box-shadow: 2px 4px 10px 4px rgba(0, 0, 0, 0.3);
 }
 .container-expandable .expandable {
   overflow: hidden;

@@ -300,8 +300,7 @@
 
                                 <div class="swiper-wrapper">
 
-                                    <?php 
-
+                                    <?php
                                     while( have_rows('repeater_card_examples') ) : the_row();
                                     $example      = get_sub_field('card_example');
 
@@ -325,7 +324,7 @@
                                         }
                                         $link = '<a href="'.$link['url'].'" '.$link_alt.'>Learn more -></a>';
                                     }
-                                ?>
+                                    ?>
 
                                     <article class="example swiper-slide">
                                         <h3><?php echo $title; ?></h3>
