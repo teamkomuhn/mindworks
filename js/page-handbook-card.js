@@ -1,14 +1,3 @@
-//Add color picker global var
-function colorPicker() {
-    
-    var card        = document.querySelector('.cards-slider');
-    var cardColor   = card.dataset.color;
-    document.querySelector(':root').style.setProperty('--card-color', ''+cardColor+'');
-    //console.log(colorVar);
-
-}
-colorPicker();
-
 // page-handbook-card.js
 
 import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'

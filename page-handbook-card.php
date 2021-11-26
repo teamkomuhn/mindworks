@@ -44,14 +44,14 @@
                     $postcat = get_the_category( $post->ID );
                     foreach( $postcat as $cat ) {
                         $cat_color = get_field('category_color', $cat);
-                    }
-                    if (!empty($cat->parent) && !empty($cat_color)) {
-                        $data_color = 'data-color = "'.$cat_color.'"';
+                        if (!empty($cat->parent)) {
+                            $cat_color = 'style = "'.$cat_color.'"';
+                        }
                     }
 
             ?>
 
-                <section class="cards-slider" <?php echo $data_color; ?>>
+                <section class="cards-slider" <?php echo $cat_color; ?>>
 
                     <nav class="cards-nav">
                         <a href="<?php echo get_permalink($post->post_parent); ?>" title="All cards"><span>All cards</span></a>

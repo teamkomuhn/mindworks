@@ -2,13 +2,13 @@
 <?php get_header(); ?>
 
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
+    
     <?php
         $postcat = get_the_category( $post->ID );
 
         foreach( $postcat as $cat ) {
-            if ($cat->category_parent == 0) {
-                $cat_color = get_field('category_color', $cat);
+            $cat_color = get_field('category_color', $cat);
+            if ($cat->category_parent == 0 && !empty($cat_color)) {
                 $cat_color = 'style = "--cat-color:'.$cat_color.'"';
             }
         }
@@ -40,16 +40,17 @@
                     'post_parent'    => $post->ID,
                     'cat'            => $cat->cat_ID,
                 );
-
+    
                 // The Query
                 $cards = new WP_Query( $args );
 
                 $subcat_color = get_field('category_color', $cat);
 
-                if (!empty($cat->parent) && !empty($cat_color) && $cards->have_posts() ) {
+                if (!empty($cat->parent) && $cards->have_posts() ) {
                     $imageID = get_term_meta ( $cat->cat_ID, 'category-image-id', true );
-
-                    $subcat_color = 'style = "--subcat-color:'.$subcat_color.'"';
+                    if (!empty($subcat_color)) {
+                        $subcat_color = 'style = "--subcat-color:'.$subcat_color.'"';
+                    }
             ?>
 
             <section class="category" id="<?php echo $cat->slug; ?>" <?php echo $subcat_color; ?>>
@@ -88,34 +89,6 @@
                     }
                 }
             ?>
-
-            <section class="category special">
-                <header>
-                    <h2>Special cards</h2>
-                    <p></p>
-                </header>
-
-                <article class="card">
-                    <header>
-                        <h3>Special card 1</h3>
-                        <figure>
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/icon-sense.svg" alt="">
-                        </figure>
-                        <a class="button open" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">Open card</a>
-                    </header>
-                    <p>Orienting yourself quickly is crucial in any crisis - observe the crisis unfolding, speak to different audiences and do quick ...</p>
-                </article>
-                <article class="card">
-                    <header>
-                        <h3>Special card 2</h3>
-                        <figure>
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/icon-sense.svg" alt="">
-                        </figure>
-                        <a class="button open" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">Open card</a>
-                    </header>
-                    <p>Orienting yourself quickly is crucial in any crisis - observe the crisis unfolding, speak to different audiences and do quick ...</p>
-                </article>
-            </section>
 
         <?php endwhile; endif; ?>
 

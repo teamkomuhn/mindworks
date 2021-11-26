@@ -7,8 +7,7 @@ body.page-handbook main > header {
   flex-flow: row wrap;
   margin: -2rem calc(-1 * var(--spacing-x)) 2rem;
   padding: var(--spacing-y) var(--spacing-x);
-  background-color: #FF7557;
-  background-color: var(--cat-color);
+  background-color: var(--cat-color, var(--color-yellow-light));
 }
 body.page-handbook main > header h1 {
   order: 1;
@@ -62,7 +61,7 @@ body.page-handbook main section.category article.card {
 body.page-handbook main section.category article.card > header {
   position: relative;
   background-color: #FEF288;
-  background-color: var(--subcat-color);
+  background-color: var(--subcat-color, var(--color-yellow-light));
   border-radius: 0.5em 0.5em 0 0;
   padding: 1.5rem;
   display: flex;

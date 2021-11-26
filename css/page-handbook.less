@@ -14,8 +14,7 @@ body.page-handbook {
             margin: -2rem calc(-1 * var(--spacing-x)) 2rem;
             padding: var(--spacing-y) var(--spacing-x);
 
-            background-color: @color-coral; //TODO: Fix fall back, not working well
-            background-color: var(--cat-color);
+            background-color: var(--cat-color, var(--color-yellow-light));
 
             h1 {
                 order: 1;
@@ -94,7 +93,7 @@ body.page-handbook {
                 > header {
                     position: relative;
                     background-color: @color-yellow-light;
-                    background-color: var(--subcat-color);
+                    background-color: var(--subcat-color, var(--color-yellow-light));
                     border-radius: 0.5em 0.5em 0 0;
                     padding: 1.5rem;
 
