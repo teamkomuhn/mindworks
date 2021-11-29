@@ -153,16 +153,16 @@ body.page-handbook-card main section.cards-slider article.card section.steps {
 body.page-handbook-card main section.cards-slider article.card section.steps header {
   background-image: url("../img/icon-map-black.svg");
 }
-body.page-handbook-card main section.cards-slider article.card section.steps > article {
+body.page-handbook-card main section.cards-slider article.card section.steps article.step {
   margin: 0 var(--spacing-x) 1.5em;
   border-bottom: 1px dotted #666;
 }
-body.page-handbook-card main section.cards-slider article.card section.steps > article h3 {
+body.page-handbook-card main section.cards-slider article.card section.steps article.step h3 {
   display: flex;
   flex-flow: row nowrap;
   margin-right: 1.2em;
 }
-body.page-handbook-card main section.cards-slider article.card section.steps > article h3::before {
+body.page-handbook-card main section.cards-slider article.card section.steps article.step h3::before {
   counter-increment: section;
   content: counter(section);
   flex: 0 0 2em;
@@ -178,14 +178,14 @@ body.page-handbook-card main section.cards-slider article.card section.steps > a
   margin-right: 0.7em;
   margin-top: -0.2em;
 }
-body.page-handbook-card main section.cards-slider article.card section.steps > article:last-of-type {
+body.page-handbook-card main section.cards-slider article.card section.steps article.step:last-of-type {
   border-bottom: none;
   margin-bottom: var(--spacing-y);
 }
-body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable {
+body.page-handbook-card main section.cards-slider article.card section.steps article.step.container-expandable {
   position: relative;
 }
-body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable > .button-expandable {
+body.page-handbook-card main section.cards-slider article.card section.steps article.step.container-expandable > .button-expandable {
   position: absolute;
   top: 0;
   right: 0;
@@ -196,19 +196,22 @@ body.page-handbook-card main section.cards-slider article.card section.steps > a
   text-align: right;
   color: white;
 }
-body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable.expanded {
+body.page-handbook-card main section.cards-slider article.card section.steps article.step.container-expandable.expanded {
   padding-bottom: 2rem;
 }
-body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable.expanded > .button-expandable {
+body.page-handbook-card main section.cards-slider article.card section.steps article.step.container-expandable.expanded > .button-expandable {
   top: auto;
   bottom: 0;
   line-height: 3em;
 }
-body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable.expanded > .button-expandable span {
+body.page-handbook-card main section.cards-slider article.card section.steps article.step.container-expandable.expanded > .button-expandable span {
   display: none;
 }
-body.page-handbook-card main section.cards-slider article.card section.steps > article.container-expandable.expanded > .button-expandable::after {
+body.page-handbook-card main section.cards-slider article.card section.steps article.step.container-expandable.expanded > .button-expandable::after {
   content: "\2191  Close";
+}
+body.page-handbook-card main section.cards-slider article.card section.steps article.step article.tool h3:before {
+  display: none;
 }
 body.page-handbook-card main section.cards-slider article.card section.steps.active header {
   background-image: url("../img/icon-map-white.svg");

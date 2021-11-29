@@ -239,7 +239,7 @@ body.page-handbook-card {
                             background-image: url("../img/icon-map-black.svg");
                         }
 
-                        > article {
+                        article.step {
                             margin: 0 var(--spacing-x) 1.5em;
                             border-bottom: 1px dotted #666;
 
@@ -304,6 +304,14 @@ body.page-handbook-card {
                                             content: "\2191  Close";
                                         }
 
+                                    }
+                                }
+                            }
+                            article.tool {
+    
+                                h3 {
+                                    &:before {
+                                        display: none;
                                     }
                                 }
                             }

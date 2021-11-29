@@ -246,7 +246,7 @@
                                             $slug           = sanitize_title( $title );
                                             $excerpt        = get_the_excerpt( $tool->ID );
                                             ?>
-                                            <article class="tools">
+                                            <article class="tool">
                                                 <h3><?php echo $title; ?></h3>
                                                 <?php if(!empty($excerpt)) { echo '<p>'.$excerpt.'</p>'; } ?>
                                                 <a href="#tools?tool=<?php echo $slug; ?>">Learn more -></a>
