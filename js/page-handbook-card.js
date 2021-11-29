@@ -5,6 +5,50 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 (function( $ ) {
     'use strict';
 
+    //CARDS NAV on mobile
+    // Only works if mobile
+    if( window.matchMedia( '(any-hover: none)' ).matches ) {
+
+        // Adjust things if browser sizes change
+        // window.addEventListener('resize', debounce(function() {
+        //   addClickOutsideSlide();
+        // }, true));
+
+        $(window).on('load', function() {
+
+            const nav = document.querySelector(`.cards-nav`)
+            let cards = [ ...nav.querySelectorAll(`a`) ] // NodeList to Array
+
+            if (cards.length > 5) {
+
+                const first = cards.shift()
+                const active = cards.findIndex(card => card.classList.contains(`active`))
+
+                if (active < (cards.length - 6)) {
+                    cards.splice(active + 3, cards.length - 1 - (active + 3) - 1, `...`)
+                    cards.splice(1, active - 1)
+                } else {
+                    const difference = cards.length - 2 - active
+
+                    cards.splice(1, active - 5 + difference)
+                }
+
+                nav.innerHTML = null
+
+                cards = [ first, ...cards ]
+
+                for (const card of cards) nav.append(card)
+            }
+        });
+
+
+
+
+
+    }
+
+
+    //TABS
     let tabs = [];
     function setTabs() {
 
@@ -68,6 +112,7 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
     }
 
+    //SWIPER
     new Swiper(`.swiper`, {
 
         speed: 500,
