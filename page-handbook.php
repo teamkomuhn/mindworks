@@ -20,8 +20,7 @@
                 <figure>
                     <img src="<?php echo get_template_directory_uri(); ?>/img/icon-book-black.svg" alt="">
                 </figure>
-                <button type="button go-to">Go to cards &darr;</button>
-                <!-- <a class="button" href="#">Go to cards &darr;</a> -->
+                <button class="button go-to">Go to cards &darr;</button>
             </header>
 
             <div class="content max-width">
