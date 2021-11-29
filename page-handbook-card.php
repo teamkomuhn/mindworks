@@ -249,7 +249,7 @@
                                             <article class="tool">
                                                 <h3><?php echo $title; ?></h3>
                                                 <?php if(!empty($excerpt)) { echo '<p>'.$excerpt.'</p>'; } ?>
-                                                <a href="#tools?tool=<?php echo $slug; ?>">Learn more -></a>
+                                                <a href="?tool=<?php echo $slug; ?>">Learn more -></a>
                                             </article>
                                             <?php endwhile; endif; ?>
                                         </div>
@@ -280,7 +280,7 @@
                                 $link           = get_sub_field('card_tool_link');
                                 ?>
 
-                                <article class="tool" id="tool=<?php echo $slug; ?>">
+                                <article class="tool" id="tool-<?php echo $slug; ?>">
                                     <h3><?php echo $title; ?></h3>
                                     <?php if(!empty($excerpt)) { echo '<p>'.$excerpt.'</p>'; } ?>
 
