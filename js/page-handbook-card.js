@@ -104,4 +104,22 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
         mousewheel: true,
     })
 
+
+    // Link to tool
+
+    const toolName = new URLSearchParams(location.search).get(`tool`)
+    const stepsTab = document.querySelector(`.tab.steps`)
+    const toolsTab = document.querySelector(`.tab.tools`)
+
+    if (toolName) {
+        stepsTab.classList.remove(`active`)
+        toolsTab.classList.add(`active`)
+
+        const tool = document.querySelector(`.tool#tool-${toolName}`)
+
+        if (tool) {
+            scrollTo(tool, 250, 0, 32)
+        }
+    }
+
 })( jQuery );
