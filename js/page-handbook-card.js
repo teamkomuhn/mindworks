@@ -108,30 +108,37 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
     }
 
-    //SWIPER
-    new Swiper(`.swiper`, {
+    const slides = document.querySelectorAll(`.swiper-slide`)
 
-        speed: 500,
-        spaceBetween: 100,
-        autoHeight: true,
+    if (slides.length > 1) {
 
-        loop: true,
+        new Swiper(`.swiper`, {
 
-        paginationClickable: true,
+            speed: 500,
+            spaceBetween: 100,
+            autoHeight: true,
 
-        pagination: {
-            el: `.swiper-pagination`,
-            clickable: true,
+            loop: true,
 
-            renderBullet: (index, className) => `<li class="${className}"></li>`
-        },
+            paginationClickable: true,
 
-        keyboard: {
-            enabled: true,
-            onlyInViewport: true
-        },
+            pagination: {
+                el: `.swiper-pagination`,
+                clickable: true,
 
-        mousewheel: true,
-    })
+                renderBullet: (index, className) => `<li class="${className}"></li>`
+            },
+
+            keyboard: {
+                enabled: true,
+                onlyInViewport: true
+            },
+
+            mousewheel: {
+                forceToAxis: true
+            }
+        })
+
+    }
 
 })( jQuery );
