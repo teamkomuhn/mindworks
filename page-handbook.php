@@ -7,9 +7,11 @@
         $postcat = get_the_category( $post->ID );
 
         foreach( $postcat as $cat ) {
-            $cat_color = get_field('category_color', $cat);
-            if ($cat->category_parent == 0 && !empty($cat_color)) {
-                $cat_color = 'style = "--cat-color:'.$cat_color.'"';
+            if ($cat->category_parent == 0) {
+                $cat_color = get_field('category_color', $cat);
+                if(!empty($cat_color)) {
+                    $cat_color = 'style = "--cat-color:'.$cat_color.'"';
+                }
             }
         }
     ?>
