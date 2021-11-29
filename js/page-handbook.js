@@ -15,15 +15,13 @@
     button.addEventListener(`click`, () => {
         scrollTo(`.category`)
     })
-
+    
 
     const cards = document.querySelectorAll(`.card`)
 
     for (const card of cards) {
-        card.addEventListener(`click`, () => {
-
+        card.addEventListener(`click`, event => {
             location.href = card.querySelector(`.open`).href
-
         })
     }
 
