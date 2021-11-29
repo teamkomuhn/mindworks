@@ -187,7 +187,7 @@
 
 
     //This code will limit WordPress to only save your last 4 revisions of each post or page, and discard older revisions automatically.
-    define( 'WP_POST_REVISIONS', 4 );
+    //define( 'WP_POST_REVISIONS', 4 );
 
     //ADD TEMAPLATE NAME TO BODY CLASS
     add_filter('body_class', 'acme_add_body_class');

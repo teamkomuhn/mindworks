@@ -39,55 +39,54 @@
         <main id="main">
 
             <?php
-                if ( have_posts() ) : while ( have_posts() ) : the_post();
-
-                    $postcat = get_the_category( $post->ID );
-                    foreach( $postcat as $cat ) {
-                        $cat_color = get_field('category_color', $cat);
-                        if (!empty($cat->parent)) {
-                            $cat_color = 'style = "'.$cat_color.'"';
-                        }
-                    }
-
+            if ( have_posts() ) : while ( have_posts() ) : the_post();
+            
+            $postcat = get_the_category( $post->ID );
+            foreach( $postcat as $cat ) {
+                $cat_color = get_field('category_color', $cat);
+                if (!empty($cat->parent)) {
+                    $cat_color = 'style = "--cat-color:'.$cat_color.'"';
+                }
+            }
             ?>
 
                 <section class="cards-slider" <?php echo $cat_color; ?>>
 
                     <?php
-                        $current_cardID = get_the_ID();
+                    $current_cardID = get_the_ID();
 
-                        $cardslist = get_pages(array(
-                            'child_of'    => $post->post_parent,
-                            'sort_column' => 'menu_order',
-                            //'sort_order'  => 'ASC',
-                        ));
-                        $cards = array();
+                    $cardslist = get_pages(array(
+                        'child_of'    => $post->post_parent,
+                        'sort_column' => 'menu_order',
+                        //'sort_order'  => 'ASC',
+                    ));
+                    $cards = array();
 
-                        foreach ($cardslist as $card) {
-                            $cards[] += $card->ID;
-                        }
+                    foreach ($cardslist as $card) {
+                        $cards[] += $card->ID;
+                    }
 
-                        $firstID    = $cards[0];
-                        $lastID     = end($cards);
-                        $total      = count($cards);
+                    $firstID    = $cards[0];
+                    $lastID     = end($cards);
+                    $total      = count($cards);
 
-                        $current = array_search(get_the_ID(), $cards);
-                        $prevID = $cards[$current-1];
-                        $nextID = $cards[$current+1];
-                        
-                        if($current == get_the_ID($post)){ 
-                            $active = 'class="active"'; 
-                        } else { 
-                            $active = '';  
-                        }
-
-                        if($pages > 1) {
+                    $current = array_search(get_the_ID(), $cards);
+                    $prevID = $cards[$current-1];
+                    $nextID = $cards[$current+1];
+                    
+                    if($current == get_the_ID($post)){ 
+                        $active = 'class="active"'; 
+                    } else { 
+                        $active = '';  
+                    }
+                    
+                    if($cards > 1) {
                     ?>
                    
                     <nav class="cards-nav">
                         <a href="<?php echo get_permalink($post->post_parent); ?>" title="All cards"><span>All cards</span></a>
                         
-                        <?php if (!empty($prevID)) { ?>
+                        <?php if ($prevID != 1) { ?>
                                 <a class="previous" href="<?php echo get_permalink($prevID); ?>" title="Previous card"><-</a>
                         <?php } else { ?>
                                 <a class="previous" href="<?php echo get_permalink($lastID); ?>" title="Previous card"><-</a>
@@ -112,9 +111,9 @@
 
                         <a <?php echo $active; ?> href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo $i++; ?></a>
 
-                        <?php endwhile; endif; wp_reset_postdata(); ?>
+                        <?php endwhile; wp_reset_postdata(); endif; ?>
 
-                        <?php if (!empty($nextID)) { ?>
+                        <?php if ($nextID != $lastID) { ?>
                                 <a class="next" href="<?php echo get_permalink($nextID); ?>" title="Next card">-></a>
                         <?php } else { ?>
                                 <a class="next" href="<?php echo get_permalink($firstID); ?>" title="Next card">-></a>
@@ -163,7 +162,7 @@
 
                             <div class="companion-content">
                                 <figure class="companion-image">
-                                    <img src="<?php echo $companion_image['url']; ?>" <?php echo $companion_image_alt; ?>>
+                                    <img src="<?php echo esc_url($companion_image['url']); ?>" <?php echo $companion_image_alt; ?>>
                                 </figure>
                                 <?php // echo $companion_button; ?>
                             </div>
@@ -186,7 +185,7 @@
 								<p><strong><?php echo $label; ?>:</strong> <?php echo $description; ?></p>
 
                                 <?php
-                                        endwhile;
+                                        endwhile; 
                                     endif;
 
                                     $content = get_the_content();
@@ -240,23 +239,26 @@
 
                                             if ( have_rows('repeater_card_step_tools') ):
                                             while ( have_rows('repeater_card_step_tools') ) : the_row();
-                                            $tool           = get_sub_field('card_step_tool');
+                                            $post_object = get_sub_field('card_step_tool');
+            
+                                            if( $posts ): 
+                                            $post = $post_object;
+                                            setup_postdata( $post );
 
-                                            $title          = get_the_title( $tool->ID );
+                                            $title          = get_the_title( $post->ID );
                                             $slug           = sanitize_title( $title );
-                                            $excerpt        = get_the_excerpt( $tool->ID );
+                                            $excerpt        = get_the_excerpt( $post->ID );
                                             ?>
                                             <article class="tool">
                                                 <h3><?php echo $title; ?></h3>
                                                 <?php if(!empty($excerpt)) { echo '<p>'.$excerpt.'</p>'; } ?>
                                                 <a href="?tool=<?php echo $slug; ?>">Learn more -></a>
                                             </article>
-                                            <?php endwhile; endif; ?>
+                                            <?php  wp_reset_postdata(); endif; endwhile; endif; ?>
                                         </div>
                                     <?php } ?>
 
                                 </article>
-
 
                                 <?php endwhile; ?>
 
@@ -272,11 +274,15 @@
 
                                 <?php
                                 while( have_rows('repeater_card_tools') ) : the_row();
-                                $tool           = get_sub_field('card_tool');
+                                $post_object = get_sub_field('card_tool');
 
-                                $title          = get_the_title( $tool->ID );
+                                if( $posts ): 
+                                $post = $post_object;
+                                setup_postdata( $post );
+
+                                $title          = get_the_title( $post->ID );
                                 $slug           = sanitize_title( $title );
-                                $excerpt        = get_the_excerpt( $tool->ID );
+                                $excerpt        = get_the_excerpt( $post->ID );
                                 $link           = get_sub_field('card_tool_link');
                                 ?>
 
@@ -290,16 +296,14 @@
 
                                 </article>
 
-                                <?php endwhile; ?>
+                                <?php wp_reset_postdata(); endif; endwhile;  ?>
 
                             </section>
 
+                            <?php endif; ?>
+
                         </div>
-                        <?php endif; 
-                        endif; ?>
-
-
-                        <?php if( have_rows('repeater_card_examples') ): ?>
+                        <?php endif; if( have_rows('repeater_card_examples') ): ?>
 
                             <section class="examples swiper">
                                 <header>
@@ -312,11 +316,15 @@
 
                                     <?php
                                     while( have_rows('repeater_card_examples') ) : the_row();
-                                    $example      = get_sub_field('card_example');
+                                    $post_object = get_sub_field('card_example');
 
-                                    $title       = get_the_title( $example->ID );
-                                    $content     = apply_filters('the_content', $example->post_content);
-                                    $image       = get_post_thumbnail_id( $example->ID );
+                                    if( $posts ): 
+                                    $post = $post_object;
+                                    setup_postdata( $post );
+
+                                    $title       = get_the_title( $post->ID );
+                                    $content     = apply_filters('the_content', $post->post_content);
+                                    $image       = get_post_thumbnail_id( $post->ID );
                                     $image_url   = wp_get_attachment_image_url( $image, 'medium' );
                                     $image_alt   = get_post_meta($image, '_wp_attachment_image_alt', true);
                                     $link        = get_sub_field('card_example_link');
@@ -332,7 +340,7 @@
                                             $link_alt = $link['alt'];
                                             $link_alt = 'alt="'.$link_alt.'"';
                                         }
-                                        $link = '<a href="'.$link['url'].'" '.$link_alt.'>Learn more -></a>';
+                                        $link = '<a href="'.esc_url($link['url']).'" '.$link_alt.'>Learn more -></a>';
                                     }
                                     ?>
 
@@ -342,7 +350,7 @@
                                         <?php if(!empty($image_url)) { ?>
 
                                         <figure>
-                                            <img src="<?php echo $image_url; ?>" <?php echo $image_alt; ?>>
+                                            <img src="<?php echo esc_url($image_url); ?>" <?php echo $image_alt; ?>>
                                         </figure>
 
                                         <?php }
@@ -351,7 +359,7 @@
                                         ?>
                                     </article>
 
-                                    <?php endwhile; ?>
+                                    <?php wp_reset_postdata(); endif; endwhile; ?>
 
                                 </div>
                             </section>
