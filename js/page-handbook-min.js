@@ -1,1 +1,1 @@
-jQuery;
+!function($){"use strict";document.querySelector(".go-to").addEventListener("click",(()=>{((e,t=250,o=0,c=0)=>{setTimeout((()=>{$([document.documentElement,document.body]).animate({scrollTop:$(e).offset().top-c},t,"linear")}),o)})(".category")}));const e=document.querySelectorAll(".card");for(const t of e)t.addEventListener("click",(e=>{location.href=t.querySelector(".open").href}))}(jQuery);

@@ -176,11 +176,11 @@
 							<header class="card-meta">
 
                                 <?php
-                                    if( have_rows('repeater_card_meta') ):
-                                        while( have_rows('repeater_card_meta') ) : the_row();
+                                if( have_rows('repeater_card_meta') ):
+                                while( have_rows('repeater_card_meta') ) : the_row();
 
-                                            $label       = get_sub_field('card_meta_label');
-                                            $description = get_sub_field('card_meta_description');
+                                $label       = get_sub_field('card_meta_label');
+                                $description = get_sub_field('card_meta_description');
                                 ?>
 
 								<p><strong><?php echo $label; ?>:</strong> <?php echo $description; ?></p>
@@ -206,21 +206,27 @@
                             <?php } ?>
                         </section>
 
+                        <?php 
+                        $card_steps = get_field('repeater_card_steps');
+                        $card_tools = get_field('repeater_card_steps');
+                        if ($card_steps > 0 || $card_tools > 0) :
+                        ?>
+
                         <div class="tabs">
+                            <?php if ( have_rows('repeater_card_steps') ) : ?>
 
                             <section class="steps tab active">
                                 <header class="tab-button">
                                     <h2>How to</h2>
                                 </header>
-
                                 <?php
-                                if ( have_rows('repeater_card_steps') ):
-                                while ( have_rows('repeater_card_steps') ) : the_row();
+                                    while ( have_rows('repeater_card_steps') ) : the_row();
 
-                                $title      = get_sub_field('card_step_title');
-                                $content    = get_sub_field('card_step_content');
-                                $tools      = get_sub_field('card_step_tools');
+                                    $title      = get_sub_field('card_step_title');
+                                    $content    = get_sub_field('card_step_content');
+                                    $tools      = get_sub_field('card_step_tools');
                                 ?>
+
 
                                 <article class="step container-expandable">
                                     <h3><?php echo $title; ?></h3>
@@ -252,9 +258,12 @@
                                 </article>
 
 
-                                <?php endwhile; endif; ?>
+                                <?php endwhile; ?>
 
                             </section>
+
+                            <?php endif; 
+                            if( have_rows('repeater_card_tools') ): ?>
 
                             <section class="tools tab" id="tools">
                                 <header class="tab-button">
@@ -262,7 +271,6 @@
                                 </header>
 
                                 <?php
-                                if( have_rows('repeater_card_tools') ):
                                 while( have_rows('repeater_card_tools') ) : the_row();
                                 $tool           = get_sub_field('card_tool');
 
@@ -282,11 +290,13 @@
 
                                 </article>
 
-                                <?php endwhile; endif; ?>
+                                <?php endwhile; ?>
 
                             </section>
 
                         </div>
+                        <?php endif; 
+                        endif; ?>
 
 
                         <?php if( have_rows('repeater_card_examples') ): ?>
@@ -339,9 +349,10 @@
                                         echo $content;
                                         echo $link;
                                         ?>
-                                </article>
+                                    </article>
 
                                     <?php endwhile; ?>
+
                                 </div>
                             </section>
 
