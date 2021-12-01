@@ -149,14 +149,13 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
     const toolsTab = document.querySelector(`.tab.tools`)
 
     if (toolName) {
+
         stepsTab.classList.remove(`active`)
         toolsTab.classList.add(`active`)
 
         const tool = document.querySelector(`.tool#tool-${toolName}`)
 
-        if (tool) {
-            scrollTo(tool, 250, 0, 32)
-        }
+        if (tool) scrollTo(tool, 250, 0, 32)
     }
 
 })( jQuery );

@@ -75,9 +75,9 @@
                     $nextID = $cards[$current+1];
                     
                     if($current == get_the_ID($post)){ 
-                        $active = 'class="active"'; 
+                        $active_class = 'class="active"'; 
                     } else { 
-                        $active = '';  
+                        $active_class = '';  
                     }
                     
                     if($cards > 1) {
@@ -87,9 +87,9 @@
                         <a href="<?php echo get_permalink($post->post_parent); ?>" title="All cards"><span>All cards</span></a>
                         
                         <?php if ($prevID != 1) { ?>
-                                <a class="previous" href="<?php echo get_permalink($prevID); ?>" title="Previous card"><-</a>
+                                <a class="previous" href="<?php echo get_permalink($prevID); ?>" title="Previous card">&larr;</a>
                         <?php } else { ?>
-                                <a class="previous" href="<?php echo get_permalink($lastID); ?>" title="Previous card"><-</a>
+                                <a class="previous" href="<?php echo get_permalink($lastID); ?>" title="Previous card">&larr;</a>
                         <?php } ?>
 
                         <?php 
@@ -106,17 +106,17 @@
                                 
                                 $i = 1;
                                 while ( $cards->have_posts() ) : $cards->the_post();
-                                if($current_cardID == get_the_ID()){ $active = 'class="active"'; } else { $active = '';  }
+                                if($current_cardID == get_the_ID()){ $active_class = 'class="active"'; } else { $active_class = '';  }
                         ?>
 
-                        <a <?php echo $active; ?> href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo $i++; ?></a>
+                        <a <?php echo $active_class; ?> href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo $i++; ?></a>
 
                         <?php endwhile; wp_reset_postdata(); endif; ?>
 
                         <?php if ($nextID != $lastID) { ?>
-                                <a class="next" href="<?php echo get_permalink($nextID); ?>" title="Next card">-></a>
+                                <a class="next" href="<?php echo get_permalink($nextID); ?>" title="Next card">&rarr;</a>
                         <?php } else { ?>
-                                <a class="next" href="<?php echo get_permalink($firstID); ?>" title="Next card">-></a>
+                                <a class="next" href="<?php echo get_permalink($firstID); ?>" title="Next card">&rarr;</a>
                         <?php }?>
                     </nav>
 
@@ -171,7 +171,15 @@
 
                         </header>
 
-                        <section class="intro container-expandable">
+                        <?php
+                            $content = get_the_content();
+                            if(!empty($content)) {
+                                $expandable_class = 'expandable-container';
+                            } else {
+                                $expandable_class = '';
+                            }
+                        ?>
+                        <section class="intro <?php echo $expandable_class; ?>">
 							<header class="card-meta">
 
                                 <?php
@@ -187,8 +195,6 @@
                                 <?php
                                         endwhile; 
                                     endif;
-
-                                    $content = get_the_content();
 
                                     if(!empty($content)){
                                 ?>
@@ -230,7 +236,7 @@
                                 <article class="step container-expandable">
                                     <h3><?php echo $title; ?></h3>
 
-                                    <?php if(!empty($content)) { ?>
+                                    <?php if( !empty($content) ): ?>
                                         <button class="button-expandable"><span>&darr;</span></button>
 
                                         <div class="expandable">
@@ -249,14 +255,24 @@
                                             $slug           = sanitize_title( $title );
                                             $excerpt        = get_the_excerpt( $post->ID );
                                             ?>
+
                                             <article class="tool">
                                                 <h3><?php echo $title; ?></h3>
-                                                <?php if(!empty($excerpt)) { echo '<p>'.$excerpt.'</p>'; } ?>
-                                                <a href="?tool=<?php echo $slug; ?>">Learn more -></a>
+
+                                                <?php
+                                                
+                                                if( !empty($excerpt)) {
+                                                    echo '<p>'.$excerpt.'</p>';
+                                                }
+                                                
+                                                ?>
+
+                                                <a href="?tool=<?php echo $slug; ?>">Learn more &rarr;</a>
                                             </article>
                                             <?php  wp_reset_postdata(); endif; endwhile; endif; ?>
                                         </div>
-                                    <?php } ?>
+                                        
+                                    <?php endif; ?>
 
                                 </article>
 
@@ -291,7 +307,7 @@
                                     <?php if(!empty($excerpt)) { echo '<p>'.$excerpt.'</p>'; } ?>
 
                                     <?php if(!empty($link)) { ?>
-                                    <a href="<?php echo esc_url($link); ?>">Learn more -></a>
+                                    <a href="<?php echo esc_url($link); ?>">Learn more &rarr;</a>
                                     <?php } ?>
 
                                 </article>
@@ -372,8 +388,8 @@
                             </header>
 
                             <ul>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/img/icon-slack.svg" alt="Icon slack"> <p>Want to learn and exchange with fellow changemakers? <a href="#">Join the conversation on Slack -></a></p></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/img/icon-email-black.svg" alt="Icon email"> <p>Looking for some advice or would like to collaborate with Mindworks? <a href="#">Ask us anything -></a></p></li>
+                                <li><img src="<?php echo get_template_directory_uri(); ?>/img/icon-slack.svg" alt="Icon slack"> <p>Want to learn and exchange with fellow changemakers? <a href="#">Join the conversation on Slack &rarr;</a></p></li>
+                                <li><img src="<?php echo get_template_directory_uri(); ?>/img/icon-email-black.svg" alt="Icon email"> <p>Looking for some advice or would like to collaborate with Mindworks? <a href="#">Ask us anything &rarr;</a></p></li>
                             </ul>
 
                         </footer>
