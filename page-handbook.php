@@ -30,13 +30,17 @@
             </div>
 
             <?php
+
+            $cat_global = get_cat_ID('Global');
+            $cat_card = get_cat_ID('Card');
+
             // Get handbook sections, organized by categories
             // Get handbook cards, organized by categories
 
             foreach( $postcat as $cat ) {
                 // WP_Query arguments
                 $args = array(
-                    'post_type'      => 'page',
+                    'post_type'      => array('page', 'post'),
                     'posts_per_page' => -1,
                     'post_parent'    => $post->ID,
                     'cat'            => $cat->cat_ID,
@@ -89,35 +93,44 @@
             <?php // Closing if + foreach
                     }
                 }
+
+                $args = array(
+                    'post_type'      => 'page',
+                    'posts_per_page' => -1,
+                    'orderby'        => 'menu_order',
+                    'order'          => 'ASC',
+                    'category__and'  => array($cat_global, $cat_card)
+                );
+
+                $cards_global = new WP_Query( $args );
+
+                if ( $cards_global->have_posts() ) {
+
             ?>
 
             <section class="category special">
                 <header>
-                    <h2>Special cards</h2>
-                    <p></p>
+                    <h2>Special Cards</h2>
                 </header>
+
+                <?php while ( $cards_global->have_posts() ) : $cards_global->the_post();?>
 
                 <article class="card">
                     <header>
-                        <h3>Special card 1</h3>
+                        <h3><?php echo get_the_title(); ?></h3>
                         <figure>
                             <img src="<?php echo get_template_directory_uri(); ?>/img/icon-sense.svg" alt="">
                         </figure>
                         <a class="button open" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">Open card</a>
                     </header>
-                    <p>Orienting yourself quickly is crucial in any crisis - observe the crisis unfolding, speak to different audiences and do quick ...</p>
+                    <p><?php echo limit_text(get_the_excerpt(), 20) ?></p>
                 </article>
-                <article class="card">
-                    <header>
-                        <h3>Special card 2</h3>
-                        <figure>
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/icon-sense.svg" alt="">
-                        </figure>
-                        <a class="button open" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">Open card</a>
-                    </header>
-                    <p>Orienting yourself quickly is crucial in any crisis - observe the crisis unfolding, speak to different audiences and do quick ...</p>
-                </article>
+
+                <?php endwhile; ?>
+
             </section>
+
+        <?php } ?>
 
         <?php endwhile; endif; ?>
 
