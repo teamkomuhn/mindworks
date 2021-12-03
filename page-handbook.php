@@ -31,6 +31,7 @@
 
             <?php
 
+            $cat_specialcard = get_cat_ID('Special card');
             $cat_global = get_cat_ID('Global');
             $cat_card = get_cat_ID('Card');
 
@@ -99,7 +100,7 @@
                     'posts_per_page' => -1,
                     'orderby'        => 'menu_order',
                     'order'          => 'ASC',
-                    'category__and'  => array($cat_global, $cat_card)
+                    'category__and'  => array($cat_specialcard, $cat_card)
                 );
 
                 $cards_global = new WP_Query( $args );
