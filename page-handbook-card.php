@@ -55,57 +55,67 @@
                     <?php
                     $current_cardID = get_the_ID();
 
-                    $cardslist = get_pages(array(
+                    $cat_global     = get_cat_ID('Global');
+                    $cat_card       = get_cat_ID('Card');
+
+                    $cards_handbook = get_posts(array(
+                        'fields'         => 'ids',
+                        'post_type'      => 'page',
+                        'posts_per_page' => -1,
                         'child_of'    => $post->post_parent,
-                        'sort_column' => 'menu_order',
-                        //'sort_order'  => 'ASC',
                     ));
-                    $cards = array();
+                    var_dump($cards_handbook);
 
-                    foreach ($cardslist as $card) {
-                        $cards[] += $card->ID;
-                    }
+                    $cards_global   = get_posts(array(
+                        'fields'         => 'ids',
+                        'post_type'      => 'page',
+                        'posts_per_page' => -1,
+                        'category__and'  => array($cat_global, $cat_card)
+                    ));
+                    var_dump($cards_global);
 
-                    $firstID    = $cards[0];
-                    $lastID     = end($cards);
-                    $total      = count($cards);
+                    $cardslist = array_merge($cards_handbook, $cards_global);
 
-                    $current = array_search(get_the_ID(), $cards);
-                    $prevID = $cards[$current-1];
-                    $nextID = $cards[$current+1];
+                    $firstID    = $cardslist[0];
+                    $lastID     = end($cardslist);
+                    $total      = count($cardslist);
+
+                    $current = array_search(get_the_ID(), $cardslist);
+                    $prevID = $cardslist[$current-1];
+                    $nextID = $cardslist[$current+1];
                     
                     if($current == get_the_ID($post)){ 
                         $active_class = 'class="active"'; 
                     } else { 
                         $active_class = '';  
                     }
-                    
-                    if($cards > 1) {
+
+                    if($cardslist > 1) {
                     ?>
                    
                     <nav class="cards-nav">
                         <a href="<?php echo get_permalink($post->post_parent); ?>" title="All cards"><span>All cards</span></a>
                         
-                        <?php if ($prevID != 1) { ?>
+                        <?php if ($prevID != '') {?>
                                 <a class="previous" href="<?php echo get_permalink($prevID); ?>" title="Previous card">&larr;</a>
                         <?php } else { ?>
                                 <a class="previous" href="<?php echo get_permalink($lastID); ?>" title="Previous card">&larr;</a>
                         <?php } ?>
 
                         <?php 
-                            $args = array(
-                                'post_type'      => 'page',
-                                'posts_per_page' => -1,
-                                //'post__not_in'   => array($firstID, $lastID),
-                                'post_parent'    => $post->post_parent
-                            );
-                            
-                            // The Query
-                            $cards = new WP_Query( $args );
-                            if ( $cards->have_posts() ) :
+                            // the main query
+                            $query_cardslist = new WP_Query(array(
+                                'post__in'          => $cardslist,
+                                'post_type'         => 'page',
+                                'posts_per_page'    => -1,
+                                'orderby'           => 'menu_order',
+                                'order'             => 'ASC'
+                            ));
+
+                            if ( $query_cardslist->have_posts() ) :
                                 
                                 $i = 1;
-                                while ( $cards->have_posts() ) : $cards->the_post();
+                                while ( $query_cardslist->have_posts() ) : $query_cardslist->the_post();
                                 if($current_cardID == get_the_ID()){ $active_class = 'class="active"'; } else { $active_class = '';  }
                         ?>
 
@@ -113,7 +123,7 @@
 
                         <?php endwhile; wp_reset_postdata(); endif; ?>
 
-                        <?php if ($nextID != $lastID) { ?>
+                        <?php if ($nextID != '') { ?>
                                 <a class="next" href="<?php echo get_permalink($nextID); ?>" title="Next card">&rarr;</a>
                         <?php } else { ?>
                                 <a class="next" href="<?php echo get_permalink($firstID); ?>" title="Next card">&rarr;</a>
@@ -174,7 +184,7 @@
                         <?php
                             $content = get_the_content();
                             if(!empty($content)) {
-                                $expandable_class = 'expandable-container';
+                                $expandable_class = 'container-expandable';
                             } else {
                                 $expandable_class = '';
                             }
@@ -196,19 +206,19 @@
                                         endwhile; 
                                     endif;
 
-                                    if(!empty($content)){
+                                    if(!empty($content)) :
                                 ?>
 
 								<button class="button-expandable" type="button"><span>Read more &darr;</span></button>
 
-                                <?php } ?>
+                                <?php endif; ?>
 							</header>
 
-                            <?php if(!empty($content)){ ?>
+                            <?php if(!empty($content)) : ?>
                                 <div class="content expandable">
                                     <?php echo $content; ?>
                                 </div>
-                            <?php } ?>
+                            <?php endif; ?>
                         </section>
 
                         <?php 
