@@ -243,7 +243,7 @@ body.page-handbook-card {
                             margin: 0 var(--spacing-x) 1.5em;
                             border-bottom: 1px dotted #666;
 
-                            h3 {
+                            > h3 {
                                 display: flex;
                                 flex-flow: row nowrap;
                                 margin-right: 1.2em; //Space for button
@@ -290,7 +290,7 @@ body.page-handbook-card {
                                 }
 
                                 &.expanded {
-                                    padding-bottom: 2rem;
+                                    padding-bottom: 3rem;
 
                                     > .button-expandable {
                                         top: auto; bottom: 0;
@@ -307,13 +307,32 @@ body.page-handbook-card {
                                     }
                                 }
                             }
-                            article.tool {
-    
-                                h3 {
-                                    &:before {
-                                        display: none;
+
+                            aside.related.tools {
+
+                                h4 {
+                                    text-transform: uppercase;
+                                    color: @color-yellow-light;
+                                    padding-bottom: 1em;
+                                }
+
+                                ul {
+                                    list-style: none;
+                                    padding: 0; margin: 0;
+
+                                    li.related.tool {
+                                        border: .5px solid #666;
+                                        padding: var(--spacing-x);
+                                        margin-bottom: 1em;
+
+                                        h5 {
+                                            font-size: var(--font-size-p);
+                                            font-weight: bold;
+                                            padding-bottom: .5em;
+                                        }
                                     }
                                 }
+
                             }
                         }
 
@@ -675,7 +694,7 @@ div.tabs { // TODO: Move this to main css?
                         }
 
                         &.steps {
-                            > article {
+                            article.step {
                                 margin: 0 var(--spacing-y) 1.5em;
 
                                 h3 {
@@ -685,7 +704,26 @@ div.tabs { // TODO: Move this to main css?
                                     }
                                 }
 
+                                aside.related.tools {
+                                    margin-top: 2rem;
 
+                                    h4 {
+                                        font-weight: bold;
+                                    }
+
+                                    ul {
+                                        display: flex;
+                                        flex-flow: row wrap;
+                                        margin-right: -1rem;
+
+                                        li.related.tool {
+                                            padding: 2rem;
+                                            margin: 0 1rem 1rem 0;
+                                            flex: 1 1 auto;
+                                        }
+                                    }
+
+                                }
                             }
                         }
 

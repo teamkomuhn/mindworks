@@ -126,7 +126,7 @@
 
     </section>
 
-<?php endif; ?>
+    <?php endif; ?>
 
     <?php endwhile; endif; ?>
 

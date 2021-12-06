@@ -1579,6 +1579,17 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/js/page-handbook-card.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/page-handbook-card-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/js/page-handbook-min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -1695,6 +1706,22 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/LICENSE.txt",
+		"oF": 0
+		},
+	"/page-handbook-card.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/page-handbook-card.php",
+		"oF": 0
+		},
+	"/page-handbook.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/page-handbook.php",
 		"oF": 0
 		},
 	"/page-index.php": {
