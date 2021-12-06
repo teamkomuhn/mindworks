@@ -85,7 +85,7 @@
                 <nav class="cards-nav">
                     <a href="<?php echo get_permalink($post->post_parent); ?>" title="All cards"><span>All cards</span></a>
 
-                    <?php if ($prevID != 1) { ?>
+                    <?php if ($prevID != '') { ?>
                             <a class="previous" href="<?php echo get_permalink($prevID); ?>" title="Previous card">&larr;</a>
                     <?php } else { ?>
                             <a class="previous" href="<?php echo get_permalink($lastID); ?>" title="Previous card">&larr;</a>
@@ -112,7 +112,7 @@
 
                     <?php endwhile; wp_reset_postdata(); endif; ?>
 
-                    <?php if ($nextID != $lastID) { ?>
+                    <?php if ($nextID != '') { ?>
                             <a class="next" href="<?php echo get_permalink($nextID); ?>" title="Next card">&rarr;</a>
                     <?php } else { ?>
                             <a class="next" href="<?php echo get_permalink($firstID); ?>" title="Next card">&rarr;</a>
@@ -173,7 +173,7 @@
                     <?php
                         $content = get_the_content();
                         if(!empty($content)) {
-                            $expandable_class = 'expandable-container';
+                            $expandable_class = 'container-expandable';
                         } else {
                             $expandable_class = '';
                         }
