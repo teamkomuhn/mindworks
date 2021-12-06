@@ -223,66 +223,68 @@
                             <header class="tab-button">
                                 <h2>How to</h2>
                             </header>
-                            <?php
+
+                            <div class="container">
+                                <?php
                                 while ( have_rows('repeater_card_steps') ) : the_row();
 
                                 $title      = get_sub_field('card_step_title');
                                 $content    = get_sub_field('card_step_content');
                                 $tools      = get_sub_field('card_step_tools');
-                            ?>
+                                ?>
 
-                            <article class="step container-expandable">
-                                <h3><?php print $title; ?></h3>
+                                <article class="step container-expandable">
+                                    <h3><?php print $title; ?></h3>
 
-                                <?php if( !empty($content) ): ?>
-                                    <button class="button-expandable"><span>&darr;</span></button>
+                                    <?php if( !empty($content) ): ?>
+                                        <button class="button-expandable"><span>&darr;</span></button>
 
-                                    <div class="content expandable">
-                                        <?php print $content; ?>
+                                        <div class="content expandable">
+                                            <?php print $content; ?>
 
-                                        <?php // GET RELATED TOOLS
-                                        if ( have_rows('repeater_card_step_tools') ):
-                                        ?>
-                                        <aside class="related tools">
-                                            <h4>Related tools</h4>
-                                            <ul>
+                                            <?php // GET RELATED TOOLS
+                                            if ( have_rows('repeater_card_step_tools') ):
+                                            ?>
+                                            <aside class="related tools">
+                                                <h4>Related tools</h4>
+                                                <ul>
 
-                                                <?php
-                                                while ( have_rows('repeater_card_step_tools') ) : the_row();
-                                                $post_object = get_sub_field('card_step_tool');
+                                                    <?php
+                                                    while ( have_rows('repeater_card_step_tools') ) : the_row();
+                                                    $post_object = get_sub_field('card_step_tool');
 
-                                                if( $posts ):
-                                                $post = $post_object;
-                                                setup_postdata( $post );
+                                                    if( $posts ):
+                                                    $post = $post_object;
+                                                    setup_postdata( $post );
 
-                                                $title          = get_the_title( $post->ID );
-                                                $slug           = sanitize_title( $title );
-                                                $excerpt        = get_the_excerpt( $post->ID );
-                                                ?>
+                                                    $title          = get_the_title( $post->ID );
+                                                    $slug           = sanitize_title( $title );
+                                                    $excerpt        = get_the_excerpt( $post->ID );
+                                                    ?>
 
-                                                <li class="related tool">
-                                                    <h5><?php print $title; ?></h5>
+                                                    <li class="related tool">
+                                                        <h5><?php print $title; ?></h5>
 
-                                                    <!-- <?php if( !empty($excerpt) ) : ?>
-                                                    <p><?php print $excerpt; ?></p>
-                                                    <?php endif; ?> -->
+                                                        <!-- <?php if( !empty($excerpt) ) : ?>
+                                                        <p><?php print $excerpt; ?></p>
+                                                        <?php endif; ?> -->
 
-                                                    <a href="?tool=<?php echo $slug; ?>">Go to tool &rarr;</a>
-                                                </li>
+                                                        <a href="?tool=<?php echo $slug; ?>">Go to tool &rarr;</a>
+                                                    </li>
 
-                                            <?php  wp_reset_postdata(); endif; endwhile; ?>
-                                            </ul>
-                                        </aside>
+                                                <?php  wp_reset_postdata(); endif; endwhile; ?>
+                                                </ul>
+                                            </aside>
 
-                                        <?php endif; ?>
-                                    </div>
+                                            <?php endif; ?>
+                                        </div>
 
-                                <?php endif; ?>
+                                    <?php endif; ?>
 
-                            </article>
+                                </article>
 
-                            <?php endwhile; ?>
-
+                                <?php endwhile; ?>
+                            </div>
                         </section>
 
                         <?php endif;
@@ -293,35 +295,36 @@
                                 <h2>Tools</h2>
                             </header>
 
-                            <?php
-                            while( have_rows('repeater_card_tools') ) : the_row();
-                            $post_object = get_sub_field('card_tool');
+                            <div class="container">
+                                <?php
+                                while( have_rows('repeater_card_tools') ) : the_row();
+                                $post_object = get_sub_field('card_tool');
 
-                            if( $posts ):
-                            $post = $post_object;
-                            setup_postdata( $post );
+                                if( $posts ):
+                                $post = $post_object;
+                                setup_postdata( $post );
 
-                            $title          = get_the_title( $post->ID );
-                            $slug           = sanitize_title( $title );
-                            $excerpt        = get_the_excerpt( $post->ID );
-                            $link           = get_sub_field('card_tool_link');
-                            ?>
+                                $title          = get_the_title( $post->ID );
+                                $slug           = sanitize_title( $title );
+                                $excerpt        = get_the_excerpt( $post->ID );
+                                $link           = get_sub_field('card_tool_link');
+                                ?>
 
-                            <article class="tool" id="tool-<?php echo $slug; ?>">
-                                <h3><?php print $title; ?></h3>
+                                <article class="tool" id="tool-<?php echo $slug; ?>">
+                                    <h3><?php print $title; ?></h3>
 
-                                <?php if( !empty($excerpt) ) : ?>
-                                <p><?php print $excerpt; ?></p>
-                                <?php endif; ?>
+                                    <?php if( !empty($excerpt) ) : ?>
+                                    <p><?php print $excerpt; ?></p>
+                                    <?php endif; ?>
 
-                                <?php if( !empty($link) ) : ?>
-                                <a href="<?php echo esc_url($link); ?>">Learn more &rarr;</a>
-                                <?php endif; ?>
+                                    <?php if( !empty($link) ) : ?>
+                                    <a href="<?php echo esc_url($link); ?>">Learn more &rarr;</a>
+                                    <?php endif; ?>
 
-                            </article>
+                                </article>
 
                             <?php wp_reset_postdata(); endif; endwhile;  ?>
-
+                            </div>
                         </section>
 
                         <?php endif; ?>
