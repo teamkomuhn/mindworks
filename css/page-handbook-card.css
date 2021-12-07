@@ -439,7 +439,9 @@ div.tabs .tab .tab-button {
   cursor: pointer;
 }
 div.tabs .tab div.container {
-  display: none;
+  position: absolute;
+  left: -10000px;
+  top: -10000px;
 }
 div.tabs .tab:first-of-type .tab-button {
   top: 0;
@@ -455,7 +457,7 @@ div.tabs .tab.active .tab-button {
   position: relative;
 }
 div.tabs .tab.active div.container {
-  display: block;
+  position: inherit;
 }
 @media only screen and (min-width: 1201px) {
   body.page-handbook-card main {

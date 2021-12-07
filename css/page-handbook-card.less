@@ -614,8 +614,11 @@ div.tabs { // TODO: Move this to main css?
             cursor: pointer;
         }
 
-        div.container {
-            display: none;
+        div.container { // Hide container
+            // display: none;
+            // visibility: hidden;
+            position: absolute;
+            left: -10000px; top: -10000px;
         }
 
         &:first-of-type {
@@ -635,8 +638,10 @@ div.tabs { // TODO: Move this to main css?
                 position: relative;
             }
 
-            div.container { 
-                display: block;
+            div.container { // Show container
+                // display: block;
+                // visibility: visible;
+                position: inherit;
             }
         }
     }
