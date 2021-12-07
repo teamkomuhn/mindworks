@@ -52,67 +52,77 @@
             <section class="cards-slider" <?php echo $cat_color; ?>>
 
                 <?php
-                $current_cardID = get_the_ID();
+                    $current_cardID = get_the_ID();
 
-                $cardslist = get_pages(array(
-                    'child_of'    => $post->post_parent,
-                    'sort_column' => 'menu_order',
-                    //'sort_order'  => 'ASC',
-                ));
-                $cards = array();
+                    $cat_global     = get_cat_ID('Getting prepared');
+                    $cat_card       = get_cat_ID('Card');
 
-                foreach ($cardslist as $card) {
-                    $cards[] += $card->ID;
-                }
+                    $cards_handbook = get_posts(array(
+                        'fields'         => 'ids',
+                        'post_type'      => 'page',
+                        'posts_per_page' => -1,
+                        'child_of'       => $post->post_parent,
+                        'category__in'  => $cat_card
+                    ));
 
-                $firstID    = $cards[0];
-                $lastID     = end($cards);
-                $total      = count($cards);
+                    $cards_global   = get_posts(array(
+                        'fields'         => 'ids',
+                        'post_type'      => 'page',
+                        'posts_per_page' => -1,
+                        'cat'            => array($cat_card)
+                    ));
 
-                $current = array_search(get_the_ID(), $cards);
-                $prevID = $cards[$current-1];
-                $nextID = $cards[$current+1];
+                    $cardslist = array_merge($cards_handbook, $cards_global);
 
-                if($current == get_the_ID($post)){
-                    $active_class = 'class="active"';
-                } else {
-                    $active_class = '';
-                }
+                    $firstID    = $cardslist[0];
+                    $lastID     = end($cardslist);
+                    $total      = count($cardslist);
 
-                if($cards > 1) {
+                    $current = array_search(get_the_ID(), $cardslist);
+                    $prevID = $cardslist[$current-1];
+                    $nextID = $cardslist[$current+1];
+                    
+                    if($current == get_the_ID($post)){ 
+                        $active_class = 'class="active"'; 
+                    } else { 
+                        $active_class = '';  
+                    }
+
+                    if($cardslist > 1) {
                 ?>
 
                 <nav class="cards-nav">
                     <a href="<?php echo get_permalink($post->post_parent); ?>" title="All cards"><span>All cards</span></a>
 
-                    <?php if ($prevID != '') { ?>
+                    <?php if (!empty($prevID)) { 
+                    ?>
                             <a class="previous" href="<?php echo get_permalink($prevID); ?>" title="Previous card">&larr;</a>
                     <?php } else { ?>
                             <a class="previous" href="<?php echo get_permalink($lastID); ?>" title="Previous card">&larr;</a>
                     <?php } ?>
 
                     <?php
-                        $args = array(
-                            'post_type'      => 'page',
-                            'posts_per_page' => -1,
-                            //'post__not_in'   => array($firstID, $lastID),
-                            'post_parent'    => $post->post_parent
-                        );
+                        // the main query
+                        $query_cardslist = new WP_Query(array(
+                            'post__in'          => $cardslist,
+                            'post_type'         => 'page',
+                            'posts_per_page'    => -1,
+                            'orderby'           => 'menu_order',
+                            'order'             => 'ASC'
+                        ));
 
-                        // The Query
-                        $cards = new WP_Query( $args );
-                        if ( $cards->have_posts() ) :
-
+                        if ( $query_cardslist->have_posts() ) :
+                            
                             $i = 1;
-                            while ( $cards->have_posts() ) : $cards->the_post();
-                            if($current_cardID == get_the_ID()){ $active_class = 'class="active"'; } else { $active_class = '';  }
+                            while ( $query_cardslist->have_posts() ) : $query_cardslist->the_post();
+                        if($current_cardID == get_the_ID()){ $active_class = 'class="active"'; } else { $active_class = '';  }
                     ?>
 
                     <a <?php echo $active_class; ?> href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo $i++; ?></a>
 
                     <?php endwhile; wp_reset_postdata(); endif; ?>
 
-                    <?php if ($nextID != '') { ?>
+                    <?php if (!empty($nextID)) { ?>
                             <a class="next" href="<?php echo get_permalink($nextID); ?>" title="Next card">&rarr;</a>
                     <?php } else { ?>
                             <a class="next" href="<?php echo get_permalink($firstID); ?>" title="Next card">&rarr;</a>
@@ -275,9 +285,7 @@
                                                     <li class="related tool">
                                                         <h5><?php print $title; ?></h5>
 
-                                                        <!-- <?php if( !empty($excerpt) ) : ?>
-                                                        <p><?php print $excerpt; ?></p>
-                                                        <?php endif; ?> -->
+                                                        <!-- <p><?php //print $excerpt; ?></p> -->
 
                                                         <a href="?tool=<?php echo $slug; ?>">Go to tool &rarr;</a>
                                                     </li>
@@ -320,18 +328,15 @@
                                 $link           = get_sub_field('card_tool_link');
                                 ?>
 
-                                <article class="tool" id="tool-<?php echo $slug; ?>">
-                                    <h3><?php print $title; ?></h3>
+                            <article class="tool" id="tool-<?php echo $slug; ?>">
+                                <h3><?php print $title; ?></h3>
+                                <p><?php print $excerpt; ?></p>
+                                
+                                <?php if( !empty($link) ) : ?>
+                                <a href="<?php echo esc_url($link); ?>">Learn more &rarr;</a>
+                                <?php endif; ?>
 
-                                    <?php if( !empty($excerpt) ) : ?>
-                                    <p><?php print $excerpt; ?></p>
-                                    <?php endif; ?>
-
-                                    <?php if( !empty($link) ) : ?>
-                                    <a href="<?php echo esc_url($link); ?>">Learn more &rarr;</a>
-                                    <?php endif; ?>
-
-                                </article>
+                            </article>
 
                             <?php wp_reset_postdata(); endif; endwhile;  ?>
                             </div>
