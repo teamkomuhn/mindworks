@@ -150,7 +150,7 @@ body.page-handbook-card {
                         }
                     }
 
-                    > article {
+                    article {
 
                         h3 {
                             font-weight: bold;
@@ -163,7 +163,7 @@ body.page-handbook-card {
                         }
 
                         a {
-                            color: @color-card;
+                            color: @color-yellow-light;
                         }
 
                         figure {
@@ -267,6 +267,32 @@ body.page-handbook-card {
                                 }
                             }
 
+                            aside.related.tools {
+
+                                h4 {
+                                    text-transform: uppercase;
+                                    color: @color-yellow-light;
+                                    padding-bottom: 1em;
+                                }
+
+                                ul {
+                                    list-style: none;
+                                    padding: 0; margin: 0;
+
+                                    li.related.tool {
+                                        border: .5px solid #666;
+                                        padding: var(--spacing-x);
+                                        margin-bottom: 1em;
+
+                                        h5 {
+                                            font-size: var(--font-size-p);
+                                            font-weight: bold;
+                                            padding-bottom: .5em;
+                                        }
+                                    }
+                                }
+                            }
+
                             &:last-of-type {
                                 border-bottom: none;
                                 margin-bottom: var(--spacing-y);
@@ -307,33 +333,10 @@ body.page-handbook-card {
                                     }
                                 }
                             }
+                        }
 
-                            aside.related.tools {
-
-                                h4 {
-                                    text-transform: uppercase;
-                                    color: @color-yellow-light;
-                                    padding-bottom: 1em;
-                                }
-
-                                ul {
-                                    list-style: none;
-                                    padding: 0; margin: 0;
-
-                                    li.related.tool {
-                                        border: .5px solid #666;
-                                        padding: var(--spacing-x);
-                                        margin-bottom: 1em;
-
-                                        h5 {
-                                            font-size: var(--font-size-p);
-                                            font-weight: bold;
-                                            padding-bottom: .5em;
-                                        }
-                                    }
-                                }
-
-                            }
+                        &.tab {
+                            padding: 0;
                         }
 
                         &.active {
@@ -344,18 +347,37 @@ body.page-handbook-card {
                     }
 
                     &.tools {
+
                         header {
                             background-image: url("../img/icon-hand-black.svg");
                         }
 
-                        > article {
+                        article {
                             margin: 0 var(--spacing-x) 1.5em;
                             border: .5px solid #666;
                             padding: var(--spacing-x);
 
+                            > h3 {
+                                font-weight: bold;
+                                padding-bottom: .5em;
+                            }
+
+                            > p {
+                                padding-bottom: .5em;
+                            }
+
+                            > a {
+                                color: @color-yellow-light;
+                            }
+
                             &:last-of-type {
                                 margin-bottom: var(--spacing-y);
                             }
+
+                        }
+
+                        &.tab {
+                            padding: 0;
                         }
 
                         &.active {
@@ -366,62 +388,12 @@ body.page-handbook-card {
                     }
 
                     &.examples {
-                        /*
-                        header {
-                            background-image: url("../img/icon-example-black.svg");
-                        }
-
-                        ol.examples-nav {
-                            padding: 0;
-                            margin-top: -1em;
-                            list-style: none;
-
-                            display: flex;
-                        	flex-flow: row wrap;
-                            justify-content: center;
-                            align-items: center;
-
-                            background-image: url("../img/icon-swipe-black.svg");
-                            background-repeat: no-repeat;
-                            background-position: right center;
-                            background-size: contain;
-
-                            li {
-                                font-size: 1.3em;
-                                cursor: pointer;
-                                margin: 0 .1em;
-
-                                span {
-                                    display: none;
-                                }
-
-                                &::after {
-                                    content: "○";
-                                }
-
-                                &.active {
-                                    &::after {
-                                        // content: "●";
-                                        content: "◉";
-                                    }
-                                }
-                            }
-                        }
-
-                        article.example {
-                            border-top: 1px dotted #666;
-                            padding-top: 1em;
-
-                            > a {
-                                color: @color-black;
-                            }
-                        }
-                        */
 
                         header {
                             background-image: url("../img/icon-example-black.svg");
                         }
 
+                        // ol.examples-nav
                         .swiper-pagination {
                             position: static;
 
@@ -438,22 +410,22 @@ body.page-handbook-card {
                             background-repeat: no-repeat;
                             background-position: right center;
                             background-size: contain;
-                        }
 
-                        .swiper-pagination-bullet {
-                            display: contents;
-                        }
+                            .swiper-pagination-bullet {
+                                display: contents;
+                            }
 
-                        .swiper-pagination-bullet::before {
-                            content: "\25CB"; // Unicode hex for ○
+                            .swiper-pagination-bullet::before {
+                                content: "\25CB"; // Unicode hex for ○
 
-                            font-size: 1.3em;
-                            cursor: pointer;
-                            margin: 0 .1em;
-                        }
+                                font-size: 1.3em;
+                                cursor: pointer;
+                                margin: 0 .1em;
+                            }
 
-                        .swiper-pagination-bullet-active::before {
-                            content: "\25C9"; // Unicode hex for ◉
+                            .swiper-pagination-bullet-active::before {
+                                content: "\25C9"; // Unicode hex for ◉
+                            }
                         }
 
                         article.example {
@@ -480,10 +452,10 @@ body.page-handbook-card {
                                 margin-bottom: 1em;
                                 font-size: var(--font-size-small);
                             }
-
-                            > a {
+                            a {
                                 color: @color-black;
                             }
+
                         }
                     }
 
@@ -494,13 +466,12 @@ body.page-handbook-card {
                     color: @color-white;
 
                     > section {
-                        padding: 0;
-                        // padding-bottom: var(--spacing-y);
 
                         header {
                             background-position: var(--spacing-x) center;
                             background-color: @color-grey;
                             color: @color-black;
+                            height: fit-content;
 
                             h2 {
                                 line-height: 3em;
@@ -508,15 +479,10 @@ body.page-handbook-card {
                             }
                         }
 
-                        &:last-of-type {
-
-                        }
-
                         &.active {
                             header {
                                 background-color: @color-black;
                                 color: @color-white;
-
                             }
                         }
                     }
@@ -598,10 +564,12 @@ div.tabs { // TODO: Move this to main css?
             cursor: pointer;
         }
 
-        > * { // All children elements
-            display: none;
+        div.container { // Hide container
+            // display: none;
+            // visibility: hidden;
+            position: absolute;
+            left: -10000px; top: -10000px;
         }
-
 
         &:first-of-type {
             .tab-button {
@@ -620,13 +588,13 @@ div.tabs { // TODO: Move this to main css?
                 position: relative;
             }
 
-            > * { // All children elements
-                display: block;
+            div.container { // Show container
+                // display: block;
+                // visibility: visible;
+                position: inherit;
             }
         }
     }
-
-
 }
 
 // DESKTOP
@@ -673,7 +641,7 @@ div.tabs { // TODO: Move this to main css?
                             }
                         }
 
-                        > article {
+                        article {
 
                             h3 {
                                 font-weight: normal;
@@ -728,15 +696,37 @@ div.tabs { // TODO: Move this to main css?
                         }
 
                         &.tools {
-                            display: flex;
-                            flex-flow: row wrap;
 
-                            > article {
-                                // flex: 1 1 calc( 50% - (2 * var(--spacing-y)) );
-                                // max-width: calc( 2 * var(--spacing-y) );
-                                // max-width: 200px;
-                                margin: 0 var(--spacing-y) 1.5em;
+                            padding: 0 var(--spacing-y) !important;
+
+                            > header {
+                                margin: 0;
+                            }
+
+                            div.container {
+                                display: flex;
+                                flex-flow: row wrap;
+
+                                margin-right: -2rem;
+                                padding: var(--spacing-y) 0 0 0;
+                            }
+
+                            article {
+                                margin: 0 2rem 2rem 0;
                                 padding: 2rem;
+
+                                flex: 1 1 calc( 50% - 6rem - 2px );
+                                // max-width: calc( 50% - 6rem - 2px );
+
+                                > h3 {
+                                    font-size: var(--font-size-biggish);
+                                    font-weight: normal;
+                                    padding-bottom: 1em;
+                                }
+
+                                > p {
+                                    padding-bottom: 1em;
+                                }
 
                             }
                         }
@@ -764,6 +754,8 @@ div.tabs { // TODO: Move this to main css?
                                 > p {
                                     clear: left;
                                 }
+
+
                             }
                         }
 
