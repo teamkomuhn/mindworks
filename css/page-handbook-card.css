@@ -75,6 +75,9 @@ body.page-handbook-card main section.cards-slider article.card > header p {
 }
 body.page-handbook-card main section.cards-slider article.card > header div.companion-content {
   order: 3;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
 }
 body.page-handbook-card main section.cards-slider article.card > header div.companion-content figure.companion-image {
   width: 100%;
@@ -83,6 +86,19 @@ body.page-handbook-card main section.cards-slider article.card > header div.comp
 body.page-handbook-card main section.cards-slider article.card > header div.companion-content figure.companion-image img {
   width: 100%;
   height: auto;
+}
+body.page-handbook-card main section.cards-slider article.card > header div.companion-content button.companion {
+  height: 1.5rem;
+  width: 3.1rem;
+  margin-left: auto;
+  background-image: url("../img/bkg-button-slide.svg");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: right;
+  border: 0;
+}
+body.page-handbook-card main section.cards-slider article.card > header div.companion-content button.companion span {
+  display: none;
 }
 body.page-handbook-card main section.cards-slider article.card section {
   padding: var(--spacing-y) var(--spacing-x);

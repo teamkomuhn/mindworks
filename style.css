@@ -488,6 +488,44 @@ header.main-header nav.main-nav {
   color: var(--color-white);
 }
 /* BLOCKS SIDENOTE */
+aside.slide {
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: var(--color-black);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  transform: translateX(100vw);
+  width: auto;
+}
+aside.slide figure {
+  width: 100%;
+}
+aside.slide figure img {
+  width: inherit;
+}
+aside.slide div.buttons {
+  position: fixed;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  background-color: white;
+}
+aside.slide.started {
+  transition: transform 0.5s ease;
+}
+aside.slide.opened {
+  transform: translateX(0vw);
+}
+@media only screen and (min-width: 1201px) {
+  aside.slide {
+    left: auto;
+    max-width: var(--main-width-pad);
+  }
+}
 section.latest-work {
   position: relative;
   overflow: hidden;
