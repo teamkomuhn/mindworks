@@ -263,59 +263,6 @@ body.page-handbook-card main section.cards-slider article.card section.tools.tab
 body.page-handbook-card main section.cards-slider article.card section.tools.active header {
   background-image: url("../img/icon-hand-white.svg");
 }
-body.page-handbook-card main section.cards-slider article.card section.examples {
-  /*
-                        header {
-                            background-image: url("../img/icon-example-black.svg");
-                        }
-
-                        ol.examples-nav {
-                            padding: 0;
-                            margin-top: -1em;
-                            list-style: none;
-
-                            display: flex;
-                        	flex-flow: row wrap;
-                            justify-content: center;
-                            align-items: center;
-
-                            background-image: url("../img/icon-swipe-black.svg");
-                            background-repeat: no-repeat;
-                            background-position: right center;
-                            background-size: contain;
-
-                            li {
-                                font-size: 1.3em;
-                                cursor: pointer;
-                                margin: 0 .1em;
-
-                                span {
-                                    display: none;
-                                }
-
-                                &::after {
-                                    content: "○";
-                                }
-
-                                &.active {
-                                    &::after {
-                                        // content: "●";
-                                        content: "◉";
-                                    }
-                                }
-                            }
-                        }
-
-                        article.example {
-                            border-top: 1px dotted #666;
-                            padding-top: 1em;
-
-                            > a {
-                                color: @color-black;
-                            }
-                        }
-                        */
-}
 body.page-handbook-card main section.cards-slider article.card section.examples header {
   background-image: url("../img/icon-example-black.svg");
 }
@@ -333,16 +280,16 @@ body.page-handbook-card main section.cards-slider article.card section.examples 
   background-position: right center;
   background-size: contain;
 }
-body.page-handbook-card main section.cards-slider article.card section.examples .swiper-pagination-bullet {
+body.page-handbook-card main section.cards-slider article.card section.examples .swiper-pagination .swiper-pagination-bullet {
   display: contents;
 }
-body.page-handbook-card main section.cards-slider article.card section.examples .swiper-pagination-bullet::before {
+body.page-handbook-card main section.cards-slider article.card section.examples .swiper-pagination .swiper-pagination-bullet::before {
   content: "\25CB";
   font-size: 1.3em;
   cursor: pointer;
   margin: 0 0.1em;
 }
-body.page-handbook-card main section.cards-slider article.card section.examples .swiper-pagination-bullet-active::before {
+body.page-handbook-card main section.cards-slider article.card section.examples .swiper-pagination .swiper-pagination-bullet-active::before {
   content: "\25C9";
 }
 body.page-handbook-card main section.cards-slider article.card section.examples article.example {
@@ -365,7 +312,7 @@ body.page-handbook-card main section.cards-slider article.card section.examples 
   margin-bottom: 1em;
   font-size: var(--font-size-small);
 }
-body.page-handbook-card main section.cards-slider article.card section.examples article.example > a {
+body.page-handbook-card main section.cards-slider article.card section.examples article.example > p a {
   color: #222222;
 }
 body.page-handbook-card main section.cards-slider article.card div.tabs {

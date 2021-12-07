@@ -388,62 +388,12 @@ body.page-handbook-card {
                     }
 
                     &.examples {
-                        /*
+                        
                         header {
                             background-image: url("../img/icon-example-black.svg");
                         }
 
-                        ol.examples-nav {
-                            padding: 0;
-                            margin-top: -1em;
-                            list-style: none;
-
-                            display: flex;
-                        	flex-flow: row wrap;
-                            justify-content: center;
-                            align-items: center;
-
-                            background-image: url("../img/icon-swipe-black.svg");
-                            background-repeat: no-repeat;
-                            background-position: right center;
-                            background-size: contain;
-
-                            li {
-                                font-size: 1.3em;
-                                cursor: pointer;
-                                margin: 0 .1em;
-
-                                span {
-                                    display: none;
-                                }
-
-                                &::after {
-                                    content: "○";
-                                }
-
-                                &.active {
-                                    &::after {
-                                        // content: "●";
-                                        content: "◉";
-                                    }
-                                }
-                            }
-                        }
-
-                        article.example {
-                            border-top: 1px dotted #666;
-                            padding-top: 1em;
-
-                            > a {
-                                color: @color-black;
-                            }
-                        }
-                        */
-
-                        header {
-                            background-image: url("../img/icon-example-black.svg");
-                        }
-
+                        // ol.examples-nav
                         .swiper-pagination {
                             position: static;
 
@@ -460,22 +410,22 @@ body.page-handbook-card {
                             background-repeat: no-repeat;
                             background-position: right center;
                             background-size: contain;
-                        }
 
-                        .swiper-pagination-bullet {
-                            display: contents;
-                        }
+                            .swiper-pagination-bullet {
+                                display: contents;
+                            }
 
-                        .swiper-pagination-bullet::before {
-                            content: "\25CB"; // Unicode hex for ○
+                            .swiper-pagination-bullet::before {
+                                content: "\25CB"; // Unicode hex for ○
 
-                            font-size: 1.3em;
-                            cursor: pointer;
-                            margin: 0 .1em;
-                        }
+                                font-size: 1.3em;
+                                cursor: pointer;
+                                margin: 0 .1em;
+                            }
 
-                        .swiper-pagination-bullet-active::before {
-                            content: "\25C9"; // Unicode hex for ◉
+                            .swiper-pagination-bullet-active::before {
+                                content: "\25C9"; // Unicode hex for ◉
+                            }
                         }
 
                         article.example {
@@ -501,11 +451,12 @@ body.page-handbook-card {
                             > p {
                                 margin-bottom: 1em;
                                 font-size: var(--font-size-small);
+
+                                a {
+                                    color: @color-black;
+                                }
                             }
 
-                            > a {
-                                color: @color-black;
-                            }
                         }
                     }
 
@@ -804,6 +755,8 @@ div.tabs { // TODO: Move this to main css?
                                 > p {
                                     clear: left;
                                 }
+
+
                             }
                         }
 

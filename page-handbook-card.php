@@ -337,9 +337,9 @@
                                 <h2>Examples</h2>
                             </header>
 
-							<ol class="swiper-pagination"></ol>
+							<ol class="examples-nav swiper-pagination"></ol>
 
-                            <div class="swiper-wrapper">
+                            <div class="container swiper-wrapper">
 
                                 <?php
                                 while( have_rows('repeater_card_examples') ) : the_row();
