@@ -54,8 +54,8 @@
                 <?php
                     $current_cardID = get_the_ID();
 
-                    $cat_global     = get_cat_ID('Getting prepared');
-                    $cat_card       = get_cat_ID('Card');
+                    $cat_card = get_cat_ID('Card');
+                    $cat_getting_prepared_card = get_cat_ID('Getting prepared');
 
                     $cards_handbook = get_posts(array(
                         'fields'         => 'ids',

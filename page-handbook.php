@@ -29,9 +29,8 @@
     </div>
 
     <?php
-    $cat_specialcard = get_cat_ID('Special card');
-    $cat_global = get_cat_ID('Global');
     $cat_card = get_cat_ID('Card');
+    $cat_getting_prepared_card = get_cat_ID('Getting prepared');
 
     // Get handbook sections, organized by categories
     // Get handbook cards, organized by categories
@@ -90,26 +89,27 @@
         }
     ?>
 
-    <?php // GET SPECIAL CARDS
+    <?php // GET GETTING PREPARED CARDS
     $args = array(
         'post_type'      => 'page',
         'posts_per_page' => -1,
         'orderby'        => 'menu_order',
         'order'          => 'ASC',
-        'category__and'  => array($cat_specialcard, $cat_card)
+        'category__in'   => $cat_getting_prepared_card
     );
 
-    $cards_global = new WP_Query( $args );
+    $cards_getting_prepared = new WP_Query( $args );
 
-    if ( $cards_global->have_posts() ) :
+    if ( $cards_getting_prepared->have_posts() ) :
     ?>
 
     <section class="category special">
         <header>
-            <h2>Special Cards</h2>
+            <h2><?php print get_cat_name($cat_getting_prepared_card); ?></h2>
+            <p><?php print category_description($cat_getting_prepared_card); ?></p>
         </header>
 
-        <?php while ( $cards_global->have_posts() ) : $cards_global->the_post();?>
+        <?php while ( $cards_getting_prepared->have_posts() ) : $cards_getting_prepared->the_post();?>
 
         <article class="card">
             <header>
