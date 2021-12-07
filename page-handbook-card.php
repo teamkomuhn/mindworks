@@ -146,9 +146,9 @@
                             $companion_overlay = get_field('companion_overlay');
 
                             if($companion_overlay == 1) {
-                                $companion_button = '<button class="open companion" type="button"></button>';
+                                $companion_button = '<button class="open companion" type="button"><span>Open</span></button>';
                             } else {
-                                $companion_button = '<a class="button open" href="'.$companion_url.'"></a>';
+                                $companion_button = '<a class="button open" href="'.$companion_url.'">Open</a>';
                             }
 
                             if(!empty($companion_image)) {
@@ -163,8 +163,18 @@
                             <figure class="companion-image">
                                 <img src="<?php echo esc_url($companion_image['url']); ?>" <?php echo $companion_image_alt; ?>>
                             </figure>
-                            <?php // echo $companion_button; ?>
+                            <?php print $companion_button; ?>
                         </div>
+
+                        <aside class="slide companion" aria-hidden="true">
+                            <div class="buttons">
+                                <!-- <a class="button download" href="" download>Download</a> -->
+                                <button class="close open companion" type="button">Close</button>
+                            </div>
+                            <figure>
+                                <img src="<?php echo $companion_url ?>" alt="">
+                            </figure>
+                        </aside>
 
 						<?php } ?>
 

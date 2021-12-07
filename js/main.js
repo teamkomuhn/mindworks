@@ -65,7 +65,7 @@ var debounce = function (fn) {
         //console.log(words);
     }
 
-    // CONTENT SLIDE
+    // CONTENT OVERLAY SLIDE
 
     // pinchzomm.js https://github.com/manuelstofer/pinchzoom // TODO: Try this to zoom only the image
     // var myElement = document.getElementById("zoom");
@@ -126,28 +126,28 @@ var debounce = function (fn) {
             addClickOutsideSlide();
         }, true));
 
+        // Snap overlay to header height on scroll // TODO: Detect header height depending on page
+        // const main_header_height = getComputedStyle(document.documentElement).getPropertyValue('--main-header-height');
+        // const main_header_height_num = parseFloat(main_header_height) * 16; // Transfrom rem to px in integral number
         //
-        const main_header_height = getComputedStyle(document.documentElement).getPropertyValue('--main-header-height');
-        const main_header_height_num = parseFloat(main_header_height) * 16; // Transfrom rem to px in integral number
-
-        window.addEventListener('scroll', function() {
-
-            let current_scroll = $(window).scrollTop();
-            let snap_scroll = Math.abs( current_scroll - main_header_height_num );
-
-            if ( current_scroll >= main_header_height_num ) {
-                content_slide.css({
-                    top: 0
-                });
-            } else {
-                content_slide.css({
-                    top: snap_scroll
-                })
-            }
-
-            // console.log(current_scroll + ' / ' + snap_scroll);
-
-        }, true);
+        // window.addEventListener('scroll', function() {
+        //
+        //     let current_scroll = $(window).scrollTop();
+        //     let snap_scroll = Math.abs( current_scroll - main_header_height_num );
+        //
+        //     if ( current_scroll >= main_header_height_num ) {
+        //         content_slide.css({
+        //             top: 0
+        //         });
+        //     } else {
+        //         content_slide.css({
+        //             top: snap_scroll
+        //         })
+        //     }
+        //
+        //     // console.log(current_scroll + ' / ' + snap_scroll);
+        //
+        // }, true);
 
 
     } // If NOT mobile

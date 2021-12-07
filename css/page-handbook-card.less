@@ -118,19 +118,41 @@ body.page-handbook-card {
                     p {
                         order: 2;
                     }
+
                     div.companion-content {
                         order: 3;
+
+                        display: flex;
+                        flex-flow: row wrap;
+                        align-items: baseline;
 
                         figure.companion-image {
                             width: 100%;
                             margin-top: 2rem;
-
 
                             img {
                                 width: 100%;
                                 height: auto;
                             }
                         }
+
+                        button.companion {
+                            height: 1.5rem; width: 3.1rem;
+                            margin-left: auto; // Align to right
+
+                            background-image: url("../img/bkg-button-slide.svg");
+                            background-size: auto 100%;
+                            background-repeat: no-repeat;
+                            background-position: right;
+                            // padding-right: 60px;
+
+                            border: 0;
+
+                            span {
+                                display: none;
+                            }
+                        }
+
                     }
 
                 }
