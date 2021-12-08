@@ -1,5 +1,4 @@
 <?php /* Template Name: Page handbook card */ ?>
-
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -26,7 +25,7 @@
         <link
             rel="stylesheet"
             href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
-        />
+        /> <?php // TODO: Move this css to the right place ?>
     </head>
 
     <body <?php body_class(); ?>>
@@ -40,7 +39,7 @@
 
             <?php
             if ( have_posts() ) : while ( have_posts() ) : the_post();
-            
+
             $postcat = get_the_category( $post->ID );
             foreach( $postcat as $cat ) {
                 $cat_color = get_field('category_color', $cat);
@@ -50,249 +49,276 @@
             }
             ?>
 
-                <section class="cards-slider" <?php echo $cat_color; ?>>
+            <section class="cards-slider" <?php echo $cat_color; ?>>
 
-                    <?php
+                <?php
                     $current_cardID = get_the_ID();
 
-                    $cardslist = get_pages(array(
-                        'child_of'    => $post->post_parent,
-                        'sort_column' => 'menu_order',
-                        //'sort_order'  => 'ASC',
+                    $cat_card = get_cat_ID('Card');
+                    $cat_getting_prepared_card = get_cat_ID('Getting prepared');
+
+                    $cards_handbook = get_posts(array(
+                        'fields'         => 'ids',
+                        'post_type'      => 'page',
+                        'posts_per_page' => -1,
+                        'child_of'       => $post->post_parent,
+                        'category__in'  => $cat_card
                     ));
-                    $cards = array();
 
-                    foreach ($cardslist as $card) {
-                        $cards[] += $card->ID;
-                    }
+                    $cards_global   = get_posts(array(
+                        'fields'         => 'ids',
+                        'post_type'      => 'page',
+                        'posts_per_page' => -1,
+                        'cat'            => array($cat_card)
+                    ));
 
-                    $firstID    = $cards[0];
-                    $lastID     = end($cards);
-                    $total      = count($cards);
+                    $cardslist = array_merge($cards_handbook, $cards_global);
 
-                    $current = array_search(get_the_ID(), $cards);
-                    $prevID = $cards[$current-1];
-                    $nextID = $cards[$current+1];
+                    $firstID    = $cardslist[0];
+                    $lastID     = end($cardslist);
+                    $total      = count($cardslist);
+
+                    $current = array_search(get_the_ID(), $cardslist);
+                    $prevID = $cardslist[$current-1];
+                    $nextID = $cardslist[$current+1];
                     
                     if($current == get_the_ID($post)){ 
                         $active_class = 'class="active"'; 
                     } else { 
                         $active_class = '';  
                     }
-                    
-                    if($cards > 1) {
+
+                    if($cardslist > 1) {
+                ?>
+
+                <nav class="cards-nav">
+                    <a href="<?php echo get_permalink($post->post_parent); ?>" title="All cards"><span>All cards</span></a>
+
+                    <?php if (!empty($prevID)) { 
                     ?>
-                   
-                    <nav class="cards-nav">
-                        <a href="<?php echo get_permalink($post->post_parent); ?>" title="All cards"><span>All cards</span></a>
-                        
-                        <?php if ($prevID != 1) { ?>
-                                <a class="previous" href="<?php echo get_permalink($prevID); ?>" title="Previous card">&larr;</a>
-                        <?php } else { ?>
-                                <a class="previous" href="<?php echo get_permalink($lastID); ?>" title="Previous card">&larr;</a>
-                        <?php } ?>
-
-                        <?php 
-                            $args = array(
-                                'post_type'      => 'page',
-                                'posts_per_page' => -1,
-                                //'post__not_in'   => array($firstID, $lastID),
-                                'post_parent'    => $post->post_parent
-                            );
-                            
-                            // The Query
-                            $cards = new WP_Query( $args );
-                            if ( $cards->have_posts() ) :
-                                
-                                $i = 1;
-                                while ( $cards->have_posts() ) : $cards->the_post();
-                                if($current_cardID == get_the_ID()){ $active_class = 'class="active"'; } else { $active_class = '';  }
-                        ?>
-
-                        <a <?php echo $active_class; ?> href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo $i++; ?></a>
-
-                        <?php endwhile; wp_reset_postdata(); endif; ?>
-
-                        <?php if ($nextID != $lastID) { ?>
-                                <a class="next" href="<?php echo get_permalink($nextID); ?>" title="Next card">&rarr;</a>
-                        <?php } else { ?>
-                                <a class="next" href="<?php echo get_permalink($firstID); ?>" title="Next card">&rarr;</a>
-                        <?php }?>
-                    </nav>
-
+                            <a class="previous" href="<?php echo get_permalink($prevID); ?>" title="Previous card">&larr;</a>
+                    <?php } else { ?>
+                            <a class="previous" href="<?php echo get_permalink($lastID); ?>" title="Previous card">&larr;</a>
                     <?php } ?>
 
-                    <article class="card full">
-                        <header>
-                            <h1><?php the_title(); ?></h1>
+                    <?php
+                        // the main query
+                        $query_cardslist = new WP_Query(array(
+                            'post__in'          => $cardslist,
+                            'post_type'         => 'page',
+                            'posts_per_page'    => -1,
+                            'orderby'           => 'menu_order',
+                            'order'             => 'ASC'
+                        ));
 
-                            <?php
-                                if ( has_post_thumbnail( $post->ID ) ) :
-                                    $thumbnail_id = get_post_thumbnail_id( $post->ID );
-                                    $card_image = wp_get_attachment_image_src( $thumbnail_id );
-                                    $card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-                            ?>
+                        if ( $query_cardslist->have_posts() ) :
+                            
+                            $i = 1;
+                            while ( $query_cardslist->have_posts() ) : $query_cardslist->the_post();
+                        if($current_cardID == get_the_ID()){ $active_class = 'class="active"'; } else { $active_class = '';  }
+                    ?>
 
-                            <figure class="icon">
-                                <img src="<?php echo $card_image[0]; ?>" alt="<?php echo $card_image_alt; ?>">
-                            </figure>
+                    <a <?php echo $active_class; ?> href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo $i++; ?></a>
 
-							<?php endif; ?>
+                    <?php endwhile; wp_reset_postdata(); endif; ?>
 
-                            <?php the_excerpt(); ?>
+                    <?php if (!empty($nextID)) { ?>
+                            <a class="next" href="<?php echo get_permalink($nextID); ?>" title="Next card">&rarr;</a>
+                    <?php } else { ?>
+                            <a class="next" href="<?php echo get_permalink($firstID); ?>" title="Next card">&rarr;</a>
+                    <?php }?>
+                </nav>
 
-                            <?php
-                                $companion_image = get_field('companion_image');
-                                $companion_url = get_field('companion_url');
-                                $companion_overlay = get_field('companion_overlay');
+                <?php } ?>
 
-                                if($companion_overlay == 1) {
-                                    $companion_button = '<button class="open companion" type="button"></button>';
-                                } else {
-                                    $companion_button = '<a class="button open" href="'.$companion_url.'"></a>';
-                                }
-
-                                if(!empty($companion_image)) {
-                                    $companion_image_alt = $companion_image['alt'];
-
-                                    if(!empty($companion_image_alt)) {
-                                        $companion_image_alt = 'alt="'.$companion_image_alt.'"';
-                                    }
-                            ?>
-
-                            <div class="companion-content">
-                                <figure class="companion-image">
-                                    <img src="<?php echo esc_url($companion_image['url']); ?>" <?php echo $companion_image_alt; ?>>
-                                </figure>
-                                <?php // echo $companion_button; ?>
-                            </div>
-
-							<?php } ?>
-
-                        </header>
+                <article class="card full">
+                    <header>
+                        <h1><?php the_title(); ?></h1>
 
                         <?php
-                            $content = get_the_content();
-                            if(!empty($content)) {
-                                $expandable_class = 'expandable-container';
+                            if ( has_post_thumbnail( $post->ID ) ) :
+                                $thumbnail_id = get_post_thumbnail_id( $post->ID );
+                                $card_image = wp_get_attachment_image_src( $thumbnail_id );
+                                $card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+                        ?>
+
+                        <figure class="icon">
+                            <img src="<?php echo $card_image[0]; ?>" alt="<?php echo $card_image_alt; ?>">
+                        </figure>
+
+						<?php endif; ?>
+
+                        <?php the_excerpt(); ?>
+
+                        <?php
+                            $companion_image = get_field('companion_image');
+                            $companion_url = get_field('companion_url');
+                            $companion_overlay = get_field('companion_overlay');
+
+                            if($companion_overlay == 1) {
+                                $companion_button = '<button class="open companion" type="button"><span>Open</span></button>';
                             } else {
-                                $expandable_class = '';
+                                $companion_button = '<a class="button open" href="'.$companion_url.'">Open</a>';
                             }
+
+                            if(!empty($companion_image)) {
+                                $companion_image_alt = $companion_image['alt'];
+
+                                if(!empty($companion_image_alt)) {
+                                    $companion_image_alt = 'alt="'.$companion_image_alt.'"';
+                                }
                         ?>
-                        <section class="intro <?php echo $expandable_class; ?>">
-							<header class="card-meta">
 
-                                <?php
-                                if( have_rows('repeater_card_meta') ):
-                                while( have_rows('repeater_card_meta') ) : the_row();
+                        <div class="companion-content">
+                            <figure class="companion-image">
+                                <img src="<?php echo esc_url($companion_image['url']); ?>" <?php echo $companion_image_alt; ?>>
+                            </figure>
+                            <?php print $companion_button; ?>
+                        </div>
 
-                                $label       = get_sub_field('card_meta_label');
-                                $description = get_sub_field('card_meta_description');
-                                ?>
+                        <aside class="slide companion" aria-hidden="true">
+                            <div class="buttons">
+                                <!-- <a class="button download" href="" download>Download</a> -->
+                                <button class="close open companion" type="button">Close</button>
+                            </div>
+                            <figure>
+                                <img src="<?php echo $companion_url ?>" alt="">
+                            </figure>
+                        </aside>
 
-								<p><strong><?php echo $label; ?>:</strong> <?php echo $description; ?></p>
+						<?php } ?>
 
-                                <?php
-                                        endwhile; 
-                                    endif;
+                    </header>
 
-                                    if(!empty($content)){
-                                ?>
+                    <?php
+                        $content = get_the_content();
+                        if(!empty($content)) {
+                            $expandable_class = 'container-expandable';
+                        } else {
+                            $expandable_class = '';
+                        }
+                    ?>
+                    <section class="intro <?php echo $expandable_class; ?>">
+						<header class="card-meta">
 
-								<button class="button-expandable" type="button"><span>Read more &darr;</span></button>
+                            <?php
+                            if( have_rows('repeater_card_meta') ):
+                            while( have_rows('repeater_card_meta') ) : the_row();
 
-                                <?php } ?>
-							</header>
+                            $label       = get_sub_field('card_meta_label');
+                            $description = get_sub_field('card_meta_description');
+                            ?>
 
-                            <?php if(!empty($content)){ ?>
-                                <div class="content expandable">
-                                    <?php echo $content; ?>
-                                </div>
+							<p><strong><?php echo $label; ?>:</strong> <?php echo $description; ?></p>
+
+                            <?php
+                                    endwhile;
+                                endif;
+
+                                if(!empty($content)){
+                            ?>
+
+							<button class="button-expandable" type="button"><span>Read more &darr;</span></button>
+
                             <?php } ?>
-                        </section>
+						</header>
 
-                        <?php 
-                        $card_steps = get_field('repeater_card_steps');
-                        $card_tools = get_field('repeater_card_steps');
-                        if ($card_steps > 0 || $card_tools > 0) :
-                        ?>
+                        <?php if(!empty($content)){ ?>
+                            <div class="content expandable">
+                                <?php echo $content; ?>
+                            </div>
+                        <?php } ?>
+                    </section>
 
-                        <div class="tabs">
-                            <?php if ( have_rows('repeater_card_steps') ) : ?>
+                    <?php
+                    $card_steps = get_field('repeater_card_steps');
+                    $card_tools = get_field('repeater_card_steps');
+                    if ($card_steps > 0 || $card_tools > 0) :
+                    ?>
 
-                            <section class="steps tab active">
-                                <header class="tab-button">
-                                    <h2>How to</h2>
-                                </header>
+                    <div class="tabs">
+                        <?php if ( have_rows('repeater_card_steps') ) : ?>
+
+                        <section class="steps tab active">
+                            <header class="tab-button">
+                                <h2>How to</h2>
+                            </header>
+
+                            <div class="container">
                                 <?php
-                                    while ( have_rows('repeater_card_steps') ) : the_row();
+                                while ( have_rows('repeater_card_steps') ) : the_row();
 
-                                    $title      = get_sub_field('card_step_title');
-                                    $content    = get_sub_field('card_step_content');
-                                    $tools      = get_sub_field('card_step_tools');
+                                $title      = get_sub_field('card_step_title');
+                                $content    = get_sub_field('card_step_content');
+                                $tools      = get_sub_field('card_step_tools');
                                 ?>
-
 
                                 <article class="step container-expandable">
-                                    <h3><?php echo $title; ?></h3>
+                                    <h3><?php print $title; ?></h3>
 
                                     <?php if( !empty($content) ): ?>
                                         <button class="button-expandable"><span>&darr;</span></button>
 
-                                        <div class="expandable">
-                                            <?php
-                                            echo $content;
+                                        <div class="content expandable">
+                                            <?php print $content; ?>
 
+                                            <?php // GET RELATED TOOLS
                                             if ( have_rows('repeater_card_step_tools') ):
-                                            while ( have_rows('repeater_card_step_tools') ) : the_row();
-                                            $post_object = get_sub_field('card_step_tool');
-            
-                                            if( $posts ): 
-                                            $post = $post_object;
-                                            setup_postdata( $post );
-
-                                            $title          = get_the_title( $post->ID );
-                                            $slug           = sanitize_title( $title );
-                                            $excerpt        = get_the_excerpt( $post->ID );
                                             ?>
+                                            <aside class="related tools">
+                                                <h4>Related tools</h4>
+                                                <ul>
 
-                                            <article class="tool">
-                                                <h3><?php echo $title; ?></h3>
+                                                    <?php
+                                                    while ( have_rows('repeater_card_step_tools') ) : the_row();
+                                                    $post_object = get_sub_field('card_step_tool');
 
-                                                <?php
-                                                
-                                                if( !empty($excerpt)) {
-                                                    echo '<p>'.$excerpt.'</p>';
-                                                }
-                                                
-                                                ?>
+                                                    if( $posts ):
+                                                    $post = $post_object;
+                                                    setup_postdata( $post );
 
-                                                <a href="?tool=<?php echo $slug; ?>">Learn more &rarr;</a>
-                                            </article>
-                                            <?php  wp_reset_postdata(); endif; endwhile; endif; ?>
+                                                    $title          = get_the_title( $post->ID );
+                                                    $slug           = sanitize_title( $title );
+                                                    $excerpt        = get_the_excerpt( $post->ID );
+                                                    ?>
+
+                                                    <li class="related tool">
+                                                        <h5><?php print $title; ?></h5>
+
+                                                        <!-- <p><?php //print $excerpt; ?></p> -->
+
+                                                        <a href="?tool=<?php echo $slug; ?>">Go to tool &rarr;</a>
+                                                    </li>
+
+                                                <?php  wp_reset_postdata(); endif; endwhile; ?>
+                                                </ul>
+                                            </aside>
+
+                                            <?php endif; ?>
                                         </div>
-                                        
+
                                     <?php endif; ?>
 
                                 </article>
 
                                 <?php endwhile; ?>
+                            </div>
+                        </section>
 
-                            </section>
+                        <?php endif;
+                        if( have_rows('repeater_card_tools') ): ?>
 
-                            <?php endif; 
-                            if( have_rows('repeater_card_tools') ): ?>
+                        <section class="tools tab" id="tools">
+                            <header class="tab-button">
+                                <h2>Tools</h2>
+                            </header>
 
-                            <section class="tools tab" id="tools">
-                                <header class="tab-button">
-                                    <h2>Tools</h2>
-                                </header>
-
+                            <div class="container">
                                 <?php
                                 while( have_rows('repeater_card_tools') ) : the_row();
                                 $post_object = get_sub_field('card_tool');
 
-                                if( $posts ): 
+                                if( $posts ):
                                 $post = $post_object;
                                 setup_postdata( $post );
 
@@ -302,107 +328,107 @@
                                 $link           = get_sub_field('card_tool_link');
                                 ?>
 
-                                <article class="tool" id="tool-<?php echo $slug; ?>">
-                                    <h3><?php echo $title; ?></h3>
-                                    <?php if(!empty($excerpt)) { echo '<p>'.$excerpt.'</p>'; } ?>
+                            <article class="tool" id="tool-<?php echo $slug; ?>">
+                                <h3><?php print $title; ?></h3>
+                                <p><?php print $excerpt; ?></p>
+                                
+                                <?php if( !empty($link) ) : ?>
+                                <a href="<?php echo esc_url($link); ?>">Learn more &rarr;</a>
+                                <?php endif; ?>
 
-                                    <?php if(!empty($link)) { ?>
-                                    <a href="<?php echo esc_url($link); ?>">Learn more &rarr;</a>
-                                    <?php } ?>
+                            </article>
 
-                                </article>
-
-                                <?php wp_reset_postdata(); endif; endwhile;  ?>
-
-                            </section>
-
-                            <?php endif; ?>
-
-                        </div>
-                        <?php endif; if( have_rows('repeater_card_examples') ): ?>
-
-                            <section class="examples swiper">
-                                <header>
-                                    <h2>Examples</h2>
-                                </header>
-
-								<ol class="swiper-pagination"></ol>
-
-                                <div class="swiper-wrapper">
-
-                                    <?php
-                                    while( have_rows('repeater_card_examples') ) : the_row();
-                                    $post_object = get_sub_field('card_example');
-
-                                    if( $posts ): 
-                                    $post = $post_object;
-                                    setup_postdata( $post );
-
-                                    $title       = get_the_title( $post->ID );
-                                    $content     = apply_filters('the_content', $post->post_content);
-                                    $image       = get_post_thumbnail_id( $post->ID );
-                                    $image_url   = wp_get_attachment_image_url( $image, 'medium' );
-                                    $image_alt   = get_post_meta($image, '_wp_attachment_image_alt', true);
-                                    $link        = get_sub_field('card_example_link');
-
-                                    if(!empty($image)) {
-
-                                        if(!empty($image_alt)) {
-                                            $image_alt = 'alt="'.$image_alt.'"';
-                                        }
-                                    }
-                                    if(!empty($link)) {
-                                        if(!empty($link_alt)) {
-                                            $link_alt = $link['alt'];
-                                            $link_alt = 'alt="'.$link_alt.'"';
-                                        }
-                                        $link = '<a href="'.esc_url($link['url']).'" '.$link_alt.'>Learn more -></a>';
-                                    }
-                                    ?>
-
-                                    <article class="example swiper-slide">
-                                        <h3><?php echo $title; ?></h3>
-
-                                        <?php if(!empty($image_url)) { ?>
-
-                                        <figure>
-                                            <img src="<?php echo esc_url($image_url); ?>" <?php echo $image_alt; ?>>
-                                        </figure>
-
-                                        <?php }
-                                        echo $content;
-                                        echo $link;
-                                        ?>
-                                    </article>
-
-                                    <?php wp_reset_postdata(); endif; endwhile; ?>
-
-                                </div>
-                            </section>
+                            <?php wp_reset_postdata(); endif; endwhile;  ?>
+                            </div>
+                        </section>
 
                         <?php endif; ?>
 
-                        <footer>
+                    </div>
+                    <?php endif; if( have_rows('repeater_card_examples') ): ?>
+
+                        <section class="examples swiper">
                             <header>
-                                <h2>Participate</h2>
+                                <h2>Examples</h2>
                             </header>
 
-                            <ul>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/img/icon-slack.svg" alt="Icon slack"> <p>Want to learn and exchange with fellow changemakers? <a href="#">Join the conversation on Slack &rarr;</a></p></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/img/icon-email-black.svg" alt="Icon email"> <p>Looking for some advice or would like to collaborate with Mindworks? <a href="#">Ask us anything &rarr;</a></p></li>
-                            </ul>
+							<ol class="examples-nav swiper-pagination"></ol>
 
-                        </footer>
+                            <div class="container swiper-wrapper">
 
-                    </article>
+                                <?php
+                                while( have_rows('repeater_card_examples') ) : the_row();
+                                $post_object = get_sub_field('card_example');
 
-                </section>
+                                if( $posts ):
+                                $post = $post_object;
+                                setup_postdata( $post );
 
-                <aside class="sidebar">
-                    <!-- Sidenote elements  -->
-                </aside>
+                                $title       = get_the_title( $post->ID );
+                                $content     = apply_filters('the_content', $post->post_content);
+                                $image       = get_post_thumbnail_id( $post->ID );
+                                $image_url   = wp_get_attachment_image_url( $image, 'medium' );
+                                $image_alt   = get_post_meta($image, '_wp_attachment_image_alt', true);
+                                $link        = get_sub_field('card_example_link');
 
-                <?php endwhile; endif; ?>
+                                if(!empty($image)) {
+
+                                    if(!empty($image_alt)) {
+                                        $image_alt = 'alt="'.$image_alt.'"';
+                                    }
+                                }
+                                if(!empty($link)) {
+                                    if(!empty($link_alt)) {
+                                        $link_alt = $link['alt'];
+                                        $link_alt = 'alt="'.$link_alt.'"';
+                                    }
+                                    $link = '<a href="'.esc_url($link['url']).'" '.$link_alt.'>Learn more -></a>';
+                                }
+                                ?>
+
+                                <article class="example swiper-slide">
+                                    <h3><?php echo $title; ?></h3>
+
+                                    <?php if(!empty($image_url)) { ?>
+
+                                    <figure>
+                                        <img src="<?php echo esc_url($image_url); ?>" <?php echo $image_alt; ?>>
+                                    </figure>
+
+                                    <?php }
+                                    echo $content;
+                                    echo $link;
+                                    ?>
+                                </article>
+
+                                <?php wp_reset_postdata(); endif; endwhile; ?>
+
+                            </div>
+                        </section>
+
+                    <?php endif; ?>
+
+                    <footer>
+                        <header>
+                            <h2>Participate</h2>
+                        </header>
+
+                        <ul>
+                            <li><img src="<?php echo get_template_directory_uri(); ?>/img/icon-slack.svg" alt="Icon slack"> <p>Want to learn and exchange with fellow changemakers? <a href="#">Join the conversation on Slack &rarr;</a></p></li>
+                            <li><img src="<?php echo get_template_directory_uri(); ?>/img/icon-email-black.svg" alt="Icon email"> <p>Looking for some advice or would like to collaborate with Mindworks? <a href="#">Ask us anything &rarr;</a></p></li>
+                        </ul>
+
+                    </footer>
+
+                </article>
+
+            </section>
+
+            <aside class="sidebar">
+                <!-- Sidenote elements  -->
+            </aside>
+
+            <?php endwhile; endif; ?>
 
         </main>
         <?php wp_footer(); ?>
