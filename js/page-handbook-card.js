@@ -3,21 +3,32 @@
 import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
 (function( $ ) {
+
     'use strict';
 
-    //CARDS NAV on mobile
-    // Only works if mobile
-    if( window.matchMedia( '(any-hover: none)' ).matches ) {
+    const scrollTo = (element, { duration = 250, delay = 0, offset = 0, timing = `linear`, viewport = false} = {}) => {
+        
+        setTimeout(() => {
+            $([ document.documentElement, document.body ]).animate({
+                scrollTop: $(element).offset().top - offset
+            }, duration, timing)
+        }, delay)
+        
+    }
+    
 
-        // Adjust things if browser sizes change
-        // window.addEventListener('resize', debounce(function() {
-        //   addClickOutsideSlide();
-        // }, true));
+    // Cards navigation
+
+    const isMobile = window.matchMedia( '(any-hover: none)' ).matches
+
+    if (isMobile) {
 
         $(window).on('load', function() {
 
+            // TODO: 🧹 Clean up @ayoreis
+
             const nav = document.querySelector(`.cards-nav`)
-            let cards = [ ...nav.querySelectorAll(`a`) ] // NodeList to Array
+            let cards = [ ...nav.querySelectorAll(`a`) ]
 
             if (cards.length > 5) {
 
@@ -39,12 +50,13 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
                 for (const card of cards) nav.append(card)
             }
-        });
+        })
 
     }
 
 
-    //TABS
+    // Tabs
+
     let tabs = [];
     function setTabs() {
 
@@ -67,46 +79,40 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
     setTabs();
 
 
-    // TODO: Make a page able to have more than one expandable content section
-
-    const scrollTo = (element, duration = 250, delay = 0, offset = 0) => {
-        setTimeout(() => {
-            $([ document.documentElement, document.body ]).animate({
-                scrollTop: $(element).offset().top - offset
-            }, duration, `linear`)
-        }, delay)
-    }
+    // Expandable steps
 
     const containers = document.querySelectorAll(`.container-expandable`)
-    const allExpandables = []
     const heights = []
 
     for (const [index, container] of containers.entries()) {
 
+        const title = container.querySelector(`h3`)
         const button = container.querySelector(`.button-expandable`)
         const expandable = container.querySelector(`.expandable`)
 
-        allExpandables.push(expandable)
         heights.push(expandable.getBoundingClientRect().height)
 
-        expandable.style.height = `0px`
+        expandable.style.setProperty(`--height`, `0px`)
 
         button.addEventListener(`click`, () => {
 
-            const isOpen = expandable.style.height !== `0px`
+            const isOpen = expandable.style.getPropertyValue(`--height`) !== `0px`
 
             if (isOpen) {
-                expandable.style.height = `0px`
+                expandable.style.setProperty(`--height`, `0px`)
 
-                scrollTo(expandable, 250, 0, 250)
+                scrollTo(title, { viewport: true })
             } else {
-                expandable.style.height = `${heights[index]}px`
+                expandable.style.setProperty(`--height`, `${heights[index]}px`)
             }
 
-            containers[index].classList.toggle(`expanded`)
+            container.classList.toggle(`expanded`)
         })
 
     }
+
+
+    // Examples carousel
 
     const slides = document.querySelectorAll(`.swiper-slide`)
 
@@ -145,17 +151,17 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
     // Link to tool
 
     const toolName = new URLSearchParams(location.search).get(`tool`)
-    const stepsTab = document.querySelector(`.tab.steps`)
     const toolsTab = document.querySelector(`.tab.tools`)
+    const otherTabs = document.querySelectorAll(`.tab:not(.tools)`)
 
     if (toolName) {
 
-        stepsTab.classList.remove(`active`)
+        for (const tab of otherTabs) tab.classList.remove(`active`)
         toolsTab.classList.add(`active`)
 
-        const tool = document.querySelector(`.tool#tool-${toolName}`)
+        const tool = document.querySelector(`#tool-${toolName}`)
 
-        if (tool) scrollTo(tool, 250, 0, 32)
+        if (tool) scrollTo(tool, { duration: 0 })
     }
 
 })( jQuery );

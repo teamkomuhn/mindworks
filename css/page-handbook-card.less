@@ -559,14 +559,15 @@ body.page-handbook-card {
 }
 
 .container-expandable { // TODO: Move this to main css?
+
     .button-expandable {
 
     }
 
     .expandable {
         overflow: hidden;
-        height: auto;
-        transition: height 250ms;
+        height: var(--height, auto);
+        transition: height 250ms linear;
         will-change: height;
     }
 }

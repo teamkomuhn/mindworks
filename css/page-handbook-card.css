@@ -387,8 +387,8 @@ body.page-handbook-card main section.cards-slider article.card footer ul li p a 
 }
 .container-expandable .expandable {
   overflow: hidden;
-  height: auto;
-  transition: height 250ms;
+  height: var(--height, auto);
+  transition: height 250ms linear;
   will-change: height;
 }
 div.tabs {
