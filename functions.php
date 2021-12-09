@@ -445,4 +445,18 @@
         return $text;
     }
     
+    /**
+     * Count the number of words in post content
+     * @param string $content The post content
+     * @return integer $count Number of words in the content
+     * https://isabelcastillo.com/count-words-wordpress
+     */
+    function count_content_words( $content ) {
+        $decode_content = html_entity_decode( $content );
+        $filter_shortcode = do_shortcode( $decode_content );
+        $strip_tags = wp_strip_all_tags( $filter_shortcode, true );
+        $count = str_word_count( $strip_tags );
+        return $count;
+    }
+
 ?>

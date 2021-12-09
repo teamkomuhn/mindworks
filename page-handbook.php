@@ -72,9 +72,18 @@
         <article class="card">
             <header>
                 <h3><?php echo get_the_title(); ?></h3>
+                <?php
+                    if ( has_post_thumbnail( $post->ID ) ) :
+                        $thumbnail_id = get_post_thumbnail_id( $post->ID );
+                        $card_image = wp_get_attachment_image_src( $thumbnail_id );
+                        $card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+                ?>
+
                 <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/icon-sense.svg" alt="">
+                    <img src="<?php echo $card_image[0]; ?>" alt="<?php echo $card_image_alt; ?>">
                 </figure>
+
+                <?php endif; ?>
                 <a class="button open" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">Open card</a>
             </header>
             <p><?php echo limit_text(get_the_excerpt(), 20) ?></p>
@@ -114,9 +123,18 @@
         <article class="card">
             <header>
                 <h3><?php echo get_the_title(); ?></h3>
+                <?php
+                    if ( has_post_thumbnail( $post->ID ) ) :
+                        $thumbnail_id = get_post_thumbnail_id( $post->ID );
+                        $card_image = wp_get_attachment_image_src( $thumbnail_id );
+                        $card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+                ?>
+
                 <figure>
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/icon-sense.svg" alt="">
+                    <img src="<?php echo $card_image[0]; ?>" alt="<?php echo $card_image_alt; ?>">
                 </figure>
+
+                <?php endif; ?>
                 <a class="button open" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">Open card</a>
             </header>
             <p><?php echo limit_text(get_the_excerpt(), 20) ?></p>

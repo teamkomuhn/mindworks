@@ -62,33 +62,41 @@
                         'post_type'      => 'page',
                         'posts_per_page' => -1,
                         'child_of'       => $post->post_parent,
-                        'category__in'  => $cat_card
+                        'category__in'   => $cat_card
                     ));
 
-                    $cards_global   = get_posts(array(
+                    $cards_getting_prepared   = get_posts(array(
                         'fields'         => 'ids',
                         'post_type'      => 'page',
                         'posts_per_page' => -1,
-                        'cat'            => array($cat_card)
+                        'cat'            => array($cat_getting_prepared_card)
                     ));
 
-                    $cardslist = array_merge($cards_handbook, $cards_global);
+                    $cardslist = array_merge($cards_handbook, $cards_getting_prepared);
 
-                    $firstID    = $cardslist[0];
-                    $lastID     = end($cardslist);
-                    $total      = count($cardslist);
+                    $firstID   = $cardslist[0];
+                    $lastID    = end($cardslist);
+                    $total     = count($cardslist);
 
-                    $current = array_search(get_the_ID(), $cardslist);
-                    $prevID = $cardslist[$current-1];
-                    $nextID = $cardslist[$current+1];
+                    $current   = array_search(get_the_ID(), $cardslist);
+                    $prevID    = $cardslist[$current-1];
+                    $nextID    = $cardslist[$current+1];
                     
-                    if($current == get_the_ID($post)){ 
+                    if( $current == get_the_ID($post) ){ 
                         $active_class = 'class="active"'; 
                     } else { 
                         $active_class = '';  
                     }
 
-                    if($cardslist > 1) {
+                    if( $cardslist > 1 ) {
+
+                        if( $post->post_parent ) {
+                            $post_parent_ID     = $post->post_parent;
+                            $post_parent_link   = get_permalink($post->post_parent);
+                        } else {
+                            $post_parent_ID     = $post->post_parent;
+                            $post_parent_link   = get_permalink($post->post_parent);
+                        }
                 ?>
 
                 <nav class="cards-nav">
@@ -115,7 +123,7 @@
                             
                             $i = 1;
                             while ( $query_cardslist->have_posts() ) : $query_cardslist->the_post();
-                        if($current_cardID == get_the_ID()){ $active_class = 'class="active"'; } else { $active_class = '';  }
+                                if($current_cardID == get_the_ID()){ $active_class = 'class="active"'; } else { $active_class = '';  }
                     ?>
 
                     <a <?php echo $active_class; ?> href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo $i++; ?></a>
@@ -215,7 +223,9 @@
                                     endwhile;
                                 endif;
 
-                                if(!empty($content)){
+                                $content_size = count_content_words($content);
+
+                                if( !empty($content) && $content_size > 100 ){
                             ?>
 
 							<button class="button-expandable" type="button"><span>Read more &darr;</span></button>
@@ -223,8 +233,12 @@
                             <?php } ?>
 						</header>
 
-                        <?php if(!empty($content)){ ?>
+                        <?php if( !empty($content) && $content_size > 100 ){ ?>
                             <div class="content expandable">
+                                <?php echo $content; ?>
+                            </div>
+                        <?php } else { ?>
+                            <div class="content">
                                 <?php echo $content; ?>
                             </div>
                         <?php } ?>
