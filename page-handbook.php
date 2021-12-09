@@ -67,22 +67,18 @@
         <?php
         // The Loop
         while ( $cards->have_posts() ) : $cards->the_post();
+            $thumbnail_id   = get_post_thumbnail_id( $post->ID );
+            $card_image     = wp_get_attachment_image_src( $thumbnail_id );
+            $card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
         ?>
 
         <article class="card">
             <header>
                 <h3><?php echo get_the_title(); ?></h3>
-                <?php
-                    if ( has_post_thumbnail( $post->ID ) ) :
-                        $thumbnail_id = get_post_thumbnail_id( $post->ID );
-                        $card_image = wp_get_attachment_image_src( $thumbnail_id );
-                        $card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-                ?>
-
-                <figure>
-                    <img src="<?php echo $card_image[0]; ?>" alt="<?php echo $card_image_alt; ?>">
-                </figure>
-
+                <?php if ( !empty( $thumbnail_id ) ) : ?>
+                    <figure>
+                        <img src="<?php echo $card_image[0]; ?>" alt="<?php echo $card_image_alt; ?>">
+                    </figure>
                 <?php endif; ?>
                 <a class="button open" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">Open card</a>
             </header>
@@ -118,22 +114,20 @@
             <p><?php print category_description($cat_getting_prepared_card); ?></p>
         </header>
 
-        <?php while ( $cards_getting_prepared->have_posts() ) : $cards_getting_prepared->the_post();?>
+        <?php 
+        while ( $cards_getting_prepared->have_posts() ) : $cards_getting_prepared->the_post();
+            $thumbnail_id = get_post_thumbnail_id( $post->ID );
+            $card_image = wp_get_attachment_image_src( $thumbnail_id );
+            $card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+        ?>
 
         <article class="card">
             <header>
                 <h3><?php echo get_the_title(); ?></h3>
-                <?php
-                    if ( has_post_thumbnail( $post->ID ) ) :
-                        $thumbnail_id = get_post_thumbnail_id( $post->ID );
-                        $card_image = wp_get_attachment_image_src( $thumbnail_id );
-                        $card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-                ?>
-
-                <figure>
-                    <img src="<?php echo $card_image[0]; ?>" alt="<?php echo $card_image_alt; ?>">
-                </figure>
-
+                <?php if ( !empty( $thumbnail_id ) ) : ?>
+                    <figure>
+                        <img src="<?php echo $card_image[0]; ?>" alt="<?php echo $card_image_alt; ?>">
+                    </figure>
                 <?php endif; ?>
                 <a class="button open" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">Open card</a>
             </header>
