@@ -91,16 +91,15 @@
                     if( $cardslist > 1 ) {
 
                         if( $post->post_parent ) {
-                            $post_parent_ID     = $post->post_parent;
                             $post_parent_link   = get_permalink($post->post_parent);
                         } else {
-                            $post_parent_ID     = $post->post_parent;
-                            $post_parent_link   = get_permalink($post->post_parent);
+                            //TODO: Change the way we're getting this post parent page when we're in a getting prepared card
+                            $post_parent_link   = get_permalink( get_page_by_title( 'The Crisis Handbook' ) );
                         }
                 ?>
 
                 <nav class="cards-nav">
-                    <a href="<?php echo get_permalink($post->post_parent); ?>" title="All cards"><span>All cards</span></a>
+                    <a href="<?php echo $post_parent_link; ?>" title="All cards"><span>All cards</span></a>
 
                     <?php if (!empty($prevID)) { 
                     ?>
