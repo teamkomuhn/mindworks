@@ -104,6 +104,11 @@ body.page-handbook main section.category article.card > p {
 body.page-handbook main section.category article.card:hover {
   box-shadow: 2px 4px 10px 4px rgba(0, 0, 0, 0.2);
 }
+body.page-handbook main section.category aside.companion-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 body.page-handbook main section.category.special {
   margin: 0 calc(-1 * var(--spacing-x)) calc(-1 * var(--spacing-y));
   padding: var(--spacing-y) var(--spacing-x);

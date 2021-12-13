@@ -87,6 +87,10 @@
 
         <?php endwhile; wp_reset_postdata(); ?>
 
+        <!-- <aside class="companion-image left"> <?php // TODO: Make position change from block options ?>
+            <img src="<?php echo get_stylesheet_directory_uri() . '/img/timeline-dotted-line-empty.svg' ?>" alt="">
+        </aside> -->
+
     </section>
 
     <?php // Closing if + foreach

@@ -65,6 +65,11 @@ body.page-handbook {
         section.category {
             margin: 2rem 0 var(--spacing-y) 0;
 
+            // For companion image
+            // position: relative;
+            // padding-left: 2rem;
+            // overflow: hidden;
+
             > header {
                 margin-bottom: 2rem;
 
@@ -148,6 +153,11 @@ body.page-handbook {
                     box-shadow: 2px 4px 10px 4px rgba(0, 0, 0, .2);
                 }
 
+            }
+
+            aside.companion-image {
+                position: absolute;
+                left: 0; top: 0;
             }
 
             &.special {
@@ -315,6 +325,8 @@ div.tabs { // TODO: Move this to main css?
                     }
 
                 }
+
+
 
             }
         }
