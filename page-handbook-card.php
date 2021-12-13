@@ -129,7 +129,7 @@
 
                     <?php endwhile; wp_reset_postdata(); endif; ?>
 
-                    <?php if (!empty($nextID)) { ?>
+                    <?php if (!empty($nextID) && ! $prevID ) {?>
                             <a class="next" href="<?php echo get_permalink($nextID); ?>" title="Next card">&rarr;</a>
                     <?php } else { ?>
                             <a class="next" href="<?php echo get_permalink($firstID); ?>" title="Next card">&rarr;</a>
