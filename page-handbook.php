@@ -61,7 +61,7 @@
     <section class="category" id="<?php echo $cat->slug; ?>" <?php echo $subcat_color; ?>>
         <header>
             <h2><?php print $cat->name; ?></h2>
-            <p><?php print $cat->description; ?></p>
+            <?php print $cat->description; ?>
         </header>
 
         <?php
@@ -111,10 +111,10 @@
     <section class="category special">
         <header>
             <h2><?php print get_cat_name($cat_getting_prepared_card); ?></h2>
-            <p><?php print category_description($cat_getting_prepared_card); ?></p>
+            <?php print category_description($cat_getting_prepared_card); ?>
         </header>
 
-        <?php 
+        <?php
         while ( $cards_getting_prepared->have_posts() ) : $cards_getting_prepared->the_post();
             $thumbnail_id = get_post_thumbnail_id( $post->ID );
             $card_image = wp_get_attachment_image_src( $thumbnail_id );

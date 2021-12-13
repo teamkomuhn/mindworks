@@ -63,7 +63,7 @@ body.page-handbook {
         }
 
         section.category {
-            padding: var(--spacing-y) 0;
+            margin: 2rem 0 var(--spacing-y) 0;
 
             > header {
                 margin-bottom: 2rem;
@@ -82,7 +82,11 @@ body.page-handbook {
                     padding-left: 2em;
                 }
 
-
+                p {
+                    font-size: var(--font-size-p);
+                    font-weight: 500;
+                    padding-top: 1em;
+                }
             }
 
             article.card {
@@ -250,20 +254,24 @@ div.tabs { // TODO: Move this to main css?
             }
 
             section.category {
-
                 display: flex;
             	flex-flow: row wrap;
 
                 > header {
                     flex: 1 1 100%;
-                    margin-bottom: 1px;
+                    margin-bottom: var(--spacing-y);
+                    max-width: var(--main-width);
 
                     h2 {
                         font-size: var(--font-size-bigger);
                         background-size: 2.6rem;
                         min-height: 2.6rem;
+                    }
 
-                        margin-bottom: var(--spacing-y);
+                    p {
+                        font-size: var(--font-size-biggish);
+                        font-weight: lighter;
+                        padding-top: 2rem;
                     }
                 }
 
@@ -305,7 +313,6 @@ div.tabs { // TODO: Move this to main css?
                     }
 
                 }
-
 
             }
         }

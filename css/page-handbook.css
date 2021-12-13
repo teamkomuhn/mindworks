@@ -38,7 +38,7 @@ body.page-handbook main div.content > p {
   padding-bottom: 1em;
 }
 body.page-handbook main section.category {
-  padding: var(--spacing-y) 0;
+  margin: 2rem 0 var(--spacing-y) 0;
 }
 body.page-handbook main section.category > header {
   margin-bottom: 2rem;
@@ -52,6 +52,11 @@ body.page-handbook main section.category > header h2 {
   background-size: 2rem;
   min-height: 2rem;
   padding-left: 2em;
+}
+body.page-handbook main section.category > header p {
+  font-size: var(--font-size-p);
+  font-weight: 500;
+  padding-top: 1em;
 }
 body.page-handbook main section.category article.card {
   background-color: #EEEEEE;
@@ -166,13 +171,18 @@ div.tabs .tab.active > * {
   }
   body.page-handbook main section.category > header {
     flex: 1 1 100%;
-    margin-bottom: 1px;
+    margin-bottom: var(--spacing-y);
+    max-width: var(--main-width);
   }
   body.page-handbook main section.category > header h2 {
     font-size: var(--font-size-bigger);
     background-size: 2.6rem;
     min-height: 2.6rem;
-    margin-bottom: var(--spacing-y);
+  }
+  body.page-handbook main section.category > header p {
+    font-size: var(--font-size-biggish);
+    font-weight: lighter;
+    padding-top: 2rem;
   }
   body.page-handbook main section.category article.card {
     flex: 0 0 auto;
@@ -194,3 +204,4 @@ div.tabs .tab.active > * {
     margin-right: 0;
   }
 }
+/*# sourceMappingURL=page-handbook.css.map */
