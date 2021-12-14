@@ -202,12 +202,12 @@
                     <?php
                         $content = get_the_content();
                         if(!empty($content)) {
-                            $expandable_class = 'container-expandable';
+                            $expandable_class   = 'container-expandable';
                         } else {
-                            $expandable_class = '';
+                            $expandable_class   = '';
                         }
                     ?>
-                    <section class="intro <?php echo $expandable_class; ?>">
+                    <section class="intro">
 						<header class="card-meta">
 
                             <?php
@@ -234,10 +234,18 @@
                             <?php } ?>
 						</header>
 
-                        <?php if( !empty($content) && $content_size > 100 ){ ?>
+                        <?php $content_size = count_content_words($content);
+
+                        if( !empty($content) && $content_size > 100 ){
+                        ?>
+                        <div class="container-expandable">
+                            <button class="button-expandable" type="button"><span>Read more &darr;</span></button>
+
                             <div class="content expandable">
                                 <?php echo $content; ?>
                             </div>
+                        </div>
+                        
                         <?php } else { ?>
                             <div class="content">
                                 <?php echo $content; ?>
