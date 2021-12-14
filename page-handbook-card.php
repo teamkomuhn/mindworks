@@ -77,7 +77,7 @@
                     $firstID   = $cardslist[0];
                     $lastID    = end($cardslist);
                     $total     = count($cardslist);
-
+                    
                     $current   = array_search(get_the_ID(), $cardslist);
                     $prevID    = $cardslist[$current-1];
                     $nextID    = $cardslist[$current+1];
@@ -129,11 +129,13 @@
 
                     <?php endwhile; wp_reset_postdata(); endif; ?>
 
-                    <?php if (!empty($nextID) && ! $prevID ) {?>
+                    <?php if ($lastID == $current_cardID) { ?>
+                            <a class="next" href="<?php echo get_permalink($firstID); ?>" title="Next card">&rarr;</a>
+                    <?php } else if (!empty($nextID)) { ?>
                             <a class="next" href="<?php echo get_permalink($nextID); ?>" title="Next card">&rarr;</a>
                     <?php } else { ?>
                             <a class="next" href="<?php echo get_permalink($firstID); ?>" title="Next card">&rarr;</a>
-                    <?php }?>
+                    <?php } ?>
                 </nav>
 
                 <?php } ?>
