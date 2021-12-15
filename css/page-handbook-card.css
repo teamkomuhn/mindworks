@@ -425,6 +425,7 @@ div.tabs .tab.active div.container {
 @media only screen and (min-width: 1201px) {
   body.page-handbook-card main {
     max-width: var(--main-width);
+    margin: 0 auto;
   }
   body.page-handbook-card main section.cards-slider nav.cards-nav {
     margin: -1.5rem 0 2rem 0;

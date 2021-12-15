@@ -1,5 +1,6 @@
 /* page-handbook.php styles */
 @import "../css/variables-static";
+@import "../css/variables";
 
 body.page-handbook {
     header.main-header {
@@ -240,12 +241,28 @@ div.tabs { // TODO: Move this to main css?
 
 }
 
+div.container.center {
+
+}
+
+
+
 // DESKTOP
 @media @desktop {
     body.page-handbook {
         main {
+            // NOTE: Temporary centering
+            max-width: var(--main-width);
+            margin: 0 auto;
+
             > header {
                 margin-bottom: var(--spacing-y);
+
+                // NOTE: Temporary centering
+                margin-left: @center-margin;
+                margin-right: @center-margin;
+                padding-left: @center-padding;
+                padding-right: @center-padding;
 
                 h1 {
                     font-size: var(--font-size-biggest);
@@ -267,9 +284,13 @@ div.tabs { // TODO: Move this to main css?
                 display: flex;
             	flex-flow: row wrap;
 
+                // NOTE: Temporary centering
+                margin-right: -4rem;
+
                 > header {
                     flex: 1 1 100%;
                     margin-bottom: var(--spacing-y);
+
 
 
                     h2 {
@@ -323,10 +344,16 @@ div.tabs { // TODO: Move this to main css?
                     &:last-of-type {
                         margin-right: 0;
                     }
-
                 }
 
+                &.special {
+                    // NOTE: Temporary centering
+                    margin-left: @center-margin;
+                    margin-right: @center-margin;
+                    padding-left: @center-padding;
+                    padding-right: @center-padding;
 
+                }
 
             }
         }

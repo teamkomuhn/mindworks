@@ -1,4 +1,54 @@
 /* page-handbook.php styles */
+:root {
+  --spacing-x: 1.5rem;
+  --spacing-y: 3rem;
+  --spacing-half: 3.75rem;
+  --main-header-height: 6rem;
+  --main-width: 60rem;
+  --main-width-pad: calc(var(--main-width) + (2 * var(--spacing-x)));
+  --color-black: #222222;
+  --color-white: #ffffff;
+  --color-grey-light: #EEEEEE;
+  --rgb-grey-light: 238, 238, 238;
+  --color-grey: #DDDDDD;
+  --rgb-grey: 212, 221, 221;
+  --color-grey-dark: #CCCCCC;
+  --color-grey-darker: #666666;
+  --color-yellow-light: #FEF288;
+  --color-yellow: #FAFF00;
+  --color-blue-light: #DBEFEE;
+  --color-coral-dark: #FF7557;
+  --color-coral: #FF7557;
+  --color-coral-light: #FFA693;
+  --font-size-title: 4rem;
+  --font-size-biggest: 3rem;
+  --font-size-bigger: 2.3rem;
+  --font-size-big: 1.5rem;
+  --font-size-biggish: 1.3rem;
+  --font-size-p: 1.1rem;
+  --font-size-small: 1rem;
+  --font-size-smaller: 0.9rem;
+  --font-size-smallest: 0.8rem;
+  --font-size-h1: 3rem;
+  --font-size-h2: 3rem;
+  --font-size-h3: 2.3rem;
+  --font-size-h4: 1.5rem;
+  --font-size-h5: 1.2rem;
+}
+@media only screen and (min-width: 1201px) {
+  :root {
+    --spacing-x: 7.5rem;
+    --spacing-y: 3.75rem;
+    --main-header-height: 10rem;
+    --font-size-title: 4rem;
+    --font-size-biggest: 3rem;
+    --font-size-bigger: 2rem;
+    --font-size-h1: 3rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 2rem;
+    --font-size-h4: 2rem;
+  }
+}
 body.page-handbook main {
   padding: 2rem var(--spacing-x) var(--spacing-y) var(--spacing-x);
 }
@@ -156,8 +206,16 @@ div.tabs .tab.active > * {
   display: block;
 }
 @media only screen and (min-width: 1201px) {
+  body.page-handbook main {
+    max-width: var(--main-width);
+    margin: 0 auto;
+  }
   body.page-handbook main > header {
     margin-bottom: var(--spacing-y);
+    margin-left: calc(-1 * calc((100vw - var(--main-width)) / 2));
+    margin-right: calc(-1 * calc((100vw - var(--main-width)) / 2));
+    padding-left: calc((100vw - var(--main-width)) / 2);
+    padding-right: calc((100vw - var(--main-width)) / 2);
   }
   body.page-handbook main > header h1 {
     font-size: var(--font-size-biggest);
@@ -173,6 +231,7 @@ div.tabs .tab.active > * {
   body.page-handbook main section.category {
     display: flex;
     flex-flow: row wrap;
+    margin-right: -4rem;
   }
   body.page-handbook main section.category > header {
     flex: 1 1 100%;
@@ -208,6 +267,12 @@ div.tabs .tab.active > * {
   }
   body.page-handbook main section.category article.card:last-of-type {
     margin-right: 0;
+  }
+  body.page-handbook main section.category.special {
+    margin-left: calc(-1 * calc((100vw - var(--main-width)) / 2));
+    margin-right: calc(-1 * calc((100vw - var(--main-width)) / 2));
+    padding-left: calc((100vw - var(--main-width)) / 2);
+    padding-right: calc((100vw - var(--main-width)) / 2);
   }
 }
 /*# sourceMappingURL=page-handbook.css.map */

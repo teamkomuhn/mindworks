@@ -11,8 +11,7 @@ body {
 
 main {
 	background-color: var(--color-white);
-	// max-width: var(--main-width);
-	overflow: auto;
+	// overflow: auto;
 }
 
 .max-width {
@@ -74,6 +73,9 @@ section.comments {
 /* HEADER */
 
 header.main-header {
+	// NOTE: Temporary centering
+	width: var(--main-width-pad);
+	margin: 0 auto;
 
 	.logo {
 		img {
@@ -137,6 +139,10 @@ section.latest-work {
 footer.main-footer {
 	max-width: var(--main-width);
 	padding: var(--spacing-x) var(--spacing-x);
+
+	// NOTE: Temporary centering
+	padding-left: @center-padding;
+	padding-right: @center-padding;
 
     div.identity {
 
