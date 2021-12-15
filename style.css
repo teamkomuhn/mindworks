@@ -478,8 +478,68 @@ header.main-header .logo span {
   display: none;
 }
 header.main-header nav.main-nav {
-  margin-right: var(--spacing-x);
-  margin-bottom: 12px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99999;
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+  background-color: #222222;
+  color: #ffffff;
+  padding: var(--spacing-y) var(--spacing-x);
+  display: none;
+}
+header.main-header nav.main-nav a.logo {
+  margin: -0.5rem 0 var(--spacing-y) 0;
+}
+header.main-header nav.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+header.main-header nav.main-nav ul > li {
+  font-size: var(--font-size-biggish);
+  margin-bottom: 1em;
+}
+header.main-header nav.main-nav ul > li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+header.main-header nav.main-nav ul > li ul {
+  margin: 1em 0 0 1em;
+}
+header.main-header nav.main-nav ul > li ul li {
+  font-size: var(--font-size-p);
+}
+div.so-me {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+div.so-me a.icon {
+  position: relative;
+  font-size: var(--font-size-bigger);
+  color: var(--color-white);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+div.so-me a.icon:first-child {
+  margin-left: 0;
+}
+div.so-me a.privacy {
+  color: var(--color-white);
+  margin-left: auto;
 }
 /* SIDEBAR */
 /* BLOCKS */
@@ -649,29 +709,6 @@ footer.main-footer div.form p.email-link a {
 }
 footer.main-footer div.form p.email-link a strong {
   display: block;
-}
-footer.main-footer div.so-me {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -webkit-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
-  margin-bottom: 1em;
-}
-footer.main-footer div.so-me a.icon {
-  position: relative;
-  font-size: var(--font-size-bigger);
-  color: var(--color-white);
-  text-decoration: none;
-  margin: 0 0.5rem;
-}
-footer.main-footer div.so-me a.icon:first-child {
-  margin-left: 0;
 }
 footer.main-footer div.so-me a.privacy {
   color: var(--color-white);

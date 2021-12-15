@@ -58,11 +58,38 @@
 			</a>
 		<?php endif; ?>
 
-		<nav class="main-nav">
-			<?php global $post; if ( is_page() && $post->post_parent ) : ?>
-				<a class="button back-to-index" href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php echo get_the_title( $post->post_parent ); ?>">← <?php //print get_post_field( 'post_title', $post_id, 'raw' ); ?></a>
-			<?php endif; ?>
+		<nav class="main-nav opened">
+			<!-- <?php //global $post; if ( is_page() && $post->post_parent ) : ?>
+				<a class="button back-to-index" href="<?php //echo get_permalink( $post->post_parent ); ?>" title="<?php echo get_the_title( $post->post_parent ); ?>">← <?php //print get_post_field( 'post_title', $post_id, 'raw' ); ?></a>
+			<?php //endif; ?> -->
+
+			<a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name') ?>">
+				<span><?php bloginfo('name') ?></span>
+				<img src="<?php echo get_template_directory_uri(); ?>/img/logo-white.svg" alt="<?php bloginfo('name'); ?>" />
+			</a>
+
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li>
+					<a href="#">The Disrupted Mind</a>
+					<ul>
+						<li><a href="#">Scientific insights</a></li>
+						<li><a href="#">The crisis timeline</a></li>
+						<li><a href="#">The crisis handbook</a></li>
+					</ul>
+				</li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contacts</a></li>
+			</ul>
+
+			<div class="so-me">
+                <a href="https://www.linkedin.com/company/mindworks-lab/" class="icon icon-linkedin" alt="Mindworks Linkedin"></a>
+                <a href="https://twitter.com/mindworkslab" class="icon icon-twitter" alt="Mindworks Twitter"></a>
+            </div>
+
+			<button type="button">Close</button>
 		</nav>
+
 
 	</header>
 

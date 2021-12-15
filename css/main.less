@@ -430,15 +430,83 @@ header.main-header {
     }
 
     nav.main-nav {
+        position: fixed;
+        // top: var(--main-header-height); right: 0; bottom: 0; left: 0;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: 99999;
+        overflow-y: scroll;
+        overscroll-behavior: contain;
 
-        margin-right: var(--spacing-x);
-        margin-bottom: 12px;
+        background-color: @color-black;
+        color: @color-white;
+
+        padding: var(--spacing-y) var(--spacing-x);
+
+        display: none;
+
+        a.logo {
+            margin: -.5rem 0 var(--spacing-y) 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0; margin: 0;
+            margin-bottom: 2rem;
+
+            > li {
+                font-size: var(--font-size-biggish);
+                margin-bottom: 1em;
+
+                a {
+                    color: @color-white;
+                    text-decoration: none;
+                }
+
+                ul {
+                    margin: 1em 0 0 1em;
+
+                    li {
+                        font-size: var(--font-size-p);
+                    }
+                }
+            }
+        }
 
         a.back-to-index {
 
         }
+
+        &.closed {
+
+        }
+    }
+}
+
+div.so-me {
+    .flex-display();
+    .flex-flow(row nowrap);
+    .align-items(center);
+
+    margin-bottom: 1em;
+
+    a.icon {
+        position: relative;
+
+        font-size: var(--font-size-bigger);
+        color: var(--color-white);
+        text-decoration: none;
+
+        margin: 0 .5rem;
+
+        &:first-child {
+            margin-left: 0;
+        }
     }
 
+    a.privacy {
+        color: var(--color-white);
+        margin-left: auto;
+    }
 }
 
 /* SIDEBAR */
@@ -690,25 +758,6 @@ footer.main-footer {
     }
 
     div.so-me {
-        .flex-display();
-        .flex-flow(row nowrap);
-        .align-items(center);
-
-        margin-bottom: 1em;
-
-        a.icon {
-            position: relative;
-
-            font-size: var(--font-size-bigger);
-            color: var(--color-white);
-            text-decoration: none;
-
-            margin: 0 .5rem;
-
-            &:first-child {
-                margin-left: 0;
-            }
-        }
 
         a.privacy {
             color: var(--color-white);
