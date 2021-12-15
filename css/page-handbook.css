@@ -270,7 +270,7 @@ div.tabs .tab.active > * {
   }
   body.page-handbook main section.category.special {
     margin-left: calc(-1 * calc((100vw - var(--main-width)) / 2));
-    margin-right: calc(-1 * calc((100vw - var(--main-width)) / 2));
+    margin-right: calc(-1 * (calc((100vw - var(--main-width)) / 2) + 4rem));
     padding-left: calc((100vw - var(--main-width)) / 2);
     padding-right: calc((100vw - var(--main-width)) / 2);
   }

@@ -39,8 +39,8 @@
                     <?php if ( $parent->have_posts() ) : ?>
 
                         <?php
-                            while ( $parent->have_posts() ) : $parent->the_post(); 
-                        
+                            while ( $parent->have_posts() ) : $parent->the_post();
+
                             // Make part from page child order
                                 $page_order = $post->menu_order;
                                 $part = 'Part ' . ($page_order + 1);

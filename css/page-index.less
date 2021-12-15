@@ -229,8 +229,6 @@
 @media only screen and (min-width: 1025px) {
 
     .page-index {
-
-
         //Variables
         @x-spacing: 	7.5rem;
         @y-spacing: 	7.5rem;
@@ -244,7 +242,12 @@
         @font-size-h5: 		1.5rem;
         @font-size-p: 		1.1rem;
 
-
+        // NOTE: Temporary centering
+        main {
+            width: var(--main-width-pad) !important;
+        	margin: 0 auto !important;
+        }
+    	
         /* ITEMS */
 
         .featured-post {

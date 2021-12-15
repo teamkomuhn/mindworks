@@ -77,15 +77,15 @@
                     $firstID   = $cardslist[0];
                     $lastID    = end($cardslist);
                     $total     = count($cardslist);
-                    
+
                     $current   = array_search(get_the_ID(), $cardslist);
                     $prevID    = $cardslist[$current-1];
                     $nextID    = $cardslist[$current+1];
-                    
-                    if( $current == get_the_ID($post) ){ 
-                        $active_class = 'class="active"'; 
-                    } else { 
-                        $active_class = '';  
+
+                    if( $current == get_the_ID($post) ){
+                        $active_class = 'class="active"';
+                    } else {
+                        $active_class = '';
                     }
 
                     if( $cardslist > 1 ) {
@@ -101,7 +101,7 @@
                 <nav class="cards-nav">
                     <a href="<?php echo $post_parent_link; ?>" title="All cards"><span>All cards</span></a>
 
-                    <?php if (!empty($prevID)) { 
+                    <?php if (!empty($prevID)) {
                     ?>
                             <a class="previous" href="<?php echo get_permalink($prevID); ?>" title="Previous card">&larr;</a>
                     <?php } else { ?>
@@ -119,7 +119,7 @@
                         ));
 
                         if ( $query_cardslist->have_posts() ) :
-                            
+
                             $i = 1;
                             while ( $query_cardslist->have_posts() ) : $query_cardslist->the_post();
                                 if($current_cardID == get_the_ID()){ $active_class = 'class="active"'; } else { $active_class = '';  }
@@ -245,7 +245,7 @@
                                 <?php echo $content; ?>
                             </div>
                         </div>
-                        
+
                         <?php } else { ?>
                             <div class="content">
                                 <?php echo $content; ?>
@@ -354,7 +354,7 @@
                             <article class="tool" id="tool-<?php echo $slug; ?>">
                                 <h3><?php print $title; ?></h3>
                                 <p><?php print $excerpt; ?></p>
-                                
+
                                 <?php if( !empty($link) ) : ?>
                                 <a href="<?php echo esc_url($link); ?>">Learn more &rarr;</a>
                                 <?php endif; ?>

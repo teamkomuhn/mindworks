@@ -291,8 +291,6 @@ div.container.center {
                     flex: 1 1 100%;
                     margin-bottom: var(--spacing-y);
 
-
-
                     h2 {
                         font-size: var(--font-size-bigger);
                         background-size: 2.6rem;
@@ -349,7 +347,7 @@ div.container.center {
                 &.special {
                     // NOTE: Temporary centering
                     margin-left: @center-margin;
-                    margin-right: @center-margin;
+                    margin-right: calc( -1 * (@center-padding + 4rem) );
                     padding-left: @center-padding;
                     padding-right: @center-padding;
 

@@ -195,6 +195,10 @@
   .page-index {
     /* ITEMS */
   }
+  .page-index main {
+    width: var(--main-width-pad) !important;
+    margin: 0 auto !important;
+  }
   .page-index .featured-post {
     -webkit-flex-flow: row nowrap;
     -ms-flex-flow: row nowrap;
