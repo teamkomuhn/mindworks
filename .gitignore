@@ -23,6 +23,7 @@ node_modules/
 *.sqlite
 
 # ignore
+.DS_Store
 *.DS_Store
 *.ftpconfig
 *.ftpignore
