@@ -85,24 +85,25 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
     for (const container of containers) {
 
-        const button = container.querySelector(`.button-expandable`)
+        const buttons = [ ...container.querySelectorAll(`.button-expandable, .title-expandable`) ]
         const expandable = container.querySelector(`.expandable`)
 
-        const { scrollHeight } = expandable
+        for (const button of buttons) {
 
-        button.addEventListener(`click`, event => {
+            button.addEventListener(`click`, event => {
             
-            let height = scrollHeight
-
-            const isOpen = container.classList.contains(`expanded`)
-
-            if (isOpen) height = 0
-
-            scrollTo(container)
-
-            container.style.setProperty(`--height`, height)
-            container.classList.toggle(`expanded`)
-        })
+                let { scrollHeight: height } = expandable
+    
+                const isOpen = container.classList.contains(`expanded`)
+    
+                if (isOpen) height = 0
+    
+                scrollTo(container)
+    
+                container.style.setProperty(`--height`, height)
+                container.classList.toggle(`expanded`)
+            })
+        }
     }
 
 

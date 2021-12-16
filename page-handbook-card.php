@@ -277,7 +277,7 @@
                                 ?>
 
                                 <article class="step container-expandable">
-                                    <h3><?php print $title; ?></h3>
+                                    <h3 class="title-expandable"><?php print $title; ?></h3>
 
                                     <?php if( !empty($content) ): ?>
                                         <button class="button-expandable"><span>&darr;</span></button>
