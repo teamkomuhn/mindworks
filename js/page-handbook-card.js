@@ -6,16 +6,24 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
     'use strict';
 
-    const scrollTo = (element, duration = 250, delay = 0, offset = 0, timing = `linear`) => {
-        
-        setTimeout(() => {
-            $([ document.documentElement, document.body ]).animate({
-                scrollTop: $(element).offset().top - offset
-            }, duration, timing)
-        }, delay)
-        
+    const scrollTo = async (element, { duration = 250, delay = 0, offset = 0, timing = `linear`, visible = false} = {}) => {
+
+        const observer = new IntersectionObserver((entries, observer) => {
+
+            if (visible && entries[0].isIntersecting) return
+            
+            setTimeout(() => {
+                $([ document.documentElement, document.body ]).animate({
+                    scrollTop: $(element).offset().top - offset
+                }, duration, timing)
+            }, delay)
+
+            observer.disconnect()
+        })
+
+        observer.observe(element)
     }
-    
+
 
     // Cards navigation
 
@@ -98,7 +106,7 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
     
                 if (isOpen) height = 0
     
-                scrollTo(container)
+                scrollTo(container, { visible: true })
     
                 container.style.setProperty(`--height`, height)
                 container.classList.toggle(`expanded`)
