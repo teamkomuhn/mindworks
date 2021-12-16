@@ -6,7 +6,7 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
     'use strict';
 
-    const scrollTo = (element, { duration = 250, delay = 0, offset = 0, timing = `linear`, viewport = false} = {}) => {
+    const scrollTo = (element, duration = 250, delay = 0, offset = 0, timing = `linear`) => {
         
         setTimeout(() => {
             $([ document.documentElement, document.body ]).animate({
@@ -79,36 +79,30 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
     setTabs();
 
 
-    // Expandable steps
+    // 🪜 Expandable steps
 
     const containers = document.querySelectorAll(`.container-expandable`)
-    const heights = []
 
-    for (const [index, container] of containers.entries()) {
+    for (const container of containers) {
 
-        const title = container.querySelector(`h3`)
         const button = container.querySelector(`.button-expandable`)
         const expandable = container.querySelector(`.expandable`)
 
-        heights.push(expandable.getBoundingClientRect().height)
+        const { scrollHeight } = expandable
 
-        expandable.style.setProperty(`--height`, `0px`)
+        button.addEventListener(`click`, event => {
+            
+            let height = scrollHeight
 
-        button.addEventListener(`click`, () => {
+            const isOpen = container.classList.contains(`expanded`)
 
-            const isOpen = expandable.style.getPropertyValue(`--height`) !== `0px`
+            if (isOpen) height = 0
 
-            if (isOpen) {
-                expandable.style.setProperty(`--height`, `0px`)
+            scrollTo(container)
 
-                scrollTo(title, { viewport: true })
-            } else {
-                expandable.style.setProperty(`--height`, `${heights[index]}px`)
-            }
-
+            container.style.setProperty(`--height`, height)
             container.classList.toggle(`expanded`)
         })
-
     }
 
 

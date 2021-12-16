@@ -244,7 +244,7 @@ body.page-handbook-card main section.cards-slider article.card section.steps art
   display: none;
 }
 body.page-handbook-card main section.cards-slider article.card section.steps article.step.container-expandable.expanded > .button-expandable::after {
-  content: "\2191  Close";
+  content: "\2191 Close";
 }
 body.page-handbook-card main section.cards-slider article.card section.steps.tab {
   padding: 0;
@@ -387,7 +387,7 @@ body.page-handbook-card main section.cards-slider article.card footer ul li p a 
 }
 .container-expandable .expandable {
   overflow: hidden;
-  height: var(--height, auto);
+  height: calc(var(--height, 0) * 1px);
   transition: height 250ms linear;
   will-change: height;
 }
@@ -546,4 +546,3 @@ div.tabs .tab.active div.container {
     margin-right: 0;
   }
 }
-/*# sourceMappingURL=page-handbook-card.css.map */
