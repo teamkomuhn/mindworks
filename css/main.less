@@ -258,12 +258,12 @@ button, .button {
     display: inline-block;
 
     background-color: transparent;
-    border: .1rem solid var(--color-black);
+    border: .1rem solid @color-black;
     border-radius: 0.2em;
 
     font-size: var(--font-size-small);
     font-weight: 500;
-    color: var(--color-black);
+    color: @color-black;
     line-height: 3rem;
     text-align: center;
     text-decoration: none;
@@ -317,8 +317,8 @@ div.buttons {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
 
-            background-color: var(--color-black);
-            color: var(--color-white);
+            background-color: @color-black;
+            color: @color-white;
         }
     }
 }
@@ -335,9 +335,9 @@ figure {
 form {
     input, textarea {
     	font-weight: 500;
-        color: var(--color-black);
+        color: @color-black;
 
-    	border: 1px solid var(--color-black);
+    	border: 1px solid @color-black;
     	border-radius: 0.2em;
     	background-color: transparent;
     	padding: 1em;
@@ -349,24 +349,24 @@ form {
         -webkit-appearance: none;
 
     	&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    		color: var(--color-black);
+    		color: @color-black;
     		opacity: 1; /* Firefox */
     	  }
 
     	  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    		color: var(--color-black);
+    		color: @color-black;
     	}
 
     	&:-ms-input-placeholder { /* Microsoft Edge */
-    		color: var(--color-black);
+    		color: @color-black;
     	}
     }
 
     input[type="submit"] {
         font-weight: 600;
-        color: var(--color-white);
+        color: @color-white;
 
-        background-color: var(--color-black);
+        background-color: @color-black;
         margin-top: 1em;
     }
 
@@ -377,7 +377,7 @@ form {
 
 // COMMENTS FORM
 section.comments {
-    background-color: var(--color-grey-light);
+    background-color: @color-grey-light;
     padding: var(--spacing-x);
     margin-bottom: var(--spacing-y);
 
@@ -412,7 +412,7 @@ section.comments {
 /* HEADER */
 header.main-header {
 	height: var(--main-header-height);
-    background-color: var(--color-white);
+    background-color: @color-white;
 
     display: flex;
     flex-flow: row nowrap;
@@ -429,6 +429,35 @@ header.main-header {
 
     }
 
+    button.nav {
+        margin-right: var(--spacing-x);
+
+        border: 0;
+        height: 1.5rem; width: 1.5em;
+        padding: 0;
+
+        background-color: transparent;
+        background-image: url("img/icon-burger-black.svg");
+        background-repeat: no-repeat;
+        background-position: center left;
+        background-size: contain;
+
+        > span {
+            display: none;
+        }
+
+        &.open {}
+
+        &.close {
+            background-image: url("img/icon-cross-white.svg");
+
+            position: absolute;
+            top: var(--spacing-y);
+            right: 0;
+            margin-top: -.5rem;
+        }
+    }
+
     nav.main-nav {
         position: fixed;
         // top: var(--main-header-height); right: 0; bottom: 0; left: 0;
@@ -442,10 +471,12 @@ header.main-header {
 
         padding: var(--spacing-y) var(--spacing-x);
 
-        display: none;
+        transform: translateX(100vw); // Hide it
+        transition: transform .5s ease;
 
         a.logo {
-            margin: -.5rem 0 var(--spacing-y) 0;
+            margin: -5rem 0 var(--spacing-y) 0;
+            display: inline-block;
         }
 
         ul {
@@ -472,12 +503,10 @@ header.main-header {
             }
         }
 
-        a.back-to-index {
+        div.so-me {}
 
-        }
-
-        &.closed {
-
+        &.opened {
+            transform: translateX(0vw) !important; // Show it
         }
     }
 }

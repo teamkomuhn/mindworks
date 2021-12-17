@@ -333,11 +333,11 @@ button,
 .button {
   display: inline-block;
   background-color: transparent;
-  border: 0.1rem solid var(--color-black);
+  border: 0.1rem solid #222222;
   border-radius: 0.2em;
   font-size: var(--font-size-small);
   font-weight: 500;
-  color: var(--color-black);
+  color: #222222;
   line-height: 3rem;
   text-align: center;
   text-decoration: none;
@@ -382,8 +382,8 @@ div.buttons button:last-child,
 div.buttons .button:last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: #222222;
+  color: #ffffff;
 }
 /* IMAGES */
 figure {
@@ -394,8 +394,8 @@ figure {
 form input,
 form textarea {
   font-weight: 500;
-  color: var(--color-black);
-  border: 1px solid var(--color-black);
+  color: #222222;
+  border: 1px solid #222222;
   border-radius: 0.2em;
   background-color: transparent;
   padding: 1em;
@@ -407,31 +407,31 @@ form textarea {
 form input::placeholder,
 form textarea::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: var(--color-black);
+  color: #222222;
   opacity: 1;
   /* Firefox */
 }
 form input:-ms-input-placeholder,
 form textarea:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: var(--color-black);
+  color: #222222;
 }
 form input:-ms-input-placeholder,
 form textarea:-ms-input-placeholder {
   /* Microsoft Edge */
-  color: var(--color-black);
+  color: #222222;
 }
 form input[type="submit"] {
   font-weight: 600;
-  color: var(--color-white);
-  background-color: var(--color-black);
+  color: #ffffff;
+  background-color: #222222;
   margin-top: 1em;
 }
 form textarea {
   line-height: 1.5;
 }
 section.comments {
-  background-color: var(--color-grey-light);
+  background-color: #EEEEEE;
   padding: var(--spacing-x);
   margin-bottom: var(--spacing-y);
 }
@@ -464,7 +464,7 @@ section.comments header p {
 /* HEADER */
 header.main-header {
   height: var(--main-header-height);
-  background-color: var(--color-white);
+  background-color: #ffffff;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -476,6 +476,28 @@ header.main-header .logo {
 }
 header.main-header .logo span {
   display: none;
+}
+header.main-header button.nav {
+  margin-right: var(--spacing-x);
+  border: 0;
+  height: 1.5rem;
+  width: 1.5em;
+  padding: 0;
+  background-color: transparent;
+  background-image: url("img/icon-burger-black.svg");
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: contain;
+}
+header.main-header button.nav > span {
+  display: none;
+}
+header.main-header button.nav.close {
+  background-image: url("img/icon-cross-white.svg");
+  position: absolute;
+  top: var(--spacing-y);
+  right: 0;
+  margin-top: -0.5rem;
 }
 header.main-header nav.main-nav {
   position: fixed;
@@ -489,10 +511,12 @@ header.main-header nav.main-nav {
   background-color: #222222;
   color: #ffffff;
   padding: var(--spacing-y) var(--spacing-x);
-  display: none;
+  transform: translateX(100vw);
+  transition: transform 0.5s ease;
 }
 header.main-header nav.main-nav a.logo {
-  margin: -0.5rem 0 var(--spacing-y) 0;
+  margin: -5rem 0 var(--spacing-y) 0;
+  display: inline-block;
 }
 header.main-header nav.main-nav ul {
   list-style: none;
@@ -513,6 +537,9 @@ header.main-header nav.main-nav ul > li ul {
 }
 header.main-header nav.main-nav ul > li ul li {
   font-size: var(--font-size-p);
+}
+header.main-header nav.main-nav.opened {
+  transform: translateX(0vw) !important;
 }
 div.so-me {
   display: -webkit-flex;
@@ -749,6 +776,12 @@ footer.main-footer div.so-me a.privacy {
   /* HEADER */
   header.main-header .logo img {
     width: 15rem;
+  }
+  header.main-header button.nav.close {
+    margin-top: 0.5rem;
+  }
+  header.main-header nav.main-nav a.logo {
+    margin-top: -0.5rem;
   }
   section.latest-work {
     margin: 0 var(--spacing-x) var(--spacing-x) var(--spacing-x);

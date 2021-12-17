@@ -55,15 +55,15 @@ var debounce = function (fn) {
 
 
     // READ TIME JS - https://w3collective.com/calculate-reading-time-javascript/
-    function readingTime() { // TODO: Make function better: variables, id
-        var text = document.getElementById('main').innerText;
-        var wpm = 175;
-        var words = text.trim().split(/\s+/).length;
-        var time = Math.ceil(words / wpm);
-        document.getElementById('readtime').innerText = time;
-
-        //console.log(words);
-    }
+    // function readingTime() { // TODO: Make function better: variables, id
+    //     var text = document.getElementById('main').innerText;
+    //     var wpm = 175;
+    //     var words = text.trim().split(/\s+/).length;
+    //     var time = Math.ceil(words / wpm);
+    //     document.getElementById('readtime').innerText = time;
+    //
+    //     //console.log(words);
+    // }
 
     // CONTENT OVERLAY SLIDE
 
@@ -158,6 +158,17 @@ var debounce = function (fn) {
             // console.log('click');
             content_slide.toggleClass( 'opened' );
             event.preventDefault();
+        }
+    );
+
+
+
+    // MAIN NAV SLIDE
+    $('.main-header').on(
+        'click', 'button.nav.open, button.nav.close', function() {
+
+            // console.log(e.target);
+            $('.main-nav').toggleClass( 'opened' );
         }
     );
 

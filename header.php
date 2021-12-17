@@ -58,7 +58,8 @@
 			</a>
 		<?php endif; ?>
 
-		<nav class="main-nav opened">
+		<button class="button nav open" type="button"><span>Open</span></button>
+		<nav class="main-nav">
 			<!-- <?php //global $post; if ( is_page() && $post->post_parent ) : ?>
 				<a class="button back-to-index" href="<?php //echo get_permalink( $post->post_parent ); ?>" title="<?php echo get_the_title( $post->post_parent ); ?>">← <?php //print get_post_field( 'post_title', $post_id, 'raw' ); ?></a>
 			<?php //endif; ?> -->
@@ -87,7 +88,7 @@
                 <a href="https://twitter.com/mindworkslab" class="icon icon-twitter" alt="Mindworks Twitter"></a>
             </div>
 
-			<button type="button">Close</button>
+			<button class="button nav close" type="button"><span>Close</span></button>
 		</nav>
 
 
