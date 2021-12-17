@@ -70,17 +70,17 @@
 			</a>
 
 			<ul>
-				<li><a href="#">Home</a></li>
+				<li><a href="<?php echo home_url(); ?>">Home</a></li>
 				<li>
-					<a href="#">The Disrupted Mind</a>
+					<a href="<?php echo home_url('/thedisruptedmind/'); ?>">The Disrupted Mind</a>
 					<ul>
-						<li><a href="#">Scientific insights</a></li>
-						<li><a href="#">The crisis timeline</a></li>
-						<li><a href="#">The crisis handbook</a></li>
+						<li><a href="<?php echo home_url('/thedisruptedmind/scientific-insights'); ?>">Scientific insights</a></li>
+						<li><a href="<?php echo home_url('/thedisruptedmind/the-crisis-timeline'); ?>">The crisis timeline</a></li>
+						<li><a href="<?php echo home_url('/thedisruptedmind/the-crisis-handbook'); ?>">The crisis handbook</a></li>
 					</ul>
 				</li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contacts</a></li>
+				<!-- <li><a href="#">About</a></li> -->
+				<li><a href="#contacts">Contacts</a></li>
 			</ul>
 
 			<div class="so-me">
