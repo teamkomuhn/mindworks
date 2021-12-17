@@ -6,6 +6,7 @@
  * (c) 2018 Chris Ferdinandi, MIT License, https://gomakethings.com/debouncing-your-javascript-events/
  * @param  {Function} fn The function to debounce
  */
+
 var debounce = function (fn) {
 	// Setup a timer
 	let timeout;
@@ -162,14 +163,20 @@ var debounce = function (fn) {
     );
 
 
-
     // MAIN NAV SLIDE
-    $('.main-header').on(
-        'click', 'button.nav.open, button.nav.close', function() {
+    
+    const mainHeader = document.querySelector(`.main-header`)
+    const mainNav = mainHeader.querySelector(`.main-nav`)
+    const navButtons = mainHeader.querySelectorAll(`.button.nav`)
 
-            // console.log(e.target);
-            $('.main-nav').toggleClass( 'opened' );
-        }
-    );
+    for (const navButton of navButtons) {
+        navButton.addEventListener(`click`, () => {
+            mainNav.classList.toggle(`opened`)
+        })
+    }
+
+    mainNav.addEventListener(`click`, event => {
+        mainNav.classList.toggle(`opened`)
+    })
 
 })( jQuery );
