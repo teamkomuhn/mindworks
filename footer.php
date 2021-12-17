@@ -17,7 +17,7 @@
                 <h3>Mindworks translates insights from cognitive and social sciences into practical tools for audience research, campaign strategy and engagement design.</h3>
             </div>
 
-            <div class="form mailchimp">
+            <div class="form mailchimp" id="contacts">
                 <h4>Join our mailing list!</h4>
                 <p>Sign up for news, insights, tips and tools from the Mindworks Lab.</p>
 
