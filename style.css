@@ -394,6 +394,7 @@ figure {
 form input,
 form textarea {
   font-weight: 500;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   color: #222222;
   border: 1px solid #222222;
   border-radius: 0.2em;
@@ -752,6 +753,12 @@ footer.main-footer div.so-me a.privacy {
   }
   .max-width {
     max-width: var(--main-width);
+  }
+  .max-width-pad {
+    max-width: var(--main-width-pad);
+  }
+  .margin-auto {
+    margin: 0 auto;
   }
   /* TYPOGRAPHY */
   .text-biggest {

@@ -37,9 +37,9 @@
 		$old_page_TDM1 = get_page_by_path('thedisruptedmind/scientific-insights/');
 
 		if ( is_page( $old_page_TDMindex->ID ) || is_page( $old_page_TDM1->ID ) ) {
-			$maxWidth = "style='max-width:calc(60rem + (var(--spacing-x)*2));'";
+			$maxWidth = "class='max-width-pad margin-auto'";
 		} else {
-			$maxWidth = "";
+			$maxWidth = "class='max-width margin-auto'";
 		}
 
 	?>
