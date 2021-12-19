@@ -459,9 +459,12 @@ header.main-header {
     }
 
     nav.main-nav {
+        box-sizing: border-box;
+
         position: fixed;
         // top: var(--main-header-height); right: 0; bottom: 0; left: 0;
-        top: 0; right: 0; bottom: 0; left: 0;
+        top: 0; right: 200vw; bottom: 0; left: 100vw;
+        width: 100%;
         z-index: 99999;
         overflow-y: scroll;
         overscroll-behavior: contain;
@@ -471,7 +474,6 @@ header.main-header {
 
         padding: var(--spacing-y) var(--spacing-x);
 
-        transform: translateX(100vw); // Hide it
         transition: transform .5s ease;
 
         a.logo {
@@ -506,7 +508,7 @@ header.main-header {
         div.so-me {}
 
         &.opened {
-            transform: translateX(0vw) !important; // Show it
+            transform: translateX(-100vw); // Show it
         }
     }
 }

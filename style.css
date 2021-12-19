@@ -500,18 +500,19 @@ header.main-header button.nav.close {
   margin-top: -0.5rem;
 }
 header.main-header nav.main-nav {
+  box-sizing: border-box;
   position: fixed;
   top: 0;
-  right: 0;
+  right: 200vw;
   bottom: 0;
-  left: 0;
+  left: 100vw;
+  width: 100%;
   z-index: 99999;
   overflow-y: scroll;
   overscroll-behavior: contain;
   background-color: #222222;
   color: #ffffff;
   padding: var(--spacing-y) var(--spacing-x);
-  transform: translateX(100vw);
   transition: transform 0.5s ease;
 }
 header.main-header nav.main-nav a.logo {
@@ -539,7 +540,7 @@ header.main-header nav.main-nav ul > li ul li {
   font-size: var(--font-size-p);
 }
 header.main-header nav.main-nav.opened {
-  transform: translateX(0vw) !important;
+  transform: translateX(-100vw);
 }
 div.so-me {
   display: -webkit-flex;
@@ -856,4 +857,3 @@ footer.main-footer div.so-me a.privacy {
     font-size: var(--font-size-biggest);
   }
 }
-/*# sourceMappingURL=style.css.map */
