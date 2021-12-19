@@ -45,14 +45,25 @@ var debounce = function (fn) {
         }, delay);
     }
 
-    //SMOOTH SCROLL FOR ANY .SCROLL-TO ELEMENT
-    function smoothScrollAnchors() {
-        $('a.scroll-to[href^="#"]').on('click', function(event) {
-            event.preventDefault();
-            scrollToMain($($.attr(this, 'href')), 300, 0);
-        });
+    // Polyfill: scroll-behavior: smooth;
+    const polyfillScrollBehaivior = () => {
+
+        const anchors = document.querySelectorAll(`a[href^="#"]`)
+
+        for (const anchor of anchors) {
+            anchor.addEventListener(`click`, event => {
+                event.preventDefault()
+
+                const href = event.target.getAttribute('href')
+                const target = document.querySelector(href)
+                scrollToMain(target, 250, 500)
+            })
+        }
     }
-    smoothScrollAnchors();
+
+    polyfillScrollBehaivior()
+
+    
 
 
     // READ TIME JS - https://w3collective.com/calculate-reading-time-javascript/
@@ -166,15 +177,18 @@ var debounce = function (fn) {
     // MAIN NAV SLIDE
     
     const mainHeader = document.querySelector(`.main-header`)
-    const mainNav = mainHeader.querySelector(`.main-nav`)
-    const navButtons = mainHeader.querySelectorAll(`.button.nav`)
+    const mainNav = mainHeader?.querySelector(`.main-nav`)
 
-    for (const navButton of [ mainNav, ...navButtons ]) {
-        navButton.addEventListener(`click`, event => {
-            event.stopPropagation()
+    if (mainNav) {
+        const navButtons = mainHeader.querySelectorAll(`.button.nav`)
 
-            mainNav.classList.toggle(`opened`)
-        })
+        for (const navButton of [ mainNav, ...navButtons ]) {
+            navButton.addEventListener(`click`, event => {
+                event.stopPropagation()
+
+                mainNav.classList.toggle(`opened`)
+            })
+        }
     }
 
 })( jQuery );
