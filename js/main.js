@@ -169,14 +169,12 @@ var debounce = function (fn) {
     const mainNav = mainHeader.querySelector(`.main-nav`)
     const navButtons = mainHeader.querySelectorAll(`.button.nav`)
 
-    for (const navButton of navButtons) {
-        navButton.addEventListener(`click`, () => {
+    for (const navButton of [ mainNav, ...navButtons ]) {
+        navButton.addEventListener(`click`, event => {
+            event.stopPropagation()
+
             mainNav.classList.toggle(`opened`)
         })
     }
-
-    mainNav.addEventListener(`click`, event => {
-        mainNav.classList.toggle(`opened`)
-    })
 
 })( jQuery );
