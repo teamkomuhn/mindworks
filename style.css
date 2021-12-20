@@ -324,6 +324,10 @@ p.footnote {
 p a {
   color: var(--color-black);
 }
+mark {
+  background-color: #FEF288;
+  font-weight: 500;
+}
 main > h2 {
   font-size: var(--font-size-bigger);
   padding-bottom: 0.5em;
@@ -501,18 +505,19 @@ header.main-header button.nav.close {
   margin-top: -0.5rem;
 }
 header.main-header nav.main-nav {
+  box-sizing: border-box;
   position: fixed;
   top: 0;
-  right: 0;
+  right: 200vw;
   bottom: 0;
-  left: 0;
+  left: 100vw;
+  width: 100%;
   z-index: 99999;
   overflow-y: scroll;
   overscroll-behavior: contain;
   background-color: #222222;
   color: #ffffff;
   padding: var(--spacing-y) var(--spacing-x);
-  transform: translateX(100vw);
   transition: transform 0.5s ease;
 }
 header.main-header nav.main-nav a.logo {
@@ -540,7 +545,7 @@ header.main-header nav.main-nav ul > li ul li {
   font-size: var(--font-size-p);
 }
 header.main-header nav.main-nav.opened {
-  transform: translateX(0vw) !important;
+  transform: translateX(-100vw);
 }
 div.so-me {
   display: -webkit-flex;
@@ -613,6 +618,70 @@ aside.slide.opened {
     left: auto;
     max-width: var(--main-width-pad);
   }
+}
+/* HOME */
+body.home header.main-header {
+  position: absolute;
+  z-index: 9999;
+  background-color: transparent;
+  width: 100%;
+}
+body.home header.main-header > .logo {
+  visibility: hidden;
+}
+body.home main section.about {
+  padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
+}
+body.home main section.about header {
+  background: transparent url("/img/cover-mind.jpg") no-repeat;
+  background-position: center right;
+  background-size: 200%;
+  margin-left: calc(-1 * var(--spacing-x));
+  margin-right: calc(-1 * var(--spacing-x));
+  height: 40rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+body.home main section.about header div.container {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: var(--spacing-y) var(--spacing-x);
+}
+body.home main section.about header h1.logo {
+  margin-bottom: 2rem;
+}
+body.home main section.about header h1.logo span {
+  display: none;
+}
+body.home main section.about header h2 {
+  margin-bottom: 1em;
+  font-weight: 500;
+  color: #ffffff;
+}
+body.home main section.about header h2 > span {
+  display: inline-block;
+  white-space: nowrap;
+  margin-bottom: 0.1em;
+}
+body.home main section.about header h3 {
+  padding-bottom: 1em;
+  font-size: var(--font-size-p);
+}
+body.home main section.latest-work {
+  margin-top: -8rem;
+}
+body.home main aside.cta {
+  padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
+}
+body.home main aside.cta p {
+  font-size: var(--font-size-p);
+  padding-bottom: 1em;
+}
+body.home main aside.cta a.button {
+  background-color: #FEF288;
+  display: block;
+  margin-top: 1rem;
 }
 section.latest-work {
   position: relative;
@@ -767,6 +836,10 @@ footer.main-footer div.so-me a.privacy {
     font-size: var(--font-size-biggest);
   }
   /* BUTTONS */
+  button,
+  .button {
+    font-weight: bold;
+  }
   /* FORMS */
   form {
     display: flex;
@@ -778,7 +851,6 @@ footer.main-footer div.so-me a.privacy {
   section.comments {
     padding: var(--spacing-y);
   }
-  /* BLOCKS */
   /* HEADER */
   header.main-header {
     width: var(--main-width-pad);
@@ -792,6 +864,51 @@ footer.main-footer div.so-me a.privacy {
   }
   header.main-header nav.main-nav a.logo {
     margin-top: -0.5rem;
+  }
+  /* HOME */
+  body.home main {
+    width: var(--main-width-pad);
+    margin: 0 auto;
+  }
+  body.home main section.about header {
+    background-size: cover;
+    margin-bottom: 1em;
+    margin-left: calc(-1 * calc((100vw - var(--main-width)) / 2));
+    margin-right: calc(-1 * calc((100vw - var(--main-width)) / 2));
+  }
+  body.home main section.about header div.container {
+    flex-flow: row wrap;
+    align-items: center;
+    max-width: var(--main-width);
+    margin: 0 auto;
+  }
+  body.home main section.about header h1.logo {
+    flex: 0 0 100%;
+  }
+  body.home main section.about header h1.logo img {
+    width: 15rem;
+  }
+  body.home main section.about header h2 {
+    flex: 0 0 50%;
+    font-size: var(--font-size-bigger);
+  }
+  body.home main section.about header h3 {
+    flex: 0 0 50%;
+    font-size: var(--font-size-biggish);
+    font-weight: 500;
+    line-height: 1.5em;
+  }
+  body.home main section.latest-work {
+    margin-top: -10rem;
+  }
+  body.home main aside.cta p {
+    font-size: var(--font-size-biggish);
+  }
+  body.home main aside.cta a.button {
+    width: 50%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 1rem;
   }
   section.latest-work {
     margin: 0 var(--spacing-x) var(--spacing-x) var(--spacing-x);
@@ -863,4 +980,3 @@ footer.main-footer div.so-me a.privacy {
     font-size: var(--font-size-biggest);
   }
 }
-/*# sourceMappingURL=style.css.map */
