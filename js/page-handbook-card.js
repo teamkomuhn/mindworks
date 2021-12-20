@@ -2,28 +2,27 @@
 
 import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
-(function( $ ) {
+(async function( $ ) {
 
     'use strict';
 
-    const scrollTo = async (element, { duration = 250, delay = 0, offset = 0, timing = `linear`, visible = false} = {}) => {
+    const scrollTo = (element, { duration = 250, wait = 0, offset = 0, timing = `linear`, visible = false} = {}) => {
 
         const observer = new IntersectionObserver((entries, observer) => {
-
+    
             if (visible && entries[0].isIntersecting) return
             
             setTimeout(() => {
                 $([ document.documentElement, document.body ]).animate({
                     scrollTop: $(element).offset().top - offset
                 }, duration, timing)
-            }, delay)
-
+            }, wait)
+    
             observer.disconnect()
         })
-
+    
         observer.observe(element)
     }
-
 
     // Cards navigation
 

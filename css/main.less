@@ -245,11 +245,6 @@ p {
 
 }
 
-mark {
-    background-color: @color-yellow-light;
-    font-weight: 500;
-}
-
 main {
     > h1 {}
     > h2 {
@@ -465,10 +460,13 @@ header.main-header {
     }
 
     nav.main-nav {
+        box-sizing: border-box;
+
         position: fixed;
         // top: var(--main-header-height); right: 0; bottom: 0; left: 0;
-        top: 0; right: 0; bottom: 0; left: 0;
-        z-index: 999999;
+        top: 0; right: 200vw; bottom: 0; left: 100vw;
+        width: 100%;
+        z-index: 99999;
         overflow-y: scroll;
         overscroll-behavior: contain;
 
@@ -477,7 +475,6 @@ header.main-header {
 
         padding: var(--spacing-y) var(--spacing-x);
 
-        transform: translateX(100vw); // Hide it
         transition: transform .5s ease;
 
         a.logo {
@@ -512,7 +509,7 @@ header.main-header {
         div.so-me {}
 
         &.opened {
-            transform: translateX(0vw) !important; // Show it
+            transform: translateX(-100vw); // Show it
         }
     }
 }
@@ -626,100 +623,6 @@ aside.slide {
         max-width: var(--main-width-pad);
 
     } // desktop styles
-
-}
-
-
-/* HOME */
-body.home {
-    header.main-header {
-        position: absolute;
-        z-index: 9999;
-        background-color: transparent;
-        width: 100%;
-
-        > .logo {
-            visibility: hidden;
-        }
-    }
-
-	main {
-        section.about {
-            padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
-
-            header {
-                background: transparent url("/img/cover-mind.jpg") no-repeat;
-                background-position: center right;
-                background-size: 200%;
-                margin-left: calc(-1 * var(--spacing-x));
-                margin-right: calc(-1 * var(--spacing-x));
-                // padding: var(--spacing-y) var(--spacing-x);
-
-                height: 40rem;
-
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: center;
-
-                div.container {
-                    display: flex;
-                    flex-flow: column nowrap;
-
-                    padding: var(--spacing-y) var(--spacing-x);
-                }
-
-                h1.logo {
-                    margin-bottom: 2rem;
-
-                    span {
-                        display: none;
-                    }
-                }
-
-                h2 {
-                    margin-bottom: 1em;
-                    font-weight: 500;
-                    color: @color-white;
-
-                    > span {
-                        // background-color: @color-yellow-light;
-                        // padding: 0 .3em;
-                        display: inline-block;
-                        white-space: nowrap;
-                        margin-bottom: .1em;
-
-                    }
-                }
-
-                h3 {
-                    padding-bottom: 1em;
-                    font-size: var(--font-size-p);
-                    // color: @color-white;
-                }
-            }
-
-        }
-
-        section.latest-work {
-            margin-top: -8rem;
-        }
-
-        aside.cta {
-            padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
-
-            p {
-                font-size: var(--font-size-p);
-                padding-bottom: 1em;
-            }
-
-            a.button {
-                background-color: @color-yellow-light;
-                display: block;
-                margin-top: 1rem;
-            }
-        }
-
-	}
 
 }
 
