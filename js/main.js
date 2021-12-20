@@ -63,7 +63,7 @@ var debounce = function (fn) {
 
     polyfillScrollBehaivior()
 
-    
+
 
 
     // READ TIME JS - https://w3collective.com/calculate-reading-time-javascript/

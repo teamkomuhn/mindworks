@@ -54,7 +54,7 @@
 			<h3>Stefan Flothmann</h3>
 			<p>Direction, Campaign Strategy, Partnerships</p>
 		</header>
-		<a class="button small" href="#">Connect</a>
+		<a class="button small" href="https://www.linkedin.com/in/stefan-flothmann-4a7b7b35" rel="nofollow">Connect</a>
 	</article>
 	<article class="member">
 		<figure>
@@ -64,7 +64,7 @@
 			<h3>Diya Deb</h3>
 			<p>Direction, Campaign Strategy, Org Dev, Partnerships</p>
 		</header>
-		<a class="button small" href="#">Connect</a>
+		<a class="button small" href="https://www.linkedin.com/in/diya-deb-0a4a178/" rel="nofollow">Connect</a>
 	</article>
 	<article class="member">
 		<figure>
@@ -74,38 +74,78 @@
 			<h3>Ieva Rozentale</h3>
 			<p>Research, Data, Prototyping, Workshops</p>
 		</header>
-		<a class="button small" href="#">Connect</a>
+		<a class="button small" href="https://www.linkedin.com/in/ieva-rozentale-83446739/" rel="nofollow">Connect</a>
 	</article>
 	<article class="member">
-		<figure>
+		<!-- <figure>
 			<img src="<?php echo get_template_directory_uri(); ?>/img/sam-300x300.jpeg" alt="Samatha Balachandran photo">
-		</figure>
+		</figure> -->
 		<header>
 			<h3>Samatha Balachandran</h3>
 			<p>Communications, Engagement, Growth</p>
 		</header>
-		<a class="button small" href="#">Connect</a>
+		<a class="button small" href="https://www.linkedin.com/in/samatha-b-a9b69b89/" rel="nofollow">Connect</a>
 	</article>
 	<article class="member">
-		<figure>
+		<!-- <figure>
 			<img src="<?php echo get_template_directory_uri(); ?>/img/robin-300x300.jpeg" alt="Robin Perkins photo">
-		</figure>
+		</figure> -->
 		<header>
 			<h3>Robin Perkins</h3>
 			<p>Communications, Engagement</p>
 		</header>
-		<a class="button small" href="#">Connect</a>
+		<a class="button small" href="https://www.linkedin.com/in/robin-john-perkins/" rel="nofollow">Connect</a>
 	</article>
 	<article class="member">
-		<figure>
+		<!-- <figure>
 			<img src="<?php echo get_template_directory_uri(); ?>/img/sophia-300x300.jpeg" alt="Sophia Hsiang  photo">
-		</figure>
+		</figure> -->
 		<header>
 			<h3>Sophia Hsiang</h3>
 			<p>Operations and coordinations</p>
 		</header>
-		<a class="button small" href="#">Connect</a>
+		<a class="button small" href="https://www.linkedin.com/in/sophia-hsiang-66394635/" rel="nofollow">Connect</a>
 	</article>
+</section>
+
+<section class="engage">
+	<article>
+		<header>
+			<figure aria-hidden="true">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/icon-hand-yellow.svg">
+			</figure>
+			<h3>Applying our tools and insights</h3>
+		</header>
+		<p>Our materials are designed to support your internal capabilities in building campaigns and engagements in various ways. Which means they are easy and interesting to engage with. They are research-backed, evidence-based, tested and open-sourced.</p>
+	</article>
+	<article>
+		<header>
+			<figure aria-hidden="true">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/icon-highfive-black.svg">
+			</figure>
+			<h3>Co-creating tailor made tools for your specific needs</h3>
+		</header>
+		<p>If you have a specific challenge within your campaign or engagement project, we are keen to dive in with you to help solve it. This often means working alongside you to develop new tools or strategies that are specific to your needs.</p>
+	</article>
+	<article>
+		<header>
+			<figure aria-hidden="true">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/icon-support-black.svg">
+			</figure>
+			<h3>Supporting full project implementation</h3>
+		</header>
+		<p>We can also work right alongside you through the full lifespan of the project. From project planning, implementation and finalisation, we can help your team design, research, test, analyze and make decisions.</p>
+	</article>
+	<article>
+		<header>
+			<figure aria-hidden="true">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/icon-participate-yellow.svg">
+			</figure>
+			<h3>Participating in our workshops</h3>
+		</header>
+		<p>Participating in our workshops is a bit like going on an ‘aha!’ journey; each lesson is designed as a learning experience and is less about being presented with information, and more about discovering these insights for yourself. We then help participants to integrate these insights into their campaign and engagement projects.</p>
+	</article>
+
 </section>
 
 <?php get_footer(); ?>
