@@ -36,13 +36,76 @@
 </section>
 
 <aside class="cta">
-	<p>Mindworks co-creates with <mark>organisations</mark>, <mark>teams</mark> and <mark>changemakers</mark> working to shift the hearts and minds of people in order to create mindset, power or structural change in complex social and environmental issues such as the climate crisis, polarisation, social unrest or crises.</p>
+	<p>We co-create with <mark>organisations</mark>, <mark>teams</mark> and <mark>changemakers</mark> working to shift the hearts and minds of people in order to create mindset, power or structural change in complex social and environmental issues such as the climate crisis, polarisation, social unrest or crises.</p>
 	<a class="button go-to" href="#contacts">Talk with us</a>
 </aside>
 
 <section class="team">
-	<h2>Our mission</h2>
-	<p>We support changemakers working with communities, societies and decision makers to catalyse cultural change by shifting people’s hearts and minds. We leverage our team’s expertise and passion for the human mind to help changemakers develop innovative strategies, tactics and tools to understand and engage their audience in order to change the way they feel, think and act. </p>
+	<header>
+		<h2>Our team</h2>
+		<p>Our team combines researchers, campaign strategists, innovators and trainers working together to provide research and evidence-based perspectives on how to shift mindset about climate change.</p>
+	</header>
+
+	<article class="member">
+		<figure>
+			<img src="<?php echo get_template_directory_uri(); ?>/img/stefan-300x300.jpeg" alt="Stefan Flothmann photo">
+		</figure>
+		<header>
+			<h3>Stefan Flothmann</h3>
+			<p>Direction, Campaign Strategy, Partnerships</p>
+		</header>
+		<a class="button small" href="#">Connect</a>
+	</article>
+	<article class="member">
+		<figure>
+			<img src="<?php echo get_template_directory_uri(); ?>/img/diya-300x300.jpeg" alt="Diya Deb photo">
+		</figure>
+		<header>
+			<h3>Diya Deb</h3>
+			<p>Direction, Campaign Strategy, Org Dev, Partnerships</p>
+		</header>
+		<a class="button small" href="#">Connect</a>
+	</article>
+	<article class="member">
+		<figure>
+			<img src="<?php echo get_template_directory_uri(); ?>/img/ieva-300x300.jpeg" alt="Ieva Rozentale photo">
+		</figure>
+		<header>
+			<h3>Ieva Rozentale</h3>
+			<p>Research, Data, Prototyping, Workshops</p>
+		</header>
+		<a class="button small" href="#">Connect</a>
+	</article>
+	<article class="member">
+		<figure>
+			<img src="<?php echo get_template_directory_uri(); ?>/img/sam-300x300.jpeg" alt="Samatha Balachandran photo">
+		</figure>
+		<header>
+			<h3>Samatha Balachandran</h3>
+			<p>Communications, Engagement, Growth</p>
+		</header>
+		<a class="button small" href="#">Connect</a>
+	</article>
+	<article class="member">
+		<figure>
+			<img src="<?php echo get_template_directory_uri(); ?>/img/robin-300x300.jpeg" alt="Robin Perkins photo">
+		</figure>
+		<header>
+			<h3>Robin Perkins</h3>
+			<p>Communications, Engagement</p>
+		</header>
+		<a class="button small" href="#">Connect</a>
+	</article>
+	<article class="member">
+		<figure>
+			<img src="<?php echo get_template_directory_uri(); ?>/img/sophia-300x300.jpeg" alt="Sophia Hsiang  photo">
+		</figure>
+		<header>
+			<h3>Sophia Hsiang</h3>
+			<p>Operations and coordinations</p>
+		</header>
+		<a class="button small" href="#">Connect</a>
+	</article>
 </section>
 
 <?php get_footer(); ?>

@@ -683,6 +683,46 @@ body.home main aside.cta a.button {
   display: block;
   margin-top: 1rem;
 }
+body.home main section.team {
+  padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
+}
+body.home main section.team > header {
+  margin-bottom: 2rem;
+}
+body.home main section.team > header h2 {
+  font-weight: bold;
+  padding-bottom: 1em;
+}
+body.home main section.team article {
+  margin-bottom: 1rem;
+  background-color: #DDDDDD;
+  padding: var(--spacing-x);
+  border-radius: 0.2em;
+  overflow: hidden;
+}
+body.home main section.team article header {
+  margin-bottom: 1rem;
+}
+body.home main section.team article header h3 {
+  font-weight: bold;
+}
+body.home main section.team article header p {
+  font-size: var(--font-size-small);
+}
+body.home main section.team article figure {
+  float: left;
+  margin-bottom: 1rem;
+  background-color: #222222;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-right: var(--spacing-x);
+}
+body.home main section.team article figure img {
+  width: inherit;
+  height: inherit;
+}
 section.latest-work {
   position: relative;
   overflow: hidden;
@@ -910,6 +950,28 @@ footer.main-footer div.so-me a.privacy {
     padding-right: 0;
     margin-top: 1rem;
   }
+  body.home main section.team {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  body.home main section.team header h2 {
+    font-size: var(--font-size-bigger);
+  }
+  body.home main section.team article {
+    margin-bottom: 2rem;
+    flex: 0 0 25rem;
+    padding: 2rem;
+  }
+  body.home main section.team article header h3 {
+    font-size: var(--font-size-biggish);
+  }
+  body.home main section.team article header p {
+    font-size: var(--font-size-p);
+  }
+  body.home main section.team article figure {
+    margin-right: 1rem;
+  }
   section.latest-work {
     margin: 0 var(--spacing-x) var(--spacing-x) var(--spacing-x);
     height: 35rem;
@@ -980,3 +1042,4 @@ footer.main-footer div.so-me a.privacy {
     font-size: var(--font-size-biggest);
   }
 }
+/*# sourceMappingURL=style.css.map */

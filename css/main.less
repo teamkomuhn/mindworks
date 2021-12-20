@@ -721,6 +721,61 @@ body.home {
             }
         }
 
+        section.team {
+            padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
+
+            > header {
+                margin-bottom: 2rem;
+
+                h2 {
+                    font-weight: bold;
+                    padding-bottom: 1em;
+                }
+            }
+
+            article {
+                margin-bottom: 1rem;
+                background-color: @color-grey;
+                padding: var(--spacing-x);
+                border-radius: 0.2em;
+                overflow: hidden;
+
+                header {
+                    margin-bottom: 1rem;
+
+                    h3 {
+                        font-weight: bold;
+                    }
+                    p {
+                        font-size: var(--font-size-small);
+                    }
+                }
+
+                figure {
+                    float: left;
+                    margin-bottom: 1rem;
+
+                    background-color: @color-black;
+                    width: 5rem; height: 5rem;
+                    border-radius: 100%;
+                    overflow: hidden;
+
+                    margin-right: var(--spacing-x);
+
+                    img {
+                        width: inherit; height: inherit;
+                    }
+                }
+
+                a.button {
+
+                }
+
+            }
+
+
+        }
+
 	}
 
 }
