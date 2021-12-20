@@ -162,9 +162,8 @@ var debounce = function (fn) {
         }
     );
 
-
     // MAIN NAV SLIDE
-    
+
     const mainHeader = document.querySelector(`.main-header`)
     const mainNav = mainHeader.querySelector(`.main-nav`)
     const navButtons = mainHeader.querySelectorAll(`.button.nav`)
