@@ -54,7 +54,7 @@
 			<h3>Stefan Flothmann</h3>
 			<p>Direction, Campaign Strategy, Partnerships</p>
 		</header>
-		<a class="button small" href="#">Connect</a>
+		<a class="button small connect" href="#">Connect</a>
 	</article>
 	<article class="member">
 		<figure>
@@ -64,7 +64,7 @@
 			<h3>Diya Deb</h3>
 			<p>Direction, Campaign Strategy, Org Dev, Partnerships</p>
 		</header>
-		<a class="button small" href="#">Connect</a>
+		<a class="button small connect" href="#">Connect</a>
 	</article>
 	<article class="member">
 		<figure>
@@ -74,7 +74,7 @@
 			<h3>Ieva Rozentale</h3>
 			<p>Research, Data, Prototyping, Workshops</p>
 		</header>
-		<a class="button small" href="#">Connect</a>
+		<a class="button small connect" href="#">Connect</a>
 	</article>
 	<article class="member">
 		<figure>
@@ -84,7 +84,7 @@
 			<h3>Samatha Balachandran</h3>
 			<p>Communications, Engagement, Growth</p>
 		</header>
-		<a class="button small" href="#">Connect</a>
+		<a class="button small connect" href="#">Connect</a>
 	</article>
 	<article class="member">
 		<figure>
@@ -94,7 +94,7 @@
 			<h3>Robin Perkins</h3>
 			<p>Communications, Engagement</p>
 		</header>
-		<a class="button small" href="#">Connect</a>
+		<a class="button small connect" href="#">Connect</a>
 	</article>
 	<article class="member">
 		<figure>
@@ -104,7 +104,7 @@
 			<h3>Sophia Hsiang</h3>
 			<p>Operations and coordinations</p>
 		</header>
-		<a class="button small" href="#">Connect</a>
+		<a class="button small connect" href="#">Connect</a>
 	</article>
 </section>
 
