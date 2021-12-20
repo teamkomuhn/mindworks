@@ -46,7 +46,7 @@ var debounce = function (fn) {
     }
 
     // Polyfill: scroll-behavior: smooth;
-    const polyfillScrollBehaivior = () => {
+    const polyfillSmoothScroll = () => {
 
         const anchors = document.querySelectorAll(`a[href^="#"]`)
 
@@ -56,12 +56,12 @@ var debounce = function (fn) {
 
                 const href = event.target.getAttribute('href')
                 const target = document.querySelector(href)
-                scrollToMain(target, 250, 500)
+                scrollToMain(target, 500, 0)
             })
         }
     }
 
-    polyfillScrollBehaivior()
+    polyfillSmoothScroll()
 
 
 
@@ -173,7 +173,8 @@ var debounce = function (fn) {
         }
     );
 
-    // MAIN NAV SLIDE
+
+    // Navigation
 
     const mainHeader = document.querySelector(`.main-header`)
     const mainNav = mainHeader?.querySelector(`.main-nav`)
@@ -186,6 +187,22 @@ var debounce = function (fn) {
                 event.stopPropagation()
 
                 mainNav.classList.toggle(`opened`)
+            })
+        }
+    }
+
+
+    // 🏡 If homepage
+
+    if (location.pathname.length <= 1) {
+
+        // 👨‍👩‍👧‍👦 Click on team member
+
+        const members = document.querySelectorAll(`.team .member`)
+
+        for (const member of members) {
+            member.addEventListener(`click`, event => {
+                location.href = member.querySelector(`.connect`).href
             })
         }
     }

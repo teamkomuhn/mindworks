@@ -54,7 +54,7 @@
 			<h3>Stefan Flothmann</h3>
 			<p>Direction, Campaign Strategy, Partnerships</p>
 		</header>
-		<a class="button small" href="https://www.linkedin.com/in/stefan-flothmann-4a7b7b35" rel="nofollow">Connect</a>
+		<a class="button small connect" href="https://www.linkedin.com/in/stefan-flothmann-4a7b7b35" rel="nofollow">Connect</a>
 	</article>
 	<article class="member">
 		<figure>
@@ -63,8 +63,8 @@
 		<header>
 			<h3>Diya Deb</h3>
 			<p>Direction, Campaign Strategy, Org Dev, Partnerships</p>
-		</header>
-		<a class="button small" href="https://www.linkedin.com/in/diya-deb-0a4a178/" rel="nofollow">Connect</a>
+    </header>
+		<a class="button small connect" href="https://www.linkedin.com/in/diya-deb-0a4a178/" rel="nofollow">Connect</a>
 	</article>
 	<article class="member">
 		<figure>
@@ -74,7 +74,7 @@
 			<h3>Ieva Rozentale</h3>
 			<p>Research, Data, Prototyping, Workshops</p>
 		</header>
-		<a class="button small" href="https://www.linkedin.com/in/ieva-rozentale-83446739/" rel="nofollow">Connect</a>
+		<a class="button small connect" href="https://www.linkedin.com/in/ieva-rozentale-83446739/" rel="nofollow">Connect</a>
 	</article>
 	<article class="member">
 		<!-- <figure>
@@ -83,8 +83,8 @@
 		<header>
 			<h3>Samatha Balachandran</h3>
 			<p>Communications, Engagement, Growth</p>
-		</header>
-		<a class="button small" href="https://www.linkedin.com/in/samatha-b-a9b69b89/" rel="nofollow">Connect</a>
+    </header>
+		<a class="button small connect" href="https://www.linkedin.com/in/samatha-b-a9b69b89/" rel="nofollow">Connect</a>
 	</article>
 	<article class="member">
 		<!-- <figure>
@@ -94,7 +94,7 @@
 			<h3>Robin Perkins</h3>
 			<p>Communications, Engagement</p>
 		</header>
-		<a class="button small" href="https://www.linkedin.com/in/robin-john-perkins/" rel="nofollow">Connect</a>
+		<a class="button small connect" href="https://www.linkedin.com/in/robin-john-perkins/" rel="nofollow">Connect</a>
 	</article>
 	<article class="member">
 		<!-- <figure>
@@ -104,7 +104,7 @@
 			<h3>Sophia Hsiang</h3>
 			<p>Operations and coordinations</p>
 		</header>
-		<a class="button small" href="https://www.linkedin.com/in/sophia-hsiang-66394635/" rel="nofollow">Connect</a>
+		<a class="button small connect" href="https://www.linkedin.com/in/sophia-hsiang-66394635/" rel="nofollow">Connect</a>
 	</article>
 </section>
 
