@@ -712,16 +712,20 @@ body.home main section.team article header p {
 body.home main section.team article figure {
   float: left;
   margin-bottom: 1rem;
+  margin-right: 1rem;
   background-color: #222222;
   width: 5rem;
   height: 5rem;
   border-radius: 100%;
   overflow: hidden;
-  margin-right: var(--spacing-x);
 }
 body.home main section.team article figure img {
   width: inherit;
   height: inherit;
+}
+body.home main section.team article a.button {
+  display: block;
+  clear: both;
 }
 section.latest-work {
   position: relative;
@@ -968,9 +972,6 @@ footer.main-footer div.so-me a.privacy {
   }
   body.home main section.team article header p {
     font-size: var(--font-size-p);
-  }
-  body.home main section.team article figure {
-    margin-right: 1rem;
   }
   section.latest-work {
     margin: 0 var(--spacing-x) var(--spacing-x) var(--spacing-x);
