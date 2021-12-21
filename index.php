@@ -36,77 +36,9 @@
 </section>
 
 <aside class="cta">
-	<p>We co-create with <mark>organisations</mark>, <mark>teams</mark> and <mark>changemakers</mark> working to shift the hearts and minds of people in order to create mindset, power or structural change in complex social and environmental issues such as the climate crisis, polarisation, social unrest or crises.</p>
-	<a class="button go-to" href="#contacts">Talk with us</a>
+	<p>We co-create with <strong>organisations</strong>, <strong>teams</strong> and <strong>changemakers</strong> working to shift the hearts and minds of people in order to create mindset, power or structural change in complex social and environmental issues such as the climate crisis, polarisation, social unrest or crises.</p>
+	<a class="button go-to" href="#contacts">Let's talk!</a>
 </aside>
-
-<section class="team">
-	<header>
-		<h2>Our team</h2>
-		<p>Our team combines researchers, campaign strategists, innovators and trainers working together to provide research and evidence-based perspectives on how to shift mindset about climate change.</p>
-	</header>
-
-	<article class="member">
-		<figure>
-			<img src="<?php echo get_template_directory_uri(); ?>/img/stefan-300x300.jpeg" alt="Stefan Flothmann photo">
-		</figure>
-		<header>
-			<h3>Stefan Flothmann</h3>
-			<p>Direction, Campaign Strategy, Partnerships</p>
-		</header>
-		<a class="button small connect" href="https://www.linkedin.com/in/stefan-flothmann-4a7b7b35" rel="nofollow">Connect</a>
-	</article>
-	<article class="member">
-		<figure>
-			<img src="<?php echo get_template_directory_uri(); ?>/img/diya-300x300.jpeg" alt="Diya Deb photo">
-		</figure>
-		<header>
-			<h3>Diya Deb</h3>
-			<p>Direction, Campaign Strategy, Org Dev, Partnerships</p>
-    </header>
-		<a class="button small connect" href="https://www.linkedin.com/in/diya-deb-0a4a178/" rel="nofollow">Connect</a>
-	</article>
-	<article class="member">
-		<figure>
-			<img src="<?php echo get_template_directory_uri(); ?>/img/ieva-300x300.jpeg" alt="Ieva Rozentale photo">
-		</figure>
-		<header>
-			<h3>Ieva Rozentale</h3>
-			<p>Research, Data, Prototyping, Workshops</p>
-		</header>
-		<a class="button small connect" href="https://www.linkedin.com/in/ieva-rozentale-83446739/" rel="nofollow">Connect</a>
-	</article>
-	<article class="member">
-		<!-- <figure>
-			<img src="<?php echo get_template_directory_uri(); ?>/img/sam-300x300.jpeg" alt="Samatha Balachandran photo">
-		</figure> -->
-		<header>
-			<h3>Samatha Balachandran</h3>
-			<p>Communications, Engagement, Growth</p>
-    </header>
-		<a class="button small connect" href="https://www.linkedin.com/in/samatha-b-a9b69b89/" rel="nofollow">Connect</a>
-	</article>
-	<article class="member">
-		<!-- <figure>
-			<img src="<?php echo get_template_directory_uri(); ?>/img/robin-300x300.jpeg" alt="Robin Perkins photo">
-		</figure> -->
-		<header>
-			<h3>Robin Perkins</h3>
-			<p>Communications, Engagement</p>
-		</header>
-		<a class="button small connect" href="https://www.linkedin.com/in/robin-john-perkins/" rel="nofollow">Connect</a>
-	</article>
-	<article class="member">
-		<!-- <figure>
-			<img src="<?php echo get_template_directory_uri(); ?>/img/sophia-300x300.jpeg" alt="Sophia Hsiang  photo">
-		</figure> -->
-		<header>
-			<h3>Sophia Hsiang</h3>
-			<p>Operations and coordinations</p>
-		</header>
-		<a class="button small connect" href="https://www.linkedin.com/in/sophia-hsiang-66394635/" rel="nofollow">Connect</a>
-	</article>
-</section>
 
 <section class="engage">
 	<article>
@@ -147,5 +79,65 @@
 	</article>
 
 </section>
+
+<section class="team">
+	<header>
+		<h2>Our team</h2>
+		<p>Our team combines researchers, campaign strategists, innovators and trainers working together to provide research and evidence-based perspectives on how to shift mindset about climate change.</p>
+	</header>
+
+	<article class="member">
+		<figure>
+			<img src="<?php echo get_template_directory_uri(); ?>/img/stefan-300x300.jpeg" alt="Stefan Flothmann photo">
+		</figure>
+		<header>
+			<h3>Stefan Flothmann</h3>
+			<p>Direction, Campaign Strategy, Partnerships</p>
+		</header>
+		<a class="button small connect" href="https://www.linkedin.com/in/stefan-flothmann-4a7b7b35" rel="nofollow">Connect</a>
+	</article>
+	<article class="member">
+		<figure>
+			<img src="<?php echo get_template_directory_uri(); ?>/img/diya-300x300.jpeg" alt="Diya Deb photo">
+		</figure>
+		<header>
+			<h3>Diya Deb</h3>
+			<p>Direction, Campaign Strategy, Org Dev, Partnerships</p>
+    </header>
+		<a class="button small connect" href="https://www.linkedin.com/in/diya-deb-0a4a178/" rel="nofollow">Connect</a>
+	</article>
+	<article class="member">
+		<figure>
+			<img src="<?php echo get_template_directory_uri(); ?>/img/ieva-300x300.jpeg" alt="Ieva Rozentale photo">
+		</figure>
+		<header>
+			<h3>Ieva Rozentale</h3>
+			<p>Research, Data, Prototyping, Workshops</p>
+		</header>
+		<a class="button small connect" href="https://www.linkedin.com/in/ieva-rozentale-83446739/" rel="nofollow">Connect</a>
+	</article>
+	<article class="member">
+		<figure>
+			<img src="<?php echo get_template_directory_uri(); ?>/img/robin-300x300.jpeg" alt="Robin Perkins photo">
+		</figure>
+		<header>
+			<h3>Robin Perkins</h3>
+			<p>Communications, Engagement</p>
+		</header>
+		<a class="button small connect" href="https://www.linkedin.com/in/robin-john-perkins/" rel="nofollow">Connect</a>
+	</article>
+	<article class="member">
+		<!-- <figure>
+			<img src="<?php echo get_template_directory_uri(); ?>/img/sophia-300x300.jpeg" alt="Sophia Hsiang  photo">
+		</figure> -->
+		<header>
+			<h3>Sophia Hsiang</h3>
+			<p>Operations and coordinations</p>
+		</header>
+		<a class="button small connect" href="https://www.linkedin.com/in/sophia-hsiang-66394635/" rel="nofollow">Connect</a>
+	</article>
+</section>
+
+
 
 <?php get_footer(); ?>

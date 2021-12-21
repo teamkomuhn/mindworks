@@ -695,7 +695,7 @@ body.home main section.team > header h2 {
 }
 body.home main section.team article {
   margin-bottom: 1rem;
-  background-color: #DDDDDD;
+  background-color: #D6E1EC;
   padding: var(--spacing-x);
   border-radius: 0.2em;
   overflow: hidden;
@@ -1124,3 +1124,4 @@ footer.main-footer div.so-me a.privacy {
     font-size: var(--font-size-biggest);
   }
 }
+/*# sourceMappingURL=style.css.map */
