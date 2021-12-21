@@ -37,7 +37,7 @@
 
 <aside class="cta">
 	<p>We co-create with <strong>organisations</strong>, <strong>teams</strong> and <strong>changemakers</strong> working to shift the hearts and minds of people in order to create mindset, power or structural change in complex social and environmental issues such as the climate crisis, polarisation, social unrest or crises.</p>
-	<a class="button go-to" href="#contacts">Let's talk!</a>
+	<a class="button" href="#contacts">Let's talk!</a>
 </aside>
 
 <section class="engage">

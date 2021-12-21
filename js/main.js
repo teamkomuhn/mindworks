@@ -190,14 +190,11 @@ var debounce = function (fn) {
             })
         }
     }
+    
 
-
-    // 🏡 If homepage
-
-    if (location.pathname.length <= 1) {
+    if (location.pathname.length <= 1) { // 🏡 If homepage
 
         // 👨‍👩‍👧‍👦 Click on team member
-
         const members = document.querySelectorAll(`.team .member`)
 
         for (const member of members) {

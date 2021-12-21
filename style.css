@@ -778,6 +778,7 @@ section.latest-work {
   position: relative;
   overflow: hidden;
   margin: var(--spacing-x) var(--spacing-x) var(--spacing-y) var(--spacing-x);
+  border-radius: 0.2em;
   display: flex;
   flex-flow: column nowrap;
 }
@@ -930,6 +931,12 @@ footer.main-footer div.so-me a.privacy {
   button,
   .button {
     font-weight: bold;
+    transition: all 0.3s;
+  }
+  button:hover,
+  .button:hover {
+    background-color: #222222;
+    color: #ffffff;
   }
   /* FORMS */
   form {
@@ -955,6 +962,9 @@ footer.main-footer div.so-me a.privacy {
   }
   header.main-header nav.main-nav a.logo {
     margin-top: -0.5rem;
+  }
+  header.main-header nav.main-nav ul > li a:hover {
+    color: #FEF288;
   }
   /* HOME */
   body.home main {
@@ -1001,6 +1011,10 @@ footer.main-footer div.so-me a.privacy {
     padding-right: 0;
     margin: 1rem auto 0 auto;
   }
+  body.home main aside.cta a.button:hover {
+    background-color: #222222;
+    color: #FEF288;
+  }
   body.home main section.team {
     display: flex;
     flex-flow: row wrap;
@@ -1016,6 +1030,7 @@ footer.main-footer div.so-me a.privacy {
     margin-bottom: 2rem;
     flex: 0 0 25rem;
     padding: 2rem;
+    cursor: pointer;
   }
   body.home main section.team article header h3 {
     font-size: var(--font-size-biggish);
@@ -1089,6 +1104,10 @@ footer.main-footer div.so-me a.privacy {
   section.latest-work h3 {
     margin: 5rem 0;
     font-size: var(--font-size-bigger);
+  }
+  section.latest-work a.button:hover {
+    background-color: #ffffff;
+    color: #FF7557;
   }
   /* FOOTER */
   footer.main-footer {
