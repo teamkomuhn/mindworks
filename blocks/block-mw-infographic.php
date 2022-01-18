@@ -1,7 +1,7 @@
 <section class="block companion infographic">
     <header>
         <hgroup>
-            <h1><span class="sub-title">Infographic</span> The crisis timeline</h1>
+            <h1><span class="sub-title">Infographic</span> The Crisis Timeline</h1>
             <h2>How collective mindsets and cultures are shaped during the different phases of a crisis.</h2>
         </hgroup>
 
