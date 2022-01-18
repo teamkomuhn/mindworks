@@ -64,7 +64,7 @@
 				<li>
 					<a href="<?php echo home_url('/thedisruptedmind/'); ?>">The Disrupted Mind</a>
 					<ul>
-						<li><a href="<?php echo home_url('/thedisruptedmind/scientific-insights'); ?>">Scientific insights</a></li>
+						<li><a href="<?php echo home_url('/thedisruptedmind/scientific-insights'); ?>">Scientific Insights</a></li>
 						<li><a href="<?php echo home_url('/thedisruptedmind/the-crisis-timeline'); ?>">The Crisis Timeline</a></li>
 						<li><a href="<?php echo home_url('/thedisruptedmind/the-crisis-handbook'); ?>">The Crisis Handbook</a></li>
 					</ul>
