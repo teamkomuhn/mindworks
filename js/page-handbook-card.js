@@ -6,7 +6,7 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
     'use strict';
 
-    function isVisisble(element) {
+    function isVisible(element) {
 
         // Special bonus for those using jQuery
         if (typeof jQuery === 'function' && element instanceof jQuery) {
@@ -26,7 +26,7 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
     function scrollTo(element, { duration = 250, wait = 0, offset = 0, timing = `linear`, visible = false } = {}) {
 
-        if (visible && isVisisble(element)) return
+        if (visible && isVisible(element)) return
         
         setTimeout(() => {
             $([ document.documentElement, document.body ]).animate({
