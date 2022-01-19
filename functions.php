@@ -231,9 +231,10 @@
         'page',
         //'custom-post-type-name',
     ));
+
     // Enable svg support
     function cc_mime_types($mimes) {
-        $mimes['svg'] = 'image/svg+xml';
+        $mimes['svg'] = 'image/svg';
         return $mimes;
     }
     add_filter('upload_mimes', 'cc_mime_types');
@@ -444,7 +445,7 @@
         }
         return $text;
     }
-    
+
     /**
      * Count the number of words in post content
      * @param string $content The post content
