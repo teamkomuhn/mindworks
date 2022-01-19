@@ -61,7 +61,7 @@
     <section class="category" id="<?php echo $cat->slug; ?>" <?php echo $subcat_color; ?>>
         <header>
             <h2><?php print $cat->name; ?></h2>
-            <?php print $cat->description; ?>
+            <p><?php print $cat->description; ?></p>
         </header>
 
         <?php
