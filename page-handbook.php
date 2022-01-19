@@ -112,7 +112,7 @@
     if ( $cards_getting_prepared->have_posts() ) :
     ?>
 
-    <section class="category special">
+    <section class="category special" id="getting-prepared">
         <header>
             <h2><?php print get_cat_name($cat_getting_prepared_card); ?></h2>
             <?php print category_description($cat_getting_prepared_card); ?>

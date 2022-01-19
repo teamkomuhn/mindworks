@@ -87,6 +87,9 @@ body.page-handbook main > header button {
 body.page-handbook main div.content > p {
   padding-bottom: 1em;
 }
+body.page-handbook main div.content a {
+  color: #222222;
+}
 body.page-handbook main section.category {
   margin: 2rem 0 var(--spacing-y) 0;
 }
