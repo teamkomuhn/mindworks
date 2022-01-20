@@ -9,7 +9,7 @@ function admin_init(){
     //MW Tools
     //add_meta_box('label_meta', 'Label', 'label_meta', array('post', 'page'), 'side', 'high');
     //add_meta_box('cover_meta', 'Cover', 'cover_meta', array('post', 'page'), 'side', 'high');
-	//add_meta_box('infographic_meta', 'Infographic', 'infographic_meta', array('post', 'page'), 'side', 'high');
+	//add_meta_box('infographic_meta', 'Infographic', 'infographic_meta', array('page'), 'side', 'high');
 
 }
 

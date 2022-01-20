@@ -24,10 +24,11 @@
             </div>
 
             <?php
-                $post_infographic = get_post_meta( $post->ID, 'infographic_meta', 1);
-                if ($post_infographic) : ?>
+                //$post_infographic = get_post_meta( $post->ID, 'infographic_meta', 1);
+                $companionURL = get_field('companion_url');
+                if ($companionURL) : ?>
 
-                <section class="infographic popup">
+                <section class="infographic popup"> 
                     <header>
                         <h1>Infographic</h1>
                         <nav>
@@ -36,7 +37,7 @@
                         </nav>
                     </header>
                     <figure>
-                        <img src="<?php echo $post_infographic; ?>" alt="">
+                        <img src="<?php echo $companionURL; ?>" alt="">
                     </figure>
                 </section>
 
