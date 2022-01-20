@@ -2,29 +2,41 @@
 
 import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
-(async function( $ ) {
+(function( $ ) {
 
     'use strict';
 
-    const scrollTo = (element, { duration = 250, wait = 0, offset = 0, timing = `linear`, visible = false} = {}) => {
+    function isVisible(element) {
 
-        const observer = new IntersectionObserver((entries, observer) => {
+        // Special bonus for those using jQuery
+        if (typeof jQuery === 'function' && element instanceof jQuery) {
+            element = element[0]
+        }
     
-            if (visible && entries[0].isIntersecting) return
-            
-            setTimeout(() => {
-                $([ document.documentElement, document.body ]).animate({
-                    scrollTop: $(element).offset().top - offset
-                }, duration, timing)
-            }, wait)
+        var box = element.getBoundingClientRect()
     
-            observer.disconnect()
-        })
-    
-        observer.observe(element)
+        return (
+            box.top >= 0 &&
+            box.left >= 0 &&
+            box.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            box.right <= (window.innerWidth || document.documentElement.clientWidth)
+        )
     }
 
-    // Cards navigation
+
+    function scrollTo(element, { duration = 250, wait = 0, offset = 0, timing = `linear`, visible = false } = {}) {
+
+        if (visible && isVisible(element)) return
+        
+        setTimeout(() => {
+            $([ document.documentElement, document.body ]).animate({
+                scrollTop: $(element).offset().top - offset
+            }, duration, timing)
+        }, wait)
+    }
+
+
+    // 🃏 Cards navigation
 
     const isMobile = window.matchMedia( '(any-hover: none)' ).matches
 
@@ -103,9 +115,11 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
     
                 const isOpen = container.classList.contains(`expanded`)
     
-                if (isOpen) height = 0
-    
-                scrollTo(container, { visible: true })
+                if (isOpen) {
+                    height = 0
+                    
+                    scrollTo(container, { visible: true })
+                }
     
                 container.style.setProperty(`--height`, height)
                 container.classList.toggle(`expanded`)
@@ -114,7 +128,7 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
     }
 
 
-    // Examples carousel
+    // 🎠 Examples carousel
 
     const slides = document.querySelectorAll(`.swiper-slide`)
 
@@ -134,7 +148,7 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
                 el: `.swiper-pagination`,
                 clickable: true,
 
-                renderBullet: (index, className) => `<li class="${className}"></li>`
+                renderBullet: (_index, className) => `<li class="${className}"></li>`
             },
 
             keyboard: {
@@ -150,7 +164,7 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
     }
 
 
-    // Link to tool
+    // 🔗 Link to tool
 
     const toolName = new URLSearchParams(location.search).get(`tool`)
     const toolsTab = document.querySelector(`.tab.tools`)

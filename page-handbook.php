@@ -21,7 +21,7 @@
         <figure>
             <img src="<?php echo get_template_directory_uri(); ?>/img/icon-book-black.svg" alt="">
         </figure>
-        <button class="button go-to">Go to cards &darr;</button>
+        <button class="button go-to">Go to recommendations &darr;</button>
     </header>
 
     <div class="content max-width">
@@ -61,7 +61,7 @@
     <section class="category" id="<?php echo $cat->slug; ?>" <?php echo $subcat_color; ?>>
         <header>
             <h2><?php print $cat->name; ?></h2>
-            <?php print $cat->description; ?>
+            <p><?php print $cat->description; ?></p>
         </header>
 
         <?php
@@ -112,7 +112,7 @@
     if ( $cards_getting_prepared->have_posts() ) :
     ?>
 
-    <section class="category special">
+    <section class="category special" id="getting-prepared">
         <header>
             <h2><?php print get_cat_name($cat_getting_prepared_card); ?></h2>
             <?php print category_description($cat_getting_prepared_card); ?>
