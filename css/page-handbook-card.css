@@ -231,6 +231,7 @@ body.page-handbook-card main section.cards-slider article.card section.steps art
   line-height: 1.8rem;
   text-align: right;
   color: white;
+  background-color: inherit;
 }
 body.page-handbook-card main section.cards-slider article.card section.steps article.step.container-expandable.expanded {
   padding-bottom: 3rem;
