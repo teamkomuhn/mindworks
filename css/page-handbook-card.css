@@ -464,6 +464,9 @@ div.tabs .tab.active div.container {
   body.page-handbook-card main section.cards-slider article.card section.steps article.step {
     margin: 0 var(--spacing-y) 1.5em;
   }
+  body.page-handbook-card main section.cards-slider article.card section.steps article.step h3:hover {
+    cursor: pointer;
+  }
   body.page-handbook-card main section.cards-slider article.card section.steps article.step h3::before {
     font-size: var(--font-size-p);
   }

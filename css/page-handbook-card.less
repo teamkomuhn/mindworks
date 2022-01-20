@@ -574,7 +574,6 @@ body.page-handbook-card {
 }
 
 
-
 div.tabs { // TODO: Move this to main css?
     position: relative;
     overflow: hidden;
@@ -693,7 +692,9 @@ div.tabs { // TODO: Move this to main css?
                                 margin: 0 var(--spacing-y) 1.5em;
 
                                 h3 {
-
+                                    &:hover {
+                                      cursor: pointer;
+                                    }
                                     &::before {
                                         font-size: var(--font-size-p);
                                     }
