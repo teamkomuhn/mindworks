@@ -34,3 +34,5 @@ node_modules/
 /readme.html
 /sitemap.xml
 /sitemap.xml.gz
+*.codekit3
+.DS_Store
