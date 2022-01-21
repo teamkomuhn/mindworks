@@ -12,9 +12,9 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
         if (typeof jQuery === 'function' && element instanceof jQuery) {
             element = element[0]
         }
-    
+
         var box = element.getBoundingClientRect()
-    
+
         return (
             box.top >= 0 &&
             box.left >= 0 &&
@@ -27,7 +27,7 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
     function scrollTo(element, { duration = 250, wait = 0, offset = 0, timing = `linear`, visible = false } = {}) {
 
         if (visible && isVisible(element)) return
-        
+
         setTimeout(() => {
             $([ document.documentElement, document.body ]).animate({
                 scrollTop: $(element).offset().top - offset
@@ -110,17 +110,17 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
         for (const button of buttons) {
 
             button.addEventListener(`click`, event => {
-            
+
                 let { scrollHeight: height } = expandable
-    
+
                 const isOpen = container.classList.contains(`expanded`)
-    
+
                 if (isOpen) {
                     height = 0
-                    
+
                     scrollTo(container, { visible: true })
                 }
-    
+
                 container.style.setProperty(`--height`, height)
                 container.classList.toggle(`expanded`)
             })
