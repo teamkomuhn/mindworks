@@ -191,7 +191,7 @@
                                 <button class="close open companion" type="button">Close</button>
                             </div>
                             <figure>
-                                <img src="<?php echo $companion_url ?>" alt="">
+                                <img src="<?php echo $companion_url ?>">
                             </figure>
                         </aside>
 

@@ -582,17 +582,20 @@ div.so-me a.privacy {
 }
 /* BLOCKS SIDENOTE */
 aside.slide {
+  z-index: 10000;
   position: fixed;
-  z-index: 99999;
-  left: 0;
-  right: 0;
+  left: 100vw;
+  right: -100vw;
   top: 0;
   bottom: 0;
   background-color: var(--color-black);
   overflow-x: hidden;
   overflow-y: scroll;
-  transform: translateX(100vw);
-  width: auto;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+aside.slide.opened {
+  transform: translateX(-100vw);
 }
 aside.slide figure {
   width: 100%;
@@ -601,17 +604,14 @@ aside.slide figure img {
   width: inherit;
 }
 aside.slide div.buttons {
-  position: fixed;
-  right: 0;
-  top: 0;
-  overflow: hidden;
+  position: inherit;
+  right: inherit;
+  top: inherit;
+  transition: inherit;
   background-color: white;
 }
-aside.slide.started {
-  transition: transform 0.5s ease;
-}
-aside.slide.opened {
-  transform: translateX(0vw);
+aside.slide.opened > div.buttons {
+  transform: inherit;
 }
 @media only screen and (min-width: 1201px) {
   aside.slide {
@@ -1143,4 +1143,3 @@ footer.main-footer div.so-me a.privacy {
     font-size: var(--font-size-biggest);
   }
 }
-/*# sourceMappingURL=style.css.map */

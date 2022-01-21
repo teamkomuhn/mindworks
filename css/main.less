@@ -586,16 +586,25 @@ aside.sidebar {
 //OVERLAY SLIDE
 // SLIDE
 aside.slide {
-    position: fixed; z-index: 99999;
-    left: 0; right: 0;
-    top: 0; bottom: 0;
+    z-index: 10000;
+    position: fixed;
+    
+    left: 100vw;
+    right: -100vw;
+    top: 0;
+    bottom: 0;
 
     background-color: var(--color-black);
     overflow-x: hidden;
     overflow-y: scroll;
 
-    transform: translateX(100vw); // Hide it
-    width: auto;
+    transition: transform .5s ease;
+
+    width: 100%;
+
+    &.opened {
+        transform: translateX(-100vw);
+    }
 
     figure {
         width: 100%;
@@ -606,29 +615,22 @@ aside.slide {
     }
 
     div.buttons {
-        position: fixed;
-        // position: sticky;
-        right: 0; top: 0;
-        overflow: hidden;
+        position: inherit;
+        right: inherit;
+        top: inherit;
+        transition: inherit;
 
         background-color: white;
     }
 
-    &.started {
-        transition: transform .5s ease;
+    &.opened > div.buttons {
+        transform: inherit;
     }
 
-    &.opened {
-        transform: translateX(0vw);
-    }
-
-    // DESKTOP for SLIDE
     @media @desktop {
         left: auto;
         max-width: var(--main-width-pad);
-
-    } // desktop styles
-
+    }
 }
 
 
@@ -699,7 +701,6 @@ body.home {
                     // color: @color-white;
                 }
             }
-
         }
 
         section.latest-work {
