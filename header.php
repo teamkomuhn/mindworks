@@ -27,11 +27,11 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<?php enqueue_template_files(); ?>
+	<?php enqueue_template_files(); // TODO: Is this neede here? ?>
 	<!--[if IE]>
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
-	<?php
+	<?php // TODO: Find a permanent solution for this
 	$old_page_TDMindex = get_page_by_path('thedisruptedmind');
 	$old_page_TDM1 = get_page_by_path('thedisruptedmind/scientific-insights/');
 
@@ -42,13 +42,23 @@
 	}
 	?>
 
-	<header class="main-header">
+	<?php // Make header full or compact depending on page
+
+	$compactHeader = '';
+
+	if ( is_page_template( 'page-handbook-card.php' ) ) {
+		$compactHeader = 'compact';
+	}
+
+	?>
+
+	<header class="main-header <?php echo $compactHeader; ?>">
 		<a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name') ?>">
 			<span><?php bloginfo('name') ?></span>
-			<img src="<?php echo get_template_directory_uri(); ?>/img/logo-black.svg" alt="<?php bloginfo('name'); ?>" />
 		</a>
 
 		<button class="button nav open" type="button"><span>Open</span></button>
+
 		<nav class="main-nav">
 			<!-- <?php //global $post; if ( is_page() && $post->post_parent ) : ?>
 				<a class="button back-to-index" href="<?php //echo get_permalink( $post->post_parent ); ?>" title="<?php echo get_the_title( $post->post_parent ); ?>">← <?php //print get_post_field( 'post_title', $post_id, 'raw' ); ?></a>

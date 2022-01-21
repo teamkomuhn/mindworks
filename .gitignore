@@ -36,3 +36,4 @@ node_modules/
 /sitemap.xml.gz
 *.codekit3
 .DS_Store
+*.codekit3

@@ -1,41 +1,6 @@
 <?php /* Template Name: Page handbook card */ ?>
 <!doctype html>
-<html class="no-js" lang="en">
-
-    <head>
-        <meta charset="utf-8">
-        <?php global $post;
-            if ( is_page() && $post->post_parent ) {
-                echo '<title>' . strip_tags(get_the_title( $post )) . ' | ' . strip_tags(get_the_title( $post->post_parent )) . ' - Mindworks</title>';
-            } elseif ( is_home() ) {
-                echo '<title>Mindworks | ' . strip_tags(get_bloginfo( 'description' )) . '</title>';
-            } else {
-                echo '<title>' . strip_tags(get_the_title( $post )) . ' - Mindworks</title>';
-            }
-        ?>
-
-        <?php wp_head(); ?>
-
-        <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" type="image/x-icon" />
-        <meta name="description" content="<?php bloginfo( 'description' ); ?>">
-        <meta name="author" content="Komuhn">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <link
-            rel="stylesheet"
-            href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
-        /> <?php // TODO: Move this css to the right place ?>
-    </head>
-
-    <body <?php body_class(); ?>>
-
-        <?php enqueue_template_files(); ?>
-        <!--[if IE]>
-                <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-
-        <main id="main">
+<?php get_header(); ?>
 
             <?php
             if ( have_posts() ) : while ( have_posts() ) : the_post();
