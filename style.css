@@ -476,8 +476,15 @@ header.main-header {
   justify-content: space-between;
 }
 header.main-header .logo {
-  margin: 0 0.5em 0 var(--spacing-x);
   display: block;
+  background-color: transparent;
+  background-image: url("img/logo-black.svg");
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 190px;
+  height: 44px;
+  margin: 0 0.5em 0 var(--spacing-x);
 }
 header.main-header .logo span {
   display: none;
@@ -485,8 +492,8 @@ header.main-header .logo span {
 header.main-header button.nav {
   margin-right: var(--spacing-x);
   border: 0;
-  height: 1.5rem;
-  width: 1.5em;
+  height: 24px;
+  width: 24px;
   padding: 0;
   background-color: transparent;
   background-image: url("img/icon-burger-black.svg");
@@ -546,6 +553,19 @@ header.main-header nav.main-nav ul > li ul li {
 }
 header.main-header nav.main-nav.opened {
   transform: translateX(-100vw);
+}
+header.main-header.compact {
+  height: calc(var(--main-header-height) / 2);
+  background-color: #ffffff;
+}
+header.main-header.compact .logo {
+  background-image: url("img/logo-icon-black.svg");
+  width: 25.5px;
+  height: 24px;
+}
+header.main-header.compact button.nav {
+  height: 20px;
+  width: 20px;
 }
 div.so-me {
   display: -webkit-flex;
@@ -954,8 +974,9 @@ footer.main-footer div.so-me a.privacy {
     width: var(--main-width-pad);
     margin: 0 auto;
   }
-  header.main-header .logo img {
-    width: 15rem;
+  header.main-header .logo {
+    width: 240px;
+    height: 55px;
   }
   header.main-header button.nav.close {
     margin-top: 0.5rem;
@@ -965,6 +986,10 @@ footer.main-footer div.so-me a.privacy {
   }
   header.main-header nav.main-nav ul > li a:hover {
     color: #FEF288;
+  }
+  header.main-header.compact .logo {
+    width: 34px;
+    height: 32px;
   }
   /* HOME */
   body.home main {
@@ -1143,3 +1168,4 @@ footer.main-footer div.so-me a.privacy {
     font-size: var(--font-size-biggest);
   }
 }
+/*# sourceMappingURL=style.css.map */
