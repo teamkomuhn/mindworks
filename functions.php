@@ -460,4 +460,11 @@
         return $count;
     }
 
+    // remove "Private: " from titles
+    function remove_private_prefix($title) {
+        $title = str_replace('Private: ', '', $title);
+        return $title;
+    }
+    add_filter('the_title', 'remove_private_prefix');
+
 ?>

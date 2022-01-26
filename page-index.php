@@ -17,7 +17,7 @@
                         'post_parent'    => $post->ID,
                         'order'          => 'ASC',
                         'orderby'        => 'menu_order',
-                        'post_status'    => array('publish', 'pending')
+                        'post_status'    => array('publish', 'private')
                     );
 
 
@@ -48,14 +48,14 @@
                                 $post_cover_text = get_the_excerpt();
                                 $post_image_url = wp_get_attachment_image_url( get_post_thumbnail_id(), 'large');
                                 $post_image = get_the_post_thumbnail( $post , 'thumbnail');
-                                if (get_post_status() == 'pending') {
-                                    $post_pending = 'pending';
+                                if (get_post_status() == 'private') {
+                                    $post_wip = 'wip';
                                 } else {
-                                    $post_pending = '';
+                                    $post_wip = '';
                                 }
                         ?>
 
-                            <article class="featured-post <?php echo $post_pending; ?>">
+                            <article class="featured-post <?php echo $post_wip; ?>">
 
                                 <header>
 
