@@ -476,8 +476,15 @@ header.main-header {
   justify-content: space-between;
 }
 header.main-header .logo {
-  margin: 0 0.5em 0 var(--spacing-x);
   display: block;
+  background-color: transparent;
+  background-image: url("img/logo-black.svg");
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 190px;
+  height: 44px;
+  margin: 0 0.5em 0 var(--spacing-x);
 }
 header.main-header .logo span {
   display: none;
@@ -485,8 +492,8 @@ header.main-header .logo span {
 header.main-header button.nav {
   margin-right: var(--spacing-x);
   border: 0;
-  height: 1.5rem;
-  width: 1.5em;
+  height: 24px;
+  width: 24px;
   padding: 0;
   background-color: transparent;
   background-image: url("img/icon-burger-black.svg");
@@ -547,6 +554,19 @@ header.main-header nav.main-nav ul > li ul li {
 header.main-header nav.main-nav.opened {
   transform: translateX(-100vw);
 }
+header.main-header.compact {
+  height: calc(var(--main-header-height) / 2);
+  background-color: #ffffff;
+}
+header.main-header.compact .logo {
+  background-image: url("img/logo-icon-black.svg");
+  width: 25.5px;
+  height: 24px;
+}
+header.main-header.compact button.nav {
+  height: 20px;
+  width: 20px;
+}
 div.so-me {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -582,17 +602,20 @@ div.so-me a.privacy {
 }
 /* BLOCKS SIDENOTE */
 aside.slide {
+  z-index: 10000;
   position: fixed;
-  z-index: 99999;
-  left: 0;
-  right: 0;
+  left: 100vw;
+  right: -100vw;
   top: 0;
   bottom: 0;
   background-color: var(--color-black);
   overflow-x: hidden;
   overflow-y: scroll;
-  transform: translateX(100vw);
-  width: auto;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+aside.slide.opened {
+  transform: translateX(-100vw);
 }
 aside.slide figure {
   width: 100%;
@@ -601,17 +624,14 @@ aside.slide figure img {
   width: inherit;
 }
 aside.slide div.buttons {
-  position: fixed;
-  right: 0;
-  top: 0;
-  overflow: hidden;
+  position: inherit;
+  right: inherit;
+  top: inherit;
+  transition: inherit;
   background-color: white;
 }
-aside.slide.started {
-  transition: transform 0.5s ease;
-}
-aside.slide.opened {
-  transform: translateX(0vw);
+aside.slide.opened > div.buttons {
+  transform: inherit;
 }
 @media only screen and (min-width: 1201px) {
   aside.slide {
@@ -954,8 +974,9 @@ footer.main-footer div.so-me a.privacy {
     width: var(--main-width-pad);
     margin: 0 auto;
   }
-  header.main-header .logo img {
-    width: 15rem;
+  header.main-header .logo {
+    width: 240px;
+    height: 55px;
   }
   header.main-header button.nav.close {
     margin-top: 0.5rem;
@@ -965,6 +986,10 @@ footer.main-footer div.so-me a.privacy {
   }
   header.main-header nav.main-nav ul > li a:hover {
     color: #FEF288;
+  }
+  header.main-header.compact .logo {
+    width: 34px;
+    height: 32px;
   }
   /* HOME */
   body.home main {

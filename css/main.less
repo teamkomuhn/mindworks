@@ -426,8 +426,16 @@ header.main-header {
     justify-content: space-between;
 
     .logo {
-        margin: 0 0.5em 0 var(--spacing-x);
         display: block;
+
+        background-color: transparent;
+        background-image:  url("img/logo-black.svg");
+        background-position: left top;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        width: 190px; height: 44px;
+        margin: 0 0.5em 0 var(--spacing-x);
 
         span {
             display: none;
@@ -439,7 +447,7 @@ header.main-header {
         margin-right: var(--spacing-x);
 
         border: 0;
-        height: 1.5rem; width: 1.5em;
+        height: 24px; width: 24px;
         padding: 0;
 
         background-color: transparent;
@@ -517,6 +525,20 @@ header.main-header {
             transform: translateX(-100vw); // Show it
         }
     }
+
+    &.compact {
+        height: calc( var(--main-header-height) / 2 );
+        background-color: @color-white;
+
+        .logo {
+            background-image:  url("img/logo-icon-black.svg");
+            width: 25.5px; height: 24px;
+        }
+
+        button.nav {
+            height: 20px; width: 20px;
+        }
+    }
 }
 
 div.so-me {
@@ -586,16 +608,25 @@ aside.sidebar {
 //OVERLAY SLIDE
 // SLIDE
 aside.slide {
-    position: fixed; z-index: 99999;
-    left: 0; right: 0;
-    top: 0; bottom: 0;
+    z-index: 10000;
+    position: fixed;
+
+    left: 100vw;
+    right: -100vw;
+    top: 0;
+    bottom: 0;
 
     background-color: var(--color-black);
     overflow-x: hidden;
     overflow-y: scroll;
 
-    transform: translateX(100vw); // Hide it
-    width: auto;
+    transition: transform .5s ease;
+
+    width: 100%;
+
+    &.opened {
+        transform: translateX(-100vw);
+    }
 
     figure {
         width: 100%;
@@ -606,29 +637,22 @@ aside.slide {
     }
 
     div.buttons {
-        position: fixed;
-        // position: sticky;
-        right: 0; top: 0;
-        overflow: hidden;
+        position: inherit;
+        right: inherit;
+        top: inherit;
+        transition: inherit;
 
         background-color: white;
     }
 
-    &.started {
-        transition: transform .5s ease;
+    &.opened > div.buttons {
+        transform: inherit;
     }
 
-    &.opened {
-        transform: translateX(0vw);
-    }
-
-    // DESKTOP for SLIDE
     @media @desktop {
         left: auto;
         max-width: var(--main-width-pad);
-
-    } // desktop styles
-
+    }
 }
 
 
@@ -699,7 +723,6 @@ body.home {
                     // color: @color-white;
                 }
             }
-
         }
 
         section.latest-work {
