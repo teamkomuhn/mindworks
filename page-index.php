@@ -27,7 +27,7 @@
                 <header class="cover">
                     <div class="cover-content">
                         <h1>
-                            <span><?php echo get_the_excerpt(); ?></span>
+                            <span><?php echo get_field('label'); ?></span>
                             <?php the_title(); ?>
                         </h1>
                         <?php the_content(); ?>

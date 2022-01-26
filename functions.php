@@ -15,50 +15,6 @@
     add_action( 'after_setup_theme', 'theme_slug_setup' );*/
 
 
-    // Adding the OPEN GRAPH in the Language Attributes - link https://www.wpbeginner.com/wp-themes/how-to-add-facebook-open-graph-meta-data-in-wordpress-themes/
-    function add_opengraph_doctype( $output ) {
-        return $output . ' xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"';
-    }
-    add_filter('language_attributes', 'add_opengraph_doctype');
-
-    //Lets add Open Graph Meta Info
-    function insert_fb_in_head() {
-
-        global $post;
-        $custom = get_post_custom($post->ID);
-        $opengraph_meta = $custom['opengraph_meta'][0];
-
-        if ( !is_singular() ) {//if it is not a post or a page
-            //return;
-            //echo '<meta property="fb:app_id" content="Your Facebook App ID" />';
-            echo '<meta property="og:title" content="' . strip_tags(get_the_title()) . ' - Mindworks"/>';
-            echo '<meta property="og:type" content="website"/>';
-            echo '<meta property="og:url" content="' . get_permalink() . '"/>';
-            echo '<meta property="og:site_name" content="Mindworks"/>';
-            echo '<meta property="og:description" content="' . get_the_excerpt() . '"/>';
-        }
-        /*if(!has_post_thumbnail( $post->ID )) { //the post does not have featured image, use a default image
-            $default_image="http://example.com/image.jpg"; //replace this with a default image on your server or an image in your media library
-            echo '<meta property="og:image" content="' . $default_image . '"/>';
-        }
-        else {
-            $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
-            echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
-        }*/
-        if ( is_page() && $post->post_parent ) {
-            echo '<meta property="og:title" content="' . strip_tags(get_the_title( $post )) . ' | ' . strip_tags(get_the_title( $post->post_parent )) . ' - Mindworks"/>';
-        }
-        if( $opengraph_meta ) {
-            echo '<meta property="og:image" content="' . $opengraph_meta . '"/>';
-        } else {
-            $default_image = get_template_directory_uri() . "/uploads/cover-og.png"; //replace this with a default image on your server or an image in your media library
-            echo '<meta property="og:image" content="' . $default_image . '"/>';
-        }
-        echo '';
-    }
-    add_action( 'wp_head', 'insert_fb_in_head', 5 );
-
-
     // ENQUEUE SCRIPTS and STYLES - Add custom CSS and JS
     function enqueue_scripts_styles() {
 
@@ -437,12 +393,22 @@
 
     //TRIM TEXT - limit words
 
-    function limit_text($text, $limit) {
+    function limit_words($text, $limit) {
         if (str_word_count($text, 0) > $limit) {
             $words = str_word_count($text, 2);
             $pos   = array_keys($words);
             $text  = substr($text, 0, $pos[$limit]) . '...';
         }
+        return $text;
+    }
+
+    function limit_characters($text, $limit) {
+
+        if (strlen($text) > $limit) {
+            $offset = ($limit - 3) - strlen($text);
+            $text = substr($text, 0, strrpos($text, ' ', $offset)) . '...';
+        }
+
         return $text;
     }
 

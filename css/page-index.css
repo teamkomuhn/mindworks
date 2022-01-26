@@ -140,15 +140,15 @@
 .page-index .featured-post figure img {
   display: none;
 }
-.page-index .featured-post.pending {
+.page-index .featured-post.wip {
   opacity: 0.3;
 }
-.page-index .featured-post.pending figure {
+.page-index .featured-post.wip figure {
   background-image: none;
   background-color: #CCCCCC;
 }
-.page-index .featured-post.pending span.date,
-.page-index .featured-post.pending a.button {
+.page-index .featured-post.wip span.date,
+.page-index .featured-post.wip a.button {
   display: none;
 }
 .page-index header.cover {

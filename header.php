@@ -4,12 +4,46 @@
 <head>
 	<meta charset="utf-8">
 	<?php global $post;
-		if ( is_page() && $post->post_parent ) {
-			echo '<title>' . strip_tags(get_the_title( $post )) . ' | ' . strip_tags(get_the_title( $post->post_parent )) . ' - Mindworks</title>';
-		} elseif ( is_home() ) {
-			echo '<title>Mindworks | ' . strip_tags(get_bloginfo( 'description' )) . '</title>';
+		$default_image = home_url() . "/wp-content/uploads/cover-og.png"; //replace this with a default image on your server or an image in your media library
+		
+		$post_featured_image = get_post_thumbnail_id($post);
+		$post_parent_featured_image = get_post_thumbnail_id($post->post_parent);
+		
+		if ( !empty($post_featured_image) ){
+			$featured_image = wp_get_attachment_image_url($post_featured_image, 'medium');
 		} else {
-			echo '<title>' . strip_tags(get_the_title( $post )) . ' - Mindworks</title>';
+			$featured_image = $default_image;
+			
+			if( is_page() && $post->post_parent ) {
+				$featured_image = wp_get_attachment_image_url($post_parent_featured_image, 'medium');
+			} else {
+				$featured_image = $default_image;
+			}
+		}
+
+		echo '<meta property="og:locale" content="alternate"/>';
+		if ( is_home() ) {
+			echo '<title>Mindworks | '. strip_tags(get_bloginfo( 'description' )) .'</title>';
+			echo '<meta property="og:type" content="website"/>';
+			echo '<meta property="og:title" content="Mindworks"/>';
+			echo '<meta property="og:description" content="' . strip_tags(get_bloginfo( 'description' )) . '"/>';
+			echo '<meta property="og:image" content="' . $default_image . '"/>';
+
+		} elseif ( is_page() && $post->post_parent ) {
+			echo '<title>' . strip_tags(get_the_title( $post )) . ' | ' . strip_tags(get_the_title( $post->post_parent )) . ' - Mindworks</title>';
+			echo '<meta property="og:type" content="article"/>';
+			echo '<meta property="og:title" content="' . strip_tags(get_the_title( $post )) . ' | ' . strip_tags(get_the_title( $post->post_parent )) . ' - Mindworks"/>';
+			echo '<meta property="og:description" content="' . strip_tags(limit_characters(get_the_excerpt($post->post_parent ), 200)) . '"/>';
+			echo '<meta property="og:image" content="' . $featured_image . '"/>';
+
+		} else {
+			echo '<title>' . strip_tags(get_the_title()) . ' - Mindworks</title>';
+			echo '<meta property="og:type" content="website"/>';
+			echo '<meta property="og:title" content="' . strip_tags(get_the_title()) . ' - Mindworks"/>';
+			echo '<meta property="og:description" content="' . strip_tags(limit_characters(get_the_excerpt($post->post_parent ), 200)) . '"/>';
+			echo '<meta property="og:url" content="' . get_permalink() . '"/>';
+			echo '<meta property="og:site_name" content="Mindworks"/>';
+			echo '<meta property="og:image" content="' . $featured_image . '"/>';
 		}
 	?>
 
@@ -76,7 +110,10 @@
 					<ul>
 						<li><a href="<?php echo home_url('/thedisruptedmind/scientific-insights'); ?>">Scientific Insights</a></li>
 						<li><a href="<?php echo home_url('/thedisruptedmind/the-crisis-timeline'); ?>">The Crisis Timeline</a></li>
-						<li><a href="<?php echo home_url('/thedisruptedmind/the-crisis-handbook'); ?>">The Crisis Handbook</a></li>
+						<?php if ( is_user_logged_in() ) {
+								echo ' <li><a href="'. home_url('/thedisruptedmind/the-crisis-handbook') .'">The Crisis Handbook</a></li>';
+							}
+						?>
 					</ul>
 				</li>
 				<!-- <li><a href="#">About</a></li> -->

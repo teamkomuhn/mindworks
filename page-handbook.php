@@ -82,7 +82,7 @@
                 <?php endif; ?>
                 <a class="button open" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">Open card</a>
             </header>
-            <p><?php echo limit_text(get_the_excerpt(), 20) ?></p>
+            <p><?php echo limit_words(get_the_excerpt(), 20) ?></p>
         </article>
 
         <?php endwhile; wp_reset_postdata(); ?>
