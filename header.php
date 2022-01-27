@@ -5,15 +5,15 @@
 	<meta charset="utf-8">
 	<?php global $post;
 		$default_image = home_url() . "/wp-content/uploads/cover-og.png"; //replace this with a default image on your server or an image in your media library
-
+		
 		$post_featured_image = get_post_thumbnail_id($post);
 		$post_parent_featured_image = get_post_thumbnail_id($post->post_parent);
-
+		
 		if ( !empty($post_featured_image) ){
 			$featured_image = wp_get_attachment_image_url($post_featured_image, 'medium');
 		} else {
 			$featured_image = $default_image;
-
+			
 			if( is_page() && $post->post_parent ) {
 				$featured_image = wp_get_attachment_image_url($post_parent_featured_image, 'medium');
 			}
@@ -121,7 +121,7 @@
 					</ul>
 				</li>
 				<!-- <li><a href="#">About</a></li> -->
-				<li><a href="#contacts">Contact</a></li>
+				<li><a href="#contacts">Contacts</a></li>
 			</ul>
 
 			<div class="so-me">
