@@ -7,7 +7,8 @@
 			<span><?php bloginfo('name') ?></span>
 			<img src="<?php echo get_template_directory_uri(); ?>/img/logo-black.svg" alt="<?php bloginfo('name'); ?>" />
 		</h1>
-		<h2><span>Giving changemakers</span>
+		<h2>
+			<span>Giving changemakers</span>
 			<span>the power to understand </span>
 			<span>how the human mind works.</span>
 		</h2>
@@ -36,8 +37,10 @@
 </section>
 
 <aside class="cta">
-	<p>We co-create with <strong>organisations</strong>, <strong>teams</strong> and <strong>changemakers</strong> working to shift the hearts and minds of people in order to create mindset, power or structural change in complex social and environmental issues such as the climate crisis, polarisation, social unrest or crises.</p>
-	<a class="button" href="#contacts">Let's talk!</a>
+	<header>
+		<h2>What we do</h2>
+		<p>We co-create with <strong>organisations</strong>, <strong>teams</strong> and <strong>changemakers</strong> working to shift the hearts and minds of people in order to create mindset, power or structural change in complex social and environmental issues such as the climate crisis, polarisation, social unrest or crises.</p>
+	</header>
 </aside>
 
 <section class="engage">
@@ -46,38 +49,50 @@
 			<figure aria-hidden="true">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/icon-hand-yellow.svg">
 			</figure>
+
 			<h3>Applying our tools and insights</h3>
 		</header>
+
 		<p>Our materials are designed to support your internal capabilities in building campaigns and engagements in various ways. Which means they are easy and interesting to engage with. They are research-backed, evidence-based, tested and open-sourced.</p>
 	</article>
+
 	<article>
 		<header>
 			<figure aria-hidden="true">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/icon-highfive-black.svg">
 			</figure>
+
 			<h3>Co-creating tailor made tools for your specific needs</h3>
 		</header>
+
 		<p>If you have a specific challenge within your campaign or engagement project, we are keen to dive in with you to help solve it. This often means working alongside you to develop new tools or strategies that are specific to your needs.</p>
 	</article>
+
 	<article>
 		<header>
 			<figure aria-hidden="true">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/icon-support-black.svg">
 			</figure>
+
 			<h3>Supporting full project implementation</h3>
 		</header>
+
 		<p>We can also work right alongside you through the full lifespan of the project. From project planning, implementation and finalisation, we can help your team design, research, test, analyze and make decisions.</p>
 	</article>
+
 	<article>
 		<header>
 			<figure aria-hidden="true">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/icon-participate-yellow.svg">
 			</figure>
+
 			<h3>Participating in our workshops</h3>
 		</header>
+
 		<p>Participating in our workshops is a bit like going on an ‘aha!’ journey; each lesson is designed as a learning experience and is less about being presented with information, and more about discovering these insights for yourself. We then help participants to integrate these insights into their campaign and engagement projects.</p>
 	</article>
 
+	<a class="button" href="#contacts">Let's talk!</a>
 </section>
 
 <section class="team">

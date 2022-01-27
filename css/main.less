@@ -474,21 +474,26 @@ header.main-header {
 
     nav.main-nav {
         box-sizing: border-box;
+        padding: var(--spacing-y) var(--spacing-x);
 
         position: fixed;
-        // top: var(--main-header-height); right: 0; bottom: 0; left: 0;
-        top: 0; right: 200vw; bottom: 0; left: 100vw;
-        width: 100%;
-        z-index: 99999;
+        top: 0; right: -100vw; bottom: 0; left: 100vw;
+        z-index: 100000;
         overflow-y: scroll;
         overscroll-behavior: contain;
 
         background-color: @color-black;
         color: @color-white;
-
-        padding: var(--spacing-y) var(--spacing-x);
-
         transition: transform .5s ease;
+
+        width: 100vw;
+
+        @media @desktop {
+            width: 50vw;
+        }
+
+        margin-right: 0;
+        margin-left: auto;
 
         a.logo {
             margin: -5rem 0 var(--spacing-y) 0;
@@ -522,7 +527,7 @@ header.main-header {
         div.so-me {}
 
         &.opened {
-            transform: translateX(-100vw); // Show it
+            transform: translateX(-100vw);
         }
     }
 
@@ -726,15 +731,78 @@ body.home {
         }
 
         section.latest-work {
-            margin-top: -8rem;
+            // margin-top: -8rem;
         }
 
         aside.cta {
             padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
 
-            p {
-                font-size: var(--font-size-p);
-                padding-bottom: 1em;
+            > header {
+                h2 {
+                    font-weight: bold;
+                    padding-bottom: 1em;
+                }
+
+                p {
+                    font-size: var(--font-size-p);
+                }
+            }
+        }
+
+        section.engage {
+            padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
+
+            article {
+                background-color: @color-black;
+                color: @color-white;
+                padding: var(--spacing-y) var(--spacing-x);
+                border-radius: 0.2em;
+                margin-bottom: 2rem;
+
+                header {
+                    margin-bottom: var(--spacing-x);
+
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+
+                    figure {
+                        margin-right: 1rem;
+                        img {
+                            width: 5rem; height: auto;
+                        }
+                    }
+                    h3 {
+                        font-size: var(--font-size-big);
+                        color: @color-yellow-light;
+                    }
+                }
+                p {
+                    display: block;
+                    clear: both;
+                }
+
+                &:nth-of-type(1) {
+				}
+				&:nth-of-type(2),
+                &:nth-of-type(3) {
+					background-color: @color-yellow-light;
+
+					header {
+						h3 {
+							color: @color-black;
+							font-weight: 600;
+						}
+					}
+					p {
+						color: @color-black;
+						font-weight: 500;
+					}
+				}
+				&:nth-of-type(3) {
+				}
+				&:nth-of-type(4) {
+				}
             }
 
             a.button {
@@ -798,69 +866,10 @@ body.home {
 
             }
         }
-
-        section.engage {
-            padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
-
-            article {
-                background-color: @color-black;
-                color: @color-white;
-                padding: var(--spacing-y) var(--spacing-x);
-                border-radius: 0.2em;
-                margin-bottom: 2rem;
-
-                header {
-                    margin-bottom: var(--spacing-x);
-
-                    display: flex;
-                    flex-flow: row nowrap;
-                    align-items: center;
-
-                    figure {
-                        margin-right: 1rem;
-                        img {
-                            width: 5rem; height: auto;
-                        }
-                    }
-                    h3 {
-                        font-size: var(--font-size-big);
-                        color: @color-yellow-light;
-                    }
-                }
-                p {
-                    display: block;
-                    clear: both;
-                }
-
-                &:nth-of-type(1) {
-				}
-				&:nth-of-type(2),
-                &:nth-of-type(3) {
-					background-color: @color-yellow-light;
-
-					header {
-						h3 {
-							color: @color-black;
-							font-weight: 600;
-						}
-					}
-					p {
-						color: @color-black;
-						font-weight: 500;
-					}
-				}
-				&:nth-of-type(3) {
-				}
-				&:nth-of-type(4) {
-				}
-            }
-        }
-
 	}
-
 }
 
-//
+
 section.latest-work {
     position: relative;
     overflow: hidden;

@@ -513,19 +513,26 @@ header.main-header button.nav.close {
 }
 header.main-header nav.main-nav {
   box-sizing: border-box;
+  padding: var(--spacing-y) var(--spacing-x);
   position: fixed;
   top: 0;
-  right: 200vw;
+  right: -100vw;
   bottom: 0;
   left: 100vw;
-  width: 100%;
-  z-index: 99999;
+  z-index: 100000;
   overflow-y: scroll;
   overscroll-behavior: contain;
   background-color: #222222;
   color: #ffffff;
-  padding: var(--spacing-y) var(--spacing-x);
   transition: transform 0.5s ease;
+  width: 100vw;
+  margin-right: 0;
+  margin-left: auto;
+}
+@media only screen and (min-width: 1201px) {
+  header.main-header nav.main-nav {
+    width: 50vw;
+  }
 }
 header.main-header nav.main-nav a.logo {
   margin: -5rem 0 var(--spacing-y) 0;
@@ -688,17 +695,62 @@ body.home main section.about header h3 {
   padding-bottom: 1em;
   font-size: var(--font-size-p);
 }
-body.home main section.latest-work {
-  margin-top: -8rem;
-}
 body.home main aside.cta {
   padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
 }
-body.home main aside.cta p {
-  font-size: var(--font-size-p);
+body.home main aside.cta > header h2 {
+  font-weight: bold;
   padding-bottom: 1em;
 }
-body.home main aside.cta a.button {
+body.home main aside.cta > header p {
+  font-size: var(--font-size-p);
+}
+body.home main section.engage {
+  padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
+}
+body.home main section.engage article {
+  background-color: #222222;
+  color: #ffffff;
+  padding: var(--spacing-y) var(--spacing-x);
+  border-radius: 0.2em;
+  margin-bottom: 2rem;
+}
+body.home main section.engage article header {
+  margin-bottom: var(--spacing-x);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+body.home main section.engage article header figure {
+  margin-right: 1rem;
+}
+body.home main section.engage article header figure img {
+  width: 5rem;
+  height: auto;
+}
+body.home main section.engage article header h3 {
+  font-size: var(--font-size-big);
+  color: #FEF288;
+}
+body.home main section.engage article p {
+  display: block;
+  clear: both;
+}
+body.home main section.engage article:nth-of-type(2),
+body.home main section.engage article:nth-of-type(3) {
+  background-color: #FEF288;
+}
+body.home main section.engage article:nth-of-type(2) header h3,
+body.home main section.engage article:nth-of-type(3) header h3 {
+  color: #222222;
+  font-weight: 600;
+}
+body.home main section.engage article:nth-of-type(2) p,
+body.home main section.engage article:nth-of-type(3) p {
+  color: #222222;
+  font-weight: 500;
+}
+body.home main section.engage a.button {
   background-color: #FEF288;
   display: block;
   margin-top: 1rem;
@@ -748,51 +800,6 @@ body.home main section.team article figure img {
 body.home main section.team article a.button {
   display: block;
   clear: both;
-}
-body.home main section.engage {
-  padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
-}
-body.home main section.engage article {
-  background-color: #222222;
-  color: #ffffff;
-  padding: var(--spacing-y) var(--spacing-x);
-  border-radius: 0.2em;
-  margin-bottom: 2rem;
-}
-body.home main section.engage article header {
-  margin-bottom: var(--spacing-x);
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-}
-body.home main section.engage article header figure {
-  margin-right: 1rem;
-}
-body.home main section.engage article header figure img {
-  width: 5rem;
-  height: auto;
-}
-body.home main section.engage article header h3 {
-  font-size: var(--font-size-big);
-  color: #FEF288;
-}
-body.home main section.engage article p {
-  display: block;
-  clear: both;
-}
-body.home main section.engage article:nth-of-type(2),
-body.home main section.engage article:nth-of-type(3) {
-  background-color: #FEF288;
-}
-body.home main section.engage article:nth-of-type(2) header h3,
-body.home main section.engage article:nth-of-type(3) header h3 {
-  color: #222222;
-  font-weight: 600;
-}
-body.home main section.engage article:nth-of-type(2) p,
-body.home main section.engage article:nth-of-type(3) p {
-  color: #222222;
-  font-weight: 500;
 }
 section.latest-work {
   position: relative;
@@ -1024,44 +1031,8 @@ footer.main-footer div.so-me a.privacy {
     font-weight: 500;
     line-height: 1.5em;
   }
-  body.home main section.latest-work {
-    margin-top: -10rem;
-  }
-  body.home main aside.cta p {
+  body.home main aside.cta header p {
     font-size: var(--font-size-biggish);
-  }
-  body.home main aside.cta a.button {
-    width: 50%;
-    padding-left: 0;
-    padding-right: 0;
-    margin: 1rem auto 0 auto;
-  }
-  body.home main aside.cta a.button:hover {
-    background-color: #222222;
-    color: #FEF288;
-  }
-  body.home main section.team {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-  }
-  body.home main section.team header h2 {
-    font-size: var(--font-size-bigger);
-  }
-  body.home main section.team header p {
-    font-size: var(--font-size-biggish);
-  }
-  body.home main section.team article {
-    margin-bottom: 2rem;
-    flex: 0 0 25rem;
-    padding: 2rem;
-    cursor: pointer;
-  }
-  body.home main section.team article header h3 {
-    font-size: var(--font-size-biggish);
-  }
-  body.home main section.team article header p {
-    font-size: var(--font-size-p);
   }
   body.home main section.engage {
     display: flex;
@@ -1093,6 +1064,39 @@ footer.main-footer div.so-me a.privacy {
   }
   body.home main section.engage article:nth-of-type(4) {
     border-bottom-right-radius: 0.2em;
+  }
+  body.home main section.engage a.button {
+    width: 50%;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 1rem auto 0 auto;
+  }
+  body.home main section.engage a.button:hover {
+    background-color: #222222;
+    color: #FEF288;
+  }
+  body.home main section.team {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  body.home main section.team header h2 {
+    font-size: var(--font-size-bigger);
+  }
+  body.home main section.team header p {
+    font-size: var(--font-size-biggish);
+  }
+  body.home main section.team article {
+    margin-bottom: 2rem;
+    flex: 0 0 25rem;
+    padding: 2rem;
+    cursor: pointer;
+  }
+  body.home main section.team article header h3 {
+    font-size: var(--font-size-biggish);
+  }
+  body.home main section.team article header p {
+    font-size: var(--font-size-p);
   }
   section.latest-work {
     margin: 0 var(--spacing-x) var(--spacing-x) var(--spacing-x);
@@ -1168,4 +1172,3 @@ footer.main-footer div.so-me a.privacy {
     font-size: var(--font-size-biggest);
   }
 }
-/*# sourceMappingURL=style.css.map */
