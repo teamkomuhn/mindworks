@@ -433,4 +433,33 @@
     }
     add_filter('the_title', 'remove_private_prefix');
 
+
+    /**
+     * https://gist.github.com/kupoback/5230bd14e7257412bd8cafc76eabe6f3
+     * An action to update the default WP image sizes, while removing the thumbnail crop
+     * Default image sizes are thumbnail, medium, medium_large, and large
+     * 
+     * Default WP
+     */
+    add_action('after_setup_theme', function () {
+        // Update Thumbnail image size
+        update_option('thumbnail_size_w', 630, true);
+        update_option('thumbnail_size_h', 0, true);
+        
+        // Remove crops
+        update_option('thumbnail_crop', 0, true);
+    
+        // Update Medium image size
+        update_option('medium_size_w', 1200, true);
+        update_option('medium_size_h', 0, true);
+        
+        // Update Medium Large image size
+        update_option('medium_large_size_w', 1440, true);
+        update_option('medium_large_size_h', 0, true);
+    
+        // Update Large image size
+        update_option('large_size_w', 1920, true);
+        update_option('large_size_h', 0, true);
+    });
+
 ?>
