@@ -178,11 +178,18 @@ var debounce = function (fn) {
 
     const mainHeader = document.querySelector(`.main-header`)
     const mainNav = mainHeader?.querySelector(`.main-nav`)
+    const navButtons = mainHeader.querySelectorAll(`.button.nav`)
 
     if (mainNav) {
-        const navButtons = mainHeader.querySelectorAll(`.button.nav`)
+        addEventListener('click', event => {
+            event.stopPropagation()
 
-        for (const navButton of [ mainNav, ...navButtons ]) {
+            if (event.target === mainNav || mainNav.contains(event.target)) return 
+    
+            mainNav.classList.remove('opened')
+        })
+
+        for (const navButton of navButtons) {
             navButton.addEventListener(`click`, event => {
                 event.stopPropagation()
 

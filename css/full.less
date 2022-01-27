@@ -186,16 +186,57 @@ body.home {
         }
 
 		section.latest-work {
-			margin-top: -10rem;
+			// margin-top: -10rem;
 		}
 
 		aside.cta {
+			header {
+				p {
+					font-size: var(--font-size-biggish);
+				}
+			}
+        }
 
-            p {
-                font-size: var(--font-size-biggish);
+		section.engage {
+			display: flex;
+			flex-flow: row wrap;
+
+            article {
+				flex: 0 0 calc( 50% - 8rem );
+				padding: 4rem;
+				margin: 0;
+				border-radius: 0;
+
+                header {
+					margin-bottom: 2rem;
+
+                    figure {
+                        img {
+							width: 7rem
+                        }
+                    }
+                    h3 {
+						// font-size: var(--font-size-big);
+						font-weight: 500;
+                    }
+                }
+
+				&:nth-of-type(1) {
+					border-top-left-radius: 0.2em;
+				}
+				&:nth-of-type(2) {
+					border-top-right-radius: 0.2em;
+				}
+				&:nth-of-type(3) {
+					border-bottom-left-radius: 0.2em;
+				}
+				&:nth-of-type(4) {
+					border-bottom-right-radius: 0.2em;
+				}
+
             }
 
-            a.button {
+			a.button {
                 width: 50%; padding-left: 0; padding-right: 0;
                 margin: 1rem auto 0 auto;
 				&:hover {
@@ -241,51 +282,9 @@ body.home {
 
             }
         }
-
-		section.engage {
-			display: flex;
-			flex-flow: row wrap;
-
-            article {
-				flex: 0 0 calc( 50% - 8rem );
-				padding: 4rem;
-				margin: 0;
-				border-radius: 0;
-
-                header {
-					margin-bottom: 2rem;
-
-                    figure {
-                        img {
-							width: 7rem
-                        }
-                    }
-                    h3 {
-						// font-size: var(--font-size-big);
-						font-weight: 500;
-                    }
-                }
-
-				&:nth-of-type(1) {
-					border-top-left-radius: 0.2em;
-				}
-				&:nth-of-type(2) {
-					border-top-right-radius: 0.2em;
-				}
-				&:nth-of-type(3) {
-					border-bottom-left-radius: 0.2em;
-				}
-				&:nth-of-type(4) {
-					border-bottom-right-radius: 0.2em;
-				}
-
-            }
-        }
-
 	}
 }
 
-//
 section.latest-work {
     margin: 0 var(--spacing-x) var(--spacing-x) var(--spacing-x);
 	height: 35rem;
