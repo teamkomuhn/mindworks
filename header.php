@@ -16,24 +16,32 @@
 			
 			if( is_page() && $post->post_parent ) {
 				$featured_image = wp_get_attachment_image_url($post_parent_featured_image, 'medium');
-			} else {
-				$featured_image = $default_image;
 			}
 		}
 
 		echo '<meta property="og:locale" content="alternate"/>';
+		echo '<meta property="og:site_name" content="Mindworks"/>';
 		if ( is_home() ) {
 			echo '<title>Mindworks | '. strip_tags(get_bloginfo( 'description' )) .'</title>';
 			echo '<meta property="og:type" content="website"/>';
-			echo '<meta property="og:title" content="Mindworks"/>';
+			echo '<meta property="og:title" content="Mindworks | '. strip_tags(get_bloginfo( 'description' )) .'"/>';
 			echo '<meta property="og:description" content="' . strip_tags(get_bloginfo( 'description' )) . '"/>';
 			echo '<meta property="og:image" content="' . $default_image . '"/>';
+
+		} elseif ( is_page() || is_singular('post') )  {
+			echo '<title>' . strip_tags(get_the_title( $post )) . ' - Mindworks</title>';
+			echo '<meta property="og:type" content="article"/>';
+			echo '<meta property="og:title" content="' . strip_tags(get_the_title( $post )) . ' - Mindworks"/>';
+			echo '<meta property="og:description" content="' . strip_tags(limit_characters(get_the_excerpt($post), 200)) . '"/>';
+			echo '<meta property="og:url" content="' . get_permalink($post) . '"/>';
+			echo '<meta property="og:image" content="' . $featured_image . '"/>';
 
 		} elseif ( is_page() && $post->post_parent ) {
 			echo '<title>' . strip_tags(get_the_title( $post )) . ' | ' . strip_tags(get_the_title( $post->post_parent )) . ' - Mindworks</title>';
 			echo '<meta property="og:type" content="article"/>';
 			echo '<meta property="og:title" content="' . strip_tags(get_the_title( $post )) . ' | ' . strip_tags(get_the_title( $post->post_parent )) . ' - Mindworks"/>';
 			echo '<meta property="og:description" content="' . strip_tags(limit_characters(get_the_excerpt($post->post_parent ), 200)) . '"/>';
+			echo '<meta property="og:url" content="' . get_permalink($post) . '"/>';
 			echo '<meta property="og:image" content="' . $featured_image . '"/>';
 
 		} else {
@@ -42,7 +50,6 @@
 			echo '<meta property="og:title" content="' . strip_tags(get_the_title()) . ' - Mindworks"/>';
 			echo '<meta property="og:description" content="' . strip_tags(limit_characters(get_the_excerpt($post->post_parent ), 200)) . '"/>';
 			echo '<meta property="og:url" content="' . get_permalink() . '"/>';
-			echo '<meta property="og:site_name" content="Mindworks"/>';
 			echo '<meta property="og:image" content="' . $featured_image . '"/>';
 		}
 	?>
