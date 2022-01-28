@@ -67,17 +67,19 @@
         <?php
         // The Loop
         while ( $cards->have_posts() ) : $cards->the_post();
-            $thumbnail_id   = get_post_thumbnail_id( $post->ID );
-            $card_image     = wp_get_attachment_image_src( $thumbnail_id );
-            $card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+
+        $card_image = get_field('icon');
+        $card_image = $card_image['url'];
+        $card_image_alt = $card_image['alt'];
+        
         ?>
 
         <article class="card">
             <header>
                 <h3><?php echo get_the_title(); ?></h3>
-                <?php if ( !empty( $thumbnail_id ) ) : ?>
+                <?php if ( !empty( $card_image ) ) : ?>
                     <figure>
-                        <img src="<?php echo $card_image[0]; ?>" alt="<?php echo $card_image_alt; ?>">
+                        <img src="<?php echo $card_image; ?>" alt="<?php echo $card_image_alt; ?>">
                     </figure>
                 <?php endif; ?>
                 <a class="button open" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">Open card</a>

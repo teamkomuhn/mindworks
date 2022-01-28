@@ -110,14 +110,15 @@
                         <h1><?php the_title(); ?></h1>
 
                         <?php
-                            if ( has_post_thumbnail( $post->ID ) ) :
-                                $thumbnail_id = get_post_thumbnail_id( $post->ID );
-                                $card_image = wp_get_attachment_image_src( $thumbnail_id );
-                                $card_image_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+                            $card_image = get_field('icon');
+                            $card_image = $card_image['url'];
+                            $card_image_alt = $card_image['alt'];
+
+                            if(!empty($card_image)) :
                         ?>
 
                         <figure class="icon">
-                            <img src="<?php echo $card_image[0]; ?>" alt="<?php echo $card_image_alt; ?>">
+                            <img src="<?php echo $card_image; ?>" alt="<?php echo $card_image_alt; ?>">
                         </figure>
 
 						<?php endif; ?>
