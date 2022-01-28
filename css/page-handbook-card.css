@@ -332,6 +332,65 @@ body.page-handbook-card main section.cards-slider article.card section.examples 
 body.page-handbook-card main section.cards-slider article.card section.examples article.example a {
   color: #222222;
 }
+body.page-handbook-card main section.cards-slider article.card section.participate {
+  background-color: #ffffff;
+}
+body.page-handbook-card main section.cards-slider article.card section.participate > header {
+  margin-bottom: 2rem;
+}
+body.page-handbook-card main section.cards-slider article.card section.participate > header h2 {
+  background-image: url("../img/icon-help-black.svg");
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  font-size: var(--font-size-biggish);
+  text-indent: 2.5rem;
+  margin-bottom: 1em;
+}
+body.page-handbook-card main section.cards-slider article.card section.participate > header h3 {
+  font-size: var(--font-size-biggish);
+  margin-bottom: 1em;
+}
+body.page-handbook-card main section.cards-slider article.card section.participate > header p {
+  margin-bottom: 1em;
+}
+body.page-handbook-card main section.cards-slider article.card section.participate div.card-contact form {
+  margin-bottom: var(--spacing-y);
+}
+body.page-handbook-card main section.cards-slider article.card section.participate div.card-contact form button.button {
+  background-color: #222222;
+  border-radius: 0.2em;
+  border: 0.1rem solid #222222;
+  color: #ffffff;
+  width: 100%;
+}
+body.page-handbook-card main section.cards-slider article.card section.participate .wpforms-field-medium {
+  max-width: 100%;
+}
+body.page-handbook-card main section.cards-slider article.card section.participate .wpforms-container-full {
+  margin-bottom: 0;
+}
+body.page-handbook-card main section.cards-slider article.card section.participate div.join-slack {
+  background-color: #222222;
+  border-radius: 0.5em;
+  color: #ffffff;
+  padding: var(--spacing-y) 2rem;
+}
+body.page-handbook-card main section.cards-slider article.card section.participate div.join-slack img {
+  width: 3rem;
+  margin: auto 1em 1em auto;
+}
+body.page-handbook-card main section.cards-slider article.card section.participate div.join-slack h3 {
+  font-weight: 500;
+  margin-bottom: 1em;
+}
+body.page-handbook-card main section.cards-slider article.card section.participate div.join-slack p {
+  margin-bottom: 1em;
+}
+body.page-handbook-card main section.cards-slider article.card section.participate div.join-slack a.button {
+  display: block;
+  color: #ffffff;
+  border-color: #ffffff;
+}
 body.page-handbook-card main section.cards-slider article.card div.tabs {
   background-color: #222222;
   color: #ffffff;
@@ -349,42 +408,6 @@ body.page-handbook-card main section.cards-slider article.card div.tabs > sectio
 body.page-handbook-card main section.cards-slider article.card div.tabs > section.active header {
   background-color: #222222;
   color: #ffffff;
-}
-body.page-handbook-card main section.cards-slider article.card footer {
-  padding: var(--spacing-x);
-  background-color: #ffffff;
-}
-body.page-handbook-card main section.cards-slider article.card footer header {
-  background-image: url("../img/icon-help-black.svg");
-  background-repeat: no-repeat;
-  background-position: 0 center;
-  margin-bottom: 2rem;
-}
-body.page-handbook-card main section.cards-slider article.card footer header h2 {
-  font-size: var(--font-size-biggish);
-  text-indent: 2.5rem;
-}
-body.page-handbook-card main section.cards-slider article.card footer ul {
-  padding: 0;
-  list-style: none;
-}
-body.page-handbook-card main section.cards-slider article.card footer ul li {
-  display: flex;
-  flex-flow: row no-wrap;
-  align-items: flex-start;
-  margin-bottom: 2rem;
-}
-body.page-handbook-card main section.cards-slider article.card footer ul li img {
-  width: 6em;
-  margin-right: 1em;
-}
-body.page-handbook-card main section.cards-slider article.card footer ul li p {
-  font-size: var(--font-size-small);
-  font-weight: 500;
-}
-body.page-handbook-card main section.cards-slider article.card footer ul li p a {
-  display: block;
-  font-weight: normal;
 }
 .container-expandable .expandable {
   overflow: hidden;
@@ -529,25 +552,47 @@ div.tabs .tab.active div.container {
   body.page-handbook-card main section.cards-slider article.card section.examples article.example > p {
     clear: left;
   }
+  body.page-handbook-card main section.cards-slider article.card section.participate div.columns {
+    display: flex;
+    flex-flow: row no-wrap;
+  }
+  body.page-handbook-card main section.cards-slider article.card section.participate div.columns > div:first-of-type {
+    flex: 0 0 60%;
+  }
+  body.page-handbook-card main section.cards-slider article.card section.participate div.columns > div:last-of-type {
+    margin-left: var(--spacing-y);
+    margin-right: calc(-1 * var(--spacing-y));
+  }
+  body.page-handbook-card main section.cards-slider article.card section.participate div.card-contact form {
+    margin-bottom: 0;
+  }
+  body.page-handbook-card main section.cards-slider article.card section.participate div.card-contact form button.button {
+    width: 50%;
+  }
+  body.page-handbook-card main section.cards-slider article.card section.participate div.join-slack {
+    text-align: center;
+  }
+  body.page-handbook-card main section.cards-slider article.card section.participate div.join-slack img {
+    width: 6em;
+    display: block;
+    margin: 0 auto 2rem;
+  }
+  body.page-handbook-card main section.cards-slider article.card section.participate div.join-slack h3 {
+    font-size: var(--font-size-biggish);
+  }
+  body.page-handbook-card main section.cards-slider article.card section.participate div.join-slack a.button {
+    color: #ffffff;
+  }
+  body.page-handbook-card main section.cards-slider article.card section.participate div.join-slack a.button:hover {
+    background-color: #ffffff;
+    color: #222222;
+  }
   body.page-handbook-card main section.cards-slider article.card div.tabs > section header {
     background-position: var(--spacing-y) center;
   }
   body.page-handbook-card main section.cards-slider article.card div.tabs > section header h2 {
     text-indent: 6rem;
     font-size: var(--font-size-big);
-  }
-  body.page-handbook-card main section.cards-slider article.card footer {
-    padding: var(--spacing-y);
-  }
-  body.page-handbook-card main section.cards-slider article.card footer ul {
-    display: flex;
-    flex-flow: row nowrap;
-  }
-  body.page-handbook-card main section.cards-slider article.card footer ul li {
-    margin-right: var(--spacing-y);
-  }
-  body.page-handbook-card main section.cards-slider article.card footer ul li:last-of-type {
-    margin-right: 0;
   }
 }
 /*# sourceMappingURL=page-handbook-card.css.map */
