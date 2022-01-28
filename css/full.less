@@ -147,6 +147,7 @@ body.home {
 		section.about {
 			header {
 				background-size: cover;
+				background-position: bottom;
 				margin-bottom: 1em;
 
 				// NOTE: Temporary centering
@@ -201,6 +202,12 @@ body.home {
 			display: flex;
 			flex-flow: row wrap;
 
+			header {
+				p {
+					font-size: var(--font-size-biggish);
+				}
+			}
+
             article {
 				flex: 0 0 calc( 50% - 8rem );
 				padding: 4rem;
@@ -238,7 +245,8 @@ body.home {
 
 			a.button {
                 width: 50%; padding-left: 0; padding-right: 0;
-                margin: 1rem auto 0 auto;
+                margin: var(--spacing-y) auto 0 auto;
+
 				&:hover {
 					background-color: @color-black;
 					color: @color-yellow-light;
@@ -279,6 +287,13 @@ body.home {
 
                 figure {
                 }
+
+				&:hover {
+					a.button {
+						background-color: @color-black;
+						color: @color-white;
+					}
+				}
 
             }
         }

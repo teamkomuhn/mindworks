@@ -39,7 +39,7 @@
                 <!--End mc_embed_signup-->
 
                 <p class="email-link icon-email">
-                    <a href="mailto:hello@mindworkslab.org" alt="hello@mindworkslab.org"><strong>Email</strong> hello@mindworkslab.org</a>
+                    <a href="mailto:hello@mindworkslab.org" alt="hello@mindworkslab.org"><strong>Get in touch!</strong> hello@mindworkslab.org</a>
                 </p>
 
             </div>
@@ -51,8 +51,6 @@
             </div>
 
         </footer>
-
-
 
     <?php wp_footer(); ?>
 

@@ -752,6 +752,19 @@ body.home {
         section.engage {
             padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
 
+            > header {
+                padding-bottom: var(--spacing-y);
+
+                h2 {
+                    font-weight: bold;
+                    padding-bottom: 1em;
+                }
+
+                p {
+                    font-size: var(--font-size-p);
+                }
+            }
+
             article {
                 background-color: @color-black;
                 color: @color-white;
@@ -808,7 +821,7 @@ body.home {
             a.button {
                 background-color: @color-yellow-light;
                 display: block;
-                margin-top: 1rem;
+                margin-top: var(--spacing-y);
             }
         }
 

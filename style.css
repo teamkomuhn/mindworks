@@ -708,6 +708,16 @@ body.home main aside.cta > header p {
 body.home main section.engage {
   padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
 }
+body.home main section.engage > header {
+  padding-bottom: var(--spacing-y);
+}
+body.home main section.engage > header h2 {
+  font-weight: bold;
+  padding-bottom: 1em;
+}
+body.home main section.engage > header p {
+  font-size: var(--font-size-p);
+}
 body.home main section.engage article {
   background-color: #222222;
   color: #ffffff;
@@ -753,7 +763,7 @@ body.home main section.engage article:nth-of-type(3) p {
 body.home main section.engage a.button {
   background-color: #FEF288;
   display: block;
-  margin-top: 1rem;
+  margin-top: var(--spacing-y);
 }
 body.home main section.team {
   padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
@@ -1005,6 +1015,7 @@ footer.main-footer div.so-me a.privacy {
   }
   body.home main section.about header {
     background-size: cover;
+    background-position: bottom;
     margin-bottom: 1em;
     margin-left: calc(-1 * calc((100vw - var(--main-width)) / 2));
     margin-right: calc(-1 * calc((100vw - var(--main-width)) / 2));
@@ -1038,6 +1049,9 @@ footer.main-footer div.so-me a.privacy {
     display: flex;
     flex-flow: row wrap;
   }
+  body.home main section.engage header p {
+    font-size: var(--font-size-biggish);
+  }
   body.home main section.engage article {
     flex: 0 0 calc(50% - 8rem);
     padding: 4rem;
@@ -1069,7 +1083,7 @@ footer.main-footer div.so-me a.privacy {
     width: 50%;
     padding-left: 0;
     padding-right: 0;
-    margin: 1rem auto 0 auto;
+    margin: var(--spacing-y) auto 0 auto;
   }
   body.home main section.engage a.button:hover {
     background-color: #222222;
@@ -1097,6 +1111,10 @@ footer.main-footer div.so-me a.privacy {
   }
   body.home main section.team article header p {
     font-size: var(--font-size-p);
+  }
+  body.home main section.team article:hover a.button {
+    background-color: #222222;
+    color: #ffffff;
   }
   section.latest-work {
     margin: 0 var(--spacing-x) var(--spacing-x) var(--spacing-x);
@@ -1172,3 +1190,4 @@ footer.main-footer div.so-me a.privacy {
     font-size: var(--font-size-biggest);
   }
 }
+/*# sourceMappingURL=style.css.map */

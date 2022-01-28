@@ -36,14 +36,12 @@
 
 </section>
 
-<aside class="cta">
+<section class="engage">
 	<header>
 		<h2>What we do</h2>
 		<p>We co-create with <strong>organisations</strong>, <strong>teams</strong> and <strong>changemakers</strong> working to shift the hearts and minds of people in order to create mindset, power or structural change in complex social and environmental issues such as the climate crisis, polarisation, social unrest or crises.</p>
 	</header>
-</aside>
 
-<section class="engage">
 	<article>
 		<header>
 			<figure aria-hidden="true">
@@ -142,9 +140,9 @@
 		<a class="button small connect" href="https://www.linkedin.com/in/robin-john-perkins/" rel="nofollow">Connect</a>
 	</article>
 	<article class="member">
-		<!-- <figure>
+		<figure>
 			<img src="<?php echo get_template_directory_uri(); ?>/img/sophia-300x300.jpeg" alt="Sophia Hsiang  photo">
-		</figure> -->
+		</figure>
 		<header>
 			<h3>Sophia Hsiang</h3>
 			<p>Operations and coordinations</p>
@@ -152,7 +150,5 @@
 		<a class="button small connect" href="https://www.linkedin.com/in/sophia-hsiang-66394635/" rel="nofollow">Connect</a>
 	</article>
 </section>
-
-
 
 <?php get_footer(); ?>
