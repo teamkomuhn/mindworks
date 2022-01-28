@@ -184,8 +184,8 @@ var debounce = function (fn) {
         addEventListener('click', event => {
             event.stopPropagation()
 
-            if (event.target === mainNav || mainNav.contains(event.target)) return 
-    
+            if (event.target === mainNav || mainNav.contains(event.target)) return
+
             mainNav.classList.remove('opened')
         })
 
