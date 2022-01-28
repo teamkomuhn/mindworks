@@ -404,11 +404,6 @@
                             <p><u>Use the form below to ask us anything.</u></p>
                         </header>
 
-                        <!-- <ul>
-                            <li><img src="<?php echo get_template_directory_uri(); ?>/img/icon-slack.svg" alt="Icon slack"> <p>Want to learn and exchange with fellow changemakers? <a href="#">Join the conversation on Slack &rarr;</a></p></li>
-                            <li><img src="<?php echo get_template_directory_uri(); ?>/img/icon-email-black.svg" alt="Icon email"> <p>Looking for some advice or would like to collaborate with Mindworks? <a href="#">Ask us anything &rarr;</a></p></li>
-                        </ul> -->
-
                         <div class="columns">
                             <?php echo do_shortcode('[wpforms id="763"]'); //div.card-contact ?>
 
