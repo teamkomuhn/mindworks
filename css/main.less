@@ -734,21 +734,6 @@ body.home {
             // margin-top: -8rem;
         }
 
-        aside.cta {
-            padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
-
-            > header {
-                h2 {
-                    font-weight: bold;
-                    padding-bottom: 1em;
-                }
-
-                p {
-                    font-size: var(--font-size-p);
-                }
-            }
-        }
-
         section.engage {
             padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
 
@@ -826,39 +811,52 @@ body.home {
         }
 
         section.team {
-            padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+
+            gap: 1rem;
+
+            padding: var(--spacing-y) var(--spacing-x);
 
             > header {
-                margin-bottom: 2rem;
+                grid-column: 1 / -1;
 
                 h2 {
                     font-weight: bold;
                     padding-bottom: 1em;
                 }
+
+                padding-bottom: 1rem;
             }
 
             article {
-                margin-bottom: 1rem;
+                display: grid;
+                gap: 1rem;
+
+                grid-template: 
+                    "image header" 1fr
+                    "button button";
+
                 background-color: @color-blue-grey-light;
                 padding: var(--spacing-x);
                 border-radius: 0.2em;
                 overflow: hidden;
 
                 header {
-                    margin-bottom: 1rem;
+                    grid-area: header;
 
                     h3 {
                         font-weight: bold;
                     }
+
                     p {
                         font-size: var(--font-size-small);
                     }
                 }
 
                 figure {
-                    float: left;
-                    margin-bottom: 1rem;
-                    margin-right: 1rem;
+                    grid-area: image;
 
                     background: @color-grey-dark url("./img/icon-user-black.svg") no-repeat;
                     background-size: contain;
@@ -873,8 +871,9 @@ body.home {
                 }
 
                 a.button {
+                    grid-area: button;
+
                     display: block;
-                    clear: both;
                 }
 
             }

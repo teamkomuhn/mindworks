@@ -190,14 +190,6 @@ body.home {
 			// margin-top: -10rem;
 		}
 
-		aside.cta {
-			header {
-				p {
-					font-size: var(--font-size-biggish);
-				}
-			}
-        }
-
 		section.engage {
 			display: flex;
 			flex-flow: row wrap;
@@ -255,27 +247,27 @@ body.home {
         }
 
 		section.team {
-			display: flex;
-			flex-flow: row wrap;
-			justify-content: space-between;
+			display: grid;
 
             header {
-
-                h2 {
+				h2 {
 					font-size: var(--font-size-bigger);
                 }
+				
 				p {
 					font-size: var(--font-size-biggish);
 				}
             }
 
             article {
-				margin-bottom: 2rem;
-				flex: 0 0 25rem;
+				grid-template: 
+                    "image header" 1fr
+                    "image button";
 				padding: 2rem;
 				cursor: pointer;
 
 				header {
+					grid-area: header;
 
 					h3 {
 						font-size: var(--font-size-biggish);
@@ -286,7 +278,14 @@ body.home {
 				}
 
                 figure {
+					grid-area: image;
+
+					width: 8rem; height: 8rem;
                 }
+
+				a.button {
+					grid-area: button;
+				}
 
 				&:hover {
 					a.button {
@@ -294,7 +293,6 @@ body.home {
 						color: @color-white;
 					}
 				}
-
             }
         }
 	}

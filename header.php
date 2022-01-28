@@ -60,6 +60,7 @@
 
 	<meta name="description" content="<?php bloginfo( 'description' ); ?>">
 	<meta name="author" content="Komuhn">
+	<!-- TODO: https://css-tricks.com/the-notch-and-css -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
