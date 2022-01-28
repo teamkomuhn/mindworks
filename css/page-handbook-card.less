@@ -482,6 +482,112 @@ body.page-handbook-card {
                         }
                     }
 
+                    &.participate {
+                        background-color: @color-white;
+
+                        > header {
+                            margin-bottom: 2rem;
+
+                            h2 {
+                                background-image: url("../img/icon-help-black.svg");
+                                background-repeat: no-repeat;
+                                background-position: 0 center;
+
+                                font-size: var(--font-size-biggish);
+                                text-indent: 2.5rem;
+
+                                margin-bottom: 1em;
+                            }
+
+                            h3 {
+                                font-size: var(--font-size-biggish);
+                                margin-bottom: 1em;
+                            }
+
+                            p {
+                                margin-bottom: 1em;
+                            }
+                        }
+
+                        // ul {
+                        //     padding: 0;
+                        //     list-style: none;
+                        //
+                        //     li {
+                        //         display: flex;
+                        //     	flex-flow: row no-wrap;
+                        //         align-items: flex-start;
+                        //         margin-bottom: 2rem;
+                        //
+                        //         img {
+                        //             width: 6em;
+                        //             margin-right: 1em;
+                        //         }
+                        //
+                        //         p {
+                        //             font-size: var(--font-size-small);
+                        //             font-weight: 500;
+                        //
+                        //             a {
+                        //                 display: block;
+                        //                 font-weight: normal;
+                        //             }
+                        //         }
+                        //     }
+                        // }
+
+                        div.card-contact {
+                            // background-color: pink;
+                            // margin: auto calc( -1 * var(--spacing-x) );
+
+                            form {
+                                margin-bottom: var(--spacing-y);
+
+                                button.button {
+                                    background-color: @color-black;
+                                    border: .1rem solid @color-black;
+                                    border-radius: 0.2em;
+                                    border: .1rem solid @color-black;
+                                    color: @color-white;
+                                    width: 100%;
+                                }
+                            }
+
+                        }
+                        //Reset WPforms styles
+                        .wpforms-field-medium {max-width: 100%;}
+                        .wpforms-container-full {margin-bottom: 0;}
+
+                        div.join-slack {
+                            background-color: @color-black; border-radius: 0.5em;
+                            color: @color-white;
+                            padding: var(--spacing-y) 2rem;
+
+                            img {
+                                width: 3rem;
+                                margin: auto 1em 1em auto;
+                            }
+
+                            h3 {
+                                font-weight: 500;
+                                margin-bottom: 1em;
+                            }
+
+                            p {
+                                margin-bottom: 1em;
+                            }
+
+                            a.button {
+                                display: block;
+                                // font-size: var(--font-size-p);
+                                color: @color-white;
+                                border-color: @color-white;
+                            }
+
+                        }
+
+
+                    }
                 }
 
                 div.tabs {
@@ -511,49 +617,7 @@ body.page-handbook-card {
                     }
                 }
 
-                footer {
-                    padding: var(--spacing-x);
-                    background-color: @color-white;
 
-                    header {
-                        background-image: url("../img/icon-help-black.svg");
-                        background-repeat: no-repeat;
-                        background-position: 0 center;
-                        margin-bottom: 2rem;
-
-                        h2 {
-                            font-size: var(--font-size-biggish);
-                            text-indent: 2.5rem;
-                        }
-                    }
-
-                    ul {
-                        padding: 0;
-                        list-style: none;
-
-                        li {
-                            display: flex;
-                        	flex-flow: row no-wrap;
-                            align-items: flex-start;
-                            margin-bottom: 2rem;
-
-                            img {
-                                width: 6em;
-                                margin-right: 1em;
-                            }
-
-                            p {
-                                font-size: var(--font-size-small);
-                                font-weight: 500;
-
-                                a {
-                                    display: block;
-                                    font-weight: normal;
-                                }
-                            }
-                        }
-                    }
-                }
             }
         }
     }
@@ -787,6 +851,64 @@ div.tabs { // TODO: Move this to main css?
                             }
                         }
 
+                        &.participate {
+
+                            div.columns {
+                                display: flex;
+                                flex-flow: row no-wrap;
+
+                                > div {
+
+                                    &:first-of-type {
+                                        flex: 0 0 60%;
+                                    }
+                                    &:last-of-type {
+                                        margin-left: var(--spacing-y);
+                                        margin-right: calc( -1 * var(--spacing-y) );
+                                    }
+                                }
+                            }
+
+                                div.card-contact {
+                                    // background-color: @color-yellow-light;
+
+                                    form {
+                                        margin-bottom: 0;
+                                        button.button {
+                                            width: 50%;
+                                        }
+                                    }
+                                }
+
+                                div.join-slack {
+                                    text-align: center;
+
+                                    img {
+                                        width: 6em;
+                                        display: block;
+                                        margin: 0 auto 2rem;
+                                    }
+
+                                    h3 {
+                                        font-size: var(--font-size-biggish);
+                                    }
+
+                                    p {
+
+                                    }
+
+                                    a.button {
+                                        color: @color-white;
+
+                                        &:hover {
+                                            background-color: @color-white;
+                                            color: @color-black;
+                                        }
+                                    }
+
+                                }
+                        }
+
 
                     }
 
@@ -802,32 +924,8 @@ div.tabs { // TODO: Move this to main css?
                             }
                         }
                     }
-
-                    footer {
-                        padding: var(--spacing-y);
-
-
-                        ul {
-                            display: flex;
-                        	flex-flow: row nowrap;
-
-                            li {
-                                // padding: 0 2rem;
-                                margin-right: var(--spacing-y);
-
-                                &:last-of-type {
-                                    margin-right: 0;
-                                }
-                            }
-                        }
-                    }
-
-
-
-
                 }
             }
-
 
         }
     }
