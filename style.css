@@ -695,16 +695,6 @@ body.home main section.about header h3 {
   padding-bottom: 1em;
   font-size: var(--font-size-p);
 }
-body.home main aside.cta {
-  padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
-}
-body.home main aside.cta > header h2 {
-  font-weight: bold;
-  padding-bottom: 1em;
-}
-body.home main aside.cta > header p {
-  font-size: var(--font-size-p);
-}
 body.home main section.engage {
   padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
 }
@@ -766,24 +756,30 @@ body.home main section.engage a.button {
   margin-top: var(--spacing-y);
 }
 body.home main section.team {
-  padding: 0 var(--spacing-x) var(--spacing-y) var(--spacing-x);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+  gap: 1rem;
+  padding: var(--spacing-y) var(--spacing-x);
 }
 body.home main section.team > header {
-  margin-bottom: 2rem;
+  grid-column: 1 / -1;
+  padding-bottom: 1rem;
 }
 body.home main section.team > header h2 {
   font-weight: bold;
   padding-bottom: 1em;
 }
 body.home main section.team article {
-  margin-bottom: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template: "image header" 1fr "button button";
   background-color: #D6E1EC;
   padding: var(--spacing-x);
   border-radius: 0.2em;
   overflow: hidden;
 }
 body.home main section.team article header {
-  margin-bottom: 1rem;
+  grid-area: header;
 }
 body.home main section.team article header h3 {
   font-weight: bold;
@@ -792,9 +788,7 @@ body.home main section.team article header p {
   font-size: var(--font-size-small);
 }
 body.home main section.team article figure {
-  float: left;
-  margin-bottom: 1rem;
-  margin-right: 1rem;
+  grid-area: image;
   background: #CCCCCC url("./img/icon-user-black.svg") no-repeat;
   background-size: contain;
   color: transparent;
@@ -808,8 +802,8 @@ body.home main section.team article figure img {
   height: inherit;
 }
 body.home main section.team article a.button {
+  grid-area: button;
   display: block;
-  clear: both;
 }
 section.latest-work {
   position: relative;
@@ -1042,9 +1036,6 @@ footer.main-footer div.so-me a.privacy {
     font-weight: 500;
     line-height: 1.5em;
   }
-  body.home main aside.cta header p {
-    font-size: var(--font-size-biggish);
-  }
   body.home main section.engage {
     display: flex;
     flex-flow: row wrap;
@@ -1090,9 +1081,7 @@ footer.main-footer div.so-me a.privacy {
     color: #FEF288;
   }
   body.home main section.team {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    display: grid;
   }
   body.home main section.team header h2 {
     font-size: var(--font-size-bigger);
@@ -1101,16 +1090,26 @@ footer.main-footer div.so-me a.privacy {
     font-size: var(--font-size-biggish);
   }
   body.home main section.team article {
-    margin-bottom: 2rem;
-    flex: 0 0 25rem;
+    grid-template: "image header" 1fr "image button";
     padding: 2rem;
     cursor: pointer;
+  }
+  body.home main section.team article header {
+    grid-area: header;
   }
   body.home main section.team article header h3 {
     font-size: var(--font-size-biggish);
   }
   body.home main section.team article header p {
     font-size: var(--font-size-p);
+  }
+  body.home main section.team article figure {
+    grid-area: image;
+    width: 8rem;
+    height: 8rem;
+  }
+  body.home main section.team article a.button {
+    grid-area: button;
   }
   body.home main section.team article:hover a.button {
     background-color: #222222;
@@ -1190,4 +1189,3 @@ footer.main-footer div.so-me a.privacy {
     font-size: var(--font-size-biggest);
   }
 }
-/*# sourceMappingURL=style.css.map */

@@ -13,7 +13,7 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
             element = element[0]
         }
 
-        var box = element.getBoundingClientRect()
+        const box = element.getBoundingClientRect()
 
         return (
             box.top >= 0 &&
