@@ -69,7 +69,7 @@
         while ( $cards->have_posts() ) : $cards->the_post();
 
         $card_image = get_field('icon');
-        $card_image = $card_image['url'];
+        $card_image_url = $card_image['url'];
         $card_image_alt = $card_image['alt'];
 
         ?>
@@ -79,7 +79,7 @@
                 <h3><?php echo get_the_title(); ?></h3>
                 <?php if ( !empty( $card_image ) ) : ?>
                     <figure>
-                        <img src="<?php echo $card_image; ?>" alt="<?php echo $card_image_alt; ?>">
+                        <img src="<?php echo $card_image_url; ?>" alt="<?php echo $card_image_alt; ?>">
                     </figure>
                 <?php endif; ?>
                 <a class="button open" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">Open card</a>
@@ -123,7 +123,7 @@
         <?php
         while ( $cards_getting_prepared->have_posts() ) : $cards_getting_prepared->the_post();
             $card_image = get_field('icon');
-            $card_image = $card_image['url'];
+            $card_image_url = $card_image['url'];
             $card_image_alt = $card_image['alt'];
         ?>
 
@@ -132,7 +132,7 @@
                 <h3><?php echo get_the_title(); ?></h3>
                 <?php if ( !empty( $card_image ) ) : ?>
                     <figure>
-                        <img src="<?php echo $card_image; ?>" alt="<?php echo $card_image_alt; ?>">
+                        <img src="<?php echo $card_image_url; ?>" alt="<?php echo $card_image_alt; ?>">
                     </figure>
                 <?php endif; ?>
                 <a class="button open" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">Open card</a>

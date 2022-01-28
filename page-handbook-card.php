@@ -111,14 +111,14 @@
 
                         <?php
                             $card_image = get_field('icon');
-                            $card_image = $card_image['url'];
+                            $card_image_url = $card_image['url'];
                             $card_image_alt = $card_image['alt'];
 
                             if(!empty($card_image)) :
                         ?>
 
                         <figure class="icon">
-                            <img src="<?php echo $card_image; ?>" alt="<?php echo $card_image_alt; ?>">
+                            <img src="<?php echo $card_image_url; ?>" alt="<?php echo $card_image_alt; ?>">
                         </figure>
 
 						<?php endif; ?>
