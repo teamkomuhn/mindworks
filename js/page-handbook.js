@@ -15,7 +15,7 @@
     button.addEventListener(`click`, () => {
         scrollTo(`.category`)
     })
-    
+
 
     const cards = document.querySelectorAll(`.card`)
 
