@@ -107,7 +107,8 @@
 
 			<a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name') ?>">
 				<span><?php bloginfo('name') ?></span>
-				<img src="<?php echo get_template_directory_uri(); ?>/img/logo-white.svg" alt="<?php bloginfo('name'); ?>" />
+				<img class="mobile" src="<?php echo get_template_directory_uri(); ?>/img/logo-white.svg" alt="<?php bloginfo('name'); ?>" />
+				<img class="desktop" src="<?php echo get_template_directory_uri(); ?>/img/logo-icon-white.svg" alt="<?php bloginfo('name'); ?>" />
 			</a>
 
 			<ul>

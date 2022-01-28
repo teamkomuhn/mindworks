@@ -538,6 +538,24 @@ header.main-header nav.main-nav a.logo {
   margin: -5rem 0 var(--spacing-y) 0;
   display: inline-block;
 }
+header.main-header nav.main-nav a.logo > img.mobile {
+  display: inline;
+}
+@media only screen and (min-width: 1201px) {
+  header.main-header nav.main-nav a.logo > img.mobile {
+    display: none;
+  }
+}
+header.main-header nav.main-nav a.logo > img.desktop {
+  width: 34px;
+  height: 32px;
+  display: none;
+}
+@media only screen and (min-width: 1201px) {
+  header.main-header nav.main-nav a.logo > img.desktop {
+    display: block;
+  }
+}
 header.main-header nav.main-nav ul {
   list-style: none;
   padding: 0;

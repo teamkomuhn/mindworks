@@ -498,6 +498,24 @@ header.main-header {
         a.logo {
             margin: -5rem 0 var(--spacing-y) 0;
             display: inline-block;
+
+            > img.mobile {
+                display: inline;
+
+                @media @desktop {
+                    display: none;
+                }
+            }
+
+            > img.desktop {
+                width: 34px; height: 32px;
+
+                display: none;
+
+                @media @desktop {
+                    display: block;
+                }
+            }
         }
 
         ul {
