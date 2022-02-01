@@ -45,9 +45,11 @@ button, .button {
 	font-weight: bold;
 	transition: all .3s;
 
-	&:hover {
-		background-color: @color-black;
-		color: @color-white;
+	&.hover {
+		&:hover {
+			background-color: @color-black;
+			color: @color-white;
+		}
 	}
 }
 
@@ -253,14 +255,14 @@ body.home {
 				h2 {
 					font-size: var(--font-size-bigger);
                 }
-				
+
 				p {
 					font-size: var(--font-size-biggish);
 				}
             }
 
             article {
-				grid-template: 
+				grid-template:
                     "image header" 1fr
                     "image button";
 				padding: 2rem;

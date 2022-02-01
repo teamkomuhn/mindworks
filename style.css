@@ -982,8 +982,8 @@ footer.main-footer div.so-me a.privacy {
     font-weight: bold;
     transition: all 0.3s;
   }
-  button:hover,
-  .button:hover {
+  button.hover:hover,
+  .button.hover:hover {
     background-color: #222222;
     color: #ffffff;
   }
@@ -1207,3 +1207,4 @@ footer.main-footer div.so-me a.privacy {
     font-size: var(--font-size-biggest);
   }
 }
+/*# sourceMappingURL=style.css.map */
