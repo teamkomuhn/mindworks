@@ -41,7 +41,7 @@
     //add_action('init', 'cpt_cards');
 
     //Register CPT - expandable content
-    function cpt_expandable_content() {
+    /*function cpt_expandable_content() {
         register_post_type('expandable_content',
             array(
                 'labels'        => array(
@@ -57,5 +57,5 @@
             )
         );
     }
-    add_action('init', 'cpt_expandable_content');
+    add_action('init', 'cpt_expandable_content');*/
 ?>
