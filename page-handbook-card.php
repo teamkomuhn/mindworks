@@ -267,8 +267,13 @@
                                                     setup_postdata( $post );
 
                                                     $title          = get_the_title( $post->ID );
-                                                    $slug           = sanitize_title( $title );
                                                     $excerpt        = get_the_excerpt( $post->ID );
+                                                    $link           = get_field('external_link');
+
+                                                    if(empty($link)) {
+                                                        $link       = get_the_permalink($post->ID);
+                                                    }
+
                                                     ?>
 
                                                     <li class="related tool">
@@ -276,7 +281,7 @@
 
                                                         <!-- <p><?php //print $excerpt; ?></p> -->
 
-                                                        <a href="?tool=<?php echo $slug; ?>">Go to tool &rarr;</a>
+                                                        <a href="<?php echo esc_url($link); ?>">Go to tool &rarr;</a>
                                                     </li>
 
                                                 <?php  wp_reset_postdata(); endif; endwhile; ?>
@@ -312,19 +317,19 @@
                                 setup_postdata( $post );
 
                                 $title          = get_the_title( $post->ID );
-                                $slug           = sanitize_title( $title );
                                 $excerpt        = get_the_excerpt( $post->ID );
-                                $link           = get_sub_field('card_tool_link');
+                                $link           = get_field('external_link');
+
+                                if(empty($link)) {
+                                    $link       = get_the_permalink($post->ID);
+                                }
                                 ?>
 
                             <article class="tool" id="tool-<?php echo $slug; ?>">
                                 <h3><?php print $title; ?></h3>
                                 <p><?php print $excerpt; ?></p>
 
-                                <?php if( !empty($link) ) : ?>
                                 <a href="<?php echo esc_url($link); ?>">Learn more &rarr;</a>
-                                <?php endif; ?>
-
                             </article>
 
                             <?php wp_reset_postdata(); endif; endwhile;  ?>
@@ -358,7 +363,7 @@
                                 $image       = get_post_thumbnail_id( $post->ID );
                                 $image_url   = wp_get_attachment_image_url( $image, 'medium' );
                                 $image_alt   = get_post_meta($image, '_wp_attachment_image_alt', true);
-                                $link        = get_sub_field('card_example_link');
+                                $link        = get_field('external_link');
 
                                 if(!empty($image)) {
 
@@ -366,12 +371,9 @@
                                         $image_alt = 'alt="'.$image_alt.'"';
                                     }
                                 }
-                                if(!empty($link)) {
-                                    if(!empty($link_alt)) {
-                                        $link_alt = $link['alt'];
-                                        $link_alt = 'alt="'.$link_alt.'"';
-                                    }
-                                    $link = '<a href="'.esc_url($link['url']).'" '.$link_alt.'>Learn more -></a>';
+
+                                if(empty($link)) {
+                                    $link       = get_the_permalink($post->ID);
                                 }
                                 ?>
 
@@ -384,10 +386,12 @@
                                         <img src="<?php echo esc_url($image_url); ?>" <?php echo $image_alt; ?>>
                                     </figure>
 
-                                    <?php }
+                                    <?php } 
                                     echo $content;
-                                    echo $link;
                                     ?>
+
+                                    <a href="<?php echo esc_url($link); ?>" title="<?php echo $title; ?>" alt="<?php echo $title; ?>" >Learn more -></a>
+                                    
                                 </article>
 
                                 <?php wp_reset_postdata(); endif; endwhile; ?>
