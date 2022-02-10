@@ -166,18 +166,18 @@ import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
 
     // 🔗 Link to tool
 
-    const toolName = new URLSearchParams(location.search).get(`tool`)
-    const toolsTab = document.querySelector(`.tab.tools`)
-    const otherTabs = document.querySelectorAll(`.tab:not(.tools)`)
-
-    if (toolName) {
-
-        for (const tab of otherTabs) tab.classList.remove(`active`)
-        toolsTab.classList.add(`active`)
-
-        const tool = document.querySelector(`#tool-${toolName}`)
-
-        if (tool) scrollTo(tool, { duration: 0 })
-    }
+    // const toolName = new URLSearchParams(location.search).get(`tool`)
+    // const toolsTab = document.querySelector(`.tab.tools`)
+    // const otherTabs = document.querySelectorAll(`.tab:not(.tools)`)
+    //
+    // if (toolName) {
+    //
+    //     for (const tab of otherTabs) tab.classList.remove(`active`)
+    //     toolsTab.classList.add(`active`)
+    //
+    //     const tool = document.querySelector(`#tool-${toolName}`)
+    //
+    //     if (tool) scrollTo(tool, { duration: 0 })
+    // }
 
 })( jQuery );

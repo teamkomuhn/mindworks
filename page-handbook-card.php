@@ -220,7 +220,7 @@
                     </section>
 
                     <?php
-                    $card_steps = get_field('repeater_card_steps');
+                    $card_steps = get_field('repeater_card_steps'); // TODO: ? // QUESTION: Why are there two variables for the same thing?
                     $card_tools = get_field('repeater_card_steps');
                     if ($card_steps > 0 || $card_tools > 0) :
                     ?>
