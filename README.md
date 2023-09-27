@@ -1,2 +1,0 @@
-# mindworks
-Mindworks website

@@ -1,5 +1,0 @@
-{
-  "__file": "wp_block",
-  "title": "Contact us",
-  "content": "<!-- wp:group {\"className\":\"contact-us\"} -->\n<div class=\"wp-block-group contact-us\"><div class=\"wp-block-group__inner-container\"><!-- wp:paragraph -->\n<p>In the upcoming publication in The Disrupted Mind series we are going to focus on how psychological and social phases like the hero or the honeymoon phase, influence the creation of mindsets throughout a crisis. With these insights you will be able to design effective interventions to catalyse mindset change. The Disrupted Mind: Handbook completes the series by providing changemakers with concrete advice on how to design projects to catalyse mindset change during disruptions.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Contact us at <strong><a href=\"mailto:hello@mindworkslab.org\" target=\"_blank\" rel=\"noreferrer noopener\">hello@mindworkslab.org</a></strong> for any inquiry or leave your email below so we can reach you when we put out the next publication.</p>\n<!-- /wp:paragraph --></div></div>\n<!-- /wp:group -->"
-}
